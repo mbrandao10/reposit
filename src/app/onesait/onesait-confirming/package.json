@@ -1,0 +1,8 @@
+{
+    "name": "onesait-confirming",
+    "version": "0.0.2",
+    "description": "modulo de onesait-confirming",
+    "main": "index.js",
+    "author": "Minsait",
+    "license": "ISC"
+}

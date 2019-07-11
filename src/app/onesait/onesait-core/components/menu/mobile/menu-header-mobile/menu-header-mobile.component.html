@@ -1,0 +1,26 @@
+<div class="main-menu-mobile-bar">
+    <div class="pull-left er">
+        <span class="navbar-brand">
+            <i class="icon icononesait icon-menu" (click)="close()"></i>
+        </span>
+    </div>
+    <div class="pull-right">
+        <img class="logo-mobile img-responsive" title="" alt="Logo" src="assets/images/logo-novobanco.png" />
+    </div>
+</div>
+<div class="main-menu-mobile-bar bg-green">
+    <div class="pull-left mobile-avatar-container" (click)="mySpace()" title="{{ 'USER.MENU.PERSONAL.INFO' | translate }} (JG)">
+        <div class="mobile-avatar"> JG</div>
+    </div>
+    <div class="pull-right nav-item dropdown dropdown-mobile-profile">
+        <a class="dropdown-toggle" type="button" data-toggle="dropdown">
+            <strong>{{activeProfileName}}</strong>
+            <br><small>{{activeProfileTitle}}</small>
+            <span class="icon icononesait icon-arrow-drop-down"></span>
+        </a>
+        <div class="dropdown-arrow"></div>
+        <ul class="dropdown-menu">
+            <li *ngFor="let profile of profiles"><a (click)="changeProfileMobile(profile)">{{ profile.contractName }} - {{ profile.relationShip.name }}</a></li>
+        </ul>
+    </div>
+</div>

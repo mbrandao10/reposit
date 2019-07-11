@@ -1,0 +1,60 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "movementClass":"RemittanceDebsPaymentMovement",
+    "id": "xxxx-xxxx-xxxxx-xxxxx-xxxxx-xxxxxx-xxxx",
+    "reference": "xxxx-xxxx-xxxxx-xxxxx-xxxxx-xxxxxx-xxxx",
+    "reason": "Cargo por remesa transferencia",
+    "amount": {
+      "amount": -12.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "type": {
+          "id": "ARAD",
+          "name": "Abono por remesa de adeudos"
+        },
+    "operationDate": "2014-10-30T00:00:00.00Z",
+    "hasDocument":true,
+    "documentId": "71cb8771-5b29-4570-af1c-ca3cb7975246",
+    "state": "APLICADA",
+
+    "aebId":"",
+    "ordererLegalDocument": {
+      "id":"12345678Z",
+      "type":{
+        "id":"01",
+        "name":"DNI"
+      }
+    },
+    "firstOperationId":"",
+    "lastOperationId":"",
+    "aebType":"",
+    "initialRetentionAmount": {
+      "amount": -12.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+        "currentRetentionAmount": {
+      "amount": -12.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "endRetentionDate": "2014-10-30T00:00:00.00Z",
+    "generationDate": "2014-10-30T00:00:00.00Z",
+    "settlementDate": "2014-10-30T00:00:00.00Z",
+    "standardCloseDate": "2014-10-30T00:00:00.00Z",
+    "lastCloseDate": "2014-10-30T00:00:00.00Z",
+    "firstDevolutionDate": "2014-10-30T00:00:00.00Z",
+    "endRiskDate": "2014-10-30T00:00:00.00Z"
+  }
+}

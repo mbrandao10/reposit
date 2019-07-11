@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-xs-8 text-os-semibold">
+        <span class="name">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.RECEIPT-INDICATOR' | translate }} :
+        </span>
+        <span *ngIf="paymentSelected.id" class="value text-no-warp">
+            {{ paymentSelected.id }}
+        </span>
+    </div>
+</div>
+<div class="row mt-1">
+    <div class="col-xs-12 text-os-semibold">
+        <span class="name">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.ENTITY' | translate }} :
+        </span>
+        <span *ngIf="paymentSelected.entity" class="value text-no-warp">
+            {{ paymentSelected.entity }}
+        </span>
+    </div>
+</div>
+<div class="row mt-1">
+    <div class="col-xs-6 ">
+        <span class="name text-os-semibold">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.ENTRY-DATE' | translate }} :
+        </span>
+        <span *ngIf="paymentSelected.lastBillingDate" class="value text-no-warp">
+            {{ paymentSelected.lastBillingDate | date: 'dd/MM/yyyy' }}
+        </span>
+    </div>
+    <div class="col-xs-6">
+        <span class="name text-os-semibold">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.ACCRUAL-DATE' | translate }} :
+        </span>
+        <span *ngIf="paymentSelected.chargeDate" class="value text-no-warp">
+            {{ paymentSelected.chargeDate | date: 'dd/MM/yyyy'}}
+        </span>
+    </div>
+</div>
+<div class="row mt-1">
+    <div class="col-xs-6">
+        <span class="name text-os-semibold">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.RETURN-DEADLINE' | translate }} :
+        </span>
+        <span *ngIf="paymentSelected.maxReturnDate" class="value text-no-warp">
+            {{ paymentSelected.maxReturnDate  | date: 'dd/MM/yyyy'}}
+        </span>
+    </div>
+    <div class="col-xs-6">
+        <span class="name text-os-semibold">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.CONCEPT' | translate }} :
+        </span>
+        <span *ngIf="paymentSelected.reason" class="value text-no-warp">
+            {{ paymentSelected.reason   | capitalize}}
+        </span>
+    </div>
+</div>
+<div class="row mt-1">
+    <div class="col-xs-12">
+        <span class="name text-os-semibold">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.AMOUNT' | translate }} :
+        </span>
+        <span *ngIf="paymentSelected.amount && paymentSelected.amount.amount" class="value text-no-warp">
+            {{ paymentSelected.amount.amount | CurrencyPipe: paymentSelected.amount.currency.code }}
+        </span>
+    </div>
+</div>

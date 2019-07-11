@@ -1,0 +1,9 @@
+@import "assets/scss/colors";
+@import "assets/scss/variables";
+
+@import "assets/scss/bootstrap/bootstrap";
+
+@import "assets/scss/novobanco/novobanco";
+
+//NO SE DEBEN INCLUIR ESTILOS ADICIONALES EN ESTE ARCHIVO
+//Para código en pruebas o pendiente de integrar usar _nvb-scratch.scss

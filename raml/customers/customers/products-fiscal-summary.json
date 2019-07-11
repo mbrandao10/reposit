@@ -1,0 +1,215 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "productClass": "SavingsProductFiscalSummary",
+      "product": {
+        "id": "CCCOT",
+        "description": "Cuenta Corriente ABC"
+      },
+      "account": {
+        "id": "ES8101284885958446991378",
+        "type": "IBAN"
+      },
+      "ownerShipPercentage": 50,
+      "interests": {
+        "amount": 100.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "taxes": {
+        "amount": 18.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "debtorInterests": {
+        "amount": 18.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "productClass": "SavingsProductFiscalSummary",
+      "product": {
+        "id": "CCCOT",
+        "description": "Cuenta Corriente CDE"
+      },
+      "account": {
+        "id": "ES8101284885958446991379",
+        "type": "IBAN"
+      },
+      "ownerShipPercentage": 100,
+      "interests": {
+        "amount": 10.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "taxes": {
+        "amount": 3.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "productClass": "SavingsProductFiscalSummary",
+      "product": {
+        "id": "CCCOT",
+        "description": "Cuenta Corriente EFJ"
+      },
+      "account": {
+        "id": "ES8101284885958446991380",
+        "type": "IBAN"
+      },
+      "ownerShipPercentage": 50,
+      "interests": {
+        "amount": 23.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "taxes": {
+        "amount": 2.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "productClass": "SavingsProductFiscalSummary",
+      "product": {
+        "id": "CCCOT",
+        "description": "Cuenta Corriente ABC"
+      },
+      "account": {
+        "id": "ES8101284885958446991378",
+        "type": "IBAN"
+      },
+      "ownerShipPercentage": 50,
+      "interests": {
+        "amount": 100.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "taxes": {
+        "amount": 18.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "productClass": "SavingsProductFiscalSummary",
+      "product": {
+        "id": "CCCOT",
+        "description": "Cuenta Corriente CDE"
+      },
+      "account": {
+        "id": "ES8101284885958446991379",
+        "type": "IBAN"
+      },
+      "ownerShipPercentage": 100,
+      "interests": {
+        "amount": 10.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "taxes": {
+        "amount": 3.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "productClass": "CreditProductFiscalSummary",
+      "product": {
+        "id": "PR007",
+        "description": "Préstamo personal"
+      },
+      "account": {
+        "id": "ES1401289437601118178952",
+        "type": "IBAN"
+      },
+      "ownerShipPercentage": 100,
+      "interests": {
+        "amount": 9000.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "balanceAtEnding": {
+        "amount": 10000.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "amortizedAmount": {
+        "amount": 5340.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "productClass": "CreditProductFiscalSummary",
+      "product": {
+        "id": "PR008",
+        "description": "Préstamo plus"
+      },
+      "account": {
+        "id": "ES1401289437601118178953",
+        "type": "IBAN"
+      },
+      "ownerShipPercentage": 50,
+      "interests": {
+        "amount": 5000.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "balanceAtEnding": {
+        "amount": 87000.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "amortizedAmount": {
+        "amount": 15340.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

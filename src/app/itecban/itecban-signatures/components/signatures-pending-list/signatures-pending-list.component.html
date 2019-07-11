@@ -1,0 +1,79 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<ng-container *ngIf="step === 'LIST'">
+    <table class="table table-detail">
+        <thead class="hidden-xs">
+            <tr>
+                <th>{{ 'ITECBAN-PERSONS.SIGNATURES.DATE' | translate }}</th>
+                <th>{{ 'ITECBAN-PERSONS.SIGNATURES.TYPE' | translate }}</th>
+                <!--<th>{{ 'ITECBAN-PERSONS.SIGNATURES.SEND-BY' | translate }}</th>-->
+                <th>{{ 'ITECBAN-PERSONS.SIGNATURES.REQUIRED-SIGNATURES' | translate }}</th>
+                <th>{{ 'ITECBAN-PERSONS.SIGNATURES.AMOUNT' | translate }}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <ng-container *ngIf="pendingSignatures">
+            <tbody [ngClass]="{'open': pendingSignature.id == selectedItem}" *ngFor="let pendingSignature of pendingSignatures">
+                <tr class="interactive" (click)="viewDetail(pendingSignature)">
+                    <td class="hidden-xs">
+                        {{ pendingSignature.date | date: 'dd/MM/yyyy' }}
+                    </td>
+                    <td>
+                        {{ pendingSignature.group.name }}
+                        <span class="visible-xs-block fs-12">{{ pendingSignature.date | date: 'dd/MM/yyyy' }}</span>
+                    </td>
+                    <!-- <td class="hidden-xs">
+                        {{ pendingSignature.creator }}
+                    </td>-->
+                    <td class="hidden-xs">
+                        {{ pendingSignature.pendingSignatures }}
+                    </td>
+                    <td>
+                        <span class="hidden-xs text-no-warp">
+                            {{ pendingSignature.amount.amount | CurrencyPipe: pendingSignature.amount.currency.code}}
+                        </span>
+                        <span class="visible-xs-block text-right text-os-semibold text-no-warp">
+                            {{ pendingSignature.amount.amount | CurrencyPipe: pendingSignature.amount.currency.code}}
+                        </span>
+                        <!--   <span class="visible-xs-block text-right fs-12">
+                            {{ pendingSignature.creator }}
+                        </span>-->
+                    </td>
+                    <td class="text-right hidden-xs">
+                        <button class="btn btn-primary" (click)="verifyOperation(pendingSignature, 'accept')">
+                            {{ 'ITECBAN-PERSONS.SIGNATURES.BUTTON.SIGN' | translate | uppercase }}
+                        </button>
+                    </td>
+                </tr>
+                <tr [ngClass]="{'description': !isMobileResolution() }" *ngIf="selectedItem && (selectedItem === pendingSignature.id)">
+                    <td colspan="6">
+                        <app-signatures-pending-detail [pendingSignature]="pendingSignature" [pendingSignatureDetail]="pendingSignatureDetail" (cancelOperationEvent)="verifyOperation(pendingSignature, 'reject')" (closeEvent)="close($event)">
+                        </app-signatures-pending-detail>
+                    </td>
+                </tr>
+            </tbody>
+        </ng-container>
+    </table>
+    <div class="row" *ngIf="hasMoreData">
+        <a class="col-xs-12 text-center p-1 text-os-bold" (click)="next()" role="button">{{'ITECBAN-ACCOUNT.MOVEMENT.MORE-DATA'
+      | translate}}</a>
+    </div>
+</ng-container>
+<!-- Firma -->
+<ng-container *ngIf="step === 'VERIFY'">
+    <app-signatures-sign-procces [action]="action" [pendingSignature]="itemPendingSelected" [pendingSignatureDetail]="pendingSignatureDetail" (returnOperationEvent)="returnOperation()" (closeEvent)="close($event)"></app-signatures-sign-procces>
+</ng-container>
+
+
+<!-- Modal -->
+<app-modal #modal *ngIf="!ismobileResolution">
+    <app-modal-body>
+        {{'ITECBAN-PERSONS.SIGNATURES.DELETE-TEXT' | translate}}
+    </app-modal-body>
+    <app-modal-footer>
+        <button class="btn btn-secondary" (click)="closeDeleteModal()">{{'ITECBAN-PERSONS.SIGNATURES.BUTTON.CANCELED' |
+      translate}}</button>
+        <button class="btn btn-primary" (click)="cancelSignature()">{{'ITECBAN-PERSONS.SIGNATURES.BUTTON.CONFIRM'
+      | translate}}</button>
+    </app-modal-footer>
+</app-modal>

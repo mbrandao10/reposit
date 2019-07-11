@@ -1,0 +1,39 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "movementClass":"RemittanceChargeTransferMovement",
+    "id": "xxxx-xxxx-xxxxx-xxxxx-xxxxx-xxxxxx-xxxx",
+    "reference": "xxxx-xxxx-xxxxx-xxxxx-xxxxx-xxxxxx-xxxx",
+    "reason": "Cargo por remesa transferencia",
+    "amount": {
+      "amount": -12.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "type":     {
+          "id": "RM34",
+          "name": "Cargo por remesa transferencias"
+        },
+    "operationDate": "2014-10-30T00:00:00.00Z",
+    "hasDocument":true,
+    "documentId": "71cb8771-5b29-4570-af1c-ca3cb7975246",
+    "state": "APLICADA",
+    "operationCount": 999,
+    "legalDocument": {
+      "id":"12345678Z",
+      "type":{
+        "id":"01",
+        "name":"DNI"
+      }
+    },
+    "suffix":"xxx",
+    "supportNumber":"",
+    "creationDate": "2014-10-30T00:00:00.00Z",
+    "supportDate": "2014-10-30T00:00:00.00Z"
+  }
+}

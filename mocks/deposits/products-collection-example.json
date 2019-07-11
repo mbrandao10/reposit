@@ -1,0 +1,31 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "code": "PFFD1",
+      "name": "PLAZO FIJO EN DOLARES 30 DÍAS",
+      "tae": 0.50,
+      "interest": 0.50
+    },
+    {
+      "code": "PFFD2",
+      "name": "PLAZO FIJO EN DOLARES 1 AÑO",
+      "tae": 0.50,
+      "interest": 0.50
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+    "links": [
+      {
+        "rel": "next",
+        "href": "https://itecban.indra.es/deposits/products?paginationKey=f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+        "method": "GET"
+      }
+    ]
+  }
+}

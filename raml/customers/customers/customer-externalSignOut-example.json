@@ -1,0 +1,16 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "accessToken": "74547e66-3bbe-42e8-b0fc-ddf06a951fe3",
+    "tokenType": "bearer",
+    "refreshToken": "6bca4e40-d733-43e6-93c9-a4b7ba8ec073",
+    "expiresIn": 24811,
+    "scope": "write",
+    "institution": "NB",
+    "channel": "B",
+    "url": "https://integra.novobanco.inversis.com/trans/inversis/SvlAutentificar"
+  }
+}

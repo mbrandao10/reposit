@@ -1,0 +1,105 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<div class="box-form-info grayBackground-c">
+  <osb-voucher-container #voucherContainer>
+    <div class="info-section-group">
+      <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+        <div class="row">
+          <div class="col-xs-12 text-right">
+            <button class="close" type="button" (click)="changeShowDetail()">&times;</button>
+            <!-- <i class="icon icononesait icon-close"></i> -->
+          </div>
+          <div class="col-xs-6">
+            <div><b OsbVoucherKey>{{'ONESAIT-FACTORING.INVOICES.DETAIL.INVOICE' | translate }}: </b><b
+                OsbVoucherValue>{{invoice.id}}</b></div>
+          </div>
+        </div>
+      </div>
+      <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+        <div>
+          <b OsbVoucherKey>{{'ONESAIT-FACTORING.INVOICES.DETAIL.STATUS' | translate }}: </b><b
+            OsbVoucherValue>{{invoice.status.name}}</b>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="mb-1 mt-1">
+            <div class="row">
+              <div OsbVoucherKeyValue class="col-xs-6 ">
+                <div OsbVoucherKey>{{'ONESAIT-FACTORING.INVOICES.DETAIL.CREATION-DATE' | translate }}</div>
+                <div OsbVoucherValue>{{invoice.creationDate | dateLocalized: 'shortDate'}}</div>
+              </div>
+              <div class="col-xs-6 OsbVoucherKeyValue" *ngIf="invoice.acceptanceDate">
+                <div OsbVoucherKey>{{'ONESAIT-FACTORING.INVOICES.DETAIL.ACCEPTANCE-DATE' | translate }}</div>
+                <div OsbVoucherValue>{{invoice.acceptanceDate | dateLocalized: 'shortDate'}}</div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-1 mt-1">
+            <div class="row">
+              <div OsbVoucherKeyValue class="col-xs-6 ">
+                <div OsbVoucherKey>{{'ONESAIT-FACTORING.INVOICES.DETAIL.ADVANCE-DATE' | translate }}</div>
+                <div OsbVoucherValue>{{invoice.advanceDate | dateLocalized: 'shortDate'}}</div>
+              </div>
+              <div OsbVoucherKeyValue class="col-xs-6 ">
+                <div OsbVoucherKey>{{'ONESAIT-FACTORING.INVOICES.DETAIL.EXPIRATION-DATE' | translate }}</div>
+                <div OsbVoucherValue>{{invoice.expirationDate | dateLocalized: 'shortDate'}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div OsbVoucherKeyValue class="mb-1 mt-1 text-right ">
+            <div OsbVoucherKey>{{'ONESAIT-FACTORING.INVOICES.DETAIL.AMOUNT' | translate }}</div>
+            <div class="text-no-warp" OsbVoucherValue>{{invoice.amount.amount | CurrencyPipe : invoice.amount.currency.code :false}}
+            </div>
+          </div>
+          <div class="mb-1 mt-1 text-right">
+            <div class="row">
+              <div OsbVoucherKeyValue class="col-xs-6 " *ngIf="invoice.fees">
+                <div OsbVoucherKey>{{'ONESAIT-FACTORING.INVOICES.DETAIL.FEE' | translate }}</div>
+                <div OsbVoucherValue>{{invoice.fees.amount}} %</div>
+              </div>
+              <div OsbVoucherKeyValue class="col-xs-6" *ngIf="contract ">
+                <div OsbVoucherKey>{{'ONESAIT-FACTORING.INVOICES.DETAIL.INTEREST-RATE' | translate }}</div>
+                <div><span OsbVoucherValue *ngIf="contract.financing.fixedRate">{{'ONESAIT-FACTORING.INVOICES.DETAIL.FIXED'
+                  | translate
+                  }}</span><span OsbVoucherValue
+                    *ngIf="contract.financing.referenceIndex">{{contract.financing.referenceIndex}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+        <div OsbVoucherKey>{{'ONESAIT-FACTORING.INVOICES.DETAIL.CONTRACT' | translate }}: <span
+            OsbVoucherValue>{{contractId}}</span></div>
+      </div>
+      <div class="col-xs-6">
+        <div class="row">
+          <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+            <div OsbVoucherKey>{{'ONESAIT-FACTORING.INVOICES.DETAIL.DEBTOR' | translate }}: <span
+                OsbVoucherValue>{{invoice.debtorDescription}}</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6" *ngIf="invoice.financedAmount">
+        <div class="row">
+          <div OsbVoucherKeyValue class="mb-1 mt-1 text-right ">
+            <div><b OsbVoucherKey>{{'ONESAIT-FACTORING.INVOICES.DETAIL.FINANCED-AMOUNT' | translate }}</b>
+            </div>
+            <div class="text-no-warp" OsbVoucherValue>{{invoice.financedAmount.amount | CurrencyPipe :
+            invoice.financedAmount.currency.code: false}}</div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="voucherContainer" class="pull-right">
+        <osb-download-info [voucherContainer]="voucherContainer"
+          text="{{'ONESAIT-FACTORING.INVOICES.DETAIL.DOWNLOAD' | translate }}"></osb-download-info>
+      </div>
+    </div>
+  </osb-voucher-container>
+</div>

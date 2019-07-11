@@ -1,0 +1,41 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "currency": {
+      "code": "840"
+    },
+    "account": {
+      "id": "049100010000000136",
+      "formats": [
+        {
+          "format": {
+            "id": "CBU",
+            "name": "CBU"
+          },
+          "value": "4910001700000000001362"
+        }
+      ]
+    },
+    "valueDate": "2017-05-23T00:00:00.00Z",
+    "creditorInterest": 4.13,
+    "debtorInterest": 0,
+    "exceededInterest": 0,
+    "totalInterest": 4.13,
+    "totalLiquidation": 0,
+    "maxExceededFee": 0,
+    "averageBalanceFee": 0,
+    "serviceFee": 0,
+    "otherFees": 0,
+    "totalSettlement": 4.13,
+    "newBalance": 209.35,
+    "cancelAmount": 213.48,
+    "litAmount": 213.48,
+    "interestDonation": 0,
+    "sealFee": 0,
+    "iva": 0,
+    "dycFee": 0
+  }
+}

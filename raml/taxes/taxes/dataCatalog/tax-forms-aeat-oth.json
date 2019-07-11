@@ -1,0 +1,28 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "430",
+      "name": "IMPUESTO PRIMAS ASEGURADORAS"
+    },
+    {
+      "id": "561",
+      "name": "IMPUESTO SOBRE LA CERVEZA"
+    },
+    {
+      "id": "681",
+      "name": "TASA POR RESIDUOS RADIACTIVOS"
+    },
+    {
+      "id": "714",
+      "name": "IMPUESTO SOBRE EL PATRIMONIO"
+    },
+    {
+      "id": "791",
+      "name": "IMPUESTO SUJETO PASIVO"
+    }
+  ]
+}

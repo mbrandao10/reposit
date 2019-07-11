@@ -1,0 +1,34 @@
+{
+  "debin": {
+    "id": "1212121212121212121234",
+    "sellerName": "David Robert Jones",
+    "buyerName": "Sara Jones",
+    "sellerLegalDocumentId":"20111144444",
+    "buyerLegalDocumentId":"35111144444",
+    "buyerCbu":"3840001700000000005656",
+    "periodAmount": {
+      "amount": 60000,
+      "currency": "032"
+    },
+    "debinAmount": {
+      "amount": 6000,
+      "currency": "032"
+    },
+    "periodQuantity": 20,
+    "period": {
+      "id": "1",
+      "name": "MES"
+    },
+    "concept": {
+      "id": "ALQ",
+      "name": "ALQUILER"
+    },
+    "reason": "Pago del alquiler",
+    "status": {
+      "id": "01",
+      "name": "PENDIENTE"
+    },
+    "role":"seller"
+  },
+  "action":"A"
+}

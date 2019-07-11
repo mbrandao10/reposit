@@ -1,0 +1,66 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "id": "fac-000000001",
+    "productData": {
+      "id": "00-FAC-PLUS",
+      "description": "Factoring Plus"
+    },
+    "factoringType": {
+      "id": "01",
+      "name": "Con recurso"
+    },
+    "maxPercentageToAnticipate": 80.4,
+    "percentageOfCoverage": 20.3,
+    "collectionManagementLimit": {
+      "amount": 20000.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "financingLimit": {
+      "amount": 40000.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "financing": {
+      "isAutomatic": false,
+      "referenceIndex": "EURIBOR",
+	  "differentialRate": 1.1,
+      "latePaymentRate": 5.1
+    },
+    "openingDate": "2018-05-23T00:00:00.00Z",
+    "expirationDate": "2018-05-23T00:00:00.00Z",
+    "subscriptionAccount": {
+      "id": "ES00 00000000000000000001"
+    },
+    "settlementType": {
+      "id": "001",
+      "name": "Factura a Factura"
+    },
+    "settlementSubtType": {
+      "id": "001-1",
+      "name": "Fin de mes por vencido"
+    },
+    "collectionsAmount": {
+      "amount": 100000.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "financedAmount": {
+      "amount": 34060.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    }
+  }
+}

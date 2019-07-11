@@ -1,0 +1,8 @@
+<div class="modal fade in">
+    <div class="modal-background" (click)="dismiss()"></div>
+    <div class="modal-dialog">
+        <div *ngIf="visibleContent" class="modal-content"  OsbVAlign>
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

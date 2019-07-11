@@ -1,0 +1,10 @@
+{
+  "id": "049100010000000094",
+  "type": "Account",
+  "payee": "GOMEZ",
+  "instructedAmount": {
+    "amount": 1000,
+    "currency": "978"
+  },
+  "consentId": "123512345123412351245"
+}

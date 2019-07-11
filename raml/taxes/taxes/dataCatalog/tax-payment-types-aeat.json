@@ -1,0 +1,28 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "REN",
+      "name": "Pago del impuesto de la Renta"
+    },
+    {
+      "id": "IVA",
+      "name": "Pago del IVA"
+    },
+    {
+      "id": "SOC",
+      "name": "Pago del impuesto de sociedades"
+    },
+    {
+      "id": "NTF",
+      "name": "Pago de impuestos de notificaciones y tasas"
+    },
+    {
+      "id": "OTH",
+      "name": "Pago de otros impuestos"
+    }
+  ]
+}

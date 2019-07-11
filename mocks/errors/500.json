@@ -1,0 +1,13 @@
+{
+  "result": {
+    "code": "500",
+    "info": "Internal error server",
+    "errors": [
+      {
+        "errorDescription": "Internal server error. Try again later",
+        "errorCode": "000A",
+        "errorType": "T"
+      }
+    ]
+  }
+}

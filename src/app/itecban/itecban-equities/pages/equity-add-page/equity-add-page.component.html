@@ -1,0 +1,332 @@
+<app-loader *ngIf="loading"></app-loader>
+<div class="row">
+    <div class="col-xs-12 p-dynamic mt-1">
+        <!-- Seleccion de cuenta -->
+        <ng-container *ngIf="step === 'FIRST'">
+            <div class="panel">
+                <div class="panel-body">
+                    <form #formStep1="ngForm">
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="selectCuenta"><b>{{ 'ITECBAN-EQUITIES.ADD.SELECT-PRODUCTS' | translate }}</b></label>
+                                    <select class="form-control" [(ngModel)]="newEquity.productId" (ngModelChange)="changeProduct($event)" name="productId" id="productId" required>
+                                        <option *ngFor="let product of products" [ngValue]="product.id">{{ product.name }}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mb-1 mt-1">
+                                    <label for="selectCuenta"><b>{{ 'ITECBAN-EQUITIES.ADD.ASSOCIATE-ACCOUNT' | translate }}</b></label>
+                                    <select class="form-control" [(ngModel)]="newEquity.accountId" name="accountId" id="accountId" required>
+                                        <option *ngFor="let account of accounts" [ngValue]="account.id">{{account.formats | formatAccountPipe: accountFormatView}}</option>
+                                    </select>
+                                </div>
+                                <ng-container *ngIf="newEquity">
+                                    <div class="row mt-1 mb-1">
+                                        <div class="col-xs-6" *ngIf="userInfo.businessName">
+                                            <div class="text-os-semibold mb-12">
+                                                {{ 'ITECBAN-EQUITIES.ADD.OWNERSHIP' | translate }}
+                                            </div>
+                                            <div class="text-gray-dark">
+                                                {{ userInfo.businessName }}
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 text-right" *ngIf="userInfo.businessId">
+                                            <div class="text-os-semibold mb-12">
+                                                {{ 'ITECBAN-EQUITIES.ADD.CIF' | translate }}
+                                            </div>
+                                            <div class="text-gray-dark">
+                                                {{ userInfo.businessId }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-1 mb-1">
+                                        <div class="col-xs-6" *ngIf="userInfo.attorney">
+                                            <div class="text-os-semibold mb-12">
+                                                {{ 'ITECBAN-EQUITIES.ADD.ATTORNEY' | translate }}
+                                            </div>
+                                            <div class="text-gray-dark">
+                                                {{ userInfo.attorney }}
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6 text-right" *ngIf="userInfo.userId">
+                                            <div class="text-os-semibold mb-12">
+                                                {{ 'ITECBAN-EQUITIES.ADD.NIF' | translate }}
+                                            </div>
+                                            <div class="text-gray-dark">
+                                                {{ userInfo.userId }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row mt-2">
+                        <div class="col-xs-6">
+                            <button class="btn btn-terciary" (click)="cancel()">
+                {{ 'ITECBAN-EQUITIES.ADD.BUTTON.CANCEL' | translate }}
+              </button>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <button class="btn btn-primary" [disabled]="!formStep1.form.valid" (click)="step = 'VERIFY'">
+                {{ 'ITECBAN-EQUITIES.ADD.BUTTON.CONFIRM' | translate }}
+              </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <!-- Condiciones de Contratación -->
+
+        <ng-container *ngIf="step === 'VERIFY'">
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12 mt-1 mb-1">
+                            <b>
+                {{ 'ITECBAN-EQUITIES.ADD.CONTRACT.CONDITIONS' | translate }}
+              </b>
+                        </div>
+                        <div class="col-xs-12 col-sm-7">
+                            <div class="mt-1 mb-1 text-gray-dark">
+                                {{ 'ITECBAN-EQUITIES.ADD.CONTRACT.ONE' | translate }}
+                            </div>
+                            <div class="mt-1 mb-1 text-gray-dark">
+                                {{ 'ITECBAN-EQUITIES.ADD.CONTRACT.TWO' | translate }}
+                            </div>
+                            <div class="mt-1 mb-1 text-gray-dark">
+                                {{ 'ITECBAN-EQUITIES.ADD.CONTRACT.THREE' | translate }}
+                            </div>
+                            <div class="mt-1 mb-1 text-gray-dark">
+                                {{ 'ITECBAN-EQUITIES.ADD.CONTRACT.FOUR' | translate }}
+                            </div>
+                            <div class="mt-1 mb-1 text-gray-dark">
+                                {{ 'ITECBAN-EQUITIES.ADD.CONTRACT.FIVE' | translate }}
+                            </div>
+                        </div>
+                        <app-conditions [conditions]="conditions" (read)="returnOperation($event)"></app-conditions>
+                        <!-- <div class="col-xs-12 col-sm-5">
+                            <div class="mt-1 mb-1">
+                                <a (click)="downloadDocument('pre-contractual')">
+                                    <i class="icon icononesait icon-documents"></i> {{ 'ITECBAN-EQUITIES.ADD.LINK.DOCUMENTS.PRECONTRACTUAL.INFORMATION' | translate }}
+                                </a>
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <a (click)="downloadDocument('pre-employment')">
+                                    <i class="icon icononesait icon-documents"></i> {{ 'ITECBAN-EQUITIES.ADD.LINK.DOCUMENTS.PREEMPLOYMENT.INFORMATION' | translate }}
+                                </a>
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <a (click)="downloadDocument('global-contract')">
+                                    <i class="icon icononesait icon-documents"></i> {{ 'ITECBAN-EQUITIES.ADD.LINK.DOCUMENTS.GLOBAL.CONTRACT' | translate }}
+                                </a>
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <a (click)="downloadDocument('book-rates')">
+                                    <i class="icon icononesait icon-documents"></i> {{ 'ITECBAN-EQUITIES.ADD.LINK.DOCUMENTS.BOOK.RATES' | translate }}
+                                </a>
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <a (click)="downloadDocument('straight')">
+                                    <i class="icon icononesait icon-documents"></i> {{ 'ITECBAN-EQUITIES.ADD.LINK.DOCUMENTS.STRAIGHT' | translate }}
+                                </a>
+                            </div>
+                        </div> -->
+                        <div class="col-xs-12 mt-1 mb-1">
+                            <div class="form-group">
+                                <div class="checkbox-custom">
+                                    <label>
+                    <input [checked]="checkControl" [disabled]="!activeBoton" type="checkbox" name="acceptConditions" required="required"
+                      (click)="controlCheck()" />
+                    <i class="icon-check"> </i>
+                    <span>
+                      <a class="text-gray-dark underline interactive" data-toggle="modal" data-target="#termAndConditionsModal"  *ngIf="!activeBoton">
+                        {{ 'ITECBAN-EQUITIES.ADD.READ.ACCEPTED' | translate }}
+                      </a>
+                      <a class="text-gray-dark underline interactive" (click)="controlCheck()" data-toggle="modal" data-target="#termAndConditionsModal"  *ngIf="activeBoton">
+                        {{ 'ITECBAN-EQUITIES.ADD.READ.ACCEPTED' | translate }}
+                      </a>
+                    </span>
+                  </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <button class="btn btn-terciary" (click)="cancel()">
+                    {{ 'ITECBAN-EQUITIES.ADD.BUTTON.CANCEL' | translate }}
+                  </button>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <button class="btn btn-secondary" (click)="step = 'FIRST'">
+                        {{ 'ITECBAN-EQUITIES.ADD.BUTTON.BEHIND' | translate }}
+                      </button>
+                                        </div>
+                                        <div class="col-xs-6" *ngIf="checkControl">
+                                            <button class="btn btn-primary" [disabled]="!checkControl" (click)="addEquity()">
+                        {{ 'ITECBAN-EQUITIES.ADD.BUTTON.CONFIRM' | translate }}
+                      </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <!-- Tarjeta de Coordenadas -->
+        <ng-container *ngIf="step === 'TOKEN'">
+            <div class="panel">
+                <div class="panel-body">
+                    <form #formStep3="ngForm">
+                        <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+                        <div class="row mt-2">
+                            <div class="col-xs-6">
+                                <button class="btn btn-secondary" (click)="cancel()">
+                                    {{ 'ITECBAN-EQUITIES.ADD.BUTTON.CANCEL' | translate }}
+                                </button>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <button class="btn btn-secondary" (click)="step = 'VERIFY'">
+                                            {{ 'ITECBAN-EQUITIES.ADD.BUTTON.BEHIND' | translate }}
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <button class="btn btn-primary" [disabled]="!signatureEntity?.tokenValid" (click)="tokenCompleted()">
+                                            {{ 'ITECBAN-EQUITIES.ADD.BUTTON.FINALIZE' | translate }}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </ng-container>
+
+        <!-- Contratacion Correcta -->
+        <ng-container *ngIf="step === 'CREATED'">
+            <div class="panel">
+                <div class="panel-body">
+                    <osb-final-message [text]="'ITECBAN-EQUITIES.ADD.HIRING.CORRECT'"></osb-final-message>
+                    <osb-voucher-container #voucherContainer>
+                        <ng-container *ngIf="newEquity.productId">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-4 mt-1">
+                                    <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="selectedProductName">
+                                        <div OsbVoucherKey class="text-os-semibold">
+                                            {{ 'ITECBAN-EQUITIES.ADD.NAME' | translate }}
+                                        </div>
+                                        <div OsbVoucherValue class="text-section ">
+                                            {{ selectedProductName }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 mt-1">
+                                    <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="accountSelected">
+                                        <div OsbVoucherKey class="text-os-semibold ">
+                                            {{ 'ITECBAN-EQUITIES.ADD.ASSOCIATE-ACCOUNT' | translate }}
+                                        </div>
+                                        <div OsbVoucherValue class="text-section ">
+                                            {{ accountSelected.formats | formatAccountPipe: accountFormatView}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4 mt-1">
+                                    <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="dateOpen">
+                                        <div OsbVoucherKey class="text-os-semibold ">
+                                            {{ 'ITECBAN-EQUITIES.ADD.DATE' | translate }}
+                                        </div>
+                                        <div OsbVoucherValue class="text-section ">
+                                            {{ dateOpen | date:'dd/MM/yyyy'}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="userInfo.businessName">
+                                        <div OsbVoucherKey class="text-os-semibold ">
+                                            {{ 'ITECBAN-EQUITIES.ADD.OWNERSHIP' | translate }}
+                                        </div>
+                                        <div OsbVoucherValue class="text-section ">
+                                            {{ userInfo.businessName }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="userInfo.businessId">
+                                        <div OsbVoucherKey class="text-os-semibold ">
+                                            {{ 'ITECBAN-EQUITIES.ADD.CIF' | translate }}
+                                        </div>
+                                        <div OsbVoucherValue class="text-section ">
+                                            {{ userInfo.businessId }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <div *ngIf="newEquity.productId">
+                                        <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="idEquityCreate">
+                                            <div OsbVoucherKey class="text-os-semibold ">
+                                                {{ 'ITECBAN-EQUITIES.ADD.IBAN' | translate }}
+                                            </div>
+                                            <div OsbVoucherValue>
+                                                {{ idEquityCreate }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="userInfo.attorney">
+                                        <div OsbVoucherKey class="text-os-semibold ">
+                                            {{ 'ITECBAN-EQUITIES.ADD.ATTORNEY' | translate }}
+                                        </div>
+                                        <div OsbVoucherValue class="text-section ">
+                                            {{ userInfo.attorney }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-4">
+                                    <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="userInfo.userId">
+                                        <div OsbVoucherKey class="text-os-semibold ">
+                                            {{ 'ITECBAN-EQUITIES.ADD.NIF' | translate }}
+                                        </div>
+                                        <div OsbVoucherValue class="text-section ">
+                                            {{ userInfo.userId }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                        <div class="row">
+                            <div class="col-xs-12 mb-1">
+                                <osb-download-info [voucherContainer]="voucherContainer" text="{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.DOWNLOAD-RECEIPT' | translate}}"></osb-download-info>
+                                <div class="mt-1">
+                                    <a (click)="downloadDocument('pre-contractual')" class="text-os-bold text-gray-dark">
+                                        {{ 'ITECBAN-ACCOUNT.ADD.LINK.DOCUMENTATION' | translate }}
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 text-right">
+                                <button class="btn btn-primary" (click)="goNewEquity()">
+                                        {{ 'ITECBAN-EQUITIES.ADD.BUTTON.EQUITIES' | translate }}
+                                </button>
+                            </div>
+                        </div>
+                    </osb-voucher-container>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

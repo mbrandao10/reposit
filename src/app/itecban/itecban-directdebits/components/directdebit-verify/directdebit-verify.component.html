@@ -1,0 +1,69 @@
+<osb-loader *ngIf="loading">
+</osb-loader>
+<div class="modal-detail" *ngIf="paymentSelected">
+    <!-- VISTA MOVIL-->
+    <ng-container *ngIf="isMobileResolution()">
+        <osb-modal-page [isOpenModal]="true" (closeEvent)="close()">
+            <osb-modal-page-header></osb-modal-page-header>
+            <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+        </osb-modal-page>
+    </ng-container>
+    <!-- VISTA DESKTOP-->
+    <ng-container *ngIf="!ismobileResolution">
+        <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+    </ng-container>
+    <!-- CONTENIDO-->
+    <ng-template #templateRef>
+        <div class="p-1">
+            <app-directdebit-info-detail [paymentSelected]="paymentSelected"></app-directdebit-info-detail>
+            <form [formGroup]="selectReasonForm">
+                <div class="form-group">
+                    <div class="row mt-1">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group">
+                                <label class="form-custom-label" for="selectReason">
+                                    <span class="text-os-semibold">
+                                        {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.VERIFY.BODY.SELECT-REASON' | translate }}*
+                                    </span>
+                                </label>
+                                <select class="form-control form-control-amim" name="selectReason"
+                                    formControlName="selectReason">
+                                    <option *ngFor="let paymentReasonReturn of paymentReasonReturns"
+                                        [ngValue]="paymentReasonReturn">
+                                        {{ paymentReasonReturn.name }}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group">
+                                <label class="form-custom-label" for="inputReason">
+                                    <span class="text-os-semibold">
+                                        {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.VERIFY.BODY.INDICATE-REASON' | translate }}
+                                    </span>
+                                </label>
+                                <textarea style="resize: none;" class="form-control form-control-amim" type="text"
+                                    maxlength="150" rows="4" cols="7" autofocus="true"
+                                    placeholder=" {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.VERIFY.TEXTAREA.PLACEHOLDER' | translate }}"
+                                    name="inputReason" formControlName="inputReason"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="row mt-1">
+                <div class="col-xs-12 col-sm-6 text-left mb-1">
+                    <div class="btn btn-secondary interactive" (click)="goBack()">
+                        {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.VERIFY.BUTTON.CANCEL' | translate }}
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 text-right mb-1">
+                    <button type="button" class="btn btn-primary interactive" (click)="signOperation()"
+                        [disabled]="!selectReasonForm.valid">
+                        {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.VERIFY.BUTTON.CONTINU' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>

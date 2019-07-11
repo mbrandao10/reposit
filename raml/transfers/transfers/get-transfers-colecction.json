@@ -1,0 +1,60 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+  	{
+        "id":"TRNE030000000001744",
+  			"orderer" : {
+          "fromAccount":{
+            "id":"14910001273000001268",
+            "type":{
+              "id": "cbu",
+              "name": "cbu"
+            }
+          },
+          "description": "GREGORIO MUNOZ AVILA"
+  			},
+  			"beneficiary" : {
+          "toAccount": {
+            "type": {
+              "id": "ccc",
+              "name": "ccc"
+            },
+            "id": "14910001273000001268"
+          },
+          "description" : "LILARECORDS",
+          "legalDocument":{
+            "id":"12345678Z",
+            "type":{
+              "id":"01",
+              "name":"DNI"
+            }
+          }
+  			},
+        "amount": {
+          "amount": 60.00,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+  			"reason" : "Arreglo furgoneta",
+        "purposeType" : {
+          "id": "02",
+          "name": "CUOTA"
+        },
+        "transferType" : {
+          "id": "03",
+          "name": "Cash"
+        },
+  			"date" :"2014-10-30T00:00:00.00Z",
+        "time" : "12:34"
+  	}
+  ],
+  "paging": {
+    "hasMorePages":true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

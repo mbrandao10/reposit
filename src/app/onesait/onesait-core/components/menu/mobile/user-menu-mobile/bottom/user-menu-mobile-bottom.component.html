@@ -1,0 +1,16 @@
+<div class="pull-left " *ngIf="lastConnectionDate">
+    <span class="text-os-light d-block"><small>Última conexión</small></span>
+    <span class="d-block"><small>{{ lastConnectionDate | date}}</small></span>
+</div>
+<div class="pull-right">
+    <ul class="list-horizontal mt-1">
+        <li *ngFor="let element of userMenuConfig.buttons" [ngClass]="{ 'active': element.active }">
+            <i class="icon icononesait {{element.icon}}" *ngIf="element.action != 'logout'"
+                title="{{element.name | translate}}" (click)="goTo(element)">
+            </i>
+            <i class="icon icononesait {{element.icon}}" *ngIf="element.action == 'logout'"
+                (click)="execAction(element)" title="{{element.name | translate}}">
+            </i>
+        </li>
+    </ul>
+</div>

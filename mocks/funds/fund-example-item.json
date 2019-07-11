@@ -1,0 +1,16 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "id": "01318961678422000286",
+    "name": "FCS GESTION FLEXIBLE, FI",
+    "liquidationValue": 10.56686,
+    "effectiveValue": 10.24,
+    "costEffectiveness": 0.969099,
+    "isin": "ES0165947005",
+    "gains_losses": 0.24,
+    "totalCost": 10
+  }
+}

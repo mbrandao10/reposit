@@ -1,0 +1,62 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "001",
+      "name": "Agua y saneamientos Argentinos S.A",
+      "shortName": "Aysa",
+      "item": {
+        "id": "01",
+        "name": "Luz, Agua y Gas",
+        "shortName": "Luz, Agua y Gas"
+      }
+    },
+    {
+      "id": "002",
+      "name": "Afip VEP Pendientes",
+      "shortName": "Afip",
+      "item": {
+        "id": "02",
+        "name": "Impuestos AFIP",
+        "shortName": "Impuestos AFIP"
+      }
+    },
+    {
+      "id": "003",
+      "name": "COTELMAS Servicios Telefonia",
+      "shortName": "COTELMAS",
+      "item": {
+        "id": "03",
+        "name": "Telefonía",
+        "shortName": "Telefonía y .."
+      }
+    },
+    {
+      "id": "004",
+      "name": "Global Telecomunicaciones",
+      "shortName": "Global",
+      "item": {
+        "id": "04",
+        "name": "Operadores de TV",
+        "shortName": "TV"
+      }
+    },
+    {
+      "id": "005",
+      "name": "Buenos Aires- Comite de Cuenca Zona Oeste",
+      "shortName": "Cuenca Zona Oeste",
+      "item": {
+        "id": "05",
+        "name": "Impuestos municipales",
+        "shortName": "Impuestos municipales"
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

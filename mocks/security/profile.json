@@ -1,0 +1,23 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "id": "0000583850",
+    "holderLegalId": "27321239E",
+    "contractNumber": "0000583850",
+    "contractName": "NOMBRE APE_1_0000583850 APE_2_0000583850",
+    "userNumber": 0,
+    "group": {
+      "id": "PF01",
+      "name": "Persona física",
+      "href": "https://itecban.indra.es/masterTables/operativeProfiles"
+    },
+    "relationShip": {
+      "id": "01",
+      "name": "TITULAR",
+      "href": "https://itecban.indra.es/masterTables/participantTypes"
+    }
+  }
+}

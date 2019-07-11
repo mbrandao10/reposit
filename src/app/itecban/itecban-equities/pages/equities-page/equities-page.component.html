@@ -1,0 +1,61 @@
+<app-loader *ngIf="loading"></app-loader>
+<!-- row section-app page-non-tabbed pb-1 -->
+<div class="row pt-1">
+    <div class="col-xs-12">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-7">
+                        <div class="borde-superior"></div>
+                        <div class="text-section fs-12 text-uppercase text-os-semibold">{{ 'ITECBAN-EQUITIES.DETAIL.TOTAL-VALUE' | translate }}</div>
+                        <div class='fs-28 text-os-semibold text-no-warp'>{{ totalValue.amount | CurrencyPipe: totalValue.currency.code }}</div>
+                        <div class="mb-1 visible-xs"></div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 pt-1 text-center">
+                        <a (click)="operateInversis()" *ngIf="accountEquitiesList && accountEquitiesList.length > 0">
+                            <span class="text-os-bold text-literal">{{'ITECBAN-EQUITIES.DETAIL.BUTTON.OPERATE1' | translate}}</span><br>
+                            <span class="text-os-bold text-literal">{{'ITECBAN-EQUITIES.DETAIL.BUTTON.OPERATE2' | translate}}</span>
+                        </a>
+                    </div>
+                    <osb-validator-profile>
+                        <div class="col-sm-12 col-md-2 hidden-xs pt-1">
+                            <button class="btn btn-primary" (click)="addEquities()">{{ 'ITECBAN-EQUITIES.ADD.BUTTON.ADD' | translate }}</button>
+                        </div>
+                    </osb-validator-profile>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="panel">
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead class="hidden-xs">
+                        <tr>
+                            <th>{{ 'ITECBAN-EQUITIES.LIST.EQUITY' | translate }}</th>
+                            <!-- <th>{{ 'ITECBAN-EQUITIES.LIST.DESCRIPTION' | translate }}</th> -->
+                            <th>{{ 'ITECBAN-EQUITIES.LIST.AMOUNT' | translate }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr class="interactive" (click)="viewEquity(item)" *ngFor="let item of listByEquities"> -->
+                        <tr class="interactive" (click)="viewEquity(item)" *ngFor="let item of accountEquitiesList">
+                            <td>
+                                <!-- <span *ngIf="item.equity && item.equity.id" class="name">{{ item.equity.id }}</span>
+                                        <span *ngIf="item.empty" class="name">{{ 'ITECBAN-EQUITIES.LIST.EMPTY' | translate }}</span><br />
+                                        <span *ngIf="item.formats" class="desc hidden-xs">{{ item.formats | formatAccountPipe: accountFormatView }}</span> -->
+                                <span *ngIf="item.formats">{{ item.formats | formatAccountPipe: accountFormatView }}</span>
+                            </td>
+                            <!-- <td>
+                                        <span *ngIf="item.equity && item.equity.name" class="name">{{ item.equity.name }} </span>
+                                    </td> -->
+                            <td>
+                                <span *ngIf="item.totalValue" class="text-no-warp"><strong>{{ item.totalValue.amount | CurrencyPipe: item.totalValue.currency.code }}</strong></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

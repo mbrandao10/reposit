@@ -1,0 +1,51 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "termCapital": {
+      "amount": 5100,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "totalInterestPaid": {
+      "amount": 340.5,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "totalInterestAccrued": {
+      "amount": 760.23,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "commissions": {
+      "amount": 4.5,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "penalties": {
+      "amount": 345,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "irc": 3.45,
+    "netAmount": {
+      "amount": 4100,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    }
+  }
+}

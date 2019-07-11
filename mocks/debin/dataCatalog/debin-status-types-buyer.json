@@ -1,0 +1,48 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "50",
+      "name": "PENDIENTE AUTORIZAR"
+    },
+    {
+      "id": "55",
+      "name": "AUTORIZADO"
+    },
+    {
+      "id": "60",
+      "name": "RECHAZADO CLIENTE"
+    },
+    {
+      "id": "80",
+      "name": "SIN SALDO"
+    },
+    {
+      "id": "81",
+      "name": "ERROR DATOS"
+    },
+    {
+      "id": "82",
+      "name": "ERROR DEBITO"
+    },
+    {
+      "id": "12",
+      "name": "VENCIDO"
+    },
+    {
+      "id": "83",
+      "name": "SIN GARANTIA"
+    },
+    {
+      "id": "84",
+      "name": "ERROR ACREDITACIÓN"
+    },
+    {
+      "id": "14",
+      "name": "ACREDITADO VENDEDOR"
+    }
+  ]
+}

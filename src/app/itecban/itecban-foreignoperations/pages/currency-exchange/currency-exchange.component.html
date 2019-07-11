@@ -1,0 +1,41 @@
+<app-loader *ngIf="loading"></app-loader>
+
+<div class="col-xs-12 mt-1">
+    <div class="panel">
+        <div class="panel-body">
+
+            <osb-search-list [formGroup]="currenciesListForm" [formConfig]="formConfig" (search)="getExchangeCurrency()"></osb-search-list>
+
+            <table class="table table-striped" *ngIf="listExchanges">
+                <thead class="hidden-xs">
+                    <tr>
+                        <th>{{ 'ITECBAN-FOREIGNOPERATION.CURRENCY-EXCHANGE.CURRENCY' | translate}}</th>
+                        <!-- <th>{{ 'ITECBAN-FOREIGNOPERATION.CURRENCY-EXCHANGE.QUOTATION-DATE' | translate}}</th> -->
+                        <th>{{ 'ITECBAN-FOREIGNOPERATION.CURRENCY-EXCHANGE.CHANGE-BUYER' | translate}}</th>
+                        <th>{{ 'ITECBAN-FOREIGNOPERATION.CURRENCY-EXCHANGE.FIXING' | translate}}</th>
+                        <th>{{ 'ITECBAN-FOREIGNOPERATION.CURRENCY-EXCHANGE.CHANGE-SELLER' | translate}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of listExchanges">
+                        <td class="text-no-warp">
+                            {{ item.currency.id }}
+                        </td>
+                        <td>
+                            {{ item.changeBuyer }}
+                        </td>
+                        <td>
+                            {{ item.fixing }}
+                        </td>
+                        <td>
+                            {{ item.changeSeller }}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ng-container *ngIf="!listExchanges">
+                <div class="p3 datepicker-fix"></div>
+            </ng-container>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<ng-container *ngIf="show">
+    <form [formGroup]="transferFormData">
+        <div class="row mt-1">
+            <div class="col-xs-12">
+                <b>{{'ONESAIT-TRANSFERS.EMIT.ADD-FAV' | translate}}</b>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+
+                    <div class="checkbox pt-1">
+                        <!-- <label for="favouriteName">{{'ONESAIT-TRANSFERS.EMIT.ADD-ALIAS' | translate}}</label>
+                        <input class="form-control" type="text" name="favouriteName" formControlName="favouriteName" /> -->
+                        <label>
+                            <input type="checkbox" name="favouriteName" formControlName="favouriteName">
+                          <!-- {{'ONESAIT-TRANSFERS.EMIT.ADD-ALIAS' | translate}} -->
+                          {{'ONESAIT-TRANSFERS.EMIT.ADD-ALIAS-CHECK' | translate}} 
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</ng-container>

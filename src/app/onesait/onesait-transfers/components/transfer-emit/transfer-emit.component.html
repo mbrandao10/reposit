@@ -1,0 +1,199 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="hidden-xs" *ngIf="transferState">
+    <ng-container *ngIf="transferState.step === STEPS.FORM">
+        <div class="panel">
+            <div class="panel-body pt-0">
+                <ul class="nav nav-pills">
+                    <li (click)="open('INTERNAL')" [ngClass]="{'active': view === 'INTERNAL' }">
+                        <a>{{'ONESAIT-TRANSFERS.EMIT.TRANSFER' | translate | uppercase}}</a></li>
+                    <li (click)="open('NB')" [ngClass]="{'active': view === 'NB' }">
+                        <a>{{'ONESAIT-TRANSFERS.EMIT.NB-SP-PT' | translate | uppercase}}</a></li>
+                    <li (click)="open('SEPA')" [ngClass]="{'active': view === 'SEPA' }">
+                        <a>{{'ONESAIT-TRANSFERS.EMIT.SEPA' | translate | uppercase}}</a></li>
+                    <li (click)="open('INTERNATIONAL')" [ngClass]="{'active': view === 'INTERNATIONAL' }">
+                        <a>{{'ONESAIT-TRANSFERS.EMIT.INTERNATIONAL.TEXT' | translate | uppercase}}</a></li>
+                    <li (click)="open('TARGET2')" [ngClass]="{'active': view === 'TARGET2' }">
+                        <a>{{'ONESAIT-TRANSFERS.EMIT.TARGET.TEXT' | translate | uppercase}}</a></li>
+                </ul>
+                <osb-transfer-emit-trasp *ngIf="view === 'INTERNAL'" (formsCompleted)="formsCompleted()" [transferState]="transferState" [favourite]="favourite"></osb-transfer-emit-trasp>
+                <osb-transfer-emit-nb *ngIf="view === 'NB'" (formsCompleted)="formsCompleted()" [transferState]="transferState" [favourite]="favourite"></osb-transfer-emit-nb>
+                <osb-transfer-emit-sepa *ngIf="view === 'SEPA'" (formsCompleted)="formsCompleted()" [transferState]="transferState" [favourite]="favourite"></osb-transfer-emit-sepa>
+                <osb-transfer-emit-inter *ngIf="view === 'INTERNATIONAL'" (formsCompleted)="formsCompleted()" [transferState]="transferState" [favourite]="favourite"></osb-transfer-emit-inter>
+                <osb-transfer-emit-target *ngIf="view === 'TARGET2'" (formsCompleted)="formsCompleted()" [transferState]="transferState" [favourite]="favourite"></osb-transfer-emit-target>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="transferState.step === STEPS.VERIFY">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12 mb-2 text-os-semibold">
+                        {{'ONESAIT-TRANSFERS.EMIT.VERIFY' | translate}} -
+                        <span *ngIf="transferState.transferForms[2].value.executionMoment==='S'">{{'ONESAIT-TRANSFERS.EMIT.EXECUTE.PERIOD.TEXT' | translate}}</span>
+                        <span *ngIf="transferState.transferForms[2].value.executionMoment!=='S'">{{'ONESAIT-TRANSFERS.EMIT.EXECUTE.NOW' | translate}}</span>
+                    </div>
+                </div>
+                <osb-transfer-verify [transferState]="transferState"></osb-transfer-verify>
+
+                <div class="row mt-1">
+                    <div class="col-xs-6">
+                        <button class="btn btn-secondary" (click)="cancel()">
+                            {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CANCEL' | translate }}
+                        </button>
+                    </div>
+                    <div class="col-xs-3">
+                        <button class="btn btn-secondary" (click)="back()">
+                            {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.BEHIND' | translate }}
+                        </button>
+                    </div>
+                    <div class="col-xs-3 text-right">
+                        <button class="btn btn-primary" (click)="sendTransfer()">
+                            {{ 'COMMON.NEXT' | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="transferState.step === STEPS.TOKEN">
+        <div class="panel">
+            <div class="panel-body">
+                <form #formStep3="ngForm">
+                    <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+
+                    <div class="row mt-1">
+                        <div class="col-xs-6">
+                            <button class="btn btn-secondary" (click)="cancel()">
+                                {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CANCEL' | translate }}
+                            </button>
+                        </div>
+                        <div class="col-xs-3">
+                            <button class="btn btn-secondary" (click)="back()">
+                                {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.BEHIND' | translate }}
+                            </button>
+                        </div>
+                        <div class="col-xs-3 text-right">
+                            <button class="btn btn-primary" [disabled]="!signatureEntity?.tokenValid" (click)="sendTransfer()">
+                                {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.FINALIZE' | translate }}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="transferState.step === STEPS.RESUME">
+        <div class="panel">
+            <div class="panel-body">
+                <osb-final-message [signatureData]="signatureData" text="{{'ONESAIT-TRANSFERS.EMIT.CORRECT' | translate}}"></osb-final-message>
+                <osb-voucher-container #voucherContainer>
+                    <osb-transfer-verify [transferState]="transferState" (closeVerify)="cancel()"></osb-transfer-verify>
+
+                    <div class="row mt-1">
+                        <div class="col-xs-6">
+                            <osb-download-info [templateTitle]="templateTitle" [voucherContainer]="voucherContainer" text="{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.DOWNLOAD-RECEIPT' | translate}}">
+                            </osb-download-info>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <button class="btn btn-primary" (click)="cancel()">
+                                {{ 'COMMON.FINALIZE' | translate }}
+                            </button>
+                        </div>
+                    </div>
+                </osb-voucher-container>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+<!--------------------------VISTA MOVIL---------------------------->
+
+<div class="visible-xs" *ngIf="transferState">
+    <div class="panel">
+        <div class="panel-body">
+            <ul class="list interactive">
+                <li (click)="open('INTERNAL')">
+                    <span>{{'ONESAIT-TRANSFERS.EMIT.TRANSFER' | translate | uppercase}}</span>
+                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                </li>
+                <li (click)="open('NB')">
+                    <span> {{'ONESAIT-TRANSFERS.EMIT.NB-SP-PT' | translate | uppercase}}</span>
+                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                </li>
+                <li (click)="open('SEPA')">
+                    <span> {{'ONESAIT-TRANSFERS.EMIT.SEPA' | translate | uppercase}}</span>
+
+                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                </li>
+                <li (click)="open('INTERNATIONAL')">
+                    <span>{{'ONESAIT-TRANSFERS.EMIT.INTERNATIONAL.TEXT' | translate | uppercase}}</span>
+                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                </li>
+                <li (click)="open('TARGET2')">
+                    <span> {{'ONESAIT-TRANSFERS.EMIT.TARGET.TEXT' | translate | uppercase}}</span>
+                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<osb-modal-page #modal>
+    <osb-modal-page-header [backVisible]="backVisibleFn()"></osb-modal-page-header>
+    <div class="modal-container" *ngIf="modal.isOpenModal">
+        <ng-container *ngIf="transferState.step === STEPS.FORM">
+            <div class="row">
+                <osb-transfer-emit-trasp *ngIf="view === 'INTERNAL'" (formsCompleted)="formsCompleted()" [transferState]="transferState"></osb-transfer-emit-trasp>
+                <osb-transfer-emit-nb *ngIf="view === 'NB'" [transferState]="transferState" (formsCompleted)="formsCompleted()"></osb-transfer-emit-nb>
+                <osb-transfer-emit-sepa *ngIf="view === 'SEPA'" (formsCompleted)="formsCompleted()" [transferState]="transferState" [favourite]="favourite"></osb-transfer-emit-sepa>
+                <osb-transfer-emit-inter *ngIf="view === 'INTERNATIONAL'" [transferState]="transferState" (formsCompleted)="formsCompleted()"></osb-transfer-emit-inter>
+                <osb-transfer-emit-target *ngIf="view === 'TARGET2'" (formsCompleted)="formsCompleted()" [transferState]="transferState"></osb-transfer-emit-target>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="transferState.step === STEPS.VERIFY">
+            <div class="row">
+                <div class="col-xs-12 mb-2 text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.EMIT.VERIFY' | translate}}
+                </div>
+            </div>
+            <osb-transfer-verify [transferState]="transferState"></osb-transfer-verify>
+            <div class="row">
+                <div class="col-xs-6 col-xs-offset-3">
+                    <button class="btn btn-primary" (click)="sendTransfer()">
+                        {{ 'COMMON.NEXT' | translate }}
+                    </button>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="transferState.step === STEPS.TOKEN">
+            <div class="row">
+                <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+                <div class="col-xs-6 col-xs-offset-3">
+                    <button class="btn btn-primary" [disabled]="!signatureEntity?.tokenValid" (click)="sendTransfer()">
+                        {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.FINALIZE' | translate }}
+                    </button>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="transferState.step === STEPS.RESUME">
+            <div class="row">
+                <osb-final-message [signatureData]="signatureData" text="{{'ONESAIT-TRANSFERS.EMIT.CORRECT' | translate}}"></osb-final-message>
+                <osb-voucher-container #voucherContainer>
+                    <osb-transfer-resume [transferState]="transferState"></osb-transfer-resume>
+
+                    <div class="col-xs-12 mb-1">
+                        <osb-download-info [voucherContainer]="voucherContainer" text="{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.DOWNLOAD-RECEIPT' | translate}}">
+                        </osb-download-info>
+                    </div>
+                    <div class="col-xs-6 col-xs-offset-3">
+                        <button class="btn btn-primary" (click)="close()">
+                            {{ 'COMMON.FINALIZE' | translate }}
+                        </button>
+                    </div>
+                </osb-voucher-container>
+            </div>
+        </ng-container>
+    </div>
+</osb-modal-page>

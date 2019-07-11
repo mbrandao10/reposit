@@ -1,0 +1,1110 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "accounts": [
+      {
+        "id": "149100011009408526",
+        "name": "Cuenta de ahorro",
+        "balance": {
+          "amount": 1285.01,
+          "currency": {
+            "id": "USD",
+            "code": "840"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "postedBalance": {
+          "amount": 100.01,
+          "currency": {
+            "id": "USD",
+            "code": "840"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534431785"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534431785"
+          }
+        ]
+      },
+      {
+        "id": "149100011009408525",
+        "name": "Cuenta de ahorro",
+        "balance": {
+          "amount": 1385.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "04",
+          "name": "APODERADO PF"
+        },
+        "postedBalance": {
+          "amount": 200.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454879"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454879"
+          }
+        ]
+      },
+      {
+        "id": "149100011009408525",
+        "name": "Cuenta de ahorro 3",
+        "balance": {
+          "amount": 1485.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "06",
+          "name": "AUTORIZADO"
+        },
+        "postedBalance": {
+          "amount": 300.02,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454879"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454879"
+          }
+        ]
+      },
+      {
+        "id": "149100011009408525",
+        "name": "Cuenta de ahorro 4",
+        "balance": {
+          "amount": 1185.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "06",
+          "name": "AUTORIZADO"
+        },
+        "postedBalance": {
+          "amount": 100.04,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454880"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454880"
+          }
+        ]
+      },
+      {
+        "id": "149100011009408570",
+        "name": "Cuenta de ahorro 5",
+        "balance": {
+          "amount": 1786.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "06",
+          "name": "AUTORIZADO"
+        },
+        "postedBalance": {
+          "amount": 450.5,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454890"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454890"
+          }
+        ]
+      }
+    ],
+    "credits": [
+      {
+        "id": "149100011009408527",
+        "name": "Cuenta de credito 1",
+        "outstandingBalance": {
+          "amount": 210.5,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "postedBalance": {
+          "amount": 200.09,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454880"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454880"
+          }
+        ]
+      },
+      {
+        "id": "149100011009408528",
+        "name": "Cuenta de credito 2",
+        "outstandingBalance": {
+          "amount": 110.5,
+          "currency": {
+            "id": "USD",
+            "code": "840"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "postedBalance": {
+          "amount": 100.09,
+          "currency": {
+            "id": "USD",
+            "code": "840"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534431783"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534431783"
+          }
+        ]
+      },
+      {
+        "id": "149100011009408528",
+        "name": "Cuenta de credito 3",
+        "outstandingBalance": {
+          "amount": 410.5,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "postedBalance": {
+          "amount": 300.09,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534431783"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534431783"
+          }
+        ]
+      }
+    ],
+    "cards": [
+      {
+        "id": "4305790004640705",
+        "name": "Visa oro",
+        "outstandingBalance": {
+          "amount": 170,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "postedBalance": {
+          "amount": 150.2,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "limit": {
+          "amount": 1000,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        }
+      },
+      {
+        "id": "4305790004640734",
+        "name": "Visa Crédito",
+        "outstandingBalance": {
+          "amount": 170,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "postedBalance": {
+          "amount": 3150.2,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "limit": {
+          "amount": 510,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        }
+      }
+    ],
+    "pensionPlans": [
+      {
+        "id": "149100011009408530",
+        "name": "Plan de pension 1",
+        "balance": {
+          "amount": 1285.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "postedBalance": {
+          "amount": 102.51,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454821"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454821"
+          }
+        ],
+        "updateDate": "2019-01-31"
+      },
+      {
+        "id": "149100011009408540",
+        "name": "Plan de pension 1",
+        "balance": {
+          "amount": 1586.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "postedBalance": {
+          "amount": 511.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534431785"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534431785"
+          }
+        ],
+        "updateDate": "2019-02-05"
+      },
+      {
+        "id": "149100011009408511",
+        "name": "Plan de pension 3",
+        "balance": {
+          "amount": 4185.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "postedBalance": {
+          "amount": 812.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534431786"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534431786"
+          }
+        ],
+        "updateDate": "2019-02-14"
+      },
+      {
+        "id": "149100011009408518",
+        "name": "Plan de pension 4",
+        "balance": {
+          "amount": 1188.01,
+          "currency": {
+            "id": "USD",
+            "code": "840"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "postedBalance": {
+          "amount": 518.01,
+          "currency": {
+            "id": "USD",
+            "code": "840"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534431784"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534431784"
+          }
+        ],
+        "updateDate": "2019-03-01"
+      }
+    ],
+    "loans": [
+      {
+        "id": "149100011009408526",
+        "name": "Préstamo personal 1",
+        "limit": {
+          "amount": 10000,
+          "currency":
+          {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454879"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454879"
+          }
+        ],
+        "outstandingBalance": {
+          "amount": 1800,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "pendingAmount": {
+          "amount": 1500.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        }
+      },
+      {
+        "id": "149100011009408526",
+        "name": "Préstamo personal 2",
+        "limit": {
+          "amount": 10000,
+          "currency":
+          {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454879"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454879"
+          }
+        ],
+        "outstandingBalance": {
+          "amount": 2000,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "pendingAmount": {
+          "amount": 1400.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        }
+      }
+    ],
+    "confirming": [
+      {
+        "id": "149100011009408527",
+        "name": "Confirming 1",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454833"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454833"
+          }
+        ],
+        "agreedBalanceAccepted": {
+          "amount": 2500.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "prepaidBalance": {
+          "amount": 1500.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "productType": "EB"
+      },
+      {
+        "id": "149100011009408528",
+        "name": "Confirming 2",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454834"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454834"
+          }
+        ],
+        "agreedBalanceAccepted": {
+          "amount": 3500.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "prepaidBalance": {
+          "amount": 5500.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "productType": "EB"
+      }
+    ],
+    "factoring": [
+      {
+        "id": "149100011009408529",
+        "name": "Factoring 1",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454835"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454835"
+          }
+        ],
+        "chargesMngLimit": {
+          "amount": 2520.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "financingLimit": {
+          "amount": 1530.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        }
+      },
+      {
+        "id": "149100011009408530",
+        "name": "Factoring 2",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454836"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454836"
+          }
+        ],
+        "chargesMngLimit": {
+          "amount": 3510.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "financingLimit": {
+          "amount": 5520.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        }
+      }
+    ],
+    "leasing": [
+      {
+        "id": "149100011009408531",
+        "name": "Leasing 1",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454837"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454837"
+          }
+        ],
+        "outstandingBalance": {
+          "amount": 2570.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        }
+      },
+      {
+        "id": "149100011009408532",
+        "name": "Leasing 2",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454838"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454838"
+          }
+        ],
+        "outstandingBalance": {
+          "amount": 3580.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        }
+      }
+    ],
+    "investmentfunds": [
+      {
+        "id": "149100011009408533",
+        "name": "Fondo 1",
+        "postedBalance": {
+          "amount": -12.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454839"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454839"
+          }
+        ]
+      },
+      {
+        "id": "149100011009408534",
+        "name": "Fondo 2",
+        "postedBalance": {
+          "amount": -12.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534431740"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534431740"
+          }
+        ]
+      }
+    ],
+    "equities": [
+      {
+        "id": "149100011009408535",
+        "name": "Valor l",
+        "postedBalance": {
+          "amount": 34.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454841"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454841"
+          }
+        ]
+      },
+      {
+        "id": "149100011009408536",
+        "name": "Valor 2",
+        "postedBalance": {
+          "amount": 36.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534431742"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534431742"
+          }
+        ]
+      }
+    ],
+    "guarantees": [
+      {
+        "id": "149100011009408537",
+        "name": "Garantia l",
+        "amount": {
+          "amount": 36.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454843"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454843"
+          }
+        ]
+      },
+      {
+        "id": "149100011009408538",
+        "name": "Garantia 2",
+        "amount": {
+          "amount": 37.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "relationType": {
+          "id": "01",
+          "name": "TITULAR"
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534431744"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534431744"
+          }
+        ]
+      }
+    ]
+  },
+  "insurance": [
+    {
+      "id": "149100011009408537",
+      "name": "Seguro l",
+      "paymentType":"MENSUAL",
+      "insurancePrime": {
+        "amount": 206.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "relationType": {
+        "id": "01",
+        "name": "TITULAR"
+      },
+      "formats": [
+        {
+          "format": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "value": "ES6968867819113534456843"
+        },
+        {
+          "format": {
+            "id": "CCC",
+            "name": "CCC"
+          },
+          "value": "68867819113534456843"
+        }
+      ],
+      "updateDate": "2019-04-22"
+    },
+    {
+      "id": "149100011009408538",
+      "name": "seguro 12l",
+      "paymentType":"ANUAL",
+      "insurancePrime": {
+        "amount": 429.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "relationType": {
+        "id": "01",
+        "name": "TITULAR"
+      },
+      "formats": [
+        {
+          "format": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "value": "ES6968867819113534401744"
+        },
+        {
+          "format": {
+            "id": "CCC",
+            "name": "CCC"
+          },
+          "value": "68867819113534401744"
+        }
+      ],
+      "updateDate": "2019-04-22"
+    }
+  ]
+}

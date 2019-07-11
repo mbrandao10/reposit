@@ -1,0 +1,397 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "account": {
+        "id": "149100011009408526",
+        "alias": "",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454879"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454879"
+          }
+        ]
+      },
+      "pendingAmount": {
+        "amount": 1500.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "startAmount": {
+        "amount": 8000.00,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "limitAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "product": {
+        "id": "PR007",
+        "description": "PRESTAMO PAGO COCINA",
+        "type": {
+          "id": "A",
+          "name": "ACTIVO",
+          "href": "https://itecban.indra.es/masterTables/productTypes"
+        },
+        "subtype": {
+          "id": "PR",
+          "name": "PRESTAMOS",
+          "href": "https://itecban.indra.es/masterTables/productSubypes"
+        }
+      },
+	  "currency": {
+          "id": "ARS",
+          "code": "032"
+      },
+      "lastMovementDate": "2014-10-30T00:00:00.00Z"
+    },
+	{
+      "account": {
+        "id": "149100011009408526",
+        "alias": "",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454879"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454879"
+          }
+        ]
+      },
+      "pendingAmount": {
+        "amount": 1400.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "startAmount": {
+        "amount": 10000.00,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "limitAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "product": {
+        "id": "PR007",
+        "description": "PRESTAMO PAGO COCHE",
+        "type": {
+          "id": "A",
+          "name": "ACTIVO",
+          "href": "https://itecban.indra.es/masterTables/productTypes"
+        },
+        "subtype": {
+          "id": "PR",
+          "name": "PRESTAMOS",
+          "href": "https://itecban.indra.es/masterTables/productSubypes"
+        }
+      },
+	  "currency": {
+          "id": "ARS",
+          "code": "032"
+      },
+      "lastMovementDate": "2014-10-30T00:00:00.00Z"
+    },
+	{
+		 "account": {
+        "id": "149100011009408525",
+        "alias": "",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454879"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454879"
+          }
+        ]
+      },
+
+      "pendingAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "USD",
+		  "code": "840"
+        }
+      },
+      "startAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "USD",
+		  "code": "840"
+        }
+      },
+      "limitAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "USD",
+		  "code": "840"
+        }
+      },
+      "product": {
+        "id": "PR007",
+        "description": "PRESTAMO PERSONAL",
+        "type": {
+          "id": "A",
+          "name": "ACTIVO",
+          "href": "https://itecban.indra.es/masterTables/productTypes"
+        },
+        "subtype": {
+          "id": "PR",
+          "name": "PRESTAMOS",
+          "href": "https://itecban.indra.es/masterTables/productSubypes"
+        }
+      },
+      "currency": {
+          "id": "USD",
+		  "code": "840"
+      },
+      "lastMovementDate": "2014-10-30T00:00:00.00Z"
+    },
+	{
+      "account": {
+        "id": "149100011009408526",
+        "alias": "",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454879"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454879"
+          }
+        ]
+      },
+      "pendingAmount": {
+        "amount": 1500.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "startAmount": {
+        "amount": 8000.00,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "limitAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "product": {
+        "id": "PR007",
+        "description": "PRESTAMO PAGO COCINA",
+        "type": {
+          "id": "A",
+          "name": "ACTIVO",
+          "href": "https://itecban.indra.es/masterTables/productTypes"
+        },
+        "subtype": {
+          "id": "PR",
+          "name": "PRESTAMOS",
+          "href": "https://itecban.indra.es/masterTables/productSubypes"
+        }
+      },
+	  "currency": {
+          "id": "EUR",
+          "code": "978"
+      },
+      "lastMovementDate": "2014-10-30T00:00:00.00Z"
+    },
+	{
+      "account": {
+        "id": "149100011009408526",
+        "alias": "",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454879"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454879"
+          }
+        ]
+      },
+      "pendingAmount": {
+        "amount": 1400.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "startAmount": {
+        "amount": 10000.00,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "limitAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "product": {
+        "id": "PR007",
+        "description": "PRESTAMO PAGO COCHE",
+        "type": {
+          "id": "A",
+          "name": "ACTIVO",
+          "href": "https://itecban.indra.es/masterTables/productTypes"
+        },
+        "subtype": {
+          "id": "PR",
+          "name": "PRESTAMOS",
+          "href": "https://itecban.indra.es/masterTables/productSubypes"
+        }
+      },
+	  "currency": {
+          "id": "EUR",
+          "code": "978"
+      },
+      "lastMovementDate": "2014-10-30T00:00:00.00Z"
+    },
+	{
+		 "account": {
+        "id": "149100011009408525",
+        "alias": "",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454879"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454879"
+          }
+        ]
+      },
+      "pendingAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+		  "code": "978"
+        }
+      },
+      "startAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+		  "code": "978"
+        }
+      },
+      "limitAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+		  "code": "978"
+        }
+      },
+      "product": {
+        "id": "PR007",
+        "description": "PRESTAMO PERSONAL",
+        "type": {
+          "id": "A",
+          "name": "ACTIVO",
+          "href": "https://itecban.indra.es/masterTables/productTypes"
+        },
+        "subtype": {
+          "id": "PR",
+          "name": "PRESTAMOS",
+          "href": "https://itecban.indra.es/masterTables/productSubypes"
+        }
+      },
+      "currency": {
+          "id": "EUR",
+		"code": "978"
+      },
+      "lastMovementDate": "2014-10-30T00:00:00.00Z"
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

@@ -1,0 +1,56 @@
+<!--.row.item-group.col-xs-8
+  .header-title Buzón de mensajes
+  .header-subtitle {{mailboxCounter}} convesaciones no leidas
+  
+.col-xs-4
+    a.btn.btn-primary.pull-right((click)="newConversation()")
+      .icon.glyphicon.glyphicon-envelope
+      span Nuevo mensaje--><!--.width-80.pull-left.row 
+
+  .col-xs-4.item-tab(*ngIf="view ==='newMailbox'")
+    span.active
+      | Nuevo mensaje
+      .icon.glyphicon.glyphicon-remove-circle.interactive((click)="view='mailbox'")
+  .col-xs-4.item-tab(*ngIf="view ==='respondMailbox'")
+    span.active
+      | Responder mensaje
+      .icon.glyphicon.glyphicon-remove-circle.interactive((click)="view='mailbox'")
+  .col-xs-4.item-tab(*ngIf="view ==='showSearch'")
+    span.active
+      | Resultados de la búsqueda
+      .icon.glyphicon.glyphicon-remove-circle.interactive((click)="view='mailbox'")
+  
+
+.col-xs-12
+  div(*ngIf="view==='mailbox'")
+    app-mailbox-list
+  div(*ngIf="view==='mailbox-trash'")
+    app-mailbox-list(viewTrash="true")
+  div(*ngIf="view==='showSearch'")
+    app-mailbox-list([searchParams]="searchParams")
+  div(*ngIf="view==='newMailbox'")  
+    app-mailbox-create((mailSended)="mailSended($event)")
+--><!--.width-20.pull-left.cardbox.search-box.mailbox-search
+  .row
+    .col-xs-12
+      form
+        .form-group.col-xs-12
+          .row
+            .col-xs-12
+              label(for="search") ¿Qué estas buscando? 
+            .col-xs-12
+              input.width-100([(ngModel)]="searchForm.keywords", name="keywords")
+        
+        .form-group.col-xs-12
+          .row
+            .col-xs-6
+              label ¿Desde?
+                input(type="date", name="dateFrom", [(ngModel)]="searchForm.dateFrom").width-100
+            .col-xs-6
+              label ¿Hasta? 
+                input(type="date", name="dateTo", [(ngModel)]="searchForm.dateTo").width-100
+            
+          .col-xs-offset-4
+            a.btn.btn-primary((click)="search()") Buscar
+
+      -->

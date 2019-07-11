@@ -1,0 +1,11 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "fileName": "Remitance24012018.xml",
+    "date": "2018-05-23T00:00:00.00Z",
+	  "documentId":"38f93bf9-5704-45b8-8f4f-bf6e47241a03"
+  }
+}

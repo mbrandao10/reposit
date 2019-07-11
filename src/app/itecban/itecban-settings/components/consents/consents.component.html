@@ -1,0 +1,91 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<ng-container>
+    <div class="col-xs-12">
+        <h6> {{'ONESAIT-CONSENTS.INFO' | translate }} </h6>
+    </div>
+    <!-- CUADRO DE CONSENTIMIENTOS -->
+    <div class="row" *ngIf="consent">
+        <div class="col-xs-12">
+            <div class="panel panel-custom_osb_t1">
+                <div class="panel-body">
+                    <table class="table table-detail" *ngIf="consent.length === 0">
+                        <thead>
+                            <tr>
+                                <th> {{'ONESAIT-CONSENTS.CONSENTS.NO-CONSENTS' | translate }} </th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <table class="table table-detail" *ngIf="consent.length > 0">
+                        <thead class="hidden-xs">
+                            <tr>
+                                <th> {{'ONESAIT-CONSENTS.CONSENTS.DETAIL.APP-EXTERNAL' | translate }} </th>
+                                <th> {{'ONESAIT-CONSENTS.CONSENTS.DETAIL.PERMITS' | translate }} </th>
+                                <th> {{'ONESAIT-CONSENTS.CONSENTS.DETAIL.END-VALIDITY' | translate }} </th>
+                                <th> {{'ONESAIT-CONSENTS.CONSENTS.DETAIL.ACTIONS' | translate }} </th>
+                            </tr>
+                        </thead>
+                        <tbody [ngClass]="{'open': selectedItem === consents.consent.consentId}"
+                            *ngFor="let consents of consent">
+                            <tr class="interactive" (click)="selectItem(consents)">
+                                <td>
+                                    <span class="hidden-xs">{{ consents.consent.tpp }}</span>
+                                    <span class="visible-xs-block text-os-semibold text-no-warp text-left">
+                                        {{ consents.consent.tpp | formatLiteralPipe: 2:'mobileResolution'}}
+                                    </span>
+                                    <span class="visible-xs-block fs-12 text-no-warp text-left">
+                                        {{ consents.consent.consentType }}
+                                    </span>
+                                </td>
+                                <td class="hidden-xs"> {{ consents.consent.consentType }} </td>
+                                <td>
+                                    <span class="hidden-xs">
+                                        {{ consents.consent.expirationTime | date: 'dd/MM/yyyy'}}
+                                    </span>
+                                    <span class="visible-xs-block text-os-semibold text-no-warp text-right">
+                                        {{ consents.consent.expirationTime | date: 'dd/MM/yyyy'}}
+                                    </span>
+                                </td>
+                                <td class="hidden-xs">
+                                    <button class="btn btn-primary" (click)="openModal(consents.consent.consentId)">
+                                        {{'ONESAIT-CONSENTS.CONSENTS.DETAIL.ANUL' | translate }}
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="description" *ngIf="selectedItem === consents.consent.consentId">
+                                <td colspan="4">
+                                    <osb-consents-detail [consent]="consents" (closeEvent)="close()"
+                                        (openMod)="openModal(consents.consent.consentId)"></osb-consents-detail>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+                    <app-modal #modal>
+                        <ng-container>
+                            <div>
+                                <app-modal-body>{{'ONESAIT-CONSENTS.CANCEL-PERMITS' | translate }} </app-modal-body>
+                                <app-modal-footer>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 mt-1 text-left">
+                                            <button class="btn btn-secondary" (click)="closemModal()">
+                                                {{'ONESAIT-CONSENTS.CANCEL' | translate }}
+                                            </button>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 mt-1 text-right">
+                                            <button class="btn btn-primary" (click)="deleteConsent(anularItem)">
+                                                {{'ONESAIT-CONSENTS.OK' | translate }}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </app-modal-footer>
+                            </div>
+                        </ng-container>
+                    </app-modal>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ng-container>

@@ -1,0 +1,11 @@
+{
+
+		"fromAccount": {
+				"type": "CBU",
+				"id": "14910001273000001268"
+			},
+		"paymentAmount": {
+			"amount": 60.00,
+			"currency": "032"
+		}
+}

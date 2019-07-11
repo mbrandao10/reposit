@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form #formToken="ngForm" role="form" autocomplete="off">
+            <h4 class="text-center mb-2">
+                {{ 'ITECBAN-COMMON.COMPONENT.TOKEN.OTP' | translate }}
+            </h4>
+            <div class="text-center mb-1">
+                <div class="form-group d-inline-block ml-1">
+                    <input class="form-control form-control-amim token text-center" [(ngModel)]="token" (ngModelChange)="tokenModified(token)" name="token" type="password" minlength="6" maxlength="6" required="required" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="text-center text-os-bold ml-1">
+            <a class="text-blue" target="_blank" href="/onesaitbusiness/construccion.pdf">
+                            {{ 'ITECBAN-COMMON.COMPONENT.TOKEN.LOCATE.CODE' | translate }}
+                        </a>
+        </div>
+    </div>
+</div>

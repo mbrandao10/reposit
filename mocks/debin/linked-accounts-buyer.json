@@ -1,0 +1,40 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "cbu": "4910001700000000000758",
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "type": {
+        "id": "10",
+        "name": "Cuenta corriente pesos"
+      },
+      "name": "Marta Wannaper",
+      "startDate": "2017-10-30T00:00:00.00Z",
+      "email": "mwannaper@themail.net",
+      "role": "buyer",
+      "legalDocumentId":"12345678Z"
+    },
+    {
+      "cbu": "4910001700000000000840",
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "type": {
+        "id": "10",
+        "name": "Cuenta corriente pesos"
+      },
+      "name": "Arturo Mayo",
+      "startDate": "2017-10-28T00:00:00.00Z",
+      "email": "amayo@themail.net",
+      "role": "buyer",
+      "legalDocumentId":"22345678Z"
+    }
+  ]
+}

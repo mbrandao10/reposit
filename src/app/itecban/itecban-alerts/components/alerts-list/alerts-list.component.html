@@ -1,0 +1,29 @@
+<div class="acount-info-destacados" *ngIf="!hideAlerts">
+    <div class="acount-info-destacados-title">Alertas configuradas</div>
+    <!--.acount-info-destacados-title {{'ITECBAN-ACCOUNT.ALERTS.CONFIGURED' | translate}}-->
+    <ul class="acount-info-destacados-list row">
+        <li class="col-md-6" *ngFor="let notification of notifications">
+            <div class="acount-info-destacados-list-elemt">
+                <div class="acount-info-destacados-list-elemt-content interactive" (click)="addAlert()"><img title="Titular"
+                        alt="ico alertas" src="assets/images/ico_alertas.png" />
+                    <div class="texts" *ngIf="notification">
+                        <div class="title">{{notification.name | capitalize}}</div>
+                        <div class="subtitle text-no-warp" *ngIf="notification.eventType === 'amount'"> {{notification.amount.amount
+                            | CurrencyPipe: notification.amount.currency.code}}</div>
+                        <div class="subtitle" *ngIf="notification.eventType === 'period'">{{notification.period.name}}</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="col-md-6">
+            <div class="acount-info-destacados-list-elemt acount-info-destacados-list-elemt-add">
+                <div class="acount-info-destacados-list-elemt-content interactive" (click)="addAlert()"><img title="add alert"
+                        alt="add alert" src="assets/images/ico_add.png" />
+                    <div class="texts">
+                        <div class="title">{{'ITECBAN-ACCOUNT.ALERTS.ADD' | translate}}</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

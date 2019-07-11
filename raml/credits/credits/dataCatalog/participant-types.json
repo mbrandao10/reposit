@@ -1,0 +1,76 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "TITULAR"
+    },
+    {
+      "id": "02",
+      "name": "USUFRUCTUARIO"
+    },
+    {
+      "id": "03",
+      "name": "BENEFICIARIO"
+    },
+    {
+      "id": "04",
+      "name": "APODERADO DE PERSONA FISICA"
+    },
+    {
+      "id": "06",
+      "name": "AUTORIZADO"
+    },
+    {
+      "id": "07",
+      "name": "APODERADO DE PERSONA JURIDICA"
+    },
+    {
+      "id": "08",
+      "name": "AVALISTA"
+    },
+    {
+      "id": "10",
+      "name": "TUTOR"
+    },
+    {
+      "id": "11",
+      "name": "REPRESENTANTE LEGAL"
+    },
+    {
+      "id": "13",
+      "name": "PARTICIPE"
+    },
+    {
+      "id": "14",
+      "name": "TOMADOR"
+    },
+    {
+      "id": "15",
+      "name": "VISUALIZADOR-PRESENTADOR"
+    },
+    {
+      "id": "16",
+      "name": "SUBROGADO DE"
+    },
+    {
+      "id": "17",
+      "name": "SUBROGADO A"
+    },
+    {
+      "id": "18",
+      "name": "HIPOTECANTE"
+    },
+    {
+      "id": "19",
+      "name": "T.RENTIN"
+    },
+    {
+      "id": "20",
+      "name": "PIGNORANTE NO DEUDOR"
+    }
+  ]
+}

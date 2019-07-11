@@ -1,0 +1,48 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "accountEquityId": "01318825185900055018",
+      "equities": [
+        {
+          "id": "01318961678422000300",
+          "name": "Cuenta de valor 1",
+          "date": "2019-01-29",
+          "numberTitles": 69,
+          "totalValue": {
+            "amount": 88648.95,
+            "currency": {
+              "id": "USA",
+              "code": "840"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "accountEquityId": "01318860845900000667",
+      "equities": [
+        {
+          "id": "01318961678422000295",
+          "name": "Cuenta de valor 2",
+          "date": "2019-01-29",
+          "numberTitles": 10799,
+          "totalValue": {
+            "amount": 49898.22,
+            "currency": {
+              "id": "EUR",
+              "code": "978"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

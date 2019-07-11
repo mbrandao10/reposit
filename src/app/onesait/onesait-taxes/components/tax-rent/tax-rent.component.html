@@ -1,0 +1,333 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<div class="row" *ngIf="view === VIEWS.FIRST">
+    <form [formGroup]="newRentForm" id="form">
+        <div class="col-xs-12">
+            <fieldset class="fielset-custom">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <label class="form-custom-label" for="accountId">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.FORM' | translate}}</label>
+                            <div class="form-select-custom">
+                                <select class="form-control form-control-amim" name="taxForm" formControlName="taxForm">
+                                    <option *ngFor="let taxForm of taxForms" [value]="taxForm.id">{{taxForm.name}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 mt-2">
+                            <div class="box-form-info">
+                                <div class="info-section-group">
+                                    <label class="radio-inline">
+                                        <input formControlName="type" type="radio" name="type" value="income">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.INCOME' | translate}}
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input formControlName="type" type="radio" name="type" value="refund">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.REFUND' | translate}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <h5>{{'ONESAIT-TAXES.PAYMENTS-RETURNS.PAYMENT-RETURN-DATA' | translate}}</h5>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4">
+                            <label class="form-custom-label" for="entityId">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.CHARGE-ACCOUNT' | translate}}</label>
+                            <div class="form-select-custom">
+                                <select class="form-control form-control-amim" name="accountId" formControlName="accountId">
+                                    <option *ngFor="let account of accounts" [value]="account.id">{{account.alias ? account.alias : account.id}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-2">
+                            <label class="form-custom-label" for="entityId">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.YEAR' | translate}}</label>
+                            <div class="form-select-custom">
+                                <select class="form-control form-control-amim" name="taxYear" formControlName="taxYear">
+                                    <option *ngFor="let year of years" [value]="year.id">{{year.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-md-2">
+                            <label class="form-custom-label" for="entityId">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.PERIOD' | translate}}</label>
+                            <div class="form-select-custom">
+                                <select class="form-control form-control-amim" name="taxPeriod" formControlName="taxPeriod">
+                                    <option *ngFor="let period of periods" [value]="period.id">{{period.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-10 col-sm-5 col-md-3">
+                            <label class="form-custom-label" for="paymentAmount">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.AMOUNT' | translate}}</label>
+                            <input class="form-control" type="number" name="paymentAmount" formControlName="paymentAmount" />
+                        </div>
+                        <div class="col-xs-2 col-sm-1 mt-1 fs-20">
+                            <br>
+                            <p>{{defaultCurrency.sign}}</p>
+                        </div>
+                        <div class="col-xs-10 col-sm-5 col-md-3">
+                            <label class="form-custom-label" for="splitPaymentAmount">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.SPLIT-PAYMENT' | translate}}</label>
+                            <input class="form-control" type="number" name="splitPaymentAmount" formControlName="splitPaymentAmount" />
+                        </div>
+                        <div class="col-xs-2 col-sm-1  mt-1 fs-20">
+                            <br>
+                            <p>{{defaultCurrency.sign}}</p>
+                        </div>
+                        <div class="col-xs-12 col-md-4 mt-2 mb-1 fs-12">
+                            <br>
+                            <p>
+                                {{'ONESAIT-TAXES.PAYMENTS-RETURNS.LABEL-RENT-TAX1' | translate}}
+                                <b>{{'ONESAIT-TAXES.PAYMENTS-RETURNS.LABEL-RENT-TAX2' | translate}}</b>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 checkbox checkbox-primary">
+                        <input type="checkbox" formControlName="isDirectDebit" id="directDebit">
+                        <i class="icon-check"> </i>
+                        <label for="directDebit">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.WANT-DIRECT-PAYMENT' | translate}}</label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-xs-12 mt-1">
+            <div class="row">
+                <div class="col-xs-12 col-sm-offset-6 col-sm-6 text-center">
+                    <button [disabled]="!newRentForm.valid" class="btn btn-primary pull-right" type="button" (click)="makeOperation()"> {{ 'COMMON.OPERATION' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row" *ngIf="view === VIEWS.TOKEN">
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel ">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="col-xs-12 col-sm-6">
+                            <button class="btn btn-secondary" (click)="cancel()">
+                                {{ 'COMMON.CANCEL' | translate }}
+                            </button>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6">
+                                    <button class="btn btn-secondary" (click)="back()">
+                                        {{ 'COMMON.BACK' | translate }}
+                                    </button>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6">
+                                    <button class="btn btn-primary" [disabled]="!signatureEntity.tokenValid" (click)="tokenCompleted()">
+                                        {{ 'COMMON.FINALIZE' | translate }}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="view === VIEWS.CONFIRM">
+    <div class="panel">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div>{{ 'ONESAIT-TAXES.PAYMENTS-RETURNS.TYPE-TAX' | translate }}
+                        <b>{{taxSelectedCombo.name}}</b>
+                    </div>
+                </div>
+                <div class="col-xs-12 mb-2">
+                    <span>{{'ONESAIT-TAXES.PAYMENTS-RETURNS.FORM' | translate}}: </span>
+                    <span class="text-os-semibold">{{taxFormSelected.id}} - {{taxFormSelected.name}}</span>
+                </div>
+            </div>
+            <div class="row mt-1 mb-1">
+                <div class="col-sm-4 col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-12 mb-1 ">
+                            <div class="text-os-semibold ">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.CHARGE-ACCOUNT' | translate}}</div>
+                            <div class="text-section">{{accountSelected.alias ? accountSelected.alias : accountSelected.id}}</div>
+                        </div>
+                        <div class="col-xs-12 mb-1 ">
+                            <div class="text-os-semibold ">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.DNI-NIF' | translate}}</div>
+                            <div class="text-section">{{accountInfo.userId}}</div>
+                        </div>
+                        <div class="col-xs-12 mb-1 ">
+                            <div class="text-os-semibold ">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.YEAR' | translate}}</div>
+                            <div class="text-section">{{newRentForm.value.taxYear}}</div>
+                        </div>
+                        <div class="col-xs-12 mb-1 ">
+                            <div class="text-os-semibold ">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.PERIOD' | translate}}</div>
+                            <div class="text-section">{{periodSelected.name}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-12 mb-1 ">
+                            <div class="text-os-semibold ">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.DIRECTDEBIT' | translate}}</div>
+                            <div class="text-section">{{newRentForm.value.isDirectDebit | BooleanToStringPipe}}</div>
+                        </div>
+                        <div class="col-xs-12 mb-1 ">
+                            <div class="text-os-semibold ">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.TYPE' | translate}}</div>
+                            <div class="text-section">{{newRentForm.value.type}}</div>
+                        </div>
+                        <div class="col-xs-12 mb-1 ">
+                            <div class="text-os-semibold ">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.SPLIT-PAYMENT' | translate}}</div>
+                            <div class="text-section">{{newRentForm.value.splitPaymentAmount}} €</div>
+                        </div>
+                        <div class="col-xs-12 mb-1 text-os-semibold">
+                            <div class="text-os-semibold ">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.AMOUNT' | translate}}</div>
+                            <div class="text-section">{{newRentForm.value.paymentAmount}} €</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-2 mt-1">
+                        <button class="btn btn-terciary" (click)="cancel()">{{ 'COMMON.CANCEL' | translate }}</button>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-sm-offset-3 col-md-offset-4 mt-1">
+                        <button type="button" class="btn btn-secondary" (click)="back()">{{ 'COMMON.BACK' | translate }}</button>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-2 mt-1 text-right">
+                        <!--<button type="button" class="btn btn-primary" (click)="confirm()">{{ 'COMMON.NEXT' | translate }}</button>-->
+                        <button type="button" class="btn btn-primary" (click)="view = VIEWS.FINISH">{{ 'COMMON.NEXT' | translate }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="view === VIEWS.FINISH">
+    <osb-final-message text="{{'ONESAIT-TAXES.PAYMENTS-RETURNS.OPERATION-SUCCESS' | translate}}"></osb-final-message>
+    <div class="panel-body">
+        <osb-voucher-container #voucherContainer>
+            <div class="row">
+                <div OsbVoucherKeyValue class="col-xs-12">
+                    <span OsbVoucherKey>{{ 'ONESAIT-TAXES.PAYMENTS-RETURNS.TYPE-TAX' | translate }}</span>
+                    <span OsbVoucherValue>
+                        <b>{{taxSelectedCombo.name}}</b>
+                    </span>
+                </div>
+                <div OsbVoucherKeyValue class="col-xs-12 mb-2">
+                    <span OsbVoucherKey>{{'ONESAIT-TAXES.PAYMENTS-RETURNS.FORM' | translate}}: </span>
+                    <span OsbVoucherValue class="text-os-semibold">{{taxFormSelected.id}} - {{taxFormSelected.name}}</span>
+                </div>
+            </div>
+            <div class="row mt-1 mb-1">
+                <div class="col-sm-4 col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-12 mb-1 ">
+                            <div OsbVoucherKeyValue class="col-xs-12 mb-1">
+                                <div OsbVoucherKey class="text-os-semibold">
+                                    {{'ONESAIT-TAXES.PAYMENTS-RETURNS.CHARGE-ACCOUNT' | translate}}
+                                </div>
+                                <div OsbVoucherValue class="text-section">
+                                    {{accountSelected.alias ? accountSelected.alias : accountSelected.id}}
+                                </div>
+                            </div>
+                            <div OsbVoucherKeyValue class="col-xs-12 mb-1">
+                                <div OsbVoucherKey class="text-os-semibold">
+                                    {{'ONESAIT-TAXES.PAYMENTS-RETURNS.DNI-NIF' | translate}}
+                                </div>
+                                <div OsbVoucherValue class="text-section">
+                                    {{accountInfo.userId}}
+                                </div>
+                            </div>
+                            <div OsbVoucherKeyValue class="col-xs-12 mb-1">
+                                <div OsbVoucherKey class="text-os-semibold">
+                                    {{'ONESAIT-TAXES.PAYMENTS-RETURNS.YEAR' | translate}}
+                                </div>
+                                <div OsbVoucherValue class="text-section">
+                                    {{newRentForm.value.taxYear}}
+                                </div>
+                            </div>
+                            <div OsbVoucherKeyValue class="col-xs-12 mb-1">
+                                <div OsbVoucherKey class="text-os-semibold">
+                                    {{'ONESAIT-TAXES.PAYMENTS-RETURNS.PERIOD' | translate}}
+                                </div>
+                                <div OsbVoucherValue class="text-section">
+                                    {{periodSelected.name}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-12 mb-1 ">
+                            <div OsbVoucherKeyValue class="col-xs-12 mb-1">
+                                <div OsbVoucherKey class="text-os-semibold">
+                                    {{'ONESAIT-TAXES.PAYMENTS-RETURNS.DIRECTDEBIT' | translate}}
+                                </div>
+                                <div OsbVoucherValue class="text-section">
+                                    {{newRentForm.value.isDirectDebit | BooleanToStringPipe}}
+                                </div>
+                            </div>
+                            <div OsbVoucherKeyValue class="col-xs-12 mb-1">
+                                <div OsbVoucherKey class="text-os-semibold">
+                                    {{'ONESAIT-TAXES.PAYMENTS-RETURNS.TYPE' | translate}}
+                                </div>
+                                <div OsbVoucherValue class="text-section">
+                                    {{newRentForm.value.type}}
+                                </div>
+                            </div>
+                            <div OsbVoucherKeyValue class="col-xs-12 mb-1">
+                                <div OsbVoucherKey class="text-os-semibold">
+                                    {{'ONESAIT-TAXES.PAYMENTS-RETURNS.SPLIT-PAYMENT' | translate}}
+                                </div>
+                                <div OsbVoucherValue class="text-section">
+                                    {{newRentForm.value.splitPaymentAmount}} €
+                                </div>
+                            </div>
+                            <div OsbVoucherKeyValue class="col-xs-12 mb-1">
+                                <div OsbVoucherKey class="text-os-semibold">
+                                    {{'ONESAIT-TAXES.PAYMENTS-RETURNS.AMOUNT' | translate}}
+                                </div>
+                                <div OsbVoucherValue class="text-section">
+                                    {{newRentForm.value.paymentAmount}} €
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 mt-1 mb-1">
+                        <osb-download-info [voucherContainer]="voucherContainer" text="{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.DOWNLOAD-RECEIPT' | translate}}"></osb-download-info>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-2 mt-1"></div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-sm-offset-3 col-md-offset-4 mt-1">
+                        <button type="button" class="btn btn-secondary" (click)="goToAccounts()">{{'COMMON.GO-ACCOUNTS' | translate}}</button>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-2 mt-1 text-right">
+                        <button type="button" class="btn btn-primary" (click)="cancel()">{{ 'COMMON.OPERATION-NEW' | translate }}</button>
+                    </div>
+                </div>
+            </div>
+        </osb-voucher-container>
+    </div>
+</div>

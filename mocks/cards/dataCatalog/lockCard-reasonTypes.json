@@ -1,0 +1,17 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "1",
+      "name": "ROBO"
+    },
+    {
+      "id": "2",
+      "name": "PERDIDA"
+
+    }
+  ]
+}

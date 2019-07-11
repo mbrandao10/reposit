@@ -1,0 +1,80 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "id": "TRNE030000000001744",
+    "orderer": {
+      "fromAccount": {
+        "id": "149100011009408526",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES69149100011009408528"
+          }
+        ]
+      }
+    },
+    "beneficiary": {
+      "toAccount": {
+        "id": "149100011009408529",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES69149100011009408529"
+          }
+        ]
+      },
+      "description": "ALVARO MUNOZ AVILA",
+      "legalDocument": {
+        "id": "12345678Z",
+        "type": {
+          "id": "01",
+          "name": "DNI"
+        }
+      }
+    },
+    "amount": {
+      "amount": 60,
+      "currency": {
+        "id": "USA",
+        "code": "840"
+      }
+    },
+    "reason": "Arreglo furgoneta",
+    "purposeType": {
+      "id": "01",
+      "name": "ALQUILER"
+    },
+    "transferType": {
+      "id": "03",
+      "name": "Cash"
+    },
+    "transferMode": {
+      "id": "03",
+      "name": "Cash"
+    },
+    "periodicity": {
+      "type": "PERIODIC",
+      "firstExecutionDate": "2017-12-31",
+      "frequency": {
+        "id": "2",
+        "name": "MENSUAL"
+      },
+      "executionRule": "E"
+    },
+    "nextExecutionDate": "2014-10-30T00:00:00.00Z",
+    "creationDate": "2014-09-10T00:00:00.00Z",	
+	  "status": {
+        "id": "AUTHORIZED",
+        "name": "Autorizada"
+      }
+  }
+}

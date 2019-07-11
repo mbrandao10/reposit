@@ -1,0 +1,238 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="modal-detail" *ngIf="detail">
+    <!-- VISTA MOVIL-->
+    <ng-container *ngIf="isMobileResolution()">
+        <osb-modal-page [isOpenModal]="true" (closeEvent)="close()">
+            <osb-modal-page-header></osb-modal-page-header>
+            <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+        </osb-modal-page>
+    </ng-container>
+    <!-- VISTA DESKTOP-->
+    <ng-container *ngIf="!isMobileResolution()">
+        <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+    </ng-container>
+    <!-- CONTENIDO-->
+    <ng-template #templateRef>
+        <!-- Detalle statement -->
+        <div class="p-1" *ngIf="detail.reference && normal">
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                        {{ 'ITECBAN-CREDITCARD.STATEMENTS.DATEO' | translate }}
+                </span>
+                <span>
+                    {{ detail.date | date: 'dd/MM/yyyy' }}
+                </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                        {{ 'ITECBAN-CREDITCARD.STATEMENTS.TYPEO' | translate }}
+                </span>
+                <span>
+                    {{ detail.operationType.name }}
+                </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                        {{ 'ITECBAN-CREDITCARD.STATEMENTS.IMPORT' | translate }}
+                </span>
+                <span>
+                    {{ detail.amount.amount | CurrencyPipe: detail.amount.currency.code }}
+                </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                        {{ 'ITECBAN-CREDITCARD.STATEMENTS.DIVISA' | translate }}
+                </span>
+                <span>
+                    {{ detail.amount.currency.id }}
+                </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                        {{ 'ITECBAN-CREDITCARD.STATEMENTS.COMERCE' | translate }}
+                </span>
+                <span>
+                    {{ detail.commerce }}
+                </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                        {{ 'ITECBAN-CREDITCARD.STATEMENTS.PLACE' | translate }}
+                </span>
+                <span>
+                    {{ detail.location }}
+                </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                        {{ 'ITECBAN-CREDITCARD.STATEMENTS.COUNTRY' | translate }}
+                </span>
+                <span>
+                    {{ detail.country }}
+                </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                        {{ 'ITECBAN-CREDITCARD.STATEMENTS.SITUATION' | translate }}
+                </span>
+                <span>
+                </span>
+            </div>
+        </div>
+        <!-- Detalle movement -->
+        <div class="p-1" *ngIf="detail.id && normal">
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                            {{'ITECBAN-CREDITCARD.MOVEMENTS.DATE' | translate}}
+                    </span>
+                <span *ngIf="detail.date">
+                            {{ detail.date | date: 'dd/MM/yyyy'}}
+                    </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                            {{'ITECBAN-CREDITCARD.MOVEMENTS.DATEV' | translate}}
+                    </span>
+                <span>
+                </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                            {{'ITECBAN-CREDITCARD.MOVEMENTS.TYPE' | translate}}
+                    </span>
+                <span *ngIf="detail.shop">
+                            {{ detail.shop }}
+                    </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                            {{'ITECBAN-CREDITCARD.MOVEMENTS.ENTITY' | translate}}
+                    </span>
+                <span>
+                    </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                            {{'ITECBAN-CREDITCARD.MOVEMENTS.POS' | translate}}
+                    </span>
+                <span>
+                    </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                            {{'ITECBAN-CREDITCARD.MOVEMENTS.DESCRIPTION' | translate}}
+                    </span>
+                <span class="text-no-warp" *ngIf="detail.reason">
+                            {{ detail.reason }}
+                    </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                            {{'ITECBAN-CREDITCARD.MOVEMENTS.CONCEPT' | translate}}
+                    </span>
+                <span class="text-no-warp" *ngIf="detail.shop">
+                            {{ detail.shop }}
+                    </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                            {{'ITECBAN-CREDITCARD.MOVEMENTS.POBLATION' | translate}}
+                    </span>
+                <span class="text-no-warp" *ngIf="detail.city">
+                    {{ detail.city }}
+                </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                            {{'ITECBAN-CREDITCARD.MOVEMENTS.DIVISA' | translate}}
+                    </span>
+                <span class="text-no-warp" *ngIf="detail.amount">
+                            {{ detail.amount.amount | CurrencyPipe: detail.amount.currency.code }}
+                    </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                            {{'ITECBAN-CREDITCARD.MOVEMENTS.CURRENCY' | translate}}
+                    </span>
+                <span class="text-no-warp" *ngIf="detail.currency">
+                            {{ detail.amount.currency.id }}
+                    </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                            {{'ITECBAN-CREDITCARD.MOVEMENTS.IMPORT' | translate}}
+                    </span>
+                <span class="text-no-warp" *ngIf="detail.amount">
+                            {{ detail.amount.amount | CurrencyPipe: detail.amount.currency.code }}
+                    </span>
+            </div>
+        </div>
+        <!-- CHAPUCEO PARA MOVIMIENTOS -->
+        <div class="p-1" *ngIf="!normal">
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                                {{'ITECBAN-CREDITCARD.MOVEMENTS.DATE' | translate}}
+                        </span>
+                <span *ngIf="detail.date">
+                                {{ detail.date | date: 'dd/MM/yyyy'}}
+                        </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                                {{'ITECBAN-CREDITCARD.MOVEMENTS.DATEV' | translate}}
+                        </span>
+                <span>
+                    {{ detail.valueDate | date: 'dd/MM/yyyy'}}
+                </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                                {{'ITECBAN-CREDITCARD.MOVEMENTS.TYPE' | translate}}
+                        </span>
+                <span *ngIf="detail.shop">
+                                {{ detail.type }}
+                        </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                        {{'ITECBAN-CREDITCARD.MOVEMENTS.ENTITY' | translate}}
+                </span>
+                <span>
+                        {{ detail.shop }}
+                </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                                {{'ITECBAN-CREDITCARD.MOVEMENTS.POBLATION' | translate}}
+                        </span>
+                <span class="text-no-warp" *ngIf="detail.address">
+                        {{ detail.address }}
+                    </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                                {{'ITECBAN-CREDITCARD.MOVEMENTS.DIVISA' | translate}}
+                        </span>
+                <span class="text-no-warp" *ngIf="detail.amount">
+                                {{ detail.amount.amount | CurrencyPipe: detail.amount.currency.code }}
+                        </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                                {{'ITECBAN-CREDITCARD.MOVEMENTS.CURRENCY' | translate}}
+                        </span>
+                <span class="text-no-warp" *ngIf="detail.amount.currency">
+                                {{ detail.amount.currency.id }}
+                        </span>
+            </div>
+            <div class="col-xs-12 col-sm-6 mb-1">
+                <span class="text-os-semibold">
+                                {{'ITECBAN-CREDITCARD.MOVEMENTS.IMPORT' | translate}}
+                        </span>
+                <span class="text-no-warp" *ngIf="detail.amount">
+                                {{ detail.amount.amount | CurrencyPipe: detail.amount.currency.code }}
+                        </span>
+            </div>
+        </div>
+    </ng-template>
+</div>

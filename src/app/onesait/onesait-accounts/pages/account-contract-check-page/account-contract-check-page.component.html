@@ -1,0 +1,145 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<!-- Seleccion de cuenta -->
+<div class="row bg-white m-1 p-1" *ngIf="view === VIEWS.FIRST">
+    <div class="col-xs-12">
+        <form [formGroup]="newCheckForm">
+            <div class="row">
+                <div class="col-xs-12 col-md-8">
+
+                    <div class="col-xs-12">
+                        <b>{{ 'ONESAIT-ACCOUNTS.ACCOUNTS.CONTRACT-CHECK.CONTRACT' | translate }}</b>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-9">
+                            <label class="form-custom-label" for="accountId">{{ 'ONESAIT-ACCOUNTS.ACCOUNTS.CONTRACT-CHECK.ACCOUNT' | translate }}</label>
+                            <select class="form-control" formControlName="accountId" name="accountId" id="accountId">
+                                <option *ngFor="let account of accounts" [ngValue]="account.id">{{ account.formats | formatAccountPipe: accountFormatView  }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-xs-12 col-sm-9">
+                                <label class="form-custom-label" for="type">{{ 'ONESAIT-ACCOUNTS.ACCOUNTS.CONTRACT-CHECK.TYPE' | translate }}</label>
+                                <select class="form-control" formControlName="type" name="type" id="type">
+                                    <option *ngFor="let type of types" [ngValue]="type.id">{{ type.name }}</option>
+                                </select>
+                            </div>
+
+                            <div class="col-xs-6 col-sm-3">
+                                <label class="form-custom-label" for="quantity">{{ 'ONESAIT-ACCOUNTS.ACCOUNTS.CONTRACT-CHECK.NUMBER' | translate }}</label>
+                                <input class="form-control" type="number" name="quantity" formControlName="quantity" id="quantity">
+                            </div>
+                            <div class="col-xs-12">
+                                <osb-input-validator [formCtrl]="newCheckForm.get('quantity')" [opts]="inputValidatorOptions">
+                                </osb-input-validator>                                        
+                            </div>
+                    </div>
+                    
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <osb-formgroup-validator [formGroup]="newCheckForm"></osb-formgroup-validator>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box-form-info mt-1 mb-1">
+                                <div class="info-section-group">
+                                    <b>{{ 'ONESAIT-ACCOUNTS.ACCOUNTS.CONTRACT-CHECK.TEXT1' | translate }}</b>
+                                </div>
+                                <div class="info-section-group">
+                                    {{ 'ONESAIT-ACCOUNTS.ACCOUNTS.CONTRACT-CHECK.TEXT2' | translate }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-xs-12">
+        <div class="col-xs-12 col-sm-6 mt-1">
+            <button class="btn btn-secondary" (click)="cancel()">
+                {{ 'COMMON.CANCEL' | translate }}
+            </button>
+        </div>
+        <div class="col-xs-12 col-sm-6  mt-1">
+            <button class="btn btn-primary pull-right" [disabled]="!newCheckForm.valid" (click)="contract()">
+                {{ 'COMMON.CONTINUE' | translate }}
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Tarjeta de Coordenadas -->
+<div class="panel"*ngIf="view === VIEWS.TOKEN">
+    <div class="panel-body">
+        <form #formToken="ngForm">
+            <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+            <!-- <osb-signature-token [(token)]="newAccount.token" [(tokenValid)]="newAccount.tokenValid"></osb-signature-token> -->
+            <div class="row mt-1 mb-1">
+                <div class="col-xs-6 mt-1 mb-1">
+                    <button class="btn btn-secondary" (click)="cancel()">
+                        {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CANCEL' | translate }}
+                    </button>
+                </div>
+                <div class="col-xs-6 mt-1 mb-1">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <button class="btn btn-secondary" (click)="back()">
+                                {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.BEHIND' | translate }}
+                            </button>
+                        </div>
+                        <div class="col-xs-6">
+                            <button class="btn btn-primary" [disabled]="!signatureEntity.tokenValid" (click)="tokenCompleted()">
+                                {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.FINALIZE' | translate }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row bg-white m-1" *ngIf="view === VIEWS.RESUME">
+    <osb-final-message [text]="'ONESAIT-ACCOUNTS.ACCOUNTS.CONTRACT-CHECK.SUCCESS'"></osb-final-message>
+    <div class="col-xs-12 col-sm-6 mt-1">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12 mb-2">
+                        <div>
+                            <b>{{ 'ONESAIT-ACCOUNTS.ACCOUNTS.CONTRACT-CHECK.ACCOUNT' | translate }}</b>
+                        </div>
+                        <div>{{accountSelected.formats | formatAccountPipe: accountFormatView  }}</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-9 mb-2">
+                        <div>
+                            <b>{{ 'ONESAIT-ACCOUNTS.ACCOUNTS.CONTRACT-CHECK.TYPE' | translate }}</b>
+                        </div>
+                        <div>{{typeSelected.name}}</div>
+                    </div>
+                    <div class="col-xs-3 mb-2">
+                        <div>
+                            <b>{{ 'ONESAIT-ACCOUNTS.ACCOUNTS.CONTRACT-CHECK.NUMBER' | translate }}</b>
+                        </div>
+                        <div>{{newCheckForm.value.quantity}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row col-xs-12">
+        <div class="col-xs-6 col-xs-offset-6">
+            <button class="btn btn-primary pull-right" (click)="cancel()">
+                {{ 'COMMON.ACCEPT' | translate }}
+            </button>
+        </div>
+    </div>
+</div>

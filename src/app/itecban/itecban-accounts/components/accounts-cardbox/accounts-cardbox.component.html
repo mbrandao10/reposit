@@ -1,0 +1,35 @@
+<div class="col-xs-12 cardbox cardbox-grey">
+    <div class="cardbox-title">
+        {{ 'ITECBAN-ACCOUNT.CARDBOX.TITLE' | translate }}
+    </div>
+    <div class="cardbox-item interactive" (click)="viewDetail(account)" *ngFor="let account of accounts">
+        <div class="row">
+            <div class="col-xs-8 f-bold">
+                {{ account.alias }}
+            </div>
+            <div class="col-xs-4">
+                <span class="f-bold pull-right text-no-warp">
+                    {{ account.balance.amount | CurrencyPipe: account.currency.code}}
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-8">
+                {{ account.productData.description }}
+            </div>
+            <div class="col-xs-4">
+                <span class="f-12 pull-right">
+                    {{ 'ITECBAN-ACCOUNT.AVAILABLE-BALANCE.MORE' | translate }}
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                {{ account.IBAN }}
+            </div>
+        </div>
+    </div>
+    <div class="cardbox-footer">
+        {{ 'ITECBAN-ACCOUNT.CARDBOX.MORE' | translate }}
+    </div>
+</div>

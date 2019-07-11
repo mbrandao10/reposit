@@ -1,0 +1,83 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "SIND",
+      "name": "SIN DETALLE",
+      "href": "https://itecban.indra.es/masterTables/movementTypes"
+    },
+    {
+      "id": "TRSR",
+      "name": "Transferencias Sepa recibidas",
+      "href": "https://itecban.indra.es/masterTables/movementTypes"
+    },
+    {
+      "id": "TRSE",
+      "name": "Transferencias Sepa emitidas",
+      "href": "https://itecban.indra.es/masterTables/movementTypes"
+    },
+    {
+      "id": "TRPR",
+      "name": "Traspaso Recibido",
+      "href": "https://itecban.indra.es/masterTables/movementTypes"
+    },
+    {
+      "id": "TRPE",
+      "name": "Traspaso Emitido",
+      "href": "https://itecban.indra.es/masterTables/movementTypes"
+    },
+    {
+      "id": "ADSR",
+      "name": "Adeudos SEPA Recibidos",
+      "href": "https://itecban.indra.es/masterTables/movementTypes"
+    },
+    {
+      "id": "ADNR",
+      "name": "Adeudos NO SEPA Recibidos",
+      "href": "https://itecban.indra.es/masterTables/movementTypes"
+    },
+    {
+      "id": "TRIR",
+      "name": "Transferencias Internacionales Recibidas",
+      "href": "https://itecban.indra.es/masterTables/movementTypes"
+    },
+    {
+      "id": "TRIE",
+      "name": "Transferencias Internacionales Emitidas",
+      "href": "https://itecban.indra.es/masterTables/movementTypes"
+    },
+    {
+      "id": "LIQC",
+      "name": "Liquidación cuenta a la vista",
+      "href": "https://itecban.indra.es/masterTables/movementTypes"
+    },
+    {
+      "id": "ARAD",
+      "name": "Abono por remesa de adeudos",
+      "href": "https://itecban.indra.es/masterTables/movementTypes"
+    },
+    {
+      "id": "RM34",
+      "name": "Cargo por remesa transferencias   ",
+      "href": "https://itecban.indra.es/masterTables/movementTypes"
+    },
+    {
+      "id": "CTDB",
+      "name": "Compra tarjeta débito",
+      "href": "https://itecban.indra.es/masterTables/movementTypes"
+    },
+    {
+      "id": "RTDB",
+      "name": "Retirada de efectivo tarjeta debito",
+      "href": "https://itecban.indra.es/masterTables/movementTypes"
+    },
+    {
+      "id": "LQCR",
+      "name": "Liquidación contrato tarjeta crédito",
+      "href": "https://itecban.indra.es/masterTables/movementTypes"
+    }
+  ]
+}

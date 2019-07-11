@@ -1,0 +1,167 @@
+$nvb-menu-option-height-sm: 50px;
+$nvb-menu-option-height-md: 50px;
+
+.main-menu{
+    color: $nvb-gray-darker;
+    background-color: $nvb-white;
+	font-weight: 600;
+	box-shadow: 3px 0 10px 0 rgba(0, 0, 0, 0.2);
+
+	//Tablet
+	@media (max-width: $screen-sm-max) {
+		height: -webkit-calc(100% - 55px);
+		height: -moz-calc(100vh - 55px);
+		height: calc(100vh - 55px);
+		top: 55px;
+		position: absolute;
+		width: 30vw;
+	}
+
+	//Pantalla grande
+	@media (min-width: $screen-md-min) {
+		height: 100vh;
+		top: 0;
+		position: relative;
+    }	
+    
+	.menu-container{
+		margin-left: ($grid-gutter-width / -2);
+    	margin-right: ($grid-gutter-width / -2);
+	}
+
+	z-index: $zindex-menu;
+}
+
+.main-menu__list{
+	margin: 0;
+	padding: 0;
+}
+
+.main-menu__title{
+	padding: 34px 24px 50px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.main-menu-menu .main-menu__list__element {
+    position: relative;
+
+    .close-submenu {
+        display: block;
+        background-color: $nvb-green;
+        width: $nvb-menu-option-height-md;
+        height: $nvb-menu-option-height-md;
+        text-align: center;
+        line-height: $nvb-menu-option-height-md;
+        position: absolute;
+        top: 0;
+        right: -20px;
+        -webkit-border-top-right-radius: 100px;
+        -webkit-border-bottom-right-radius: 100px;
+        -moz-border-radius-topright: 100px;
+        -moz-border-radius-bottomright: 100px;
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+        visibility: hidden;
+		z-index: 10;
+		
+		&.close-submenu-show {
+			visibility: visible;
+		}
+    }
+
+	&:hover, &.active{
+		position: relative;
+		background: $nvb-green;
+		z-index: 1036;
+
+		.icon, .glyphicon {
+			color: $nvb-gray-darker;
+		}
+	}
+}
+
+.main-menu__list__element{
+	display:block;
+	height: $nvb-menu-option-height-md;
+	line-height: $nvb-menu-option-height-md;
+	padding-left: 20px;
+	
+	.option-text {
+		@media (min-width: $screen-md-min) and (max-width: $nvb-screen-md-special-max) {
+			font-size: 12px;
+		}
+	}
+
+	.option-more {
+		padding-right: 10px;
+
+		@media (min-width: $screen-md-min) and (max-width: $nvb-screen-md-special-max) {
+			font-size: 12px;
+		}
+	}
+
+	.icon{
+		color: $nvb-green-dark;
+		font-size: 18px;
+		padding-right: 20px;
+		@media (min-width: $screen-md-min) and (max-width: $nvb-screen-md-special-max) {
+			padding-right: 5px;
+		}
+	}
+	&:hover{
+		cursor: pointer;
+		background: $nvb-green;
+		z-index: 1;
+
+		.icon, .glyphicon {
+			color: $nvb-white;
+		}
+	}
+}
+
+.app-version{
+	position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 10px;
+}
+
+.counter{
+	border-radius: 50%;
+	padding: 2px 4px;
+	margin: 0 3px;
+	background-color: $nvb-white;
+	color: #333333;
+	margin-top: -10px;
+	display: inline-block;
+	position: absolute;
+	font-size: 12px;
+}
+
+.main-menu-submenu{
+	visibility: hidden;
+    width: 100%;
+    left: 0%;
+    top: 0px;
+	bottom: 0px;	
+    position: absolute;
+	background-color: $nvb-gray-submenu;
+	background-image: linear-gradient(146deg, rgba(255, 255, 255, 0.5), rgba(74, 74, 74, 0.5));	
+	
+	z-index: $zindex-menu;
+
+	.main-menu__list__element{
+		color:$nvb-white;
+
+		&:hover, &.active{
+            text-decoration: underline;
+            background-color: inherit;
+		}
+	}
+}
+
+.submenu-show{
+	left: 100%;
+	visibility: visible;
+}

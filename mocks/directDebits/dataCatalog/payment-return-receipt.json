@@ -1,0 +1,20 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "MD01",
+      "name": "Error en domiciliación"
+    },
+    {
+      "id": "MD06",
+      "name": "Disconformidad con el importe"
+    },
+    {
+      "id": "AM05",
+      "name": "Recibo duplicado"
+    }
+  ]
+}

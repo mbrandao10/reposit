@@ -1,0 +1,12 @@
+<ng-container> 
+    <div [ngClass]="{'input-invalid': formCtrl.invalid && (formCtrl.touched)}">
+        <ng-content></ng-content>
+    </div>       
+</ng-container>
+
+
+<span class="help-block text-red"
+*ngIf="errorText && formCtrl.invalid && (formCtrl.touched)">
+    <p class="text-left" >{{ errorText | translate:{formCtrl: formCtrl}  }}</p>
+</span>
+

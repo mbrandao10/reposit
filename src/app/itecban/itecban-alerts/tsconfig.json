@@ -1,0 +1,45 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "../../../../libs",
+    "rootDir": "../",
+    //"sourceMap": true,
+    "declaration": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,    
+    "importHelpers": true,
+    "inlineSources": true,
+    "inlineSourceMap": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "paths": {      
+      "itecban-environment": [
+        "../itecban-environment"
+      ],
+      "itecban-common": [
+        "../itecban-common"
+      ]
+    }  
+  },
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true,
+    "strictMetadataEmit": true,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "enableResourceInlining": true
+  },
+  "exclude": [
+    "src/test.ts",
+    "**/*.spec.ts"
+  ]
+}

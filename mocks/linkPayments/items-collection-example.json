@@ -1,0 +1,37 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "Luz, Agua y Gas",
+      "shortName": "Luz, Agua y Gas"
+    },
+    {
+      "id": "02",
+      "name": "Impuestos AFIP",
+      "shortName": "Impuestos AFIP"
+    },
+    {
+      "id": "03",
+      "name": "Telefonía",
+      "shortName": "Telefonía y .."
+    },
+    {
+      "id": "04",
+      "name": "Operadores de TV",
+      "shortName": "TV"
+    },
+    {
+      "id": "05",
+      "name": "Impuestos municipales",
+      "shortName": "Impuestos municipales"
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "id": "00000",
+    "reference": "FACT-FC-XX-000",
+    "debtorDescription": "Fashion Clothes",
+    "amount": {
+      "amount": 20000.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "creationDate": "2018-05-23T00:00:00.00Z",	
+    "expirationDate": "2018-05-23T00:00:00.00Z",
+    "acceptanceDate": "2018-05-23T00:00:00.00Z",
+    "advanceDate": "2018-05-23T00:00:00.00Z",	
+    "status": {
+      "id": "01",
+      "name": "Aceptada"
+    },
+	"financedAmount": {
+      "amount": 12085.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "fees": {
+      "amount": 1.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },	
+	"outstandingAmount": {
+      "amount": 8000.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+	"nominalInterestRate": 0.01,
+	"latePaymentRate": 5.01	
+  }
+}

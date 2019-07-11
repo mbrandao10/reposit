@@ -1,0 +1,131 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id":"991200130",
+      "productData": {
+        "id": "00-LEASING",
+        "description": "Leasing"
+      },
+      "availableAmount": {
+        "amount": 5456.21,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "drawnAmount": {
+        "amount": 9345.96,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "outstandingAmount": {
+        "amount": 20322.34,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "account":{
+         "id":"886106660003282",
+         "formats":[
+            {
+               "format":{
+                  "id":"IBAN",
+                  "name":"IBAN"
+               },
+               "value":"ES6801318861240666003282"
+            }
+         ]
+      }
+    },
+    {
+      "id":"991200131",
+      "productData": {
+        "id": "00-LEASING_BASIC",
+        "description": "Leasing Basic"
+      },
+      "availableAmount": {
+        "amount": 5456.21,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "drawnAmount": {
+        "amount": 9345.96,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "outstandingAmount": {
+        "amount": 20322.34,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "account":{
+         "id":"886106660003282",
+         "formats":[
+            {
+               "format":{
+                  "id":"IBAN",
+                  "name":"IBAN"
+               },
+               "value":"ES6801318861240666003282"
+            }
+         ]
+      }
+    },
+	  {
+      "id":"991200132",
+      "productData": {
+        "id": "00-LEASING_PLUS",
+        "description": "Leasing Plus"
+      },
+      "availableAmount": {
+        "amount": 5456.21,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "drawnAmount": {
+        "amount": 9345.96,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "outstandingAmount": {
+        "amount": 20322.34,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "account":{
+         "id":"886106660003282",
+         "formats":[
+            {
+               "format":{
+                  "id":"IBAN",
+                  "name":"IBAN"
+               },
+               "value":"ES6801318861240666003282"
+            }
+         ]
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages": false
+  }
+}

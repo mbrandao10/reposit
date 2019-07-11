@@ -1,0 +1,283 @@
+<div class="row">
+    <div class="col-sm-12">
+        {{'ITECBAN-ACCOUNT.CANCEL.ACCOUNT' | translate}}
+    </div>
+    <!--//////////////////////////////////////////////////////////////////////////-->
+</div>
+<div class="row">
+    <app-loader *ngIf="loading"></app-loader>
+    <div *ngIf="step === 'FIRST' &amp;&amp; simulation">
+        <div class="col-xs-12">
+            <div class="info-page">
+                <div class="info-page-title">{{ "ITECBAN-ACCOUNT.CANCEL.FIRST.TEXT" | translate }} </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="info-box">
+                            <div class="info-box-image"> <img class="img-responsive" title="No link" alt="No link"
+                                    src="assets/images/img_info_no_link.png"></div>
+                            <div class="info-box-text"> {{ "ITECBAN-ACCOUNT.CANCEL.FIRST.TEXT2" | translate }}</div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="info-box">
+                            <div class="info-box-image"> <img class="img-responsive" title="No client" alt="No Client"
+                                    src="assets/images/img_info_no_client.png"></div>
+                            <div class="info-box-text">{{ "ITECBAN-ACCOUNT.CANCEL.FIRST.TEXT3" | translate }} </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6"><button class="btn btn-secondary" (click)="cancel()">{{'COMMON.CANCEL' | translate}}</button></div>
+            <div class="col-xs-6 text-right"><button class="btn btn-primary" (click)="moveAmount()">{{'COMMON.CONTINUE'
+                    | translate}}</button></div>
+        </div>
+    </div>
+    <!--//////////////////////////////////////////////////////////////////////////-->
+    <div *ngIf="step === 'SELECT_ACCOUNT' &amp;&amp; simulation">
+        <form class="col-xs-12" #formCancel="ngForm">
+            <fieldset class="row">
+                <div class="info-section">
+                    <div class="col-xs-12">
+                        <div class="info-section-title text-no-warp">
+                            <p>{{ "ITECBAN-ACCOUNT.CANCEL.SELECT.TEXT" | translate}} {{cancelAccount.amount |
+                                CurrencyPipe: accountDetail.balance.currency.code}} {{
+                                "ITECBAN-ACCOUNT.CANCEL.SELECT.TEXT1" | translate}}</p>
+                        </div>
+                        <div class="info-section-resume">
+                            <p>{{ "ITECBAN-ACCOUNT.CANCEL.SELECT.TEXT2" | translate}} </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="info-section-group">
+                                    <div class="col-xs-12">
+                                        <div class="form-group"><label class="form-custom-label" for="myAccount">Destino</label>
+                                            <div class="radio-custom"><label><input type="radio" [(ngModel)]="destinyType"
+                                                        (ngModelChange)="changeDestinyType('account')" name="myAccount"
+                                                        value="account"><i class="icon-check"> </i><span>{{
+                                                        "ITECBAN-ACCOUNT.CANCEL.SELECT.MY.ACCOUNTS" | translate}}
+                                                    </span></label><label><input type="radio" [(ngModel)]="destinyType"
+                                                        (ngModelChange)="changeDestinyType('cbu')" name="myAccount"
+                                                        value="cbu"><i class="icon-check"> </i><span>{{
+                                                        "ITECBAN-ACCOUNT.CANCEL.SELECT.ALIAS" | translate}}</span></label></div>
+                                            <div class="form-group" *ngIf="destinyType === 'account'"><label class="form-custom-label"
+                                                    for="accounts">{{'ITECBAN-TRANSFER.MAKE-TRANSFER.MY.ACCOUNTS' |
+                                                    translate}}</label>
+                                                <div class="form-select-custom"><select class="form-control form-control-amim form-control"
+                                                        [(ngModel)]="cancelAccount.account" (ngModelChange)="validateForm()"
+                                                        name="accountsTo" id="accountsTo" required>
+                                                        <option value="-1">Seleccione cuenta destino</option>
+                                                        <option class="text-no-warp" *ngFor="let detinationAccount of accounts"
+                                                            [ngValue]="detinationAccount">{{detinationAccount.alias
+                                                            ? detinationAccount.alias :
+                                                            detinationAccount.productData.description}} -
+                                                            {{detinationAccount.balance.amount | CurrencyPipe:
+                                                            detinationAccount.balance.currency.code}}</option>
+                                                    </select></div>
+                                            </div>
+                                            <div class="form-group" *ngIf="destinyType === 'cbu'">
+                                                <div class="col-xs-9"><input class="form-control" type="text"
+                                                        [(ngModel)]="cancelAccount.beneficiaryCoelsa" name="beneficiaryCoelsa"
+                                                        id="beneficiaryCoelsa" minlength="6" maxlength="22"
+                                                        #beneficiaryCoelsaAliasAttr="ngModel" placeholder="{{'ITECBAN-ACCOUNT.CANCEL.ALIASCBU.TEXT'|translate}}"
+                                                        required></div>
+                                                <div class="col-xs-3"><button class="btn btn-field form-control"
+                                                        type="button" [disabled]="beneficiaryCoelsaAliasAttr.invalid"
+                                                        (click)="getAccontFromCoelsa()">Ok</button></div>
+                                                <div class="alert alert-warning" *ngIf="cancelAccount.destinyCoelsaAccount">
+                                                    <div class="div"><span>{{'ITECBAN-TRANSFER.MAKE-TRANSFER.NAME.OWNER'
+                                                            | translate}}:
+                                                            {{cancelAccount.destinyCoelsaAccount.holders[0].name}}
+                                                        </span></div>
+                                                    <div class="div"><span>{{'ITECBAN-TRANSFER.MAKE-TRANSFER.COIN'
+                                                            | translate}}:
+                                                            {{cancelAccount.destinyCoelsaAccount.currency.id}}
+                                                        </span></div>
+                                                </div>
+                                                <div class="alert alert-danger" *ngIf="errorDestiny"><span>La
+                                                        cuenta de destino debe ser una cuenta del usuario. </span></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group"><label class="form-custom-label" for="currency">{{'ITECBAN-TRANSFER.MAKE-TRANSFER.COIN'
+                                                            | translate}}</label>
+                                                        <div class="form-select-custom"><select class="form-control"
+                                                                [(ngModel)]="cancelAccount.currency" name="currency"
+                                                                id="currency" disabled>
+                                                                <option *ngFor="let currency of currencies"
+                                                                    [ngValue]="currency">{{currency.id}}</option>
+                                                            </select></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <app-form-attr-validator errorMessage="COMMON.FIELD.REQUIRED"><label
+                                                                class="form-custom-label" for="amount">{{'ITECBAN-TRANSFER.TRANSFERS.MONTO'
+                                                                | translate}}</label><input class="form-control"
+                                                                type="number" [(ngModel)]="cancelAccount.amount"
+                                                                [min]="0" disabled name="amount" id="amount"></app-form-attr-validator>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group"><label class="form-custom-label" for="reasonType">{{'ITECBAN-TRANSFER.TRANSFERS.CONCEPT'
+                                                            | translate}}</label>
+                                                        <div class="form-select-custom"><select class="form-control"
+                                                                [(ngModel)]="cancelAccount.reasonType" name="reasonType"
+                                                                id="reasonType" disabled>
+                                                                <option *ngFor="let reasonType of reasonTypes"
+                                                                    [ngValue]="reasonType">{{reasonType.name}}</option>
+                                                            </select></div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group"><label class="form-custom-label" for="reason">{{'ITECBAN-TRANSFER.TRANSFERS.DESCRIPTION'
+                                                            | translate}}</label><input class="form-control"
+                                                            [(ngModel)]="cancelAccount.reason" name="reason" id="reason"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-6"><button class="btn btn-secondary" (click)="back()">{{'COMMON.BACK' | translate}}</button></div>
+                <div class="col-xs-6 text-right"><button class="btn btn-primary" (click)="doTransfer()" [disabled]="!formValid">{{'COMMON.CONTINUE'
+                        | translate}}</button></div>
+            </div>
+        </div>
+    </div>
+    <!--//////////////////////////////////////////////////////////////////////////-->
+    <div *ngIf="step === 'NEGATIVE_ACCOUNT' &amp;&amp; simulation">
+        <app-loader *ngIf="loading"></app-loader>
+        <div class="col-xs-12 col-sm-6">
+            <div class="info-section">
+                <div class="info-section-title"><i class="glyphicon glyphicon-check info-section-title-icon"></i>{{'ITECBAN-ACCOUNT.CANCEL.NEGATIVE.TEXT'
+                    | translate}}</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"><button class="btn btn-secondary" (click)="cancel()">{{'COMMON.BACK' | translate}}</button></div>
+        </div>
+    </div>
+    <!--//////////////////////////////////////////////////////////////////////////-->
+    <div *ngIf="step === 'VERIFY' &amp;&amp; simulation">
+        <app-loader *ngIf="loading"></app-loader>
+        <div class="col-xs-12">
+            <div class="info-section">
+                <div class="info-section-title" *ngIf="simulation.cancelAmount === 0">{{'ITECBAN-ACCOUNT.CANCEL.VERIFY.SURE.TEXT'
+                    | translate}} </div>
+                <div class="info-section-title" *ngIf="simulation.cancelAmount != 0">{{'ITECBAN-ACCOUNT.CANCEL.VERIFY.TEXT'
+                    | translate}} </div>
+                <div class="col-xs-12 col-md-6">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="info-section-group" *ngIf="accountDetail">
+                                <div class="info-section-group-elem">
+                                    <div class="lbl-info">{{ "ITECBAN-ACCOUNT.CANCEL.VERIFY.ACCOUNT.CLOSE" |
+                                        translate}}</div>
+                                    <div class="content-info">{{cancelAccount.alias ? cancelAccount.alias:
+                                        accountDetail.productData.description}}</div>
+                                </div>
+                            </div>
+                            <div class="info-section-group" *ngIf="selectDestiny &amp;&amp; cancelAccount.account">
+                                <div class="info-section-group-elem">
+                                    <div class="lbl-info">{{ "ITECBAN-ACCOUNT.CANCEL.VERIFY.ACCOUNT.DESTINY" |
+                                        translate}}</div>
+                                    <div class="content-info">{{cancelAccount.alias ? cancelAccount.alias:
+                                        cancelAccount.account.productData.description}}</div>
+                                </div>
+                            </div>
+                            <div class="info-section-group" *ngIf="selectDestiny &amp;&amp; cancelAccount.destinyCoelsaAccount">
+                                <div class="info-section-group-elem">
+                                    <div class="lbl-info">{{ "ITECBAN-ACCOUNT.CANCEL.VERIFY.ACCOUNT.DESTINY" |
+                                        translate}}</div>
+                                    <div class="content-info">{{cancelAccount.destinyCoelsaAccount.name}}</div>
+                                </div>
+                                <div class="info-section-group-elem">
+                                    <div class="lbl-info">CBU:</div>
+                                    <div class="content-info">{{cancelAccount.destinyCoelsaAccount.cbu}}</div>
+                                </div>
+                            </div>
+                            <div class="info-section-group">
+                                <div class="info-section-group-elem" *ngIf="cancelAccount.amount">
+                                    <div class="lbl-info">{{ "ITECBAN-ACCOUNT.CANCEL.VERIFY.AMOUNT" | translate}}</div>
+                                    <div class="content-info">{{cancelAccount.amount}}</div>
+                                </div>
+                                <div class="info-section-group-elem" *ngIf="cancelAccount.reason">
+                                    <div class="lbl-info">{{ "ITECBAN-ACCOUNT.CANCEL.VERIFY.CONCEPT" | translate}}</div>
+                                    <div class="content-info">{{ cancelAccount.reason }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-6"><button class="btn btn-secondary" (click)="back()">{{'COMMON.BACK' | translate}}</button></div>
+                <div class="col-xs-6 text-right"><button class="btn btn-primary" (click)="completeToken()">{{'COMMON.CONTINUE'
+                        | translate}}</button></div>
+            </div>
+        </div>
+    </div>
+    <!--//////////////////////////////////////////////////////////////////////////-->
+    <div *ngIf="step === 'TOKEN' &amp;&amp; simulation">
+        <app-loader *ngIf="loading"></app-loader>
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <h2 class="info-section-group-title">{{'ITECBAN-ACCOUNT.TOKEN.TEXT' | translate}} </h2>
+                <!-- <osb-signature-token [(token)]="token" [(tokenValid)]="tokenValid"></osb-signature-token> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6"><button class="btn btn-secondary" (click)="back()">{{'COMMON.BACK' | translate}}</button></div>
+            <div class="col-xs-6 pull-right text-right"><button class="btn btn-primary" (click)="confirmTransfer()"
+                    [disabled]="!tokenValid">{{'COMMON.CONTINUE' | translate}}</button></div>
+        </div>
+    </div>
+    <!--//////////////////////////////////////////////////////////////////////////-->
+    <div *ngIf="step === 'FINISH' &amp;&amp; simulation">
+        <app-loader *ngIf="loading"></app-loader>
+        <div class="col-xs-12 col-sm-6">
+            <div class="info-section">
+                <div class="info-section-title"><i class="glyphicon glyphicon-check info-section-title-icon"> </i>{{
+                    "ITECBAN-ACCOUNT.CANCEL.FINISH.TEXT" | translate}} </div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-6 pull-right text-right"><button class="btn btn-primary" (click)="viewAccounts()">{{
+                        "ITECBAN-ACCOUNT.CANCEL.FINISH.BUTTON" | translate}} </button></div>
+            </div>
+        </div>
+    </div>
+    <!--//////////////////////////////////////////////////////////////////////////-->
+    <div *ngIf="step === 'ERROR' &amp;&amp; simulation">
+        <app-loader *ngIf="loading"></app-loader>
+        <div class="col-xs-12 col-sm-6">
+            <div class="info-section">
+                <div class="info-section-title"><i class="glyphicon glyphicon-check info-section-title-icon"></i>{{
+                    "ITECBAN-ACCOUNT.CANCEL.ERROR.TEXT" | translate}} </div>
+                <div class="info-section-resume">(Tranqui, no hemos realizado la transferencia)</div>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-6 pull-right text-right"><button class="btn btn-primary" (click)="viewAccounts()">{{
+                        "ITECBAN-ACCOUNT.CANCEL.FINISH.BUTTON" | translate}} </button></div>
+            </div>
+        </div>
+    </div>
+</div>

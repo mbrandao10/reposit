@@ -1,0 +1,68 @@
+<app-loader *ngIf="loading"></app-loader>
+<!-- row section-app page-non-tabbed pb-1 -->
+<div class="row pt-1">
+    <div class="col-xs-12">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3">
+                        <div class="borde-superior"></div>
+                        <div class="text-section fs-12 text-uppercase text-os-semibold">{{ 'ITECBAN-FUNDS.DETAIL.EFFECTIVE-VALUE' | translate }}</div>
+                        <div class='fs-28 text-os-semibold text-no-warp'>{{ effectiveValue.amount | CurrencyPipe: effectiveValue.currency.code }}</div>
+                        <div class="mb-1 visible-xs"></div>
+                    </div>
+                    <div class="col-xs-6 col-sm-2">
+                        <div class="borde-superior"></div>
+                        <div class="text-section fs-12 text-uppercase text-os-semibold">{{ 'ITECBAN-FUNDS.DETAIL.LIQ-VALUE' | translate }}</div>
+                        <div class='fs-20 text-os-light mt-10 text-no-warp'>{{ liquidationValue.amount | CurrencyPipe: liquidationValue.currency.code }}</div>
+                    </div>
+                    <div class="col-xs-6 col-sm-2">
+                        <div class="borde-superior"></div>
+                        <div class="text-section fs-12 text-uppercase text-os-semibold">{{ 'ITECBAN-FUNDS.DETAIL.TOTAL-COST' | translate }}</div>
+                        <div class="fs-20 text-os-light mt-10 text-no-warp">{{ totalCost.amount | CurrencyPipe: totalCost.currency.code }}</div>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 pt-1 text-center">
+                        <a (click)="operateInversis()" *ngIf="listByFunds && listByFunds.length > 0">
+                            <span class="text-os-bold text-literal">{{'ITECBAN-FUNDS.DETAIL.BUTTON.OPERATE1' | translate}}</span><br>
+                            <span class="text-os-bold text-literal">{{'ITECBAN-FUNDS.DETAIL.BUTTON.OPERATE2' | translate}}</span>
+                        </a>
+                    </div>
+                    <osb-validator-profile>
+                        <div class="col-xs-6 col-sm-1 hidden-xs hidden-sm pt-1">
+                            <button class="btn btn-primary text-right" (click)="addFunds()">{{ 'ITECBAN-FUNDS.ADD.BUTTON.ADD' | translate }}</button>
+                        </div>
+                    </osb-validator-profile>
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead class="hidden-xs">
+                        <tr>
+                            <th>{{ 'ITECBAN-FUNDS.LIST.FUND' | translate }}</th>
+                            <th class="hidden-xs">{{ 'ITECBAN-FUNDS.LIST.DESCRIPTION' | translate }}</th>
+                            <th class="text-right">{{ 'ITECBAN-FUNDS.LIST.LIQ-VALUE' | translate }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="interactive" (click)="viewFund(item)" *ngFor="let item of listByFunds">
+                            <td>
+                                <span *ngIf="item.fund && item.fund.id" class="name"><strong>{{ item.fund.id }}</strong></span>
+                                <span *ngIf="item.empty" class="name">{{ 'ITECBAN-FUNDS.LIST.EMPTY' | translate }}</span><br />
+                                <span *ngIf="item.formats">{{ item.formats | formatAccountPipe: accountFormatView }}</span>
+                            </td>
+                            <td class="hidden-xs">
+                                <span *ngIf="item.fund && item.fund.name" class="name">{{ item.fund.name }} </span>
+                            </td>
+                            <td class="text-right">
+                                <span *ngIf="item.fund && item.fund.totalCost" class="text-no-warp"><strong>{{ item.fund.liquidationValue.amount | CurrencyPipe: item.fund.liquidationValue.currency.code }}</strong></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

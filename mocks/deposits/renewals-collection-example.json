@@ -1,0 +1,67 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "number": 1,
+      "startDate": "2014-10-30T00:00:00.00Z",
+      "expirationDate": "2015-10-30T00:00:00.00Z",
+      "amount": {
+        "amount": 3000,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "initialInterestRate": 0.5,
+      "finalInterestRate": 0.6,
+      "initialTae": 0.3,
+      "finalTae": 0.4
+    },
+    {
+      "number": 2,
+      "startDate": "2015-10-30T00:00:00.00Z",
+      "expirationDate": "2016-10-30T00:00:00.00Z",
+      "amount": {
+        "amount": 3000,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "initialInterestRate": 0.5,
+      "finalInterestRate": 0.6,
+      "initialTae": 0.3,
+      "finalTae": 0.4
+    },
+    {
+      "number": 3,
+      "startDate": "2016-10-30T00:00:00.00Z",
+      "expirationDate": "2020-10-30T00:00:00.00Z",
+      "amount": {
+        "amount": 3000,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "initialInterestRate": 0.5,
+      "finalInterestRate": 0.6,
+      "initialTae": 0.3,
+      "finalTae": 0.4
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+    "links": [
+      {
+        "rel": "next",
+        "href": "https://itecban.indra.es/deposits/149100011009408525/renewals?paginationKey=f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+        "method": "GET"
+      }
+    ]
+  }
+}

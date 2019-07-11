@@ -1,0 +1,8 @@
+{
+    "name": "onesait-api",
+    "version": "0.0.2",
+    "description": "modulo de onesait-api",
+    "main": "index.js",
+    "author": "Minsait",
+    "license": "ISC"
+}

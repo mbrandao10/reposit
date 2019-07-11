@@ -1,0 +1,40 @@
+<app-loader *ngIf="loading"></app-loader>
+
+<table class="table table-striped" *ngIf="locked">
+    <thead class="hidden-xs">
+        <tr>
+            <th>
+                {{'ITECBAN-ACCOUNT.LOCKS.DESCRIPTION' | translate}}
+            </th>
+            <th>
+                {{'ITECBAN-ACCOUNT.LOCKS.STARTDATE' | translate}}
+            </th>
+            <th>
+                {{'ITECBAN-ACCOUNT.LOCKS.ENDDATE' | translate}}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let item of locked; let i: index">
+            <tr *ngIf="item">
+                <td>
+                    <span class="hidden-xs">
+                        {{ item.reason }}
+                    </span>
+                    <span class="hidden-sm hidden-md hidden-lg text-os-semibold">
+                        {{ item.reason }}
+                    </span>
+                    <span class="visible-xs-block fs-12">
+                        {{ item.startDate | date: 'dd/MM/yyyy' }} - {{ item.endDate | date: 'dd/MM/yyyy' }}
+                    </span>
+                </td>
+                <td class="hidden-xs">
+                    {{ item.startDate | date: 'dd/MM/yyyy' }}
+                </td>
+                <td class="hidden-xs">
+                    {{ item.endDate | date: 'dd/MM/yyyy' }}
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

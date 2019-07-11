@@ -1,0 +1,66 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "990000",
+      "debtor": "Global Marketing",
+      "concept": "Factura 201705-JXT",
+      "amount": {
+        "amount": 12085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "creationDate": "2018-05-23T00:00:00.00Z",
+      "expirationDate": "2018-06-23T00:00:00.00Z",
+      "status": {
+        "id": "01",
+        "name": "Activa"
+      }
+    },
+    {
+      "id": "9900001",
+      "debtor": "Mediterranean Culture S.A",
+      "concept": "Factura  201705-PTC ",
+      "amount": {
+        "amount": 2085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "creationDate": "2018-05-23T00:00:00.00Z",
+      "expirationDate": "2018-06-23T00:00:00.00Z",
+      "status": {
+        "id": "03",
+        "name": "Fallida"
+      }
+    },
+    {
+      "id": "9900002",
+      "debtor": "Software Makers Corp",
+      "concept": "Factura 901705-AGO ",
+      "amount": {
+        "amount": 70085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "creationDate": "2018-05-23T00:00:00.00Z",
+      "expirationDate": "2018-06-23T00:00:00.00Z",
+      "status": {
+        "id": "02",
+        "name": "Denegada"
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

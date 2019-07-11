@@ -1,0 +1,16 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "confirming",
+      "name": "Productos de confirming"
+    },
+    {
+      "id": "factoring",
+      "name": "Productos de factoring"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<!-- VISTA MOVIL-->
+<ng-container *ngIf="isMobileResolution()">
+    <div class="modal-detail">
+        <osb-modal-page [isOpenModal]="true" (closeEvent)="close()">
+            <osb-modal-page-header></osb-modal-page-header>
+            <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+        </osb-modal-page>
+    </div>
+</ng-container>
+<!-- VISTA DESKTOP-->
+<ng-container *ngIf="!isMobileResolution()">
+    <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+</ng-container>
+<!-- CONTENIDO-->
+<ng-template #templateRef>
+    <div class="p-1">
+        <div class="col-sx-12 mt-1">
+            <span class="text-os-semibold mb-2">
+                {{ 'ITECBAN-PERSONS.SIGNATURES.DATE' | translate }}
+            </span>
+            <span>
+                {{ conversationId.creationDate | date: 'dd/MM/yyyy'}}
+            </span>
+        </div>
+        <div class="col-sx-12 mt-1">
+            <span class="text-os-semibold">
+                {{ 'ITECBAN-PERSONS.MY.SPACE.CATEGORYDOC' | translate }}
+            </span>
+            <span>
+                {{ conversationId.id}}
+            </span>
+        </div>
+        <div class="col-sx-12 mt-1">
+            <span class="text-os-semibold">
+                {{ 'ITECBAN-PERSONS.MY.SPACE.TYPEDOC' | translate }}
+            </span>
+            <span>
+                {{ conversationId.subject}}
+            </span>
+        </div>
+    </div>
+</ng-template>

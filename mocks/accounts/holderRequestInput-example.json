@@ -1,0 +1,10 @@
+{
+  "name":"Marina",
+  "surname":"Casas",
+  "secondSurname":"Vazquez",
+  "email":"theuser@theemail.org",
+  "legalDocument":{
+    "type":"01",
+    "id":"12345678Z"
+  }  
+}

@@ -1,0 +1,57 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="row mt-1" *ngIf="view ==='amortization-table'">
+    <div class="col-xs-12 p-dynamic">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="panel ">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <div class="borde-superior"></div>
+                                <div class=" fs-12 text-uppercase text-os-semibold">
+                                    {{'ONESAIT-LEASING.BALANCE-AVAILABLE' | translate }}
+                                </div>
+                                <div class='fs-28 text-os-semibold text-no-warp'>
+                                    {{contract?.availableAmount?.amount  | CurrencyPipe : contract?.availableAmount?.currency.code :false }}
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-3">
+                                <div class="borde-superior"></div>
+                                <div class=" fs-12 text-uppercase text-os-semibold">
+                                    {{'ONESAIT-LEASING.DISPOSED' | translate }}
+                                </div>
+                                <p class='fs-20 text-os-light text-no-warp'>
+                                    {{contract?.drawnAmount?.amount  | CurrencyPipe : contract?.drawnAmount?.currency.code :false }}
+                                </p>
+                            </div>
+
+                            <div class="col-xs-6 col-sm-3 col-md-3">
+                                <div class="borde-superior"></div>
+                                <div class=" fs-12 text-uppercase text-os-semibold">
+                                    {{'ONESAIT-LEASING.PENDING' | translate }}
+                                </div>
+                                <p class='fs-20 text-os-light text-no-warp'>
+                                    {{contract?.outstandingAmount?.amount  | CurrencyPipe : contract?.outstandingAmount?.currency.code :false }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row ">
+    <div class="col-xs-12 p-dynamic">
+        <osb-tabs [tabs]="pageConfig.tabs" [(view)]="view"></osb-tabs>
+        <div class="mt-1">
+            <div *ngIf="view ==='amortization-table'">
+                <osb-leasing-amortization [contractId]="contractId"></osb-leasing-amortization>
+            </div>
+            <div *ngIf="view ==='conditions'">
+                <osb-leasing-conditions [contractId]="contractId"></osb-leasing-conditions>
+            </div>
+        </div>
+    </div>
+</div>

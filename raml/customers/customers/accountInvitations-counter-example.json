@@ -1,0 +1,11 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data":
+    {
+      "numOfNewInvitations": 3,
+      "hasNewInvitations": true
+    }
+}

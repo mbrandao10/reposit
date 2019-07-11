@@ -1,0 +1,13 @@
+{
+    "accountId":"149100011009408525",
+    "legalDocument": {
+      "id":"12345678Z",
+      "type":"DNI"
+    },
+    "name": "Antonia Gomez Gonzales",
+    "bondType": "01",
+    "birthDate": "1991-03-03",
+    "email": "THEUSER@THEMAIL.ES",
+    "userNumber": "123",
+    "text":"Prueba de texto"
+}

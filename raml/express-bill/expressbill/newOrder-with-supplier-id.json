@@ -1,0 +1,13 @@
+{
+  "contractId": "988338",
+  "concept": "Factura 201705-JXT",
+  "amount": {
+    "amount": 12085.01,
+    "currency": "978"
+  },
+  "expirationDate": "2018-06-23",
+  "supplier": "C93328664",
+  "account": {
+    "id": "01800005330323202032"
+  }
+}

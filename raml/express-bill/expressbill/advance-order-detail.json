@@ -1,0 +1,53 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "id": "990000",
+    "debtor": "Global Marketing",
+    "concept": "Factura 201705-JXT",
+    "amount": {
+      "amount": 12085.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "creationDate": "2018-05-23T00:00:00.00Z",
+    "expirationDate": "2018-06-23T00:00:00.00Z",  
+    "status": {
+      "id": "01",
+      "name": "Activa"
+    },
+    "termInDays": 20,
+    "ivaAmount": {
+      "amount": 2054.467,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "interestAmount": {
+      "amount": 234.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "feeAmount": {
+      "amount": 100.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "totalAmount": {
+      "amount": 14473.497,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    }
+  }
+}

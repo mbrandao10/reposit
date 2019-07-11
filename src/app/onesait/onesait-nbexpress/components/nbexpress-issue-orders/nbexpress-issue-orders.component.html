@@ -1,0 +1,243 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<!-- Vista principal -->
+<ng-container *ngIf="view === 'INIT'">
+    <div class="panel ">
+        <div class="panel-body">
+            <osb-input-file (sendFile)="sendFileEvent($event)" (fileAdded)="fileAdded()" (fileDeleted)="fileDeleted()">
+                <div>
+                    <label>{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.REMITTANCE.FILE' | translate}}</label>
+                </div>
+                <div *ngIf="!showTextFiles">
+                    <a class="interactive" (click)="goToCompatibleFiles()" data-toggle="modal"
+                        data-target="#compatibleFilesModal">{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.REMITTANCE.COMPATIBLE'
+                                        | translate}}</a>
+                </div>
+            </osb-input-file>
+        </div>
+    </div>
+    <osb-nbexpress-issue-orders-individual [contractId]="contractId" (newIssueOrder)="getNewIssueOrder($event)">
+    </osb-nbexpress-issue-orders-individual>
+</ng-container>
+
+<!-- Pantalla de confirmacion de subida de archivo -->
+<ng-container *ngIf="view === 'CONFIRM'">
+    <div class="panel ">
+        <div class="panel-body">
+            <!-- <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6" *ngIf="fileResponse">
+                    <div class="mb-1 mt-1 info-text">
+                        <div>{{'HEADER.TITLE.EXPRESS' | translate }} - <b>{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.REMITTANCE.DETAIL.TITLE'
+                                            |
+                                            translate}}</b></div>
+                        <div>{{fileResponse.fileName}}</div>
+                    </div>
+                    <div class="box-form-info grayBackground-c">
+                        <div class="info-section-group">
+                            <div *ngIf="fileResponse.date" class="mb-1 mt-1">
+                                <div><b>{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.REMITTANCE.DETAIL.CREATION-DATE' |
+                                                    translate}}</b></div>
+                                <div>{{fileResponse.date | dateLocalized: 'shortDate'}}</div>
+                            </div>
+                            <div class="mb-1 mt-1 ">
+                                <div><b>{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.REMITTANCE.DETAIL.ISSUER' |
+                                                    translate}}</b></div>
+                                <div>[]</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="mb-1 mt-1 ">
+                                        <div><b>{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.REMITTANCE.DETAIL.NUM-ORDERS'
+                                                            | translate}}</b></div>
+                                        <div *ngIf="fileResponse.numOfItems">{{fileResponse.numOfItems}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="mb-1 mt-1 text-right ">
+                                        <div><b>{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.REMITTANCE.DETAIL.AMOUNT' |
+                                                            translate}}</b></div>
+                                        <div>[]</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <ng-container *ngTemplateOutlet="nbExpressIssueOrderResume"></ng-container>
+
+            <div class="col-xs-12 mt-1 text-center">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-2">
+                        <button class="btn btn-terciary" (click)="cancel()">{{ 'COMMON.CANCEL' | translate }}</button>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-sm-offset-3 col-md-offset-4">
+                        <button type="button" class="btn btn-secondary"
+                            (click)="back()">{{ 'COMMON.BACK' | translate }}</button>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 text-right">
+                        <button type="button" class="btn btn-primary"
+                            (click)="sendFileConfirm()">{{ 'COMMON.NEXT' | translate }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<!-- Token -->
+<ng-container *ngIf="view === 'TOKEN'">
+    <div class="panel">
+        <div class="panel-body">
+            <div class="row mb-1 mt-1">
+                <div class="col-xs-12 col-md-6 col-md-offset-3">
+                    <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+                </div>
+            </div>
+
+            <div class="row text-center mt-1">
+                <div class="col-xs-12 col-sm-3 col-md-2">
+                    <button class="btn btn-terciary" (click)="cancel()">{{ 'COMMON.CANCEL' | translate }}</button>
+                </div>
+                <div class="col-xs-12 col-sm-2 col-md-3 col-sm-offset-4 col-md-offset-4">
+                    <button type="button" class="btn btn-secondary"
+                        (click)="back()">{{ 'COMMON.BACK' | translate }}</button>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 text-right">
+                    <button class="btn btn-primary" [disabled]="!signatureEntity.tokenValid" (click)="tokenCompleted()">
+                        {{ 'COMMON.FINALIZE' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<!-- Mensaje archuvo subido confirmado -->
+<ng-container *ngIf="view === 'FINISH'">
+    <div class="panel ">
+        <div class="panel-body">
+            <osb-voucher-container #voucherContainer>
+                <osb-final-message *ngIf="option === 'sendFile'"
+                    text="{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.REMITTANCE.CORRECT-FILE' | translate}}">
+                </osb-final-message>
+                <osb-final-message *ngIf="option === 'issueOrder'"
+                    text="{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.REMITTANCE.CORRECT-ORDER' | translate}}">
+                </osb-final-message>
+
+                <ng-container *ngTemplateOutlet="nbExpressIssueOrderResume"></ng-container>
+
+                <div class="col-xs-12 mb-1 p-0" *ngIf="fileResponse">
+                    <osb-download-info [voucherContainer]="voucherContainer"
+                        text="{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.DOWNLOAD-RECEIPT' | translate}}">
+                    </osb-download-info>
+                </div>
+
+                <div class="row mt-1">
+                    <div class="col-xs-12">
+                        <button type="button" class="btn btn-secondary pull-left" (click)="goToAccounts()">{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.REMITTANCE.GO-ACCOUNTS'
+                                                | translate }}</button>
+                        <button type="button" class="btn btn-primary pull-right" (click)="back()"><span
+                                *ngIf="option === 'sendFile'">{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.REMITTANCE.ANOTHER-FILE'
+                                                | translate }}</span><span *ngIf="option === 'issueOrder'">{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.INDIVIDUAL.ANOTHER-ORDER'
+                                                | translate }}</span></button>
+                    </div>
+                </div>
+            </osb-voucher-container>
+        </div>
+    </div>
+</ng-container>
+
+<ng-template #nbExpressIssueOrderResume>
+    <div class="col-xs-12 col-sm-6 col-md-6" *ngIf="fileResponse">
+        <div class=" mb-1 mt-1 info-text">
+            <div>{{'HEADER.TITLE.EXPRESS' | translate }} - <b>{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.REMITTANCE.DETAIL.TITLE'
+                                    | translate}}</b></div>
+            <!-- <div>{{file.name}}</div> -->
+        </div>
+        <div class="box-form-info grayBackground-c">
+            <div class="info-section-group">
+                <div OsbVoucherKeyValue *ngIf="fileResponse.date" class="mb-1 mt-1 ">
+                    <div><b OsbVoucherKey>{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.REMITTANCE.DETAIL.CREATION-DATE'
+                                    | translate }}</b>
+                    </div>
+                    <div OsbVoucherValue>{{fileResponse.date | date: 'dd/MM/yyyy'}}</div>
+                </div>
+                <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+                    <div><b OsbVoucherKey>{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.REMITTANCE.DETAIL.NAME'
+                                    | translate
+                                    }}</b></div>
+                    <div OsbVoucherValue>{{file.name}}</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+                            <div><b OsbVoucherKey>{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.REMITTANCE.DETAIL.NUM-ORDERS'
+                                            | translate }}</b></div>
+                            <div OsbVoucherValue *ngIf="fileResponse.numOfItems">
+                                {{fileResponse.numOfItems}}</div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-xs-6">
+                        <div OsbVoucherKeyValue class="mb-1 mt-1 text-right ">
+                            <div><b OsbVoucherKey>{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.REMITTANCE.DETAIL.AMOUNT'
+                                            |
+                                            translate }}</b></div>
+                            <div OsbVoucherValue>[]</div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+
+<!-- Modal archivos compatibles -->
+<div class="modal fade" id="compatibleFilesModal" *ngIf="modal=='compatibleFiles'" role="dialog">
+    <div class="modal-dialog modal-long">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" (click)="goBackFromModal()">&times;</button>
+                <div class="modal-title">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.REMITTANCE.COMPATIBLE' | translate}}</div>
+            </div>
+            <div class="modal-body">
+                <span>[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.
+                    Proin
+                    gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor.
+                    Cum
+                    sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam
+                    fermentum,
+                    nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.]</span>
+                <br><br>
+                <table class="table">
+                    <tr>
+                        <th>{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.COMPATIBLE.NAME' | translate}}</th>
+                        <th>{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.COMPATIBLE.EXTENSION' | translate}}</th>
+                    </tr>
+                    <tr>
+                        <td>[Lorem ipsum]</td>
+                        <td>[xxx]</td>
+                    </tr>
+                    <tr>
+                        <td>[Lorem ipsum]</td>
+                        <td>[xxx]</td>
+                    </tr>
+                    <tr>
+                        <td>[Lorem ipsum]</td>
+                        <td>[xxx]</td>
+                    </tr>
+                    <tr>
+                        <td>[Lorem ipsum]</td>
+                        <td>[xxx]</td>
+                    </tr>
+                    <tr>
+                        <td>[Lorem ipsum]</td>
+                        <td>[xxx]</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

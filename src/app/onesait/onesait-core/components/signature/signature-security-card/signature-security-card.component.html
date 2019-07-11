@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form #formToken="ngForm" role="form" autocomplete="off">
+            <h4 class="text-center mb-2">
+                {{ 'ONESAIT-CORE.SIGNATURES.SECURITY-CARD.TEXT' | translate }}
+            </h4>
+            <div class="text-center mb-1">
+                <div class="form-group d-inline-block ml-1" *ngFor="let token of tokensRequired; let ind = index;">
+                    <label for="labelCordenada" class="label-cordenada"> {{ token.id }}</label>
+                    <input id="{{'labelCordenada' + ind }}" class="text-center input-cordenada form-control form-control-amim token" [(ngModel)]="token.value" (ngModelChange)="tokenModified(ind);" name="token" type="password" [minlength]="tokenLength" [maxlength]="tokenLength"
+                        required="required" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="text-center text-os-bold ml-1">
+            <a (click)="viewLink()" class="text-blue text-os-bold">
+                {{ 'ITECBAN-COMMON.COMPONENT.TOKEN.LOCATE.CODE' | translate }}
+            </a>
+        </div>
+    </div>
+</div>

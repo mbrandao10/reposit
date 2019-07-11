@@ -1,0 +1,28 @@
+<table class="table table-striped">
+    <div class="text-os-semibold mb-1">{{'ITECBAN-PERSONS.SIGNATURES.REQUIRED-SIGNATURES' | translate}}: {{requiredSignatures}} </div>
+    <tbody *ngIf="pendingSigners">
+        <ng-container *ngFor="let pendingSigner of pendingSigners">
+            <tr>
+                <td>
+                    {{ pendingSigner.name }}
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
+
+<table class="table table-striped mt-1">
+    <div class="text-os-semibold mb-1">{{'ITECBAN-PERSONS.SIGNATURES.COMPLETED-SIGNERS' | translate}}: {{completedCount}}</div>
+    <tbody *ngIf="completedSigners">
+        <ng-container *ngFor="let completedSigner of completedSigners">
+            <tr>
+                <td>
+                    {{ completedSigner.name }}
+                </td>
+                <td>
+                    {{ completedSigner.date | date: 'dd/MM/yyyy' }}
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

@@ -1,0 +1,15 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="acount-info" *ngIf="recivedCard">
+    <ul class="list" *ngIf="recivedCard">
+        <li *ngIf="pin">
+            <div class="col-xs-6 col-sm-4 text-left">{{'ITECBAN-DEBITCARD.PIN' | translate}}</div>
+            <div class="col-xs-6 col-sm-6 text-right mb-1">
+                <input class="bg-white" type="text" value={{showpin}} disabled=true>
+                <!-- <i class="icon icoonesait icon-ok" (click)="change()"> </i> -->
+            </div>
+            <div class="col-xs-12 col-sm-2">
+                <button class="btn btn-primary" (click)="change()">{{txt}}</button>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,27 @@
+{
+  "contractId": "988338",
+  "concept": "Factura 201705-JXT",
+  "amount": {
+    "amount": 12085.01,
+    "currency": "978"
+  },
+  "expirationDate": "2018-06-23",
+  "supplier": {
+    "name": "Chick & Fashion S.A",
+    "legalDocument": "B53033700",
+    "accountId": "PT11987054633812631767857",
+    "phoneNumber": "212654406436",
+    "address": {
+      "streetType": "RUA",
+      "streetName": "Tradição",
+      "streetNumber": "69",
+      "postCode": "2950-279",
+      "city": "Lisboa",
+      "province": "Lisboa",
+      "country": "Portugal"
+    }
+  },
+  "account": {
+    "id": "01800005330323202032"
+  }
+}

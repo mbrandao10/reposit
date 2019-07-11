@@ -1,0 +1,24 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "NC",
+      "name": "No Contratación"
+    },
+    {
+      "id": "ZB",
+      "name": "Zero Balancing"
+    },
+    {
+      "id": "TW",
+      "name": "Two way sweeping"
+    },
+    {
+      "id": "CB",
+      "name": "Cash Balancing"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+<div class="row">
+  <!-- CABECERA DE LAS TABS -->
+  <div class="col-xs-12 p-dynamic">
+    <osb-tabs [tabs]="pageConfig.tabs" [(view)]="view"></osb-tabs>
+  </div>
+
+  <!-- DETALLES DE LAS TABS -->
+  <div class="col-xs-12 pt-1 page-tabbed pb-1 p-dynamic">
+    <div class="panel">
+      <div class="panel-body">
+        <osb-change-password-page *ngIf="view==='change-password'"></osb-change-password-page>
+        <osb-consents *ngIf="view==='consent'"></osb-consents>
+      </div>
+    </div>
+  </div>
+</div>

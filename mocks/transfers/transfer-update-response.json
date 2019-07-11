@@ -1,0 +1,46 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+			"orderer" : {
+        "fromAccount":{
+          "id":"1491000127322000001268",
+          "type": {
+            "id": "cbu",
+            "name": "cbu"
+          }
+        }
+			},
+			"beneficiary" : {
+				"toAccount": {
+					"type": "ccc",
+					"id": "1491 0001 27 3000001268"
+				},
+				"description" : "ALVARO MUNOZ AVILA",
+				"swift" : "ESPCESMMXXX",
+        "legalDocument":{
+          "id":"12345678Z",
+          "type":{
+            "id":"01",
+            "name":"DNI"
+          }
+        }
+			},
+			"amount": {
+				"amount": 60.00,
+				"currency": {
+					"id": "EUR",
+					"code": "978"
+				}
+			},
+			"reason" : "Arreglo furgoneta",
+			"operationType" : "TRNE",
+      "transferType" : "03",
+			"execution" : "I",
+			"firstExecutionDate" : "2017-12-31",
+			"urgent" : false,
+			"cancellable" : false
+	}
+}

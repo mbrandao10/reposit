@@ -1,0 +1,20 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "iban",
+      "name": "IBAN"
+    },
+    {
+      "id": "ccc",
+      "name": "CC"
+    },
+    {
+      "id": "alias",
+      "name": "Alias Argentino"
+    }
+  ]
+}

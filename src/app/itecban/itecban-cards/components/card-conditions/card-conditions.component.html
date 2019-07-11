@@ -1,0 +1,75 @@
+<div class="panel-body">
+    <!-- <div class="row"> -->
+    <div class="col-xs-12 mt-1 mb-1">
+        <b>
+                {{ 'ITECBAN-ACCOUNT.ADD.CONTRACT.CONDITIONS' | translate }}
+            </b>
+    </div>
+    <div class="col-xs-12 col-sm-7">
+        <div class="mt-1 mb-1 text-gray-dark">
+            {{ 'ITECBAN-ACCOUNT.ADD.CONTRACT.ONE' | translate }}
+        </div>
+        <div class="mt-1 mb-1 text-gray-dark">
+            {{ 'ITECBAN-ACCOUNT.ADD.CONTRACT.TWO' | translate }}
+        </div>
+        <div class="mt-1 mb-1 text-gray-dark">
+            {{ 'ITECBAN-ACCOUNT.ADD.CONTRACT.THREE' | translate }}
+        </div>
+        <div class="mt-1 mb-1 text-gray-dark">
+            {{ 'ITECBAN-ACCOUNT.ADD.CONTRACT.FOUR' | translate }}
+        </div>
+        <div class="mt-1 mb-1 text-gray-dark">
+            {{ 'ITECBAN-ACCOUNT.ADD.CONTRACT.FIVE' | translate }}
+        </div>
+    </div>
+    <app-conditions [conditions]="conditions" (read)="returnOperation($event)"></app-conditions>
+    <div class="col-xs-12 mt-1 mb-1">
+        <div class="checkbox">
+            <label>
+                        <!-- De esta forma se utilizaria la ventana modal -->
+                        <!-- <input [checked]="acceptTerms" type="checkbox" name="acceptConditions" required="required" (click)="goTermsCheck()" data-toggle="modal" data-target="#termAndConditionsModal"/> -->
+                        <input [checked]="checkControl" [disabled]="!activeBoton" type="checkbox" name="acceptConditions" required="required" (click)="controlCheck()" />
+                        <i class="icon-check"></i>
+                        <span>
+                            <a class=" text-gray-dark underline interactive" data-toggle="modal" data-target="#termAndConditionsModal" *ngIf="!activeBoton">
+                                {{ 'ITECBAN-ACCOUNT.ADD.READ.ACCEPTED' | translate }}
+                            </a>
+                            <a class=" text-gray-dark underline interactive"  (click)="controlCheck()" data-toggle="modal" data-target="#termAndConditionsModal"  *ngIf="activeBoton">
+                                {{ 'ITECBAN-ACCOUNT.ADD.READ.ACCEPTED' | translate }}
+                            </a>
+                        </span>
+                    </label>
+        </div>
+    </div>
+    <div class="col-xs-12 mt-2">
+        <div class="row">
+            <div class="col-xs-6">
+                <button class="btn btn-terciary" (click)="cancel()">
+                            {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CANCEL' | translate }}
+                        </button>
+            </div>
+            <div class="col-xs-6 text-right">
+                <div class="row">
+                    <div class="col-xs-6 hidden-xs">
+                        <!-- <button class="btn btn-secondary" (click)="step = 'FIRST'"> -->
+                        <button class="btn btn-secondary" (click)="back()">
+                            {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.BEHIND' | translate }}
+                        </button>
+                    </div>
+                    <!-- De esta forma el boton es visible pero no accionable -->
+                    <!-- <div class="col-xs-6" *ngIf="!checkControl">
+                        <button class="btn btn-primary disabled"  >
+                            {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CONFIRM' | translate }}
+                        </button>
+                    </div> -->
+                    <div class="col-xs-12 col-sm-6" *ngIf="checkControl">
+                        <button class="btn btn-primary" [disabled]="!checkControl" (click)="accept()">
+                            {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CONFIRM' | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+</div>

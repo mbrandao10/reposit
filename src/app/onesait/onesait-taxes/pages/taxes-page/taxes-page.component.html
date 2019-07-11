@@ -1,0 +1,43 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<div class="row">
+    <div class="col-xs-12 p-dynamic">
+        <osb-tabs [tabs]="pageConfig.tabs" [(view)]="view"></osb-tabs>
+    </div>
+</div>
+
+<div class="row section-app-content page-tabbed pb-1 mt-1 p-dynamic min-h-date">
+    <div class="panel" *ngIf="view ==='payments-returns'">
+        <div class="panel-body">
+            <div class="row">
+                <div *ngIf="showHeader" class="col-xs-12 col-sm-6 col-md-6 col-lg-">
+                    <label class="form-custom-label" for="orderNum">{{'ONESAIT-TAXES.PAYMENTS-RETURNS.SELECT-TYPE' | translate}}</label>
+                    <select class="form-control form-control-amim" name="tax" [formControl]="taxForm">
+                        <option *ngFor="let tax of taxes" [ngValue]="tax">{{ tax.name }}</option>
+                    </select>
+                </div>
+
+                <div class="col-xs-12">
+                    <osb-tax-social-security *ngIf="taxForm?.value.id === 'TSS'" [taxSelectedCombo]="taxForm?.value" [accounts]="accounts" [accountInfo]="accountInfo"
+                        (showHeader)="getShowHeader($event)" [defaultCurrency]="defaultCurrency" scroll-collapse-emitter></osb-tax-social-security>
+                    <osb-tax-rent *ngIf="taxForm?.value.id === 'REN'" [taxSelectedCombo]="taxForm?.value" [accounts]="accounts" [accountInfo]="accountInfo"
+                        (showHeader)="getShowHeader($event)" [defaultCurrency]="defaultCurrency" scroll-collapse-emitter></osb-tax-rent>
+                    <osb-tax-iva *ngIf="taxForm?.value.id === 'IVA'" [taxSelectedCombo]="taxForm?.value" [accounts]="accounts" [accountInfo]="accountInfo"
+                        (showHeader)="getShowHeader($event)" [defaultCurrency]="defaultCurrency" scroll-collapse-emitter></osb-tax-iva>
+                    <osb-tax-societies *ngIf="taxForm?.value.id === 'SOC'" [taxSelectedCombo]="taxForm?.value" [accounts]="accounts" [accountInfo]="accountInfo"
+                        (showHeader)="getShowHeader($event)" [defaultCurrency]="defaultCurrency" scroll-collapse-emitter></osb-tax-societies>
+                    <osb-tax-notification-fees *ngIf="taxForm?.value.id === 'NTF'" [taxSelectedCombo]="taxForm?.value" [accounts]="accounts"
+                        [accountInfo]="accountInfo" (showHeader)="getShowHeader($event)" [defaultCurrency]="defaultCurrency"
+                        scroll-collapse-emitter></osb-tax-notification-fees>
+                    <osb-tax-others *ngIf="taxForm?.value.id === 'OTH'" [taxSelectedCombo]="taxForm?.value" [accounts]="accounts" [accountInfo]="accountInfo"
+                        (showHeader)="getShowHeader($event)" [defaultCurrency]="defaultCurrency" scroll-collapse-emitter></osb-tax-others>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel" *ngIf="view ==='inquirys'">
+        <div class="panel-body">
+            <osb-tax-inquiry></osb-tax-inquiry>
+        </div>
+    </div>
+</div>

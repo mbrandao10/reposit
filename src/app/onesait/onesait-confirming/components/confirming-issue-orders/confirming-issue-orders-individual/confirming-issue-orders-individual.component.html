@@ -1,0 +1,155 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<form [formGroup]="newOrderForm" id="form">
+  <div class="col-xs-12">
+    {{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.ISSUE-INFO' | translate}} <a  (click)="goToAddSupplier()" data-toggle="modal"
+    data-target="#compatibleAddSupplierModal">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.ISSUE-LINK' | translate}}</a>
+  </div>
+
+  
+
+  <!-- <fieldset class="fielset-custom">
+    <div class="form-group">
+      <div class="row">
+        
+        <div class="col-xs-12 col-md-3">
+            <label class="form-custom-label" for="contractId">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.FORM.CONTRACT' | translate}}</label>
+            <div class="form-select-custom">
+                <select class="form-control form-control-amim" name="contractId" formControlName="contractId">
+                    <option *ngFor="let contract of contracts" [value]="contract.id">{{contract.productData.description}}</option>
+                </select>
+            </div>
+        </div>
+       
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <label for="account">{{'ONESAIT-CONFIRMING.ACCOUNT'| translate}}</label>
+              <osb-input-validator [formCtrl]="newOrderForm.get('account')">
+                <select class="form-control form-control-amim" name="account" formControlName="account">
+                  <option *ngFor="let account of accounts" [ngValue]="account">
+                    {{account.formats | formatAccountPipe: accountFormatView}}</option>
+                </select>
+              </osb-input-validator>
+            </div>
+            <div class="col-xs-12 col-md-6 mt-1">
+              <label for="concept">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.FORM.CONCEPT'
+            | translate}}</label>
+              <osb-input-validator [formCtrl]="newOrderForm.get('concept')">
+                <input class="form-control" type="text" name="concept" formControlName="concept" />
+              </osb-input-validator>
+            </div>
+
+            <div class="col-xs-6 col-md-3 mt-1">
+              <div class="col-xs-6 col-sm-9 p-0">
+                <label for="amount">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.FORM.AMOUNT'
+                      | translate}}</label>
+                <osb-input-validator [formCtrl]="newOrderForm.get('amount')" [opts]="inputValidatorOptions">
+                  <input class="form-control" type="text" name="amount" formControlName="amount"
+                    (blur)="applyFormatInput()" />
+                </osb-input-validator>
+              </div>
+              <div class="col-xs-6 col-sm-3 mt-2"><span>{{defaultCurrency.sign}}</span></div>
+            </div>
+            <div class="col-xs-6 col-md-3 pl-0 mt-1">
+              <label for="expirationDate">
+                {{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.FORM.EXPIRATION' | translate}}
+              </label>
+              <div class="input-calendar-custom">
+                <osb-input-validator [formCtrl]="newOrderForm.get('expirationDate')">
+                  <input autocomplete="off" class="form-control" name="expirationDate" formControlName="expirationDate"
+                    #dp="bsDatepicker" bsDatepicker [minDate]="minDate">
+                  <i class="icon icononesait icon-calendar" (click)="dp.show()"></i>
+                </osb-input-validator>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-12">
+          <div class="row">
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="fielset-custom">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <div class="row">
+            <label class="col-xs-12 col-sm-3" for="supplier">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.FORM.SUPPLIER'
+            | translate}}</label>
+            <a class="col-xs-6 mb-1" (click)="goToAddSupplier()" data-toggle="modal"
+              data-target="#compatibleAddSupplierModal">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.ADD'
+            | translate}}</a>
+          </div>
+          <div class="row">
+            <label class="col-xs-12" for="supplier">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.FORM.SUPPLIER'
+              | translate}}</label>
+            <osb-input-validator class="col-xs-6" [formCtrl]="newOrderForm.get('supplier')">
+              <input class="form-control" type="text" name="supplier" formControlName="supplier">
+            </osb-input-validator>
+            <a class="col-xs-6 mb-1" (click)="goToAddSupplier()" data-toggle="modal"
+              data-target="#compatibleAddSupplierModal">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.ADD'
+            | translate}}</a>
+          </div>
+          <select class="form-control form-control-amim" name="supplier" formControlName="supplier">
+            <option *ngFor="let supplier of suppliers" [value]="supplier.id">{{supplier.name}}</option>
+          </select> -->
+          <!-- <app-autocomplete *ngIf="!newSupplier" [items]="suppliers" [autocompleteOptions]="autocompleteOptions"
+            (valueSelected)="getValueSelectedSupplier($event)">
+          </app-autocomplete>
+
+          <div *ngIf="newSupplier">
+            <input disabled class="col-xs-12 col-sm-12 col-md-11" type="text" name="supplier"
+              value={{newSupplier.name}}>
+            <button class="close" type="button" (click)="deleteSupplier()">&times;</button>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <label for="info">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.NOTFOUND'
+            | translate}}</label>
+          <a class="col-xs-12 mb-1" (click)="goToAddSupplier()" data-toggle="modal"
+            data-target="#compatibleAddSupplierModal">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.ADD'
+            | translate}}</a>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button [disabled]="!newOrderForm.valid" class="btn btn-primary pull-right" type="button"
+            (click)="issueOrder()">
+            <span>{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.FORM.ISSUE'| translate}}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </fieldset> -->
+</form>
+
+
+<osb-modal-page #modalPage>
+  <osb-modal-page-header [title]="'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.FORM.ADD'">
+  </osb-modal-page-header>
+  <osb-confirming-issue-orders-add-supplier (isSavedSupplier)="getSupplierFromForm($event)">
+  </osb-confirming-issue-orders-add-supplier>
+</osb-modal-page>
+
+<div class="hidden-xs" *ngIf="modal=='addSupplier'">
+  <div class="modal " id="compatibleAddSupplierModal" role="dialog">
+    <div class="modal-dialog modal-long modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" type="button" data-dismiss="modal">&times;</button>
+          <!-- <div class="modal-title">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.FORM.ADD' | translate}}</div> -->
+        </div>
+        <div class="modal-body">
+          <osb-confirming-issue-orders-add-supplier (isSavedSupplier)="getSupplierFromForm($event)">
+          </osb-confirming-issue-orders-add-supplier>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

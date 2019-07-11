@@ -1,0 +1,30 @@
+<div class="file-container">
+  
+  <div class="col-xs-12 col-md-6">
+    <ng-content>
+
+    </ng-content>
+  </div>
+
+
+
+  <div class="row" *ngIf="!file">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="text-right">
+        <label class="btn btn-primary" for="file-input" disabled *ngIf="disableButton">{{ 'ONESAIT-CORE.INPUT-FILE.ADD' | translate}}</label>
+        <label class="btn btn-primary" for="file-input" *ngIf="!disableButton">{{ 'ONESAIT-CORE.INPUT-FILE.ADD' | translate}}</label>
+        <input type="file" id="file-input" (change)="selectFile($event)" style="display:none"  [disabled]="disableButton">
+      </div>
+    </div>
+  </div>
+
+  <div class="row pb-1 borde-inferior-gray-dark" *ngIf="file">
+    <div class="col-xs-8 col-sm-8 col-md-8 pt-1">
+      <span>{{file.name}}</span>
+      <a class="pl-2 text-os-bold" (click)="removeFile()">{{ 'ONESAIT-CORE.INPUT-FILE.REMOVE' | translate}}</a>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 text-right">
+      <button class="btn btn-primary" (click)="send()">{{ 'ONESAIT-CORE.INPUT-FILE.SEND' | translate}}</button>
+    </div>
+  </div>
+</div>

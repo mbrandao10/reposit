@@ -1,0 +1,26 @@
+<div class="visible-xs">
+    <osb-menu-mobile [userMenuConfig]="userMenuConfig" [menuConfig]="menuConfig" ></osb-menu-mobile>
+</div>
+<div class="container-fluid bg-gray-content-background h-100">
+    <osb-modal-confirm></osb-modal-confirm>
+    <osb-info-modal></osb-info-modal>
+    <div class="row">
+       
+        <div class="main-menu col-md-2 hidden-xs" [hidden]="!showMenu">
+            <osb-menu [menuConfig]="menuConfig"></osb-menu>
+        </div>
+        <div class="col-xs-12 col-md-10" >
+            <osb-header></osb-header>
+
+            <div class="row" OsbCloseMenu>
+                <div class="col-xs-12 col-sm-11">
+                    <osb-info-header></osb-info-header>
+                    <router-outlet></router-outlet>
+                </div>
+                <div class="hidden-xs col-sm-1">
+                    <osb-user-menu [userMenuConfig]="userMenuConfig"></osb-user-menu>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

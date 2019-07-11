@@ -1,0 +1,56 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "personId": "00001",
+      "name": "Juan Pérez Lopez",
+      "participation":{
+        "order": 1,
+        "participantType": {
+          "id": "01",
+          "name": "Titular",
+          "href": "https://itecban.indra.es/masterTables/participantTypes"
+        }
+      }
+    },
+    {
+      "personId": "00002",
+      "name": "María Flores Gómez",
+      "participation":{
+        "order": 2,
+        "participantType": {
+          "id": "06",
+          "name": "Autorizado",
+          "href": "https://itecban.indra.es/masterTables/participantTypes"
+        }
+      }
+    },
+    {
+      "personId": "00003",
+      "name": "Juana Martínez Sánchez",
+      "participation":{
+        "order": 3,
+        "participantType": {
+          "id": "06",
+          "name": "Autorizado",
+          "href": "https://itecban.indra.es/masterTables/participantTypes"
+        }
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages":true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+    "links": [
+      {
+        "rel": "next",
+        "href": "https://itecban.indra.es/accounts/149100011009408525/interveners?paginationKey=f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+         "method": "GET"
+      }
+    ]
+
+  }
+}

@@ -1,0 +1,73 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="acount-info" *ngIf="recivedCard">
+    <ul class="list" *ngIf="typeCard">
+        <li *ngIf="typeCard.holder">
+            <div class="name text-left">{{'ITECBAN-DEBITCARDS.OWNER' | translate}}</div>
+            <div class="value text-right">{{ typeCard.holder }}</div>
+        </li>
+        <li *ngIf="typeCard.openingDate">
+            <div class="name text-left">{{'ITECBAN-DEBITCARD.LASTUPDATE' | translate}}</div>
+            <div class="value text-right">{{ typeCard.openingDate | date: 'dd/MM/yyyy' }}</div>
+        </li>
+        <li *ngIf="typeCard.id">
+            <div class="name text-left">{{'ITECBAN-DEBITCARD.NUMBER' | translate}}</div>
+            <!-- Tenemos -->
+            <div class="value text-right">{{ typeCard.id | formatCardNumberHidden }}</div>
+        </li>
+        <li>
+            <div class="name text-left">{{'ITECBAN-DEBITCARDS.ASSOCIATED.ACCOUNT' | translate}}</div>
+            <div class="value text-right" *ngIf="typeCard.account && typeCard.account.formats">{{ typeCard.account.formats | formatAccountPipe: accountFormatView:ismobileResolution }}</div>
+        </li>
+        <li *ngIf="typeCard.productData && typeCard.productData.type">
+            <div class="name text-left">{{'ITECBAN-DEBITCARDS.TYPE' | translate }}</div>
+            <!-- Tenemos -->
+            <div class="value text-right" *ngIf="typeCard.productData && typeCard.productData.type">{{typeCard.productData.type.name}}</div>
+        </li>
+        <li *ngIf="typeCard.productData && typeCard.productData.subtype">
+            <div class="name text-left">{{'ITECBAN-DEBITCARD.NAME' | translate}}</div>
+            <!-- Tenemos -->
+            <div class="value text-right" *ngIf="typeCard.productData && typeCard.productData.subtype">{{ typeCard.productData.subtype.name }}</div>
+        </li>
+        <li *ngIf="typeCard.status && typeCard.status.name">
+            <div class="name text-left">{{'ITECBAN-CREDITCARD.STATEMENTS.NUMBER.STATUS' | translate}}</div>
+            <!-- Tenemos -->
+            <div class="value text-right">{{typeCard.status.name}}</div>
+        </li>
+        <li *ngIf="typeCard.paymentType && typeCard.paymentType.name">
+            <div class="name text-left">{{'ITECBAN-DEBITCARD.PAYMENTTYPE' | translate}}</div>
+            <!-- Tenemos -->
+            <div class="value text-right" *ngIf="typeCard.paymentType && typeCard.paymentType.name">{{ typeCard.paymentType.name }}</div>
+        </li>
+        <li *ngIf="typeCard.paymentType && typeCard.paymentType.name && recivedCard.productData.type.id === 'D'">
+            <div class="name text-left">{{'ITECBAN-CREDITCARD.PAYMENT.PAY' | translate}}</div>
+            <div class="value text-right">{{ typeCard.paymentType.name }}</div>
+        </li>
+        <li *ngIf="typeCard.settlement && typeCard.settlement.settlementGroup && recivedCard.settlement.settlementGroup.name">
+            <div class="name text-left">{{'ITECBAN-CARDS.WAYPAY' | translate }}</div>
+            <div class="value text-right" *ngIf="typeCard.settlement && recivedCard.settlement.settlementGroup.name"> {{typeCard.settlement.settlementGroup.name}}
+                <span *ngIf="typeCard.settlement && typeCard.settlement.settlementAmount">{{ typeCard.settlement.settlementAmount | CurrencyPipe: '978' }}</span>
+                <span *ngIf="typeCard.settlement && typeCard.settlement.settlementPercentage">{{ typeCard.settlement.settlementPercentage }} %</span></div>
+        </li>
+        <li *ngIf="typeCard.outstandingBalance && typeCard.outstandingBalance.amount && typeCard.outstandingBalance && typeCard.outstandingBalance.type && recivedCard.productData.type.id === 'D'">
+            <div class="name text-left">{{'ITECBAN-CREDITCARD.PAYMENT.PERCENT' | translate}}</div>
+            <div class="value text-right text-no-warp">{{ typeCard.outstandingBalance.amount.amount | CurrencyPipe: typeCard.currency.code}}</div>
+        </li>
+        <li *ngIf="typeCard.currentMonthPurchaseOutstandingBalance && typeCard.currentMonthPurchaseOutstandingBalance.amount && recivedCard.productData.type.id === 'D'">
+            <div class="name text-left">{{'ITECBAN-CREDITCARD.PAYMENT.LIMIT' | translate}}</div>
+            <div class="value text-right text-no-warp">{{ typeCard.currentMonthPurchaseOutstandingBalance.amount | CurrencyPipe: typeCard.currency.code}}</div>
+        </li>
+        <li *ngIf="typeCard.dailyCashLimit && typeCard.dailyCashLimit.amount">
+            <div class="name text-left">{{'ITECBAN-CREDITCARD.PAYMENT.ATM' | translate}}</div>
+            <div class="value text-right text-no-warp">{{ typeCard.dailyCashLimit.amount | CurrencyPipe: typeCard.dailyCashLimit.currency.code}}</div>
+        </li>
+        <li *ngIf="typeCard.dailyPurchaseLimit && typeCard.dailyPurchaseLimit.amount">
+            <div class="name text-left">{{'ITECBAN-CREDITCARDS.LIMITS.PURCHASE' | translate}}</div>
+            <div class="value text-right text-no-warp">{{ typeCard.dailyPurchaseLimit.amount | CurrencyPipe: typeCard.dailyPurchaseLimit.currency.code}}</div>
+        </li>
+        <li *ngIf="typeCard.creditLimit && typeCard.creditLimit.amount">
+            <div class="name text-left">{{'ITECBAN-CREDITCARDS.LIMITS.CREDITLIMIT' | translate}}</div>
+            <div class="value text-right text-no-warp">{{ typeCard.creditLimit.amount | CurrencyPipe: typeCard.creditLimit.currency.code}}</div>
+        </li>
+
+    </ul>
+</div>

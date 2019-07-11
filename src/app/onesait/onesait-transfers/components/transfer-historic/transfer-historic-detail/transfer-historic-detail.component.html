@@ -1,0 +1,123 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<div class="modal-detail" *ngIf="transfer">
+
+    <ng-container *ngIf="isMobileResolution()">
+        <osb-modal-page [isOpenModal]="true" (closeEvent)="close()">
+            <osb-modal-page-header [title]="'ONESAIT-TRANSFERS.HISTORIC.DETAIL.TITLE'"></osb-modal-page-header>
+            <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+        </osb-modal-page>
+    </ng-container>
+
+    <ng-container *ngIf="!isMobileResolution()">
+        <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+    </ng-container>
+
+
+    <ng-template #templateRef>
+        <div class="p-1">
+            <div class="mb-1" *ngIf="transfer.date">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.DATE' | translate}}:
+                </span>
+                <span>
+                    {{ transfer.date | date: 'dd/MM/yyyy' }}
+                </span>
+                <div *ngIf="!isMobileResolution()" class="pull-right icon icononesait icon-close text-blue fs-28" (click)="close()"></div>
+            </div>
+            <div class="mb-1" *ngIf="transfer.date">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.OPERATION-DATE' | translate}}:
+                </span>
+                <span>
+                    {{ transfer.operationDate | date: 'dd/MM/yyyy' }}
+                </span>
+            </div>
+            <div class="mb-1" *ngIf="transfer.reason">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.CONCEPT' | translate}}:
+                </span>
+                <span class="test-no-warp">
+                    {{ transfer.reason}}
+                </span>
+            </div>
+            <div class="mb-1" *ngIf="transfer.beneficiary">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.TOACCOUNT' | translate}}:
+                </span>
+                <span class="test-no-warp">
+                    {{ transfer.beneficiary.toAccount.formats | formatAccountPipe:accountFormatView:isMobileResolution() }}
+                </span>
+            </div>
+            <div class="mb-1" *ngIf="transfer.amount">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.AMOUNT' | translate}}:
+                </span>
+                <span class="text-no-warp">
+                    {{ transfer.amount.amount | CurrencyPipe: transfer.amount.currency.code }}
+                </span>
+            </div>
+            <div class="mb-1" *ngIf="transfer.orderer">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.ORDERER' | translate}}:
+                </span>
+                <span class="text-no-warp">
+                    {{ transfer.orderer.description }}
+                </span>
+            </div>
+            <div class="mb-1" *ngIf="transfer.id">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.REFERENCE' | translate}}:
+                </span>
+                <span class="text-no-warp">
+                    {{ transfer.id }}
+                </span>
+            </div>
+            <div class="mb-1" *ngIf="transfer.beneficiary">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.BENEFICIARY' | translate}}:
+                </span>
+                <span class="text-no-warp">
+                    {{ transfer.beneficiary.description }}
+                </span>
+            </div>
+            <div class="mb-1" *ngIf="transfer.transferType">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.TRANSFER-TYPE' | translate}}:
+                </span>
+                <span class="text-no-warp">
+                    {{ transfer.transferType.name }}
+                </span>
+            </div>
+            <div class="row mt-1" *ngIf="mode === 'SEPA'">
+                <div class="col-xs-6 pull-right text-right">
+                    <button class="btn btn-primary" (click)="openModal()">
+                        {{ 'ONESAIT-TRANSFERS.HISTORIC.DETAIL.ANUL' | translate | uppercase }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <app-modal #modal>
+        <ng-container>
+            <div>
+                <!-- <app-modal-header></app-modal-header> -->
+                <app-modal-body>{{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.CONFIRM-TEXT' | translate }}</app-modal-body>
+                <app-modal-footer>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 mt-1 text-left">
+                            <button class="btn btn-secondary" (click)="cancelConfirmModal()">
+                                {{ 'ONESAIT-TRANSFERS.FAVOURITE.DELETE.CANCEL' | translate}}
+                            </button>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 mt-1 text-right">
+                            <button class="btn btn-primary" (click)="anulTransfer()">
+                                {{ 'ONESAIT-TRANSFERS.FAVOURITE.DELETE.CONFIRM' | translate}}
+                            </button>
+                        </div>
+                    </div>
+                </app-modal-footer>
+            </div>
+        </ng-container>
+    </app-modal>
+</div>

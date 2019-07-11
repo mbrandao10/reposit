@@ -1,0 +1,229 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<!-- Formulario para buscar orden y listado -->
+<ng-container *ngIf="view === 'SEARCH'">
+  <div class="panel ">
+    <div class="panel-body">
+      <ng-container *ngIf="advances">
+        <osb-search-list [formGroup]="consultOrdersForm" [formConfig]="formConfig" (search)="getOrder()">
+        </osb-search-list>
+      </ng-container>
+      <div class="mb-1 mt-1" *ngIf="advances">
+        <p *ngIf="!showingRecent">{{'ONESAIT-NB-EXPRESS.REQUEST-ADVANCE.RESULTS' | translate}}</p>
+        <p *ngIf="showingRecent && advances.length>1">{{'ONESAIT-NB-EXPRESS.REQUEST-ADVANCE.HAVE' | translate}}
+          {{advances.length}} {{'ONESAIT-NB-EXPRESS.REQUEST-ADVANCE.PENDING-ADVANCES' | translate}}</p>
+        <p *ngIf="showingRecent && advances.length===1">{{'ONESAIT-NB-EXPRESS.REQUEST-ADVANCE.HAVE' | translate}}
+          {{advances.length}} {{'ONESAIT-NB-EXPRESS.REQUEST-ADVANCE.PENDING-ADVANCE' | translate}}</p>
+        <table class="table table-striped">
+          <thead class="hidden-xs">
+            <tr>
+              <th>{{'ONESAIT-NB-EXPRESS.ADVANCES.ORDER-NUMBER' | translate}}</th>
+              <th class="hidden-xs hidden-sm">{{'ONESAIT-NB-EXPRESS.ADVANCES.RECEIPT' | translate}}</th>
+              <th class="hidden-xs">{{'ONESAIT-NB-EXPRESS.ADVANCES.EXPIRATION' | translate}}</th>
+              <th class="hidden-xs">{{'ONESAIT-NB-EXPRESS.ADVANCES.DEBTOR' | translate}}</th>
+              <th class="hidden-xs">{{'ONESAIT-NB-EXPRESS.ADVANCES.CONCEPT' | translate}}</th>
+              <th>{{'ONESAIT-NB-EXPRESS.ADVANCES.AMOUNT' | translate}}</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let adv of advances">
+              <td>{{adv.id}}</td>
+              <td class="hidden-xs hidden-sm">{{adv.creationDate | dateLocalized: 'shortDate'}}</td>
+              <td class="hidden-xs">{{adv.expirationDate | dateLocalized: 'shortDate'}}</td>
+              <td class="hidden-xs">{{adv.debtor}}</td>
+              <td class="hidden-xs">{{adv.concept}}</td>
+              <td class="text-no-warp">{{adv.amount.amount | CurrencyPipe : adv.amount.currency.code :false}}</td>
+              <td>
+                <button class="btn btn-secondary" (click)="advanceOrder(adv.id)">{{'ONESAIT-NB-EXPRESS.REQUEST-ADVANCE.ADVANCE'
+                  | translate}}</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <ng-container *ngIf="hasMoreData">
+          <p class="text-center pt-1">
+            <a class="col-xs-12 text-center" (click)="next()" role="button">{{'COMMON.MORE-RESULTS' | translate}}</a>
+          </p>
+        </ng-container>
+      </div>
+      <div *ngIf="!advances && consulted ">{{'ONESAIT-NB-EXPRESS.REQUEST-ADVANCE.NO-ORDER' |
+                            translate}}</div>
+      <div *ngIf="!advances && !consulted ">{{'ONESAIT-NB-EXPRESS.REQUEST-ADVANCE.NO-ORDERS' |
+                            translate}}</div>
+    </div>
+  </div>
+</ng-container>
+
+<!-- Cuadro de Simulación de orden-->
+<ng-container *ngIf="view === 'SIMULATE' && advance">
+  <div class="panel ">
+    <div class="panel-body">
+      <ng-container *ngTemplateOutlet="expressRequestAdvanceResume"></ng-container>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-2 mb-1 mt-1">
+          <button class="btn btn-terciary" (click)="newAdvance()">{{ 'COMMON.CANCEL' | translate }}</button>
+        </div>
+
+        <div class="col-xs-12 col-sm-3 col-md-3 col-sm-offset-3 col-md-offset-5 mb-1 mt-1">
+          <button class=" btn btn-terciary" (click)="back()">{{ 'COMMON.BACK' | translate }}
+          </button>
+        </div>
+
+        <div class="col-xs-12 col-sm-3 col-md-2 mb-1 mt-1">
+          <button class="btn btn-primary" (click)="advanceOrderConfirm(advance.id)">{{
+                                        'COMMON.NEXT' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<!-- Tarjeta de Coordenadas -->
+<ng-container *ngIf="view === 'TOKEN'">
+  <div class="panel ">
+    <div class="panel-body">
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+          <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-2 mb-1 mt-1">
+          <button class="btn btn-terciary" (click)="newAdvance()">{{ 'COMMON.CANCEL' | translate }}</button>
+        </div>
+
+        <div class="col-xs-12 col-sm-3 col-md-3 col-sm-offset-3 col-md-offset-5 mb-1 mt-1">
+          <button class=" btn btn-terciary" (click)="back()">{{ 'COMMON.BACK' | translate }}
+          </button>
+        </div>
+
+        <div class="col-xs-12 col-sm-3 col-md-2 mb-1 mt-1">
+          <button class="btn btn-primary" [disabled]="!signatureEntity.tokenValid" (click)="tokenCompleted()">{{
+                                        'COMMON.FINALIZE' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<!-- Cuadro de anticipo solicitado correctamente -->
+<ng-container *ngIf="view === 'ADVANCED'">
+  <div class="panel">
+    <div class="panel-body">
+      <osb-final-message text="{{'ONESAIT-NB-EXPRESS.REQUEST-ADVANCE.CORRECT-ADVANCE' | translate}}">
+      </osb-final-message>
+      <osb-voucher-container #voucherContainer>
+
+        <ng-container *ngTemplateOutlet="expressRequestAdvanceResume"></ng-container>
+        <div class="col-xs-12 mb-1">
+          <osb-download-info [voucherContainer]="voucherContainer"
+            text="{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.DOWNLOAD-RECEIPT' | translate}}">
+          </osb-download-info>
+        </div>
+
+      </osb-voucher-container>
+      <div class="col-xs-12 text-center">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-sm-offset-4 col-md-offset-5 mb-1">
+            <button type="button" class="btn btn-secondary" (click)="goToAccounts()">{{'ONESAIT-NB-EXPRESS.ISSUE-ORDERS.REMITTANCE.GO-ACCOUNTS'
+                                    | translate }}</button>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4 mb-1">
+            <button type="button" class="btn btn-primary" (click)="newAdvance()">{{'ONESAIT-NB-EXPRESS.REQUEST-ADVANCE.ANOTHER-ADVANCE'
+                        | translate}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+
+<ng-template #expressRequestAdvanceResume>
+  <div class="col-xs-12 mt-1">
+    <div>{{'HEADER.TITLE.EXPRESS' | translate }} - <b>{{'ONESAIT-NB-EXPRESS.REQUEST-ADVANCE.TITLE'
+        |
+        translate}}</b></div>
+    <div OsbVoucherKeyValue>
+      <span OsbVoucherKey>{{'ONESAIT-NB-EXPRESS.ADVANCES.DETAIL.ADVANCED-ORDER' | translate}}:
+      </span><span OsbVoucherValue>{{advance.id}}</span>
+    </div>
+  </div>
+
+  <div class="box-form-info grayBackground-c">
+    <div class="info-section-group">
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="row">
+          <div class="col-xs-6">
+            <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+              <div OsbVoucherKey>{{'ONESAIT-NB-EXPRESS.ADVANCES.DETAIL.DEBTOR' | translate}}
+              </div>
+              <div OsbVoucherValue>{{advance.debtor}}</div>
+            </div>
+            <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+              <div OsbVoucherKey>{{'ONESAIT-NB-EXPRESS.ADVANCES.DETAIL.CONCEPT' | translate}}
+              </div>
+              <div OsbVoucherValue>{{advance.concept}}</div>
+            </div>
+          </div>
+          <div class="col-xs-6 text-right">
+            <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+              <div OsbVoucherKey>{{'ONESAIT-NB-EXPRESS.ADVANCES.DETAIL.ENTRANCE' | translate}}
+              </div>
+              <div OsbVoucherValue>{{advance.creationDate | dateLocalized: 'shortDate'}}</div>
+            </div>
+            <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+              <div OsbVoucherKey>{{'ONESAIT-NB-EXPRESS.ADVANCES.DETAIL.EXPIRATION' | translate}}
+              </div>
+              <div OsbVoucherValue>{{advance.expirationDate | dateLocalized: 'shortDate'}}</div>
+            </div>
+            <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+              <div OsbVoucherKey>{{'ONESAIT-NB-EXPRESS.ADVANCES.DETAIL.DAYS' | translate}}</div>
+              <div><b OsbVoucherValue>{{advance.termInDays}}</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="row">
+          <div class="col-xs-6">
+            <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+              <div OsbVoucherKey>{{'ONESAIT-NB-EXPRESS.ADVANCES.DETAIL.BASE-AMOUNT' |
+                  translate}}</div>
+              <div class="text-no-warp" OsbVoucherValue>{{advance.amount.amount | CurrencyPipe :
+                  advance.amount.currency.code
+                  : false}}</div>
+            </div>
+            <div OsbVoucherKeyValue class="mb-1 mt-1  ">
+              <div OsbVoucherKey>{{'ONESAIT-NB-EXPRESS.ADVANCES.DETAIL.TAX' | translate}}</div>
+              <div class="text-no-warp" OsbVoucherValue>{{advance.ivaAmount.amount | CurrencyPipe : advance.ivaAmount.currency.code
+                  :false}}</div>
+            </div>
+          </div>
+
+          <div class="col-xs-6 text-right">
+            <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+              <div OsbVoucherKey>{{'ONESAIT-NB-EXPRESS.ADVANCES.DETAIL.APPLIED-RATE' |
+                  translate}}</div>
+              <div class="text-no-warp" OsbVoucherValue>{{advance.interestAmount.amount | CurrencyPipe :
+                  advance.feeAmount.currency.code : false}}</div>
+            </div>
+            <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+              <div OsbVoucherKey>{{'ONESAIT-NB-EXPRESS.ADVANCES.DETAIL.FEE' | translate}}</div>
+              <div class="text-no-warp" OsbVoucherValue>{{advance.feeAmount.amount | CurrencyPipe :
+                  advance.feeAmount.currency.code : false}}</div>
+            </div>
+            <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+              <div OsbVoucherKey>{{'ONESAIT-NB-EXPRESS.ADVANCES.DETAIL.TOTAL' | translate}}</div>
+              <div class="text-no-warp"><b OsbVoucherValue>{{advance.totalAmount.amount | CurrencyPipe :
+                    advance.totalAmount.currency.code : false}}</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

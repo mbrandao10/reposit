@@ -1,0 +1,32 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "EMI",
+      "name": "EMITIDA NO LIQUIDADA"
+    },
+    {
+      "id": "LIQ",
+      "name": "LIQUIDADA"
+    },
+    {
+      "id": "ANU",
+      "name": "ANULADA"
+    },
+    {
+      "id": "ERC",
+      "name": "EN RECUPERACIÓN CENTRAL"
+    },
+    {
+      "id": "REC",
+      "name": "RECUPERADA"
+    },
+    {
+      "id": "SUS",
+      "name": "SUSPENDIDO"
+    }
+  ]
+}

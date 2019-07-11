@@ -1,0 +1,38 @@
+<app-loader *ngIf="loading"></app-loader>
+<ng-container *ngIf="formConfig">
+    <osb-search-list [formGroup]="filterSearchForm" [formConfig]="formConfig" (search)="getCashpoolingAccounts()"></osb-search-list>
+</ng-container>
+<ng-container *ngIf="cashpoolingAccounts">
+    <table class="table table-striped mt-1">
+        <thead>
+            <tr class="hidden-xs">
+                <th>{{'ITECBAN-CASHPOOLING.LIST.ACCOUNT' | translate}}</th>
+                <th>{{'ITECBAN-CASHPOOLING.LIST.RELATIONSHIP' | translate}}</th>
+                <th class="text-right">{{'ITECBAN-CASHPOOLING.LIST.AMOUNT-MAX' | translate}}</th>
+                <th class="text-right">{{'ITECBAN-CASHPOOLING.LIST.AMOUNT-MIN' | translate}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let item of cashpoolingAccounts; let i: index">
+                <tr>
+                    <td *ngIf="item">
+                        <span class="hidden-xs">{{ item.secondaryAccount.formats | formatAccountPipe: accountFormatView }}</span>
+                        <span class="visible-xs-block">{{ item.secondaryAccount.formats | formatAccountPipe: accountFormatView }}</span>
+                        <span class="visible-xs-block fs-12">{{ item.relationType.name}}</span>
+                    </td>
+                    <td *ngIf="item" class="hidden-xs">
+                        {{ item.relationType.name}}
+                    </td>
+                    <td class="text-no-warp hidden-xs text-right" *ngIf="item">
+                        {{ item.maxBalance.amount | CurrencyPipe: item.maxBalance.currency.code }}
+                    </td>
+                    <td class="text-no-warp text-right" *ngIf="item">
+                        <span class="hidden-xs">{{ item.minBalance.amount | CurrencyPipe: item.minBalance.currency.code }}</span>
+                        <span class="visible-xs-block text-os-semibold ">{{ item.maxBalance.amount | CurrencyPipe: item.maxBalance.currency.code }}</span>
+                        <span class="visible-xs-block fs-12">{{ item.minBalance.amount | CurrencyPipe: item.minBalance.currency.code }}</span>
+                    </td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</ng-container>

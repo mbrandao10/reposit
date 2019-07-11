@@ -1,0 +1,107 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<!--Buscador fecha-->
+<div class="row">
+    <form [formGroup]="settlementsForm" class="form">
+        <div class="form-group col-sm-6 col-md-4">
+            <label for="select">{{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.SELECT-DATE' | translate}}
+			</label>
+            <select id="select" class="form-control" name="date" formControlName="date">
+				<option *ngFor="let settlementDate of settlementDates" [ngValue]="settlementDate.date">
+					{{ settlementDate.date }}</option>
+			</select>
+        </div>
+    </form>
+</div>
+<ng-container *ngIf="settlements">
+    <p class="mt-1"><b>{{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.CONCEPT-LIQUIDATION' | translate}}</b></p>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="text-os-semibold">
+                {{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.START-DATE' | translate}}</div>
+            <p>{{settlements.dateFrom | date: 'dd/MM/yyyy'}}</p>
+        </div>
+        <div class="col-sm-3">
+            <div class="text-os-semibold">
+                {{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.END-DATE' | translate}}</div>
+            <p>{{settlements.dateTo | date: 'dd/MM/yyyy'}}</p>
+        </div>
+        <!-- <div class="col-sm-3">
+			<div class="text-os-semibold">
+				{{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.VALUE-DATE' | translate}}</div>
+			<div>[---Falta---]</div>
+		</div> -->
+        <div class="col-sm-3  borde-izquierdo">
+            <p><span class="text-os-semibold fs-16">{{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.NET-AMOUNT' | translate}}</span>
+            </p>
+            <p *ngIf="settlements.netAmount && settlements.netAmount.amount">
+                {{settlements.netAmount.amount | CurrencyPipe: settlements.netAmount.currency.code}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 " *ngIf="settlements.balanceAtBeginning && settlements.balanceAtBeginning.amount">
+            <small>{{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.BALANCE-BEGIN' | translate}}
+				{{settlements.balanceAtBeginning.amount | CurrencyPipe: settlements.balanceAtBeginning.currency.code}}
+			</small>
+        </div>
+        <div class="col-sm-6" *ngIf="settlements.balanceAtEnd && settlements.balanceAtEnd.amount">
+            <small>{{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.BALANCE-END' | translate}}
+				{{settlements.balanceAtEnd.amount | CurrencyPipe: settlements.balanceAtEnd.currency.code}}
+			</small>
+        </div>
+    </div>
+    <hr>
+    <div class="row mt-2">
+        <div class="col-sm-4 mb-1">
+            <p><b>{{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.INTERESTS' | translate}}</b></p>
+            <div class="mt-1" *ngFor="let interest of settlements.interests">
+                <div>{{interest.concept.name}}: {{interest.amount.amount | CurrencyPipe: interest.amount.currency.code }}</div>
+            </div>
+        </div>
+        <div class="col-sm-5 mb-1 pr-2">
+            <p><b>{{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.COMMISSIONS' | translate}}</b></p>
+            <div class="mt-1" *ngFor="let fee of settlements.fees">
+                <div>{{fee.concept.name}}: {{fee.amount.amount | CurrencyPipe: fee.amount.currency.code }}</div>
+            </div>
+        </div>
+        <div class="col-sm-3 mb-1">
+            <p><b>{{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.WITHHOLDING' | translate}}</b></p>
+            <div class="mt-1" *ngFor="let item of settlements.breakDown">
+                <div>{{item.balance.amount | CurrencyPipe: item.balance.currency.code }}</div>
+            </div>
+        </div>
+    </div>
+    <!-- <hr class="mb-2"> -->
+    <!-- <p><b>{{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.SETTLEMENT-CALCULATION' | translate}}</b></p>
+	<ng-container *ngIf="settlements.breakDown">
+		<table class="table table-striped">
+			<thead class="hidden-xs">
+				<tr>
+					<th>{{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.VALUE-DATE' | translate}}</th>
+					<th>{{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.TYPE-BALANCE' | translate}}</th>
+					<th>{{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.BALANCE' | translate}}</th>
+					<th class="hidden-sm">{{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.DAYS' | translate}}</th>
+					<th class="hidden-sm">{{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.COMMERCIAL-NO' | translate}}</th>
+					<th>{{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.TYPE-INTEREST' | translate}}</th>
+					<th>{{'ONESAIT-ACCOUNTS.ACCOUNTS.SETTLEMENT.INTERESTS' | translate}}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let item of settlements.breakDown; let i: index">
+					<td>{{ item.date | date: 'dd-MM-yyyy'}}</td>
+					<td>{{ item.description }}</td>
+					<td class="text-no-warp">{{ item.balance.amount | CurrencyPipe: item.balance.currency.code }}</td>
+					<td class="hidden-sm">{{ item.numOfDays }}</td>
+					<td class="hidden-sm">{{ item.accountingDates }}</td>
+					<td>{{ item.interestRate }}</td>
+					<td>
+						<ng-container *ngIf="item.interest && item.interest.amount">
+							<span class="text-no-warp">{{ item.interest.amount | CurrencyPipe: item.interest.currency.code }}</span>
+						</ng-container>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</ng-container> -->
+</ng-container>

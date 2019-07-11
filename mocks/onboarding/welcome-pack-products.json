@@ -1,0 +1,202 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "clientStatus": "active",
+    "signatureTimestamp": "2012-11-06T08:54:17 + 01:00",
+    "certAdminContact": "Buenos Aires;ARG;Fabian Muñoz;+54 11 4916-9132",
+    "certAdminAddData": "email#fabian.munoz@wanap.com",
+    "products": [
+      {
+        "id": "CCCOT",
+        "name": "Caja de Ahorros",
+        "description": "Dolares",
+        "type": {
+          "id": "P",
+          "name": "PASIVO"
+        },
+        "isMandatory": true
+      },
+      {
+        "id": "CCCOT",
+        "name": "Caja de Ahorros",
+        "description": "Pesos",
+        "type": {
+          "id": "P",
+          "name": "PASIVO"
+        },
+        "isMandatory": true
+      },
+      {
+        "id": "CCCOT",
+        "name": "Caja de Ahorros",
+        "description": "Dolares",
+        "type": {
+          "id": "AV",
+          "name": "AHORRO VISTA"
+        },
+        "isMandatory": true,
+        "amount": "1212",
+        "currency": "032",
+        "invitedAccount": "9839333030338",
+        "invitedAccountData": {
+          "relationshipType": {
+            "id": "01",
+            "name": "COTITULAR",
+            "href": "https://itecban.indra.es/onboarding/dataCatalogs/accountRelationshipTypes/01"
+          },
+          "holder": "Antonio Pérez",
+          "holderId": "A0792A",
+          "invitedId": "0001",
+          "holderInternalId": "800204",
+          "description": "Solicitud de cotitularidad de cuenta 997777"
+        }
+      },
+      {
+        "id": "TD001",
+        "name": "Tarjeta Débito",
+        "description": "",
+        "type": {
+          "id": "TDT",
+          "name": "TARJETAS"
+        },
+        "isMandatory": true,
+        "subtype": {
+          "id": "02",
+          "name": "Visa Electron"
+        }
+      },
+      {
+        "id": "PR0002",
+        "name": "Prestamo Personal",
+        "description": "",
+        "type": {
+          "id": "PR",
+          "name": "PRESTAMO"
+        },
+        "isMandatory": false,
+        "loanOptions": [
+          {
+            "amount": "$39600.00",
+            "period": "12",
+            "periodId": "1",
+            "value": "Meses",
+            "averageInstallment": "$3000",
+            "percentage": "2%",
+            "intialInstallment": "$1000",
+            "cfts": "36,42%",
+            "cftn": "29,33%",
+            "ttin": "26,12%",
+            "ttea": "25,13%"
+          },
+          {
+            "amount": "$39600.00",
+            "period": "24",
+            "periodId": "2",
+            "value": "Meses",
+            "averageInstallment": "$4000",
+            "percentage": "2%",
+            "intialInstallment": "$1000",
+            "cfts": "35,42%",
+            "cftn": "26,33%",
+            "ttin": "26,12%",
+            "ttea": "25,13%"
+          },
+          {
+            "amount": "$39600.00",
+            "period": "36",
+            "periodId": "3",
+            "value": "Meses",
+            "averageInstallment": "$5000",
+            "percentage": "2%",
+            "intialInstallment": "$1000",
+            "cfts": "35,42%",
+            "cftn": "26,33%",
+            "ttin": "26,12%",
+            "ttea": "25,13%"
+          },
+          {
+            "amount": "$79600.00",
+            "period": "12",
+            "periodId": "1",
+            "value": "Meses",
+            "averageInstallment": "$4000",
+            "percentage": "2%",
+            "intialInstallment": "$1000",
+            "cfts": "85,42%",
+            "cftn": "26,33%",
+            "ttin": "26,12%",
+            "ttea": "25,13%"
+          },
+          {
+            "amount": "$79600.00",
+            "period": "24",
+            "periodId": "2",
+            "value": "Meses",
+            "averageInstallment": "$4000",
+            "percentage": "2%",
+            "intialInstallment": "$1000",
+            "cfts": "35,42%",
+            "cftn": "26,33%",
+            "ttin": "26,12%",
+            "ttea": "25,13%"
+          },
+          {
+            "amount": "$79600.00",
+            "period": "36",
+            "periodId": "3",
+            "value": "Meses",
+            "averageInstallment": "$6000",
+            "percentage": "2%",
+            "intialInstallment": "$1000",
+            "cfts": "55,42%",
+            "cftn": "26,33%",
+            "ttin": "26,12%",
+            "ttea": "25,13%"
+          },
+          {
+            "amount": "$99000.00",
+            "period": "12",
+            "periodId": "1",
+            "value": "Meses",
+            "averageInstallment": "$7000",
+            "percentage": "2%",
+            "intialInstallment": "$1000",
+            "cfts": "35,45%",
+            "cftn": "26,33%",
+            "ttin": "26,12%",
+            "ttea": "25,13%"
+          },
+          {
+            "amount": "$99000.00",
+            "period": "24",
+            "periodId": "2",
+            "value": "Meses",
+            "averageInstallment": "$8000",
+            "percentage": "2%",
+            "intialInstallment": "$1000",
+            "cfts": "35,42%",
+            "cftn": "26,33%",
+            "ttin": "26,12%",
+            "ttea": "25,13%"
+          },
+          {
+            "amount": "$99000.00",
+            "period": "36",
+            "periodId": "3",
+            "value": "Meses",
+            "averageInstallment": "$4000",
+            "percentage": "2%",
+            "intialInstallment": "$1000",
+            "cfts": "65,42%",
+            "cftn": "26,33%",
+            "ttin": "26,12%",
+            "ttea": "25,13%"
+          }
+        ]
+      }
+    ]
+  }
+}

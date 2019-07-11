@@ -1,0 +1,132 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "account": {
+      "id": "149100011009408525",
+      "alias": "",
+      "formats": [
+        {
+          "format": {
+            "id": "IBAN",
+            "name": "IBAN",
+            "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+          },
+          "value": "ES6968867819113534454879"
+        },
+        {
+          "format": {
+            "id": "CCC",
+            "name": "CCC",
+            "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+          },
+          "value": "68867819113534454879"
+        }
+      ]
+    },
+    "connectedAccount": {
+      "id": "149100011009408525",
+      "formats": [
+        {
+          "format": {
+            "id": "IBAN",
+            "name": "IBAN",
+            "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+          },
+          "value": "ES6968867819113534454879"
+        },
+        {
+          "format": {
+            "id": "CCC",
+            "name": "CCC",
+            "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+          },
+          "value": "68867819113534454879"
+        }
+      ]
+    },
+    "pendingAmount": {
+      "amount": 1284.01,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "startAmount": {
+      "amount": 1284.01,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "limitAmount": {
+      "amount": 1284.01,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "product": {
+      "id": "PR007",
+      "description": "PRESTAMO PERSONAL",
+      "type": {
+        "id": "A",
+        "name": "ACTIVO",
+        "href": "https://itecban.indra.es/masterTables/productTypes"
+      },
+      "subtype": {
+        "id": "PR",
+        "name": "PRESTAMOS",
+        "href": "https://itecban.indra.es/masterTables/productSubypes"
+      }
+    },
+    "currency": {
+      "id": "EUR",
+      "code": "978"
+    },
+    "lastMovementDate": "2014-10-30T00:00:00.00Z",
+    "status": {
+      "id": "01",
+      "name": "VIGENTE",
+      "href": "https://itecban.indra.es/masterTables/accountStatusTypes"
+    },
+    "startingCapital": {
+      "amount": 1284.01,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "outstandingCapital": {
+      "amount": 1284.01,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "startDate": "2014-10-30T00:00:00.00Z",
+    "expiryDate": "2014-10-30T00:00:00.00Z",
+    "settlementPeriodicity": "1 mes(es)",
+    "amortizationPeriodicity": "1 mes(es)",
+    "reviewPeriodicity": "12 mes(es)",
+    "interestRate": 6.50,
+    "interest": 7.4348,
+    "nextReviewDate": "2014-10-30T00:00:00.00Z",
+    "differential": 3.50,
+    "varInterestDif":3.50,
+    "varInterestReferential":"BADLAR pesos fin",
+    "isVarInterest":true,
+
+    "holders": [{
+      "type": {
+        "id": "01",
+        "name": "TITULAR",
+        "href": "https://itecban.indra.es/masterTables/participantTypes"
+      },
+      "userId": "1123121",
+      "userName": "Lucía Rodríguez Luna"
+    }]
+  }
+}

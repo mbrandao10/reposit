@@ -1,0 +1,18 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "POSTAL",
+      "name": "POSTAL",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/addressTypes"
+    },
+    {
+      "id": "FISCAL",
+      "name": "POSTAL",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/addressTypes"
+    }
+  ]
+}

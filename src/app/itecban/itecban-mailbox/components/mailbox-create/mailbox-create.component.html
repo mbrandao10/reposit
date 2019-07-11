@@ -1,0 +1,79 @@
+
+<div class="mailbox-container" *ngIf="!isRespond">
+    <app-loader *ngIf="loading"></app-loader>
+    <form #formMailboxCreate="ngForm">
+        <div class="mailbox-header">
+            <div class="mailbox-section">
+                <div class="form-group"><label class="form-custom-label" for="msgType">{{'ITECBAN-MAILBOX.CREATE.TYPE'
+                        | translate}}: </label>
+                    <div class="form-select-custom"><select class="form-control" name="msgType" [(ngModel)]="mail.type"
+                            #msgTypeAttr="ngModel" required>
+                            <option value="" [disabled]="true" [selected]="mail.type === ''">{{'ITECBAN-MAILBOX.CREATE.SELECT.OPTION'
+                                | translate}}</option>
+                            <option *ngFor="let type of types" [value]="type.id">{{type.name}}</option>
+                        </select></div>
+                </div>
+                <app-form-attr-validator [formAttr]="msgTypeAttr" errorMessage="COMMON.FIELD.REQUIRED"></app-form-attr-validator>
+            </div>
+            <div class="mailbox-section">
+                <div class="form-group"><label class="form-custom-label" for="msgSubject">
+                        {{'ITECBAN-MAILBOX.CREATE.SUBJECT' | translate}}:</label><input class="form-control form-input-custom"
+                        name="msgSubject" type="text" [(ngModel)]="mail.subject" #msgSubjectAttr="ngModel" maxlength="30"
+                        required></div>
+                <app-form-attr-validator [formAttr]="msgSubjectAttr" errorMessage="COMMON.FIELD.REQUIRED"></app-form-attr-validator>
+            </div>
+        </div>
+        <div class="mailbox-body">
+            <div class="mailbox-section">
+                <div class="form-group"><textarea class="form-control form-textarea-custom" name="msgText" [(ngModel)]="mail.body"
+                        placeholder="{{ 'ITECBAN-MAILBOX.WRITE.MESSAGE' | translate }}" #msgTextAttr="ngModel" required></textarea></div>
+                <app-form-attr-validator [formAttr]="msgTextAttr" errorMessage="COMMON.FIELD.REQUIRED"></app-form-attr-validator>
+                <div class="mailbox-attachment" *ngFor="let attach of files"><i class="glyphicon glyphicon-paperclip"></i><span>{{attach.name}}</span><i
+                        class="icon icononesait icon-close" (click)="removeAttachment(attach)"></i></div>
+            </div>
+            <div class="mailbox-section" *ngIf="files.length &lt; maxNumberOfDocumentsAttached">
+                <div class="row">
+                    <div class="col-xs-12"><label class="btn btn-details" for="file-input"><i class="glyphicon glyphicon-paperclip-bk"></i>{{'ITECBAN-MAILBOX.CREATE.ATTACH'
+                            | translate}}</label><input type="file" id="file-input" (change)="fileChange($event)" style="display:none"></div>
+                </div>
+                <div class="row">
+                    <p class="help-block">{{'ITECBAN-MAILBOX.ATTACH.MAX.SIZE' | translate}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="mailbox-footer">
+            <div class="row">
+                <div class="col-xs-6"><button class="btn btn-secondary" (click)="back()">{{'COMMON.CANCEL' | translate}}</button></div>
+                <div class="col-xs-6 text-right"><button class="btn btn-primary" (click)="send()" [disabled]="!formMailboxCreate.form.valid">{{'COMMON.SEND'
+                        | translate}}</button></div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="message-emmiter" *ngIf="isRespond">
+    <app-loader *ngIf="loading"></app-loader>
+    <div class="row message-emmiter__content">
+        <div class="message-emmiter-content__box col-xs-12">
+            <div class="message-emmiter-content__text col-xs-12"><textarea class="form-control message-body" rows="3"
+                    [(ngModel)]="mail.body" maxlength="2500"></textarea></div>
+            <ul class="message-emmiter-content__attach col-xs-12">
+                <li *ngFor="let attach of files"><span class="image-upload"><i class="glyphicon glyphicon-paperclip"></i>{{attach.name}}</span><span
+                        class="icon icononesait icon-close pull-right interactive" (click)="removeAttachment(attach)"></span></li>
+            </ul>
+        </div>
+        <div class="message-emmiter-content__tools col-xs-12">
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="btn btn-details interactive" *ngIf="files.length &lt; maxNumberOfDocumentsAttached"><label
+                            class="lb-file" for="file-input"><i class="glyphicon glyphicon-paperclip-bk"></i>{{'ITECBAN-MAILBOX.CREATE.ATTACH'
+                            | translate}}</label><input type="file" id="file-input" (change)="fileChange($event)" style="display:none"></div>
+                </div>
+                <div class="col-xs-6"><a class="btn btn-primary pull-right" (click)="send()"> {{'COMMON.SEND' |
+                        translate}}</a></div>
+            </div>
+            <div class="row">
+                <p class="help-block">{{'ITECBAN-MAILBOX.ATTACH.MAX.SIZE' | translate}}</p>
+            </div>
+        </div>
+    </div>
+</div>

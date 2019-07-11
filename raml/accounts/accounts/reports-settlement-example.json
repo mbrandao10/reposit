@@ -1,0 +1,178 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "dateFrom": "2018-10-01",
+    "dateTo": "2018-10-30",
+    "netAmount": {
+      "amount": 939.05,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "balanceAtBeginning": {
+      "amount": 1000.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "balanceAtEnd": {
+      "amount": 939.05,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "interests": [
+      {
+        "concept": {
+          "id": "INTA",
+          "name": "Intereses acreedores"
+        },
+        "amount": {
+          "amount": 10.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        }
+      },
+      {
+        "concept": {
+          "id": "INTD",
+          "name": "Intereses deudores"
+        },
+        "amount": {
+          "amount": 10.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        }
+      },
+      {
+        "concept": {
+          "id": "INTEXC",
+          "name": "Intereses excedidos"
+        },
+        "amount": {
+          "amount": 10.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        }
+      }
+    ],
+    "fees": [
+      {
+        "concept": {
+          "id": "CSND",
+          "name": "Comisión de saldo no dispuesto"
+        },
+        "amount": {
+          "amount": 10.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        }
+      },
+      {
+        "concept": {
+          "id": "CEXC",
+          "name": "Comisión de excedido"
+        },
+        "amount": {
+          "amount": 10.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        }
+      },
+      {
+        "concept": {
+          "id": "CSDA",
+          "name": "Comisión de administración"
+        },
+        "amount": {
+          "amount": 10.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        }
+      }
+    ],
+    "breakDown": [
+      {
+        "date": "2017-05-23T00:00:00.00Z",
+        "description": "Saldo deudor",
+        "balance": {
+          "amount": 22.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "numOfDays": 7,
+        "accountingDates": 44.8,
+        "interestRate": 2.4,
+        "interest": {
+          "amount": 22.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        }
+      },
+      {
+        "date": "2017-05-22T00:00:00.00Z",
+        "description": "Saldo deudor",
+        "balance": {
+          "amount": 42.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "numOfDays": 3,
+        "accountingDates": 24.8,
+        "interestRate": 2.4,
+        "interest": {
+          "amount": 14.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        }
+      },
+      {
+        "date": "2017-05-21T00:00:00.00Z",
+        "description": "Saldo deudor",
+        "balance": {
+          "amount": 320.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "numOfDays": 15,
+        "accountingDates": 90.8,
+        "interestRate": 2.4,
+        "interest": {
+          "amount": 60.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        }
+      }
+    ]
+  }
+}

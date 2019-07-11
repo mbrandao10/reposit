@@ -1,0 +1,103 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "../../libs/_temp",
+    "rootDir": "./",
+    //"sourceMap": true,
+    "declaration": true,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "inlineSources": true,
+    "inlineSourceMap": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "itecban-accounts": [
+        "./itecban/itecban-accounts"
+      ],
+      "itecban-signatures": [
+        "./itecban/itecban-signatures"
+      ],
+      "itecban-alerts": [
+        "./itecban/itecban-alerts"
+      ],
+      "itecban-common": [
+        "./itecban/itecban-common"
+      ],
+      "itecban-credits": [
+        "./itecban/itecban-credits"
+      ],
+      "itecban-deposits": [
+        "./itecban/itecban-deposits"
+      ],
+      "itecban-directdebits": [
+        "./itecban/itecban-directdebits"
+      ],
+      "itecban-environment": [
+        "./itecban/itecban-environment"
+      ],
+      "itecban-loans": [
+        "./itecban/itecban-loans"
+      ],
+      "itecban-mailbox": [
+        "./itecban/itecban-mailbox"
+      ],
+      "itecban-cards": [
+        "./itecban/itecban-cards"
+       ],
+      "itecban-persons": [
+        "./itecban/itecban-persons"
+      ],
+      "itecban-cashpooling": [
+        "./itecban/itecban-cashpooling"
+      ],
+       "itecban-transfer": [
+        "./itecban/itecban-transfer"
+      ],
+      "itecban-funds": [
+        "./itecban/itecban-funds"
+      ],
+      "itecban-equities": [
+        "./itecban/itecban-equities"
+      ],
+      "onesait-api": [
+        "./onesait/onesait-api"
+      ],
+      "onesait-core": [
+        "./onesait/onesait-core"
+      ],
+      "onesait-confirming": [
+        "./onesait/onesait-confirming"
+      ],
+      "itecban-settings": [
+        "./itecban/itecban-settings"
+      ]
+    }
+  },
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true,
+    "strictMetadataEmit": true,
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "enableResourceInlining": true
+  },
+  "include": [
+    "itecban/*",
+    "onesait/*"
+  ],
+  "exclude": [
+    "src/test.ts",
+    "**/*.spec.ts"
+  ]
+}

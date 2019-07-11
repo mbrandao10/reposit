@@ -1,0 +1,108 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "BONU",
+      "name": "BonusPayment"
+    },
+    {
+      "id": "CASH",
+      "name": "CashManagementTransfer"
+    },
+    {
+      "id": "CCRD",
+      "name": "Credit Card Payment"
+    },
+    {
+      "id": "CORT",
+      "name": "TradeSettlementPayment"
+    },
+    {
+      "id": "DCRD",
+      "name": "Debit Card Payment"
+    },
+    {
+      "id": "DIVI",
+      "name": "Dividend"
+    },
+    {
+      "id": "EPAY",
+      "name": "Epayment"
+    },
+    {
+      "id": "GOVT",
+      "name": "GovernmentPayment"
+    },
+    {
+      "id": "HEDG",
+      "name": "Hedging"
+    },
+    {
+      "id": "ICCP",
+      "name": "Irrevocable Credit Card Payment"
+    },
+    {
+      "id": "IDCP",
+      "name": "Irrevocable Debit Card Payment"
+    },
+    {
+      "id": "INTC",
+      "name": "IntraCompanyPayment"
+    },
+    {
+      "id": "INTE",
+      "name": "Interest"
+    },
+    {
+      "id": "LOAN",
+      "name": "Loan"
+    },
+    {
+      "id": "OTHR",
+      "name": "OtherPayment"
+    },
+    {
+      "id": "PENS",
+      "name": "PensionPayment"
+    },
+    {
+      "id": "SALA",
+      "name": "SalaryPayment"
+    },
+    {
+      "id": "SECU",
+      "name": "Securities"
+    },
+    {
+      "id": "SSBE",
+      "name": "SocialSecurityBenefit"
+    },
+    {
+      "id": "SUPP",
+      "name": "SupplierPayment"
+    },
+    {
+      "id": "TAXS",
+      "name": "TaxPayment"
+    },
+    {
+      "id": "TRAD",
+      "name": "Trade"
+    },
+    {
+      "id": "TREA",
+      "name": "TreasuryPayment"
+    },
+    {
+      "id": "VATX",
+      "name": "ValueAddedTaxPayment"
+    },
+    {
+      "id": "WHLD",
+      "name": "WithHolding"
+    }
+  ]
+}

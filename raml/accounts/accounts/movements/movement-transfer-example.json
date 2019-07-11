@@ -1,0 +1,62 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "movementClass": "SEPATransferMovement",
+    "id": "xxxx-xxxx-xxxxx-xxxxx-xxxxx-xxxxxx-xxxx",
+    "reference": "xxxx-xxxx-xxxxx-xxxxx-xxxxx-xxxxxx-xxxx",
+    "reason": "Gastos de reforma",
+    "amount": {
+      "amount": 12.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "type": {
+      "id": "TRSR",
+      "name": "Transferencias Sepa recibidas"
+    },
+    "operationDate": "2014-10-30T00:00:00.00Z",
+    "hasDocument": true,
+    "documentId": "71cb8771-5b29-4570-af1c-ca3cb7975246",
+    "state": "APLICADA",
+    "orderer": {
+      "name": "CESAR JIMENEZ",
+      "account": {
+        "id": "14910001273000006656",
+        "type": {
+          "id": "cbu",
+          "name": "cbu"
+        }
+      },
+      "legalDocument": {
+        "id": "12345678Q",
+        "type": {
+          "id": "01",
+          "name": "DNI"
+        }
+      }
+    },
+    "beneficiary": {
+      "name": "ANTONIO MARTINEZ",
+      "swift": "TRIOESMMXXX",
+      "account": {
+        "id": "14910001273000006656",
+        "type": {
+          "id": "cbu",
+          "name": "cbu"
+        }
+      },
+      "legalDocument": {
+        "id": "12345678Q",
+        "type": {
+          "id": "01",
+          "name": "DNI"
+        }
+      }
+    }
+  }
+}

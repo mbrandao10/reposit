@@ -1,0 +1,33 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "0000",
+      "name": "Global",
+      "href": "https://itecban.indra.es/masterTables/operativeProfiles"
+    },
+    {
+      "id": "PF01",
+      "name": "Persona física",
+      "href": "https://itecban.indra.es/masterTables/operativeProfiles"
+    },
+    {
+      "id": "PJ01",
+      "name": "Persona jurídica",
+      "href": "https://itecban.indra.es/masterTables/operativeProfiles"
+    },
+    {
+      "id": "PRPF",
+      "name": "Representante persona física",
+      "href": "https://itecban.indra.es/masterTables/operativeProfiles"
+    },
+    {
+      "id": "PRPJ",
+      "name": "Representante persona jurídica",
+      "href": "https://itecban.indra.es/masterTables/operativeProfiles"
+    }
+  ]
+}

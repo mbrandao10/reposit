@@ -1,0 +1,8 @@
+{
+    "name": "onesait-leasing",
+    "version": "0.0.2",
+    "description": "modulo de onesait-leasing",
+    "main": "index.js",
+    "author": "Minsait",
+    "license": "ISC"
+}

@@ -1,0 +1,29 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJeyJ1c2VyX25hbWUiOiIyNzMyMTIzOUUiLCJpbnRlZ3JhdGlvbkNvb2tpZSI6IjE3b0tTOUtjZWE0SHYwdHc0dW1pMjhPZCIsInNjb3BlIjpbIndlYnNob3AiXSwiZXhwIjoxNDg4NTEwNDA3LCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwianRpIjoiOWI5NTZjZWYtNWJlMi00Njk3LThmNjgtZDQ5ZTkwMTdlZjFjIiwiY2xpZW50X2lkIjoiYWNtZSJrnH2PH20ZIPVWVAtGFokt1i5U3hYrHPY-MW3vO3OB4",
+    "token_type": "bearer",
+    "lastConnectionDate": "2014-10-30T00:00:00.00Z",
+    "lastConnectionIP": "83.36.217.255",
+    "userLegalId": "27321239E",
+    "userSecondaryLegalId": "20111144444",
+    "userSecondaryLegalIdType": "CUIL",
+    "userNumber": "0000583850",
+    "userName": "NOMBRE",
+    "userFirstSurname": "APE_1_0000583850",
+    "userSecondSurname": "APE_2_0000583850",
+    "userLanguage": "es",
+    "sessionTimeout": 9999999999,
+    "updateCredentialRequired": false,
+    "pushNotificationActivated": false,
+    "userWarning":"Tu caducidad esta a punto de caducar. Te quedan 15 días",
+    "userCodeWarning": "079I",
+    "aditionalInfo":{
+      "key":"value",
+      "key2":"value2"
+    }
+  }
+}

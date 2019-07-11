@@ -1,0 +1,80 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data":
+  	{
+        "id":"TRNE030000000001744",
+  			"orderer" : {
+          "fromAccount":{
+            "id":"ES6420807939518144595283"
+          },
+          "description": "GREGORIO MUNOZ AVILA"
+  			},
+  			"beneficiary" : {
+          "toAccount": {
+            "type": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "swift": "CRDAADADXXX",
+            "id": "AD9443256823492176665121"
+          },
+          "description" : "LILARECORDS",
+          "legalDocument":{
+            "id":"12345678Z",
+            "type":{
+              "id":"01",
+              "name":"DNI"
+            }
+          },
+          "address":"1st, Sventon Avenue",
+          "city":"Andorra",
+          "country":"Andorra"
+
+  			},
+        "amount": {
+          "amount": 60.00,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+  			"reason" : "Arreglo furgoneta",
+        "purposeType" : {
+          "id": "02",
+          "name": "CUOTA"
+        },
+        "transferType" : {
+          "id": "03",
+          "name": "Cash"
+        },
+        "date" :"2014-10-30T00:00:00.00Z",
+        "operationDate" :"2014-10-30T00:00:00.00Z",
+        "fee": {
+          "amount": 1.3,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "totalAmount": {
+          "amount": 61.3,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "isCancellable":true,
+        "status":{
+          "id": "PENDING",
+          "name": "Pendiente"
+        },
+        "transferMode":{
+          "id": "INTERNATIONAL",
+          "name": "Internacional"
+        }
+  	}
+
+}

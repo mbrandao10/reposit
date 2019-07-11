@@ -1,0 +1,15 @@
+<ng-container>
+  <div class="modal-header">
+    <div class="row">
+      <div class="col-xs-2">
+        <i *ngIf="visibleBack()" class="icon glyphicon glyphicon-chevron-left pull-left" (click)="backModal()"></i>
+      </div>
+      <div class="col-xs-8 text-os-semibold">
+        <span>{{ title | translate}}</span>
+      </div>
+      <div class="col-xs-2 text-right">
+        <i class="icon icononesait icon-close modal-close" (click)="closeModal()"></i>
+      </div>
+    </div>
+  </div>
+</ng-container>

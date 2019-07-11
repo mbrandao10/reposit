@@ -1,0 +1,42 @@
+<div class="main-menu-mobile" [hidden]="!show">
+    <osb-menu-header-mobile></osb-menu-header-mobile>
+
+    <div class="main-menu-mobile-bar ">
+        <osb-user-menu-mobile-top [userMenuConfig]="userMenuConfig"></osb-user-menu-mobile-top>
+    </div>
+
+    <div class="main-menu-mobile-menu ">
+        <ul>
+            <li #liElement *ngFor="let element of menuElements;" (click)="goTo(element, liElement)" [ngClass]="{ 'active': element.active }">
+                <i class="icon icononesait {{element.icon}}"></i>
+                <span>
+                    {{ element.name | translate }}
+                </span>
+                <span class="counter" *ngIf="element.counter &gt; 0">
+                </span>
+                <i *ngIf="element.children" class="glyphicon glyphicon-chevron-right pull-right"></i>
+
+                <div *ngIf="element.showChildren && element.children">
+                    <span class="glyphicon glyphicon-remove close-submenu close-submenu-show">
+                    </span>
+                </div>
+
+            </li>
+        </ul>
+
+        <div class="menu-mobile-submenu" #subMenu>
+            <ul #subMenuList>
+                <li *ngFor="let element of children;" (click)="goTo(element)" [ngClass]="{ 'active': element.active}">
+                    <span>
+                        {{ element.name | translate}}
+                    </span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="main-menu-mobile-footer">
+        <osb-user-menu-mobile-bottom [userMenuConfig]="userMenuConfig" [lastConnectionDate]="lastConnectionDate"></osb-user-menu-mobile-bottom>
+    </div>
+</div>

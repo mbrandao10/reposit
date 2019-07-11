@@ -1,0 +1,38 @@
+<div #subMenu class="main-menu-submenu">
+    <ul #subMenuList class="main-menu__list">
+        <li class="main-menu__list__element" *ngFor="let element of children" (click)="goTo(element, $event)" [ngClass]="{ 'active': element.active }">
+            <span class="option-text">
+                {{ element.name | translate }}
+            </span>
+        </li>
+    </ul>
+</div>
+
+<div class="menu-container">
+    <div class="main-menu__title" (click)="viewGlobalPosition()">
+        <img class="img-responsive" title="" alt="Logo" src="assets/images/logo-novobanco.png" />
+    </div>
+
+    <ul class="main-menu__list main-menu-menu">
+        <li #liElement class="main-menu__list__element" *ngFor="let element of menuElements" (click)="goTo(element, liElement)" [ngClass]="{ 'active': element.active }">
+            <i class="icon icononesait {{element.icon}}"></i>
+            <span class="option-text">
+                {{ element.name | translate }}
+            </span>
+            <span class="counter" *ngIf="element.counter &gt; 0">
+            </span>
+            <i *ngIf="element.children" class="option-more glyphicon glyphicon-chevron-right pull-right"></i>
+
+            <div *ngIf="element.showChildren && element.children">
+                <span class="glyphicon glyphicon-remove close-submenu close-submenu-show"></span>
+            </div>
+        </li>
+    </ul>
+
+    <!--<div class="app-version" *ngIf="lastConnectionDate">
+        <div class="name">
+            Última conexión
+        </div>
+        <span class="text-os-bold">{{ lastConnectionDate | date}}</span>
+    </div>-->
+</div>

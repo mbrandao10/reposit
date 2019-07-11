@@ -1,0 +1,83 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id":"fact-c00000001",
+      "productData": {
+        "id": "00-FAC-PLUS",
+        "description": "Factoring Plus"
+      },
+      "subscriptionAccount": {
+        "id": "ES00 00000000000000000001"
+      },
+      "collectionManagementLimit": {
+        "amount": 20000.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "financingLimit": {
+        "amount": 40000.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "id":"fact-c00000002",
+      "productData": {
+        "id": "00-FAC-BASIC",
+        "description": "Factoring Basic"
+      },
+      "subscriptionAccount": {
+        "id": "ES00 00000000000000000001"
+      },
+      "collectionManagementLimit": {
+        "amount": 20000.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "financingLimit": {
+        "amount": 40000.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "id":"fact-c00000003",
+      "productData": {
+        "id": "00-CFM-PLUS",
+        "description": "Factoring Plus"
+      },
+      "subscriptionAccount": {
+        "id": "ES00 00000000000000000001"
+      },
+      "collectionManagementLimit": {
+        "amount": 20000.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "financingLimit": {
+        "amount": 40000.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages": false
+  }
+}

@@ -1,0 +1,55 @@
+<app-loader *ngIf="loading"></app-loader>
+<table class="table table-striped" *ngIf="creditRetentions">
+    <thead class="hidden-xs">
+        <tr>
+            <th>
+                {{ 'ITECBAN-CREDITS.CREDIT-RETENTIONS.TABLE.START-DATE' | translate }}
+            </th>
+            <th>
+                {{ 'ITECBAN-CREDITS.CREDIT-RETENTIONS.TABLE.END-DATE' | translate }}
+            </th>
+            <th>
+                {{ 'ITECBAN-CREDITS.CREDIT-RETENTIONS.TABLE.DESCRIPTION' | translate }}
+            </th>
+            <th class="text-right">
+                {{ 'ITECBAN-CREDITS.CREDIT-RETENTIONS.TABLE.AMOUNT' | translate }}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let creditRetention of creditRetentions">
+            <tr>
+                <td *ngIf="creditRetention">
+                    <span class="hidden-xs" *ngIf="creditRetention.startDate">
+                        {{ creditRetention.startDate | date: 'dd/MM/yyyy'}} 
+                    </span>
+                    <span class="hidden-sm hidden-md hidden-lg text-os-semibold text-no-warp" *ngIf="creditRetention.reason">
+                        {{ creditRetention.reason }}
+                    </span>
+                    <span class="visible-xs-block fs-12" *ngIf="creditRetention.startDate">
+                        {{ creditRetention.startDate | date: 'dd/MM/yyyy'}} - {{ creditRetention.endDate | date: 'dd/MM/yyyy' }}
+                    </span>
+
+                </td>
+
+                <td>
+                    <div class="mb-1 visible-xs hidden-sm text-right"></div>
+                    <span class="visible-xs-block text-os-semibold text-right text-no-warp" *ngIf="creditRetention && creditRetention.amount.amount && creditRetention.amount.currency.code">
+                        {{ creditRetention.amount.amount | CurrencyPipe: creditRetention.amount.currency.code }}
+                    </span>
+
+                    <span class="hidden-xs" *ngIf="creditRetention && creditRetention.startDate">
+                        {{ creditRetention.endDate | date: 'dd/MM/yyyy' }}
+                    </span>
+                </td>
+
+                <td class="hidden-xs" *ngIf="creditRetention && creditRetention.startDate">
+                    {{ creditRetention.reason }}
+                </td>
+                <td class="hidden-xs text-right" *ngIf="creditRetention && creditRetention.amount.amount!==null && creditRetention.amount.currency.code">
+                    {{ creditRetention.amount.amount | CurrencyPipe: creditRetention.amount.currency.code }}
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

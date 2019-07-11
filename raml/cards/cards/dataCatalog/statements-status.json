@@ -1,0 +1,28 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "00",
+      "name": "TODOS"
+    },
+    {
+      "id": "01",
+      "name": "PENDIENTE"
+    },
+    {
+      "id": "02",
+      "name": "LIQUIDADO"
+    },
+    {
+      "id": "03",
+      "name": "CARGADO"
+    },
+    {
+      "id": "04",
+      "name": "LIQUIDANDO"
+    }
+  ]
+}

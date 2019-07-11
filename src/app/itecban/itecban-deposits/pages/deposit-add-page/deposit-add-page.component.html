@@ -1,0 +1,1117 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="row page-non-tabbed pb-1" *ngIf="!loading">
+    <div class="col-xs-12 p-dynamic mt-1">
+
+        <ng-container class="col-xs-12 p-dynamic mt-1" *ngIf="step ==='PRODUCTSELECT' ">
+            <div class="panel">
+                <div class="panel-body">
+                    <form [formGroup]="depositNewForm" id="form">
+
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <!-- Tipo de depósito -->
+                                <div class="form-group">
+                                    <label for="selectCuenta"> {{ 'ITECBAN-DEPOSITS.ADD.SELECT-TYPE' | translate }} </label>
+                                    <osb-input-validator [formCtrl]="depositNewForm.get('selectCuenta')">
+                                        <select class="form-control form-control-anim" name="selectCuenta" formControlName="selectCuenta" (ngModelChange)="getDetailProduct($event)">
+                                            <option value=" "></option>
+                                            <option *ngFor="let product of products" [ngValue]="product.id">
+                                                {{ product.name | capitalize }}
+                                            </option>
+                                        </select>
+                                    </osb-input-validator>
+                                </div>
+                                <!-- Cuenta asociada -->
+                                <div class="mt-1 mb-1 form-group">
+                                    <label for="associateAccount">
+                                        {{ 'ITECBAN-DEPOSITS.DEPOSIT.ASSOCIATE-ACCOUNT' | translate }} </label>
+                                    <osb-input-validator [formCtrl]="depositNewForm.get('associateAccount')">
+                                        <select class="form-control form-control-amim" name="associateAccount" formControlName="associateAccount">
+                                            <option value=" "></option>
+                                            <option *ngFor="let account of accounts" [ngValue]="account.IBAN">
+                                                {{account.formats | formatAccountPipe: accountFormatView:ismobileResolution }}
+                                                <!-- - {{account.balance.amount | CurrencyPipe: account.balance.currency.code}} -->
+                                            </option>
+                                        </select>
+                                    </osb-input-validator>
+                                </div>
+
+                                <div class="row mt-1 mb-1">
+                                    <!--Importe-->
+                                    <div class="col-xs-6">
+                                        <div class="text-os-semibold mb-12" for="amount">
+                                            {{ 'ITECBAN-DEPOSITS.ADD.AMOUNT' | translate }}
+                                        </div>
+                                        <div class="row mb-1">
+                                            <div class="col-xs-10">
+                                                <osb-input-validator [opts]="inputValidatorOptions" [formCtrl]="depositNewForm.get('amount')">
+                                                    <input class="form-control" type="text" name="amount" (blur)="applyFormatInput()" formControlName="amount" placeholder=" Ejemplo: 25.000,00 " required>
+                                                </osb-input-validator>
+                                            </div>
+                                            <div class="col-xs-1 fs-20 p-0 text-gray-dark">
+                                                {{defaultCurrency.sign}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--Duración-->
+                                    <!-- <div class="col-xs-6">
+                                        <div class="text-os-semibold mb-12">
+                                            {{ 'ITECBAN-DEPOSITS.ADD.DURATION' | translate }}
+                                        </div>
+                                        <div class="row mt-1 mb-2">
+                                            <div class="col-xs-10">
+                                                <input class="form-control" type="text" name="duration" disabled>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+
+                            <!-- Detalles del usuario -->
+                            <div class="col-md-6 col-xs-12">
+                                <div class="row">
+                                    <!-- Titularidad -->
+                                    <div class="col-xs-6 mb-1" *ngIf="username">
+                                        <div class="text-os-semibold">
+                                            {{ 'ITECBAN-DEPOSITS.ADD.OWNERSHIP' | translate }}
+                                        </div>
+                                        <div class="text-gray-dark text-no-warp fs-12">
+                                            {{ username }}
+                                        </div>
+                                    </div>
+                                    <!-- CIF -->
+                                    <div class="col-xs-6 mb-1" *ngIf="userId">
+                                        <div class="text-os-semibold">
+                                            {{ 'ITECBAN-DEPOSITS.ADD.CIF' | translate }}
+                                        </div>
+                                        <div class="text-gray-dark text-no-warp fs-12">
+                                            {{ userId }}
+                                        </div>
+                                    </div>
+                                    <!-- Apoderado -->
+                                    <div class="col-xs-6" *ngIf="attorney">
+                                        <div class="text-os-semibold">
+                                            {{ 'ITECBAN-DEPOSITS.ADD.ATTORNEY' | translate }}
+                                        </div>
+                                        <div class="text-gray-dark text-no-warp fs-12">
+                                            {{ attorney }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Información del producto -->
+                            <div class="col-md-6 col-xs-12">
+                                <div class="row pt-2" *ngIf="productDepositDetail">
+
+                                    <div class="col-xs-12 mt-10 text-os-semibold">
+                                        {{ 'ITECBAN-DEPOSITS.ADD.PRODUCT-INFORMATION' | translate }}
+                                    </div>
+
+                                    <!-- Fecha de apertura -->
+                                    <div class="col-xs-6 mt-10">
+                                        <div class="text-os-semibold">
+                                            {{ 'ITECBAN-DEPOSITS.ADD.DATE' | translate }}
+                                        </div>
+                                        <div class="text-gray-dark">
+                                            {{ importe.openingDate | date: 'dd/MM/yyyy' }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-6 mt-10" *ngIf="productDepositDetail.name">
+                                        <div class="text-os-semibold">
+                                            {{ 'ITECBAN-DEPOSITS.ADD.NAME' | translate }}
+                                        </div>
+                                        <div class="text-gray-dark">
+                                            {{ productDepositDetail.name }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-6 mt-10" *ngIf="productDepositDetail.settlementTerm">
+                                        <div class="text-os-semibold">
+                                            {{ 'ITECBAN-DEPOSITS.ADD.LIQUIDITY-PERIOD' | translate }}
+                                        </div>
+                                        <div class="text-gray-dark">
+                                            {{ productDepositDetail.settlementTerm }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-6 mt-10" *ngIf="productDepositDetail.currency">
+                                        <div class="text-os-semibold">
+                                            {{ 'ITECBAN-DEPOSITS.ADD.CURRENCY' | translate }}
+                                        </div>
+                                        <div class="text-gray-dark">
+                                            {{ productDepositDetail.currency.id }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-6 mt-10" *ngIf="productDepositDetail.cancelFare">
+                                        <div class="text-os-semibold">
+                                            {{'ITECBAN-DEPOSITS.ADD.CANCEL-FARE' | translate }}
+                                        </div>
+                                        <div class="text-gray-dark">
+                                            {{ productDepositDetail.cancelFare.amount | CurrencyPipe: productDepositDetail.cancelFare.currency.code }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-6 mt-10" *ngIf="productDepositDetail.minimalAmount">
+                                        <div class="text-os-semibold">
+                                            {{ 'ITECBAN-DEPOSITS.ADD.MINIMAL-AMOUNT' | translate }}
+                                        </div>
+                                        <div class="text-gray-dark">
+                                            {{ productDepositDetail.minimalAmount.amount | CurrencyPipe: productDepositDetail.minimalAmount.currency.code }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-6 mt-10" *ngIf="productDepositDetail.duration">
+                                        <div class="text-os-semibold">
+                                            {{ 'ITECBAN-DEPOSITS.ADD.DURATION' | translate }}
+                                        </div>
+                                        <div class="text-gray-dark">
+                                            {{ productDepositDetail.duration | date: 'dd/MM/yyyy' }}
+                                        </div>
+                                    </div>
+                                    <div>
+
+                                    </div>
+
+                                    <div class="col-xs-6 mt-10" *ngIf="productDepositDetail.interest">
+                                        <div class="text-os-semibold">
+                                            {{ 'ITECBAN-DEPOSITS.ADD.INTEREST' | translate }}
+                                        </div>
+                                        <div class="text-gray-dark">
+                                            {{ productDepositDetail.interest }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-6 mt-10" *ngIf="productDepositDetail.tae">
+                                        <div class="text-os-semibold">
+                                            {{ 'ITECBAN-DEPOSITS.ADD.TAE' | translate | uppercase }}
+                                        </div>
+                                        <div class="text-gray-dark">
+                                            {{ productDepositDetail.tae }}%
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="col-xs-6 mb-1">
+                                        <div>
+                                            {{ 'ITECBAN-DEPOSITS.ADD.TERMS' | translate }}
+                                        </div>
+                                    </div> -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Botones de confirmar y cancelar -->
+                    <div class="row mt-2">
+                        <div class="col-xs-6">
+                            <button class="btn btn-secondary" (click)="close()">
+                                {{ 'ITECBAN-DEPOSITS.ADD.BUTTON.CANCEL' | translate }}
+                            </button>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <button class="btn btn-primary" [disabled]="!depositNewForm.valid" (click)="step = 'VERIFY'">
+                                {{ 'ITECBAN-DEPOSITS.ADD.BUTTON.CONFIRM' | translate }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <!-- Condiciones de la contratacion -->
+        <ng-container *ngIf="step === 'VERIFY'">
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12 mt-1 mb-1">
+                            <b>
+                                {{ 'ITECBAN-DEPOSITS.ADD.CONTRACT.CONDITIONS' | translate }}
+                            </b>
+                        </div>
+                        <div class="col-xs-12 col-sm-7">
+                            <div class="mt-1 mb-1 text-gray-dark">
+                                {{ 'ITECBAN-DEPOSITS.ADD.CONTRACT.ONE' | translate }}
+                            </div>
+                            <div class="mt-1 mb-1 text-gray-dark">
+                                {{ 'ITECBAN-DEPOSITS.ADD.CONTRACT.TWO' | translate }}
+                            </div>
+                            <div class="mt-1 mb-1 text-gray-dark">
+                                {{ 'ITECBAN-DEPOSITS.ADD.CONTRACT.THREE' | translate }}
+                            </div>
+                            <div class="mt-1 mb-1 text-gray-dark">
+                                {{ 'ITECBAN-DEPOSITS.ADD.CONTRACT.FOUR' | translate }}
+                            </div>
+                            <div class="mt-1 mb-1 text-gray-dark">
+                                {{ 'ITECBAN-DEPOSITS.ADD.CONTRACT.FIVE' | translate }}
+                            </div>
+                        </div>
+                        <app-conditions [conditions]="conditions" (read)="returnOperation($event)"></app-conditions>
+                        <div class="col-xs-12 mt-1 mb-1">
+                            <div class="checkbox">
+                                <label>
+                                    <input [checked]="checkControl" [disabled]="!activeBoton" type="checkbox" name="acceptConditions" required="required" (click)="controlCheck()">
+                                    <i class="icon-check"></i>
+                                    <span>
+                                        <a class="text-gray-dark underline interactive" data-toggle="modal" data-target="#termAndConditionsModal" *ngIf="!activeBoton">
+                                            {{ 'ITECBAN-DEPOSITS.ADD.READ.ACCEPTED' | translate }}
+                                        </a>
+                                        <a class="text-gray-dark underline interactive" (click)="controlCheck()" data-toggle="modal" data-target="#termAndConditionsModal" *ngIf="activeBoton">
+                                            {{ 'ITECBAN-DEPOSITS.ADD.READ.ACCEPTED' | translate }}
+                                        </a>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <!-- <div class="col-xs-12 col-sm-5">
+                            <div class="mt-1 mb-1">
+                                <a (click)="downloadDocument()">
+                                    <i class="icon icononesait icon-documents fa-pull-left"></i>
+                                    {{ 'ITECBAN-DEPOSITS.ADD.LINK.DOCUMENTS.PRECONTRACTUAL.INFORMATION' | translate }}
+                                </a>
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <a (click)="downloadDocument()">
+                                    <i class="icon icononesait icon-documents fa-pull-left"></i>
+                                    {{ 'ITECBAN-DEPOSITS.ADD.LINK.DOCUMENTS.PREEMPLOYMENT.INFORMATION' | translate }}
+                                </a>
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <a (click)="downloadDocument()">
+                                    <i class="icon icononesait icon-documents fa-pull-left"></i>
+                                    {{ 'ITECBAN-DEPOSITS.ADD.LINK.DOCUMENTS.GLOBAL.CONTRACT' | translate }}
+                                </a>
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <a (click)="downloadDocument()">
+                                    <i class="icon icononesait icon-documents fa-pull-left"></i>
+                                    {{ 'ITECBAN-DEPOSITS.ADD.LINK.DOCUMENTS.BOOK.RATES' | translate }}
+                                </a>
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <a (click)="downloadDocument()">
+                                    <i class="icon icononesait icon-documents fa-pull-left"></i>
+                                    {{ 'ITECBAN-DEPOSITS.ADD.LINK.DOCUMENTS.STRAIGHT' | translate }}
+                                </a>
+                            </div>
+                        </div> -->
+
+
+
+                        <div class="col-xs-12 mt-12">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <button class="btn btn-terciary" (click)="close()">
+                                        {{ 'ITECBAN-DEPOSITS.ADD.BUTTON.CANCEL' | translate }}
+                                    </button>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <button class="btn btn-primary" (click)="back()">
+                                                {{ 'ITECBAN-DEPOSITS.ADD.BUTTON.BEHIND' | translate }}
+                                            </button>
+                                        </div>
+                                        <div class="col-xs-6" *ngIf="checkControl">
+                                            <button class="btn btn-primary" [disabled]="!checkControl" (click)="addDeposit()">
+                                                {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CONFIRM' | translate }}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <!-- Tarjeta de Coordenadas -->
+        <ng-container *ngIf="step === 'TOKEN'">
+            <div class="panel">
+                <div class="panel-body">
+                    <form #formStep3="ngForm">
+                        <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+
+                        <div class="row mt-2">
+                            <div class="col-xs-6">
+                                <button class="btn btn-terciary" (click)="close()">
+                                    {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CANCEL' | translate }}
+                                </button>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <button class="btn btn-secondary" (click)="step = 'VERIFY'">
+                                            {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.BEHIND' | translate }}
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <button class="btn btn-primary" [disabled]="!signatureEntity?.tokenValid" (click)="tokenCompleted()">
+                                            {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.FINALIZE' | translate }}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </ng-container>
+
+        <!-- Contratacion correcta -->
+        <ng-container *ngIf="step === 'CREATED'">
+            <div class="panel">
+                <div class="panel-body">
+                    <osb-final-message [text]=" 'ITECBAN-DEPOSITS.ADD.HIRING.CORRECT' "></osb-final-message>
+                    <osb-voucher-container #voucherContainer>
+                        <div class="row">
+
+                            <div class="col-xs-12 col-sm-6 mt-1">
+                                <ng-container>
+                                    <div class="row">
+                                        <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="dateAndTime">
+                                            <div OsbVoucherKey class="text-os-semibold">
+                                                {{ 'ITECBAN-ACCOUNT.ADD.DATE' | translate }}
+                                            </div>
+                                            <div OsbVoucherValue class="text-section">
+                                                {{ dateAndTime | date: 'dd/MM/yyyy - HH:mm' }} H
+                                            </div>
+                                        </div>
+                                        <div *ngIf="newDeposit.productCode">
+                                            <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="productDepositDetail.name">
+                                                <div OsbVoucherKey class="text-os-semibold ">
+                                                    {{ 'ITECBAN-DEPOSITS.ADD.NAME' | translate }}
+                                                </div>
+                                                <div OsbVoucherValue class="text-section ">
+                                                    {{ productDepositDetail.name }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <!--Titularidad-->
+                                        <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="username">
+                                            <div OsbVoucherKey class="text-os-semibold">
+                                                {{ 'ITECBAN-DEPOSITS.ADD.OWNERSHIP' | translate }}
+                                            </div>
+                                            <div OsbVoucherValue class="text-section">
+                                                {{ username }}
+                                            </div>
+                                        </div>
+                                        <!--CIF-->
+                                        <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="userId">
+                                            <div OsbVoucherKey class="text-os-semibold">
+                                                {{ 'ITECBAN-DEPOSITS.ADD.CIF' | translate }}
+                                            </div>
+                                            <div OsbVoucherValue class="text-section">
+                                                {{ userId }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <!--Apoderado-->
+                                        <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="attorney">
+                                            <div OsbVoucherKey class="text-os-semibold ">
+                                                {{ 'ITECBAN-ACCOUNT.ADD.ATTORNEY' | translate }}
+                                            </div>
+                                            <div OsbVoucherValue class="text-section ">
+                                                {{ attorney }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </div>
+                            <!-- INFORMACION DEL PRODUCTO -->
+                            <div class="col-xs-12 col-sm-6 mt-1">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div>
+                                            <div>
+                                                <div OsbVoucherKeyValue class="col-xs-12 mb-1">
+                                                    <div OsbVoucherKey class="text-os-semibold ">
+                                                        {{ 'ITECBAN-DEPOSITS.ADD.IBAN' | translate }}
+                                                    </div>
+                                                    <div OsbVoucherValue class="text-section ">
+                                                        {{ idDepositCreate.IBAN | formatLiteralPipe: LiteralFormats: mobileResolution }}
+                                                    </div>
+                                                </div>
+                                                <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="productDepositDetail.name">
+                                                    <div OsbVoucherKey class="text-os-semibold">
+                                                        {{ 'ITECBAN-DEPOSITS.ADD.NAME' | translate }}
+                                                    </div>
+                                                    <div OsbVoucherValue class="text-section">
+                                                        {{ productDepositDetail.name }}
+                                                    </div>
+                                                </div>
+                                                <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="productDepositDetail.settlementTerm">
+                                                    <div OsbVoucherKey class="text-os-semibold">
+                                                        {{ 'ITECBAN-DEPOSITS.ADD.LIQUIDITY-PERIOD' | translate }}
+                                                    </div>
+                                                    <div OsbVoucherValue class="text-section">
+                                                        {{ productDepositDetail.settlementTerm }}
+                                                    </div>
+                                                </div>
+                                                <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="productDepositDetail.currency">
+                                                    <div OsbVoucherKey class="text-os-semibold">
+                                                        {{ 'ITECBAN-DEPOSITS.ADD.CURRENCY' | translate }}
+                                                    </div>
+                                                    <div OsbVoucherValue class="text-section">
+                                                        {{ productDepositDetail.currency.id }}
+                                                    </div>
+                                                </div>
+                                                <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="productDepositDetail.cancelFare">
+                                                    <div OsbVoucherKey class="text-os-semibold">
+                                                        {{'ITECBAN-DEPOSITS.ADD.CANCEL-FARE' | translate }}
+                                                    </div>
+                                                    <div OsbVoucherValue class="text-section">
+                                                        {{ productDepositDetail.cancelFare.amount | CurrencyPipe: productDepositDetail.cancelFare.currency.code }}
+                                                    </div>
+                                                </div>
+                                                <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="productDepositDetail.minimalAmount">
+                                                    <div OsbVoucherKey class="text-os-semibold ">
+                                                        {{ 'ITECBAN-DEPOSITS.ADD.MINIMAL-AMOUNT' | translate }}
+                                                    </div>
+                                                    <div OsbVoucherValue class="text-section ">
+                                                        {{ productDepositDetail.minimalAmount.amount | CurrencyPipe: productDepositDetail.minimalAmount.currency.code }}
+                                                    </div>
+                                                </div>
+
+                                                <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="nameDeposit">
+                                                    <div OsbVoucherKey class="text-os-semibold ">
+                                                        {{ 'ITECBAN-DEPOSITS.DEPOSITS.DESCRIPTION' | translate }}
+                                                    </div>
+                                                    <div OsbVoucherValue class="text-section ">
+                                                        {{ nameDeposit | translate }}
+                                                    </div>
+                                                </div>
+
+                                                <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="productDepositDetail.interest">
+                                                    <div OsbVoucherKey class="text-os-semibold ">
+                                                        {{ 'ITECBAN-DEPOSITS.ADD.INTEREST' | translate }}
+                                                    </div>
+                                                    <div OsbVoucherValue class="text-section ">
+                                                        {{ productDepositDetail.interest }}
+                                                    </div>
+                                                </div>
+
+                                                <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="productDepositDetail.tae">
+                                                    <div OsbVoucherKey class="text-os-semibold ">
+                                                        {{ 'ITECBAN-DEPOSITS.ADD.TAE' | translate }}
+                                                    </div>
+                                                    <div OsbVoucherValue class="text-section ">
+                                                        {{ productDepositDetail.tae }}%
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="row">
+                                    <div>
+                                        {{ 'ITECBAN-DEPOSITS.ADD.TERMS' | translate }}
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 mt-1 mb-1">
+                                <osb-download-info [voucherContainer]="voucherContainer" text="{{ 'ITECBAN-DEPOSITS.ADD.LINK.DOWNLOAD' | translate }}"></osb-download-info>
+
+                                <div class="mt-1">
+                                    <a (click)="downloadDocument()" class="text-os-bold text-gray-dark">
+                                        {{ 'ITECBAN-DEPOSITS.ADD.LINK.DOCUMENTATION' | translate }}
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 mt-1 mb-1 text-right">
+                                <button class="btn btn-primary" (click)="close()">
+                                    {{ 'ITECBAN-DEPOSITS.ADD.BUTTON.DEPOSITS' | translate }}
+                                </button>
+                            </div>
+                        </div>
+                    </osb-voucher-container>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+
+<!--       ANTES         -->
+
+<!-- Seleccion de cuenta -->
+<!-- <div class="row" *ngIf="step === 'PRODUCTSELECT'">
+    <div class="col-xs-12">
+        <form class="form-horizontal" #formStep1="ngForm">
+            <div class="row"> -->
+<!-- <div class="col-md-6 col-xs-12">
+                    <div class="info-section">
+                        <div class="form-group col-xs-12">
+                            <div class="form-group col-xs-12">
+                                <div class="margg-c">
+                                    <b>
+                                        {{ 'ITECBAN-DEPOSITS.ADD.SELECT-TYPE' | translate }}
+                                    </b>
+                                </div>
+
+                                <div class="form-select-custom">
+                                    <select class="form-control" [(ngModel)]="productSelectedCode"
+                                        (ngModelChange)="changeProduct($event)" name="product">
+                                        <option *ngFor="let product of products" [value]="product.code">
+                                            {{ product.name | capitalize }}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-12">
+                                <div class="margg-c">
+                                    <b>
+                                        {{ 'ITECBAN-DEPOSITS.DEPOSIT.ASSOCIATE-ACCOUNT' | translate }}
+                                    </b>
+                                </div>
+                                <div class="form-select-custom">
+                                    <select class="form-control" [(ngModel)]="newDeposit.accountId"
+                                        name="associateAccount" id="associateAccount" required>
+                                        <option class="text-no-warp" *ngFor="let account of accounts"
+                                            [ngValue]="account.id">{{account.formats
+                                            | formatAccountPipe: accountFormatView }} - {{account.balance.amount |
+                                            CurrencyPipe: account.balance.currency.code}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-12">
+                                <div class="margg-c">
+                                    <b>
+                                        {{ 'ITECBAN-DEPOSITS.ADD.AMOUNT' | translate }}
+                                    </b>
+                                </div>
+                                <div class="form-select-custom">
+                                    <input class="form-control" type="number" [(ngModel)]="newDeposit.amount.amount"
+                                        name="amount" id="amount" required>
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-12">
+                                <div class="margg-c">
+                                    <b>
+                                        {{ 'ITECBAN-DEPOSITS.ADD.DURATION' | translate }}
+                                    </b>
+                                </div>
+                                <div class="form-select-custom">
+                                    <input class="form-control" type="number" [(ngModel)]="newDeposit.duration"
+                                        name="duration" id="duration" pattern="[0-9]{2,6}" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="box-form-info">
+                                    <div class="info-section-group" *ngIf="newDeposit">
+                                        <div class="row">
+                                            <div class="col-xs-6" *ngIf="username">
+                                                <div>
+                                                    <b>
+                                                        {{ 'ITECBAN-DEPOSITS.ADD.OWNERSHIP' | translate }}
+                                                    </b>
+                                                </div>
+                                                <div>
+                                                    {{ username }}
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6 text-right" *ngIf="userId">
+                                                <div>
+                                                    <b>
+                                                        {{ 'ITECBAN-DEPOSITS.ADD.CIF' | translate }}
+                                                    </b>
+                                                </div>
+                                                <div>
+                                                    {{ userId }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="margg-c" *ngIf="attorney">
+                                            <div>
+                                                <b>
+                                                    {{ 'ITECBAN-DEPOSITS.ADD.ATTORNEY' | translate }}
+                                                </b>
+                                            </div>
+                                            <div>
+                                                {{ attorney }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+<!-- <div class="col-md-6 col-xs-12">
+                    <div class="box-form-info">
+                        <div class="info-section-group" *ngIf="productDepositDetail">
+                            <div class="row">
+                                <b>
+                                    {{ 'ITECBAN-DEPOSITS.ADD.PRODUCT-INFORMATION' | translate }}
+                                </b>
+                            </div>
+
+                            <div class="row" *ngIf="productDepositDetail.name">
+                                <div>
+                                    {{ 'ITECBAN-DEPOSITS.ADD.NAME' | translate }}
+                                </div>
+                                <div>
+                                    {{ productDepositDetail.name }}
+                                </div>
+                            </div>
+
+                            <div class="row" *ngIf="productDepositDetail.settlementTerm">
+                                <div>
+                                    {{ 'ITECBAN-DEPOSITS.ADD.LIQUIDITY-PERIOD' | translate }}
+                                </div>
+                                <div>
+                                    {{ productDepositDetail.settlementTerm }}
+                                </div>
+                            </div>
+
+                            <div class="row" *ngIf="productDepositDetail.currency">
+                                <div>
+                                    {{ 'ITECBAN-DEPOSITS.ADD.CURRENCY' | translate }}
+                                </div>
+                                <div>
+                                    {{ productDepositDetail.currency.id }}
+                                </div>
+                            </div>
+
+                            <div class="row" *ngIf="productDepositDetail.cancelFare">
+                                <div>
+                                    {{'ITECBAN-DEPOSITS.ADD.CANCEL-FARE' | translate }}
+                                </div>
+                                <div class="text-no-warp">
+                                    {{ productDepositDetail.cancelFare.amount | CurrencyPipe:
+                                    productDepositDetail.cancelFare.currency.code }}
+                                </div>
+                            </div>
+
+                            <div class="row" *ngIf="productDepositDetail.minimalAmount">
+                                <div>
+                                    {{ 'ITECBAN-DEPOSITS.ADD.MINIMAL-AMOUNT' | translate }}
+                                </div>
+                                <div class="text-no-warp">
+                                    {{ productDepositDetail.minimalAmount.amount | CurrencyPipe:
+                                    productDepositDetail.minimalAmount.currency.code }}
+                                </div>
+                            </div>
+
+                            <div class="row" *ngIf="productDepositDetail.duration">
+                                <div>
+                                    {{ 'ITECBAN-DEPOSITS.ADD.DURATION' | translate }}
+                                </div>
+                                <div>
+                                    {{ productDepositDetail.duration }}
+                                </div>
+                            </div>
+
+                            <div class="row" *ngIf="productDepositDetail.interest">
+                                <div>
+                                    {{ 'ITECBAN-DEPOSITS.ADD.INTEREST' | translate }}
+                                </div>
+                                <div>
+                                    {{ productDepositDetail.interest }}
+                                </div>
+                            </div>
+
+                            <div class="row" *ngIf="productDepositDetail.tae">
+                                <div>
+                                    {{ 'ITECBAN-DEPOSITS.ADD.TAE' | translate | uppercase }}
+                                </div>
+                                <div>
+                                    {{ productDepositDetail.tae }}%
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div>
+                                    {{ 'ITECBAN-DEPOSITS.ADD.TERMS' | translate }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+<!-- </div> -->
+<!-- </form> -->
+<!-- </div> -->
+<!-- <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-6">
+                <button class="btn btn-secondary" (click)="close()">
+                    {{ 'ITECBAN-DEPOSITS.ADD.BUTTON.CANCEL' | translate }}
+                </button>
+            </div>
+            <div class="col-xs-6 text-right">
+                <button class="btn btn-primary" [disabled]="!formStep1.form.valid" (click)="step = 'VERIFY'">
+                    {{ 'ITECBAN-DEPOSITS.ADD.BUTTON.CONFIRM' | translate }}
+                </button>
+            </div>
+        </div>
+    </div> -->
+<!-- </div> -->
+
+<!-- Condiciones de Contrataciรณn -->
+<!-- <div class="row textTam-c" *ngIf="step === 'VERIFY'">
+    <div class="col-xs-12">
+        <b>
+            {{ 'ITECBAN-DEPOSITS.ADD.CONTRACT.CONDITIONS' | translate }}
+        </b>
+    </div>
+
+    <div class="col-xs-7">
+        <div class="margg-c">
+            {{ 'ITECBAN-DEPOSITS.ADD.CONTRACT.ONE' | translate }}
+        </div>
+        <div class="margg-c">
+            {{ 'ITECBAN-DEPOSITS.ADD.CONTRACT.TWO' | translate }}
+        </div>
+        <div class="margg-c">
+            {{ 'ITECBAN-DEPOSITS.ADD.CONTRACT.THREE' | translate }}
+        </div>
+        <div class="margg-c">
+            {{ 'ITECBAN-DEPOSITS.ADD.CONTRACT.FOUR' | translate }}
+        </div>
+        <div class="margg-c">
+            {{ 'ITECBAN-DEPOSITS.ADD.CONTRACT.FIVE' | translate }}
+        </div>
+    </div>
+
+    <div class="col-xs-5">
+        <div class="margg-c">
+            <i class="icon icononesait icon-documents fa-pull-left"></i>
+            <a (click)="downloadDocument()">
+                {{ 'ITECBAN-DEPOSITS.ADD.LINK.DOCUMENTS.PRECONTRACTUAL.INFORMATION' | translate }}
+            </a>
+        </div>
+        <div class="margg-c">
+            <i class="icon icononesait icon-documents fa-pull-left"></i>
+            <a (click)="downloadDocument()">
+                {{ 'ITECBAN-DEPOSITS.ADD.LINK.DOCUMENTS.PREEMPLOYMENT.INFORMATION' | translate }}
+            </a>
+        </div>
+        <div class="margg-c">
+            <i class="icon icononesait icon-documents fa-pull-left"></i>
+            <a (click)="downloadDocument()">
+                {{ 'ITECBAN-DEPOSITS.ADD.LINK.DOCUMENTS.GLOBAL.CONTRACT' | translate }}
+            </a>
+        </div>
+        <div class="margg-c">
+            <i class="icon icononesait icon-documents fa-pull-left"></i>
+            <a (click)="downloadDocument()">
+                {{ 'ITECBAN-DEPOSITS.ADD.LINK.DOCUMENTS.BOOK.RATES' | translate }}
+            </a>
+        </div>
+        <div class="margg-c">
+            <i class="icon icononesait icon-documents fa-pull-left"></i>
+            <a (click)="downloadDocument()">
+                {{ 'ITECBAN-DEPOSITS.ADD.LINK.DOCUMENTS.STRAIGHT' | translate }}
+            </a>
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <div>
+            <div class="form-group">
+                <div class="checkbox-custom">
+                    <label>
+                        <input [checked]="checkControl" type="checkbox" name="acceptConditions" required="required"
+                            (click)="controlCheck()" />
+                        <i class="icon-check"> </i>
+
+                        <span>
+                            <a class="underline interactive" (click)="controlCheck()" data-toggle="modal"
+                                data-target="#termAndConditionsModal">
+                                {{ 'ITECBAN-DEPOSITS.ADD.READ.ACCEPTED' | translate }}
+                            </a>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-6">
+                <button class="btn btn-secondary" (click)="close()">
+                    {{ 'ITECBAN-DEPOSITS.ADD.BUTTON.CANCEL' | translate }}
+                </button>
+            </div>
+            <div class="col-xs-6 text-right">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <button class="btn btn-primary" (click)="step = 'PRODUCTSELECT'">
+                            {{ 'ITECBAN-DEPOSITS.ADD.BUTTON.BEHIND' | translate }}
+                        </button>
+                    </div>
+
+                    <div class="col-xs-6" *ngIf="checkControl">
+                        <button class="btn btn-primary" [disabled]="!checkControl" (click)="addDeposit()">
+                            {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CONFIRM' | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- Tarjeta de Coordenadas -->
+<!-- <div class="row" *ngIf="step === 'TOKEN'">
+    <form class="form-horizontal col-xs-12" #formStep3="ngForm">
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <osb-signature [signatureEntity]="signatureEntity"></osb-signature> -->
+<!-- <osb-signature-token [(token)]="newAccount.token" [(tokenValid)]="newAccount.tokenValid"></osb-signature-token> -->
+<!-- </div>
+        </div> -->
+
+<!-- 
+        <div class="row">
+            <div class="col-xs-6">
+                <button class="btn btn-secondary" (click)="close()">
+                        {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CANCEL' | translate }}
+                </button>
+            </div>
+
+            <div class="col-xs-6">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <button class="btn btn-secondary" (click)="step = 'VERIFY'">
+                            {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.BEHIND' | translate }}
+                        </button>
+                    </div>
+
+                    <div class="col-xs-6">
+                        <button class="btn btn-primary" [disabled]="!signatureEntity.tokenValid"
+                            (click)="tokenCompleted()">
+                            {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.FINALIZE' | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div> -->
+
+<!-- Contratacion Correcta -->
+<!-- <div class="row" *ngIf="step === 'CREATED'">
+    <div class="col-xs-12">
+        <div class="col-xs-12">
+            <div class="info-section">
+                <div class="info-section-group">
+                    <div class="info-section-group-title">
+                        <i class="glyphicon glyphicon-check"></i> {{ 'ITECBAN-DEPOSITS.ADD.HIRING.CORRECT' |
+                        translate }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <div class="box-form-info">
+                        <div class="info-section-group" *ngIf="newDeposit.productCode">
+                            <div class="margg-c" *ngIf="productDepositDetail.name">
+                                <div>
+                                    <b>
+                                        {{ 'ITECBAN-DEPOSITS.ADD.NAME' | translate }}
+                                    </b>
+                                </div>
+                                <div>
+                                    {{ productDepositDetail.name }}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-6" *ngIf="username">
+                                    <div>
+                                        <b>
+                                            {{ 'ITECBAN-DEPOSITS.ADD.OWNERSHIP' | translate }}
+                                        </b>
+                                    </div>
+                                    <div>
+                                        {{ username }}
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xs-6 text-right" *ngIf="userId">
+                                    <div>
+                                        <b>
+                                            {{ 'ITECBAN-DEPOSITS.ADD.CIF' | translate }}
+                                        </b>
+                                    </div>
+                                    <div>
+                                        {{ userId }}
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="margg-c" *ngIf="attorney">
+                                <div>
+                                    <b>
+                                        {{ 'ITECBAN-DEPOSITS.ADD.ATTORNEY' | translate }}
+                                    </b>
+                                </div>
+                                <div>
+                                    {{ attorney }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+<!-- <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <div class="box-form-info grayBackground-c">
+                        <div class="info-section-group" *ngIf="newDeposit.productCode">
+
+                            <div class="margg-c" *ngIf="idDepositCreate">
+                                <div>
+                                    <b>
+                                        {{ 'ITECBAN-DEPOSITS.ADD.IBAN' | translate }}
+                                    </b>
+                                </div>
+                                <div>
+                                    {{ idDepositCreate }}
+                                </div>
+                            </div>
+
+                            <div class="margg-c" *ngIf="productDepositDetail.name">
+                                <div>
+                                    <b>
+                                        {{ 'ITECBAN-DEPOSITS.ADD.NAME' | translate }}
+                                    </b>
+                                </div>
+                                <div>
+                                    {{ productDepositDetail.name }}
+                                </div>
+                            </div>
+
+                            <div class="margg-c" *ngIf="productDepositDetail.settlementTerm">
+                                <div>
+                                    <b>
+                                        {{ 'ITECBAN-DEPOSITS.ADD.LIQUIDITY-PERIOD' | translate }}
+                                    </b>
+                                </div>
+                                <div>
+                                    {{ productDepositDetail.settlementTerm }}
+                                </div>
+                            </div>
+
+                            <div class="margg-c" *ngIf="productDepositDetail.currency">
+                                <div>
+                                    <b>
+                                        {{ 'ITECBAN-DEPOSITS.ADD.CURRENCY' | translate }}
+                                    </b>
+                                </div>
+                                <div>
+                                    {{ productDepositDetail.currency.id }}
+                                </div>
+                            </div>
+
+                            <div class="margg-c" *ngIf="productDepositDetail.cancelFare">
+                                <div>
+                                    <b>
+                                        {{'ITECBAN-DEPOSITS.ADD.CANCEL-FARE' | translate }}
+                                    </b>
+                                </div>
+                                <div class="text-no-warp">
+                                    {{ productDepositDetail.cancelFare.amount | CurrencyPipe:
+                                    productDepositDetail.cancelFare.currency.code }}
+                                </div>
+                            </div>
+
+                            <div class="margg-c" *ngIf="productDepositDetail.minimalAmount">
+                                <div>
+                                    <b>
+                                        {{ 'ITECBAN-DEPOSITS.ADD.MINIMAL-AMOUNT' | translate }}
+                                    </b>
+                                </div>
+                                <div class="text-no-warp">
+                                    {{ productDepositDetail.minimalAmount.amount | CurrencyPipe:
+                                    productDepositDetail.minimalAmount.currency.code }}
+                                </div>
+                            </div>
+
+                            <div class="margg-c" *ngIf="productDepositDetail.duration">
+                                <div>
+                                    <b>
+                                        {{ 'ITECBAN-DEPOSITS.ADD.DURATION' | translate }}
+                                    </b>
+                                </div>
+                                <div>
+                                    {{ productDepositDetail.duration }}
+                                </div>
+                            </div>
+
+                            <div class="margg-c" *ngIf="productDepositDetail.interest">
+                                <div>
+                                    <b>
+                                        {{ 'ITECBAN-DEPOSITS.ADD.INTEREST' | translate }}
+                                    </b>
+                                </div>
+                                <div>
+                                    {{ productDepositDetail.interest }}
+                                </div>
+                            </div>
+
+                            <div class="margg-c" *ngIf="productDepositDetail.tae">
+                                <div>
+                                    <b>
+                                        {{ 'ITECBAN-DEPOSITS.ADD.TAE' | translate }}
+                                    </b>
+                                </div>
+                                <div>
+                                    {{ productDepositDetail.tae }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="margg-c">
+                        <i class="icon icononesait icon-documents fa-pull-left"></i>
+                        <a (click)="downloadDocument()">
+                            {{ 'ITECBAN-DEPOSITS.ADD.LINK.DOWNLOAD' | translate }}
+                        </a>
+                    </div>
+
+                    <div class="margg-c">
+                        <i class="glyphicon glyphicon-arrow-right fa-pull-left"></i>
+                        <a (click)="downloadDocument()">
+                            {{ 'ITECBAN-DEPOSITS.ADD.LINK.DOCUMENTATION' | translate }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+<!-- <div class="row">
+        <div class="col-xs-12 text-right">
+            <div class="btn btn-primary interactive" (click)="close()">
+                {{ 'ITECBAN-DEPOSITS.ADD.BUTTON.DEPOSITS' | translate }}
+            </div>
+        </div>
+    </div> -->
+<!-- </div> -->

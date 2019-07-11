@@ -1,0 +1,70 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="row">
+    <div class="col-xs-12">
+        <osb-search-list [formGroup]="filterSearchForm" [formConfig]="formConfig" (search)="next()">
+        </osb-search-list>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel ">
+                <div class="panel-body" >
+                    <table class="table table-detail">
+                        <thead class="hidden-xs">
+                            <tr>
+                                <th>{{'ITECBAN-ACCOUNT.MOVEMENT.OPERATION.DATE' | translate}}</th>
+                                <th>{{'ITECBAN-CREDITCARDS.ATM' | translate}}</th>
+                                <th>{{'ITECBAN-ACCOUNT.MOVEMENT.CONCEPT' | translate}}</th>
+                                <th>{{'ITECBAN-ACCOUNT.MOVEMENT.AMOUNT' | translate}}</th>
+                            </tr>
+                        </thead>
+                        <ng-container *ngIf="cardMovements">
+                            <!-- <tbody [ngClass]="{'open': selectedId === item.id && !isMobileResolution()}" *ngFor="let item of cardMovements"> -->
+                            <tbody [ngClass]="{'open': idx === i && !isMobileResolution()}" *ngFor="let item of cardMovements, let i of index">
+                                <tr class="interactive hidden-xs text-no-warp" (click)="viewDetail(item, i)">
+                                    <td>{{ item.date | date: 'dd/MM/yyyy'}}</td>
+                                    <td class="hidden-xs">{{ item.shop }}</td>
+                                    <td class="hidden-xs">{{ item.reason }}</td>
+                                    <td class="text-no-warp text-right">{{ item.amount.amount | CurrencyPipe: item.amount.currency.code }}</td>
+                                </tr>
+                                <tr class="interactive visible-xs-block text-no-warp" (click)="viewDetail(item, i)">
+                                    <td>
+                                        <span><strong class="visible-xs-block text-os-semibold text-no-warp">{{ item.date | date: 'dd/MM/yyyy'}}</strong></span>
+                                        <span class="visible-xs-block fs-8 text-no-warp">{{ item.shop }}</span>
+                                    </td>
+                                    <!-- <td class="col-xs-12 text-no-warp text-right">
+                                        <span><strong class="visible-xs-block text-os-semibold text-no-warp">{{ item.reason }}</strong></span>
+                                        <span class="visible-xs-block fs-12 text-no-warp">{{ item.amount.amount | CurrencyPipe: item.amount.currency.code }}</span>
+                                    </td> -->
+                                    <td class="col-xs-12 text-no-warp text-right">
+                                        <span><strong class="visible-xs-block text-os-semibold text-no-warp">{{ item.amount.amount | CurrencyPipe: item.amount.currency.code }}</strong></span>
+                                        <!-- <span><strong class="visible-xs-block text-os-semibold text-no-warp">{{ item.reason }}</strong></span>
+                                        <span class="visible-xs-block fs-12 text-no-warp">{{ item.amount.amount | CurrencyPipe: item.amount.currency.code }}</span> -->
+                                    </td>
+                                </tr>
+                                <tr [ngClass]="{'description': !isMobileResolution() }" *ngIf="idx && (idx === i)">
+                                    <!-- <tr [ngClass]="{'description': !isMobileResolution() }" *ngIf="amount && (amount === item.amount.amount)"> -->
+                                    <!-- *ngIf="selectedId && (selectedId === item.id)" -->
+                                    <td colspan="6">
+                                        <app-card-detail [card]="recivedCard" [movement]="item" [coming]="coming" (closeEvent)="close()"></app-card-detail>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </ng-container>
+                    </table>
+                    <div class="row" *ngIf="hasMoreData">
+                        <a class="col-xs-12 text-center" (click)="next()" role="button">{{'ITECBAN-ACCOUNT.MOVEMENT.MORE-DATA' | translate}}</a>
+                    </div>
+                </div>
+                <div class="panel-body" *ngIf="!cardMovements">
+                    <table class="table table-detail">
+                        <tbody>
+                            <tr>
+                                {{ 'ITECBAN-CARDS.NULL' | translate }}
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

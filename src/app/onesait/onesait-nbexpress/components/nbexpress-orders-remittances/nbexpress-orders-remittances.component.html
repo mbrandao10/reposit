@@ -1,0 +1,25 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<div class="panel ">
+  <div class="panel-body">
+    <form class="form-group mb-1">
+      <label class="radio-inline">
+        <input [formControl]="radioForm" type="radio" name="optradio" value="optOrders" (change)="changeRadio()">{{'ONESAIT-NB-EXPRESS.ORDERS-REMITTANCES.CONSULT-ORDERS'
+                | translate}}
+      </label>
+      <!-- <label class="radio-inline">
+        <input [formControl]="radioForm" type="radio" name="optradio" value="optRemittances" (change)="changeRadio()">{{'ONESAIT-NB-EXPRESS.ORDERS-REMITTANCES.CONSULT-REMITTANCES'
+                | translate}}
+      </label> -->
+    </form>
+
+    <ng-container *ngIf="radioForm.value==='optOrders'">
+      <osb-nbexpress-consult-orders [statusTypes]="statusTypes" [remittanceId]="remittance?.id"
+        [contractId]="contractId"></osb-nbexpress-consult-orders>
+    </ng-container>
+    <ng-container *ngIf="radioForm.value==='optRemittances'">
+      <osb-nbexpress-consult-remittances [statusTypes]="remittanceStatusTypes" [contractId]="contractId"
+        (viewOrderDetail)="getRemittance($event)"></osb-nbexpress-consult-remittances>
+    </ng-container>
+  </div>
+</div>

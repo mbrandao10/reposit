@@ -1,0 +1,113 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<div class="row ">
+  <div class="col-xs-12">
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="panel ">
+            <div class="panel-body">
+              <div class="col-xs-12 mb-1">
+                <ul class="nav nav-pills">
+                  <li (click)="changeYear(now)" [ngClass]="{'active': selectedYear === now }">
+                    <a>{{now}}</a></li>
+                  <li *ngFor="let year of yearList" (click)="changeYear(year)"
+                    [ngClass]="{'active': selectedYear === year }">
+                    <a>{{year}}</a></li>
+                </ul>
+
+              </div>
+              <div class="col-xs-12 mb-1">
+                <ul class="nav nav-pills">
+                  <li (click)="open('savings')" [ngClass]="{'active': view === 'savings' }">
+                    <a>{{'ONESAIT-PROFILE.FISCAL.SAVINGS.TITLE' | translate}}</a></li>
+                  <li (click)="open('credit')" [ngClass]="{'active': view === 'credit' }">
+                    <a>{{'ONESAIT-PROFILE.FISCAL.CREDIT.TITLE' | translate}}</a>
+                  </li>
+                </ul>
+              </div>
+              <ng-container *ngIf="view === 'savings'">
+                <br>
+                <table class="table table-striped">
+                  <thead class="hidden-xs">
+                    <tr>
+                      <th>{{'ONESAIT-PROFILE.FISCAL.SAVINGS.ACCOUNT' | translate}}</th>
+                      <th class="hidden-xs text-right">{{'ONESAIT-PROFILE.FISCAL.SAVINGS.OWNERSHIP' | translate}}</th>
+                      <th class="hidden-xs text-right">{{'ONESAIT-PROFILE.FISCAL.SAVINGS.PAID-INTERESTS' | translate}}</th>
+                      <th class="hidden-xs text-right">{{'ONESAIT-PROFILE.FISCAL.SAVINGS.DEBTOR-INTERESTS' | translate}}</th>
+                      <th class="hidden-xs text-right">{{'ONESAIT-PROFILE.FISCAL.SAVINGS.TAXES' | translate}}</th>
+                    </tr>
+                  </thead>
+                  <ng-container *ngIf="savings">
+                    <tbody *ngIf="savings.length != 0">
+                      <tr *ngFor="let saving of savings">
+                        <td *ngIf="saving.account" class="hidden-xs">{{saving.account.id}}</td>
+                        <td *ngIf="saving.ownerShipPercentage" class="hidden-xs text-right">{{saving.ownerShipPercentage}} %</td>
+                        <td class="hidden-xs text-no-warp text-right" *ngIf="saving.interests">
+                          {{saving.interests.amount | CurrencyPipe : saving.interests.currency.code : false}}</td>
+                        <td class="hidden-xs text-no-warp text-right" *ngIf="saving.debtorInterests">
+                          {{saving.debtorInterests.amount | CurrencyPipe : saving.debtorInterests.currency.code : false}}</td>
+                        <td class="hidden-xs text-no-warp text-right" *ngIf="saving.taxes">
+                          {{saving.taxes.amount | CurrencyPipe : saving.taxes.currency.code : false}} </td>
+                      </tr>
+                    </tbody>
+                  </ng-container>
+                </table>
+                <div class="row" *ngIf="hasMoreData">
+                  <a class="col-xs-12 text-center p-1" (click)="next()" role="button">{{'COMMON.MORE-RESULTS'
+                          | translate}}</a>
+                </div>
+                <ng-container *ngIf="(savings && savings.length === 0)">
+                  <div class="col-xs-12">
+                    {{'ONESAIT-PROFILE.FISCAL.SAVINGS.NO-SAVINGS' | translate}}
+                  </div>
+                </ng-container>
+              </ng-container>
+              <ng-container *ngIf="view === 'credit'">
+                <br>
+                <table class="table table-striped">
+                  <thead class="hidden-xs">
+                    <tr>
+                      <th class="hidden-xs">{{'ONESAIT-PROFILE.FISCAL.CREDIT.ACCOUNT' | translate}}</th>
+                      <th class="hidden-xs text-right">{{'ONESAIT-PROFILE.FISCAL.CREDIT.OWNERSHIP' | translate}}</th>
+                      <th class="hidden-xs text-right">{{'ONESAIT-PROFILE.FISCAL.CREDIT.PAID-INTERESTS' | translate}}
+                      </th>
+                      <th class="hidden-xs text-right">{{'ONESAIT-PROFILE.FISCAL.CREDIT.AMORTIZED' | translate}}</th>
+                      <th class="text-right">{{'ONESAIT-PROFILE.FISCAL.CREDIT.BALANCE' | translate}}</th>
+                    </tr>
+                  </thead>
+                  <ng-container *ngIf="credits">
+                    <tbody *ngIf="credits.length!=0">
+                      <tr *ngFor="let credit of credits">
+                        <td class="hidden-xs" *ngIf="credit.account.id">{{credit.account.id}}</td>
+                        <td class="hidden-xs text-right" *ngIf="credit.ownerShipPercentage">
+                          {{credit.ownerShipPercentage}} %</td>
+                        <td class="hidden-xs text-no-warp text-right" *ngIf="credit.interests">
+                          {{credit.interests.amount | CurrencyPipe : credit.interests.currency.code : false}}</td>
+                        <td class="hidden-xs text-no-warp text-right" *ngIf="credit.amortizedAmount">
+                          {{credit.amortizedAmount.amount | CurrencyPipe : credit.amortizedAmount.currency.code : false}}
+                        </td>
+                        <td class="text-no-warp text-right" *ngIf="credit.balanceAtEnding">
+                          {{credit.balanceAtEnding.amount | CurrencyPipe : credit.balanceAtEnding.currency.code : false}}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </ng-container>
+                </table>
+                <div class="row" *ngIf="hasMoreData">
+                  <a class="col-xs-12 text-center p-1" (click)="next()" role="button">{{'COMMON.MORE-RESULTS'
+                            | translate}}</a>
+                </div>
+                <ng-container *ngIf="(!credits) || (credits && credits.length === 0)">
+                  <div class="col-xs-12" >
+                    {{'ONESAIT-PROFILE.FISCAL.CREDIT.NO-CREDIT' | translate}}
+                  </div>
+                </ng-container>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

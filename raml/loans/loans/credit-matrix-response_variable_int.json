@@ -1,0 +1,206 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "amount": 32637,
+      "period": {
+        "id": "18",
+        "description": "18 MESES"
+      },
+      "averageInstallment": 1894.52,
+      "ttin": 2.18,
+      "ttea": 2.2,
+      "cfts": 12.61,
+      "cftn": 13.14,
+      "initialInstallment": 1940.47,
+      "percentage": 100,
+      "feeType": "00",
+      "varInterestInd": "0000",
+      "varInterestCal": "000",
+      "varInterestDif": 3.50,
+      "varInterestReferential":"BADLAR pesos fin mes",
+      "isVarInterest":true,
+      "revisionPeriod": "0000",
+      "amortizationPeriod": "0000"
+    },
+    {
+      "amount": 22845.9,
+      "period": {
+        "id": "18",
+        "description": "18 MESES"
+      },
+      "averageInstallment": 1326.16,
+      "ttin": 2.18,
+      "ttea": 2.2,
+      "cfts": 12.63,
+      "cftn": 13.16,
+      "initialInstallment": 1358.32,
+      "percentage": 70,
+      "feeType": "00",
+      "varInterestInd": "0000",
+      "varInterestCal": "000",
+      "varInterestDif": 3.50,
+      "varInterestReferential":"BADLAR pesos fin mes",
+      "isVarInterest":true,
+      "revisionPeriod": "0000",
+      "amortizationPeriod": "0000"
+    },
+    {
+      "amount": 13054.8,
+      "period": {
+        "id": "18",
+        "description": "18 MESES"
+      },
+      "averageInstallment": 757.8,
+      "ttin": 2.18,
+      "ttea": 2.2,
+      "cfts": 12.68,
+      "cftn": 13.21,
+      "initialInstallment": 776.19,
+      "percentage": 40,
+      "feeType": "00",
+      "varInterestInd": "0000",
+      "varInterestCal": "000",
+      "varInterestDif": 3.50,
+      "varInterestReferential":"BADLAR pesos fin mes",
+      "isVarInterest":true,
+      "revisionPeriod": "0000",
+      "amortizationPeriod": "0000"
+    },
+    {
+      "amount": 32637,
+      "period": {
+        "id": "24",
+        "description": "24 MESES"
+      },
+      "averageInstallment": 1427,
+      "ttin": 1.42,
+      "ttea": 1.43,
+      "cfts": 10.03,
+      "cftn": 10.37,
+      "initialInstallment": 1471.51,
+      "percentage": 100,
+      "feeType": "00",
+      "varInterestInd": "0000",
+      "varInterestCal": "000",
+      "varInterestDif": 3.50,
+      "varInterestReferential":"BADLAR pesos fin mes",
+      "isVarInterest":true,
+      "revisionPeriod": "0000",
+      "amortizationPeriod": "0000"
+    },
+    {
+      "amount": 22845.9,
+      "period": {
+        "id": "24",
+        "description": "24 MESES"
+      },
+      "averageInstallment": 998.9,
+      "ttin": 1.42,
+      "ttea": 1.43,
+      "cfts": 10.07,
+      "cftn": 10.4,
+      "initialInstallment": 1030.06,
+      "percentage": 70,
+      "feeType": "00",
+      "varInterestInd": "0000",
+      "varInterestCal": "000",
+      "varInterestDif": 3.50,
+      "varInterestReferential":"BADLAR pesos fin mes",
+      "isVarInterest":true,
+      "revisionPeriod": "0000",
+      "amortizationPeriod": "0000"
+    },
+    {
+      "amount": 13054.8,
+      "period": {
+        "id": "24",
+        "description": "24 MESES"
+      },
+      "averageInstallment": 570.8,
+      "ttin": 1.42,
+      "ttea": 1.43,
+      "cfts": 10.15,
+      "cftn": 10.48,
+      "initialInstallment": 588.6,
+      "percentage": 40,
+      "feeType": "00",
+      "varInterestInd": "0000",
+      "varInterestCal": "000",
+      "varInterestDif": 3.50,
+      "varInterestReferential":"BADLAR pesos fin mes",
+      "isVarInterest":true,
+      "revisionPeriod": "0000",
+      "amortizationPeriod": "0000"
+    },
+    {
+      "amount": 32637,
+      "period": {
+        "id": "36",
+        "description": "36 MESES"
+      },
+      "averageInstallment": 971.96,
+      "ttin": 1.36,
+      "ttea": 1.37,
+      "cfts": 8.22,
+      "cftn": 8.54,
+      "initialInstallment": 1016.8,
+      "percentage": 100,
+      "feeType": "00",
+      "varInterestInd": "0000",
+      "varInterestCal": "000",
+      "varInterestDif": 3.50,
+      "varInterestReferential":"BADLAR pesos fin mes",
+      "isVarInterest":true,
+      "revisionPeriod": "0000",
+      "amortizationPeriod": "0000"
+    },
+    {
+      "amount": 22845.9,
+      "period": {
+        "id": "36",
+        "description": "36 MESES"
+      },
+      "averageInstallment": 680.37,
+      "ttin": 1.36,
+      "ttea": 1.37,
+      "cfts": 8.25,
+      "cftn": 8.57,
+      "initialInstallment": 711.75,
+      "percentage": 70,
+      "feeType": "00",
+      "varInterestInd": "0000",
+      "varInterestCal": "000",
+      "varInterestDif": 3.50,
+      "varInterestReferential":"BADLAR pesos fin mes",
+      "isVarInterest":true,
+      "revisionPeriod": "0000",
+      "amortizationPeriod": "0000"
+    },
+    {
+      "amount": 13054.8,
+      "period": {
+        "id": "36",
+        "description": "36 MESES"
+      },
+      "averageInstallment": 388.78,
+      "ttin": 1.36,
+      "ttea": 1.37,
+      "cfts": 8.33,
+      "cftn": 8.65,
+      "initialInstallment": 406.72,
+      "percentage": 40,
+      "feeType": "00",
+      "varInterestInd": "0000",
+      "varInterestCal": "000",
+      "varInterestDif": 0.00,
+      "varInterestReferential":"BADLAR xxx",
+      "isVarInterest":true,
+      "revisionPeriod": "0000",
+      "amortizationPeriod": "0000"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "movementClass":"CreditCardSettlement",
+    "id": "123412341232312341234134564563452341234234345634563456523423452345345645645664566",
+    "reference": "xxxx-xxxx-xxxxx-xxxxx-xxxxx-xxxxxx-xxxx",
+    "reason": "Compra nacional",
+    "amount": {
+      "amount": -9999.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "type": {
+      "id": "LQCR",
+      "name": "Liquidación tarjeta de crédito",
+      "href": "https://itecban.indra.es/accounts/dataCatalogs/movementTypes"
+    },
+    "operationDate": "2014-10-30T00:00:00.00Z",
+    "hasDocument":false,
+    "documentId": "71cb8771-5b29-4570-af1c-ca3cb7975246",
+    "state": "APLICADA",
+    "cardNumber":"4917610000000000003",
+    "settlementDate":"2014-10-30T00:00:00.00Z"
+  }
+}

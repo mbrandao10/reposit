@@ -1,0 +1,161 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id":"TRNE030000000001744",
+      "date": "2014-10-30T00:00:00.00Z",
+      "orderer": {
+        "fromAccount": {
+          "id": "1491000133273000001268",
+          "type": {
+            "id": "cbu",
+            "name": "cbu"
+          }
+        }
+      },
+      "beneficiary": {
+        "toAccount": {
+          "type": {
+            "id": "cbu",
+            "name": "cbu"
+          },
+          "id": "1493310001273000001268"
+        },
+        "description": "ALVARO MUNOZ AVILA",
+        "email": "theuser@themail.com"
+      },
+      "amount": {
+        "amount": 60,
+        "currency": {
+          "id": "USA",
+          "code": "840"
+        }
+      },
+      "reason": "Pago alquiler",
+      "operationType": {
+        "id": "TRNE",
+        "name": "Transferencia nacional"
+      },
+      "transferType" : {
+        "id": "03",
+        "name": "Cash"
+      },
+      "periodicity":{
+        "firstExecutionDate": "2017-12-31",
+        "frequency":{
+          "id":"1",
+          "name":"MENSUAL"
+        }
+      },
+      "urgent": false,
+      "cancellable": false
+    },
+    {
+      "id":"TRNE030000000001745",
+      "date": "2014-10-30T00:00:00.00Z",
+      "orderer": {
+        "fromAccount": {
+          "id": "14910001273000001268",
+          "type": {
+            "id": "cbu",
+            "name": "cbu"
+          }
+        }
+      },
+      "beneficiary": {
+        "toAccount": {
+          "type": {
+            "id": "ccc",
+            "name": "ccc"
+          },
+          "id": "14910001273000001268"
+        },
+        "description": "John Wood",
+        "email": "theuser@themail.com"
+      },
+      "amount": {
+        "amount": 60,
+        "currency": {
+          "id": "USA",
+          "code": "840"
+        }
+      },
+      "reason": "Abono Gimnasio",
+      "operationType": {
+        "id": "TRNE",
+        "name": "Transferencia nacional"
+      },
+      "transferType" : {
+        "id": "03",
+        "name": "Cash"
+      },
+      "periodicity":{
+        "firstExecutionDate": "2017-12-31",
+        "lastExecutionDate": "2018-12-31",
+        "frequency":{
+          "id":"1",
+          "name":"MENSUAL"
+        }
+      },
+      "urgent": false,
+      "cancellable": false
+    },
+    {
+      "id":"TRNE030000000001746",
+      "date": "2014-10-30T00:00:00.00Z",
+      "orderer": {
+        "fromAccount": {
+          "id": "14910001273000001268",
+          "type": {
+            "id": "cbu",
+            "name": "cbu"
+          }
+        }
+      },
+      "beneficiary": {
+        "toAccount": {
+          "type": {
+            "id": "ccc",
+            "name": "ccc"
+          },
+          "id": "14910001273000001268"
+        },
+        "description": "ALVARO MUNOZ AVILA",
+        "email": "theuser@themail.com"
+      },
+      "amount": {
+        "amount": 60,
+        "currency": {
+          "id": "ARG",
+          "code": "32"
+        }
+      },
+      "reason": "Arreglo furgoneta",
+      "operationType": {
+        "id": "TRNE",
+        "name": "Transferencia nacional"
+      },
+      "transferType" : {
+        "id": "03",
+        "name": "Cash"
+      },
+      "nextExecutionDate": "2017-09-20T00:00:00.00Z",
+      "urgent": false,
+      "cancellable": false
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+    "links": [
+      {
+        "rel": "next",
+        "href": "https://itecban.indra.es/transfers/favorites/?paginationKey=f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+        "method": "GET"
+      }
+    ]
+  }
+}

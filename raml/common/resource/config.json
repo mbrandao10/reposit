@@ -1,0 +1,29 @@
+{
+    "account":{
+        "formats": ["CBU"],
+        "viewKey": "CBU"
+    },
+    "transfers":{
+        "form":{
+            "conceptSelected":"VAR",
+            "orderAccountsCurrencyCodes":["032", "840"]
+        },
+        "amountExceded":{
+            "032": 50000,
+            "840": 2900
+        }
+    },
+    "currencies": [
+      {
+          "id": "PESOS",
+          "code": "032",
+          "sign": "$",
+          "position": "left"
+      },
+      {
+          "id": "DÓLARES",
+          "code": "840",
+          "sign": "USD",
+          "position": "left"
+      }]
+  }

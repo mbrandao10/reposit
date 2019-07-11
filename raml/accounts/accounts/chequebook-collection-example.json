@@ -1,0 +1,77 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "12333",
+      "type": {
+        "id": "T20CRE",
+        "name": "T.20 CHEQUES C.CLIENTE RESIDENTES EUROS"
+      },
+      "firstChequeBook": "Primer talón 1",
+      "office": "Office 1",
+      "dateExpiry": "2019-11-01",
+      "timestamp": "2019-04-29T00:00:00Z",
+      "situation": "Situación 1",
+      "owner": "Daniel"
+    },
+    {
+      "id": "12333",
+      "type": {
+        "id": "T20CRE",
+        "name": "T.20 CHEQUES C.CLIENTE RESIDENTES EUROS"
+      },
+      "firstChequeBook": "Primer talón 2",
+      "office": "Office 2",
+      "dateExpiry": "2019-10-01",
+      "timestamp": "2019-04-30T15:00:00Z",
+      "situation": "Situación 2",
+      "owner": "Juán"
+    },
+    {
+      "id": "12334",
+      "type": {
+        "id": "T20CNRE",
+        "name": "T.20 CHEQUES C.CLIENTE NO RESIDENTES EUROS"
+      },
+      "firstChequeBook": "Primer talón 3",
+      "office": "Office 3",
+      "dateExpiry": "2019-09-01",
+      "timestamp": "2019-05-01T00:00:00Z",
+      "situation": "Situación 3",
+      "owner": "Manuel"
+    },
+    {
+      "id": "12335",
+      "type": {
+        "id": "T20PRE",
+        "name": "T.20 PAGARES C.CLIENTE RESIDENTES EUROS"
+      },
+      "firstChequeBook": "Primer talón 4",
+      "office": "Office 4",
+      "dateExpiry": "2019-11-02",
+      "timestamp": "2019-05-02T00:00:00Z",
+      "situation": "Situación 4",
+      "owner": "Rafael"
+    },
+    {
+      "id": "12336",
+      "type": {
+        "id": "T20CRE",
+        "name": "T.20 CHEQUES C.CLIENTE RESIDENTES EUROS"
+      },
+      "firstChequeBook": "Primer talón 5",
+      "office": "Office 5",
+      "dateExpiry": "2019-11-03",
+      "timestamp": "2019-05-02T00:00:00Z",
+      "situation": "Situación 5",
+      "owner": "Israel"
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "result": {
+    "code": "503",
+    "info": "Service Unavailable",
+    "errors": [
+      {
+        "errorDescription": "Service is temporarily unavailable. Try again later",
+        "errorCode": "001A",
+        "errorType": "T"
+      }
+    ]
+  }
+}

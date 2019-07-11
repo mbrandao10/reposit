@@ -1,0 +1,41 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "1",
+        "name": "CREADA"
+    },
+    {
+      "id": "2",
+      "name": "CREADA SIN ADHESION"
+    },
+    {
+      "id": "3",
+      "name": "VENCIDA"
+    },
+    {
+      "id": "4",
+      "name": "RECHAZADA"
+    },
+    {
+      "id": "5",
+      "name": "ACTIVA"
+    },
+    {
+      "id": "6",
+      "name": "INACTIVA"
+    },
+    {
+      "id": "7",
+      "name": "DESUSO"
+    },
+    {
+      "id": "8",
+      "name": "SUSTITUIDA"
+    }
+
+  ]
+}

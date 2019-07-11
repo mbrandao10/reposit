@@ -1,0 +1,173 @@
+<form [formGroup]="newSupplierForm">
+    <div class="row">
+        <div class="col-xs-12">
+            <fieldset class="fielset-custom">
+                <div class="text-os-bold mb-1 fs-18">
+                    {{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.ISSUE' | translate}}
+                </div>
+                <div class="form-group">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6 mt-1">
+                                        <label for="concept">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.FORM.CONCEPT'
+                                      | translate}}</label>
+                                        <osb-input-validator [formCtrl]="newSupplierForm.get('concept')">
+                                            <input class="form-control" type="text" name="concept"
+                                                formControlName="concept" />
+                                        </osb-input-validator>
+                                    </div>
+
+                                    <div class="col-xs-6 col-md-3 mt-1">
+                                        <div class="col-xs-6 col-sm-9 p-0">
+                                            <label for="amount">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.FORM.AMOUNT'
+                                                | translate}}</label>
+                                            <osb-input-validator [formCtrl]="newSupplierForm.get('amount')">
+                                                <input class="form-control" type="text" name="amount"
+                                                    formControlName="amount" (blur)="applyFormatInput()" />
+                                            </osb-input-validator>
+                                        </div>
+                                        <div class="col-xs-6 col-sm-3 mt-2"><span>{{currencySymbol}}</span></div>
+                                    </div>
+                                    <div class="col-xs-6 col-md-3 pl-0 mt-1">
+                                        <label for="expirationDate">
+                                            {{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.FORM.EXPIRATION' | translate}}
+                                        </label>
+                                        <div class="input-calendar-custom">
+                                            <osb-input-validator [formCtrl]="newSupplierForm.get('expirationDate')">
+                                                <input autocomplete="off" class="form-control" name="expirationDate"
+                                                    formControlName="expirationDate" #dp="bsDatepicker" bsDatepicker
+                                                    [minDate]="minDate">
+                                                <i class="icon icononesait icon-calendar" (click)="dp.show()"></i>
+                                            </osb-input-validator>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-os-bold mb-1 fs-18">
+                        {{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.FORM.SUPPLIER-DATA' | translate}}
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-md-4">
+                            <label
+                                for="name">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.FORM.NAME' | translate}}</label>
+                            <osb-input-validator [formCtrl]="newSupplierForm.get('name')">
+                                <input class="form-control" type="text" name="name" formControlName="name" />
+                            </osb-input-validator>
+                        </div>
+                        <div class="col-xs-6 col-md-2">
+                            <label
+                                for="legalDocument">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.FORM.CIF' | translate}}</label>
+                            <osb-input-validator [formCtrl]="newSupplierForm.get('legalDocument')">
+                                <input class="form-control" type="text" name="legalDocument"
+                                    formControlName="legalDocument" />
+                            </osb-input-validator>
+                        </div>
+                        <div class="col-xs-6 col-md-4">
+                            <label
+                                for="accountId">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.FORM.ACCOUNT' | translate}}</label>
+                            <osb-input-validator [formCtrl]="newSupplierForm.get('accountId')">
+                                <input class="form-control" type="text" name="accountId" formControlName="accountId"
+                                    (blur)="removeSpaceFormat()" />
+                            </osb-input-validator>
+                        </div>
+                        <div class="col-xs-6 col-md-2">
+                            <label
+                                for="phoneNumber">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.FORM.PHONE' | translate}}</label>
+                            <osb-input-validator [formCtrl]="newSupplierForm.get('phoneNumber')">
+                                <input class="form-control" type="text" name="phoneNumber"
+                                    formControlName="phoneNumber" />
+                            </osb-input-validator>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="text-os-bold mb-1 mt-1 fs-18">
+                {{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.FORM.RESIDENCE' | translate}}
+            </div>
+            <fieldset class="fielset-custom">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-4 col-md-2">
+                            <label
+                                for="streetType">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.FORM.TYPE' | translate}}</label>
+                            <div class="form-select-custom">
+                                <osb-input-validator [formCtrl]="newSupplierForm.get('streetType')">
+                                    <select class="form-control form-control-amim" name="streetType"
+                                        formControlName="streetType">
+                                        <option [ngValue]="undefined" [selected]="undefined"></option>
+                                        <option *ngFor="let streetType of streetTypes" [value]="streetType.name">
+                                            {{streetType.name}}</option>
+                                    </select>
+                                </osb-input-validator>
+                            </div>
+                        </div>
+                        <div class="col-xs-5 col-md-6">
+                            <label
+                                for="streetName">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.FORM.ROAD' | translate}}</label>
+                            <osb-input-validator [formCtrl]="newSupplierForm.get('streetName')">
+                                <input class="form-control" type="text" name="streetName"
+                                    formControlName="streetName" />
+                            </osb-input-validator>
+                        </div>
+                        <div class="col-xs-3 col-md-4">
+                            <label
+                                for="streetNumber">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.FORM.NUMBER' | translate}}</label>
+                            <osb-input-validator [formCtrl]="newSupplierForm.get('streetNumber')">
+                                <input class="form-control" type="text" name="streetNumber"
+                                    formControlName="streetNumber" />
+                            </osb-input-validator>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-4 col-md-2">
+                            <label
+                                for="postCode">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.FORM.POSTAL' | translate}}</label>
+                            <osb-input-validator [formCtrl]="newSupplierForm.get('postCode')">
+                                <input class="form-control" type="text" name="postCode" formControlName="postCode" />
+                            </osb-input-validator>
+                        </div>
+                        <div class="col-xs-8 col-md-3">
+                            <label
+                                for="city">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.FORM.LOCATION' | translate}}</label>
+                            <osb-input-validator [formCtrl]="newSupplierForm.get('city')">
+                                <input class="form-control" type="text" name="city" formControlName="city"
+                                    pattern="^([^0-9]*)$" />
+                            </osb-input-validator>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <label
+                                for="province">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.FORM.PROVINCE' | translate}}</label>
+                            <osb-input-validator [formCtrl]="newSupplierForm.get('province')">
+                                <input class="form-control" type="text" name="province" formControlName="province" />
+                            </osb-input-validator>
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <label
+                                for="country">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.FORM.COUNTRY' | translate}}</label>
+                            <!-- <input class="form-control" type="text" name="country" formControlName="country" /> -->
+                            <osb-input-validator [formCtrl]="newSupplierForm.get('country')">
+                                <select class="form-control form-control-amim" name="country" formControlName="country">
+                                    <option *ngFor="let country of countries" [value]="country.id">
+                                        {{country.name}}</option>
+                                </select>
+                            </osb-input-validator>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <div>
+            <div class="col-xs-12 col-sm-12 col-md-12  mt-1 mb-1 text-right">
+                <button class="btn btn-primary" [disabled]="!newSupplierForm.valid" (click)="saveSupplier()"
+                    data-dismiss="modal">{{'ONESAIT-CONFIRMING.ISSUE-ORDERS.INDIVIDUAL.SUPPLIER.FORM.ADD' | translate}}</button>
+            </div>
+        </div>
+    </div>
+</form>

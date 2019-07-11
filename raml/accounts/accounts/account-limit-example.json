@@ -1,0 +1,23 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "id": "149100011009408525",
+    "currentAccumulatedAmount": {
+      "amount": 550.2,
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      }
+    },
+    "maxDailyAmount": {
+      "amount": 1200,
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      }
+    }
+  }
+}

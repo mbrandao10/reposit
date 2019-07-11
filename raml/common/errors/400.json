@@ -1,0 +1,13 @@
+{
+  "result": {
+    "code": "400",
+    "info": "Bad Request",
+    "errors": [
+      {
+        "errorDescription": "FORMATO NO VALIDO",
+        "errorCode": "999X",
+        "errorType": "F"
+      }
+    ]
+  }
+}

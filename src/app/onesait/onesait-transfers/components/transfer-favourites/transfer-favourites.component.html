@@ -1,0 +1,80 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<div class="panel ">
+    <div class="panel-body">
+
+        <table class="table table-detail">
+            <thead class="hidden-xs" *ngIf="favourites">
+                <tr>
+                    <th class="hidden-sm hidden-md hidden-lg"></th>
+                    <th>
+                        {{ 'ONESAIT-TRANSFERS.FAVOURITE.LIST.ALIAS' | translate }}
+                    </th>
+                    <th>
+                        {{ 'ONESAIT-TRANSFERS.FAVOURITE.LIST.TYPE' | translate }}
+                    </th>
+                    <th>
+                        {{ 'ONESAIT-TRANSFERS.FAVOURITE.LIST.BENEFICIARY' | translate }}
+                    </th>
+                    <th>
+                        {{ 'ONESAIT-TRANSFERS.FAVOURITE.LIST.AMOUNT' | translate }}
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </thead>
+
+
+            <tbody [ngClass]="{'open': favourite.id == selectedItem && !isMobileResolution() }" *ngFor="let favourite of favourites;">
+
+                <tr class="interactive">
+                    <td (click)="viewDetail(favourite)">
+                        {{ favourite.reason }}
+                        <span class="visible-xs-block fs-12">
+                            {{ favourite.transferMode?.name }}
+                        </span>
+                    </td>
+                    <td (click)="viewDetail(favourite)" class="hidden-xs">
+                        {{ favourite.transferMode?.name }}
+                    </td>
+                    <td (click)="viewDetail(favourite)" class="hidden-xs">
+                        {{ favourite.beneficiary.description }}
+                    </td>
+                    <td (click)="viewDetail(favourite)" class="text-right">
+                        <span class="hidden-xs text-no-warp">
+                            {{ favourite.amount.amount | CurrencyPipe: favourite.amount.currency.code }}
+                        </span>
+                        <span class="visible-xs-block text-os-semibold text-no-warp">
+                            {{ favourite.amount.amount | CurrencyPipe: favourite.amount.currency.code }}
+                        </span>
+                        <span class="visible-xs-block fs-12">
+                            {{ favourite.beneficiary.description }}
+                        </span>
+                    </td>
+                    <td class="hidden-xs hidden-sm text-right">
+                        <button class="btn btn-primary" (click)="repeatTransfer(favourite)">
+                            {{ 'ONESAIT-TRANSFERS.FAVOURITE.BUTTON.REPEAT' | translate | uppercase }}
+                        </button>
+                    </td>
+                </tr>
+
+                <tr [ngClass]="{'description': !isMobileResolution() }" *ngIf="selectedItem && (selectedItem === favourite.id)">
+                    <td colspan="5">
+                        <osb-transfer-favourites-detail [favourite]="favourite" (closeEvent)="close()" (repeatTransfer)="repeatTransfer(favourite)" (deleteFavOk)="deleteFavOk()"></osb-transfer-favourites-detail>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+        <!-- <div class="text-center mt-1" *ngIf="hasMoreData">
+            <a (click)="next()" role="button">
+                {{ 'ITECBAN-LOANS.AMORTIZATION-TABLE.TABLE.MORE-RESULTS' | translate }}
+            </a>
+        </div> -->
+        <div class="col-xs-12 mt-2 text-center" *ngIf="favourites && favourites.length === 0 && !loading">
+            <p> {{'ONESAIT-TRANSFERS.FAVOURITE.LIST.NO-DATA' | translate}} </p>
+        </div>
+    </div>
+</div>

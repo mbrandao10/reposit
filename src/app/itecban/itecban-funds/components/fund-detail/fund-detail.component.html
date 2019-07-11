@@ -1,0 +1,67 @@
+<ul class="list" *ngIf="fundDetail">
+    <li *ngIf="fundDetail.id">
+        <div class="name text-left">
+            {{ 'ITECBAN-FUNDS.DETAIL.ID-FUND' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ fundDetail.id }}
+        </div>
+    </li>
+    <li *ngIf="fundDetail.name">
+        <div class="name text-left">
+            {{ 'ITECBAN-FUNDS.DETAIL.DESCRIPTION' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ fundDetail.name }}
+        </div>
+    </li>
+    <li *ngIf="fundDetail.liquidationValue && fundDetail.liquidationValue.amount && fundDetail.liquidationValue.currency">
+        <div class="name text-left">
+            {{ 'ITECBAN-FUNDS.DETAIL.LIQ-VALUE' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ fundDetail.liquidationValue.amount | CurrencyPipe: fundDetail.liquidationValue.currency.code }}
+        </div>
+    </li>
+    <li *ngIf="fundDetail.effectiveValue && fundDetail.effectiveValue.amount && fundDetail.effectiveValue.currency">
+        <div class="name text-left">
+            {{ 'ITECBAN-FUNDS.DETAIL.EFFECTIVE-VALUE' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ fundDetail.effectiveValue.amount | CurrencyPipe: fundDetail.effectiveValue.currency.code }}
+        </div>
+    </li>
+    <li *ngIf="fundDetail.costEffectiveness">
+        <div class="name text-left">
+            {{ 'ITECBAN-FUNDS.DETAIL.COST-EFFECTIVENESS' | translate }}
+        </div>
+        <div class="value text-right text-no-warp">
+            {{ fundDetail.costEffectiveness | CurrencyPipe }}
+        </div>
+    </li>
+    <li *ngIf="fundDetail.isin">
+        <div class="name text-left">
+            {{ 'ITECBAN-FUNDS.DETAIL.ISIN' | translate }}
+        </div>
+        <div class="value text-right text-no-warp">
+            {{ fundDetail.isin }}
+        </div>
+    </li>
+    <li *ngIf="fundDetail.gains_losses">
+        <div class="name text-left">
+            {{ 'ITECBAN-FUNDS.DETAIL.GAINS-LOSES' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ fundDetail.gains_losses | CurrencyPipe }}
+        </div>
+    </li>
+
+    <li *ngIf="fundDetail.totalCost && fundDetail.totalCost.amount && fundDetail.totalCost.currency">
+        <div class="name text-left">
+            {{ 'ITECBAN-FUNDS.DETAIL.TOTAL-COST' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ fundDetail.totalCost.amount | CurrencyPipe: fundDetail.totalCost.currency.code }}
+        </div>
+    </li>
+</ul>

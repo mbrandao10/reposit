@@ -1,0 +1,15 @@
+{
+    "result": {
+        "code": "400",
+        "info": "Bad Request",
+        "errors": [{
+            "errorDescription": "LA OPERATIVA REQUIERE FIRMA",
+            "errorCode": "096H",
+            "errorType": "S",
+            "info": {
+                "type": "otp",
+                "transactionCode": "dd44792a-fad4-4776-a658-a2dd267b0485"
+            }
+        }]
+    }
+}

@@ -1,0 +1,311 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<div class="row p-1 page-non-tabbed pb-1">
+    <div class="col-xs-12">
+        <div class="panel">
+            <div class="panel-body">
+                <osb-final-message [text]="'ONESAIT-NB-EXPRESS.ADD.SUCCESS'" *ngIf="step === 'RESUME'">
+                </osb-final-message>
+                <ng-container *ngIf="step === 'FIRST'">
+                    <div class="col-xs-12">
+                        <form [formGroup]="newExpressForm" id="form">
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12 mt-1">
+                                    <div class="form-group">
+                                        <div class="row mb-1">
+                                            <div class="col-xs-8 col-md-12">
+                                                <label
+                                                    for="">{{ 'ONESAIT-NB-EXPRESS.ADD.SELECT-TYPE' | translate }}</label>
+                                                <select class="form-control" formControlName="product" name="product">
+                                                    <option [ngValue]="undefined" [selected]="undefined"></option>
+                                                    <option *ngFor="let product of products" [ngValue]="product">
+                                                        {{ product.name | capitalize }}
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-6 col-md-6">
+                                                <label for="expirationDate">
+                                                    {{ 'ONESAIT-NB-EXPRESS.ADD.DATE' | translate }}
+                                                </label>
+                                                <div class="input-calendar-custom">
+                                                    <osb-input-validator
+                                                        [formCtrl]="newExpressForm.get('expirationDate')">
+                                                        <input autocomplete="off" class="form-control"
+                                                            name="expirationDate" formControlName="expirationDate"
+                                                            #dp="bsDatepicker" bsDatepicker [minDate]="minDate">
+                                                        <i class="icon icononesait icon-calendar"
+                                                            (click)="dp.show()"></i>
+                                                    </osb-input-validator>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-1">
+                                            <div class="col-xs-6">
+                                                <label
+                                                    for="minAmount">{{ 'ONESAIT-NB-EXPRESS.ADD.INCOME' | translate }}</label>
+                                                <osb-input-validator [formCtrl]="newExpressForm.get('minAmount')" [opts]="inputValidatorOptions">
+                                                    <input class="form-control" placeholder="min." type="text"
+                                                        name="minAmount" formControlName="minAmount"
+                                                        (blur)="applyFormatInput(newExpressForm.get('minAmount'))" />
+                                                </osb-input-validator>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <label for="maxAmount">&nbsp; </label>
+                                                <osb-input-validator [formCtrl]="newExpressForm.get('maxAmount')" [opts]="inputValidatorOptions">
+                                                    <input class="form-control" placeholder="max." type="text"
+                                                        name="maxAmount" formControlName="maxAmount"
+                                                        (blur)="applyFormatInput(newExpressForm.get('maxAmount'))" />
+                                                </osb-input-validator>
+                                            </div>
+                                        </div>
+                                        <osb-formgroup-validator [formGroup]="newExpressForm"></osb-formgroup-validator>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div class="box-form-info">
+                                                    <div class="fs-12">
+                                                        {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-DATE-LIMIT' | translate }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div>
+                                                <div>
+                                                    <div class="row mt-1 mb-q">
+                                                        <div class="col-xs-6" *ngIf="accountInfo.username">
+                                                            <div class="text-os-semibold mb-12">
+                                                                {{ 'ONESAIT-NB-EXPRESS.ADD.OWNERSHIP' | translate }}
+                                                            </div>
+                                                            <div class="text-gray-dark">
+                                                                {{ accountInfo.username }}
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xs-6" *ngIf="accountInfo.userId">
+                                                            <div class="text-os-semibold mb-12">
+                                                                {{ 'ONESAIT-NB-EXPRESS.ADD.CIF' | translate }}
+                                                            </div>
+                                                            <div class="text-gray-dark">
+                                                                {{ accountInfo.userId }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mt-1 mb-1" *ngIf="accountInfo.attorney">
+                                                        <div class="text-os-semibold mb-12">
+                                                            {{ 'ONESAIT-NB-EXPRESS.ADD.ATTORNEY' | translate }}
+                                                        </div>
+                                                        <div class="text-gray-dark">
+                                                            {{ accountInfo.attorney }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="text-os-semibold mt-1 mb-1">
+                                        {{ 'ONESAIT-NB-EXPRESS.ADD.INFO' | translate }}
+                                    </div>
+                                    <div class="text-gray-dark">
+                                        <p>
+                                            {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT1' | translate }}
+                                        </p>
+                                        <p>
+                                            {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT2' | translate }}
+                                        </p>
+                                        <p>
+                                            {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT3' | translate }}
+
+                                        </p>
+                                        <p>
+                                            {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT4' | translate }}
+
+                                        </p>
+                                        <p>
+                                            {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT5' | translate }}
+
+                                        </p>
+                                        <p>
+                                            {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT6' | translate }}
+                                        </p>
+                                        <p>
+                                            {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT7' | translate }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <button class="btn btn-terciary" (click)="cancel()">
+                                {{ 'COMMON.CANCEL' | translate }}
+                            </button>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <button class="btn btn-primary" [disabled]="!newExpressForm.valid" (click)="confirm()">
+                                {{ 'COMMON.CONTINUE' | translate }}
+                            </button>
+                        </div>
+                    </div>
+                </ng-container>
+                <!--   ----------------------------------------------------------------------  -->
+                <ng-container *ngIf="step === 'TOKEN'">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <form #formStep3="ngForm">
+
+                                <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+
+                                <div class="row mt-2">
+                                    <div class="col-xs-6">
+                                        <button class="btn btn-terciary" (click)="cancel()">
+                                            {{'COMMON.CANCEL' | translate}}
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <div class="row">
+                                            <div class="col-xs-6">
+                                                <button class="btn btn-secondary" (click)="back()">
+                                                    {{'COMMON.BACK' | translate}}
+                                                </button>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <button class="btn btn-primary" [disabled]="!signatureEntity.tokenValid"
+                                                    (click)="confirm()">
+                                                    {{'COMMON.FINALIZE' | translate}}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </ng-container>
+                
+                <!--   ----------------------------------------------------------------------  -->
+                <ng-container *ngIf="step === 'RESUME'">
+                    <osb-voucher-container #voucherContainer class="col-xs-12">
+                        <div class="row">
+                            <div class="box-form-info">
+                                <div class="info-section-group">
+                                    <div class="row">
+                                        <div class="col-md-6 col-xs-12">
+                                            <div OsbVoucherKeyValue class="col-xs-6 mt-1">
+                                                <div OsbVoucherKey>
+                                                    <b> {{ 'ONESAIT-NB-EXPRESS.ADD.DATETIME' | translate }}
+                                                    </b>
+                                                </div>
+                                                <div class="text-gray-dark" OsbVoucherValue>
+                                                    {{ finishDate | dateLocalized:'short'}}
+                                                </div>
+                                            </div>
+                                            <div OsbVoucherKeyValue class="col-xs-6 mt-1">
+                                                <div OsbVoucherKey>
+                                                    <b>
+                                                        {{ 'ONESAIT-NB-EXPRESS.ADD.CONTRACT' | translate }}
+                                                    </b>
+                                                </div>
+                                                <div class="text-gray-dark" OsbVoucherValue>
+                                                    {{ newExpressForm.controls.product.value.name }}
+                                                </div>
+                                            </div>
+                                            <div OsbVoucherKeyValue class="col-xs-6 mt-1" *ngIf="accountInfo.username">
+                                                <div OsbVoucherKey>
+                                                    <b> {{ 'ONESAIT-NB-EXPRESS.ADD.OWNERSHIP' | translate }}
+                                                    </b>
+                                                </div>
+                                                <div class="text-gray-dark" OsbVoucherValue>
+                                                    {{ accountInfo.username }}
+                                                </div>
+                                            </div>
+                                            <div OsbVoucherKeyValue class="col-xs-6 mt-1" *ngIf="accountInfo.userId">
+                                                <div OsbVoucherKey>
+                                                    <b>
+                                                        {{ 'ONESAIT-NB-EXPRESS.ADD.CIF' | translate }}
+                                                    </b>
+                                                </div>
+                                                <div class="text-gray-dark" OsbVoucherValue>
+                                                    {{ accountInfo.userId }}
+                                                </div>
+                                            </div>
+
+                                            <div OsbVoucherKeyValue class="col-xs-12 mt-1" *ngIf="accountInfo.attorney">
+                                                <div OsbVoucherKey>
+                                                    <b>
+                                                        {{ 'ONESAIT-NB-EXPRESS.ADD.ATTORNEY' | translate }}
+                                                    </b>
+                                                </div>
+                                                <div class="text-gray-dark" OsbVoucherValue>
+                                                    {{ accountInfo.attorney }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div OsbVoucherKeyValue class="col-md-6 col-xs-12">
+                                            <div OsbVoucherKey class="text-os-semibold mt-1 mb-1">
+                                                {{ 'ONESAIT-NB-EXPRESS.ADD.INFO' | translate }}
+                                            </div>
+                                            <div class="text-gray-dark">
+                                                <p>
+                                                    {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT1' | translate }}
+
+                                                </p>
+                                                <p>
+                                                    {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT2' | translate }}
+                                                </p>
+                                                <p>
+                                                    {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT3' | translate }}
+
+                                                </p>
+                                                <p>
+                                                    {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT4' | translate }}
+
+                                                </p>
+                                                <p>
+                                                    {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT5' | translate }}
+
+                                                </p>
+                                                <p>
+                                                    {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT6' | translate }}
+                                                </p>
+                                                <p>
+                                                    {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT7' | translate }}
+                                                </p>
+                                            </div>
+                                            <div class="hidden" OsbVoucherValue>
+                                                {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT1' | translate }}
+                                                {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT2' | translate }}
+                                                {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT3' | translate }}
+                                                {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT4' | translate }}
+                                                {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT5' | translate }}
+                                                {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT6' | translate }}
+                                                {{ 'ONESAIT-NB-EXPRESS.ADD.INFO-PRODUCT7' | translate }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-xs-6">
+                                <osb-download-info [voucherContainer]="voucherContainer"
+                                    text="{{'ONESAIT-NB-EXPRESS.REQUEST-ADVANCE.DOWNLOAD-RECEIPT' | translate}}">
+                                </osb-download-info>
+                            </div>
+                            <div class="col-xs-6">
+                                <button class="btn btn-primary  pull-right" (click)="accept()">
+                                    {{ 'COMMON.GO-GLOBAL-POSITION' | translate }}
+                                </button>
+                            </div>
+                        </div>
+                    </osb-voucher-container>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,191 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "SCHED030000000001744",
+      "orderer": {
+        "fromAccount": {
+          "id": "14910001273000001268",
+          "formats": [
+            {
+              "format": {
+                "id": "IBAN",
+                "name": "IBAN"
+              },
+              "value": "ES6914910001273000001268"
+            }
+          ]
+        }
+      },
+      "beneficiary": {
+        "toAccount": {
+          "type": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "id": "ES7720809848813497195537"
+        },
+        "description": "ALVARO MUNOZ AVILA",
+        "email": "theuser@themail.com"
+      },
+      "amount": {
+        "amount": 60,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "reason": "Pago alquiler Piso",
+      "transferType": {
+        "id": "03",
+        "name": "Cash"
+      },
+      "transferMode": {
+        "id": "SEPA",
+        "name": "SEPA"
+      },
+      "periodicity": {
+        "type": "PERIODIC",
+        "firstExecutionDate": "2018-12-31",
+        "frequency": {
+          "id": "1",
+          "name": "MENSUAL"
+        },
+        "executionRule": "E"
+      },
+      "nextExecutionDate": "2017-09-20T00:00:00.00Z",
+	  "creationDate": "2017-09-10T00:00:00.00Z",
+	  "status": {
+        "id": "AUTHORIZED",
+        "name": "Autorizada"
+      }
+    },
+    {
+      "id": "SCHED030000000001745",
+      "orderer": {
+        "fromAccount": {
+          "id": "14910001273000001268",
+          "formats": [
+            {
+              "format": {
+                "id": "IBAN",
+                "name": "IBAN"
+              },
+              "value": "ES6914910001273000001268"
+            }
+          ]
+        }
+      },
+      "beneficiary": {
+        "toAccount": {
+          "type": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "id": "ES6420807939518144595283"
+        },
+        "description": "John Wood",
+        "email": "theuser@themail.com"
+      },
+      "amount": {
+        "amount": 60,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "reason": "Abono Gimnasio",
+      "transferType": {
+        "id": "03",
+        "name": "Cash"
+      },
+      "transferMode": {
+        "id": "SEPA",
+        "name": "SEPA"
+      },
+      "periodicity": {
+        "type": "PERIODIC",
+        "firstExecutionDate": "2017-12-31",
+        "lastExecutionDate": "2018-12-31",
+        "frequency": {
+          "id": "1",
+          "name": "MENSUAL"
+        },
+        "executionRule": "L"
+      },
+      "nextExecutionDate": "2017-09-20T00:00:00.00Z",
+	  "creationDate": "2017-09-10T00:00:00.00Z",	  
+	  "status": {
+        "id": "AUTHORIZED",
+        "name": "Autorizada"
+      }
+    },
+    {
+      "id": "SCHED030000000001746",
+      "orderer": {
+        "fromAccount": {
+          "id": "14910001273000001268",
+          "formats": [
+            {
+              "format": {
+                "id": "IBAN",
+                "name": "IBAN"
+              },
+              "value": "ES6914910001273000001268"
+            }
+          ]
+        }
+      },
+      "beneficiary": {
+        "toAccount": {
+          "id": "14910001273000001269",
+          "formats": [
+            {
+              "format": {
+                "id": "IBAN",
+                "name": "IBAN"
+              },
+              "value": "ES6914910001273000001269"
+            }
+          ]
+        },
+        "description": "ALVARO MUNOZ AVILA",
+        "email": "theuser@themail.com"
+      },
+      "amount": {
+        "amount": 60,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "reason": "Ahorro interno",
+      "transferType": {
+        "id": "03",
+        "name": "Cash"
+      },
+      "transferMode": {
+        "id": "SEPA",
+        "name": "SEPA"
+      },
+      "periodicity": {
+        "type": "UNIQUE",
+        "firstExecutionDate": "2018-12-31",
+        "executionRule": "E"
+      },
+      "nextExecutionDate": "2017-09-20T00:00:00.00Z",
+      "creationDate": "2017-09-10T00:00:00.00Z",	  
+	  "status": {
+        "id": "AUTHORIZED",
+        "name": "Autorizada"
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

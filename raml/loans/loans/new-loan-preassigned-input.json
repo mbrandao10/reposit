@@ -1,0 +1,17 @@
+{
+  "id":"889898798",
+  "product":"PRP01",
+  "amount":{
+    "amount":4500,
+    "currency":"032"
+  },
+  "accountId":"149100011009408525",
+  "periodId":"18",
+  "ttin": 2.18,
+  "feeType": "00",
+  "varInterestInd": "0000",
+  "varInterestCal": "000",
+  "varInterestDif": 0.00,
+  "revisionPeriod": "0000",
+  "amortizationPeriod": "0000"
+}

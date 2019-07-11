@@ -1,0 +1,19 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data":
+  [
+    {
+      "id": "1",
+      "image": "image1.png",
+      "text": "Bienvenidos a la Nueva Sede Situado en la calle Príncipe de Vergara 112, 28002 Madrid. El nuevo edificio incorpora lo último en tecnología y en eficiencia energética: optimiza el consumo y ofrece excelentes condiciones de luminosidad para los clientes y colaboradores del Banco. La disposición de espacios y el apoyo al trabajo en equipo obedece a un ambiente amigable de comodidad funcional facilitando la visita de los clientes que requieran atención especializada y personalizada."
+    },
+    {
+      "id": "2",
+      "image": "image2.png",
+      "text": "¡Ayúdanos a cuidar de nuestro Planeta! Si eres titular desactiva el correo postal accediendo en esta misma sesión a la opción BUZON VIRTUAL - Configuración Buzón - Desactivar."
+    }
+  ]
+}

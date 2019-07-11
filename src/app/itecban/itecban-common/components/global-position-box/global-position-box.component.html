@@ -1,0 +1,35 @@
+<div class="panel">
+    <div class="panel-heading line-height-headign-aux" (click)="goToHeader(headerPath)">
+        <app-loader *ngIf="loading"></app-loader>
+        <span class="text-os-bold text-uppercase fs-15 {{color}}">{{headerText}}</span>
+        <div class="w-50 pull-right text-os-light text-size-headign-aux">       
+          <app-currencyformat [amountParam]="elments?.totalAmount" [currencyParam]="currencyCode"></app-currencyformat>
+        </div>
+    </div>
+    <div class="panel-body">
+        <ul class="list list-interactive" *ngIf="elments">
+            <li *ngFor="let elm of elments" (click)="goTo(elm)">
+                <div class="name text-no-warp text-left">
+                    <!-- general -->
+                    <span *ngIf="elm.formats">{{elm.formats | formatAccountPipe: accountFormatView:ismobileResolution}}</span>
+                    <!-- cards -->
+                    <span *ngIf="product === 'cards'">{{elm.id | formatCardNumberHidden:ismobileResolution}}</span>
+                </div>
+                <div class="value text-right text-no-warp text-os-semibold">
+                    <!-- general -->
+                    <span class="text-no-warp" *ngIf="product !== 'credits' && product !== 'cards' && elm.postedBalance">{{elm.postedBalance.amount | CurrencyPipe: currencyCode}}</span>
+                    <span class="text-no-warp" *ngIf="product === 'credits' || product === 'cards' && elm.outstandingBalance">{{elm.outstandingBalance.amount | CurrencyPipe: currencyCode}}</span>
+                    <!-- loans // mostramos en positivo el importe pendiente de los prestamos en la posicion global-->
+                    <span class="text-no-warp" *ngIf="elm.pendingAmount">{{(elm.pendingAmount.amount * (-1)) | CurrencyPipe: currencyCode}}</span>
+                    <!-- confirming -->
+                    <span class="text-no-warp" *ngIf="elm.agreedBalanceAccepted">{{elm.agreedBalanceAccepted.amount | CurrencyPipe: currencyCode}}</span>
+                    <!-- factoring -->
+                    <span class="text-no-warp" *ngIf="elm.financingLimit">{{elm.financingLimit.amount | CurrencyPipe: currencyCode}}</span>
+                    <!-- leasing -->
+                    <span class="text-no-warp" *ngIf="product === 'leasing'">{{elm.outstandingBalance.amount | CurrencyPipe: currencyCode}}</span>
+                </div>
+            </li>
+        </ul>
+        <div class="panel-custom-no-element" *ngIf="!elments">No dispone de {{headerText}}</div>
+    </div>
+</div>

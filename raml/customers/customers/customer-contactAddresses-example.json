@@ -1,0 +1,52 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "addressId": "POSTAL",
+      "streetType": {
+        "id": "CALLE",
+        "name": "CALLE"
+      },
+      "streetName": "REAL",
+      "streetNumber": "0077",
+      "floor": "1",
+      "door": "A",
+      "postcode": "28049",
+      "city": "MADRID",
+      "province": "MADRID",
+      "country": "ESPAÑA",
+      "type": {
+        "id": "POSTAL",
+        "name": "POSTAL"
+      },
+      "isPrincipal":false
+    },
+    {
+      "addressId": "FISCAL",
+      "streetType": {
+        "id": "CALLE",
+        "name": "CALLE"
+      },
+      "streetName": "REAL",
+      "streetNumber": "0077",
+      "portal": "1",
+      "block": "A",
+      "stairs": "2",
+      "floor": "1",
+      "door": "B",
+      "postcode": "28049",
+      "city": "MADRID",
+      "province": "MADRID",
+      "country": "ESPAÑA",
+      "type": {
+        "id": "FISCAL",
+        "name": "FISCAL"
+      },
+      "aditionalInfo":"Parcela B",
+      "isPrincipal": false
+    }
+  ]
+}

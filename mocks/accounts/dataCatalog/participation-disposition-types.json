@@ -1,0 +1,20 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "N",
+      "name": "INDIVIDUAL O INDISTINTA",
+      "href": "https://itecban.indra.es/masterTables/participationDispositionTypes"
+    },
+    {
+      "id": "S",
+      "name": "CONJUNTA",
+      "href": "https://itecban.indra.es/masterTables/participationDispositionTypes"
+    }
+
+
+  ]
+}

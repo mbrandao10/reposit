@@ -1,0 +1,75 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "RECIB00000",
+      "debtorName":"JOAO PERES SA",
+      "amount": {
+        "amount": 2000.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "date": "2018-05-23T00:00:00.00Z",
+      "status": {
+        "id": "01",
+        "name": "Devuelto"
+      },
+      "reason": {
+        "id": "MD01",
+        "name": "Mandato no válido"
+      }
+
+    },
+    {
+      "id": "RECIB00001",
+      "debtorName":"MARIA GOMMES SA",
+      "amount": {
+        "amount": 3085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "date": "2018-05-23T00:00:00.00Z",
+      "status": {
+        "id": "01",
+        "name": "Devuelto"
+      },
+      "reason": {
+        "id": "MD06",
+        "name": "No conforme con el cargo"
+      }
+
+    },
+    {
+      "id": "RECIB00002",
+      "debtorName":"TECNOSYSTEMS CORP.",
+      "amount": {
+        "amount": 150085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "date": "2018-06-23T00:00:00.00Z",
+      "status": {
+        "id": "02",
+        "name": "Rechazo"
+      },
+      "reason": {
+        "id": "RR01",
+        "name": "Error en el IBAN del deudor"
+      }
+
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

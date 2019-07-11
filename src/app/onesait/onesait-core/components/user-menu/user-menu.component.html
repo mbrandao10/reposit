@@ -1,0 +1,15 @@
+<div class="user-menu">
+    <ul class="user-menu__list">
+        <li class="user-menu__list__element" *ngFor="let element of userMenuConfig.sections; let i = index" 
+        [ngClass]="{ 'active': element.active }" (click)="goTo(element)">
+            <i class="icononesait {{element.icon}}" title="{{element.name | translate}}"></i>
+            <span class="counter counter-red" *ngIf="element.counter &gt; 0">{{element.counter}}</span>
+        </li>
+    </ul>
+    <ul class="user-menu__list bottom-section">
+        <li class="user-menu__list__element" [ngClass]="{ 'active': element.active }" *ngFor="let element of userMenuConfig.buttons; let i = index">
+            <i class="icononesait {{element.icon}}" title="{{element.name | translate}}" (click)="execAction(element)">
+            </i>
+        </li>
+    </ul>
+</div>

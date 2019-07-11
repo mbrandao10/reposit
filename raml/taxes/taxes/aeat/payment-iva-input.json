@@ -1,0 +1,18 @@
+{
+  "accountId": "ES8120952318526683783933",
+  "taxPaymentClass":"IvaTaxPayment",
+  "taxForm": {
+    "id": "303",
+    "name": "IVA RÉGIMEN GENEAL AUTOLIQUIDACIÓN"
+  },
+  "type": "income",
+  "taxYear": 2018,
+  "taxPeriod": "1T",
+  "paymentAmount": {
+    "amount": 1245.51,
+    "currency": {
+      "id": "EUR",
+      "code": "978"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+<app-loader *ngIf="loading"></app-loader>
+<table class="table table-detail">
+    <thead class="hidden-xs" *ngIf="receipts">
+        <tr>
+            <th>
+                {{ 'ITECBAN-LOANS.FEES-PAID.TABLE.DATE' | translate }}
+            </th>
+            <th>
+                {{ 'ITECBAN-LOANS.FEES-PAID.TABLE.N-SHARE' | translate }}
+            </th>
+            <th class="text-right">
+                {{ 'ITECBAN-LOANS.FEES-PAID.TABLE.CAP-REPAYMENT' | translate }}
+            </th>
+            <th class="text-right">
+                {{ 'ITECBAN-LOANS.FEES-PAID.TABLE.INTEREST' | translate }}
+            </th>
+            <th class="text-right">
+                {{ 'ITECBAN-LOANS.FEES-PAID.TABLE.PAYMENT' | translate }}
+            </th>
+            <th class="text-right">
+                {{ 'ITECBAN-LOANS.FEES-PAID.TABLE.PENDING' | translate }}
+            </th>
+        </tr>
+    </thead>
+
+    <tbody [ngClass]="{'open': receipt == selectedItem && !isMobileResolution() }" *ngFor="let receipt of receipts; let i = index">
+        <tr class="interactive" (click)="viewDetail(receipt)">
+            <td>
+                <span class="hidden-xs text-no-warp">
+                    {{ receipt.date | date: 'dd/MM/yyyy' }}
+                </span>
+                <span class="visible-xs-block text-os-semibold text-no-warp">
+                    {{ receipt.fixedFee.amount | CurrencyPipe: receipt.fixedFee.currency.code }}
+                </span>
+                <span class="visible-xs-block fs-12 text-no-warp">
+                    {{ receipt.date | date: 'dd/MM/yyyy' }}
+                </span>
+            </td>
+            <td class="hidden-xs">
+                {{ receipt.number }}
+            </td>
+            <td class="hidden-xs text-right">
+                {{ receipt.installment.amount | CurrencyPipe: receipt.installment.currency.code }}
+            </td>
+            <td class="hidden-xs text-no-warp text-right">
+                {{ receipt.interest.amount | CurrencyPipe: receipt.interest.currency.code }}
+            </td>
+            <td class="hidden-xs text-no-warp text-right">
+                {{ receipt.fixedFee.amount | CurrencyPipe: receipt.fixedFee.currency.code }}
+            </td>
+            <td class="text-right">
+                <span class="hidden-xs text-no-warp">
+                    {{ receipt.pendingAmount.amount | CurrencyPipe: receipt.pendingAmount.currency.code }}
+                </span>
+                <span class="visible-xs-block text-os-semibold text-no-warp">
+                    {{ receipt.pendingAmount.amount | CurrencyPipe: receipt.pendingAmount.currency.code }}
+                </span>
+                <span class="visible-xs-block fs-12 text-no-warp">
+                    {{ receipt.installment.amount | CurrencyPipe: receipt.installment.currency.code }}
+                </span>
+            </td>
+        </tr>
+
+        <tr [ngClass]="{'description': !isMobileResolution() }" *ngIf="selectedItem && (selectedItem === receipt)">
+            <td colspan="4">
+                <osb-fees-paid-detail [loanReceiptDetail]="receipt" (closeEvent)="close()"></osb-fees-paid-detail>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+<div class="row" *ngIf="hasMoreData && receipts">
+    <a class="col-xs-12 text-center p-1 text-os-bold" (click)="next()" role="button">
+        {{ 'ITECBAN-LOANS.FEES-PAID.TABLE.MORE-RESULTS' | translate }}
+    </a>
+</div>

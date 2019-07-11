@@ -1,0 +1,188 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<ng-container *ngIf="view <= VIEWS.SEND_FILE">
+    <div class="panel">
+        <div class="panel-body">
+            <div class="mt-1">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <label *ngIf="view === VIEWS.SELECT_FILETYPE">{{ 'ONESAIT-SEPA.SEND-REMITTANCE.SELECT-FILETYPE' | translate }}</label>
+                        <label *ngIf="view === VIEWS.SEND_FILE">{{ fileTypeName }}</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 mb-2">
+                        <select [(ngModel)]="fileType" class="col-xs-12 col-sm-6 mb-1 mt-1" *ngIf="view === VIEWS.SELECT_FILETYPE">
+                            <option *ngFor="let fileType of fileTypes" [value]="fileType.id">{{ fileType.name }}
+                            </option>
+                        </select>
+                        <osb-input-file [file]="sepaFile.file" (fileAdded)="fileAdded()" (fileDeleted)="fileDeleted()" (sendFile)="sendFile($event)">
+                        </osb-input-file>
+                    </div>
+
+                    <div class="col-md-2 col-lg-3"></div>
+                    <div class="col-xs-12 col-md-8 col-lg-6 text-center">
+                        <b class="text-uppercase">{{ 'COMMON.IMPORTANT' | translate }}</b>
+                        <p>{{ 'ONESAIT-SEPA.SEND-REMITTANCE.REMEMBER' | translate }}</p>
+                    </div>
+                    <div class="col-md-2 col-lg-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="view === VIEWS.CONFIRM">
+    <div class="panel">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6" *ngIf="sepaFileDetail">
+                    <div class="mb-1 mt-1 info-text">
+                        <div>{{ 'ONESAIT-SEPA.SEND-REMITTANCE.REMITTANCES' | translate }} -
+                            <b>{{ 'ONESAIT-SEPA.SEND-REMITTANCE.REMITTANCE-FILE' | translate }}</b></div>
+                        <div>{{fileTypeName}}</div>
+                        <div>{{sepaFileDetail.fileName}}</div>
+                    </div>
+                    <div class="box-form-info grayBackground-c">
+                        <div class="info-section-group">
+                            <div class="mb-1 mt-1" *ngIf="sepaFileDetail.date">
+                                {{ 'ONESAIT-SEPA.SEND-REMITTANCE.DATE' | translate }}
+                                <p>{{ sepaFileDetail.date | date: 'dd/MM/yyyy' }}</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 mb-1 mt-1" *ngIf="sepaFileDetail.orderer.description">
+                                    {{ 'ONESAIT-SEPA.SEND-REMITTANCE.ORDERER' | translate }}
+                                    <p>{{ sepaFileDetail.orderer.description }}</p>
+                                </div>
+                                <div class="col-xs-6 mb-1 mt-1" *ngIf="sepaFileDetail.orderer.legalDocument.id">
+                                    {{ 'ONESAIT-SEPA.SEND-REMITTANCE.DOCUMENT-ID' | translate }}
+                                    <p>{{ sepaFileDetail.orderer.legalDocument.id }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 mb-1 mt-1" *ngIf="sepaFileDetail.numOfOrders">
+                                    {{ 'ONESAIT-SEPA.SEND-REMITTANCE.NUM-OF-ORDERS' | translate }}
+                                    <p>{{ sepaFileDetail.numOfOrders }}</p>
+                                </div>
+                                <div class="col-xs-6 mb-1 mt-1 text-right" *ngIf="sepaFileDetail.totalAmount">
+                                    {{ 'ONESAIT-SEPA.SEND-REMITTANCE.TOTAL-AMOUNT' | translate }}
+                                    <p class="text-no-warp">
+                                        <strong>
+                                            {{ sepaFileDetail.totalAmount.amount | CurrencyPipe: sepaFileDetail.totalAmount.currency.code }}
+                                        </strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-3 col-md-2 mt-1">
+                            <button class="btn btn-terciary" (click)="cancel()">{{ 'COMMON.CANCEL' | translate }}</button>
+                        </div>
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-sm-offset-3 col-md-offset-4 mt-1">
+                            <button type="button" class="btn btn-secondary" (click)="back()">{{ 'COMMON.BACK' | translate }}</button>
+                        </div>
+                        <div class="col-xs-12 col-sm-3 col-md-2 mt-1 text-right">
+                            <button type="button" class="btn btn-primary" (click)="confirm()">{{ 'COMMON.NEXT' |
+                              translate }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="view === VIEWS.TOKEN">
+    <div class="panel ">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-md-2 mt-1">
+                    <button class="btn btn-terciary" (click)="cancel()">{{ 'COMMON.CANCEL' | translate }}</button>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-3 col-sm-offset-3 col-md-offset-5 mt-1">
+                    <button type="button" class="btn btn-secondary" (click)="back()">{{ 'COMMON.BACK' | translate }}</button>
+                </div>
+                <div class="col-xs-12 col-sm-3 col-md-2 mt-1 text-right">
+                    <button class="btn btn-primary" [disabled]="!signatureEntity.tokenValid" (click)="finish()">
+                        {{ 'COMMON.FINALIZE' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ng-container>
+
+<ng-container *ngIf="view === VIEWS.FINISH">
+    <div class="panel ">
+        <div class="panel-body">
+            <osb-final-message text="{{ 'ONESAIT-SEPA.SEND-REMITTANCE.SUCCESS' | translate }}"></osb-final-message>
+            <osb-voucher-container #voucherContainer>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6" *ngIf="sepaFileDetail">
+                        <div class="mb-1 mt-1 info-text">
+                            <div>{{ 'ONESAIT-SEPA.SEND-REMITTANCE.REMITTANCES' | translate }} -
+                                <b>{{ 'ONESAIT-SEPA.SEND-REMITTANCE.REMITTANCE-FILE' | translate }}</b></div>
+                            <div>{{sepaFileDetail.fileName}}</div>
+                        </div>
+
+                        <div class="box-form-info grayBackground-c">
+                            <div class="info-section-group">
+                                <div OsbVoucherKeyValue class="mb-1 mt-1" *ngIf="sepaFileDetail.date">
+                                    <span OsbVoucherKey>{{ 'ONESAIT-SEPA.SEND-REMITTANCE.DATE' | translate }}</span>
+                                    <p OsbVoucherValue>{{ sepaFileDetail.date | date: 'dd/MM/yyyy' }}</p>
+                                </div>
+                                <div class="row">
+                                    <div OsbVoucherKeyValue class="col-xs-6 mb-1 mt-1" *ngIf="sepaFileDetail.orderer.description">
+                                        <span OsbVoucherKey>{{ 'ONESAIT-SEPA.SEND-REMITTANCE.DOCUMENT-ID' | translate }}</span>
+                                        <p OsbVoucherValue>{{ sepaFileDetail.orderer.description }}</p>
+                                    </div>
+                                    <div OsbVoucherKeyValue class="col-xs-6 mb-1 mt-1" *ngIf="sepaFileDetail.orderer.legalDocument.id">
+                                        <span OsbVoucherKey>{{ 'ONESAIT-SEPA.SEND-REMITTANCE.DOCUMENT-ID' | translate }}</span>
+                                        <p OsbVoucherValue>{{ sepaFileDetail.orderer.legalDocument.id }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div OsbVoucherKeyValue class="col-xs-6 mb-1 mt-1" *ngIf="sepaFileDetail.numOfOrders">
+                                        <span OsbVoucherKey>{{ 'ONESAIT-SEPA.SEND-REMITTANCE.NUM-OF-ORDERS' | translate }}</span>
+                                        <p OsbVoucherValue>{{ sepaFileDetail.numOfOrders }}</p>
+                                    </div>
+                                    <div OsbVoucherKeyValue class="col-xs-6 mb-1 mt-1 text-right" *ngIf="sepaFileDetail.totalAmount">
+                                        <span OsbVoucherKey>{{ 'ONESAIT-SEPA.SEND-REMITTANCE.TOTAL-AMOUNT' | translate }}</span>
+                                        <p class="text-no-warp">
+                                            <strong OsbVoucherValue>
+                                                {{ sepaFileDetail.totalAmount.amount | CurrencyPipe: sepaFileDetail.totalAmount.currency.code }}
+                                            </strong>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 mb-1 p-0 ml-1">
+                        <osb-download-info [voucherContainer]="voucherContainer" text="{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.DOWNLOAD-RECEIPT' | translate}}">
+                        </osb-download-info>
+                    </div>
+                </div>
+            </osb-voucher-container>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-3 col-sm-offset-4 col-md-offset-6">
+                    <button class="btn btn-secondary" (click)="goToAccounts()">{{ 'ONESAIT-SEPA.SEND-REMITTANCE.GO-ACCOUNTS' | translate }}</button>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-3 text-right">
+                    <button class="btn btn-primary" (click)="goToSendRemittance()">{{ 'ONESAIT-SEPA.SEND-REMITTANCE.ANOTHER-REMITTANCE' | translate }}</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</ng-container>

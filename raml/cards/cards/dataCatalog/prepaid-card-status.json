@@ -1,0 +1,28 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "00",
+      "name": "ACTIVO"
+    },
+    {
+      "id": "01",
+      "name": "INACTIVO"
+    },
+    {
+      "id": "02",
+      "name": "BLOQUEADO"
+    },
+    {
+      "id": "03",
+      "name": "CANCELADO"
+    },
+    {
+      "id": "04",
+      "name": "DESCONOCIDO"
+    }
+  ]
+}

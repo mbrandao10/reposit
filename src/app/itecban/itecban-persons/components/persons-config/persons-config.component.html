@@ -1,0 +1,24 @@
+<div class="person-config">
+    <app-loader *ngIf="loading"></app-loader>
+    <!--PWD-->
+    <div>
+        <!-- <div class="person-config-info-title">{{'ITECBAN-PERSONS.MY.SPACE.ACCOUNT.DATA' | translate}}</div> -->
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="col">
+                        <div class="row">
+                            <span class="name">{{'ITECBAN-PERSONS.MY.SPACE.PWD' | translate}}</span>
+                            <button class="btn btn-secondary" (click)="goChangePassword()">{{'ITECBAN-PERSONS.MY.SPACE.CHANGEBTN' | translate}}</button>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--ALERT-->
+    <app-alerts-config *ngIf="viewAlert" [productIdAlert]="productIdAlert"></app-alerts-config>
+</div>

@@ -1,0 +1,45 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "contractId": "049100010000000094",
+      "type": "Account",
+      "relationshipType": {
+        "id": "01",
+        "name": "TITULAR"
+      },
+      "createDate": "2019-02-08",
+      "visibilityIndicator": "Visible",
+      "operabilityIndicator": "Operativa"
+    },
+    {
+      "contractId": "049100010000000095",
+      "type": "Account",
+      "relationshipType": {
+        "id": "06",
+        "name": "AUTORIZADO"
+      },
+      "createDate": "2019-03-08",
+      "visibilityIndicator": "No visible",
+      "operabilityIndicator": "Consultiva"
+    },
+    {
+      "contractId": "34910001000000009",
+      "type": "Card",
+      "relationshipType": {
+        "id": "01",
+        "name": "TITULAR"
+      },
+      "createDate": "2019-03-14",
+      "visibilityIndicator": "Visible",
+      "operabilityIndicator": "Operativa"
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

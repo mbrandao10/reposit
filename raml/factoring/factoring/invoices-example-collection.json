@@ -1,0 +1,63 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "00000",
+      "reference": "FACT-FC-XX-000",
+      "debtorDescription": "Fashion Clothes",
+      "amount": {
+        "amount": 12085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "creationDate": "2018-05-23T00:00:00.00Z",
+      "status": {
+        "id": "01",
+        "name": "Aceptada"
+      }
+    },
+    {
+      "id": "00001",
+      "reference": "FACT-CL-JA-001",
+      "debtorDescription": "Cueros Lona",
+      "amount": {
+        "amount": 2085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "creationDate": "2018-05-23T00:00:00.00Z",
+      "status": {
+        "id": "03",
+        "name": "Financiada"
+      }
+    },
+    {
+      "id": "00002",
+      "reference": "FACT-TC-ENE-002",
+      "debtorDescription": "Trendy chick",
+      "amount": {
+        "amount": 70085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "creationDate": "2018-05-23T00:00:00.00Z",
+      "status": {
+        "id": "03",
+        "name": "Finaciada"
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

@@ -1,0 +1,21 @@
+<ul  id="detail">
+    <li  *ngIf="movementDetail.reference"><span class="name">{{'ITECBAN-ACCOUNT.MOVEMENT.REFERENCE.NUMBER'
+            | translate}}</span><span class="value">{{movementDetail.reference}}</span></li>
+    <li  *ngIf="movementDetail.amount?.amount"><span class="name">{{'ITECBAN-ACCOUNT.MOVEMENT.MONTO'
+            | translate}} </span><span class="value text-no-warp">{{movementDetail.amount.amount | CurrencyPipe:
+            movementDetail.amount.currency.code}}</span></li>
+    <li  *ngIf="movementDetail.orderer?.account.id"><span class="name">{{'ITECBAN-ACCOUNT.MOVEMENT.ORIGIN'
+            | translate}}</span><span class="value">{{movementDetail.orderer.account.id}} </span></li>
+    <li  *ngIf="movementDetail.orderer?.name"><span class="name">{{'ITECBAN-ACCOUNT.MOVEMENT.SINCE'
+            | translate}} </span><span class="value">{{movementDetail.orderer.name}}</span></li>
+    <li  *ngIf="movementDetail.beneficiary?.account.id"><span class="name">{{'ITECBAN-ACCOUNT.MOVEMENT.DESTINATION'
+            | translate}} </span><span class="value">{{movementDetail.beneficiary.account.id}}</span></li>
+    <li  *ngIf="movementDetail.beneficiary?.name"><span class="name">{{'ITECBAN-ACCOUNT.MOVEMENT.BENEFICIARY'
+            | translate}} </span><span class="value">{{movementDetail.beneficiary.name}}</span></li>
+    <li  *ngIf="movementDetail.reason"><span class="name">{{'ITECBAN-ACCOUNT.MOVEMENT.CONCEPT'
+            | translate}} </span><span class="value">{{movementDetail.reason}}</span></li>
+    <li  *ngIf="movementDetail.state"><span class="name">{{'ITECBAN-ACCOUNT.MOVEMENT.DESCRIPTION'
+            | translate}}</span><span class="value">{{movementDetail.state}}</span></li>
+    <li  *ngIf="movementDetail.operationDateHour"><span class="name">{{'ITECBAN-ACCOUNT.MOVEMENT.OPERATION.DATE'
+            | translate}} </span><span class="value">{{movementDetail.operationDateHour}}</span></li>
+</ul>

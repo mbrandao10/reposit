@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-xs-12 p-dynamic">
+        <osb-tabs [tabs]="pageConfig.tabs" [(view)]="view"></osb-tabs>
+    </div>
+</div>
+
+<div class="row page-tabbed pb-1 pt-1">
+    <div class="col-xs-12 p-dynamic">
+        <ng-container *ngIf="view ==='issue-orders'">
+            <osb-confirming-issue-orders [contractId]="contractId"></osb-confirming-issue-orders>
+        </ng-container>
+        <!-- <ng-container *ngIf="view ==='request-advance'">
+            <osb-confirming-request-advance [contractId]="contractId"></osb-confirming-request-advance>
+        </ng-container> -->
+        <ng-container *ngIf="view ==='orders-remittances'">
+            <osb-confirming-orders-remittances [contractId]="contractId"></osb-confirming-orders-remittances>
+        </ng-container>
+        <ng-container *ngIf="view ==='conditions'">
+            <osb-confirming-contract-conditions [contractId]="contractId" ></osb-confirming-contract-conditions>
+        </ng-container>
+    </div>
+</div>    

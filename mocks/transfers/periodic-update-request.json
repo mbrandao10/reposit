@@ -1,0 +1,23 @@
+{
+  "beneficiary": {
+    "toAccount": {
+      "type": "ccc",
+      "id": "14910001273000001268"
+    },
+    "description": "ALVARO MUNOZ AVILA",
+    "legalDocument":{
+      "id":"12345678Z",
+      "type":"01"
+    }
+  },
+  "amount": {
+    "amount": 60,
+    "currency": "978"
+  },
+  "periodicity": {
+    "frequency": "1",
+    "firstExecutionDate": "2017-06-01",
+    "lastExecutionDate": "2018-06-01"
+  },
+  "operationType": "T"
+}

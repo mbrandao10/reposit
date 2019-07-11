@@ -1,0 +1,177 @@
+/*------------------------------------*\
+    $MODALS
+\*------------------------------------*/
+.modal-visible {
+  .modal-background {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  .modal {
+    display: block;
+  }
+}
+
+// .modal-body {
+//   text-align: left;
+//   font-size: 15px;
+//   color: 000000;
+//   padding: 30px 30px 15px 30px;
+// }
+
+.modal-footer {
+  border-top: 0;
+  text-align: right;
+  //padding:15px 30px 40px 30px;
+}
+
+//TODO, revisar si son necesarias
+/*-- Ventana modal de terminos y condiciones --*/
+.transfer-advance {
+  padding: 20px 20px;
+  text-align: center;
+
+  .transfer-step {
+    width: 15%;
+    height: 2px;
+    background-color: grey;
+    border-radius: 20px;
+    float: left;
+    margin-left: 4%;
+    margin-top: 4px;
+  }
+
+  .transfer-step-active {
+    height: 10px;
+    margin-top: 0px;
+  }
+}
+
+#termAndConditionsModal {
+  .modal-dialog {
+    height: -webkit-calc(100% - 60px);
+    height: -moz-calc(100% - 60px);
+    height: calc(100% - 60px);
+    margin-top: 20px;
+    top: 0;
+
+    .modal-content {
+      border-radius: 0;
+      height: 100%;
+      box-shadow: none;
+
+      .modal-body {
+        height: -webkit-calc(100% - 131px);
+        height: -moz-calc(100% - 131px);
+        height: calc(100% - 131px);
+        overflow-y: auto;
+
+        p {
+          font-size: 12px;
+          margin-bottom: 10px;
+          color: #000;
+        }
+      }
+    }
+  }
+
+  .modal-header .close {
+    margin-top: 4px;
+    color: #333;
+    opacity: 1;
+  }
+
+  .modal-body {
+    font-size: 11px;
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) {
+  #termAndConditionsModal {
+    .modal-dialog {
+      width: 70%;
+    }
+  }
+}
+
+/*-- FIN Ventana modal de terminos y condiciones --*/
+
+.modal-detail .modal-page {
+  background-color: $nvb-green-lightest;
+  border-left: 4px solid $nvb-green;
+
+  .modal-header {
+    background-color: $nvb-green-lightest !important;
+  }
+}
+
+.modal-page {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  z-index: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .modal-container {
+    padding: 15px 40px;
+  }
+
+  .modal-header {
+    background-color: white;
+  }
+
+  .modal-close {
+    color: $nvb-blue;
+    font-size: 28px;
+  }
+}
+
+.footer-menu{
+  max-height: -webkit-calc(100% - 55px);
+  max-height: -moz-calc(100vh - 55px);
+  max-height: calc(100vh - 55px);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: $zindex-modal;
+  overflow-y: auto;
+  ul li {
+          //min-height: 45px;
+          background-color: $nvb-white;
+          opacity: 1;
+          text-align: center;
+          padding-top: 40px;
+          padding-bottom: 40px;
+          cursor: pointer;
+          // div {
+          //     color: rgb(255, 255, 255);
+          // }
+
+          &:hover {
+            background-color: $nvb-gray-lighter;
+          }
+      }
+      // li:active{
+      //  background-color: #3f3f3f   
+      // }
+}
+
+.footer-menu-background{
+  background-color: rgba(0, 0, 0, 0.6);  
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top:0;
+  left:0;
+  z-index:$zindex-modal-background;   
+}

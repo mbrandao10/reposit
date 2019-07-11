@@ -1,0 +1,16 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "Con errores"
+    },
+    {
+      "id": "02",
+      "name": "Sin errores"
+    }
+  ]
+}

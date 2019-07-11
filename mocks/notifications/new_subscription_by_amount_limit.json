@@ -1,0 +1,15 @@
+
+    {
+      "eventId": "002",
+      "eventGroup": "account",
+      "linkedElementId": "149100011009408525",
+      "notificationChannels": [
+        "mail",
+        "push",
+        "sms"
+      ],
+      "amount": {
+        "amount": 1284.01,
+        "currency": "023"
+      }
+    }

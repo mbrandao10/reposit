@@ -1,0 +1,44 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "VIGENTE"
+    },
+    {
+      "id": "02",
+      "name": "CANCELADA"
+    },
+    {
+      "id": "03",
+      "name": "SIN FORMALIZAR"
+    },
+    {
+      "id": "54",
+      "name": "SUSPENSO"
+    },
+    {
+      "id": "97",
+      "name": "EXPEDIENTE EN TRAMITE"
+    },
+    {
+      "id": "14",
+      "name": "DUDOSO"
+    },
+    {
+      "id": "44",
+      "name": "LITIGIO"
+    },
+    {
+      "id": "64",
+      "name": "FALLIDO"
+    },
+    {
+      "id": "99",
+      "name": "ANULADA"
+    }
+  ]
+}

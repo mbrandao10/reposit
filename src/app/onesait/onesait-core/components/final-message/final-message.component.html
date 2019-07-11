@@ -1,0 +1,9 @@
+<div [class]="_style" *ngIf="show">
+  <div *ngIf="close">
+    <span class="close" (click)="show = !show"><i class="icon icon-onesait icon-close"></i></span>
+  </div>
+  <div (click)="goTo()">
+    <i class="icon icononesait {{_icon}} fs-28 v-align-middle"></i> {{ text | translate }}
+    <span *ngIf="signatureData">{{ 'COMMON.HOLDER_REQUIRED' | translate }}</span>
+  </div>
+</div>

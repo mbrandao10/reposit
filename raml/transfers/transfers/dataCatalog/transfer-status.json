@@ -1,0 +1,20 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "PENDING",
+      "name": "Pendiente"
+    },
+    {
+      "id": "PAID",
+      "name": "Pagada"
+    },
+    {
+      "id": "CANCELLED",
+      "name": "Cancelada"
+    }
+  ]
+}

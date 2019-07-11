@@ -1,0 +1,68 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "001",
+      "name": "TGSS - REG. GRAL."
+    },
+    {
+      "id": "002",
+      "name": "TGSS - AUTONOMOS"
+    },
+    {
+      "id": "003",
+      "name": "TGSS - AGRARIOS CTA. AJENA"
+    },
+    {
+      "id": "004",
+      "name": "TGSS - AGRARIOS CTA. PROPIA"
+    },
+    {
+      "id": "005",
+      "name": "TGSS - TRABAJADORES DEL MAR"
+    },
+    {
+      "id": "006",
+      "name": "TGSS - MINERA Y CARBON"
+    },
+    {
+      "id": "007",
+      "name": "TGSS - HOGAR (CAB. FAMILIA)"
+    },
+    {
+      "id": "008",
+      "name": "TGSS - EMPLEADOS HOGAR DISCONTINUOS"
+    },
+    {
+      "id": "009",
+      "name": "TGSS - CONVENIOS ESPECIALES"
+    },
+    {
+      "id": "010",
+      "name": "TGSS - APLAZAMIENTO DE DEUDA"
+    },
+    {
+      "id": "011",
+      "name": "TGSS - SISTEMA ESP. EMPLEADOS DE HOGAR"
+    },
+    {
+      "id": "012",
+      "name": "TGSS - SISTEMA ESP. AGRARIO. INACTIVIDAD"
+    },
+    {
+      "id": "013",
+      "name": "TGSS - SITEMA ESP. AGRARIO. ACTIVIDAD CCC"
+    },
+    {
+      "id": "014",
+      "name": "TGSS - JORNADAS REALES"
+    },
+    {
+      "id": "015",
+      "name": "REG ESP TRA AUTO DEL MAR"
+    }
+  ]
+}

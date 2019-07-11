@@ -1,0 +1,8 @@
+{
+    "name": "itecban-common",
+    "version": "0.0.2",
+    "description": "modulo de itecban-common",
+    "main": "index.js",
+    "author": "Minsait",
+    "license": "ISC"
+}

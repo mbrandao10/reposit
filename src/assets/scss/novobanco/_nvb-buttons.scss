@@ -1,0 +1,80 @@
+.btn {
+  border-radius: 0;
+  text-transform: uppercase;
+  min-width: 120px;
+  @media (max-width: $screen-sm-min) {
+    width: 100%;
+  }
+
+  &[disabled] {
+    color: $nvb-gray-dark !important;
+    background-color: $nvb-gray-light !important;
+    border-color: $nvb-gray 1px solid !important;
+
+    &:hover, &.hover, &:active, &.active, &:focus, &.focus {
+      color: $nvb-gray-dark !important;
+      background-color: $nvb-gray-light !important;
+      border-color: $nvb-gray 1px solid !important;
+    }
+  }
+
+  &.btn-primary {
+    background-color: $nvb-blue;
+    border-color: transparent;
+
+    &.btn-hover {
+      &:hover {
+        background-color: $nvb-blue;
+      }
+    }
+    
+    //@media (min-width: $screen-md-min) {
+      &:hover {
+        background-color: $nvb-gray-darker;
+      }
+    //}
+  }
+
+  &.btn-secondary {
+    color: $nvb-blue;
+    border-color: $nvb-blue;
+    background: white;
+
+    &:hover {
+      color: white;
+      background-color: $nvb-blue-dark;
+      //opacity: 0.5;
+    }
+  }
+
+  &.btn-terciary {
+    font-weight: bold;
+    border-color: $nvb-gray-dark;
+    color: $nvb-gray-dark;
+    background-color: $nvb-gray-light;
+
+    &:hover {
+      background-color: $nvb-gray;
+      color: white;
+    }
+  }
+
+  &.btn-inverse {
+    background: white;
+    color: $nvb-blue !important;
+    border: 1px solid $nvb-blue;
+  }
+
+  &.btn-small {
+    font-size: 12px;
+  }
+}
+
+/** INIT button close **/
+.button-close-modal {
+  color: $nvb-blue;
+  font-weight: bold;
+  font-size: 28px;
+  cursor: pointer;
+}
+/** END button close **/

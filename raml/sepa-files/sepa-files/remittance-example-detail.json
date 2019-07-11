@@ -1,0 +1,42 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data":
+    {
+      "id": "REM00000",
+      "totalAmount": {
+        "amount": 100085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "creationDate": "2018-05-23T00:00:00.00Z",
+      "chargeDate": "2018-05-25T00:00:00.00Z",
+      "numOfOrders": 22,
+      "fileType": {
+        "id": "AEB19.14",
+        "name": "AEB19.14 - Domiciliaciones SEPA"
+      },
+      "status": {
+        "id": "01",
+        "name": "Pendiente"
+      },
+      "fromAccount":{
+        "id":"ES0000000000000000000000"
+      },
+      "holder":{
+        "name":"The holder Name",
+        "legalDocument":{
+          "id":"12345678Z",
+          "type":{
+            "id":"01",
+            "name":"DNI"
+          }
+        },
+        "suffix":"The holder suffix"
+      }
+    }
+}

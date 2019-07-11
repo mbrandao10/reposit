@@ -1,0 +1,11 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="col-xs-12 col-sm-5">
+    <div class="mt-1 mb-2" *ngIf="conditions.title">
+        <span class="text-os-semibold">{{ conditions.title | translate }}</span>
+    </div>
+    <div class="mt-1 mb-1" *ngFor="let link of conditions.data">
+        <a (click)="viewLink(link)" class="text-blue text-os-bold">
+            <i *ngIf="link.icon" [class]="link.icon"></i> {{ link.text | translate }}
+        </a>
+    </div>
+</div>

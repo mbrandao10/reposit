@@ -1,0 +1,8 @@
+{
+    "name": "onesait-taxes",
+    "version": "0.0.2",
+    "description": "modulo de onesait-taxes",
+    "main": "index.js",
+    "author": "Minsait",
+    "license": "ISC"
+}

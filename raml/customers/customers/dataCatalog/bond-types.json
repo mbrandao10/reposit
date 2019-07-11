@@ -1,0 +1,56 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "PADRE/MADRE"
+    },
+    {
+      "id": "02",
+      "name": "HIJO/HIJA"
+    },
+    {
+      "id": "03",
+      "name": "CÓNYUGE"
+    },
+    {
+      "id": "04",
+      "name": "HERMANO"
+    },
+    {
+      "id": "05",
+      "name": "OTRO PARENTESCO PRIMER GRADO"
+    },
+    {
+      "id": "06",
+      "name": "PARENTESCO SEGUNDO GRADO"
+    },
+    {
+      "id": "07",
+      "name": "PARENTESCO TERCER GRADO"
+    },
+    {
+      "id": "08",
+      "name": "AMISTAD"
+    },
+    {
+      "id": "09",
+      "name": "REPRESENTANTE LEGAL"
+    },
+    {
+      "id": "10",
+      "name": "REPRESENTADO"
+    },
+    {
+      "id": "11",
+      "name": "TUTOR"
+    },
+    {
+      "id": "12",
+      "name": "TUTELADO"
+    }
+  ]
+}

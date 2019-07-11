@@ -1,0 +1,12 @@
+{
+  "result": {
+    "code": "405",
+    "info": "Method not allowed",
+    "errors": [
+      {
+        "errorDescription": "Requested method is not supported for resource",
+        "errorCode": "000S",
+        "errorType": "F"
+      }
+  }
+}

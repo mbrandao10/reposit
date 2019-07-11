@@ -1,0 +1,36 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "TITULAR"
+    },
+    {
+      "id": "04",
+      "name": "APODERADO PF"
+    },
+    {
+      "id": "06",
+      "name": "AUTORIZADO"
+    },
+    {
+      "id": "07",
+      "name": "APODERADO PJ"
+    },
+    {
+      "id": "11",
+      "name": "REPRESENTANTE LEGAL"
+    },
+    {
+      "id": "15",
+      "name": "VISUALIZADOR/PRESENTADOR"
+    },
+    {
+      "id": "10",
+      "name": "TUTOR"
+    }
+  ]
+}

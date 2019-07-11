@@ -1,0 +1,31 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "code": "CACAF",
+      "name": "CUENTA FLEXIBLE"
+    },
+    {
+      "code": "CACCD",
+      "name": "CUENTA AHORRO"
+    },
+    {
+      "code": "CACFE",
+      "name": "CUENTA COIN"
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+    "links": [
+      {
+        "rel": "next",
+        "href": "https://itecban.indra.es/accounts/products?paginationKey=f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+        "method": "GET"
+      }
+    ]
+  }
+}

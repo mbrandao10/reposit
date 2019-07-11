@@ -1,0 +1,41 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data":
+    {
+      "id": "43439444408525",
+      "reference": "993949340934",
+      "alias": "Alquiler del piso",
+      "holder": "David Robert Jones",
+      "issuerName": "RENTAFLAT S.A ",
+      "issuerLegalDocument": {
+        "id": "12345678Z",
+        "type": {
+          "id": "01",
+          "name": "DNI"
+        }
+      },
+      "account": {
+        "id": "149100011009408526",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "value": "ES6968867819113534454879"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC"
+            },
+            "value": "68867819113534454879"
+          }
+        ]
+      },
+      "creationDate": "2014-10-30T00:00:00.00Z"
+    }
+}

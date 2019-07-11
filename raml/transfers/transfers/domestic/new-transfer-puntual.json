@@ -1,0 +1,29 @@
+{
+  "orderer": {
+    "fromAccount": {
+      "id": "14910001273000001268"
+    }
+  },
+  "beneficiary": {
+    "toAccount": {
+      "type": "IBAN",
+      "id": "ES8001824111116452928435"
+    },
+    "description": "JUAN PEREZ LOPEZ",
+    "email": "theuser@themail.org",
+    "legalDocument": {
+      "id": "12345678Z",
+      "type": "01"
+    },
+    "personType": "F"
+  },
+  "amount": {
+    "amount": 60,
+    "currency": "978"
+  },
+  "reason": "Arreglo furgoneta",
+  "purposeType": "01",
+  "transferType": "03",
+  "executionType": "S",
+  "transferMode":"SEPA"
+}

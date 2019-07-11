@@ -1,0 +1,58 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+      "id":"TRNE030000000001744",
+			"orderer" : {
+        "fromAccount":{
+          "id":"1491000127300033001268",
+          "type": {
+            "id": "cbu",
+            "name": "cbu"
+          }
+        }
+			},
+			"beneficiary" : {
+				"toAccount": {
+          "type": {
+            "id": "ccc",
+            "name": "ccc"
+          },
+					"id": "14910001273000001268"
+				},
+				"description" : "STUART MURDOCH",
+        "legalDocument":{
+          "id":"12345678Z",
+          "type":{
+            "id":"01",
+            "name":"DNI"
+          }
+        }
+			},
+			"amount": {
+				"amount": 60.00,
+				"currency": {
+					"id": "ARG",
+					"code": "32"
+				}
+			},
+			"reason" : "Arreglo furgoneta",
+			"reasonType":{
+			  "id":"1",
+			  "name":"ALQUILER"
+			},
+      "operationType" : {
+        "id": "TRNE",
+        "name": "Transferencia nacional"
+      },
+      "transferType" : {
+        "id": "03",
+        "name": "Cash"
+      },
+      "nextExecutionDate": "2017-09-20T00:00:00.00Z",
+      "date" :"2017-05-30T00:00:00.00Z"
+
+	}
+}

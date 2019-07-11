@@ -1,0 +1,56 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "cbu": "4910001700000000000758",
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "type": {
+        "id": "10",
+        "name": "Cuenta corriente pesos"
+      },
+      "name": "Marta Wannaper",
+      "startDate": "2017-10-30T00:00:00.00Z",
+      "email": "mwannaper@themail.net",
+      "role": "seller",
+      "legalDocumentId":"52345678Z"
+    },
+    {
+      "cbu": "4910001700000000000840",
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "type": {
+        "id": "10",
+        "name": "Cuenta corriente pesos"
+      },
+      "name": "Arturo Mayo",
+      "startDate": "2017-10-28T00:00:00.00Z",
+      "email": "amayo@themail.net",
+      "role": "seller",
+      "legalDocumentId":"42345678Z"
+    },
+    {
+      "cbu": "4910001700000000000841",    
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "type": {
+        "id": "10",
+        "name": "Cuenta corriente pesos"
+      },
+      "name": "Cristina Abril",
+      "startDate": "2017-12-29T00:00:00.00Z",
+      "email": "amayo@themail.net",
+      "role": "seller",
+      "legalDocumentId":"32345678Z"
+    }
+  ]
+}

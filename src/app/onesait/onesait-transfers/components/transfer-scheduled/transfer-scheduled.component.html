@@ -1,0 +1,124 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="panel">
+    <div class="panel-body">
+        <ng-container *ngIf="view==='LIST'">
+            <osb-search-list [formGroup]="filterSearchForm" [formConfig]="formConfig" (search)="getTransfersScheduled()"></osb-search-list>
+            <ng-container *ngIf="transferScheduledList">
+                <table class="table table-detail">
+                    <thead class="hidden-xs">
+                        <tr>
+                            <th> {{'ONESAIT-TRANSFERS.SCHEDULED.LIST.NEXT' | translate}} </th>
+                            <th> {{'ONESAIT-TRANSFERS.SCHEDULED.LIST.ACCOUNT' | translate}} </th>
+                            <th> {{'ONESAIT-TRANSFERS.SCHEDULED.LIST.CONCEPT' | translate}} </th>
+                            <th class="text-center"> {{'ONESAIT-TRANSFERS.SCHEDULED.LIST.AMOUNT' | translate}} </th>
+                        </tr>
+                    </thead>
+                    <tbody [ngClass]="{'open': transferscheduled.id == selectedItem}" *ngFor="let transferscheduled of transferScheduledList">
+                        <tr (click)="viewDetail(transferscheduled)" class="interactive">
+                            <td class="hidden-xs text-no-warp">
+                                {{ transferscheduled.nextExecutionDate | date: 'dd/MM/yyyy' }}
+                            </td>
+                            <td>
+                                <span class="hidden-xs text-no-warp">
+                                    {{ transferscheduled.beneficiary.toAccount.formats | formatAccountPipe: accountFormatView }}
+                                </span>
+                                <span class="visible-xs-block text-os-semibold text-no-warp text-left">
+                                    {{ transferscheduled.beneficiary.toAccount.formats | formatAccountPipe: accountFormatView:isMobileResolution() }}
+                                </span>
+                                <span class="visible-xs-block fs-12 text-no-warp text-left">
+                                    {{ transferscheduled.nextExecutionDate | date: 'dd/MM/yyyy' }}
+                                </span>
+                            </td>
+                            <td class="hidden-xs text-no-warp">{{ transferscheduled.reason }}</td>
+                            <td class="text-right">
+                                <span class="hidden-xs text-no-warp">
+                                    {{ transferscheduled.amount.amount | CurrencyPipe: transferscheduled.amount.currency.code }}
+                                </span>
+                                <span class="visible-xs-block text-os-semibold text-no-warp">
+                                    {{ transferscheduled.amount.amount | CurrencyPipe: transferscheduled.amount.currency.code }}
+                                </span>
+                                <span class="visible-xs-block fs-12 text-no-warp">
+                                    {{ transferscheduled.reason }}
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr [ngClass]="{'description': !isMobileResolution() }" *ngIf="selectedItem && (selectedItem === transferscheduled.id)">
+                            <td colspan="4">
+                                <osb-transfer-scheduled-detail [transferscheduled]="transferscheduled" [frequencyTypes]="frequencyTypes" (closeEvent)="close()" (modifySchedule)="editTransferScheduled($event)" (deleteSchedule)="deleteSchedule($event)"></osb-transfer-scheduled-detail>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="text-center mt-1" *ngIf="hasMoreData">
+                    <a (click)="next()">{{'ITECBAN-ACCOUNT.MOVEMENT.MORE-DATA' | translate}}</a>
+                </div>
+            </ng-container>
+        </ng-container>
+
+        <ng-container *ngIf="view==='MODIFICATION'">
+            <osb-transfer-sheduled-modification (updatePeriodic)="updatePeriodic($event)" (cancelEdit)="cancelEdit()" [transferscheduled]="transferscheduledSelected" [transferPeriodicUpdateBack]="transferPeriodicUpdate" [frequencyTypes]="frequencyTypes">
+            </osb-transfer-sheduled-modification>
+        </ng-container>
+        <!-- TOKEN QUE SE SOLICITA CUANDO SE VA A MODIFICAR -->
+        <ng-container *ngIf="view === 'TOKEN'">
+            <form #formStep3="ngForm">
+                <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+                <div class="row mt-1">
+                    <div class="col-xs-6">
+                        <button class="btn btn-secondary" (click)="cancelEdit()">
+                            {{ 'ITECBAN-FUNDS.ADD.BUTTON.CANCEL' | translate }}
+                        </button>
+                    </div>
+                    <div class="col-xs-3">
+                        <button class="btn btn-secondary" (click)="back('MODIFICATION')">
+                            {{ 'ITECBAN-FUNDS.ADD.BUTTON.BEHIND' | translate }}
+                        </button>
+                    </div>
+                    <div class="col-xs-3">
+                        <button class="btn btn-primary" [disabled]="!signatureEntity.tokenValid" (click)="tokenCompleted('MODIFICATION')">
+                            {{ 'ITECBAN-FUNDS.ADD.BUTTON.FINALIZE' | translate }}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </ng-container>
+        <!-- TOKEN QUE SE SOLICITA CUANDO SE VA A ELIMINAR -->
+        <ng-container *ngIf="view === 'TOKEN-DELETE'">
+            <form #formStep3="ngForm">
+                <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+                <div class="row mt-1">
+                    <div class="col-xs-6">
+                        <button class="btn btn-secondary" (click)="cancelEdit()">
+                            {{ 'ITECBAN-FUNDS.ADD.BUTTON.CANCEL' | translate }}
+                        </button>
+                    </div>
+                    <div class="col-xs-3">
+                        <button class="btn btn-secondary" (click)="back('DELETE')">
+                            {{ 'ITECBAN-FUNDS.ADD.BUTTON.BEHIND' | translate }}
+                        </button>
+                    </div>
+                    <div class="col-xs-3">
+                        <button class="btn btn-primary" [disabled]="!signatureEntity.tokenValid" (click)="tokenCompleted('DELETE')">
+                            {{ 'ITECBAN-FUNDS.ADD.BUTTON.FINALIZE' | translate }}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </ng-container>
+        <ng-container *ngIf="view==='FINISH'">
+            <osb-final-message [signatureData]="signatureData" text="{{'ONESAIT-TRANSFERS.EMIT.CORRECT' | translate}}"></osb-final-message>
+            <osb-voucher-container #voucherContainer>
+                <osb-transfer-scheduled-resume [transferPeriodicUpdate]="transferPeriodicUpdate" [frequencyTypes]="frequencyTypes"></osb-transfer-scheduled-resume>
+                <div class="row mt-1">
+                    <div class="col-xs-6">
+                        <osb-download-info [voucherContainer]="voucherContainer" text="{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.DOWNLOAD-RECEIPT' | translate}}"></osb-download-info>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <button class="btn btn-primary" (click)="finish()">{{ 'COMMON.FINALIZE' | translate }}</button>
+                    </div>
+                </div>
+            </osb-voucher-container>
+        </ng-container>
+    </div>
+</div>

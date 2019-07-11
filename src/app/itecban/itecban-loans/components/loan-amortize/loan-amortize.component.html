@@ -1,0 +1,240 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="row ">
+    <div class="col-xs-12 page-non-tabbed pt-1 p-dynamic">
+        <ng-container *ngIf="view === 'SIMULATION'">
+            <div class="panel ">
+                <div class="panel-body">
+                    <form [formGroup]="loanAmortizeForm">
+                        <label class="text-os-semibold mb-1">
+                            {{ 'ITECBAN-LOANS.LOAN-AMORTIZE.SIMULATE.TITLE' | translate }}
+                        </label>
+                        <div class="row mb-1">
+                            <div class="col-xs-12">
+                                <label class="radio-inline">
+                                    <input [formControl]="loanAmortizeForm.controls.type" type="radio" value="01">
+                                    {{'ITECBAN-LOANS.LOAN-AMORTIZE.SIMULATE.FEE' | translate}}
+                                </label>
+                                <label class="radio-inline">
+                                    <input [formControl]="loanAmortizeForm.controls.type" type="radio" value="02">
+                                    {{'ITECBAN-LOANS.LOAN-AMORTIZE.SIMULATE.AMOUNT' | translate}}
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <osb-input-validator [formCtrl]="loanAmortizeForm.get('importSel')">
+                                    <input type="text" class="form-control" placeholder="Importe" name="importSel" formControlName="importSel" required="required" placeholder="{{'ITECBAN-LOANS.LOAN-AMORTIZE.SIMULATE.PLACEHOLDER' | translate}}" (blur)="applyFormatInput()" (change)="cleanSimulate()">
+                                </osb-input-validator>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-3 col-md-2">
+                                <button class="btn btn-primary" [disabled]="!loanAmortizeForm.valid" (click)="simulate()">
+                                    {{ 'ITECBAN-LOANS.LOAN-AMORTIZE.SIMULATE.BUTTON.SIMULATE' | translate }}
+                                </button>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <button class="btn btn-secondary" [disabled]="!loanAmortizeForm.valid" (click)="amortizeNoSimulate()">
+                                    {{ 'ITECBAN-LOANS.LOAN-AMORTIZE.SIMULATE.BUTTON.AMORTIZE-WITHOUT-SIMULATING' | translate }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="mt-1">
+                        <osb-loan-amortize-detail *ngIf="amortizeData.resultsPost" [amortizeData]="amortizeData"></osb-loan-amortize-detail>
+                    </div>
+
+                    <div class="row mt-1">
+                        <div class="col-xs-12 col-sm-6">
+                            <div>
+                                <button class="btn btn-secondary" (click)="cancel()">
+                                    {{ 'ITECBAN-LOANS.LOAN-AMORTIZE.SIMULATE.BUTTON.CANCEL' | translate }}
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 pt-4 text-right">
+                            <div>
+                                <button class="btn btn-primary" [disabled]="!amortizeData.resultsPost" (click)="postConfirmAmortize()">
+                                    {{ 'ITECBAN-LOANS.LOAN-AMORTIZE.SIMULATE.BUTTON.CONTINUE' | translate }}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="view === 'TOKEN'">
+            <div class="panel">
+                <div class="panel-body">
+                    <form #formStep3="ngForm">
+                        <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+
+                        <div class="row mt-1">
+                            <div class="col-xs-6">
+                                <button class="btn btn-secondary" (click)="cancel()">
+                                    {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CANCEL' | translate }}
+                                </button>
+                            </div>
+                            <div class="col-xs-3">
+                                <button class="btn btn-secondary" (click)="back()">
+                                    {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.BEHIND' | translate }}
+                                </button>
+                            </div>
+                            <div class="col-xs-3 text-right">
+                                <button class="btn btn-primary" [disabled]="!signatureEntity?.tokenValid" (click)="postConfirmAmortize()">
+                                    {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.FINALIZE' | translate }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </ng-container>
+        <!-- <ng-container *ngIf="view === 'TOKEN'">
+            <div class="panel ">
+                <div class="panel-body">
+
+                    <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+
+                    <div class="row mt-2">
+                        <div class="col-xs-6">
+                            <button class="btn btn-terciary" (click)="cancel()">
+                                    {{ 'ITECBAN-LOANS.LOAN-AMORTIZE.TOKEN.BUTTON.CANCEL' | translate }}
+                            </button>
+                        </div>
+
+                        <div class="col-xs-6 text-right">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <button class="btn btn-secondary" (click)="behind()">
+                                        {{ 'ITECBAN-LOANS.LOAN-AMORTIZE.TOKEN.BUTTON.BEHIND' | translate }}
+                                    </button>
+                                </div>
+                                <div class="col-xs-6">
+                                    <button class="btn btn-primary" [disabled]="!signatureEntity?.tokenValid" (click)="tokenCompleted()">
+                                        {{ 'ITECBAN-LOANS.LOAN-AMORTIZE.TOKEN.BUTTON.FINALIZE' | translate }}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </ng-container> -->
+
+
+
+        <ng-container *ngIf="view === 'AMORTIZE'">
+            <div class="panel">
+                <div class="panel-body">
+                    <osb-final-message [text]="'ITECBAN-LOANS.LOAN-AMORTIZE.AMORTIZE.TITLE'"></osb-final-message>
+
+                    <osb-voucher-container #voucherContainer>
+
+                        <div class="row" *ngIf="amortizeData">
+                            <div class="col-xs-12 col-sm-12 mt-1">
+                                <div class="row">
+                                    <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="amortizeData && amortizeData.title">
+                                        <div OsbVoucherKey class="text-os-bold fs-20">
+                                            {{ amortizeData.title }}
+                                        </div>
+                                    </div>
+
+                                    <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="amortizeData && amortizeData.subTitle">
+                                        <div OsbVoucherKey class="text-os-semibold">
+                                            {{ amortizeData.subTitle }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6 col-sm-6 mt-1">
+                                <ng-container>
+
+                                    <div class="row">
+                                        <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="amortizeData && amortizeData.resultsPost">
+                                            <div OsbVoucherKey class="text-os-semibold">
+                                                {{ 'ITECBAN-LOANS.LOAN-AMORTIZE-DETAILED.DETAIL.EXPIRATION-DATE' | translate }}
+                                            </div>
+                                            <div OsbVoucherValue class="text-section">
+                                                {{ amortizeData.resultsPost.newExpirationDate | date: 'dd/MM/yyyy' }}
+                                            </div>
+                                        </div>
+                                        <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="amortizeData && amortizeData.resultsPost">
+                                            <div OsbVoucherKey class="text-os-semibold">
+                                                {{ 'ITECBAN-LOANS.LOAN-AMORTIZE-DETAILED.DETAIL.PENDING-FEES' | translate }}
+                                            </div>
+                                            <div OsbVoucherValue class="text-section" OsbVoucherValue class="text-section">
+                                                {{ amortizeData.resultsPost.pendingTerms }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="amortizeData && amortizeData.resultsPost">
+                                            <div OsbVoucherKey class="text-os-semibold">
+                                                {{ 'ITECBAN-LOANS.LOAN-AMORTIZE-DETAILED.DETAIL.COMMISSIONS' | translate }}
+                                            </div>
+                                            <div OsbVoucherValue class="text-section">
+                                                {{ amortizeData.resultsPost.termAmount.amount | CurrencyPipe: amortizeData.resultsPost.termAmount.currency.code }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </div>
+
+                            <div class="col-xs-6 col-sm-6 mt-1">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="amortizeData && amortizeData.resultsPost">
+                                            <div OsbVoucherKey class="text-os-semibold ">
+                                                {{ 'ITECBAN-LOANS.LOAN-AMORTIZE-DETAILED.DETAIL.NEW-SHARE' | translate }}
+                                            </div>
+                                            <div OsbVoucherValue class="text-section ">
+                                                {{ amortizeData.resultsPost.feeAmount.amount | CurrencyPipe: amortizeData.resultsPost.feeAmount.currency.code }}
+                                            </div>
+                                        </div>
+                                        <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="amortizeData && amortizeData.resultsPost">
+                                            <div OsbVoucherKey class="text-os-semibold ">
+                                                {{ 'ITECBAN-LOANS.LOAN-AMORTIZE-DETAILED.DETAIL.PENDING-CAPITAL' | translate }}
+                                            </div>
+                                            <div OsbVoucherValue class="text-section ">
+                                                {{ amortizeData.resultsPost.pendingAmount.amount | CurrencyPipe: amortizeData.resultsPost.pendingAmount.currency.code }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 mt-1 mb-1">
+                                <div class="mt-1">
+                                    <a (click)="downloadDocument()" class="text-os-bold text-gray-dark">
+                                        {{ 'ITECBAN-LOANS.LOAN-AMORTIZE.AMORTIZE.BUTTON.DOWNLOAD-VOUCHER' | translate }}
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-6">
+                                <button class="btn btn-secondary" (click)="goToAccounts()">
+                                    {{ 'ITECBAN-LOANS.LOAN-AMORTIZE.AMORTIZE.BUTTON.GO-TO-ACCOUNTS' | translate }}
+                                </button>
+                            </div>
+
+                            <div class="col-xs-6 text-right">
+                                <button class="btn btn-primary" (click)="amortizationTable()">
+                                    {{ 'ITECBAN-LOANS.LOAN-AMORTIZE.AMORTIZE.BUTTON.AMORTIZATION-TABLE' | translate }}
+                                </button>
+                            </div>
+                        </div>
+                    </osb-voucher-container>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

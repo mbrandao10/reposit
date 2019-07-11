@@ -1,0 +1,19 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<div class="row">
+  <div class="col-xs-12 p-dynamic">
+    <osb-tabs [tabs]="pageConfig.tabs" [(view)]="view"></osb-tabs>
+  </div>
+</div>
+
+<div class="row page-tabbed pb-1 pt-1 p-dynamic">
+  <div *ngIf="view ==='upload-invoice'">
+    <osb-factoring-upload-invoice [contractId]="contractId"></osb-factoring-upload-invoice>
+  </div>
+  <div *ngIf="view ==='invoices'">
+    <osb-factoring-invoices [contractId]="contractId"></osb-factoring-invoices>
+  </div>
+  <div *ngIf="view ==='conditions'">
+    <osb-factoring-contract-conditions [contractId]="contractId"></osb-factoring-contract-conditions>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "ADSP",
+      "name": "Adeudos SEPA"
+    },
+    {
+      "id": "BUZO",
+      "name": "Buzón"
+    },
+    {
+      "id": "CONT",
+      "name": "Contabilidad"
+    },
+    {
+      "id": "CTAS",
+      "name": "PAsivo"
+    },
+    {
+      "id": "CTIE",
+      "name": "Cuentas internas"
+    },
+    {
+      "id": "EMBA",
+      "name": "Embargos"
+    },
+    {
+      "id": "GARA",
+      "name": "Garantías"
+    },
+    {
+      "id": "HERR",
+      "name": "Herramientas"
+    },
+    {
+      "id": "IMPU",
+      "name": "Impuestos"
+    },
+    {
+      "id": "MEPA",
+      "name": "Medios de Pago"
+    },
+    {
+      "id": "OPDI",
+      "name": "Operaciones diversas"
+    },
+    {
+      "id": "PERS",
+      "name": "Personas"
+    },
+    {
+      "id": "PLZO",
+      "name": "Plazo"
+    },
+    {
+      "id": "RIES",
+      "name": "Activo"
+    },
+    {
+      "id": "SERV",
+      "name": "Servicios"
+    },
+    {
+      "id": "TRFI",
+      "name": "Transferencias internacionales"
+    },
+    {
+      "id": "TRSP",
+      "name": "Transferencias SEPA"
+    }
+
+  ]
+}

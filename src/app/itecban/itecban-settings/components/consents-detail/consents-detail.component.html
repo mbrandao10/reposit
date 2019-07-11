@@ -1,0 +1,49 @@
+<div class="modal-detail" *ngIf="consent">
+    <ng-container *ngIf="isMobileResolution()">
+        <osb-modal-page [isOpenModal]="true" (closeEvent)="close()">
+            <osb-modal-page-header [title]="'ONESAIT-CONSENTS.CONSENTS.DETAIL.TITLE'"></osb-modal-page-header>
+            <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+        </osb-modal-page>
+    </ng-container>
+
+    <ng-container *ngIf="!isMobileResolution()">
+        <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+    </ng-container>
+
+    <ng-template #templateRef>
+        <div class="p-1">
+            <div class="mb-1" *ngIf="consent.consent.consentStatusId">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-CONSENTS.CONSENTS.DETAIL.STATE' | translate }}:
+                </span>
+                <span class="test-no-warp">
+                    {{ consent.consent.consentStatusId.description}}
+                </span>
+                <div *ngIf="!isMobileResolution()" class="pull-right icon icononesait icon-close text-blue fs-28" (click)="close()"></div>
+            </div>
+            <div class="mb-1" *ngIf="consent.consent.consentId">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-CONSENTS.CONSENTS.DETAIL.ID' | translate }}:
+                </span>
+                <span class="test-no-warp">
+                    {{ consent.consent.consentId }}
+                </span>
+            </div>
+            <div class="mb-1" *ngIf="consent.consent.consentId">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-CONSENTS.CONSENTS.DETAIL.VALID-UNTIL' | translate }}:
+                </span>
+                <span class="test-no-warp">
+                    {{ consent.consent.expirationTime | date: 'dd/MM/yyyy' }}
+                </span>
+            </div>
+            <div class="row mt-1" *ngIf="isMobileResolution()">
+                <div class="col-xs-6 pull-right text-right">
+                    <button class="btn btn-primary" (click)="openModal()">
+                        {{'ONESAIT-CONSENTS.CONSENTS.DETAIL.ANUL' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>

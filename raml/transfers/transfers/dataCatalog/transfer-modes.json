@@ -1,0 +1,28 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "SEPA",
+      "name": "SEPA"
+    },
+    {
+      "id": "INTERNATIONAL",
+      "name": "Internacional"
+    },
+    {
+      "id": "TARGET2",
+      "name": "Target2"
+    },
+    {
+      "id": "INTERNAL",
+      "name": "Traspaso"
+    },
+    {
+      "id": "NB",
+      "name": "NB España - Portugal"
+    }
+  ]
+}

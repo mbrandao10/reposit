@@ -1,0 +1,128 @@
+<app-loader *ngIf="loading"></app-loader>
+<ul class="list" *ngIf="account">
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-ACCOUNT.DETAIL.ACCOUNT.IBAN' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ account.formats | formatAccountPipe: accountFormatView }}
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-ACCOUNT.DETAIL.ACCOUNT.BIC' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ account.formats | formatAccountPipe: 'BIC' }}
+        </div>
+    </li>
+
+    <li *ngIf="account.productData.description">
+        <div class="name text-left">
+            {{ 'ITECBAN-ACCOUNT.DETAIL.ACCOUNT.ACCOUNT.TYPE' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ account.productData.description | titlecase }}
+        </div>
+    </li>
+
+    <li *ngIf="account.status.name">
+        <div class="name text-left">
+            {{ 'ITECBAN-ACCOUNT.DETAIL.ACCOUNT.STATE' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ account.status.name | titlecase }}
+        </div>
+    </li>
+
+    <li *ngIf="account.balance.amount && account.balance.currency.code">
+        <div class="name text-left">
+            {{ 'ITECBAN-ACCOUNT.DETAIL.ACCOUNT.BALANCE.CURRENT' | translate }}
+        </div>
+        <div class="value text-right text-no-warp">
+            {{ account.balance.amount | CurrencyPipe: account.balance.currency.code }}
+        </div>
+    </li>
+
+    <li *ngIf="account.postedBalance.amount && account.balance.currency.code">
+        <div class="name text-left">
+            {{ 'ITECBAN-ACCOUNT.DETAIL.ACCOUNT.BALANCE.AVAILABLE' | translate }}
+        </div>
+        <div class="value text-right text-no-warp">
+            {{ account.postedBalance.amount | CurrencyPipe: account.postedBalance.currency.code }}
+        </div>
+    </li>
+
+  <!--ITECNB-1497  <li *ngIf="account.openingDate">
+        <div class="name text-left">
+            {{ 'ITECBAN-ACCOUNT.DETAIL.ACCOUNT.OPENING.DATE' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ account.openingDate | date: 'dd/MM/yyyy' }}
+        </div>
+    </li>-->
+
+    <li *ngIf="account.interest">
+        <div class="name text-left">
+            {{ 'ITECBAN-ACCOUNT.DETAIL.ACCOUNT.CREDITOR.INTEREST' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ account.interest }} %
+        </div>
+    </li>
+</ul>
+
+<div *ngIf="interveners" class="mt-2">
+    <span class="text-os-semibold">
+        {{ 'ITECBAN-ACCOUNT.DETAIL.INTERVENERS.LIST' | translate }}
+    </span>
+
+    <!--     <ul class="list" *ngIf="interveners">
+    <li>
+        <div class="name">
+            {{ 'ITECBAN-ACCOUNT.DETAIL.INTERVENERS.LIST-NAME' | translate }}
+        </div>
+        <div class="value">
+            {{ 'ITECBAN-ACCOUNT.DETAIL.INTERVENERS.LIST-PROFILE' | translate }}
+        </div>
+        <hr>
+    </li>
+    </ul>
+
+    <ul class="list" *ngIf="interveners">
+
+    <li *ngFor="let intervener of interveners">
+        <div class="name">
+            {{ intervener.name }}
+        </div>
+        <div class="value">
+            {{ intervener.participation.participantType.name }}
+        </div>
+    </li>
+    </ul> -->
+
+    <table class="table table-striped mt-1">
+        <thead class="hidden-xs">
+            <tr>
+                <th>
+                    {{ 'ITECBAN-ACCOUNT.DETAIL.INTERVENERS.LIST-NAME' | translate }}
+                </th>
+                <th class="text-right">
+                    {{ 'ITECBAN-ACCOUNT.DETAIL.INTERVENERS.LIST-PROFILE' | translate }}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let intervener of interveners">
+                <td>
+                    {{ intervener.name }}
+                </td>
+                <td class="text-right">
+                    {{ intervener.participation.participantType.name }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,65 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+
+      "eventId": "006",
+      "eventGroup": "account",
+      "linkedElementId": "149100011009408526",
+      "notificationChannels": [
+        "mail",
+        "push",
+        "sms"
+      ],
+      "amount": {
+        "amount": 1284.01,
+        "currency": {
+          "code":"032",
+          "id":"ARG"
+        }
+      },
+      "links": [
+        {
+          "rel": "event",
+          "href": "https://itecban.indra.es/notifications/events/006",
+           "method": "GET"
+        }
+      ]
+    },
+    {
+     "eventId": "001",
+      "eventGroup": "account",
+      "linkedElementId": "149100011009408526",
+      "notificationChannels": [
+        "mail",
+        "push",
+        "sms"
+      ],
+      "period": {
+        "id": "01",
+        "name": "1 semana antes"
+      },
+      "links": [
+        {
+          "rel": "event",
+          "href": "https://itecban.indra.es/notifications/events/001",
+           "method": "GET"
+        }
+      ]
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+    "links": [
+      {
+        "rel": "next",
+        "href": "https://itecban.indra.es/settings/suscriptions/?paginationKey=f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+        "method": "GET"
+      }
+    ]
+  }
+}

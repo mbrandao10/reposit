@@ -1,0 +1,327 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<div class="p-1 page-non-tabbed pb-1">
+    <div class="panel">
+        <div class="panel-body">
+            <osb-final-message *ngIf="step === 'CREATED'"
+                text="{{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.SUCCESSFUL-OPERATION.TITLE-CORRECT-OPERATION' | translate }}">
+            </osb-final-message>
+
+            <!-- Seleccion de préstamo -->
+            <div class="col-xs-12" *ngIf="step === 'FIRST'">
+                <form [formGroup]="loanNewForm">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="form-group">
+                            <label class="form-custom-label" for="productSel">
+                                <b>
+                                    {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.TERMS.SELECT-TYPE-LOAN' | translate }}
+                                </b>
+                            </label>
+                            <osb-input-validator [formCtrl]="loanNewForm.get('productSel')">
+                                <select class="form-control form-control-amim" name="productSel"
+                                    formControlName="productSel" (ngModelChange)="changeSelectProduct($event)"
+                                    [(ngModel)]="productSelected">
+                                    <option *ngFor="let loanProduct of loanProductData" [ngValue]="loanProduct">
+                                        {{ loanProduct.name | capitalize }}
+                                    </option>
+                                </select>
+                            </osb-input-validator>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-11 col-sm-5 col-md-5">
+                                <label class="form-custom-label" for="importSel">
+                                    <b>
+                                        {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.TERMS.LOAN-AMOUNT' | translate }}
+                                    </b>
+                                </label>
+                                <osb-input-validator [formCtrl]="loanNewForm.get('importSel')">
+                                    <input type="text" class="form-control form-control-amim" placeholder="Importe"
+                                        name="importSel" formControlName="importSel" required="required"
+                                        (blur)="applyFormatInput()"
+                                        placeholder="{{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.TERMS.EXAMPLE-INPUT' | translate }}">
+                                </osb-input-validator>
+                            </div>
+                            <div class="col-xs-1 mt-2 fs-20 p-0 text-left text-gray-dark">
+                                <div class="mt-1"></div>{{defaultCurrency.sign}}
+                            </div>
+
+                            <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                                <label class="form-custom-label"
+                                    for="period"><b>{{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.TERMS.PERIOD' | translate }}</b></label>
+
+                                <!-- <select class="form-control form-control-amim" name="period" formControlName="period" (ngModelChange)="changeSelectPeriod($event)" [(ngModel)]="periodSelected">
+                    <option *ngFor="let loanPeriod of loanPeriodData" [ngValue]="loanPeriod">
+                      {{ loanPeriod.name }}
+                    </option>
+                  </select> -->
+                                <div class="input-calendar-custom">
+                                    <osb-input-validator [formCtrl]="loanNewForm.get('period')">
+                                        <input autocomplete="off" class="form-control" name="period" [minDate]="minDate"
+                                            formControlName="period" #dp="bsDatepicker" bsDatepicker>
+                                        <i class="icon icononesait icon-calendar" (click)="dp.show()"></i>
+                                    </osb-input-validator>
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 fs-12 mt-1">
+                                <p>
+                                    {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.TERMS.INFO-AMOUNT' | translate }}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div *ngIf="genericAccountLoanInfo">
+                                    <div class="row mt-1 mb-1">
+                                        <div class="col-xs-6" *ngIf="genericAccountLoanInfo.username">
+                                            <div class="text-os-semibold">
+                                                {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.TERMS.OWNERSHIP' | translate }}
+                                            </div>
+                                            <div class="text-gray-dark">
+                                                {{ genericAccountLoanInfo.username }}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-xs-6" *ngIf="genericAccountLoanInfo.userId">
+                                            <div class="text-os-semibold">
+                                                {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.TERMS.CIF' | translate }}
+                                            </div>
+                                            <div class="text-gray-dark">
+                                                {{ genericAccountLoanInfo.userId }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-1 mb-1" *ngIf="genericAccountLoanInfo.attorney">
+                                        <div class="text-os-semibold">
+                                            {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.TERMS.ATTORNEY' | translate }}
+                                        </div>
+                                        <div class="text-gray-dark">
+                                            {{ genericAccountLoanInfo.attorney }}
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-xs-12 mt-1 mb-1">
+                        <div class="row">
+                            <div class="col-xs-12 mb-2 text-os-semibold">
+                                {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.INFORMATION.PRODUCT-INFORMATION' | translate }}
+                            </div>
+                            <div class="col-xs-12 text-gray-dark">
+                                <p>
+                                    {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.INFORMATION.INFO-PRODUCT1' | translate }}
+                                </p>
+                                <p>
+                                    {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.INFORMATION.INFO-PRODUCT2' | translate }}
+                                </p>
+                                <p>
+                                    {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.INFORMATION.INFO-PRODUCT3' | translate }}
+                                </p>
+                            </div>
+                            <div *ngIf="loanProducts" class="col-xs-12">
+                                <div class="row mb-1">
+                                    <div class="col-xs-12" *ngIf="loanProducts.name">
+                                        <div class="text-os-semibold">
+                                            <!-- {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.INFORMATION.FIRST-NAME' | translate }} -->
+                                            {{ loanProducts.code }}
+                                        </div>
+                                        <div class="text-gray-dark">
+                                            {{ loanProducts.name }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 mt-1">
+                            <button class="btn btn-terciary" (click)="cancel()">
+                                {{ 'COMMON.CANCEL' | translate }}
+                            </button>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 text-right mt-1">
+                            <button class="btn btn-primary" [disabled]="!loanNewForm.valid" (click)="addLoan()">
+                                {{ 'COMMON.CONTINUE' | translate }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Coordenadas -->
+            <ng-container *ngIf="step === 'TOKEN'">
+                <div class="panel">
+                    <div class="panel-body">
+                        <form #formStep3="ngForm">
+
+                            <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+
+                            <div class="row mt-2">
+                                <div class="col-xs-6">
+                                    <button class="btn btn-terciary" (click)="cancel()">
+                                        {{'COMMON.CANCEL' | translate}}
+                                    </button>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <button class="btn btn-secondary" (click)="back()">
+                                                {{'COMMON.BACK' | translate}}
+                                            </button>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <button class="btn btn-primary" [disabled]="!signatureEntity.tokenValid"
+                                                (click)="tokenCompleted()">
+                                                {{'COMMON.FINALIZE' | translate}}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </ng-container>
+
+            <!-- Contratacion Correcta -->
+            <ng-container *ngIf="step === 'CREATED'">
+
+                <osb-voucher-container #voucherContainer class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6 mt-1">
+                            <div *ngIf="genericAccountLoanInfo">
+                                <div class="row mt-1 mb-1">
+                                    <div OsbVoucherKeyValue class="col-xs-6" *ngIf="genericAccountLoanInfo.username">
+                                        <div OsbVoucherKey class="text-os-semibold">
+                                            {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.SUCCESSFUL-OPERATION.TERMS.DATE-TIME' | translate }}
+                                        </div>
+                                        <div OsbVoucherValue class="text-gray-dark">
+                                            {{ finishDate }}
+                                        </div>
+                                    </div>
+
+                                    <div OsbVoucherKeyValue class="col-xs-6" *ngIf="genericAccountLoanInfo.userId">
+                                        <div OsbVoucherKey class="text-os-semibold">
+                                            {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.SUCCESSFUL-OPERATION.TERMS.LOAN' | translate }}
+                                        </div>
+                                        <div OsbVoucherValue class="text-gray-dark">
+                                            {{ loanNewForm.controls.productSel.value.name }}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-1 mb-1">
+                                    <div OsbVoucherKeyValue class="col-xs-6" *ngIf="genericAccountLoanInfo.username">
+                                        <div OsbVoucherKey class="text-os-semibold">
+                                            {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.SUCCESSFUL-OPERATION.TERMS.OWNERSHIP' | translate }}
+                                        </div>
+                                        <div OsbVoucherValue class="text-gray-dark">
+                                            {{genericAccountLoanInfo.username}}
+                                        </div>
+                                    </div>
+
+                                    <div OsbVoucherKeyValue class="col-xs-6" *ngIf="genericAccountLoanInfo.userId">
+                                        <div OsbVoucherKey class="text-os-semibold">
+                                            {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.SUCCESSFUL-OPERATION.TERMS.CIF' | translate }}
+                                        </div>
+                                        <div OsbVoucherValue class="text-gray-dark">
+                                            {{genericAccountLoanInfo.userId}}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div OsbVoucherKeyValue class="mt-1 mb-1" *ngIf="genericAccountLoanInfo.attorney">
+                                    <div OsbVoucherKey class="text-os-semibold">
+                                        {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.SUCCESSFUL-OPERATION.TERMS.ATTORNEY' | translate }}
+                                    </div>
+                                    <div OsbVoucherValue class="text-gray-dark">
+                                        {{genericAccountLoanInfo.attorney}}
+                                    </div>
+                                </div>
+
+                                <div class="row mt-1 mb-1">
+                                    <div OsbVoucherKeyValue class="col-xs-6" *ngIf="genericAccountLoanInfo.username">
+                                        <div OsbVoucherKey class="text-os-semibold">
+                                            {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.SUCCESSFUL-OPERATION.TERMS.LOAN-AMOUNT' | translate }}
+                                        </div>
+                                        <div OsbVoucherValue class="text-gray-dark text-no-warp">
+                                            {{ loanNew.amount.amount | CurrencyPipe: loanNew.amount.currency }}
+                                        </div>
+                                    </div>
+
+                                    <div OsbVoucherKeyValue class="col-xs-6" *ngIf="loanNew.period">
+                                        <div OsbVoucherKey class="text-os-semibold">
+                                            {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.SUCCESSFUL-OPERATION.TERMS.PERIOD' | translate }}
+                                        </div>
+                                        <div OsbVoucherValue class="text-gray-dark">
+                                            {{ loanNew.period }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-md-6 mt-2 pl-1 pr-1" *ngIf="loanProducts">
+                            <div OsbVoucherKeyValue>
+                                <div OsbVoucherKey class="col-xs-12 p-0 mb-1 text-os-semibold">
+                                    {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.SUCCESSFUL-OPERATION.INFORMATION.PRODUCT-INFORMATION' | translate }}
+                                </div>
+                                <div class="text-gray-dark">
+                                    <p>
+                                        {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.INFORMATION.INFO-PRODUCT1' | translate }}
+
+                                    </p>
+                                    <p>
+                                        {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.INFORMATION.INFO-PRODUCT2' | translate }}
+                                    </p>
+                                    <p>
+                                        {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.INFORMATION.INFO-PRODUCT3' | translate }}
+                                    </p>
+                                </div>
+                                <div OsbVoucherValue class="hidden">
+                                    {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.INFORMATION.INFO-PRODUCT1' | translate }}
+                                    {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.INFORMATION.INFO-PRODUCT2' | translate }}
+                                    {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.REQUEST.INFORMATION.INFO-PRODUCT3' | translate }}
+                                </div>
+                            </div>
+                            <div *ngIf="loanProducts" class="row mb-1">
+                                <div OsbVoucherKeyValue class="col-xs-6" *ngIf="loanProducts.name">
+                                    <div OsbVoucherKey class="text-os-semibold">
+                                        <!-- {{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.SUCCESSFUL-OPERATION.INFORMATION.FIRST-NAME' | translate }} -->
+                                        {{ loanProducts.code }}
+                                    </div>
+                                    <div OsbVoucherValue class="text-gray-dark">
+                                        {{ loanProducts.name }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </osb-voucher-container>
+
+                <div class="row ">
+                    <div class="col-xs-12 col-sm-6 mt-1">
+                        <osb-download-info [voucherContainer]="voucherContainer"
+                            text="{{ 'ITECBAN-LOANS.LOAN-ADD-PAGE.SUCCESSFUL-OPERATION.DOWNLOAD-VOUCHER' | translate }}">
+                        </osb-download-info>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 mt-1">
+                        <button class="btn btn-primary  pull-right" (click)="goToAccounts()">
+                            {{ 'COMMON.GO-ACCOUNTS' | translate }}
+                        </button>
+                    </div>
+                </div>
+            </ng-container>
+
+        </div>
+    </div>
+</div>

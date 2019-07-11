@@ -1,0 +1,39 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<div class="panel ">
+  <div class="panel-body">
+    <ul class="list" *ngIf="contract">
+      <li class="acount-info-conditions-elemt" >
+        <!-- <div class="name text-left">{{'ONESAIT-CONFIRMING.CONDITIONS.OPENING-DATE' | translate}}</div>
+        <div class="value text-right" *ngIf="contract.openingDate">{{contract.openingDate | date: 'dd/MM/yyyy'}}</div> -->
+        <div class="name text-left">{{'ONESAIT-CONFIRMING.CONDITIONS.EXPIRATION-DATE' | translate}}</div>
+        <div class="value text-right" *ngIf="contract.expirationDate">{{contract.expirationDate | date: 'dd/MM/yyyy'}}</div>
+      </li>
+      <li class="acount-info-conditions-elemt" >
+        <div class="name text-left">{{'ONESAIT-CONFIRMING.CONDITIONS.MAX-AMOUNT-ADVANCES' | translate}}</div>
+        <div class="value text-right text-no-warp" *ngIf="contract?.advancesMaxAmount?.currency?.code">{{contract.advancesMaxAmount.amount | CurrencyPipe :
+          contract.advancesMaxAmount.currency.code : false }}</div>
+      </li>
+      <li class="acount-info-conditions-elemt" >
+        <div class="name text-left">{{'ONESAIT-CONFIRMING.CONDITIONS.MAX-AMOUNT-CONFIRMING' | translate}}</div>
+        <div class="value text-right text-no-warp" *ngIf="contract?.confirmingMaxAmount?.currency?.code">{{contract.confirmingMaxAmount.amount | CurrencyPipe :
+          contract.confirmingMaxAmount.currency.code : false }}</div>
+      </li>
+      <li class="acount-info-conditions-elemt" >
+        <div class="name text-left">{{'ONESAIT-CONFIRMING.CONDITIONS.ACTIVE-ORDERS'
+            |
+            translate}}</div>
+        <div class="value text-right text-no-warp" *ngIf="contract?.totalAmountOfActiveOrders?.currency?.code">{{contract.totalAmountOfActiveOrders.amount | CurrencyPipe :
+          contract.totalAmountOfActiveOrders.currency.code : false }}</div>
+      </li>
+      <li class="acount-info-conditions-elemt" >
+        <div class="name text-left">{{'ONESAIT-CONFIRMING.CONDITIONS.ADVANCED-ORDERS'
+            |
+            translate}}</div>
+        <div class="value text-right text-no-warp" *ngIf="contract?.totalAmountOfAdvanceOrders?.currency?.code">{{contract.totalAmountOfAdvanceOrders.amount | CurrencyPipe :
+          contract.totalAmountOfAdvanceOrders.currency.code : false }}</div>
+      </li>
+    </ul>
+    <!-- <div *ngIf="!contract">{{'ONESAIT-CONFIRMING.CONDITIONS.NO-CONTRACTS' | translate}}</div> -->
+  </div>
+</div>

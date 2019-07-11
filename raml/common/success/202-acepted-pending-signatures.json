@@ -1,0 +1,45 @@
+{
+  "result": {
+    "code": "202",
+    "info": "Accepted"
+  },
+  "data": {
+    "id": "000-0000-0000-0000"
+  },
+  "signatureData": {
+    "isSignatureRequired": true,
+    "factorType": {
+      "id": "security-card",
+      "name": "Tarjeta de coordenadas"
+    },
+    "type": {
+      "id": "MULTIPLE",
+      "name": "Multiple"
+    },
+    "count": 2,
+    "holderList": [
+      {
+        "authorizerName": "John Coltrane",
+        "authorizedOption": {
+          "id": "MANDATORY",
+          "name": "Obligatoria"
+        },
+        "status": {
+          "id": "PENDING",
+          "name": "Pendiente"
+        }
+      },
+      {
+        "authorizerName": "Duke Ellington",
+        "authorizedOption": {
+          "id": "ALTERNATIVE",
+          "name": "Alternativa"
+        },
+        "status": {
+          "id": "AUTHORIZED",
+          "name": "Aceptado"
+        }
+      }
+    ]
+  }
+}

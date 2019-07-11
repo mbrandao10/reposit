@@ -1,0 +1,57 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "lastConnectionDate": "2014-10-30T00:00:00.00Z",
+    "lastConnectionIP": "83.36.217.255",
+    "userLegalId": "27321239E",
+    "userSecondaryLegalId": "20111144444",
+    "userSecondaryLegalIdType": "CUIL",
+    "userNumber": "0000583850",
+    "userName": "NOMBRE",
+    "userFirstSurname": "APE_1_0000583850",
+    "userSecondSurname": "APE_2_0000583850",
+    "userLanguage": "es",
+    "updateCredentialRequired": false,
+    "pushNotificationActivated": false,
+    "userWarning": "Tu caducidad esta a punto de caducar. Te quedan 15 días",
+    "userCodeWarning": "079I",
+    "aditionalInfo": {
+      "campaignCode": "DMC45",
+      "myAdvisor": "enabled",
+      "personalCard": "deactivated"
+    },
+    "profiles" :[
+      {
+        "id": "0000583850",
+        "holderLegalId": "27321239E",
+        "contractNumber": "0000583850",
+        "contractName": "Apoderado",
+        "group": {
+          "id": "PF01",
+          "name": "Persona física"
+        },
+        "relationShip": {
+          "id": "01",
+          "name": "Indra Sistemas S.A."
+        }
+      },
+      {
+        "id": "0000583853",
+        "holderLegalId": "04116987X",
+        "contractNumber": "0000583853",
+        "contractName": "Apoderado",
+        "group": {
+          "id": "PJ01",
+          "name": "Persona jurídica"
+        },
+        "relationShip": {
+          "id": "01",
+          "name": "Indra Sistemas S.A."
+        }
+      }
+    ]
+  }
+}

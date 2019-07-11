@@ -1,0 +1,28 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "BIENES GANANCIALES "
+    },
+    {
+      "id": "02",
+      "name": "SEPARACION DE BIENES"
+    },
+    {
+      "id": "03",
+      "name": "COMUNIDAD DE BIENES"
+    },
+    {
+      "id": "04",
+      "name": "REGIMEN ESPECIAL"
+    },
+    {
+      "id": "05",
+      "name": "DESCONOCIDO"
+    }
+  ]
+}

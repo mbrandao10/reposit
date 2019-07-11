@@ -1,0 +1,16 @@
+{
+  "accountId": "ES8120952318526683783933",
+  "taxPaymentClass":"NotificationsAndFeesTaxPayment",
+  "taxForm": {
+    "id": "791",
+    "name": "SUJETO PASIVO"
+  },
+  "formId": "1234567890123",
+  "paymentAmount": {
+    "amount": 1245.51,
+    "currency": {
+      "id": "EUR",
+      "code": "978"
+    }
+  }
+}

@@ -1,0 +1,170 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<div class="modal-detail" *ngIf="transferscheduled">
+
+    <ng-container *ngIf="isMobileResolution()">
+        <osb-modal-page [isOpenModal]="true" (closeEvent)="close()">
+            <osb-modal-page-header [title]="'ONESAIT-TRANSFERS.SCHEDULED.DETAIL.TITLE'"></osb-modal-page-header>
+            <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+        </osb-modal-page>
+    </ng-container>
+
+    <ng-container *ngIf="!isMobileResolution()">
+        <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+    </ng-container>
+
+
+    <ng-template #templateRef>
+        <div class="p-1">
+            <div class="mb-1">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.SCHEDULED.DETAIL.CONCEPT' | translate}}:
+                </span>
+                <span class="text-no-warp" *ngIf="transferscheduled && transferscheduled.reason">
+                    {{ transferscheduled.reason }}
+                </span>
+                <div *ngIf="!isMobileResolution()" class="pull-right icon icononesait icon-close text-blue fs-28" (click)="close()"></div>
+            </div>
+
+            <div class="mb-1">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.SCHEDULED.DETAIL.ACCOUNTTO' | translate}}:
+                </span>
+                <span *ngIf="transferscheduled && transferscheduled.beneficiary.toAccount.id">
+                    {{ transferscheduled.beneficiary.toAccount.formats | formatAccountPipe: accountFormatView}}
+                </span>
+            </div>
+
+            <div class="mb-1">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.SCHEDULED.DETAIL.AMOUNT' | translate}}:
+                </span>
+                <span class="text-no-warp" *ngIf="transferscheduled && transferscheduled.amount.amount!==null && transferscheduled.amount.currency.code">
+                    {{transferscheduled.amount.amount | CurrencyPipe: transferscheduled.amount.currency.code}}
+                </span>
+            </div>
+
+            <div class="mb-1">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.SCHEDULED.DETAIL.CREATE-DATE' | translate}}:
+                </span>
+                <span class="text-no-warp" *ngIf="transferscheduled && transferscheduled.creationDate">
+                    {{ transferscheduled.creationDate | date: 'dd/MM/yyyy'}}
+                </span>
+            </div>
+
+            <div class="mb-1">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.SCHEDULED.DETAIL.FIRST-DATE' | translate}}:
+                </span>
+                <span class="text-no-warp" *ngIf="transferscheduled && transferscheduled.periodicity.firstExecutionDate">
+                    {{ transferscheduled.periodicity.firstExecutionDate | date: 'dd/MM/yyyy'}}
+                </span>
+            </div>
+
+            <div class="mb-1">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.SCHEDULED.DETAIL.END-DATE' | translate}}:
+                </span>
+                <span class="text-no-warp" *ngIf="transferscheduled && transferscheduled.periodicity.lastExecutionDate && !periodicUndefined">
+                    {{ transferscheduled.periodicity.lastExecutionDate | date: 'dd/MM/yyyy'}}
+                </span>
+                <span class="text-no-warp" *ngIf="periodicUndefined">
+                    {{'ONESAIT-TRANSFERS.EMIT.EXECUTE.PERIOD.UNDEFINED' | translate}}
+                </span>
+            </div>
+
+            <div class="mb-1">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.SCHEDULED.DETAIL.PERIODICITY' | translate}}:
+                </span>
+                <span class="text-no-warp" *ngIf="transferscheduled && transferscheduled.periodicity.frequency">
+                    {{ frequencyName }}
+                </span>
+            </div>
+
+            <div class="mb-1">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.SCHEDULED.DETAIL.ACCOUNTFROM' | translate}}:
+                </span>
+                <span class="text-no-warp" *ngIf="transferscheduled && transferscheduled.orderer.fromAccount.id">
+                    {{ transferscheduled.orderer.fromAccount.formats | formatAccountPipe: accountFormatView }}
+                </span>
+            </div>
+
+            <div class="mb-1" *ngIf="transferscheduled && transferscheduled.orderer.description">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.SCHEDULED.DETAIL.ORDERER' | translate}}:
+                </span>
+                <span class="text-no-warp">
+                    {{ transferscheduled.orderer.description }}
+                </span>
+            </div>
+
+            <div class="mb-1" *ngIf="transferscheduled && transferscheduled.beneficiary.description">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.SCHEDULED.DETAIL.BENEFICIARY' | translate}}:
+                </span>
+                <span class="text-no-warp">
+                    {{transferscheduled.beneficiary.description}}
+                </span>
+            </div>
+
+            <div class="mb-1" *ngIf="transferscheduled && transferscheduled.beneficiary.toAccount.swift">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.SCHEDULED.DETAIL.BIC' | translate}}:
+                </span>
+                <span class="text-no-warp">
+                    {{transferscheduled.beneficiary.toAccount.swift}}
+                </span>
+            </div>
+
+            <div class="mb-1" *ngIf="transferscheduled && transferscheduled.status &&  transferscheduled.status.name">
+                <span class="text-os-semibold">
+                    {{'ONESAIT-TRANSFERS.SCHEDULED.DETAIL.STATE' | translate}}:
+                </span>
+                <span class="text-no-warp">
+                    {{transferscheduled.status.name}}
+                </span>
+            </div>
+
+            <div class="row mt-2" *ngIf="!isMobileResolution() && showButton">
+                <div class="col-xs-6">
+                    <a class="text-os-semibold" (click)="close('deleteSchedule')">
+                        {{'ONESAIT-TRANSFERS.SCHEDULED.DETAIL.DELETE' | translate}}
+                    </a>
+                </div>
+
+                <div class=" col-xs-6 text-right">
+                    <button class="btn btn-primary" (click)="close('modifySchedule')">
+                        {{'ONESAIT-TRANSFERS.SCHEDULED.DETAIL.EDIT' | translate}}
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </ng-template>
+    <!-- <app-modal #modal>
+        <ng-container>
+            <div>
+                <app-modal-body>{{'ONESAIT-TRANSFERS.SCHEDULED.DETAIL.CONFIRM-TEXT' | translate }}</app-modal-body>
+                <app-modal-footer>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 mt-1 text-left">
+                            <button class="btn btn-secondary" (click)="cancelConfirmModal()">
+                                {{ 'ONESAIT-TRANSFERS.FAVOURITE.DELETE.CANCEL' |
+                                    translate}}
+                            </button>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 mt-1 text-right">
+                            <button class="btn btn-primary" (click)="close('deleteSchedule')">
+                                {{ 'ONESAIT-TRANSFERS.FAVOURITE.DELETE.CONFIRM' |
+                                    translate}}
+                            </button>
+                        </div>
+                    </div>
+                </app-modal-footer>
+            </div>
+        </ng-container>
+    </app-modal> -->
+</div>

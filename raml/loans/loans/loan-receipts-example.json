@@ -1,0 +1,238 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+
+  "data": [
+    {
+      "receiptNumber": "0001",
+      "date": "2014-10-30T00:00:00.00Z",
+      "amortizationAmount": {
+        "amount": 0,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "feeAmount": {
+        "amount": 383.68,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "pendingAmount": {
+        "amount": 713.28,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "outstandingAmount": {
+        "amount": 45,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "iva": {
+        "amount": 80.57,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "insurance": {
+        "amount": 236.11,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "stampTax": {
+        "amount": 279.32,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "delayTotal": {
+        "amount": 47.87,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "ivaTotal": {
+        "amount": 10.05,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "invoicedAmount": {
+        "amount": 758.28,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "interestRate":0.00
+    },
+    {
+      "receiptNumber": "0002",
+      "date": "2014-10-30T00:00:00.00Z",
+      "amortizationAmount": {
+        "amount": 1202,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "feeAmount": {
+        "amount": 500,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "pendingAmount": {
+        "amount": 2137.64,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "outstandingAmount": {
+        "amount": 0,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "iva": {
+        "amount": 96.69,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "insurance": {
+        "amount": 230,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "stampTax": {
+        "amount": 279.32,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "delayTotal": {
+        "amount": 90.04,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "ivaTotal": {
+        "amount": 18.91,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "invoicedAmount": {
+        "amount": 2137.64,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "interestRate":0.00
+    },
+    {
+      "receiptNumber": "0003",
+      "date": "2014-10-30T00:00:00.00Z",
+      "amortizationAmount": {
+        "amount": 1209.22,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "feeAmount": {
+        "amount": 453.9,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "pendingAmount": {
+        "amount": 2078.81,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "outstandingAmount": {
+        "amount": 0,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "iva": {
+        "amount": 95.32,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "insurance": {
+        "amount": 279.32,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "stampTax": {
+        "amount": 279.32,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "delayTotal": {
+        "amount": 33.92,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "ivaTotal": {
+        "amount": 7.13,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "invoicedAmount": {
+        "amount": 2078.81,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "interestRate":0.00
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

@@ -1,0 +1,40 @@
+<app-loader *ngIf="loading"></app-loader>
+<div class="account-info">
+    <ul class="list" *ngIf="deposit">
+        <li *ngIf="deposit.formats">
+            <div class="name text-left"> {{ 'ITECBAN-DEPOSITS.DEPOSIT.IBAN' | translate }} </div>
+            <div class="value text-right"> {{ deposit.formats | formatAccountPipe: accountFormatView:ismobileResolution }} </div>
+        </li>
+
+        <li *ngIf="deposit.productName">
+            <div class="name text-left"> {{ 'ITECBAN-DEPOSITS.DEPOSIT.PRODUCTDATA' | translate }} </div>
+            <div class="value text-right text-no-warp"> {{ deposit.productName | titlecase }} </div>
+        </li>
+
+        <li *ngIf="deposit.balance">
+            <div class="name text-left"> {{ 'ITECBAN-DEPOSITS.DEPOSIT.AMOUNT' | translate }} </div>
+            <div class="value text-right"> {{ deposit.balance.amount | CurrencyPipe: deposit.balance.currency.code }} </div>
+        </li>
+    
+        <li *ngIf="deposit.state">
+            <div class="name text-left"> {{ 'ITECBAN-DEPOSITS.DEPOSIT.STATUS' | translate }} </div>
+            <div class="value text-right"> {{ deposit.state }} </div>
+        </li>
+
+        <li *ngIf="deposit.connectedAccount">
+            <div class="name text-left"> {{ 'ITECBAN-DEPOSITS.DEPOSIT.ASSOCIATE-ACCOUNT' | translate }} </div>
+            <div class="value text-right"> {{ deposit.connectedAccount.formats | formatAccountPipe: accountFormatView:ismobileResolution }} </div>
+        </li>
+
+        <li *ngIf="deposit.liquidationPeriod">
+            <div class="name text-left text-no-warp"> {{ 'ITECBAN-DEPOSITS.DEPOSIT.SETTLEMENT-PERIOD' | translate }} </div>
+            <div class="value text-right"> {{ deposit.liquidationPeriod }} </div>
+        </li>
+
+        <li> <!-- *ngIf="deposit.autoRenewal"-->
+            <div class="name text-left text-no-warp"> {{ 'ITECBAN-DEPOSITS.DEPOSIT.AUTOMATIC-RENEWAL' | translate }} </div>
+            <div class="value text-right"> {{ deposit.autoRenewal | BooleanToStringPipe}} </div>
+        </li>
+
+    </ul>
+</div>

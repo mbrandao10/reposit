@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../../node_modules/itecban-accounts",
+  "lib": {
+    "entryFile": "index.ts",
+    "umdModuleIds": {
+      "moment": "moment",
+      "itecban-common": "itecban-common",
+      "underscore": "underscore",
+      "itecban-mailbox":"itecban-mailbox",
+      "itecban-alerts":"itecban-alerts",
+      "itecban-directdebits": "itecban-directdebits",
+      "itecban-cashpooling": "itecban-cashpooling",
+      "onesait-api": "onesait-api",
+      "onesait-accounts": "onesait-accounts",
+      "onesait-core": "onesait-core",
+      "@ngx-translate/core": "@ngx-translate/core",
+      "ngx-infinite-scroll": "ngx-infinite-scroll",
+      "ngx-bootstrap":"ngx-bootstrap"
+    }
+  }
+
+}

@@ -1,0 +1,31 @@
+.tabs-list{
+    position: relative;
+    left:0px;
+    //transition: left 0.5s ease;
+    overflow: hidden;
+    margin-top: 30px;
+    min-width: 100%;
+    border-bottom: 1px solid $nvb-gray-dark;
+    text-align: center;
+
+    @media (min-width: $screen-md-min) and (max-width: $nvb-screen-md-special-max) {
+        font-size: 13px;
+    }
+
+    .tab{
+        min-width: 100px;
+        float: left;
+        user-select: none;
+        padding: 6px 15px;    
+        cursor: pointer;
+    }
+    
+    .tab.active{
+        border-bottom: 3px solid $nvb-blue;
+        font-weight: bold;
+    }
+}
+
+.tabs-container{
+    width: 100%;
+}

@@ -1,0 +1,241 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<ng-container *ngIf="step === 'LIST'">
+  <div class="panel">
+    <div class="panel-body">
+      <table class="table table-detail">
+        <thead class="hidden-xs">
+          <tr>
+            <th>
+              {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.RECEIPT-INDICATOR' | translate }}
+            </th>
+            <th>
+              {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.ACCRUAL-DATE' | translate }}
+            </th>
+            <th>
+              {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.RETURN-DEADLINE' | translate }}
+            </th>
+            <th>
+              {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.CONCEPT' | translate }}
+            </th>
+            <th class="text-right">
+              {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.AMOUNT' | translate }}
+            </th>
+            <!-- <th></th>
+                <th></th> -->
+          </tr>
+        </thead>
+        <ng-container *ngIf="refundPayments">
+          <tbody [ngClass]="{'open': (refundPayments && payment) ?  payment.id == selectedItem : ''}"
+            *ngFor="let payment of refundPayments">
+            <tr class="interactive" (click)="viewDetail(payment)" *ngIf="payment">
+              <td class="hidden-xs">
+                <span *ngIf="payment.id">{{ payment.id }}</span>
+              </td>
+              <td class="hidden-xs">
+                <span *ngIf="payment.chargeDate">{{ payment.chargeDate | date: 'dd/MM/yyyy' }}</span>
+              </td>
+              <td class="hidden-xs">
+                <span *ngIf="payment.maxReturnDate">{{ payment.maxReturnDate | date: 'dd/MM/yyyy' }}</span>
+              </td>
+              <td class="hidden-xs">
+                <span *ngIf="payment.reason">{{ payment.reason | capitalize }}</span>
+              </td>
+              <td class="text-no-warp text-right hidden-xs">
+                <span
+                  *ngIf="payment.amount">{{ payment.amount.amount | CurrencyPipe: payment.amount.currency.code }}</span>
+              </td>
+              <!-- Mobile -->
+              <td class="hidden-sm hidden-md">
+                <span *ngIf="payment.id" class="visible-xs-block">{{ payment.id }}</span>
+              </td>
+              <td class="hidden-sm hidden-md">
+                <span *ngIf="payment.amount" class="visible-xs-block text-right text-os-semibold">
+                  {{ payment.amount.amount | CurrencyPipe: payment.amount.currency.code }}
+                </span>
+                <span *ngIf="payment.reason" class="visible-xs-block text-right fs-12">
+                  {{ payment.reason | capitalize }}
+                </span>
+              </td>
+            </tr>
+            <tr [ngClass]="{'description': !ismobileResolution }"
+              *ngIf="selectedItem && payment && (selectedItem === payment.id)">
+              <td colspan="9">
+                <app-directdebit-payment-detail [paymentSelected]="refundPaymentSelected"
+                  (paymentRefundEvent)="paymentRefund()" (closeEvent)="close()">
+                </app-directdebit-payment-detail>
+              </td>
+            </tr>
+          </tbody>
+        </ng-container>
+      </table>
+      <div class="row">
+        <div class="row" *ngIf="hasMoreData">
+          <a class="col-xs-12 text-center" (click)="next()" role="button">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.BUTTON.MORE-RESULTS' | translate }}
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="step === 'VERIFY'">
+  <app-directdebit-payment-verify [paymentSelected]="refundPaymentSelected" (closeEvent)="close()"
+    (goBackEvent)="goBack()" (signOperationEvent)="signOperation($event)">
+  </app-directdebit-payment-verify>
+</ng-container>
+<ng-container *ngIf="step === 'TOKEN'">
+  <div class="modal-detail" *ngIf="refundPaymentSelected">
+    <!-- VISTA MOVIL-->
+    <ng-container *ngIf="isMobileResolution()">
+      <osb-modal-page [isOpenModal]="true" (closeEvent)="close();step = 'VERIFY';">
+        <osb-modal-page-header></osb-modal-page-header>
+        <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+      </osb-modal-page>
+    </ng-container>
+    <!-- VISTA DESKTOP-->
+    <ng-container *ngIf="!ismobileResolution">
+      <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+    </ng-container>
+    <!-- CONTENIDO-->
+    <ng-template #templateRef>
+      <div class="p-1">
+        <form #formStep3="ngForm">
+          <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+          <div class="row">
+            <div class="col-xs-12 col-sm-4 mb-1">
+              <button class="btn btn-terciary" (click)="goBack()">
+                {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.TOKEN.BUTTON.CANCEL' | translate }}
+              </button>
+            </div>
+            <div class="col-xs-12 col-sm-4 text-center mb-1 hidden-xs">
+              <button class="btn btn-secondary" (click)="step = 'VERIFY'">
+                {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.TOKEN.BUTTON.BEHIND' | translate }}
+              </button>
+            </div>
+            <div class="col-xs-12 col-sm-4 text-right">
+              <button class="btn btn-primary" [disabled]="!signatureEntity?.tokenValid" (click)="tokenCompleted()">
+                {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.TOKEN.BUTTON.CONTINU' | translate }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </ng-template>
+  </div>
+</ng-container>
+<ng-container *ngIf="step === 'CREATED'">
+  <div class="modal-detail" *ngIf="refundPaymentSelected">
+    <!-- VISTA MOVIL-->
+    <ng-container *ngIf="isMobileResolution()">
+      <osb-modal-page [isOpenModal]="true" (closeEvent)="close()" (click)="goBack()">
+        <osb-modal-page-header></osb-modal-page-header>
+        <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+      </osb-modal-page>
+    </ng-container>
+    <!-- VISTA DESKTOP-->
+    <ng-container *ngIf="!ismobileResolution">
+      <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+    </ng-container>
+    <!-- CONTENIDO-->
+    <ng-template #templateRef>
+      <div class="p-1">
+        <osb-final-message [text]="'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.CREATED.FINAL-MESSAGE'">
+        </osb-final-message>
+        <div class="mt-1" *ngIf="refundPaymentSelected">
+          <div class="mb-1">
+            <span class="text-os-semibold">
+              {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.CREATED.TITLE' | translate }} :
+            </span>
+            <span class="text-no-warp text-gray-dark">
+              {{ refundPaymentSelected.id }}
+            </span>
+          </div>
+          <div class="row mb-1">
+            <div class="col-xs-6 col-sm-3" *ngIf="refundPaymentSelected.id">
+              <div class="text-os-semibold">
+                {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.CREATED.BODY.RECEIPT-INDICATOR' | translate }}
+              </div>
+              <div class="text-gray-dark">
+                {{ refundPaymentSelected.id }}
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-3">
+              <div class="text-os-semibold">
+                {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.CREATED.BODY.ENTRY-DATE' | translate }}
+              </div>
+              <div class="text-gray-dark">
+                <!-- {{ refundPaymentSelected.incomingDate | date: 'dd/MM/yyyy' }} -->
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-3">
+              <div class="text-os-semibold">
+                {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.CREATED.BODY.CONCEPT' | translate }}
+              </div>
+              <div class="text-no-warp text-gray-dark">
+                {{ refundPaymentSelected.reason }}
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-3">
+              <div class="text-os-semibold">
+                {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.CREATED.BODY.ISSUING-ENTITY' | translate }}
+
+              </div>
+              <div class="text-gray-dark">
+                <!-- {{ contract.issuerName }} -->
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-1" *ngIf="params">
+            <div class="col-xs-12 col-sm-6" *ngIf="params.name">
+              <div class="text-os-semibold">
+                {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.CREATED.BODY.SELECTED-REASON' | translate }}
+
+              </div>
+              <div class="text-gray-dark">
+                {{ params.name }}
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6" *ngIf="params.text">
+              <div class="text-os-semibold">
+                {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.CREATED.BODY.CLIENT-STATEMENT' | translate }}
+
+              </div>
+              <div class="text-gray-dark">
+                {{ params.text }}
+              </div>
+            </div>
+
+          </div>
+          <div class="row mb-1">
+            <div class="col-xs-12 pull-right" *ngIf="refundPaymentSelected.amount?.currency">
+              <div class="text-os-semibold">
+                {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.CREATED.BODY.AMOUNT' | translate }}
+
+              </div>
+              <div class="text-no-warp text-gray-dark">
+                {{ refundPaymentSelected.amount.amount | CurrencyPipe: refundPaymentSelected.amount.currency.code }}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- <div class="col-xs-12 col-sm-6 mb-1">
+              <button class="btn btn-secondary interactive" (click)="goTodirectdebits()">
+                {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.CREATED.BUTTON.GO-DEBIT' | translate }}
+              </button>
+
+            </div> -->
+            <div class="col-xs-12 col-sm-6 pull-right">
+              <button class="pull-right btn btn-primary interactive" (click)="goBack()">
+                {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.CREATED.BUTTON.RETURN-ANOTHER-RECIVO' | translate }}
+              </button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</ng-container>

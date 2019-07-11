@@ -1,0 +1,62 @@
+<app-loader *ngIf="loading"></app-loader>
+
+<div class="row page-non-tabbed pb-1" *ngIf="!loading">
+    <div class="col-xs-12 p-dynamic">
+        <div class="row p-1">
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="row" *ngIf="accountEquity">
+                        <div class="col-xs-12 col-sm-7">
+                            <div class="borde-superior"></div>
+                            <div class="text-section fs-12 text-uppercase text-os-semibold">{{ 'ITECBAN-EQUITIES.DETAIL.TOTAL-VALUE' | translate }}</div>
+                            <div class='fs-28 text-os-semibold text-no-warp'>{{ accountEquity.totalValue.amount | CurrencyPipe: accountEquity.totalValue.currency.code }}</div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3 pt-1 text-center">
+                            <a (click)="operateInversis()">
+                                <span class="text-os-bold text-literal">{{'ITECBAN-EQUITIES.DETAIL.BUTTON.OPERATE1' | translate}}</span><br>
+                                <span class="text-os-bold text-literal">{{'ITECBAN-EQUITIES.DETAIL.BUTTON.OPERATE2' | translate}}</span>
+                            </a>
+                        </div>
+                        <!-- <osb-validator-profile>-->
+                        <div class="col-sm-12 col-md-2 hidden-xs pt-1">
+                            <button class="btn btn-primary" (click)="addEquities()">{{ 'ITECBAN-EQUITIES.ADD.BUTTON.ADD' | translate }}</button>
+                        </div>
+                        <!-- </osb-validator-profile>-->
+                    </div>
+                </div>
+            </div>
+            <!-- <osb-tabs [tabs]="pageConfig.tabs" [(view)]="view"></osb-tabs>
+            <div class="mb-1">
+                <div class="panel mt-1">
+                    <div class="panel-body">
+                        <osb-equity-detail *ngIf="view==='conditions'" [equityDetail]="equity" scroll-collapse-emitter></osb-equity-detail>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="panel">
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead class="hidden-xs">
+                            <tr>
+                                <th>{{ 'ITECBAN-EQUITIES.LIST.EQUITY' | translate }}</th>
+                                <th>{{ 'ITECBAN-EQUITIES.LIST.AMOUNT' | translate }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span *ngIf="accountEquity.formats">{{ accountEquity.formats | formatAccountPipe: accountFormatView }}</span>
+                                </td>
+                                <td>
+                                    <span *ngIf="accountEquity.totalValue" class="text-no-warp"><strong>{{ accountEquity.totalValue.amount | CurrencyPipe: accountEquity.totalValue.currency.code }}</strong></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

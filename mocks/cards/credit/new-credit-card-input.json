@@ -1,0 +1,21 @@
+{
+  "productId": "TCT006000203",
+  "maxAmount": {
+    "amount": 50000.01,
+    "currency": "032"
+  },
+  "linkedAccounts": [
+    {
+      "id": "3840100200000000015778",
+      "type": "CBU",
+      "currency": "032",
+      "isPrincipal": true
+    },
+    {
+      "id": "3840100200000000015779",
+      "type": "CBU",
+      "currency": "840",
+      "isPrincipal": false
+    }
+  ]
+}

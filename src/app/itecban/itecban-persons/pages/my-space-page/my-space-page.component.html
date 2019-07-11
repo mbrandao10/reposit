@@ -1,0 +1,16 @@
+<app-loader *ngIf="loading"></app-loader>
+<div class="row">
+  <div class="col-xs-12 p-dynamic">
+    <osb-tabs [tabs]="pageConfig.tabs" [view]="view" (viewChange)="viewChangeEvent($event)"></osb-tabs>
+  </div>
+
+  <div class="col-xs-12 pt-1 p-dynamic page-tabbed pb-1 min-h-documents">
+    <div class="panel">
+      <div class="panel-body">
+        <app-signatures-pending-list *ngIf="controllerView==='pending-signatures'"></app-signatures-pending-list>
+        <app-mailbox *ngIf="controllerView==='mailbox'" (conversationReaded)="conversationReaded($event)"></app-mailbox>
+        <app-documentbox-list *ngIf="controllerView==='documentbox'"></app-documentbox-list>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<span *ngIf="level > 1" class="separator">/</span>
+
+<ng-container [ngSwitch]="element">
+    <span *ngSwitchCase="1" class="title-element">{{ title | translate }}</span>
+    <span *ngSwitchCase="2" class="title-element interactive" (click)="goTo(titleElement)">
+        <a>{{ titleElement.title | translate }}</a>
+    </span>
+    <ul class="nav navbar-nav navbar-right" *ngSwitchCase="3">
+        <li class="dropdown dropdown-navhead pl-0">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">
+                <span class="dropdown-navhead-text">{{ comboElements.selectedTitle | formatLiteralPipe: comboElements.fmt:resolution }}</span>
+                <span class="icon icononesait icon-arrow-drop-down"></span>
+            </a>
+            <div class="dropdown-arrow"></div>
+            <ul class="dropdown-menu">
+                <li *ngFor="let element of comboElements.elements" (click)="goTo(element)">
+                    <a>{{ element.title | formatLiteralPipe: element.fmt:resolution }}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</ng-container>

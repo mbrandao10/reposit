@@ -1,0 +1,33 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "code": "PFFD1",
+    "name": "PLAZO FIJO EN DOLARES 30 DÍAS",
+    "tae": 0.5,
+    "interest": 0.5,
+    "renewal": true,
+    "settlementTerm": "0001",
+    "currency": {
+      "id": "USD",
+      "code": "840"
+    },
+    "cancelFare": {
+      "amount": 20,
+      "currency": {
+        "id": "USD",
+        "code": "840"
+      }
+    },
+    "minimalAmount": {
+      "amount": 1000,
+      "currency": {
+        "id": "USD",
+        "code": "840"
+      }
+    },
+    "duration":30
+  }
+}

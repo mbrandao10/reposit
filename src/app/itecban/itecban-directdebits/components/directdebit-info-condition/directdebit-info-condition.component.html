@@ -1,0 +1,84 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<ul class="list" *ngIf="contract">
+    <li *ngIf="contract.issuerName">
+        <div class="name text-left">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-INFO-CONDITION.LIST.ISSUING-ENTITY' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ contract.issuerName }}
+        </div>
+    </li>
+
+    <li *ngIf="contract.issuerLegalDocument">
+        <div class="name text-left">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-INFO-CONDITION.LIST.ISSUING-DOCUMENT' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ contract.issuerLegalDocument.id }}
+        </div>
+    </li>
+
+    <li *ngIf="contract">
+        <div class="name text-left">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-INFO-CONDITION.LIST.BROADCAST-SUFFIX' | translate }}
+        </div>
+        <div class="value text-right">
+
+        </div>
+    </li>
+
+    <li *ngIf="contract.reference">
+        <div class="name text-left">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-INFO-CONDITION.LIST.REFERENCE' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ contract.reference }}
+        </div>
+    </li>
+
+    <li *ngIf="contract.account">
+        <div class="name text-left">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-INFO-CONDITION.LIST.CHARGE-ACCOUNT' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ contract.account.formats | formatAccountPipe: accountFormatView }}
+        </div>
+    </li>
+
+    <li *ngIf="contract">
+        <div class="name text-left">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-INFO-CONDITION.LIST.LAST-RECEIPT-DATE' | translate }}
+        </div>
+        <div class="value text-right">
+
+        </div>
+    </li>
+
+    <li *ngIf="contract">
+        <div class="name text-left">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-INFO-CONDITION.LIST.LAST-RECEIPT-CODE' | translate }}
+        </div>
+        <div class="value text-right">
+
+        </div>
+    </li>
+
+    <li *ngIf="contract.creationDate">
+        <div class="name text-left">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-INFO-CONDITION.LIST.DATE-OF-DIRECT-DEBIT' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ contract.creationDate | date: 'dd/MM/yyyy' }}
+        </div>
+    </li>
+
+    <li *ngIf="contract">
+        <div class="name text-left">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-INFO-CONDITION.LIST.AMOUNT-OF-LAST-RECEIPT' | translate }}
+        </div>
+        <div class="value text-right">
+
+        </div>
+    </li>
+</ul>

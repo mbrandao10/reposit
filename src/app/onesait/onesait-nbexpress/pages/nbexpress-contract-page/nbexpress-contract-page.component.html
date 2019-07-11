@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-xs-12 p-dynamic">
+        <osb-tabs [tabs]="pageConfig.tabs" [(view)]="view"></osb-tabs>
+    </div>
+</div>
+
+<div class="row page-tabbed pb-1 pt-1">
+    <div class="col-xs-12 p-dynamic">
+        <ng-container *ngIf="view ==='issue-orders'">
+            <osb-nbexpress-issue-orders [contractId]="contractId"></osb-nbexpress-issue-orders>
+        </ng-container>
+        <ng-container *ngIf="view ==='request-advance'">
+            <osb-nbexpress-request-advance [contractId]="contractId"></osb-nbexpress-request-advance>
+        </ng-container>
+        <ng-container *ngIf="view ==='orders-remittances'">
+            <osb-nbexpress-orders-remittances [contractId]="contractId"></osb-nbexpress-orders-remittances>
+        </ng-container>
+        <ng-container *ngIf="view ==='conditions'">
+            <osb-nbexpress-contract-conditions [contractId]="contractId" (selectOrdersChange)="selectOrders($event)">
+            </osb-nbexpress-contract-conditions>
+        </ng-container>
+    </div>
+</div>

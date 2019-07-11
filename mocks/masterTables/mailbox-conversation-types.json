@@ -1,0 +1,38 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "Sugerencia",
+      "href": "https://itecban.indra.es/masterTables/mailbox/conversationTypes"
+    },
+    {
+      "id": "02",
+      "name": "Queja",
+      "href": "https://itecban.indra.es/masterTables/mailbox/conversationTypes"
+    },
+    {
+      "id": "03",
+      "name": "Consulta de empresas",
+      "href": "https://itecban.indra.es/masterTables/mailbox/conversationTypes"
+    },
+    {
+      "id": "04",
+      "name": "Consulta sobre operativa",
+      "href": "https://itecban.indra.es/masterTables/mailbox/conversationTypes"
+    },
+    {
+      "id": "05",
+      "name": "Consulta sobre productos",
+      "href": "https://itecban.indra.es/masterTables/movementTypes"
+    },
+    {
+      "id": "06",
+      "name": "Otros",
+      "href": "https://itecban.indra.es/masterTables/movementTypes"
+    }
+  ]
+}

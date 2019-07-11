@@ -1,0 +1,14 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "code": "Confirming 02738",
+    "name": "Producto Confirming 02738",
+    "productType": "02738",
+    "interest": 0.1,
+    "tae": 0.1,
+    "settlementTerm": "MENSUAL"
+  }
+}

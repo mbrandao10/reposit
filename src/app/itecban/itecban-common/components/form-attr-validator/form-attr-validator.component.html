@@ -1,0 +1,21 @@
+<div class="form-attr-validator">
+    <div class="form-attr-content">
+        <ng-content></ng-content>
+    </div>
+    <div class="form-attr-icon" *ngIf="formAttr &amp;&amp; !opts.validateObject"><i
+            class="ng-valid glyphicon glyphicon-check"
+            *ngIf="formAttr.touched &amp;&amp; formAttr.valid &amp;&amp; !opts.hideError"></i><i
+            class="ng-invalid icon icononesait icon-close"
+            *ngIf="formAttr.touched &amp;&amp; !formAttr.valid &amp;&amp; !opts.hideError"></i></div>
+    <div class="form-attr-error"
+        *ngIf="formAttr &amp;&amp; !opts.validateObject &amp;&amp; formAttr.touched &amp;&amp; !formAttr.valid &amp;&amp; errorMessage">
+        {{errorMessage | translate}}</div>
+    <div class="form-attr-icon" *ngIf="formAttr &amp;&amp; opts.validateObject"><i
+            class="ng-valid glyphicon glyphicon-check"
+            *ngIf="formAttr.touched &amp;&amp; validateObject &amp;&amp; !opts.hideError"></i><i
+            class="ng-invalid icon icononesait icon-close"
+            *ngIf="formAttr.touched &amp;&amp; !validateObject &amp;&amp; !opts.hideError"></i></div>
+    <div class="form-attr-error"
+        *ngIf="formAttr &amp;&amp; opts.validateObject &amp;&amp; formAttr.touched &amp;&amp; !validateObject &amp;&amp; errorMessage">
+        {{errorMessage | translate}}</div>
+</div>

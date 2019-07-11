@@ -1,0 +1,132 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "210000000416002801150413060226469621",
+      "amount": {
+        "amount": -12.01,
+        "currency": {
+          "id": "USA",
+          "code": "840"
+        }
+      },
+      "type": {
+        "id": "TRPR",
+        "name": "Traspaso Recibido"
+      },
+      "reason": "Traspaso recibido",
+      "operationDate": "2017-05-23T00:00:00.00Z",
+      "valueDate": "2017-05-23T00:00:00.00Z",
+      "balance": {
+        "amount": -12.01,
+        "currency": {
+          "id": "USA",
+          "code": "840"
+        }
+      }
+    },
+    {
+      "id": "210000000416002801150413060226469622",
+      "amount": {
+        "amount": -56.99,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "type": {
+        "id": "TRPR",
+        "name": "Traspaso Recibido"
+      },
+      "reason": "Traspaso recibido",
+      "operationDate": "2017-05-20T00:00:00.00Z",
+      "valueDate": "2017-05-20T00:00:00.00Z",
+      "balance": {
+        "amount": -56.99,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      }
+    },
+    {
+      "id": "210000000416002801150413060226469623",
+      "amount": {
+        "amount": 1200.89,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "type": {
+        "id": "TRPR",
+        "name": "Traspaso Recibido"
+      },
+      "reason": "Traspaso recibido",
+      "operationDate": "2016-09-20T00:00:00.00Z",
+      "valueDate": "2016-09-20T00:00:00.00Z",
+      "balance": {
+        "amount": 1200.89,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "id": "210000000416002801150413060226469624",
+      "amount": {
+        "amount": -70.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "type": {
+        "id": "TRPR",
+        "name": "Traspaso Recibido"
+      },
+      "reason": "Traspaso recibido",
+      "operationDate": "2015-05-20T00:00:00.00Z",
+      "valueDate": "2015-05-20T00:00:00.00Z",
+      "balance": {
+        "amount": -70.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "id": "210000000416002801150413060226469625",
+      "amount": {
+        "amount": -50,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "type": {
+        "id": "TRPR",
+        "name": "Traspaso Recibido"
+      },
+      "reason": "Traspaso recibido",
+      "operationDate": "2014-10-30T00:00:00.00Z",
+      "valueDate": "2014-10-30T00:00:00.00Z",
+      "balance": {
+        "amount": -50,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

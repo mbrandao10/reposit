@@ -1,0 +1,13 @@
+{
+  "result": {
+    "code": "404",
+    "info": "Not Found",
+    "errors": [
+      {
+        "errorDescription": "EL RECURSO SOLICITADO NO SE ENCUENTRA",
+        "errorCode": "999X",
+        "errorType": "F"
+      }
+    ]
+  }
+}

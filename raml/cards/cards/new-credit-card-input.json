@@ -1,0 +1,45 @@
+{
+  "productId": "TCT006000203",
+  "maxAmount": {
+    "amount": 50000.01,
+    "currency": "032"
+  },
+  "linkedAccounts": [
+    {
+      "id": "3840100200000000015778",
+      "type": "CBU",
+      "currency": "032",
+      "isPrincipal": true
+    },
+    {
+      "id": "3840100200000000015779",
+      "type": "CBU",
+      "currency": "840",
+      "isPrincipal": false
+    }
+  ],
+  "beneficiary": {
+    "personData": "Juan Luis Martínez Martínez",
+    "legalDocument": {
+      "id": "12345678Z",
+      "type": "0"
+    }
+  },
+  "percentage": 23.50,
+  "stamping": {
+    "personData": "Juan Luis Martínez Martínez",
+    "cardSending": "OFFICE",
+    "office": "Oficina San Blas",
+    "letterPINOffice": false
+  },
+  "monthlyAmount": {
+    "amount": 20.0,
+    "currency": "032"
+  },
+  "cardNumber":"123123123",
+  "addressId":  "1",
+  "debitLimitAmount": {
+    "amount": 1000.0,
+    "currency": "032"
+  }
+}

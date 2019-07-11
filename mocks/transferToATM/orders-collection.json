@@ -1,0 +1,82 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+  {
+  "sequence": "00001",
+  "pin": "12345678",
+  "amount": {
+    "amount": 5000.01,
+    "currency": {
+      "id": "ARG",
+      "code": "032"
+    }
+  },
+  "reference": "Envio de efectivo",
+  "state": "EXTRAIDA",
+  "creationDate": "2018-04-15T00:00:00.00Z",
+  "expirationDate": "2018-06-30T00:00:00.00Z",
+  "fromAccount": {
+    "id": "149100011009408525",
+    "type": "CBU"
+  },
+  "document": {
+    "id": "12345678Z",
+    "type": "DNI"
+  }
+},
+{
+  "sequence": "00002",
+  "pin": "43223433",
+  "amount": {
+    "amount": 777.01,
+    "currency": {
+      "id": "ARG",
+      "code": "032"
+    }
+  },
+  "reference": "Envio de efectivo",
+  "state": "PENDIENTE",
+  "creationDate": "2018-04-15T00:00:00.00Z",
+  "expirationDate": "2019-06-30T00:00:00.00Z",
+  "fromAccount": {
+    "id": "149100011009408525",
+    "type": "CBU"
+  },
+  "document": {
+    "id": "12345678Z",
+    "type": "DNI"
+  }
+},
+{
+  "sequence": "00003",
+  "pin": "34543777",
+  "amount": {
+    "amount": 834.01,
+    "currency": {
+      "id": "ARG",
+      "code": "032"
+    }
+  },
+  "reference": "Envio de efectivo",
+  "state": "VENCIDA",
+  "creationDate": "2018-04-15T00:00:00.00Z",
+  "expirationDate": "2018-04-23T00:00:00.00Z",
+  "fromAccount": {
+    "id": "149100011009408525",
+    "type": "CBU"
+  },
+  "document": {
+    "id": "12345678Z",
+    "type": "DNI"
+  }
+}
+
+],
+  "paging": {
+    "hasMorePages":true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

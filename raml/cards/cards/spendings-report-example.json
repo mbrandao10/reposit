@@ -1,0 +1,152 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "spending": {
+        "amount": 1850.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "reason": "Tipo de gastos 1",
+      "month": "01",
+      "year": "2017"
+    },
+    {
+      "spending": {
+        "amount": 1200.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "reason": "Tipo de gastos 2",
+      "month": "02",
+      "year": "2017"
+    },
+    {
+      "spending": {
+        "amount": 1500.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "reason": "Tipo de gastos 3",
+      "month": "03",
+      "year": "2017"
+    },
+    {
+      "spending": {
+        "amount": 1900.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "reason": "Tipo de gastos 4",
+      "month": "04",
+      "year": "2017"
+    },
+    {
+      "spending": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "reason": "Tipo de gastos 5",
+      "month": "05",
+      "year": "2017"
+    },
+    {
+      "spending": {
+        "amount": 1800.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "reason": "Tipo de gastos 6",
+      "month": "06",
+      "year": "2017"
+    },
+    {
+      "spending": {
+        "amount": 1300.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "reason": "Tipo de gastos 7",
+      "month": "07",
+      "year": "2017"
+    },
+    {
+      "spending": {
+        "amount": 1800.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "reason": "Tipo de gastos 8",
+      "month": "08",
+      "year": "2017"
+    },
+    {
+      "spending": {
+        "amount": 1100.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "reason": "Tipo de gastos 9",
+      "month": "09",
+      "year": "2017"
+    },
+    {
+      "spending": {
+        "amount": 1760.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "reason": "Tipo de gastos 10",
+      "month": "10",
+      "year": "2017"
+    },
+    {
+      "spending": {
+        "amount": 800.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "reason": "Tipo de gastos 11",
+      "month": "11",
+      "year": "2017"
+    },
+    {
+      "spending": {
+        "amount": 1900.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "reason": "Tipo de gastos 12",
+      "month": "12",
+      "year": "2017"
+    }
+  ]
+}

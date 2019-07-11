@@ -1,0 +1,125 @@
+<app-loader *ngIf="loading"></app-loader>
+<ul class="list" *ngIf="creditDetail">
+
+    <li *ngIf="creditDetail && creditDetail.formats">
+        <div class="name text-left">
+            {{ 'ITECBAN-CREDITS.CREDIT-INFO-CONDITIONS.DETAILED-LIST.IBAN' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ creditDetail.formats | formatAccountPipe: accountFormatView }}
+        </div>
+    </li>
+
+    <li *ngIf="creditDetail && creditDetail.productData.type.name">
+        <div class="name text-left">
+            {{ 'ITECBAN-CREDITS.CREDIT-INFO-CONDITIONS.DETAILED-LIST.TYPE' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ creditDetail.productData.type.name }}
+        </div>
+    </li>
+
+    <li *ngIf="creditDetail && creditDetail.status">
+        <div class="name text-left">
+            {{ 'ITECBAN-CREDITS.CREDIT-INFO-CONDITIONS.DETAILED-LIST.STATE' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ creditDetail.status.name }}
+        </div>
+    </li>
+
+    <li *ngIf="creditDetail && creditDetail.outstandingBalance.amount!==null && creditDetail.outstandingBalance.currency.code">
+        <div class="name text-left">
+            {{ 'ITECBAN-CREDITS.CREDIT-INFO-CONDITIONS.DETAILED-LIST.CURRENT-BALANCE' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ creditDetail.outstandingBalance.amount | CurrencyPipe: creditDetail.outstandingBalance.currency.code }}
+        </div>
+    </li>
+
+    <li *ngIf="creditDetail && creditDetail.postedBalance.amount!==null && creditDetail.postedBalance.currency.code">
+        <div class="name text-left">
+            {{ 'ITECBAN-CREDITS.CREDIT-INFO-CONDITIONS.DETAILED-LIST.AVAILABLE-BALANCE' | translate }}
+        </div>
+        <div class="value text-right text-no-warp">
+            {{ creditDetail.postedBalance.amount | CurrencyPipe: creditDetail.postedBalance.currency.code }}
+        </div>
+    </li>
+
+    <li *ngIf="creditDetail && creditDetail.openingDate">
+        <div class="name text-left">
+            {{ 'ITECBAN-CREDITS.CREDIT-INFO-CONDITIONS.DETAILED-LIST.OPENING-DATE' | translate }}
+        </div>
+        <div class="value text-right text-no-warp">
+           <!-- {{ creditDetail.openingDate | date: 'dd/MM/yyyy' }}-->
+            -
+        </div>
+    </li>
+
+    <li *ngIf="creditDetail && creditDetail.expirationDate">
+        <div class="name text-left">
+            {{ 'ITECBAN-CREDITS.CREDIT-INFO-CONDITIONS.DETAILED-LIST.EXPIRATION-DATE' | translate }}
+        </div>
+        <div class="value text-right">
+           <!-- {{ creditDetail.expirationDate | date: 'dd/MM/yyyy' }}-->
+           -
+        </div>
+    </li>
+
+    <li *ngIf="creditDetail && creditDetail.interestCreditor">
+        <div class="name text-left">
+            {{ 'ITECBAN-CREDITS.CREDIT-INFO-CONDITIONS.DETAILED-LIST.INTEREST-CREDITOR' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ creditDetail.interestCreditor }} %
+        </div>
+    </li>
+
+    <li *ngIf="creditDetail && creditDetail.interestDebtor">
+        <div class="name text-left">
+            {{ 'ITECBAN-CREDITS.CREDIT-INFO-CONDITIONS.DETAILED-LIST.DEBTOR-INTEREST' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ creditDetail.interestDebtor }} %
+        </div>
+    </li>
+
+    <li *ngIf="creditDetail && creditDetail.interestExceeded">
+        <div class="name text-left">
+            {{ 'ITECBAN-CREDITS.CREDIT-INFO-CONDITIONS.DETAILED-LIST.EXCEEDED-INTEREST' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ creditDetail.interestExceeded }} %
+        </div>
+    </li>
+
+</ul>
+
+<div class="mt-2" *ngIf="creditInterveners">
+    <span class="text-os-semibold">
+        {{ 'ITECBAN-CREDITS.CREDIT-INFO-CONDITIONS.DETAILED-PARTICIPANTS.TITLE-HEADS-AND-INTERVENTIONS' | translate }}
+    </span>
+
+    <table class="table table-striped mt-1">
+        <thead class="hidden-xs">
+            <tr>
+                <th>
+                    {{ 'ITECBAN-CREDITS.CREDIT-INFO-CONDITIONS.DETAILED-PARTICIPANTS.FIRST-NAME' | translate }}
+                </th>
+                <th class="text-right">
+                    {{ 'ITECBAN-CREDITS.CREDIT-INFO-CONDITIONS.DETAILED-PARTICIPANTS.PROFILE' | translate }}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let creditIntervener of creditInterveners">
+                <td *ngIf="creditIntervener && creditIntervener.name">
+                    {{ creditIntervener.name }}
+                </td>
+                <td class="text-right" *ngIf=" creditIntervener && creditIntervener.participation.participantType.name">
+                    {{ creditIntervener.participation.participantType.name }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,288 @@
+<div class="row page-tabbed pb-1 pt-1">
+  <div class="col-xs-12 p-dynamic">
+
+    <osb-loader *ngIf="loading"></osb-loader>
+    <!-- Formulario para buscar orden y listado -->
+    <ng-container *ngIf="view === 'SEARCH'">
+      <div class="panel ">
+        <div class="panel-body">
+          <osb-search-list [formGroup]="consultOrdersForm" [formConfig]="formConfig" (search)="getOrder()">
+          </osb-search-list>
+          <ng-container *ngIf="advances">
+            <div class="mb-1 mt-1" *ngIf="!loading && advances?.length > 0">
+
+              <!-- <p *ngIf="!showingRecent">{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.RESULTS' | translate}}</p>
+            <p *ngIf="showingRecent && advances.length>1">{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.HAVE' |
+          translate}}
+          {{advances.length}} {{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.PENDING-ADVANCES' | translate}}</p>
+        <p *ngIf="showingRecent && advances.length===1">{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.HAVE' |
+          translate}} {{advances.length}} {{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.PENDING-ADVANCE' |
+          translate}}</p> -->
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th class="hidden-sm">{{'ONESAIT-CONFIRMING.ADVANCES.ORDER-NUMBER' | translate}}</th>
+                    <th class="hidden-sm">{{'ONESAIT-CONFIRMING.ADVANCES.RECEIPT' | translate}}</th>
+                    <th>{{'ONESAIT-CONFIRMING.ADVANCES.EXPIRATION' | translate}}</th>
+                    <th>{{'ONESAIT-CONFIRMING.ADVANCES.DEBTOR' | translate}}</th>
+                    <th>{{'ONESAIT-CONFIRMING.ADVANCES.CONCEPT' | translate}}</th>
+                    <th>{{'ONESAIT-CONFIRMING.ADVANCES.AMOUNT' | translate}}</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let adv of advances">
+                    <td class="hidden-sm">{{adv.id}}</td>
+                    <td class="hidden-sm">{{adv.creationDate | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{adv.expirationDate | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{adv.debtor}}</td>
+                    <td>{{adv.concept}}</td>
+                    <td class="text-no-warp">{{adv.amount.amount | CurrencyPipe : adv.amount.currency.code :false}}
+                      {{currencySymbol}}</td>
+                    <td class="text-right">
+                      <button class="btn btn-secondary" (click)="advanceOrder(adv.id)">{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.ADVANCE'
+                  | translate}}</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <ng-container *ngIf="hasMoreData">
+                <p class="text-center pt-1">
+                  <a (click)="next()" role="button">{{'COMMON.MORE-RESULTS' | translate}}</a>
+                </p>
+              </ng-container>
+            </div>
+          </ng-container>
+          <!-- <div *ngIf="!advances && consulted ">{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.NO-ORDER' |
+        translate}}</div>
+        <div *ngIf="!advances && !consulted ">{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.NO-ORDERS' |
+          translate}}</div> -->
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Cuadro de Simulación de orden-->
+    <ng-container *ngIf="view === 'SIMULATE' && advance">
+      <div class="panel ">
+        <div class="panel-body">
+          <div class="mb-1 mt-1 info-text">
+            <div>{{'HEADER.TITLE.CONFIRMING' | translate }} - <b>{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.TITLE' |
+          translate}}</b></div>
+            <div>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.SIMULATED-ORDER' | translate}}: {{advance.id}}</div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="mb-1 mt-1">
+                    <div>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.DEBTOR' | translate}} </div>
+                    <div>{{advance.debtor}}</div>
+                  </div>
+                  <div class="mb-1 mt-1">
+                    <div>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.CONCEPT' | translate}}</div>
+                    <div>{{advance.concept}}</div>
+                  </div>
+                </div>
+                <div class="col-xs-6 text-right">
+                  <div class="mb-1 mt-1">
+                    <div>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.ENTRANCE' | translate}}</div>
+                    <div>{{advance.creationDate | date: 'dd/MM/yyyy'}}</div>
+                  </div>
+                  <div class="mb-1 mt-1">
+                    <div>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.EXPIRATION' | translate}}</div>
+                    <div>{{advance.expirationDate | date: 'dd/MM/yyyy'}}</div>
+                  </div>
+                  <div class="mb-1 mt-1">
+                    <div>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.DAYS' | translate}}</div>
+                    <div><b>{{advance.termInDays}}</b></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="mb-1 mt-1">
+                    <div>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.BASE-AMOUNT' | translate}}</div>
+                    <div class="text-no-warp">
+                      {{advance.amount.amount | CurrencyPipe : advance.amount.currency.code :false}}
+                    </div>
+                  </div>
+                  <div class="mb-1 mt-1">
+                    <div>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.TAX' | translate}}</div>
+                    <div class="text-no-warp">
+                      {{advance.ivaAmount.amount | CurrencyPipe : advance.ivaAmount.currency.code :false}}
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-6 text-right">
+                  <div class="mb-1 mt-1">
+                    <div>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.APPLIED-RATE' | translate}}</div>
+                    <div class="text-no-warp">{{advance.interestAmount.amount | CurrencyPipe : advance.interestAmount.currency.code
+                :false}}</div>
+                  </div>
+                  <div class="mb-1 mt-1">
+                    <div>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.FEE' | translate}}</div>
+                    <div class="text-no-warp">
+                      {{advance.feeAmount.amount | CurrencyPipe : advance.feeAmount.currency.code :false}}
+                    </div>
+                  </div>
+                  <div class="mb-1 mt-1">
+                    <div>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.TOTAL' | translate}}</div>
+                    <div class="text-no-warp"><b>{{advance.totalAmount.amount | CurrencyPipe : advance.totalAmount.currency.code
+                  :false}}</b></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-2 mt-1">
+              <button class="btn btn-terciary" (click)="newAdvance()">{{ 'COMMON.CANCEL' | translate }}</button>
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-3 col-sm-offset-4 col-md-offset-5 mt-1">
+              <button type="button" class="btn btn-secondary" (click)="back()">{{ 'COMMON.BACK' | translate }}</button>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-2 mt-1 text-right">
+              <button type="button" class="btn btn-primary" (click)="advanceOrderConfirm(advance.id)">{{ 'COMMON.NEXT' |
+                        translate }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Cuadro de anticipo solicitado correctamente -->
+    <ng-container *ngIf="view === 'ADVANCED'">
+      <div class="panel ">
+        <div class="panel-body">
+          <osb-final-message text="{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.CORRECT-ADVANCE' | translate}}">
+          </osb-final-message>
+          <osb-voucher-container #voucherContainer>
+            <div class="row mt-1">
+              <div class="col-xs-12">
+                <div>{{'HEADER.TITLE.CONFIRMING' | translate }} - <b>{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.TITLE'
+                |
+                translate}}</b></div>
+                <div OsbVoucherKeyValue>
+                  <span OsbVoucherKey>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.ADVANCED-ORDER' | translate}}:
+                  </span><span OsbVoucherValue>{{advance.id}}</span>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+                          <div OsbVoucherKey>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.DEBTOR' | translate}}
+                          </div>
+                          <div OsbVoucherValue>{{advance.debtor}}</div>
+                        </div>
+                        <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+                          <div OsbVoucherKey>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.CONCEPT' | translate}}
+                          </div>
+                          <div OsbVoucherValue>{{advance.concept}}</div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 text-right">
+                        <div OsbVoucherKeyValue class="mb-1 mt-1">
+                          <div OsbVoucherKey>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.ENTRANCE' | translate}}
+                          </div>
+                          <div OsbVoucherValue>{{advance.creationDate | date: 'dd/MM/yyyy'}}</div>
+                        </div>
+                        <div OsbVoucherKeyValue class="mb-1 mt-1">
+                          <div OsbVoucherKey>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.EXPIRATION' | translate}}
+                          </div>
+                          <div OsbVoucherValue>{{advance.expirationDate | date: 'dd/MM/yyyy'}}</div>
+                        </div>
+                        <div OsbVoucherKeyValue class="mb-1 mt-1">
+                          <div OsbVoucherKey>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.DAYS' | translate}}</div>
+                          <div><b OsbVoucherValue>{{advance.termInDays}}</b></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <div OsbVoucherKeyValue class="mb-1 mt-1">
+                          <div OsbVoucherKey>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.BASE-AMOUNT' |
+                        translate}}</div>
+                          <div class="text-no-warp" OsbVoucherValue>{{advance.amount.amount | CurrencyPipe :
+                        advance.amount.currency.code
+                        : false}}</div>
+                        </div>
+                        <div OsbVoucherKeyValue class="mb-1 mt-1 ">
+                          <div OsbVoucherKey>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.TAX' | translate}}</div>
+                          <div class="text-no-warp" OsbVoucherValue>{{advance.ivaAmount.amount | CurrencyPipe : advance.ivaAmount.currency.code
+                        :false}}</div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6 text-right">
+                        <div OsbVoucherKeyValue class="mb-1 mt-1">
+                          <div OsbVoucherKey>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.APPLIED-RATE' |
+                        translate}}</div>
+                          <div class="text-no-warp" OsbVoucherValue>{{advance.interestAmount.amount | CurrencyPipe :
+                        advance.feeAmount.currency.code : false}}</div>
+                        </div>
+                        <div OsbVoucherKeyValue class="mb-1 mt-1">
+                          <div OsbVoucherKey>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.FEE' | translate}}</div>
+                          <div class="text-no-warp" OsbVoucherValue>{{advance.feeAmount.amount | CurrencyPipe :
+                        advance.feeAmount.currency.code : false}}</div>
+                        </div>
+                        <div OsbVoucherKeyValue class="mb-1 mt-1">
+                          <div OsbVoucherKey>{{'ONESAIT-CONFIRMING.ADVANCES.DETAIL.TOTAL' | translate}}</div>
+                          <div class="text-no-warp"><b OsbVoucherValue>{{advance.totalAmount.amount | CurrencyPipe :
+                          advance.totalAmount.currency.code : false}}</b></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12  mb-1 p-0 ml-1">
+                <osb-download-info [voucherContainer]="voucherContainer"
+                  text="{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.DOWNLOAD-RECEIPT' | translate}}">
+                </osb-download-info>
+              </div>
+              <div class="col-xs-12">
+                <button type="button" class="btn btn-secondary pull-left" (click)="goToAccounts()">{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.GO-ACCOUNTS'
+                  | translate}}</button>
+                <button type="button" class="btn btn-primary pull-right" (click)="newAdvance()">{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.ANOTHER-ADVANCE'
+                    | translate}}</button>
+              </div>
+            </div>
+          </osb-voucher-container>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Tarjeta de Coordenadas -->
+    <ng-container *ngIf="view === 'TOKEN'">
+      <div class="panel ">
+        <div class="panel-body">
+
+          <div class="row mb-1 mt-1">
+            <div class="col-xs-12 col-md-6 col-md-offset-3">
+              <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-2 mt-1">
+              <button class="btn btn-terciary" (click)="newAdvance()">{{ 'COMMON.CANCEL' | translate }}</button>
+            </div>
+            <div class="col-xs-12 col-sm-2 col-md-3 col-sm-offset-4 col-md-offset-5 mt-1">
+              <button type="button" class="btn btn-secondary" (click)="back()">{{ 'COMMON.BACK' | translate }}</button>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-2 mt-1 text-right">
+              <button type="button" class="btn btn-primary" [disabled]="!signatureEntity.tokenValid"
+                (click)="tokenCompleted()">{{
+                  'COMMON.FINALIZE' | translate }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

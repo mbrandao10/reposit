@@ -1,0 +1,24 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "funds",
+      "name": "Fondos de Inversión"
+    },
+    {
+      "id": "equities",
+      "name": "Cuenta de valores"
+    },
+    {
+      "id": "retirements",
+      "name": "Planes de pensiones"
+    },
+    {
+      "id": "deposit-cerfiticates",
+      "name": "Certificados de Depósito para Acciones"
+    }
+  ]
+}

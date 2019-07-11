@@ -1,0 +1,32 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id":"cfmg-c1232233",            
+      "productData": {
+        "id": "00-CFM-PLUS",
+        "description": "Confirming Plus"
+      }
+    },
+	    {
+      "id":"cfmg-c1232234",            
+      "productData": {
+        "id": "00-CFM-BASIC",
+        "description": "Confirming Basic"
+      }
+    },
+	    {
+      "id":"cfmg-c1232235",            
+      "productData": {
+        "id": "00-CFM-PLUS",
+        "description": "Confirming Plus"
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages": false
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "SIND",
+      "name": "SIN DETALLE"
+    },
+    {
+      "id": "TRSR",
+      "name": "Transferencias Sepa recibidas"
+    },
+    {
+      "id": "TRSE",
+      "name": "Transferencias Sepa emitidas"
+    },
+    {
+      "id": "TRPR",
+      "name": "Traspaso Recibido"
+    },
+    {
+      "id": "TRPE",
+      "name": "Traspaso Emitido"
+    },
+    {
+      "id": "ADSR",
+      "name": "Adeudos SEPA Recibidos"
+    },
+    {
+      "id": "ADNR",
+      "name": "Adeudos NO SEPA Recibidos"
+    },
+    {
+      "id": "TRIR",
+      "name": "Transferencias Internacionales Recibidas"
+    },
+    {
+      "id": "TRIE",
+      "name": "Transferencias Internacionales Emitidas"
+    },
+    {
+      "id": "LIQC",
+      "name": "Liquidación cuenta a la vista"
+    },
+    {
+      "id": "ARAD",
+      "name": "Abono por remesa de adeudos"
+    },
+    {
+      "id": "RM34",
+      "name": "Cargo por remesa transferencias"
+    },
+    {
+      "id": "CTDB",
+      "name": "Compra tarjeta débito"
+    },
+    {
+      "id": "RTDB",
+      "name": "Retirada de efectivo tarjeta debito"
+    },
+    {
+      "id": "LQCR",
+      "name": "Liquidación contrato tarjeta crédito"
+    }
+  ]
+}

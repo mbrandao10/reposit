@@ -1,0 +1,84 @@
+<div class="row mt-1">
+    <div class="col-xs-12 p-dynamic">
+        <osb-loader *ngIf="loading"></osb-loader>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel ">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-3 col-md-3">
+                                        <div class="borde-superior"></div>
+                                        <div class=" fs-12 text-uppercase text-os-semibold">
+                                            {{'ONESAIT-LEASING.BALANCE-AVAILABLE' | translate }}
+                                        </div>
+                                        <div class='fs-28 text-os-semibold text-no-warp'>
+                                            {{totalAvailable.amount  | CurrencyPipe : totalAvailable.currency.code :false }}
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-3 col-md-3">
+                                        <div class="borde-superior"></div>
+                                        <div class=" fs-12 text-uppercase text-os-semibold">
+                                            {{'ONESAIT-LEASING.DISPOSED' | translate }}
+                                        </div>
+                                        <p class='fs-20 text-os-light text-no-warp'>
+                                            {{totalDrawn.amount  | CurrencyPipe : totalDrawn.currency.code :false }}
+                                        </p>
+                                    </div>
+
+                                    <div class="col-xs-6 col-sm-3 col-md-3">
+                                        <div class="borde-superior"></div>
+                                        <div class=" fs-12 text-uppercase text-os-semibold">
+                                            {{'ONESAIT-LEASING.PENDING' | translate }}
+                                        </div>
+                                        <p class='fs-20 text-os-light text-no-warp'>
+                                            {{totalOutstanding.amount  | CurrencyPipe : totalOutstanding.currency.code :false }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="panel ">
+                            <div class="panel-body">                                
+                                <table class="table table-striped">
+                                    <thead class="hidden-xs">
+                                        <tr>
+                                            <th>{{'ONESAIT-LEASING.ACCOUNT' | translate}}</th>
+                                            <th>{{'ONESAIT-LEASING.AVAILABLE' | translate}}</th>
+                                            <th>{{'ONESAIT-LEASING.DISPOSED' | translate}}</th>
+                                            <th>{{'ONESAIT-LEASING.PENDING' | translate}}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody *ngIf="contracts">
+                                        <tr *ngFor="let contract of contracts" (click)="selectContract(contract)" class="interactive">
+                                            <td>
+                                                <span *ngIf="contract.account">
+                                                    {{ contract.account.formats | formatAccountPipe: accountFormatView: ismobileResolution }}
+                                                </span>
+                                                <br>
+                                                <span class="d-block">{{contract.productData?.description }}</span>
+                                            </td>
+                                            <td class="text-no-warp">
+                                                <span><strong>{{contract.availableAmount?.amount  | CurrencyPipe : contract.availableAmount?.currency.code :false }}</strong></span>
+                                            </td>
+                                            <td class="text-no-warp">
+                                                <span>{{contract.drawnAmount?.amount  | CurrencyPipe : contract.drawnAmount?.currency.code :false }}</span>
+                                            </td>
+                                            <td class="text-no-warp">
+                                                <span>{{contract.outstandingAmount?.amount  | CurrencyPipe : contract.outstandingAmount?.currency.code :false }}</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

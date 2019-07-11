@@ -1,0 +1,33 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+
+  "data": [
+    {
+      "id": "1",
+      "name": "NIF"
+    },
+    {
+      "id": "2",
+      "name": "NIF"
+    },
+    {
+      "id": "3",
+      "name": "PASAPORTE"
+    },
+    {
+      "id": "5",
+      "name": "TARJETA RESIDENTE"
+    },
+    {
+      "id": "6",
+      "name": "NIF EXTRANJERO"
+    },
+    {
+      "id": "7",
+      "name": "CIF EXTRANJERO"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<div class="tabs-container tabs-list" #tabsList>
+        <div #element class="tab"
+        class="{{tab.class}}"
+        (click)="changeTabView(element, tab.view)" 
+        [ngClass]="{'active': selectedView === tab.view }"
+        *ngFor="let tab of tabs">
+            <span>{{ tab.name | translate}}</span>
+        </div> 
+</div>
+

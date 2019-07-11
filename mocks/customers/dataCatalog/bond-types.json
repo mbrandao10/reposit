@@ -1,0 +1,68 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "PADRE/MADRE",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/bondTypes"
+    },
+    {
+      "id": "02",
+      "name": "HIJO/HIJA",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/bondTypes"
+    },
+    {
+      "id": "03",
+      "name": "CÓNYUGE",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/bondTypes"
+    },
+    {
+      "id": "04",
+      "name": "HERMANO",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/bondTypes"
+    },
+    {
+      "id": "05",
+      "name": "OTRO PARENTESCO PRIMER GRADO",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/bondTypes"
+    },
+    {
+      "id": "06",
+      "name": "PARENTESCO SEGUNDO GRADO",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/bondTypes"
+    },
+    {
+      "id": "07",
+      "name": "PARENTESCO TERCER GRADO",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/bondTypes"
+    },
+    {
+      "id": "08",
+      "name": "AMISTAD",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/bondTypes"
+    },
+    {
+      "id": "09",
+      "name": "REPRESENTANTE LEGAL",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/bondTypes"
+    },
+    {
+      "id": "10",
+      "name": "REPRESENTADO",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/bondTypes"
+    },
+    {
+      "id": "11",
+      "name": "TUTOR",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/bondTypes"
+    },
+    {
+      "id": "12",
+      "name": "TUTELADO",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/bondTypes"
+    }
+  ]
+}

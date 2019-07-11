@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../../node_modules/itecban-directdebits",
+  "lib": {
+    "entryFile": "index.ts",
+    "umdModuleIds": {
+      "itecban-common": "itecban-common",
+      "underscore": "underscore",
+      "itecban-mailbox":"itecban-mailbox",
+      "itecban-alerts":"itecban-alerts",
+      "onesait-core": "onesait-core",
+      "@ngx-translate/core": "@ngx-translate/core",
+      "ngx-infinite-scroll": "ngx-infinite-scroll"
+    }
+  }
+
+}

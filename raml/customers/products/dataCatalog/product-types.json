@@ -1,0 +1,32 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "saving",
+      "name": "Productos de pasivo"
+    },
+    {
+      "id": "credit",
+      "name": "Productos de activo"
+    },
+    {
+      "id": "payments",
+      "name": "Medios de pago"
+    },
+    {
+      "id": "intermediation",
+      "name": "Productos de intermediación"
+    },
+    {
+      "id": "corporate-banking",
+      "name": "Productos específicos de Banca empresas"
+    },
+    {
+      "id": "others",
+      "name": "Otros productos"
+    }
+  ]
+}

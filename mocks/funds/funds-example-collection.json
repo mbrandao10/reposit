@@ -1,0 +1,106 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "accountFundId": "01318860808421023091",
+      "funds": [
+        {
+          "id": "01318961678422000286",
+          "name": "FCS GESTION FLEXIBLE, FI",
+          "liquidationValue": {
+            "amount": 10.56686,
+            "currency": {
+              "id": "USA",
+              "code": "840"
+            }
+          },
+          "effectiveValue": {
+            "amount": 10.24,
+            "currency": {
+              "id": "USA",
+              "code": "840"
+            }
+          },
+          "costEffectiveness": 0.969099,
+          "isin": "ES0165947005",
+          "gains_losses": 0.24,
+          "totalCost": {
+            "amount": 10,
+            "currency": {
+              "id": "USA",
+              "code": "840"
+            }
+          }
+        },
+        {
+          "id": "01318860808421058091",
+          "name": "FF AMERICA FUND A ACC USD",
+          "liquidationValue": {
+            "amount": 18.694147,
+            "currency": {
+              "id": "EUR",
+              "code": "978"
+            }
+          },
+          "effectiveValue": {
+            "amount": 467.35,
+            "currency": {
+              "id": "EUR",
+              "code": "978"
+            }
+          },
+          "costEffectiveness": 25,
+          "isin": "LU0251131958",
+          "gains_losses": 47.5,
+          "totalCost": {
+            "amount": 419.85,
+            "currency": {
+              "id": "EUR",
+              "code": "978"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "accountFundId": "01318860808421238092",
+      "funds": [
+        {
+          "id": "01318961678422000288",
+          "name": "FCS GESTION FLEXIBLE, FI OTHERS",
+          "liquidationValue": {
+            "amount": 10.58,
+            "currency": {
+              "id": "USA",
+              "code": "840"
+            }
+          },
+          "effectiveValue": {
+            "amount": 12.24,
+            "currency": {
+              "id": "USA",
+              "code": "840"
+            }
+          },
+          "costEffectiveness": 1.1,
+          "isin": "ES0165947100",
+          "gains_losses": 0.28,
+          "totalCost": {
+            "amount": 55,
+            "currency": {
+              "id": "USA",
+              "code": "840"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "paging": {
+    "size": 0,
+    "totalElements": 0,
+    "totalPages": 0,
+    "number": 0,
+    "hasMorePages": false
+  },
+  "data": [
+    {
+      "reason": "SCRER140600300226",
+      "id": "0003726463",
+      "chargeDate": "2014-07-14T00:00:00.000+0000",
+      "minReturnDate": "2019-09-05T00:00:00.000+0000",
+      "maxReturnDate": "2014-07-24T00:00:00.000+0000",
+      "amount": {
+        "amount": 81,
+        "currency": {
+          "code": "978"
+        }
+      },
+      "nif": "B82369265-001",
+      "holder": "ZAFONIC, S.L.",
+      "reference": "I05228",
+      "entity": "SERVICIOS ENTREGAS Y MANIPULADOS S.L.",
+      "lastBillingDate": "2014-07-11T00:00:00.000+0000"
+    },
+    {
+      "reason": "SCRER140500300230",
+      "id": "0003721270",
+      "chargeDate": "2014-05-30T00:00:00.000+0000",
+      "minReturnDate": "2019-07-25T00:00:00.000+0000",
+      "maxReturnDate": "2014-06-11T00:00:00.000+0000",
+      "amount": {
+        "amount": 74.99,
+        "currency": {
+          "code": "978"
+        }
+      },
+      "nif": "B82369265-000",
+      "holder": "ZAFONIC, S.L.",
+      "reference": "I05228",
+      "entity": "SERVICIOS ENTREGAS Y MANIPULADOS S.L.",
+      "lastBillingDate": "2014-05-29T00:00:00.000+0000"
+    },
+    {
+      "reason": "SCRER140700300219",
+      "id": "0003727417",
+      "chargeDate": "2014-07-30T00:00:00.000+0000",
+      "minReturnDate": "2019-09-25T00:00:00.000+0000",
+      "maxReturnDate": "2014-08-11T00:00:00.000+0000",
+      "amount": {
+        "amount": 74.99,
+        "currency": {
+          "code": "978"
+        }
+      },
+      "nif": "B82369265-001",
+      "holder": "ZAFONIC, S.L.",
+      "reference": "I05228",
+      "entity": "SERVICIOS ENTREGAS Y MANIPULADOS S.L.",
+      "lastBillingDate": "2014-07-29T00:00:00.000+0000"
+    }
+  ]
+}

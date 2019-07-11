@@ -1,0 +1,76 @@
+<osb-loader *ngIf="loading">
+</osb-loader>
+
+<div class="modal-detail" *ngIf="loanRepaymentDetail">
+
+    <ng-container *ngIf="isMobileResolution()">
+        <osb-modal-page [isOpenModal]="true" (closeEvent)="close()">
+            <osb-modal-page-header [title]="'ITECBAN-LOANS.AMORTIZATION-TABLE.DETAIL.TITLE'"></osb-modal-page-header>
+            <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+        </osb-modal-page>
+    </ng-container>
+
+    <ng-container *ngIf="!isMobileResolution()">
+        <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+    </ng-container>
+
+
+    <ng-template #templateRef>
+        <div class="p-1">
+            <div class="mb-1">
+                <span class="text-os-semibold">
+                    {{ 'ITECBAN-LOANS.AMORTIZATION-TABLE.DETAIL.DATE' | translate }}:
+                </span>
+                <span class="text-no-warp" *ngIf="loanRepaymentDetail.date">
+                    {{ loanRepaymentDetail.date | date: 'dd/MM/yyyy' }}
+                </span>
+                <div *ngIf="!isMobileResolution()" class="pull-right icon icononesait icon-close text-blue fs-28" (click)="close()"></div>
+            </div>
+
+            <div class="mb-1">
+                <span class="text-os-semibold">
+                    {{ 'ITECBAN-LOANS.AMORTIZATION-TABLE.DETAIL.N-SHARE' | translate }}:
+                </span>
+                <span>
+                    {{ loanRepaymentDetail.number }}
+                </span>
+            </div>
+
+            <div class="mb-1">
+                <span class="text-os-semibold">
+                    {{ 'ITECBAN-LOANS.AMORTIZATION-TABLE.DETAIL.CAP-REPAYMENT' | translate }}:
+                </span>
+                <span class="text-no-warp" *ngIf="loanRepaymentDetail.installment?.amount">
+                    {{ loanRepaymentDetail.installment.amount | CurrencyPipe: loanRepaymentDetail.installment.currency.code }}
+                </span>
+            </div>
+
+            <div class="mb-1">
+                <span class="text-os-semibold">
+                    {{ 'ITECBAN-LOANS.AMORTIZATION-TABLE.DETAIL.INTEREST' | translate }}:
+                </span>
+                <span class="text-no-warp" *ngIf="loanRepaymentDetail.interest?.amount">
+                    {{ loanRepaymentDetail.interest.amount | CurrencyPipe: loanRepaymentDetail.interest.currency.code }}
+                </span>
+            </div>
+
+            <div class="mb-1">
+                <span class="text-os-semibold">
+                    {{ 'ITECBAN-LOANS.AMORTIZATION-TABLE.DETAIL.PAYMENT' | translate }}:
+                </span>
+                <span class="text-no-warp" *ngIf="loanRepaymentDetail.fixedFee?.amount">
+                    {{ loanRepaymentDetail.fixedFee.amount | CurrencyPipe: loanRepaymentDetail.fixedFee.currency.code }}
+                </span>
+            </div>
+
+            <div class="mb-1">
+                <span class="text-os-semibold">
+                    {{ 'ITECBAN-LOANS.AMORTIZATION-TABLE.DETAIL.PENDING' | translate }}:
+                </span>
+                <span class="text-no-warp" *ngIf="loanRepaymentDetail.pendingAmount?.amount">
+                    {{ loanRepaymentDetail.pendingAmount.amount | CurrencyPipe: loanRepaymentDetail.pendingAmount.currency.code }}
+                </span>
+            </div>
+        </div>
+    </ng-template>
+</div>

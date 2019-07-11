@@ -1,0 +1,83 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<ng-container *ngIf="step === 'LIST'">
+
+    <table class="table table-detail">
+        <thead class="hidden-xs">
+            <tr>
+                <th>
+                    {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.RECEIPT-INDICATOR' | translate }}
+                </th>
+                <th>
+                    {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.ENTRY-DATE' | translate }}
+                </th>
+                <th *ngIf="showchargeDate">
+                    {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.ACCRUAL-DATE' | translate }}
+                </th>
+                <th *ngIf="maxReturnDate">
+                    {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.RETURN-DEADLINE' | translate }}
+                </th>
+                <th *ngIf="reason">
+                    {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.CONCEPT' | translate }}
+                </th>
+                <th colspan="3">
+                    {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.STATE' | translate }}
+                </th>
+                <th class="text-right">
+                    {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.TABLE.AMOUNT' | translate }}
+                </th>
+            </tr>
+        </thead>
+        <ng-container *ngIf="payments">
+            <tbody *ngFor="let payment of payments"
+                [ngClass]="{'open': (payments && payment) ?  payment.id == selectedItem : ''}" class="no-cursor">
+                <tr *ngIf="payment">
+                    <td class="hidden-xs">
+                        <span *ngIf="payment.id">{{ payment.id }}</span>
+                    </td>
+                    <td class="hidden-xs">
+                        <span *ngIf="payment.incomingDate">{{ payment.incomingDate | date: 'dd/MM/yyyy' }}</span>
+                    </td>
+                    <td *ngIf="payment.chargeDate" class="hidden-xs">
+                        <span *ngIf="payment.chargeDate">{{ payment.chargeDate | date: 'dd/MM/yyyy' }}</span>
+                    </td>
+                    <td *ngIf="payment.maxReturnDate" class="hidden-xs">
+                        <span *ngIf="payment.maxReturnDate">{{ payment.maxReturnDate | date: 'dd/MM/yyyy' }}</span>
+                    </td>
+                    <td *ngIf="payment.reason" class="hidden-xs">
+                        <span *ngIf="payment.reason">{{ payment.reason | capitalize }}</span>
+                    </td>
+                    <td colspan="3" class="hidden-xs">
+                        <span *ngIf="payment.state"> {{ payment.state.name }}</span>
+                    </td>
+                    <td class="text-no-warp text-right hidden-xs">
+                        <span
+                            *ngIf="payment.amount">{{ payment.amount.amount | CurrencyPipe: payment.amount.currency.code }}</span>
+                    </td>
+                    <!-- Mobile -->
+                    <td class="hidden-sm hidden-md">
+                        <span *ngIf="payment.id" class="visible-xs-block">{{ payment.id }}</span>
+                        <span *ngIf="payment.incomingDate"
+                            class="visible-xs-block fs-12">{{ payment.incomingDate | date: 'dd/MM/yyyy' }}</span>
+                    </td>
+                    <td class="hidden-sm hidden-md">
+                        <span *ngIf="payment.amount" class="visible-xs-block text-right text-os-semibold">
+                            {{ payment.amount.amount | CurrencyPipe: payment.amount.currency.code }}
+                        </span>
+                        <span *ngIf="payment.state.name" class="visible-xs-block text-right fs-12">
+                            {{ payment.state.name | capitalize }}
+                        </span>
+                    </td>
+                </tr>
+
+            </tbody>
+        </ng-container>
+    </table>
+
+    <div class="row" *ngIf="hasMoreData">
+        <a class="col-xs-12 text-center" (click)="next()" role="button">
+            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBIT-PAYMENTS.LIST.BUTTON.MORE-RESULTS' | translate }}
+        </a>
+    </div>
+
+
+</ng-container>

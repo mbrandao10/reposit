@@ -1,0 +1,16 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "AUTHORIZED",
+      "name": "Autorizada"
+    },
+    {
+      "id": "UNAUTHORIZED",
+      "name": "No autorizada"
+    }
+  ]
+}

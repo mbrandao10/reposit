@@ -1,0 +1,53 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "AV",
+      "name": "Cuentas de Ahorro",
+      "href": "https://itecban.indra.es/masterTables/productSubypes"
+    },
+    {
+      "id": "CC",
+      "name": "Cuentas Corrientes",
+      "href": "https://itecban.indra.es/masterTables/productSubypes"
+    },
+    {
+      "id": "PL",
+      "name": "Depósitos Plazo",
+      "href": "https://itecban.indra.es/masterTables/productSubypes"
+    },
+    {
+      "id": "PP",
+      "name": "Planes de Pensiones",
+      "href": "https://itecban.indra.es/masterTables/productSubypes"
+    },
+    {
+      "id": "FO",
+      "name": "Fondos de Inversión",
+      "href": "https://itecban.indra.es/masterTables/productSubypes"
+    },
+    {
+      "id": "CD",
+      "name": "CDA's",
+      "href": "https://itecban.indra.es/masterTables/productSubypes"
+    },
+    {
+      "id": "PR",
+      "name": "Prestamos",
+      "href": "https://itecban.indra.es/masterTables/productSubypes"
+    },
+    {
+      "id": "CR",
+      "name": "Créditos",
+      "href": "https://itecban.indra.es/masterTables/productSubypes"
+    },
+    {
+      "id": "RF",
+      "name": "Avales",
+      "href": "https://itecban.indra.es/masterTables/productSubypes"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+<div class="panel">
+  <div class="panel-body">
+    <osb-final-message [text]="'ITECBAN-PERSONS.MY.FINAL-MESSAGE'">
+    </osb-final-message>
+    <osb-voucher-container #voucherContainer>
+      <div class="text-os-semibold mb-1">
+        {{'ITECBAN-PERSONS.MY.SPACE.CORRESPONDENCE.ADDRESS' | translate}}</div>
+      <ul class="list mb-1">
+        <li *ngIf="addressPersonalPostal.streetType && addressPersonalPostal.streetName">
+          <div class="name text-left">
+            {{ 'ITECBAN-PERSONS.MY.SPACE.STREET' | translate }}
+          </div>
+          <div class="value text-right">
+            {{ addressPersonalPostal.streetType.name }} {{ addressPersonalPostal.streetName }}
+          </div>
+        </li>
+        <li *ngIf="addressPersonalPostal.streetNumber">
+          <div class="name text-left">
+            {{ 'ITECBAN-PERSONS.MY.SPACE.NUMBER' | translate }}
+          </div>
+          <div class="value text-right">
+            {{ addressPersonalPostal.streetNumber }}
+          </div>
+        </li>
+        <li *ngIf="addressPersonalPostal.aditionalInfo">
+          <div class="name text-left">
+            {{ 'ITECBAN-PERSONS.MY.SPACE.FLOOR' | translate }} /
+            {{ 'ITECBAN-PERSONS.MY.SPACE.DOOR' | translate }}
+          </div>
+          <div class="value text-right">
+            {{ addressPersonalPostal.aditionalInfo }}
+          </div>
+        </li>
+
+        <li *ngIf="addressPersonalPostal.postcode">
+          <div class="name text-left">
+            {{ 'ITECBAN-PERSONS.MY.SPACE.POSTCODE' | translate }}
+          </div>
+          <div class="value text-right">
+            {{ addressPersonalPostal.postcode }}
+          </div>
+        </li>
+        <li *ngIf="addressPersonalPostal.city">
+          <div class="name text-left">
+            {{ 'ITECBAN-PERSONS.MY.SPACE.POPULATION' | translate }}
+          </div>
+          <div class="value text-right">
+            {{ addressPersonalPostal.city }}
+          </div>
+        </li>
+        <li *ngIf="addressPersonalPostal.province">
+          <div class="name text-left">
+            {{ 'ITECBAN-PERSONS.MY.SPACE.PROVINCE' | translate }}
+          </div>
+          <div class="value text-right">
+            {{ addressPersonalPostal.province }}
+          </div>
+        </li>
+        <li *ngIf="addressPersonalPostal.country">
+          <div class="name text-left">
+            {{ 'ITECBAN-PERSONS.MY.SPACE.COUNTRY' | translate }}
+          </div>
+          <div class="value text-right">
+            {{ addressPersonalPostal.country }}
+          </div>
+        </li>
+      </ul>
+
+
+      <div class="row mt-1">
+        <div class="col-xs-6">
+          <!-- <osb-download-info [voucherContainer]="voucherContainer"
+            text="{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.DOWNLOAD-RECEIPT' | translate}}">
+          </osb-download-info> -->
+        </div>
+      </div>
+    </osb-voucher-container>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "photo": "image.png",
+    "advisoryName": "Juan Fernández",
+    "advisoryPhone": "911112222",
+    "advisoryMobilePhone": "+34626010101",
+    "advisoryEmail": "advisory@onesait.es",
+    "userEmail": "user@onesait.es"
+  }
+}

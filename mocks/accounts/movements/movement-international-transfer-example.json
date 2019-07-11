@@ -1,0 +1,106 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "movementClass":"InternationalTransferMovement",
+    "id": "xxxx-xxxx-xxxxx-xxxxx-xxxxx-xxxxxx-xxxx",
+    "reference": "xxxx-xxxx-xxxxx-xxxxx-xxxxx-xxxxxx-xxxx",
+    "reason": "TRansferencia internacional",
+    "amount": {
+      "amount": -12.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "type": {
+      "id": "TRIE",
+      "name": "Transferencias Internacionales Emitidas",
+      "href": "https://itecban.indra.es/accounts/dataCatalogs/movementTypes"
+    },
+    "operationDate": "2014-10-30T00:00:00.00Z",
+    "hasDocument":true,
+    "documentId": "71cb8771-5b29-4570-af1c-ca3cb7975246",
+    "state": "APLICADA",
+    "orderer": {
+      "name": "MARIA JONES",
+      "swift": "BCCBA0LUXX",
+      "account": {
+        "id": "14910001273000006656",
+        "type": {
+          "id":"ccc",
+          "name":"ccc"
+        }
+      },
+      "legalDocument": {
+        "id":"12345678Q",
+        "type":{
+          "id":"01",
+          "name":"DNI"
+        }
+      }
+    },
+    "beneficiary": {
+      "name": "CESAR JIMENEZ",
+      "swift": "BCCBA0LUAA",
+      "account": {
+        "id": "14910001273000006656",
+        "type": {
+          "id":"cbu",
+          "name":"cbu"
+        }
+      },
+      "legalDocument": {
+        "id":"12345678Q",
+        "type":{
+          "id":"01",
+          "name":"DNI"
+        }
+      }
+    },
+    "exchange": {
+      "amount": -12.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "currency": {
+      "id": "EUR",
+      "code": "978"
+    },
+    "country": "Angola",
+    "chargeAmount": {
+      "amount": -12.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "requestAmount": {
+      "amount": -12.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "currencyAmount": {
+      "amount": -12.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "expenses": "",
+    "expensesAmount": {
+      "amount": -12.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "reference": ""
+  }
+}

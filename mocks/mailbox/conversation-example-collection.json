@@ -1,0 +1,91 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "BUZS160000017120",
+      "creationDate": "2014-10-30T00:00:00.00Z",
+      "lastMessageDate": "2014-10-30T00:00:00.00Z",
+      "isRead": false,
+      "hasAttachment": true,
+      "subject": "Invierta en Triodos Bank",
+      "type":     {
+            "id": "01",
+            "name": "Sugerencia",
+            "href": "https://itecban.indra.es/mailbox/conversations/types"
+          },
+      "canReply": false
+    },
+	{
+      "id": "BUZS160000017121",
+      "creationDate": "2015-10-30T00:00:00.00Z",
+      "lastMessageDate": "2015-10-30T00:00:00.00Z",
+      "isRead": true,
+      "hasAttachment": false,
+      "subject": "Gestión cambio hipoteca",
+      "type":     {
+            "id": "01",
+            "name": "Sugerencia",
+            "href": "https://itecban.indra.es/mailbox/conversations/types"
+          },
+      "canReply": true
+    },
+	{
+      "id": "BUZS160000017122",
+      "creationDate": "2014-10-30T00:00:00.00Z",
+      "lastMessageDate": "2014-10-30T00:00:00.00Z",
+      "isRead": false,
+      "hasAttachment": true,
+      "subject": "Active su tarjeta de credito",
+      "type":     {
+            "id": "01",
+            "name": "Sugerencia",
+            "href": "https://itecban.indra.es/mailbox/conversations/types"
+          },
+      "canReply": true
+    },
+	{
+      "id": "BUZS160000017123",
+      "creationDate": "2014-10-30T00:00:00.00Z",
+      "lastMessageDate": "2014-10-30T00:00:00.00Z",
+      "isRead": false,
+      "hasAttachment": true,
+      "subject": "Información comisiones",
+      "type":     {
+            "id": "01",
+            "name": "Sugerencia",
+            "href": "https://itecban.indra.es/mailbox/conversations/types"
+          },
+      "canReply": false
+    },
+	{
+      "id": "BUZS160000017124",
+      "creationDate": "2014-10-30T00:00:00.00Z",
+      "lastMessageDate": "2014-10-30T00:00:00.00Z",
+      "isRead": true,
+      "hasAttachment": false,
+      "subject": "Consulta plan de pensiones",
+      "type":     {
+            "id": "01",
+            "name": "Sugerencia",
+            "href": "https://itecban.indra.es/mailbox/conversations/types"
+          },
+      "canReply": true
+    }
+  ],
+  "paging": {
+    "hasMorePages":true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+    "links": [
+      {
+        "rel": "next",
+        "href": "https://itecban.indra.es/mailBox?paginationKey=f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+         "method": "GET"
+      }
+    ]
+
+  }
+
+}

@@ -1,0 +1,111 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "number": 1,
+      "expiryDate": "2019-02-10T00:00:00.00Z",
+      "pendingAmount": {
+        "amount": 2500.00,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 500.00,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installmentAmount": {
+        "amount": 400.00,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 3567.45,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "taxRate": 0.16
+    },
+    {
+      "number": 2,
+      "expiryDate": "2019-02-10T00:00:00.00Z",
+      "pendingAmount": {
+        "amount": 2500.00,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 500.00,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installmentAmount": {
+        "amount": 400.00,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 3567.45,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "taxRate": 0.16
+    },
+    {
+      "number": 3,
+      "expiryDate": "2019-02-10T00:00:00.00Z",
+      "pendingAmount": {
+        "amount": 2500.00,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 500.00,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installmentAmount": {
+        "amount": 400.00,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 3567.45,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "taxRate": 0.16
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

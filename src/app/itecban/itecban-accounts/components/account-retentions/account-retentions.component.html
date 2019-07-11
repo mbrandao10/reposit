@@ -1,0 +1,45 @@
+<app-loader *ngIf="loading"></app-loader>
+<table class="table table-striped" *ngIf="retentions">
+    <thead class="hidden-xs">
+        <tr>
+            <th>
+                {{ 'ITECBAN-ACCOUNT.RETENTIONS.DESCRIPTION' | translate }}
+            </th>
+            <th>
+                {{ 'ITECBAN-ACCOUNT.RETENTIONS.STARTDATE' | translate }}
+            </th>
+            <th>
+                {{ 'ITECBAN-ACCOUNT.RETENTIONS.ENDDATE' | translate }}
+            </th>
+            <th class="text-right">
+                {{ 'ITECBAN-ACCOUNT.RETENTIONS.AMOUNT' | translate }}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let item of retentions; let i: index">
+            <tr *ngIf="item">
+                <td>
+                    <span class="hidden-xs">
+                        {{ item.reason }}
+                    </span>
+                    <span class="hidden-sm hidden-md hidden-lg text-os-semibold">
+                        {{ item.reason }}
+                    </span>
+                    <span class="visible-xs-block fs-12">
+                        {{ item.startDate | date: 'dd/MM/yyyy' }} - {{ item.endDate | date: 'dd/MM/yyyy' }}
+                    </span>
+                </td>
+                <td class="hidden-xs">
+                    {{ item.startDate | date: 'dd/MM/yyyy' }}
+                </td>
+                <td class="hidden-xs">
+                    {{ item.endDate | date: 'dd/MM/yyyy' }}
+                </td>
+                <td class="text-no-warp text-right">
+                    {{ item.amount.amount | CurrencyPipe: item.amount.currency.code }}
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

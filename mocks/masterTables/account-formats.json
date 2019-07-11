@@ -1,0 +1,19 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "IBAN",
+      "name": "IBAN",
+      "href": "https://itecban.indra.es/masterTables/participantTypes"
+    },
+    {
+      "id": "CCC",
+      "name": "CC",
+      "href": "https://itecban.indra.es/masterTables/participantTypes"
+    }
+
+  ]
+}

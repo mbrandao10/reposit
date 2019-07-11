@@ -1,0 +1,8 @@
+{
+    "name": "onesait-sepa",
+    "version": "0.0.2",
+    "description": "modulo de onesait-sepa",
+    "main": "index.js",
+    "author": "Minsait",
+    "license": "ISC"
+}

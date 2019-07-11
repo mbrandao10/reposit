@@ -1,0 +1,107 @@
+<div class="row">
+    <div class="col-xs-12">
+        <osb-loader *ngIf="loading"></osb-loader>
+
+        <div class="row" *ngIf="!loading">
+            <div class="col-xs-12 p-dynamic">
+                <osb-tabs [tabs]="tabElement" [view]="view" (viewChange)="chargeDepositsByCurrency($event)"></osb-tabs>
+            </div>
+        </div>
+
+        <div class="row page-tabbed pb-1 pt-1">
+            <div class="col-xs-12 p-dynamic">
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-4 col-md-9">
+                                        <div class="borde-superior"></div>
+                                        <div class="fs-12 text-uppercase text-os-semibold">
+                                            {{ 'ITECBAN-DEPOSITS.DEPOSITS.CURRENT-BALANCE' | translate }}
+                                        </div>
+                                        <div class='fs-28 text-os-semibold' *ngIf="depositCurrencySelected">
+                                            <!-- *ngIf="depositCurrencySelected.balanceAmount && depositCurrencySelected.deposits.balanceAmount" -->
+                                            <span class="text-no-warp" [fittext]="true" [minFontSize]="12" [minFontSizeTablet]="12" [maxFontSize]="21" [maxFontSizeTablet]="21" [minFontSizeMobile]="12" [maxFontSizeMobile]="21">
+                                                {{ depositCurrencySelected.balanceAmount | CurrencyPipe: depositCurrencySelected.divisa }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!--Botón contratar depósitos-->
+                                    <osb-validator-profile>
+                                        <div class="col-sm-12 col-md-3 pt-1 hidden-xs text-right">
+                                            <button class="btn btn-primary btn-small" (click)="addDeposit()">
+                                                {{ 'ITECBAN-DEPOSITS.PAGE.BUTTON.HIRE-DEPOSIT' | translate | uppercase }}
+                                            </button>
+                                        </div>
+                                    </osb-validator-profile>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <table class="table table-striped">
+                                    <thead class="hidden-xs">
+                                        <tr>
+                                            <th>
+                                                {{ 'ITECBAN-DEPOSITS.DEPOSITS.ACCOUNT' | translate }}
+                                            </th>
+                                            <!-- Falta por recibir este campo -->
+                                            <th>
+                                                {{'ITECBAN-DEPOSITS.DEPOSITS.DESCRIPTION' | translate }}
+                                            </th>
+                                            <th class="text-right">
+                                                {{ 'ITECBAN-DEPOSITS.DEPOSITS.AMOUNT' | translate }}
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody *ngIf="depositCurrencySelected && depositCurrencySelected.deposits">
+                                        <tr class="interactive" (click)="viewDetail(deposit)" *ngFor="let deposit of depositCurrencySelected.deposits">
+                                            <td  *ngIf="deposit">
+                                                <span class="name" *ngIf="deposit.id">
+                                                    {{ deposit.formats | formatAccountPipe: accountFormatView:ismobileResolution }}
+                                                </span>
+                                                <span class="visible-xs-block fs-12 text-no-warp text-os-semibold" *ngIf="deposit.productData">
+                                                    {{ deposit.productData?.description  }} 
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span *ngIf="deposit.productData" class="desc hidden-xs">
+                                                    {{ deposit.productData?.description }}
+                                                </span>
+                                                <!-- <span class="visible-xs-block fs-12 text-no-warp" *ngIf="deposit.productData">
+                                                    {{ deposit.productData?.description  }} 
+                                                </span> -->
+                                            </td>
+                                            <td class="text-right hidden-xs">
+                                                <span class="text-no-warp">
+                                                    {{ deposit.balance.amount | CurrencyPipe: deposit.balance.currency.code }}
+                                                </span>
+                                            </td>
+
+                                            <!-- Adaptacion mobile -->
+                                            <td class="visible-xs-block text-right">
+                                                <!-- <span class="visible-xs-block text-os-semibold" [fittext]="true" [minFontSize]="21" [minFontSizeTablet]="21" [maxFontSize]="21" [maxFontSizeTablet]="21" [minFontSizeMobile]="15" [maxFontSizeMobile]="15">
+                                                    {{  deposit.formats[0].value | formatLiteralPipe: title:resolution}}
+                                                </span> -->
+                                                <span class="text-no-warp text-os-semibold text-right">
+                                                    {{ deposit.balance.amount | CurrencyPipe: deposit.balance.currency.code }}
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

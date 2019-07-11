@@ -1,0 +1,13 @@
+<app-modal #modal>
+  <ng-container>
+      <app-modal-header [backGroundColor]="bgColor" [colorCloseButton]="'text-white'"></app-modal-header>
+      <app-modal-body   [backGroundColor]="bgColor"><span class="text-white mb-2">{{message}}</span>
+        <ng-container  *ngIf="listMessages">
+          <ul class="mt-2 mb-2" >
+            <li *ngFor="let msn of listMessages" class="text-white pl-1" ><i class="glyphicon glyphicon-remove"></i>{{msn}}</li>
+           </ul>
+      </ng-container>
+      </app-modal-body>
+  </ng-container>
+
+</app-modal>

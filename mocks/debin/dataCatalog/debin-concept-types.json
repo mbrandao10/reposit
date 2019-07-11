@@ -1,0 +1,45 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "ALQ",
+      "name": "ALQUILER"
+    },
+    {
+      "id": "CUO",
+      "name": "CUOTAS"
+    },
+    {
+      "id": "EXP",
+      "name": "EXPENSAS"
+    }
+    ,
+    {
+      "id": "FAC",
+      "name": "FACTURAS"
+    },
+    {
+      "id": "PRE",
+      "name": "PRÉSTAMOS"
+    },
+    {
+      "id": "SEG",
+      "name": "SEGUROS"
+    },
+    {
+      "id": "HON",
+      "name": "HONORARIOS"
+    },
+    {
+      "id": "VAR",
+      "name": "VARIOS"
+    },
+    {
+      "id": "HAB",
+      "name": "HABERES"
+    }
+  ]
+}

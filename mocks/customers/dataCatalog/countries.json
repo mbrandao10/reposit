@@ -1,0 +1,21 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "ARG",
+      "name": "Argentina"
+
+    },
+    {
+      "id": "ESP",
+      "name": "España",
+    },
+    {
+      "id": "GBR",
+      "name": "United Kingdom",
+    }
+  ]
+}

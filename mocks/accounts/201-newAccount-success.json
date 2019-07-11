@@ -1,0 +1,16 @@
+{
+  "result": {
+    "code": "201",
+    "info": "Created"
+  },
+  "data": {
+    "id": "329800735698586629295641978511506172918",
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://itecban.indra.es/accounts/329800735698586629295641978511506172918",
+        "method": "GET"
+      }
+    ]
+  }
+}

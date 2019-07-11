@@ -1,0 +1,121 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<!-- Formulario para buscar orden y listado -->
+<div class="row">
+  <div class="col-xs-12">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel ">
+          <div class="panel-body">
+            <div *ngIf="repayments" class="page-tabbed pb-1">
+              <div class="acount-movements-list-title">
+                <div *ngIf="repayments.length > 0">{{'ONESAIT-LEASING.AMORTIZATION-TABLE.PENDING-FEES' | translate}}
+                </div>
+              </div>
+              <osb-voucher-container #voucherContainer>
+                <table class="table table-detail">
+                  <thead class="hidden-xs">
+                    <tr>
+                      <th>{{'ONESAIT-LEASING.AMORTIZATION-TABLE.EXPIRATION' | translate}}</th>
+                      <th>{{'ONESAIT-LEASING.AMORTIZATION-TABLE.NUMBER' | translate}}</th>
+                      <th>{{'ONESAIT-LEASING.AMORTIZATION-TABLE.PENDING' | translate}}</th>
+                      <th>{{'ONESAIT-LEASING.AMORTIZATION-TABLE.AMOUNT' | translate}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <ng-container *ngFor="let repayment of repayments">
+                      <tr (click)="selectItem(repayment)">
+                        <td>{{repayment.expiryDate | dateLocalized:'shortDate' }}</td>
+                        <td>{{repayment.number }}</td>
+                        <td class="text-no-warp">
+                          {{repayment.pendingAmount.amount | CurrencyPipe : repayment.pendingAmount.currency.code : false }}
+                        </td>
+                        <td class="text-no-warp">{{repayment.fixedFee.amount | CurrencyPipe : repayment.fixedFee.currency.code : false}}</td>
+                      </tr>
+                      <ng-container *ngIf="selectedItem === repayment.number">
+                        <tr class="description">
+                          <td colspan="4">
+                            <div class="col-xs-12 mb-1">
+                              <div class="row">
+                                <div class="col-xs-6">
+                                  <div class="mb-1" OsbVoucherKeyValue>
+                                    <strong>
+                                      <span
+                                        OsbVoucherKey>{{'ONESAIT-LEASING.AMORTIZATION-TABLE.NUMBER' | translate}}</span>
+                                      <span OsbVoucherValue> {{repayment.number}}</span>
+                                    </strong>
+                                  </div>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                  <div class="row">
+                                    <button class="close" type="button" (click)="selectItem(repayment)">&times;</button>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-xs-6">
+                                  <div class="mb-1">
+                                    <div OsbVoucherKeyValue class="row">
+                                      <div OsbVoucherKey class="col-xs-12">
+                                        {{'ONESAIT-LEASING.AMORTIZATION-TABLE.EXPIRATION-DATE' | translate}}</div>
+                                      <div OsbVoucherValue class="col-xs-12">
+                                        {{ repayment.expiryDate | dateLocalized:'shortDate' }}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                  <div OsbVoucherKeyValue class="row mb-1">
+                                    <div OsbVoucherKey class="col-xs-12">
+                                      <strong>{{'ONESAIT-LEASING.AMORTIZATION-TABLE.TOTAL' | translate}}</strong></div>
+                                    <div OsbVoucherValue class="col-xs-12 text-no-warp">
+                                      {{repayment.fixedFee.amount | CurrencyPipe : repayment.fixedFee.currency.code : false}}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-xs-8">
+                                  <div OsbVoucherKeyValue><span
+                                      OsbVoucherKey>{{'ONESAIT-LEASING.AMORTIZATION-TABLE.AMORTIZATION' | translate}}</span>:
+                                    <span class="text-no-warp"
+                                      OsbVoucherValue>{{repayment.installmentAmount.amount | CurrencyPipe : repayment.installmentAmount.currency.code : false}}</span>
+                                  </div>
+                                  <div OsbVoucherKeyValue><span
+                                      OsbVoucherKey>{{'ONESAIT-LEASING.AMORTIZATION-TABLE.VAT' | translate}}</span>:
+                                    <span OsbVoucherValue>{{ repayment.taxRate }}</span>
+                                  </div>
+                                  <div OsbVoucherKeyValue><span
+                                      OsbVoucherKey>{{'ONESAIT-LEASING.AMORTIZATION-TABLE.DEBTOR' | translate}}</span>:
+                                    <span class="text-no-warp"
+                                      OsbVoucherValue>{{repayment.interest.amount | CurrencyPipe : repayment.interest.currency.code : false}}</span>
+                                  </div>
+                                </div>
+                                <div class="col-xs-4 mt-2">
+                                  <div class="row pull-right">
+                                    <osb-download-info [voucherContainer]="voucherContainer"
+                                      text="{{'ONESAIT-LEASING.AMORTIZATION-TABLE.DOWNLOAD' | translate}}">
+                                    </osb-download-info>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </ng-container>
+                    </ng-container>
+                  </tbody>
+                </table>
+              </osb-voucher-container>
+              <div class="row" *ngIf="hasMoreData">
+                <a class="col-xs-12 text-center p-1" (click)="next()" role="button">{{'COMMON.MORE-RESULTS'
+                    | translate}}</a>
+              </div>
+            </div>
+
+            <div class="row" *ngIf="!repayments">{{'ONESAIT-LEASING.AMORTIZATION-TABLE.NO-PENDING-FEES' | translate}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

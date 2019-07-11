@@ -1,0 +1,51 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="col-xs-12 col-sm-12 col-md-12">
+    <osb-search-list [formGroup]="consultMovementsForm" [formConfig]="formConfig" (search)="consultMovements()" #searchComponent>
+    </osb-search-list>
+    <div class="col-md-3 col-md-offset-9 hidden-xs hidden-sm p-0">
+        <button class="btn btn-primary btn-block mt-1 btn-search pull-right" (click)="searchComponent.execSearch()">
+          {{'COMMON.CONSULT' | translate}}
+      </button>
+    </div>
+</div>
+<div #voucherContainer>
+    <div *ngIf="aeatMovements && aeatMovements.data.length > 0">
+        <div class="col-xs-6 col-sm-8 col-md-9 acount-movements-list-title text-left" *ngIf="showingLastMovements">{{'ONESAIT-TAXES.INQUIRYS.LAST-MOVEMENTS' | translate}}</div>
+        <div class="col-xs-6 col-sm-8 col-md-9 acount-movements-list-title text-left" *ngIf="!showingLastMovements">{{'ONESAIT-TAXES.INQUIRYS.CONSULTED-MOVEMENTS' | translate}}</div>
+        <!-- Cambiar este componente por el que descarga listados -->
+        <div class="col-xs-6 col-sm-4 col-md-3 mt-1 mb-1" *ngIf="voucherContainer">
+            <osb-download-info [voucherContainer]="voucherContainer" text="{{'ONESAIT-TAXES.INQUIRYS.DOWNLOAD' | translate}}">
+            </osb-download-info>
+        </div>
+    </div>
+
+    <div class="col-xs-12" *ngIf="aeatMovements && aeatMovements.data.length > 0">
+        <table class="table table-striped">
+            <thead class="hidden-xs">
+                <tr>
+                    <th>{{'ONESAIT-TAXES.INQUIRYS.NUMBER' | translate}}</th>
+                    <th class="hidden-xs">{{'ONESAIT-TAXES.INQUIRYS.DATE' | translate}}</th>
+                    <th>{{'ONESAIT-TAXES.INQUIRYS.MODEL' | translate}}</th>
+                    <th class="hidden-xs">{{'ONESAIT-TAXES.INQUIRYS.TYPE' | translate}}</th>
+                    <th>{{'ONESAIT-TAXES.INQUIRYS.AMOUNT' | translate}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let mov of aeatMovements.data">
+                    <td>{{mov.referenceNumber}}</td>
+                    <td class="hidden-xs">{{mov.executionDate | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{mov.taxForm.id}}</td>
+                    <td class="hidden-xs">
+                        <span *ngIf="mov.type === 'income'">{{'ONESAIT-TAXES.INQUIRYS.INCOME' | translate}}</span>
+                        <span *ngIf="mov.type === 'refund'">{{'ONESAIT-TAXES.INQUIRYS.REFUND' | translate}}</span>
+                    </td>
+                    <td class="text-no-warp">{{mov.paymentAmount.amount | CurrencyPipe : mov.paymentAmount.currency.code :false}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div>
+    <div class="col-xs-6 col-sm-8 col-md-9 acount-movements-list-title text-left" *ngIf="aeatMovements && aeatMovements.data.length === 0 && consulted">{{'ONESAIT-TAXES.INQUIRYS.NO-MOVEMENTS' | translate}}
+</div>

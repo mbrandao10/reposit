@@ -1,0 +1,13 @@
+{
+  "id":"889898798",
+  "productCode": "PRP01",
+  "preasignedAmount": {
+    "amount": 32637,
+    "currency": "032"
+  },
+
+  "preasignedAvailable": {
+    "amount": 32637,
+    "currency": "032"
+  }
+}

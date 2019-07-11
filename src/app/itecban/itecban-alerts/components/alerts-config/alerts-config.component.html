@@ -1,0 +1,62 @@
+<!--ALERTS-->
+<app-loader *ngIf="loading"></app-loader>
+<div class="div" *ngIf="viewAlerts">
+    <form #formAlertsData="ngForm">
+        <ul class="person-config-info">
+            <div class="options-select">
+                <div class="person-config-info-title">{{'ITECBAN-ACCOUNT.ALERTS.CONFIGURED' | translate}}</div>
+                <div class="select-custom"><select class="form-control" [(ngModel)]="productSelected" (ngModelChange)="changeProduct($event)"
+                        name="productsForm">
+                        <option [ngValue]="undefined" selected="selected" disabled="disabled"> {{
+                            'COMMON.FILTER.SELECT' | translate }}</option>
+                        <option *ngFor="let product of products" [ngValue]="product">{{product.typeLiteralal}}:
+                            {{product.alias || product.description}}</option>
+                    </select></div>
+            </div>
+            <li class="person-config-info-elemt" *ngFor="let alert of alerts">
+                <div class="name">
+                    <div class="checkbox-custom"><label><input type="checkbox" [(ngModel)]="alert.selected" name="{{alert.eventId}}"
+                                (ngModelChange)="changeCheck(alert); enabledBottons = true" [disabled]="alert.isMandatory === true &amp;&amp; alert.selected === true" /><i
+                                class="icon-check"> </i><span *ngIf="alert.name"><span>{{alert.name}}</span></span></label></div>
+                </div>
+                <div class="value" *ngIf="!editData[alert.eventId]"><span class="text-no-warp" *ngIf="alert.amount.amount">{{alert.amount.amount
+                        | CurrencyPipe: alert.amount.currency}}</span><span *ngIf="alert.period.name">{{alert.period.name}}
+                    </span><span class="icon glyphicon glyphicon-pencil pull-right interactive" *ngIf="alert.eventType !== 'basic' &amp;&amp; alert.isEditable"
+                        (click)="editData[alert.eventId] = true; alert.selected = true; enabledBottons = true"></span></div>
+                <div class="value" *ngIf="editData[alert.eventId]"><input type="number" *ngIf="alert.eventType === 'amount'"
+                        [(ngModel)]="alert.amount.amount" name="{{alert.name}}" required="required" /><select *ngIf="alert.eventType === 'period'"
+                        [(ngModel)]="alert.period.id" name="{{alert.name}}" required="required">
+                        <option *ngFor="let period of periods" [ngValue]="period.id">{{period.name}}</option>
+                    </select></div>
+            </li>
+            <div class="row" *ngIf="alerts.length &gt; 0">
+                <div class="col-xs-offset-6 col-xs-3 text-center"><button class="btn btn-secondary" [disabled]="!enabledBottons"
+                        (click)="cancel()">{{'COMMON.CANCEL' | translate}}</button></div>
+                <div class="col-xs-3 text-center"><button class="btn btn-primary" [disabled]="!enabledBottons || !formAlertsData.form.valid"
+                        (click)="goToToken()">{{'COMMON.ACCEPT' | translate}}</button></div>
+            </div>
+        </ul>
+    </form>
+</div>
+<!--WRITE TOKEN-->
+<div class="div" *ngIf="viewToken">
+    <form class="form-horizontal col-xs-12" #formViewToken="ngForm">
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <h2 class="info-section-group-title">{{'ITECBAN-ACCOUNT.TOKEN.TEXT' | translate}} </h2>
+                <!-- <osb-signature-token [(token)]="token"></osb-signature-token> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6"><button class="btn btn-secondary" (click)="cancel()">{{'COMMON.CANCEL' | translate}}</button></div>
+            <div class="col-xs-6">
+                <div class="row">
+                    <div class="col-xs-6 text-center"><button class="btn btn-secondary" (click)="goBackFromToken()">{{'COMMON.BACK'
+                            | translate}}</button></div>
+                    <div class="col-xs-6 text-center"><button class="btn btn-primary"  (click)="saveAlertsData()">{{'COMMON.FINALIZE'
+                            | translate}}</button></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

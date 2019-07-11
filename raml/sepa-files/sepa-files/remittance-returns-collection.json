@@ -1,0 +1,51 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "remittanceId": "REM00000",
+      "amount": {
+        "amount": 2000.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "creationDate": "2018-05-23T00:00:00.00Z",
+      "numOfItems":0,
+      "documentId":"aa7ce3bf-3d1f-4759-b371-a373f47b1b17"
+    },
+    {
+      "remittanceId": "REM00001",
+      "amount": {
+        "amount": 3085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "creationDate": "2018-05-23T00:00:00.00Z",
+      "numOfItems":1,
+      "documentId":"2bbd2714-536e-406a-8f9d-d5e402431f7b"
+    },
+    {
+      "remittanceId": "REM00002",
+      "amount": {
+        "amount": 150085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "creationDate": "2018-06-23T00:00:00.00Z",
+      "numOfItems":1,
+      "documentId":"e095f440-e2b8-4726-8e98-cb0057984adf"
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

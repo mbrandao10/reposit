@@ -1,0 +1,29 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<table class="table  table-detail">
+    <thead>
+        <tr class="hidden-xs">
+            <th></th>
+            <th>{{'ITECBAN-PERSONS.SIGNATURES.DATE' | translate}}</th>
+            <th>{{'ITECBAN-PERSONS.MY.SPACE.CATEGORYDOC' | translate}}</th>
+            <th>{{'ITECBAN-PERSONS.MY.SPACE.TYPEDOC' | translate}}</th>
+        </tr>
+    </thead>
+    <ng-container *ngIf="mailsBox">
+        <tbody [ngClass]="{'open': mail.id == conversationId}" *ngFor="let mail of mailsBox">
+            <tr class="interactive" (click)="viewDetail(mail)">
+                <td *ngIf="mail"><i class="glyphicon glyphicon-paperclip"></i></td>
+                <td class="text-no-warp" *ngIf="mail">{{ mail.creationDate | DateAgoPipe }}</td>
+                <td class="hidden-xs" *ngIf="mail">{{ mail.id }}</td>
+                <td *ngIf="mail">
+                    <span class="hidden-xs">{{ mail.subject }}</span>
+                    <span class="visible-xs-block text-os-semibold text-right">{{ mail.subject }}</span>
+                </td>
+            </tr>
+            <tr [ngClass]="{'description': !isMobileResolution() }" *ngIf="conversationId && (conversationId === mail.id)">
+                <td colspan="6">
+                    <app-mailbox-detail [conversationId]="mail" (closeEvent)="close()"></app-mailbox-detail>
+                </td>
+            </tr>
+        </tbody>
+    </ng-container>
+</table>

@@ -1,0 +1,13 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data":
+    {
+      "consumptAmountArs": 123,
+      "consumptQuantityArs": 5,
+      "consumptAmountUsd": 456,
+      "consumptQuantityUsd": 10
+    }
+}

@@ -1,0 +1,65 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "id": "2889",
+    "legalDocument": {
+      "id": "12345678Z",
+      "type": "DNI"
+    },
+    "secondarylegalDocument": {
+      "id": "12345678",
+      "type": "CUIT"
+    },
+    "name": "ANTONIO",
+    "surname": "GOMEZ",
+    "secondSurname": "GONZALES",
+    "bussinesName": "ANTONIO GOMEZ GONZALES",
+    "birthDateOrCreationDate": "1991-03-26",
+    "sex": {
+      "id": "01",
+      "name": "Hombre"
+    },
+    "maritalStatus": {
+      "id": "01",
+      "name": "Casado/a"
+    },
+    "contactInfo": {
+      "mobileNumber": "699519233",
+      "mobileNumberPrefix": {
+        "id": "0054",
+        "name": "ARGENTINA"
+      },
+      "email": "THEUSER@THEMAIL.ES"
+    },
+    "fiscalObligations": true,
+    "fiscalRelationType": {
+      "id": "05",
+      "name": "Consumidor Final"
+    },
+    "economicRegime": {
+      "id": "01",
+      "name": "BIENES GANANCIALES"
+    },
+    "indicators": [
+      {
+        "id": "politicInd",
+        "value": false
+      },
+      {
+        "id": "subjectInd",
+        "value": false
+      },
+      {
+        "id": "isCRS",
+        "value": false
+      },
+      {
+        "id": "isFATCA",
+        "value": false
+      }
+    ]
+  }
+}

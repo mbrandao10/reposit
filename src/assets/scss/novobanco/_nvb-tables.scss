@@ -1,0 +1,41 @@
+.table-detail {
+  >tbody {
+    cursor: pointer;
+    //***@ablancor 20190531
+    &.no-cursor {
+      cursor: default;   
+    }
+    //***
+
+    &.open {
+      border-left: 4px solid $nvb-green;
+      box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+
+      tr.description {
+
+        border: solid 1px #d8d8d8;
+
+
+      }
+
+      tr {
+        background-color: $nvb-green-lightest;
+
+        &:first-child {
+          font-style: normal;
+          font-weight: 700;
+        }
+      }
+    }
+
+    &:nth-of-type(even) {
+      background-color: $nvb-gray-lighter;
+    }
+
+    >tr.description {
+      border-left: 4px solid $nvb-green;
+    }
+
+
+  }
+}

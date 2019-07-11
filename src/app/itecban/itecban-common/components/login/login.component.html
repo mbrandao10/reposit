@@ -1,0 +1,337 @@
+<div class="container-fluid">
+    <div class="login row bg-blue" *ngIf="view==='login'">
+        <div class="login-top"></div>
+        <div class="col-md-5 col-sm-5 hidden-xs pl-2 pr-2">
+            <div class="panel panel-transp secondary-panel">
+                <div class="panel-heading">
+                    <img title="Logo Novobanco" alt="Logo Novobanco" class="img-responsive" src="assets/images/logo-empresas-blanco.png">
+                </div>
+                <div class="panel-body text-white">
+                    <div class="green-line"></div>
+                    <p class="text-os-bold mt-2 text-main">{{ 'ITECBAN-LOGIN-PAGE.TITLE' | translate }}</p>
+                    <p class="text-os-semibold mt-2 text-secondary">{{ 'ITECBAN-LOGIN-PAGE.SUBTITLE' | translate }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7 col-sm-7 col-xs-12 p-0">
+
+            <div class="panel bg-green main-panel">
+                <div class="splash-screen" #splash>
+                    <img title="Logo Novobanco" alt="Logo Novobanco" class="img-responsive" src="assets/images/logo-empresas-blanco.png">
+                    <div class="green-line"></div>
+                    <p class="text-white text-os-bold mt-2 text-main">{{ 'ITECBAN-LOGIN-PAGE.TITLE' | translate }}</p>
+                    <p class="text-white text-os-semibold pl-1 pr-1 pb-3 mt-2 text-secondary">{{ 'ITECBAN-LOGIN-PAGE.SUBTITLE' | translate }}</p>
+                </div>
+                <div class="panel-heading">
+                    <div class="visible-xs p-1"></div>
+                    <p class="text-os-bold main-panel-title">{{ 'ITECBAN-LOGIN-PAGE.DATA' | translate }}</p>
+                </div>
+                <div class="panel-body">
+                    <app-loader *ngIf="showLoader || loadingApp"></app-loader>
+                    <form role="form" autocomplete="off" #loginForm="ngForm" (keyup.enter)="loginUserPassword()">
+                        <ng-container *ngIf="errorMsg">
+                            <div class="alert alert-danger">
+                                <span class="close" (click)="close()"><i class="icon icon-onesait icon-close"></i></span>
+                                <p>{{errorMsg}}</p>
+                            </div>
+                        </ng-container>
+                        <div class="form-group mt-1">
+                            <div class="input-group" [ngClass]="{'has-error' : usernameAttr.invalid &amp;&amp; usernameAttr.touched}">
+                                <div class="input-group-addon"><i class="icon icononesait icon-profile"></i></div>
+                                <input class="form-control" id="username" name="username" [(ngModel)]="username" minlength="8" maxlength="20" type="text" placeholder="{{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.USER' | translate}}" tabindex="1" #usernameAttr="ngModel" required="required">
+                            </div>
+                            <span class="help-block text-red" *ngIf="usernameAttr.invalid &amp;&amp; usernameAttr.touched">
+                            <p class="text-left" *ngIf="usernameAttr.errors.required">{{'ITECBAN-COMMON.NGVALIDATE.REQUIRED' | translate }}</p>
+                            <p class="text-left" *ngIf="usernameAttr.errors.minlength">{{'ITECBAN-COMMON.NGVALIDATE.MINLENGTH' | translate:{minlength:8} }}</p>
+                            <p class="text-left" *ngIf="usernameAttr.errors.maxlength">{{'ITECBAN-COMMON.NGVALIDATE.MAXLENGTH' | translate:{maxlength:20} }}</p>
+                        </span>
+                        </div>
+                        <div class="form-group mt-1">
+                            <div class="input-group" [ngClass]="{'has-error' : passwordv.invalid &amp;&amp; passwordv.touched}">
+                                <div class="input-group-addon"><i class="icon icononesait icon-password"></i></div>
+                                <input class="form-control" id="inputPassword3" name="password" maxlength="19" [(ngModel)]="password" type="password" placeholder="{{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.PASSWORD' | translate}}" tabindex="2" required="required" #passwordv="ngModel">
+                            </div>
+                            <span class="help-block text-red" *ngIf="passwordv.invalid &amp;&amp; passwordv.touched">
+                            <p class="text-left" *ngIf="passwordv.errors.required">{{'ITECBAN-COMMON.NGVALIDATE.REQUIRED' | translate }}</p>
+                            <p class="text-left" *ngIf="passwordv.errors.maxlength">{{'ITECBAN-COMMON.NGVALIDATE.MAXLENGTH' | translate:{maxlength:20} }}</p>
+                        </span>
+                        </div>
+                        <!--
+                    <div class="form-group">
+                        <div class="checkbox-custom"><label><input type="checkbox" [(ngModel)]="rememberUser" name="rememberUser" id="rememberUser" tabindex="3"><i class="icon-check"></i><span>{{'ITECBAN-COMMON.LOGIN.REMEMBER' | translate}}</span></label></div>
+                    </div>
+                    -->
+                        <div class="form-group mt-1 button-login">
+                            <button class="btn btn-primary btn-block pt-1 pb-1" type="button" tabindex="4" (click)="loginUserPassword()">{{'ITECBAN-COMMON.LOGIN.ENTRAR' | translate}}</button>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 text-left">
+                                <span class="text-os-bold lnk-main">{{ 'ITECBAN-LOGIN-PAGE.KNOW-QUESTION' | translate }}</span>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 text-xs-left text-right">
+                                <div class="hidden visible-xs pt-1"></div>
+                                <a tabindex="5" class="text-blue text-os-bold lnk-secondary" (click)="goTonlyapp()">{{'ITECBAN-COMMON.LOGIN.ALTA' | translate}}</a>
+                            </div>
+                        </div>
+                        <!--
+                    <div class="form-group">
+                        <a class="link-util" (click)="rememberUserData()"> <i class="glyphicon glyphicon-question-sign"></i>{{'ITECBAN-COMMON.LOGIN.RECORDARPWD' | translate}}</a>
+                    </div>
+                    -->
+                    </form>
+                    <div class="visible-xs p-2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-offset-5 col-md-7 col-sm-12 hidden-xs login-links text-center pb-2">
+            <ul class="d-inline text-white list-horizontal">
+                <li class="p-1">
+                    <a class="text-white" href="https://www.novobanco.es/site/cms.aspx?plg=62E2D0A5-5AA4-4579-850F-7366232FD118" target="_blank">
+                        {{ 'ITECBAN-LOGIN-PAGE.FOOTER.ABOUT' | translate }}
+                    </a>
+                </li>
+                <li class="p-1">|</li>
+                <li class="p-1">
+                    <a class="text-white" href="https://www.novobanco.es/site/cms.aspx?labelid=RedOficinas" target="_blank" class="text-white">
+                        {{ 'ITECBAN-LOGIN-PAGE.FOOTER.OFFICE' | translate }}
+                    </a>
+                </li>
+                <li class="p-1">|</li>
+                <li class="p-1">
+                    <a class="text-white" href="https://www.novobanco.es/site/cms.aspx?labelid=avisolegal" target="_blank" class="text-white">
+                        {{ 'ITECBAN-LOGIN-PAGE.FOOTER.ALERT' | translate }}
+                    </a>
+                </li>
+                <li class="p-1">|</li>
+                <li class="p-1">
+                    <a class="text-white" href="https://www.novobanco.es/site/cms.aspx?labelid=RECOMENDACIONESSEGURIDAD" target="_blank" class="text-white">
+                        {{ 'ITECBAN-LOGIN-PAGE.FOOTER.SECURITY' | translate }}
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="text-white" style="bottom: 0px;position: fixed;right: 0px;">v{{version}}</div>
+    </div>
+    <div class="login row bg-blue" *ngIf="view==='choose'">
+        <div class="login-top"></div>
+        <div class="col-md-5 col-sm-5 hidden-xs pl-2 pr-2">
+            <div class="panel panel-transp secondary-panel">
+                <div class="panel-heading">
+                    <img title="Logo Novobanco" alt="Logo Novobanco" class="img-responsive" src="assets/images/logo-empresas-blanco.png">
+                </div>
+                <div class="panel-body text-white">
+                    <div class="green-line"></div>
+                    <p class="text-os-bold mt-2 text-main">{{ 'ITECBAN-LOGIN-PAGE.TITLE' | translate }}</p>
+                    <p class="text-os-semibold mt-2 text-secondary">{{ 'ITECBAN-LOGIN-PAGE.SUBTITLE' | translate }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7 col-sm-7 col-xs-12 p-0">
+            <div class="panel bg-green main-panel">
+                <div class="panel-heading">
+                    <div class="visible-xs p-1"></div>
+                    <p class="text-os-bold main-panel-title">{{ 'ITECBAN-LOGIN-PAGE.PROFILE.TITLE' | translate }}</p>
+                    <p class="text-os-bold fs-30 mt-1"><i class="icon icononesait icon-company"></i><span class="fs-25 pl-1">{{ 'ITECBAN-LOGIN-PAGE.BANK' | translate }}</span></p>
+                </div>
+                <div class="panel-body scrollable">
+                    <app-loader *ngIf="showLoader || loadingApp"></app-loader>
+
+                    <app-onesait-profiles [profiles]="profiles" (selectedProfile)="prepareApp()" (backEvent)="back()"></app-onesait-profiles>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-offset-5 col-md-7 col-sm-12 hidden-xs login-links pb-2 text-center">
+            <ul class="d-inline text-white list-horizontal">
+                <li class="p-1">
+                    <a class="text-white" href="https://www.novobanco.es/site/cms.aspx?plg=62E2D0A5-5AA4-4579-850F-7366232FD118" target="_blank">
+                        {{ 'ITECBAN-LOGIN-PAGE.FOOTER.ABOUT' | translate }}
+                    </a>
+                </li>
+                <li class="p-1">|</li>
+                <li class="p-1">
+                    <a class="text-white" href="https://www.novobanco.es/site/cms.aspx?labelid=RedOficinas" target="_blank" class="text-white">
+                        {{ 'ITECBAN-LOGIN-PAGE.FOOTER.OFFICE' | translate }}
+                    </a>
+                </li>
+                <li class="p-1">|</li>
+                <li class="p-1">
+                    <a class="text-white" href="https://www.novobanco.es/site/cms.aspx?labelid=avisolegal" target="_blank" class="text-white">
+                        {{ 'ITECBAN-LOGIN-PAGE.FOOTER.ALERT' | translate }}
+                    </a>
+                </li>
+                <li class="p-1">|</li>
+                <li class="p-1">
+                    <a class="text-white" href="https://www.novobanco.es/site/cms.aspx?labelid=RECOMENDACIONESSEGURIDAD" target="_blank" class="text-white">
+                        {{ 'ITECBAN-LOGIN-PAGE.FOOTER.SECURITY' | translate }}
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+    <div class="row" *ngIf="view==='remember'">
+        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+            <div class="panel panel-transp">
+                <div class="panel-heading">
+                    <h1> <img alt="Logo Novobanco" src="assets/images/logo-novobanco.png"></h1>
+                </div>
+                <div class="panel-body">
+                    <h2 class="mb_40">{{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.MESSAGE' | translate}}</h2>
+                    <div class="alert alert-danger" *ngIf="messageError">
+                        <p>{{messageError}}</p>
+                    </div>
+                    <form class="form-horizontal col-xs-12" #formRememberPass="ngForm" role="form" autocomplete="off">
+                        <app-loader *ngIf="showLoader"></app-loader>
+                        <div class="form-group"><label for="username">{{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.USER' | translate}}</label><input class="form-control" id="username" name="username" [(ngModel)]="username" type="text" required #usernamengv="ngModel">
+                            <span class="help-block" *ngIf="usernamengv.invalid &amp;&amp; usernamengv.touched">
+                            <p class="text-left" *ngIf="usernamengv.errors.required">{{'ITECBAN-COMMON.NGVALIDATE.REQUIRED' | translate }}</p>
+                        </span>
+                        </div>
+                        <div class="form-group"><label for="dni">{{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.DNI' | translate}}</label><input class="form-control" id="dni" name="dni" [(ngModel)]="dni" type="dni" required #dningv="ngModel">
+                            <span class="help-block" *ngIf="dningv.invalid &amp;&amp; dningv.touched">
+                            <p class="text-left" *ngIf="dningv.errors.required">{{'ITECBAN-COMMON.NGVALIDATE.REQUIRED' | translate }}</p>
+                        </span>
+                        </div>
+                        <div class="form-group"><label for="email">{{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.EMAIL' | translate}}</label><input class="form-control" id="email" name="email" [(ngModel)]="email" type="email" required #emailngv="ngModel">
+                            <span class="help-block" *ngIf="emailngv.invalid &amp;&amp; emailngv.touched">
+                            <p class="text-left" *ngIf="emailngv.errors.required">{{'ITECBAN-COMMON.NGVALIDATE.REQUIRED' | translate }}</p>
+                        </span>
+                        </div>
+                        <div class="form-group" *ngIf="rememberPasswordTokenIsRequired">
+                            <!-- <app-token [(token)]="token" [(tokenValid)]="tokenValid"></app-token> -->
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-6">
+                                <div class="row"><button class="btn btn-secondary" type="button" (click)="back()">{{'COMMON.BACK' | translate}}</button></div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="row" *ngIf="rememberPasswordTokenIsRequired"><button class="btn btn-primary" [disabled]="!formRememberPass.form.valid || !tokenValid" type="button" (click)="goLoading()">{{'COMMON.CONTINUE' | translate}}</button></div>
+                                <div class="row" *ngIf="!rememberPasswordTokenIsRequired"><button class="btn btn-primary" [disabled]="!formRememberPass.form.valid" type="button" (click)="goLoading()">{{'COMMON.CONTINUE' | translate}}</button></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="view==='loading'">
+        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+            <div class="panel panel-transp">
+                <div class="panel-heading">
+                    <h1> <img alt="Logo Novobanco" src="assets/images/logo-novobanco.png"></h1>
+                </div>
+                <div class="panel-body"><img alt="Logo Novobanco" src="assets/images/email_ok.png">
+                    <h2 class="mb_40">{{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.LOAD.MESSAGE' | translate}}</h2>
+                    <!--.row.col-xs-12
+a.link-util((click)="goLoading()") 
+|{{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.LOAD.QUESTION' | translate}}-->
+                </div>
+                <div class="panel-footer">
+                    <div class="form-group">
+                        <div class="col-xs-6"><button class="btn btn-secondary" type="button" (click)="back()">{{'COMMON.BACK' | translate}}</button></div>
+                        <div class="col-xs-6"><button class="btn btn-primary" (click)="goBackLogin()"> {{'COMMON.ACCEPT' | translate}}</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="view==='newPass'">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="panel panel-transp">
+                <div class="panel-heading">
+                    <h1> </h1><img alt="Logo Novobanco" src="assets/images/logo-novobanco.png"></div>
+                <div class="panel-body">
+                    <app-loader *ngIf="showLoader"></app-loader>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h2>{{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.NEWPWD.MESSAGE' | translate}}</h2>
+                            <div class="alert alert-danger" *ngIf="messageError">
+                                <p>{{messageError}}</p>
+                            </div>
+                            <form class="form-horizontal col-xs-12" #formWriteNewPass="ngForm" role="form" autocomplete="off">
+                                <div class="form-group"><label for="password">{{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.NEWPWD.OLDPWD' | translate}}</label><input class="form-control form-control-amim" #oldPasswordInput="ngModel" [(ngModel)]="oldPassword" name="oldPassword" type="password"
+                                        required="required">
+                                    <!--input.form-control.form-control-amim(#oldPasswordInput="ngModel", [(ngModel)]="oldPassword", name="oldPassword", type='password', placeholder="{{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.NEWPWD.NEWPWD' | translate}}", pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}", required='required')-->
+                                    <div class="form-control-valid-result form-control-valid" *ngIf="oldPassword !== '' &amp;&amp; oldPasswordInput.valid &amp;&amp; oldPasswordInput.touched"></div>
+                                    <div class="form-control-valid-result form-control-error" *ngIf="oldPassword !== '' &amp;&amp; !oldPasswordInput.valid &amp;&amp; oldPasswordInput.touched"></div>
+                                    <!--.form-control-leyend {{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.NEWPWD.WARNING' | translate}}-->
+                                </div>
+                                <div class="form-group"><label for="password">{{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.NEWPWD.NEWPWD' | translate}}</label><input class="form-control form-control-amim" #passImput="ngModel" [(ngModel)]="newPassword" name="newPassword" type="password"
+                                        required="required">
+                                    <div class="form-control-valid-result form-control-valid" *ngIf="newPassword !== '' &amp;&amp; passImput.valid &amp;&amp; passImput.touched"></div>
+                                    <div class="form-control-valid-result form-control-error" *ngIf="newPassword !== '' &amp;&amp; !passImput.valid &amp;&amp; passImput.touched"></div>
+                                    <div class="form-control-leyend">{{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.NEWPWD.WARNING' | translate}}</div>
+                                </div>
+                                <div class="form-group"><label for="passwordNew">{{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.NEWPWD.REPEATPWD' | translate}}</label><input class="form-control form-control-amim" #passImputNew="ngModel" [(ngModel)]="newPasswordRepeat" name="newPasswordRepeat"
+                                        type="password" pattern="(?=.*[a-z])(?=.*[A-Z]).{8,}" required="required">
+                                    <div class="form-control-valid-result form-control-valid" *ngIf="newPassword === newPasswordRepeat &amp;&amp; passImputNew.touched"></div>
+                                    <div class="form-control-valid-result form-control-error" *ngIf="newPassword !== newPasswordRepeat &amp;&amp; newPasswordRepeat !== ''"></div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xs-6">
+                            <div class="box-msg-info"><b>{{ 'ITECBAN-PERSONS.MY.SPACE.CHANGE.PWD.INFO.TITLE' | translate }}</b>
+                                <ul>
+                                    <li>{{ 'ITECBAN-PERSONS.MY.SPACE.CHANGE.PWD.INFO.OPT1' | translate }}</li>
+                                    <li>{{ 'ITECBAN-PERSONS.MY.SPACE.CHANGE.PWD.INFO.OPT2' | translate }}</li>
+                                    <li>{{ 'ITECBAN-PERSONS.MY.SPACE.CHANGE.PWD.INFO.OPT3' | translate }}</li>
+                                    <li>{{ 'ITECBAN-PERSONS.MY.SPACE.CHANGE.PWD.INFO.OPT4' | translate }}</li>
+                                    <li>{{ 'ITECBAN-PERSONS.MY.SPACE.CHANGE.PWD.INFO.OPT5' | translate }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="form-group">
+                            <div class="col-xs-12"><button class="btn btn-primary" [disabled]="newPassword !== newPasswordRepeat || !passImput.valid || !passImputNew.valid" type="button" (click)="completeToken()">{{'COMMON.CONTINUE' | translate}}</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="view==='compToken'">
+        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+            <div class="panel panel-transp">
+                <div class="panel-heading">
+                    <h1> <img alt="Logo Novobanco" src="assets/images/logo-novobanco.png"></h1>
+                </div>
+                <div class="panel-body">
+                    <app-loader *ngIf="showLoader"></app-loader>
+                    <h2>{{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.NEWPWD.COMPTOKEN' | translate}}</h2>
+                    <div class="alert alert-danger" *ngIf="messageError">
+                        <p>{{messageError}}</p>
+                    </div>
+                    <!-- <app-token [(token)]="token" [(tokenValid)]="tokenValid"></app-token> -->
+                </div>
+                <div class="panel-footer">
+                    <div class="form-group">
+                        <div class="col-xs-6"><button class="btn btn-secondary" type="button" (click)="back()">{{'COMMON.BACK' | translate}}</button></div>
+                        <div class="col-xs-6"> <button class="btn btn-primary" [disabled]="!tokenValid" type="button" (click)="changePwd()">{{'COMMON.ACCEPT' | translate}}</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="view==='newPassOK'">
+        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+            <div class="panel panel-transp">
+                <div class="panel-heading">
+                    <h1> <img alt="Logo Novobanco" src="assets/images/logo-novobanco.png"></h1>
+                </div>
+                <div class="panel-body"><img alt="Logo Novobanco" src="assets/images/ico_process_ok.png">
+                    <h2>{{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.NEWPWD.NEWPWDOK' | translate}}</h2>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-md-offset-3 col-md-6 col-xs-12"><button class="btn btn-primary" type="button" (click)="changePwdFinished()">{{'ITECBAN-COMMON.LOGIN.REMEMBERPWD.NEWPWD.ACCOUNT' | translate}}</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

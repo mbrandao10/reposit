@@ -1,0 +1,182 @@
+<div class="row mt-1 mb-1">
+    <div class="col-sm-4 col-xs-12">
+        <div class="row">
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 ">
+                <div OsbVoucherKey class="text-os-semibold ">{{'ONESAIT-TRANSFERS.EMIT.ACCOUNT.ORIGINIBAN' | translate}}
+                </div>
+                <div OsbVoucherValue class="text-section ">
+                    {{transfer.orderer.fromAccount.formats | formatAccountPipe: 'IBAN':false:true}}</div>
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 ">
+                <div OsbVoucherKey class="text-os-semibold ">{{'ONESAIT-TRANSFERS.EMIT.ACCOUNT.DESTINY' | translate}}
+                </div>
+                <div OsbVoucherValue class="text-section">{{transfer.beneficiary.toAccount.id}}</div>
+                <!-- <div OsbVoucherValue class="text-section " *ngIf="transfer.transferMode === 'INTERNAL'">{{transfer.beneficiary.toAccount.formats | formatAccountPipe: 'IBAN'}}</div> -->
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="transfer.beneficiary.description">
+                <div OsbVoucherKey class="text-os-semibold ">
+                    {{'ONESAIT-TRANSFERS.EMIT.ACCOUNT.BENEFICIARY' | translate}}
+                </div>
+                <div OsbVoucherValue class="text-section ">{{transfer.beneficiary.description}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-xs-12" *ngIf="transfer.beneficiary.entity.name">
+        <div class="row">
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 ">
+                <div OsbVoucherKey class="text-os-semibold ">{{'ONESAIT-TRANSFERS.EMIT.ENTITY.NAME' | translate}}
+                </div>
+                <div OsbVoucherValue class="text-section ">
+                    {{transfer.beneficiary.entity.name}}</div>
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 ">
+                <div OsbVoucherKey class="text-os-semibold ">{{'ONESAIT-TRANSFERS.EMIT.ACCOUNT.COUNTRY' | translate}}
+                </div>
+                <div OsbVoucherValue class="text-section">{{transfer.beneficiary.entity.country.name}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-xs-12" *ngIf="transfer.periodicity">
+        <div class="row">
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="transfer.periodicity.frequency">
+                <div OsbVoucherKey class="text-os-semibold ">
+                    {{'ONESAIT-TRANSFERS.EMIT.EXECUTE.PERIOD.FREQUENCY' | translate}}</div>
+                <div OsbVoucherValue class="text-section ">{{transfer.periodicity.frequencyName}}</div>
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 ">
+                <div OsbVoucherKey class="text-os-semibold " *ngIf="transfer.periodicity.frequency">
+                    {{'ONESAIT-TRANSFERS.EMIT.EXECUTE.PERIOD.START' | translate}}
+                </div>
+                <div OsbVoucherKey class="text-os-semibold " *ngIf="!transfer.periodicity.frequency">
+                    {{'ONESAIT-TRANSFERS.EMIT.EXECUTE.PERIOD.PROGRAMMED' | translate}}
+                </div>
+                <div OsbVoucherValue class="text-section ">
+                    {{transfer.periodicity.firstExecutionDate | date: 'dd/MM/yyyy'}}</div>
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="transfer.periodicity.frequency">
+                <div OsbVoucherKey class="text-os-semibold ">
+                    {{'ONESAIT-TRANSFERS.EMIT.EXECUTE.PERIOD.STOP' | translate}}
+                </div>
+                <div OsbVoucherValue class="text-section" *ngIf="transfer.periodicity.lastExecutionDate ">
+                    {{transfer.periodicity.lastExecutionDate | date: 'dd/MM/yyyy'}}</div>
+                <div OsbVoucherValue class="text-section" *ngIf="!transfer.periodicity.lastExecutionDate ">
+                    {{'ONESAIT-TRANSFERS.EMIT.EXECUTE.PERIOD.UNDEFINED' | translate}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-xs-12" *ngIf="transfer.beneficiary.address">
+        <div class="row">
+
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 ">
+                <div OsbVoucherKey class="text-os-semibold ">{{'ONESAIT-TRANSFERS.EMIT.ACCOUNT.ADDRESS' | translate}}
+                </div>
+                <div OsbVoucherValue class="text-section ">{{transfer.beneficiary.address}}</div>
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="transfer.beneficiary.city">
+                <div OsbVoucherKey class="text-os-semibold ">{{'ONESAIT-TRANSFERS.EMIT.ACCOUNT.PROVINCE' | translate}}
+                </div>
+                <div OsbVoucherValue class="text-section ">{{transfer.beneficiary?.city}}</div>
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="transfer.beneficiary.country">
+                <div OsbVoucherKey class="text-os-semibold ">
+                    {{'ONESAIT-TRANSFERS.EMIT.ACCOUNT.COUNTRY' | translate}}
+                </div>
+                <div OsbVoucherValue class="text-section ">{{transfer.beneficiary?.country.name}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-xs-12" *ngIf="transfer.aditionalInfo">
+        <div class="row">
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="transfer.aditionalInfo">
+                <div OsbVoucherKey class="text-os-semibold ">
+                    {{'ONESAIT-TRANSFERS.EMIT.RESIDENT' | translate}}
+                </div>
+                <div *ngIf="transfer.aditionalInfo ==='true'" OsbVoucherValue class="text-section ">
+                    {{'COMMON.YES' | translate}}</div>
+                <div *ngIf="transfer.aditionalInfo ==='false'" OsbVoucherValue class="text-section ">
+                    {{'COMMON.NO' | translate}}</div>
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="transfer.beneficiary.country">
+                <div OsbVoucherKey class="text-os-semibold ">
+                    {{'ONESAIT-TRANSFERS.EMIT.ACCOUNT.COUNTRY' | translate}}
+                </div>
+                <div OsbVoucherValue class="text-section ">{{transfer.beneficiary?.country.name}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-xs-12">
+        <div class="row">
+            <div *ngIf="transfer.purposeType" OsbVoucherKeyValue class="col-xs-12 mb-1 ">
+                <div OsbVoucherKey class="text-os-semibold ">{{'ONESAIT-TRANSFERS.EMIT.REASON' | translate}}</div>
+                <div OsbVoucherValue class="text-section ">{{purposeTypeName}}</div>
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 ">
+                <div *ngIf="!transfer.purposeType" OsbVoucherKey class="text-os-semibold ">
+                    {{'ONESAIT-TRANSFERS.EMIT.REASON' | translate}}</div>
+                <div *ngIf="transfer.purposeType" OsbVoucherKey class="text-os-semibold ">
+                    {{'ONESAIT-TRANSFERS.EMIT.DETAIL' | translate}}</div>
+                <div OsbVoucherValue class="text-section ">{{transfer.reason | formatLiteralPipe:2:resolution}}</div>
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1" *ngIf="transfer.beneficiary?.email">
+                <div OsbVoucherKey class="text-os-semibold ">{{'ONESAIT-TRANSFERS.EMIT.EMAIL' | translate}}</div>
+                <div OsbVoucherValue class="text-section ">{{transfer.beneficiary?.email | formatLiteralPipe:2:resolution}}</div>
+                <!-- <div OsbVoucherValue class="text-section " *ngIf="!transfer.beneficiary?.email"> - </div> -->
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="transfer.alias">
+                <!-- <div OsbVoucherKey class="text-os-semibold ">{{'ONESAIT-TRANSFERS.EMIT.ALIAS' | translate}}</div>
+                <div OsbVoucherValue class="text-section ">{{transfer.alias}}</div> -->
+                <div OsbVoucherKey class="text-os-semibold ">{{'ONESAIT-TRANSFERS.EMIT.SAVE-FAV' | translate}}</div>
+                <div OsbVoucherValue class="text-section ">{{'ONESAIT-TRANSFERS.EMIT.YES' | translate}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-xs-12">
+        <div class="row">
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="transfer.amount.amount">
+                <div OsbVoucherKey class="text-os-semibold ">{{'ONESAIT-TRANSFERS.EMIT.ACCOUNT.AMOUNT' | translate}}
+                </div>
+                <div OsbVoucherValue class="text-section text-no-warp">
+                    {{transfer.amount.amount | CurrencyPipe : transfer.amount.currency.code }}</div>
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="transferState.simulation?.fee">
+                <div OsbVoucherKey class="text-os-semibold ">{{'ONESAIT-TRANSFERS.EMIT.SIMULATOR.FEE' | translate}}
+                </div>
+                <div OsbVoucherValue class="text-section text-no-warp">
+                    {{transferState.simulation.fee.amount | CurrencyPipe : transferState.simulation.fee.currency.code}}
+                </div>
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="transferState.simulation?.expenses">
+                    <div OsbVoucherKey class="text-os-semibold ">{{'ONESAIT-TRANSFERS.EMIT.SIMULATOR.EXPENSES' | translate}}
+                    </div>
+                    <div OsbVoucherValue class="text-section text-no-warp">
+                        {{transferState.simulation.expenses.amount | CurrencyPipe : transferState.simulation.expenses.currency.code}}
+                    </div>
+                </div>
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="transferState.simulation?.mailCharge && transferState.simulation?.mailCharge.amount > 0">
+                <div OsbVoucherKey class="text-os-semibold ">{{'ONESAIT-TRANSFERS.EMIT.SIMULATOR.MAIL-CHARGES' | translate}}
+                </div>
+                <div OsbVoucherValue class="text-section text-no-warp">
+                    {{transferState.simulation.mailCharge.amount | CurrencyPipe : transferState.simulation.mailCharge.currency.code}}
+                </div>
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="transferState.simulation?.total">
+                <div OsbVoucherKey class="text-os-semibold ">{{'ONESAIT-TRANSFERS.EMIT.SIMULATOR.TOTAL' | translate}}
+                </div>
+                <div OsbVoucherValue class="text-section text-no-warp">
+                    {{transferState.simulation.total.amount | CurrencyPipe : transferState.simulation.total.currency.code}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-xs-12">
+        <div class="row">
+            <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="chargeBearer">
+                <div OsbVoucherKey class="text-os-semibold ">{{'ONESAIT-TRANSFERS.EMIT.CHARGES' | translate}}
+                </div>
+                <div OsbVoucherValue class="text-section text-no-warp">
+                    {{chargeBearer}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

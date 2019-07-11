@@ -1,0 +1,15 @@
+{
+  "alias": "Cuota Gimnasio",
+  "issuerName": "GOOD4YOU SPORTS",
+  "issuerLegalDocument": {
+    "id": "12345678Z",
+    "type": "01"
+  },
+  "description": "Salud",
+  "chargeAccount": "123456789098765432",
+  "contractHolderLegalDocument": {
+    "id": "12345678Z",
+    "type": "01"
+  },
+  "contractClientId": "123334"
+}

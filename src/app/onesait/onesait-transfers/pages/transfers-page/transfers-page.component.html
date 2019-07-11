@@ -1,0 +1,26 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="row">
+    <div class="col-xs-12 p-dynamic">
+        <osb-tabs [tabs]="pageConfig.tabs" [(view)]="view"></osb-tabs>
+    </div>
+</div>
+<div class="row page-tabbed pb-1 pt-1" *ngIf="transferState">
+    <div class="col-xs-12 p-dynamic min-h-date">
+        <div class="row">
+            <div class="col-xs-12">
+                <osb-transfer-emit *ngIf="view==='emit'" [favourite]="favourite" [transferState]="transferState"
+                    [transferFavs]="transferFavs" (refreshFavList)="refreshFavList()" scroll-collapse-emitter>
+                </osb-transfer-emit>
+                <osb-transfer-favourites *ngIf="view==='favourites'" [favourites]="transferFavs"
+                    (reuseFavourite)="reuseFavourite($event)" (refreshFavList)="refreshFavList()"
+                    scroll-collapse-emitter></osb-transfer-favourites>
+                <osb-transfer-scheduled *ngIf="view==='scheduled'" [accounts]="transferState.accounts"
+                    [credits]="transferState.credits" scroll-collapse-emitter></osb-transfer-scheduled>
+                <osb-transfer-historic *ngIf="view==='historic'" [accounts]="transferState.accounts"
+                    [credits]="transferState.credits" scroll-collapse-emitter></osb-transfer-historic>
+                <osb-transfer-historic-inter *ngIf="view==='international'" [accounts]="transferState.accounts"
+                    [credits]="transferState.credits" scroll-collapse-emitter></osb-transfer-historic-inter>
+            </div>
+        </div>
+    </div>
+</div>

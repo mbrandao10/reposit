@@ -1,0 +1,65 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "cancellable": true,
+    "totalAmount": {
+      "amount": 3027.49,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "feesCharged": {
+      "amount": 0,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "settledInterest": {
+      "amount": 22.15,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "positiveAmount": {
+      "amount": 3027.49,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "stampTax": {
+      "amount": 0,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "insurance": {
+      "amount": 0,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "iva": {
+      "amount": 0,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "outstandingCapital": {
+      "amount": 3000,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    }
+  }
+}

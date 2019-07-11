@@ -1,0 +1,11 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data":
+    {
+      "numOfNewDocuments": 3,
+      "hasNewDocuments": true
+    }
+}

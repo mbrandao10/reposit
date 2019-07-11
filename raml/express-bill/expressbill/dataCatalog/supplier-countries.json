@@ -1,0 +1,1008 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+     {
+        "id":"1",
+        "name":"FRANCIA                                      "
+     },
+     {
+        "id":"3",
+        "name":"PAISES BAJOS                                 "
+     },
+     {
+        "id":"4",
+        "name":"ALEMANIA                                     "
+     },
+     {
+        "id":"5",
+        "name":"ITALIA                                       "
+     },
+     {
+        "id":"6",
+        "name":"REINO UNIDO                                  "
+     },
+     {
+        "id":"7",
+        "name":"IRLANDA                                      "
+     },
+     {
+        "id":"8",
+        "name":"DINAMARCA                                    "
+     },
+     {
+        "id":"9",
+        "name":"GRECIA                                       "
+     },
+     {
+        "id":"10",
+        "name":"PORTUGAL                                    "
+     },
+     {
+        "id":"11",
+        "name":"ESPANA                                      "
+     },
+     {
+        "id":"17",
+        "name":"BELGICA                                     "
+     },
+     {
+        "id":"18",
+        "name":"LUXEMBURGO                                  "
+     },
+     {
+        "id":"24",
+        "name":"ISLANDIA                                    "
+     },
+     {
+        "id":"27",
+        "name":"ISLAS SVALBARD Y JANMAYEN                   "
+     },
+     {
+        "id":"28",
+        "name":"NORUEGA                                     "
+     },
+     {
+        "id":"30",
+        "name":"SUECIA                                      "
+     },
+     {
+        "id":"32",
+        "name":"FINLANDIA                                   "
+     },
+     {
+        "id":"37",
+        "name":"LIECHTENSTEIN                               "
+     },
+     {
+        "id":"38",
+        "name":"AUSTRIA                                     "
+     },
+     {
+        "id":"39",
+        "name":"SUIZA                                       "
+     },
+     {
+        "id":"41",
+        "name":"ISLAS FEROE                                 "
+     },
+     {
+        "id":"43",
+        "name":"ANDORRA                                     "
+     },
+     {
+        "id":"44",
+        "name":"GIBRALTAR                                   "
+     },
+     {
+        "id":"45",
+        "name":"SANTA SEDE (CIUDAD DEL VATICANO)            "
+     },
+     {
+        "id":"46",
+        "name":"MALTA                                       "
+     },
+     {
+        "id":"47",
+        "name":"SAN MARINO                                  "
+     },
+     {
+        "id":"52",
+        "name":"TURQUIA                                     "
+     },
+     {
+        "id":"53",
+        "name":"ESTONIA                                     "
+     },
+     {
+        "id":"54",
+        "name":"LETONIA                                     "
+     },
+     {
+        "id":"55",
+        "name":"LITUANIA                                    "
+     },
+     {
+        "id":"60",
+        "name":"POLONIA                                     "
+     },
+     {
+        "id":"61",
+        "name":"REPUBLICA CHECA                             "
+     },
+     {
+        "id":"63",
+        "name":"ESLOVAQUIA                                  "
+     },
+     {
+        "id":"64",
+        "name":"HUNGRIA                                     "
+     },
+     {
+        "id":"66",
+        "name":"RUMANIA                                     "
+     },
+     {
+        "id":"68",
+        "name":"BULGARIA                                    "
+     },
+     {
+        "id":"70",
+        "name":"ALBANIA                                     "
+     },
+     {
+        "id":"72",
+        "name":"UCRANIA                                     "
+     },
+     {
+        "id":"73",
+        "name":"BIELORRUSIA                                 "
+     },
+     {
+        "id":"74",
+        "name":"MOLDAVIA                                    "
+     },
+     {
+        "id":"75",
+        "name":"RUSIA                                       "
+     },
+     {
+        "id":"76",
+        "name":"GEORGIA                                     "
+     },
+     {
+        "id":"77",
+        "name":"ARMENIA                                     "
+     },
+     {
+        "id":"78",
+        "name":"AZERBAIYAN                                  "
+     },
+     {
+        "id":"79",
+        "name":"KAZAJISTAN                                  "
+     },
+     {
+        "id":"80",
+        "name":"TURKMENISTAN                                "
+     },
+     {
+        "id":"81",
+        "name":"UZBEKISTAN                                  "
+     },
+     {
+        "id":"82",
+        "name":"TAYIKISTAN                                  "
+     },
+     {
+        "id":"83",
+        "name":"KIRGUZISTAN                                 "
+     },
+     {
+        "id":"91",
+        "name":"ESLOVENIA                                   "
+     },
+     {
+        "id":"92",
+        "name":"CROACIA                                     "
+     },
+     {
+        "id":"93",
+        "name":"BOSNIA Y HERZEGOVINA                        "
+     },
+     {
+        "id":"94",
+        "name":"SERBIA                                      "
+     },
+     {
+        "id":"96",
+        "name":"MACEDONIA (EX YUGOSLAVIA)                   "
+     },
+     {
+        "id":"101",
+        "name":"MONACO                                     "
+     },
+     {
+        "id":"103",
+        "name":"ISLASANGLONORMANDAS                        "
+     },
+     {
+        "id":"104",
+        "name":"ISLAS DE MAN                               "
+     },
+     {
+        "id":"107",
+        "name":"ISLAS COOK                                 "
+     },
+     {
+        "id":"204",
+        "name":"MARRUECOS                                  "
+     },
+     {
+        "id":"208",
+        "name":"ARGELIA                                    "
+     },
+     {
+        "id":"212",
+        "name":"TUNEZ                                      "
+     },
+     {
+        "id":"216",
+        "name":"LIBIA                                      "
+     },
+     {
+        "id":"220",
+        "name":"EGIPTO                                     "
+     },
+     {
+        "id":"224",
+        "name":"SUDAN                                      "
+     },
+     {
+        "id":"228",
+        "name":"MAURITANIA                                 "
+     },
+     {
+        "id":"232",
+        "name":"MALI                                       "
+     },
+     {
+        "id":"236",
+        "name":"BURKINA - FASO                             "
+     },
+     {
+        "id":"240",
+        "name":"NIGER                                      "
+     },
+     {
+        "id":"244",
+        "name":"CHAD                                       "
+     },
+     {
+        "id":"247",
+        "name":"CABO VERDE                                 "
+     },
+     {
+        "id":"248",
+        "name":"SENEGAL                                    "
+     },
+     {
+        "id":"252",
+        "name":"GAMBIA                                     "
+     },
+     {
+        "id":"257",
+        "name":"GUINEA BISSAU                              "
+     },
+     {
+        "id":"260",
+        "name":"GUINEA                                     "
+     },
+     {
+        "id":"264",
+        "name":"SIERRA LEONA                               "
+     },
+     {
+        "id":"268",
+        "name":"LIBERIA                                    "
+     },
+     {
+        "id":"272",
+        "name":"COSTA DE MARFIL                            "
+     },
+     {
+        "id":"276",
+        "name":"GHANA                                      "
+     },
+     {
+        "id":"280",
+        "name":"TOGO                                       "
+     },
+     {
+        "id":"284",
+        "name":"BENIN                                      "
+     },
+     {
+        "id":"288",
+        "name":"NIGERIA                                    "
+     },
+     {
+        "id":"302",
+        "name":"CAMERUN                                    "
+     },
+     {
+        "id":"306",
+        "name":"REP. CENTROAFRICANA                        "
+     },
+     {
+        "id":"310",
+        "name":"GUINEA ECUATORIAL                          "
+     },
+     {
+        "id":"311",
+        "name":"SANTO TOME Y PRINCIPE                      "
+     },
+     {
+        "id":"314",
+        "name":"GABON                                      "
+     },
+     {
+        "id":"318",
+        "name":"CONGO                                      "
+     },
+     {
+        "id":"322",
+        "name":"CONGO (REPUBLICA DEMOCRATICA DEL)          "
+     },
+     {
+        "id":"324",
+        "name":"RWANDA                                     "
+     },
+     {
+        "id":"328",
+        "name":"BURUNDI                                    "
+     },
+     {
+        "id":"329",
+        "name":"SANTA HELENA                               "
+     },
+     {
+        "id":"330",
+        "name":"ANGOLA                                     "
+     },
+     {
+        "id":"334",
+        "name":"ETIOPIA                                    "
+     },
+     {
+        "id":"336",
+        "name":"ERITREA                                    "
+     },
+     {
+        "id":"338",
+        "name":"YIBUTI                                     "
+     },
+     {
+        "id":"342",
+        "name":"SOMALIA                                    "
+     },
+     {
+        "id":"346",
+        "name":"KENYA                                      "
+     },
+     {
+        "id":"350",
+        "name":"UGANDA                                     "
+     },
+     {
+        "id":"352",
+        "name":"TANZANIA (TANGANICA,ISLAS ZANZIBAR Y PEMBA "
+     },
+     {
+        "id":"355",
+        "name":"SEYCHELLES                                 "
+     },
+     {
+        "id":"357",
+        "name":"TERRITORIO BRITANICO DEL OCEANO INDICO     "
+     },
+     {
+        "id":"366",
+        "name":"MOZAMBIQUE                                 "
+     },
+     {
+        "id":"370",
+        "name":"MADAGASCAR                                 "
+     },
+     {
+        "id":"372",
+        "name":"REUNION                                    "
+     },
+     {
+        "id":"373",
+        "name":"MAURICIO                                   "
+     },
+     {
+        "id":"375",
+        "name":"COMORAS(GRAND COMORA,ANJOUAN Y MOHELI)    "
+     },
+     {
+        "id":"377",
+        "name":"MAYOTTE                                    "
+     },
+     {
+        "id":"378",
+        "name":"ZAMBIA                                     "
+     },
+     {
+        "id":"382",
+        "name":"ZIMBABUE                                   "
+     },
+     {
+        "id":"386",
+        "name":"MALAUI                                     "
+     },
+     {
+        "id":"388",
+        "name":"SUDAFRICA                                  "
+     },
+     {
+        "id":"389",
+        "name":"NAMIBIA                                    "
+     },
+     {
+        "id":"391",
+        "name":"BOTSWANA                                   "
+     },
+     {
+        "id":"393",
+        "name":"SWAZILANDIA                                "
+     },
+     {
+        "id":"395",
+        "name":"LESOT0                                     "
+     },
+     {
+        "id":"400",
+        "name":"ESTADOS UNIDOS DE AMERICA                  "
+     },
+     {
+        "id":"404",
+        "name":"CANADA                                     "
+     },
+     {
+        "id":"406",
+        "name":"GROENLANDIA                                "
+     },
+     {
+        "id":"408",
+        "name":"SAN PEDRO Y MIQELON                        "
+     },
+     {
+        "id":"412",
+        "name":"MEXICO                                     "
+     },
+     {
+        "id":"413",
+        "name":"BERMUDAS                                   "
+     },
+     {
+        "id":"416",
+        "name":"GUATEMALA                                  "
+     },
+     {
+        "id":"421",
+        "name":"BELICE                                     "
+     },
+     {
+        "id":"424",
+        "name":"HONDURAS (INCLUIDAS LAS ISLAS DEL CISNE)   "
+     },
+     {
+        "id":"428",
+        "name":"EL SALVADOR                                "
+     },
+     {
+        "id":"432",
+        "name":"NICARAGUA                                  "
+     },
+     {
+        "id":"436",
+        "name":"COSTA RICA                                 "
+     },
+     {
+        "id":"442",
+        "name":"PANAMA                                     "
+     },
+     {
+        "id":"446",
+        "name":"ANGUILA                                    "
+     },
+     {
+        "id":"448",
+        "name":"CUBA                                       "
+     },
+     {
+        "id":"449",
+        "name":"SAN CRISTOBAL Y NIEVES                     "
+     },
+     {
+        "id":"452",
+        "name":"HAITI                                      "
+     },
+     {
+        "id":"453",
+        "name":"BAHAMAS                                    "
+     },
+     {
+        "id":"454",
+        "name":"ISLAS TURCAS Y CAICOS                      "
+     },
+     {
+        "id":"456",
+        "name":"REPUBLICA DOMINICANA                       "
+     },
+     {
+        "id":"457",
+        "name":"ISLAS VIRGENES DE LOS ESTADOS UNIDOS       "
+     },
+     {
+        "id":"458",
+        "name":"GUADALUPE                                  "
+     },
+     {
+        "id":"459",
+        "name":"ANTIGUA Y BARBUDA                          "
+     },
+     {
+        "id":"460",
+        "name":"DOMINICA                                   "
+     },
+     {
+        "id":"462",
+        "name":"MARTINICA                                  "
+     },
+     {
+        "id":"463",
+        "name":"ISLAS CAYMAN                               "
+     },
+     {
+        "id":"464",
+        "name":"JAMAICA                                    "
+     },
+     {
+        "id":"465",
+        "name":"SANTA LUCIA                                "
+     },
+     {
+        "id":"467",
+        "name":"SAN VICENTE Y GRANADINAS                   "
+     },
+     {
+        "id":"468",
+        "name":"ISLAS VIRGENES BRITANICAS                  "
+     },
+     {
+        "id":"469",
+        "name":"BARBADOS                                   "
+     },
+     {
+        "id":"470",
+        "name":"MONTSERRAT                                 "
+     },
+     {
+        "id":"472",
+        "name":"TRINIDAD Y TOBAGO                          "
+     },
+     {
+        "id":"473",
+        "name":"GRANADA                                    "
+     },
+     {
+        "id":"474",
+        "name":"ARUBA                                      "
+     },
+     {
+        "id":"480",
+        "name":"COLOMBIA                                   "
+     },
+     {
+        "id":"484",
+        "name":"VENEZUELA                                  "
+     },
+     {
+        "id":"488",
+        "name":"GUYANA                                     "
+     },
+     {
+        "id":"492",
+        "name":"SURINAM                                    "
+     },
+     {
+        "id":"496",
+        "name":"GUAYANA FRANCESA                           "
+     },
+     {
+        "id":"499",
+        "name":"MONTENEGRO                                 "
+     },
+     {
+        "id":"500",
+        "name":"ECUADOR (INCLUIDAS ISLAS GALAPAGOS)        "
+     },
+     {
+        "id":"504",
+        "name":"PERU                                       "
+     },
+     {
+        "id":"508",
+        "name":"BRASIL                                     "
+     },
+     {
+        "id":"512",
+        "name":"CHILE                                      "
+     },
+     {
+        "id":"516",
+        "name":"BOLIVIA                                    "
+     },
+     {
+        "id":"520",
+        "name":"PARAGUAY                                   "
+     },
+     {
+        "id":"524",
+        "name":"URUGUAY                                    "
+     },
+     {
+        "id":"528",
+        "name":"ARGENTINA                                  "
+     },
+     {
+        "id":"529",
+        "name":"ISLAS MALVINAS (FALKLANDS)                 "
+     },
+     {
+        "id":"531",
+        "name":"CURA|AO                                    "
+     },
+     {
+        "id":"534",
+        "name":"SAN MARTIN                                 "
+     },
+     {
+        "id":"600",
+        "name":"CHIPRE                                     "
+     },
+     {
+        "id":"604",
+        "name":"LIBANO                                     "
+     },
+     {
+        "id":"608",
+        "name":"SIRIA                                      "
+     },
+     {
+        "id":"612",
+        "name":"IRAQ                                       "
+     },
+     {
+        "id":"616",
+        "name":"IRAN                                       "
+     },
+     {
+        "id":"624",
+        "name":"ISRAEL                                     "
+     },
+     {
+        "id":"625",
+        "name":"TERRITORIO PALESTINO OCUPADO               "
+     },
+     {
+        "id":"628",
+        "name":"JORDANIA                                   "
+     },
+     {
+        "id":"632",
+        "name":"ARABIA SAUDITA                             "
+     },
+     {
+        "id":"636",
+        "name":"KUWAIT                                     "
+     },
+     {
+        "id":"640",
+        "name":"BAHREIN                                    "
+     },
+     {
+        "id":"644",
+        "name":"QATAR                                      "
+     },
+     {
+        "id":"647",
+        "name":"EMIRATOS ARABES UNIDOS                     "
+     },
+     {
+        "id":"649",
+        "name":"OMAN                                       "
+     },
+     {
+        "id":"652",
+        "name":"SAN BARTOLOME                              "
+     },
+     {
+        "id":"653",
+        "name":"YEMEN                                      "
+     },
+     {
+        "id":"660",
+        "name":"AFGANISTAN                                 "
+     },
+     {
+        "id":"662",
+        "name":"PAKISTAN                                   "
+     },
+     {
+        "id":"664",
+        "name":"INDIA                                      "
+     },
+     {
+        "id":"666",
+        "name":"BANGLADESH                                 "
+     },
+     {
+        "id":"667",
+        "name":"ISLAS MALDIVAS                             "
+     },
+     {
+        "id":"669",
+        "name":"SRI LANKA                                  "
+     },
+     {
+        "id":"672",
+        "name":"NEPAL                                      "
+     },
+     {
+        "id":"675",
+        "name":"BHOUTAN                                    "
+     },
+     {
+        "id":"676",
+        "name":"MYANMAR (BIRMANIA)                         "
+     },
+     {
+        "id":"680",
+        "name":"THAILANDIA                                 "
+     },
+     {
+        "id":"684",
+        "name":"LAOS                                       "
+     },
+     {
+        "id":"690",
+        "name":"VIETNAM                                    "
+     },
+     {
+        "id":"696",
+        "name":"CAMBOYA                                    "
+     },
+     {
+        "id":"700",
+        "name":"INDONESIA                                  "
+     },
+     {
+        "id":"701",
+        "name":"MALASIA                                    "
+     },
+     {
+        "id":"703",
+        "name":"BRUNEI                                     "
+     },
+     {
+        "id":"706",
+        "name":"SINGAPUR                                   "
+     },
+     {
+        "id":"708",
+        "name":"FILIPINAS                                  "
+     },
+     {
+        "id":"716",
+        "name":"MONGOLIA                                   "
+     },
+     {
+        "id":"720",
+        "name":"CHINA (REPUBLICA POPULAR)                  "
+     },
+     {
+        "id":"724",
+        "name":"COREA DEL NORTE                            "
+     },
+     {
+        "id":"728",
+        "name":"REPUBLICA DE COREA - COREA DEL SUR         "
+     },
+     {
+        "id":"732",
+        "name":"JAPON                                      "
+     },
+     {
+        "id":"736",
+        "name":"TAIWAN                                     "
+     },
+     {
+        "id":"740",
+        "name":"HONG-KONG                                  "
+     },
+     {
+        "id":"743",
+        "name":"MACAO                                      "
+     },
+     {
+        "id":"800",
+        "name":"AUSTRALIA                                  "
+     },
+     {
+        "id":"801",
+        "name":"PAPUA-NUEVA GUINEA                         "
+     },
+     {
+        "id":"803",
+        "name":"NAURU                                      "
+     },
+     {
+        "id":"804",
+        "name":"NUEVA ZELANDA                              "
+     },
+     {
+        "id":"806",
+        "name":"ISLAS SALOMON                              "
+     },
+     {
+        "id":"807",
+        "name":"TUVALU                                     "
+     },
+     {
+        "id":"809",
+        "name":"NUEVA CALEDONIA                            "
+     },
+     {
+        "id":"811",
+        "name":"ISLAS WALLIS Y FUTUNA                      "
+     },
+     {
+        "id":"812",
+        "name":"KIRIBATI                                   "
+     },
+     {
+        "id":"813",
+        "name":"PITCAIRN (ISLAS HERDERSON,DUCIE Y OENO)    "
+     },
+     {
+        "id":"815",
+        "name":"FIDJI                                      "
+     },
+     {
+        "id":"816",
+        "name":"VANUATU                                    "
+     },
+     {
+        "id":"817",
+        "name":"TONGA                                      "
+     },
+     {
+        "id":"819",
+        "name":"SAMOA                                      "
+     },
+     {
+        "id":"820",
+        "name":"ISLAS MARIANAS DEL NORTE                   "
+     },
+     {
+        "id":"822",
+        "name":"POLINESIA FRANCESA                         "
+     },
+     {
+        "id":"823",
+        "name":"MICRONESIA                                 "
+     },
+     {
+        "id":"824",
+        "name":"ISLAS MARSHALL                             "
+     },
+     {
+        "id":"825",
+        "name":"PALAOS                                     "
+     },
+     {
+        "id":"832",
+        "name":"JERSEY                                     "
+     },
+     {
+        "id":"910",
+        "name":"INSTITUCIONES DE LA UNION EUROPEO          "
+     },
+     {
+        "id":"920",
+        "name":"ORG. INTERN. DIST. DE LAS INST DE UE Y BCE "
+     },
+     {
+        "id":"921",
+        "name":"ORGANISMOS INTERNACIONALES                 "
+     },
+     {
+        "id":"930",
+        "name":"BANCO CENTRAL EUROPEO                      "
+     },
+     {
+        "id":"958",
+        "name":"PAISES Y TERRITORIOS NO DETERMINADOS       "
+     },
+     {
+        "id":"960",
+        "name":"TIMOR LESTE                                "
+     },
+     {
+        "id":"961",
+        "name":"COCOS ISLAS, ISLAS KEELING                 "
+     },
+     {
+        "id":"962",
+        "name":"GUAM                                       "
+     },
+     {
+        "id":"963",
+        "name":"ISLAS HEARD E ISLAS MCDONALD               "
+     },
+     {
+        "id":"964",
+        "name":"ISLAS MENORES ALEJADAS DE LOS EEUU         "
+     },
+     {
+        "id":"965",
+        "name":"ISLADEMAN                                  "
+     },
+     {
+        "id":"966",
+        "name":"NIUE                                       "
+     },
+     {
+        "id":"967",
+        "name":"ISLAS NORFOLK                              "
+     },
+     {
+        "id":"968",
+        "name":"SAMOA AMERICANA                            "
+     },
+     {
+        "id":"969",
+        "name":"TOKELAU                                    "
+     },
+     {
+        "id":"970",
+        "name":"ANTARTIDA                                  "
+     },
+     {
+        "id":"971",
+        "name":"I.GUERNESY                                 "
+     },
+     {
+        "id":"973",
+        "name":"PUERTO RICO                                "
+     },
+     {
+        "id":"974",
+        "name":"SUDAN DEL SUR                              "
+     },
+     {
+        "id":"975",
+        "name":"TIERRAS AUSTRALES FRANCESAS                "
+     },
+     {
+        "id":"976",
+        "name":"ISLAS ALAND                                "
+     }
+  ]
+}

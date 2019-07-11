@@ -1,0 +1,28 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "0000",
+      "name": "Global"
+    },
+    {
+      "id": "PF01",
+      "name": "Persona física"
+    },
+    {
+      "id": "PJ01",
+      "name": "Persona jurídica"
+    },
+    {
+      "id": "PRPF",
+      "name": "Representante persona física"
+    },
+    {
+      "id": "PRPJ",
+      "name": "Representante persona jurídica"
+    }
+  ]
+}

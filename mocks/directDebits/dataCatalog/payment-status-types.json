@@ -1,0 +1,21 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "PAGADO"
+    },
+    {
+      "id": "02",
+      "name": "PENDIENTE"
+    },
+    {
+      "id": "03",
+      "name": "DEVUELTO"
+    }
+
+  ]
+}

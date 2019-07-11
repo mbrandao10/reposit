@@ -1,0 +1,53 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "VIGENTE",
+      "href": "https://itecban.indra.es/masterTables/accountStatusTypes"
+    },
+    {
+      "id": "01",
+      "name": "CANCELADA",
+      "href": "https://itecban.indra.es/masterTables/accountStatusTypes"
+    },
+    {
+      "id": "03",
+      "name": "SIN FORMALIZAR",
+      "href": "https://itecban.indra.es/masterTables/accountStatusTypes"
+    },
+    {
+      "id": "54",
+      "name": "SUSPENSO",
+      "href": "https://itecban.indra.es/masterTables/accountStatusTypes"
+    },
+    {
+      "id": "97",
+      "name": "EXPEDIENTE EN TRAMITE",
+      "href": "https://itecban.indra.es/masterTables/accountStatusTypes"
+    },
+    {
+      "id": "14",
+      "name": "DUDOSO",
+      "href": "https://itecban.indra.es/masterTables/accountStatusTypes"
+    },
+    {
+      "id": "44",
+      "name": "LITIGIO",
+      "href": "https://itecban.indra.es/masterTables/accountStatusTypes"
+    },
+    {
+      "id": "64",
+      "name": "FALLIDO",
+      "href": "https://itecban.indra.es/masterTables/accountStatusTypes"
+    },
+    {
+      "id": "99",
+      "name": "ANULADA",
+      "href": "https://itecban.indra.es/masterTables/accountStatusTypes"
+    }
+  ]
+}

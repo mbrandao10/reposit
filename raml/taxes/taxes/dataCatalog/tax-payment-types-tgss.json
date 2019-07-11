@@ -1,0 +1,12 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "TSS",
+      "name": "Pago del Boletín de Cotización a la Seguridad Social"
+    }
+  ]
+}

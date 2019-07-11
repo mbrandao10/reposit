@@ -1,0 +1,33 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "P",
+      "name": "PASIVO",
+      "href": "https://itecban.indra.es/masterTables/productTypes"
+    },
+    {
+      "id": "A",
+      "name": "ACTIVO",
+      "href": "https://itecban.indra.es/masterTables/productTypes"
+    },
+    {
+      "id": "T",
+      "name": "TARJETAS",
+      "href": "https://itecban.indra.es/masterTables/productTypes"
+    },
+    {
+      "id": "C",
+      "name": "CDA",
+      "href": "https://itecban.indra.es/masterTables/productTypes"
+    },
+    {
+      "id": "P",
+      "name": "PLAN DE PENSIONES",
+      "href": "https://itecban.indra.es/masterTables/productTypes"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+    "result": {
+        "code": "200",
+        "info": "OK"
+    },
+    "data": [
+        {
+            "reference": "37700000000016                  ",
+            "debtId": "00002",
+            "concept": {
+                "id": "001",
+                "name": "TASA SER PROP"
+            },
+            "entity": {
+                "id": "377",
+                "name": "Córdoba- Municipalidad de Villa Carlos Paz",
+                "shortName": "Córdoba- Municipalidad de Villa Carlos Paz",
+                "item": {
+                    "id": "06",
+                    "name": "Impuestos Municipales",
+                    "shortName": "IMP MUNICIPA"
+                }
+            },
+            "amount": {
+                "amount": 2,
+                "currency": {
+                    "code": "032"
+                }
+            },
+            "isPartialPaymentAllowed": false,
+            "minAmount": {
+                "amount": 0,
+                "currency": {
+                    "code": "032"
+                }
+            },
+            "dueDate": "2018-07-05T00:00:00+02:00",
+            "linkCode": "00000000016",
+            "isCardAdhered": false
+        }
+    ]
+}

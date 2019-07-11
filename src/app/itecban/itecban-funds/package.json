@@ -1,0 +1,8 @@
+{
+    "name": "itecban-funds",
+    "version": "0.0.2",
+    "description": "modulo de itecban-funds",
+    "main": "index.js",
+    "author": "Minsait",
+    "license": "ISC"
+}

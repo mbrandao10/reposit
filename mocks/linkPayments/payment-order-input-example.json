@@ -1,0 +1,16 @@
+
+    {
+      "reference": "01708",
+      "entity": "001",
+      "amount": {
+        "amount": 100,
+        "currency": "840"
+      },
+      "linkCode": "1234567890",
+      "cardId": "4305790004640705",
+      "accountId": "049100010000000075",
+      "accountType": "10",
+      "debtId": "00002",
+      "concept": "001",
+      "linkToCard":true
+    }

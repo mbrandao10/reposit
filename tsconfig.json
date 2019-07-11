@@ -1,0 +1,113 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+
+      /* "itecban-environment": [
+        "./src/app/itecban/itecban-environment"
+      ], */
+      "itecban-accounts": [
+        "./src/app/itecban/itecban-accounts"
+      ],
+      "itecban-signatures": [
+        "./src/app/itecban/itecban-signatures"
+      ],
+      "itecban-alerts": [
+        "./src/app/itecban/itecban-alerts"
+      ],
+      "itecban-common": [
+        "./src/app/itecban/itecban-common"
+      ],
+      "itecban-credits": [
+        "./src/app/itecban/itecban-credits"
+      ],
+      "itecban-deposits": [
+        "./src/app/itecban/itecban-deposits"
+      ],
+      "itecban-directdebits": [
+        "./src/app/itecban/itecban-directdebits"
+      ],
+      "itecban-loans": [
+        "./src/app/itecban/itecban-loans"
+      ],
+      "itecban-funds": [
+        "./src/app/itecban/itecban-funds"
+      ],
+      "itecban-equities": [
+        "./src/app/itecban/itecban-equities"
+      ],
+      "itecban-mailbox": [
+        "./src/app/itecban/itecban-mailbox"
+      ],
+      "itecban-persons": [
+        "./src/app/itecban/itecban-persons"
+      ],
+      "itecban-cards": [
+        "./src/app/itecban/itecban-cards"
+      ],
+      "itecban-foreignoperations": [
+        "./src/app/itecban/itecban-foreignoperations"
+      ],
+      "itecban-cashpooling": [
+        "./src/app/itecban/itecban-cashpooling"
+      ],
+      "itecban-settings": [
+        "./src/app/itecban/itecban-settings"
+      ],
+      "onesait-api": [
+        "./src/app/onesait/onesait-api"
+      ],
+      "onesait-core": [
+        "./src/app/onesait/onesait-core"
+      ],
+      "onesait-confirming": [
+        "./src/app/onesait/onesait-confirming"
+      ],
+      "onesait-leasing": [
+        "./src/app/onesait/onesait-leasing"
+      ],
+      "onesait-sepa": [
+        "./src/app/onesait/onesait-sepa"
+      ],
+      "onesait-factoring": [
+        "./src/app/onesait/onesait-factoring"
+      ],
+      "onesait-accounts": [
+        "./src/app/onesait/onesait-accounts"
+      ],
+      "onesait-taxes": [
+        "./src/app/onesait/onesait-taxes"
+      ],
+      "onesait-nbexpress": [
+        "./src/app/onesait/onesait-nbexpress"
+      ],
+      "onesait-transfers": [
+        "./src/app/onesait/onesait-transfers"
+      ],
+      "onesait-profile": [
+        "./src/app/onesait/onesait-profile"
+      ],
+      "onesait-credits": [
+        "./src/app/onesait/onesait-credits"
+      ]
+    }
+  }
+}

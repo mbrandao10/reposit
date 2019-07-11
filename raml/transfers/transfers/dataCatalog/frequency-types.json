@@ -1,0 +1,36 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "1",
+      "name": "MENSUAL"
+    },
+    {
+      "id": "2",
+      "name": "BIMESTRAL"
+    },
+    {
+      "id": "3",
+      "name": "TIMESTRAL"
+    },
+    {
+      "id": "6",
+      "name": "SEMESTRAL"
+    },
+    {
+      "id": "12",
+      "name": "ANUAL"
+    },
+    {
+      "id": "24",
+      "name": "BIANUAL"
+    },
+    {
+      "id": "36",
+      "name": "TRIANUAL"
+    }
+  ]
+}

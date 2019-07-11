@@ -1,0 +1,11 @@
+{
+  "eventId": "001",
+  "eventGroup": "account",
+  "linkedElementId": "149100011009408525",
+  "notificationChannels": [
+    "mail",
+    "push",
+    "sms"
+  ],
+  "period": "01"
+}

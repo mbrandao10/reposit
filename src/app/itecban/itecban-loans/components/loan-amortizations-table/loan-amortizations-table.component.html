@@ -1,0 +1,86 @@
+<app-loader *ngIf="loading"></app-loader>
+
+<table class="table table-detail">
+    <thead class="hidden-xs" *ngIf="repayments">
+        <tr>
+            <th>
+                {{ 'ITECBAN-LOANS.AMORTIZATION-TABLE.TABLE.DATE' | translate }}
+            </th>
+            <th>
+                {{ 'ITECBAN-LOANS.AMORTIZATION-TABLE.TABLE.N-SHARE' | translate }}
+            </th>
+            <th class="text-right">
+                {{ 'ITECBAN-LOANS.AMORTIZATION-TABLE.TABLE.CAP-REPAYMENT' | translate }}
+            </th>
+            <th class="text-right">
+                {{ 'ITECBAN-LOANS.AMORTIZATION-TABLE.TABLE.INTEREST' | translate }}
+            </th>
+            <th class="text-right">
+                {{ 'ITECBAN-LOANS.AMORTIZATION-TABLE.TABLE.PAYMENT' | translate }}
+            </th>
+            <th class="text-right">
+                {{ 'ITECBAN-LOANS.AMORTIZATION-TABLE.TABLE.PENDING' | translate }}
+            </th>
+        </tr>
+    </thead>
+
+    <tbody [ngClass]="{'open': repayment == selectedItem && !isMobileResolution() }" *ngFor="let repayment of repayments; let i = index">
+        <tr class="interactive" (click)="viewDetail(repayment)">
+            <td>
+                <span class="hidden-xs text-no-warp">
+                    {{ repayment.date | date: 'dd/MM/yyyy' }}
+                </span>
+                <span class="visible-xs-block text-os-semibold text-no-warp">
+                    {{ repayment.fixedFee.amount | CurrencyPipe: repayment.fixedFee.currency.code }}
+                </span>
+                <span class="visible-xs-block fs-12 text-no-warp">
+                    {{ repayment.date | date: 'dd/MM/yyyy' }}
+                </span>
+            </td>
+            <td class="hidden-xs">
+                {{ repayment.number }}
+            </td>
+            <td class="hidden-xs text-right">
+                {{ repayment.installment.amount | CurrencyPipe: repayment.installment.currency.code }}
+            </td>
+            <td class="hidden-xs text-no-warp text-right">
+                {{ repayment.interest.amount | CurrencyPipe: repayment.interest.currency.code }}
+            </td>
+            <td class="hidden-xs text-no-warp text-right">
+                {{ repayment.fixedFee.amount | CurrencyPipe: repayment.fixedFee.currency.code }}
+            </td>
+            <td class="text-right">
+                <span class="hidden-xs text-no-warp">
+                    {{ repayment.pendingAmount.amount | CurrencyPipe: repayment.pendingAmount.currency.code }}
+                </span>
+                <span class="visible-xs-block text-os-semibold text-no-warp">
+                    {{ repayment.pendingAmount.amount | CurrencyPipe: repayment.pendingAmount.currency.code }}
+                </span>
+                <span class="visible-xs-block fs-12 text-no-warp">
+                    {{ repayment.installment.amount | CurrencyPipe: repayment.installment.currency.code }}
+                </span>
+            </td>
+        </tr>
+
+        <tr [ngClass]="{'description': !isMobileResolution() }" *ngIf="selectedItem && (selectedItem === repayment)">
+            <td colspan="6">
+                <osb-loan-amortizations-table-detail [loanRepaymentDetail]="repayment" (closeEvent)="close()"></osb-loan-amortizations-table-detail>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="row" *ngIf="hasMoreData && repayments">
+    <a class="col-xs-12 text-center p-1 text-os-bold" (click)="next()" role="button">
+        {{ 'ITECBAN-LOANS.AMORTIZATION-TABLE.TABLE.MORE-RESULTS' | translate }}
+    </a>
+</div>
+
+
+<!-- <div class="col-xs-12 mt-2" *ngIf="listMovements.list.data.length === 0">
+        <div class="col-xs-12 mt-2" *ngIf="listMovements.list.data.length === 0 && !loading">
+            <p>
+                {{ 'ITECBAN-LOANS.AMORTIZATION-TABLE.TABLE.NO-MOVEMENTS' | translate }}
+            </p>
+        </div>
+    </div> -->

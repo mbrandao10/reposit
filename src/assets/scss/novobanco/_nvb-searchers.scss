@@ -1,0 +1,96 @@
+/*------------------------------------*\
+    $SEARCHERS
+\*------------------------------------*/
+
+.search-title--margin {
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+.input-calendar-custom {
+  input {
+    padding-right: 34px;
+    padding-left: 15px;
+    border: none;
+    border-bottom: 1px solid $nvb-gray-user-menu;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  i {
+    position: relative;
+    top: -30px;
+    float: right;
+    right: 12px;
+    color: $nvb-gray-darker;
+    font-size: 25px;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .input-calendar-custom {
+    input {
+      background-color: $nvb-gray-light;
+      border: none;
+    }
+  }
+}
+
+.btn-search {
+  margin-top: 10px; //60 en tablet
+}
+
+.content-historic-extract {
+  padding-top: 56px;
+  padding-left: 0;
+  padding-right: 0;
+
+  a {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  span.text-literal {
+    padding: 5px;
+  }
+
+}
+
+.mobile-searcher-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $nvb-white;
+  z-index: 1;
+  padding: 20px 20px;
+}
+
+.icon-filter {
+  color: $nvb-green-dark;
+  font-size: 28px;
+}
+
+.text-title-filter {
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.filter-dropdown {
+  position: relative;
+  padding-top: 30px;
+
+  .dropdown-menu {
+    right: 0;
+    left: auto;
+  }
+}
+
+.dropdown-options-filter {
+  font-size: 28px;
+  background-color: $nvb-gray-lighter;
+  color: $nvb-gray-darker;
+  padding-left: 15px;
+  padding-right: 15px;
+}

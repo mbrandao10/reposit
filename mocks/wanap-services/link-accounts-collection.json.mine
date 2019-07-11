@@ -1,0 +1,62 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "149100011009408525",
+      "balance": {
+        "amount": 1285.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "alias": "Cuenta gastos de casa",
+      "coelsaAccountType":"11",
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      },
+      "formats": [
+        {
+          "format": {
+            "id": "CBU",
+            "name": "CBU"
+          },
+          "value": "3840001600000000003061"
+        }
+      ]
+    },
+    {
+      "id": "149100011009408526",
+      "balance": {
+        "amount": 500.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "alias": "Cuenta gastos de casa",
+      "coelsaAccountType":"11",
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      },
+      "formats": [
+        {
+          "format": {
+            "id": "CBU",
+            "name": "CBU"
+          },
+          "value": "3840001600000000003071"
+        }
+      ]
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"    
+  }
+}

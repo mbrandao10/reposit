@@ -1,0 +1,16 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "0",
+      "name": "PENDIENTE FIRMA"
+    },
+    {
+      "id": "1",
+      "name": "FIRMA COMPLETADA"
+    }
+  ]
+}

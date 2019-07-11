@@ -1,0 +1,132 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "1",
+      "name": "LIQUIDACION DIA-1"
+    },
+    {
+      "id": "2",
+      "name": "LIQUIDACION DIA-2"
+    },
+    {
+      "id": "3",
+      "name": "LIQUIDACION DIA-3"
+    },
+    {
+      "id": "4",
+      "name": "LIQUIDACION DIA-4"
+    },
+    {
+      "id": "5",
+      "name": "LIQUIDACION DIA-5"
+    },
+    {
+      "id": "6",
+      "name": "LIQUIDACION DIA-6"
+    },
+    {
+      "id": "7",
+      "name": "LIQUIDACION DIA-7"
+    },
+    {
+      "id": "8",
+      "name": "LIQUIDACION DIA-8"
+    },
+    {
+      "id": "9",
+      "name": "LIQUIDACION DIA-9"
+    },
+    {
+      "id": "10",
+      "name": "LIQUIDACION DIA-10"
+    },
+    {
+      "id": "11",
+      "name": "LIQUIDACION DIA-11"
+    },
+    {
+      "id": "12",
+      "name": "LIQUIDACION DIA-12"
+    },
+    {
+      "id": "13",
+      "name": "LIQUIDACION DIA-13"
+    },
+    {
+      "id": "14",
+      "name": "LIQUIDACION DIA-14"
+    },
+    {
+      "id": "15",
+      "name": "LIQUIDACION DIA-15"
+    },
+    {
+      "id": "16",
+      "name": "LIQUIDACION DIA-16"
+    },
+    {
+      "id": "17",
+      "name": "LIQUIDACION DIA-17"
+    },
+    {
+      "id": "18",
+      "name": "LIQUIDACION DIA-18"
+    },
+    {
+      "id": "19",
+      "name": "LIQUIDACION DIA-19"
+    },
+    {
+      "id": "20",
+      "name": "LIQUIDACION DIA-20"
+    },
+    {
+      "id": "21",
+      "name": "LIQUIDACION DIA-21"
+    },
+    {
+      "id": "22",
+      "name": "LIQUIDACION DIA-22"
+    },
+    {
+      "id": "23",
+      "name": "LIQUIDACION DIA-23"
+    },
+    {
+      "id": "24",
+      "name": "LIQUIDACION DIA-24"
+    },
+    {
+      "id": "25",
+      "name": "LIQUIDACION DIA-25"
+    },
+    {
+      "id": "26",
+      "name": "LIQUIDACION DIA-26"
+    },
+    {
+      "id": "27",
+      "name": "LIQUIDACION DIA-27"
+    },
+    {
+      "id": "28",
+      "name": "LIQUIDACION ESTANDAR-28"
+    },
+    {
+      "id": "29",
+      "name": "LIQUIDACION DIA-29."
+    },
+    {
+      "id": "30",
+      "name": "LIQUIDACION DIA-30"
+    },
+    {
+      "id": "31",
+      "name": "LIQUIDACION DIA-31"
+    }
+  ]
+}

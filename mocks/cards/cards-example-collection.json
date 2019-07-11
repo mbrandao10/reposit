@@ -1,0 +1,1719 @@
+
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "4305790004640705",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    },
+	{
+      "id": "4305790004640706",
+      "alias": "Segunda tarjeta en ARG - crédito",
+      "productData": {
+        "id": "",
+        "description": "WORLD MASTERCARD",
+        "type": {
+          "id": "C",
+          "name": "Tarjetas crédito"
+        },
+        "subtype": {
+          "id": "518080",
+          "name": "WORLD MASTERCARD"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 40.10,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 0.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    },
+{
+      "id": "4305790004640707",
+      "alias": "Nueva Tarjeta",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT WORLD ELITE",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas débito"
+        },
+        "subtype": {
+          "id": "557717",
+          "name": "MASTER DEBIT WORLD ELITE"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "008",
+        "name": "INACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 40.10,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 0.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 0.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    },
+{
+      "id": "4305790004640708",
+      "alias": "Tarjeta débito en Dolares",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT WORLD ELITE",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas débito"
+        },
+        "subtype": {
+          "id": "557717",
+          "name": "MASTER DEBIT WORLD ELITE"
+        }
+      },
+      "currency": {
+        "id": "USD",
+        "code": "840"
+      },
+      "status": {
+        "id": "008",
+        "name": "INACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "USD",
+          "code": "840"
+        }
+      },
+      "postedBalance": {
+        "amount": 40.10,
+        "currency": {
+          "id": "USD",
+          "code": "840"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "USD",
+          "code": "840"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "USD",
+          "code": "840"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 0.00,
+        "currency": {
+          "id": "USD",
+          "code": "840"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 0.00,
+        "currency": {
+          "id": "USD",
+          "code": "840"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+},
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+    ,
+    {
+      "id": "4305790004640905",
+      "alias": "Mi tarjeta en ARG",
+      "productData": {
+        "id": "",
+        "description": "MASTER DEBIT",
+        "type": {
+          "id": "D",
+          "name": "Tarjetas Débito"
+        },
+        "subtype": {
+          "id": "525653",
+          "name": "MASTER DEBIT"
+        }
+      },
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      },
+      "status": {
+        "id": "007",
+        "name": "ACTIVA"
+      },
+      "operationalStatus": true,
+      "cancellable": true,
+      "outstandingBalance": {
+        "amount": 0.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 150.20,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyCashLimit": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "daylyPurchaseLimit": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthCashOutstandingBalance": {
+        "amount": 5.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "currentMonthPurchaseOutstandingBalance": {
+        "amount": 10.00,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      },
+      "contractNumber":"23423222342",
+      "officeNumber":"0000"
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+    "links": [
+      {
+        "rel": "next",
+        "href": "https://itecban.indra.es/debitCards/?paginationKey=f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+        "method": "GET"
+      }
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "id": "149100011009408525",
+    "balance": {
+      "amount": 1246.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "postedBalance": {
+      "amount": -12.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "retainedBalance": {
+      "amount": -10.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "lastMovementDate": "2014-10-30T00:00:00.00Z",
+    "openingDate": "2014-10-30T00:00:00.00Z",
+    "operationalStatus": "1",
+    "alias": "Gastos casa",
+    "currency": {
+      "id": "EUR",
+      "code": "978"
+    },
+    "productData": {
+      "id": "CCCOT",
+      "description": "Cuenta corriente triodos",
+      "type": {
+        "id": "P",
+        "name": "PASIVO"
+      },
+      "subtype": {
+        "id": "CC",
+        "name": "Cuentas Corrientes"
+      }
+    },
+    "status": {
+      "id": "xx",
+      "name": "vigente"
+    },
+    "interest": 0.01,
+    "dispositionType":{
+          "id": "01",
+          "name": "INDIVIDUAL"
+        },
+    "formats": [
+      {
+        "format": {
+          "id": "IBAN",
+          "name": "IBAN"
+        },
+        "value": "ES6968867819113534431785"
+      },
+      {
+        "format": {
+          "id": "CCC",
+          "name": "CCC"
+        },
+        "value": "68867819113534431785"
+      }
+    ],
+    "hasLocks":false
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "100",
+      "name": "IRPF - DECLARACIÓN ANUAL / BORRADOR IRPF"
+    },
+    {
+      "id": "109",
+      "name": "DECLARACIÓN DEL IMPUESTO SOBRE LA RENTA DE LAS PERSONAS FÍSICAS"
+    },
+    {
+      "id": "111",
+      "name": "IRPF. RETENCIÓN GRANDES EMPRESAS"
+    },
+    {
+      "id": "115",
+      "name": "IRPF URBANOS"
+    },
+    {
+      "id": "117",
+      "name": "IRPF PARTICIPACIONES"
+    },
+    {
+      "id": "123",
+      "name": "RET. CAP. MOB."
+    },
+    {
+      "id": "124",
+      "name": "RET. CAP. MOB. RENDIMIENTOS"
+    },
+    {
+      "id": "126",
+      "name": "RET. CAP. MOB. INTERESES"
+    },
+    {
+      "id": "128",
+      "name": "IRPF SIN MOB."
+    },
+    {
+      "id": "130",
+      "name": "IRPF PAGO FRACCIONADO"
+    },
+    {
+      "id": "131",
+      "name": "IRPF ACTIVIDADES ECONÓMICAS"
+    },
+    {
+      "id": "150",
+      "name": "IRPF - RÉGIMEN ESPECIAL POR IRNR"
+    },
+    {
+      "id": "110",
+      "name": "IRPF RETENCIONES E INGRESOS A CUENTA"
+    }
+  ]
+}

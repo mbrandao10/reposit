@@ -1,0 +1,13 @@
+{
+  "result": {
+    "code": "403",
+    "info": "Forbidden",
+    "errors": [
+      {
+        "errorDescription": "Access denied, the operation is not allowed.",
+        "errorCode": "001A",
+        "errorType": "S"
+      }
+    ]
+  }
+}

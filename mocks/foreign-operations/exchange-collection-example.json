@@ -1,0 +1,42 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "currency":{
+        "id": "EUR",
+        "code": "978"
+      },
+      "quotationDate": "2019-01-24",
+      "changeBuyer": "Cambio al comprador",
+      "fixing": "fixing",
+      "changeSeller": "Cambio al vendedor"
+    },
+    {
+      "currency":{
+        "id": "EUR",
+        "code": "978"
+      },
+      "quotationDate": "2019-01-25",
+      "changeBuyer": "Cambio al comprador",
+      "fixing": "fixing",
+      "changeSeller": "Cambio al vendedor"
+    },
+    {
+      "currency":{
+        "id": "EUR",
+        "code": "978"
+      },
+      "quotationDate": "2019-01-26",
+      "changeBuyer": "Cambio al comprador",
+      "fixing": "fixing",
+      "changeSeller": "Cambio al vendedor"
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

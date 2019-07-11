@@ -1,0 +1,86 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data":
+    {
+      "id": "BUZS160000017120",
+      "creationDate": "2014-10-30T00:00:00.00Z",
+      "lastMessageDate": "2014-10-30T00:00:00.00Z",
+      "isRead": false,
+      "hasAttachment": true,
+      "subject": "Invierta en Triodos Bank",
+      "type":     {
+            "id": "01",
+            "name": "Sugerencia",
+            "href": "https://itecban.indra.es/mailbox/conversations/types"
+          },
+      "canReply": true,
+      "messages":[
+        {
+          "id": "001",
+          "date": "2014-10-30T00:00:00.00Z",
+          "conversationId": "BUZS160000013851",
+          "isRead": false,
+          "body": "Solicitamos de nuevo un duplicado y te la enviamos de nuevo. Adjuntamos el justificante de solicitud de por extravío. Disculpa las molestias<br/><br/>Saludos",
+          "from": "XXX BANK NV S.E.",
+		  "isFromUser": false,
+          "attachments": [
+            {
+              "id":"9cc94b7f-3fb6-4246-89c4-f503abf58b33",
+              "fileName":"Justificante Solicitud.pdf",
+              "link":{
+                "href":"https://itecban.indra.es/documents/9cc94b7f-3fb6-4246-89c4-f503abf58b33",
+                "method":"GET"
+                }
+            }
+          ]
+        },
+		{
+          "id": "001",
+          "date": "2014-10-30T00:00:00.00Z",
+          "conversationId": "BUZS160000013851",
+          "isRead": false,
+		  "isFromUser": true,
+          "body": "En la oficina de correos me indican que no han recibido nada.",
+          "from": "XXX BANK NV S.E.",
+          "attachments": [
+            
+          ]
+        },
+		{
+          "id": "001",
+          "date": "2014-10-30T00:00:00.00Z",
+          "conversationId": "BUZS160000013851",
+          "isRead": false,
+		  "isFromUser": false,
+          "body": "Hola Marta,<br/><br/>tu tarjeta fue enviada con fecha de 15 de marzo a la dirección que nos indicaste en la solicitud.<br/><br/>Saludos",
+          "from": "XXX BANK NV S.E.",
+          "attachments": [
+          ]
+        },
+		{
+          "id": "001",
+          "date": "2014-10-30T00:00:00.00Z",
+          "conversationId": "BUZS160000013851",
+          "isRead": false,
+		  "isFromUser": true,
+          "body": "Buenos días, me pongo en contacto con ustedes para solicitarles información acerca del estado de mi solicitud de nueva tarjeta de crédito por robo.<br/><br/>Adjunto el justificante de la solicitud",
+          "from": "XXX BANK NV S.E.",
+          "attachments": [
+            {
+              "id":"9cc94b7f-3fb6-4246-89c4-f503abf58b33",
+              "fileName":"Justificante Solicitud.pdf",
+              "link":{
+                "href":"https://itecban.indra.es/documents/9cc94b7f-3fb6-4246-89c4-f503abf58b33",
+                "method":"GET"
+                }
+            }
+          ]
+        }
+      ]
+    }
+
+
+}

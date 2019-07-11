@@ -1,0 +1,34 @@
+<ul class="list" *ngIf="equityDetail">
+    <li *ngIf="equityDetail.id">
+        <div class="name text-left">
+            {{ 'ITECBAN-EQUITIES.DETAIL.ID-EQUITY' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ equityDetail.id }}
+        </div>
+    </li>
+    <li *ngIf="equityDetail.date">
+        <div class="name text-left">
+            {{ 'ITECBAN-EQUITIES.DETAIL.DATE' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ equityDetail.date | date: 'dd/MM/yyyy' }}
+        </div>
+    </li>
+    <li *ngIf="equityDetail.numberTitles">
+        <div class="name text-left">
+            {{ 'ITECBAN-EQUITIES.DETAIL.NUMBER-TITLES' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ equityDetail.numberTitles }}
+        </div>
+    </li>
+    <li *ngIf="equityDetail.totalValue && equityDetail.totalValue.amount && equityDetail.totalValue.currency">
+        <div class="name text-left">
+            {{ 'ITECBAN-EQUITIES.DETAIL.TOTAL-VALUE' | translate }}
+        </div>
+        <div class="value text-right">
+            {{ equityDetail.totalValue.amount | CurrencyPipe: equityDetail.totalValue.currency.code }}
+        </div>
+    </li>
+</ul>

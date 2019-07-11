@@ -1,0 +1,86 @@
+<div class="panel">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="row">
+                    <div class="col-sm-4 col-md-12 hidden-xs">
+                        <div class="text-size-headign-aux text-os-light  mb-2">{{'ITECBAN-GLOBAL-POSITION.CHARTS.BALANCE' | translate}}</div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-12 mb-1">
+                        <div class="borde-superior"></div>
+                        <div class="fs-12 ">{{'ITECBAN-GLOBAL-POSITION.CHARTS.DISPOSED' | translate}}</div>
+                        <div class="text-size-primary text-os-light text-no-warp">{{elments.amountDisposed | CurrencyPipe: elments.divisa}}</div>
+                    </div>
+                    <div class="col-xs-6 col-sm-4 col-md-12 mb-1">
+                        <div class="borde-superior"></div>
+                        <div class="fs-12 ">{{'ITECBAN-GLOBAL-POSITION.CHARTS.SAVED' | translate}}</div>
+                        <div class="text-size-primary text-os-semibold text-no-warp">{{elments.amountSaved | CurrencyPipe: elments.divisa}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden-xs col-sm-6 col-md-4" *ngIf="elments.dataInvestment.length >= 0">
+                <app-pie-chart [idSvg]="'investment'+ idCurrency" [data]="elments.dataInvestment" [worthless]="elments.divisa" [colorArr]="colorInvestment"></app-pie-chart>
+                <div class="row">
+                    <div class="col-xs-12 text-os-bold text-sm-center fs-12 text-blue">
+                        {{'ITECBAN-GLOBAL-POSITION.CHARTS.SAVED-INVEST' | translate}}
+                    </div>
+                    <div class="col-xs-12 text-size-secondary text-sm-center text-os-light text-no-warp">
+                        {{elments.amountInvestment | CurrencyPipe: elments.divisa}}
+                    </div>
+                </div>
+            </div>
+            <div class="hidden-xs col-xs-12 col-sm-6 col-md-4" *ngIf="elments.dataFinancial.length >= 0">
+                <app-pie-chart [idSvg]="'financial' + idCurrency" [data]="elments.dataFinancial" [worthless]="elments.divisa" [colorArr]="colorFinancial"></app-pie-chart>
+                <div class="row">
+                    <div class="col-xs-12 text-os-bold text-sm-center fs-12 text-orange">
+                        {{'ITECBAN-GLOBAL-POSITION.CHARTS.FINANCING' | translate}}
+                    </div>
+                    <div class="col-xs-12 text-size-secondary text-sm-center text-os-light text-no-warp">
+                        {{elments.amountFinancial | CurrencyPipe: elments.divisa}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row hidden-sm hidden-md hidden-lg mt-1" osbSwipe (swipeEventDetected)="managerSwipe($event)">
+            <div class="col-xs-12">
+                <div id="carousel-global-position" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active text-center">
+                            <app-pie-chart [idSvg]="'mobile-investment'+ idCurrency" [data]="elments.dataInvestment" [worthless]="elments.divisa" [colorArr]="colorInvestment"></app-pie-chart>
+                            <div class="row">
+                                <div class="col-xs-12 text-center text-os-bold fs-12 text-blue">
+                                    {{'ITECBAN-GLOBAL-POSITION.CHARTS.SAVED-INVEST' | translate}}
+                                </div>
+                                <div class="col-xs-12 text-center text-size-secondary text-os-light text-no-warp">
+                                    {{elments.amountInvestment | CurrencyPipe: elments.divisa}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item text-center">
+                            <app-pie-chart [idSvg]="'mobile-financial' + idCurrency" [data]="elments.dataFinancial" [worthless]="elments.divisa" [colorArr]="colorFinancial"></app-pie-chart>
+                            <div class="row">
+                                <div class="col-xs-12 text-center fs-12 text-orange">
+                                    {{'ITECBAN-GLOBAL-POSITION.CHARTS.FINANCING' | translate}}
+                                </div>
+                                <div class="col-xs-12 text-center text-size-secondary text-os-light text-no-warp">
+                                    {{elments.amountFinancial | CurrencyPipe: elments.divisa}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-global-position" data-slide-to="0" class="active" #leftGraph>
+                            <div class="dot"></div>
+                        </li>
+                        <li data-target="#carousel-global-position" data-slide-to="1" #rightGraph>
+                            <div class="dot"></div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

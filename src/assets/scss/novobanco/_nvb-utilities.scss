@@ -1,0 +1,478 @@
+//Font color
+.text-white {
+    color: $nvb-white !important;
+}
+
+.text-gray-lighter {
+    color: $nvb-gray-lighter !important;
+}
+
+.text-gray-light {
+    color: $nvb-gray-light !important;
+}
+
+.text-gray {
+    color: $nvb-gray !important;
+}
+
+.text-gray-dark {
+    color: $nvb-gray-dark !important;
+}
+
+.text-gray-darker {
+    color: $nvb-gray-darker !important;
+}
+
+.text-gray-doc {
+    color: $nvb-gray-doc !important;
+}
+
+.text-dark {
+    color: $nvb-dark !important;
+}
+
+.text-green {
+    color: $nvb-green !important;
+}
+
+.text-green-dark {
+    color: $nvb-green-dark !important;
+}
+
+.text-green-darker {
+    color: $nvb-green-darker !important;
+}
+
+.text-green-lightest {
+    color: $nvb-green-lightest !important;
+}
+
+.text-blue {
+    color: $nvb-blue !important;
+}
+
+.text-blue-dark {
+    color: $nvb-blue-dark !important;
+}
+
+.text-orange {
+    color: $nvb-orange !important;
+}
+
+.text-red-light {
+    color: $nvb-red-light !important;
+}
+
+.text-red {
+    color: $nvb-red !important;
+}
+
+//Background color
+.bg-white {
+    background-color: $nvb-white !important;
+}
+
+.bg-gray-lighter {
+    background-color: $nvb-gray-lighter !important;
+}
+
+.bg-gray-light {
+    background-color: $nvb-gray-light !important;
+}
+
+.bg-gray {
+    background-color: $nvb-gray !important;
+}
+
+.bg-gray-dark {
+    background-color: $nvb-gray-dark !important;
+}
+
+.bg-gray-darker {
+    background-color: $nvb-gray-darker !important;
+}
+
+.bg-green-lightest {
+    background-color: $nvb-green-lightest !important;
+}
+
+.bg-green {
+    background-color: $nvb-green !important;
+}
+
+.bg-green-dark {
+    background-color: $nvb-green-dark !important;
+}
+
+.bg-green-darker {
+    background-color: $nvb-green-darker !important;
+}
+
+.bg-blue {
+    background-color: $nvb-blue !important;
+}
+
+.bg-blue-dark {
+    background-color: $nvb-blue-dark !important;
+}
+
+.bg-orange {
+    background-color: $nvb-orange !important;
+}
+
+.bg-red-light {
+    background-color: $nvb-red-light !important;
+}
+
+.bg-red {
+    background-color: $nvb-red !important;
+}
+
+.bg-gray-content-background {
+    background-color: $nvb-gray-content-background !important;
+}
+
+//Font variants
+.text-os-light {
+    font-weight: 300 !important;
+}
+
+.text-os-semibold {
+    font-style: normal !important;
+    font-weight: 600 !important;
+}
+
+.text-os-bold {
+    font-style: normal !important;
+    font-weight: 700 !important;
+}
+
+.text-no-warp {
+    white-space: nowrap !important;
+}
+
+// font-sizes para cantidades de saldos
+.text-size-primary {
+    font-size: 20px;
+    @media (min-width: $screen-sm-min) {
+        font-size: 30px;
+    }
+}
+
+.text-size-secondary {
+    font-size: 21px;
+    @media (min-width: $screen-sm-min) {
+        font-size: 21px;
+    }
+}
+
+.line-height-headign-aux {
+    line-height: 24px;
+    @media (min-width: $screen-sm-min) {
+        line-height: 26px;
+    }
+}
+
+.text-size-headign-aux {
+    font-size: 24px;
+    @media (min-width: $screen-sm-min) {
+        font-size: 26px;
+    }
+}
+
+//heights
+.h-100 {
+    height: 100vh;
+}
+
+//font-sizes generales para textos
+.fs-10 {
+    font-size: 10px !important;
+}
+
+.fs-11 {
+    font-size: 11px !important;
+}
+
+.fs-12 {
+    font-size: 12px !important;
+}
+
+.fs-13 {
+    font-size: 13px !important;
+}
+
+.fs-14 {
+    font-size: 14px !important;
+}
+
+.fs-15 {
+    font-size: 15px !important;
+}
+
+.fs-16 {
+    font-size: 16px !important;
+}
+
+.fs-18 {
+    font-size: 18px !important;
+}
+
+.fs-19 {
+    font-size: 19px !important;
+}
+
+.fs-20 {
+    font-size: 20px !important;
+}
+
+.fs-25 {
+    font-size: 25px !important;
+}
+
+.fs-28 {
+    font-size: 28px !important;
+}
+
+.fs-30 {
+    font-size: 30px !important;
+}
+
+.fs-35 {
+    font-size: 35px !important;
+}
+
+.fs-50 {
+    font-size: 50px !important;
+}
+
+// paddings
+.p-0 {
+    padding: 0;
+}
+
+.p-1 {
+    padding: $padding-base;
+}
+
+.pt-1 {
+    padding-top: $padding-base;
+}
+
+.pb-1 {
+    padding-bottom: $padding-base;
+}
+
+.pl-0 {
+    padding-left: 0 !important;
+}
+
+.pr-0 {
+    padding-right: 0 !important;
+}
+
+.pt-0 {
+    padding-top: 0 !important;
+}
+
+.pb-0 {
+    padding-bottom: 0 !important;
+}
+
+.pl-1 {
+    padding-left: $padding-base;
+}
+
+.pr-1 {
+    padding-right: $padding-base;
+}
+
+.p-2 {
+    padding: ($padding-base)*2;
+}
+
+.pt-2 {
+    padding-top: ($padding-base)*2;
+}
+
+.pb-2 {
+    padding-bottom: ($padding-base)*2;
+}
+
+.pl-2 {
+    padding-left: ($padding-base)*2;
+}
+
+.pr-2 {
+    padding-right: ($padding-base)*2;
+}
+
+.p-3 {
+    padding: ($padding-base)*3;
+}
+
+.pt-3 {
+    padding-top: ($padding-base)*3;
+}
+
+.pb-3 {
+    padding-bottom: ($padding-base)*3;
+}
+
+.pl-3 {
+    padding-left: ($padding-base)*3;
+}
+
+.pr-3 {
+    padding-right: ($padding-base)*3;
+}
+
+.p-dynamic {
+    padding-left: ($padding-base);
+    padding-right: ($padding-base);
+    @media (min-width: $screen-md-min) {
+        padding-left: ($padding-base)*1.5;
+        padding-right: ($padding-base)*1.5;
+    }
+    @media (min-width: $nvb-screen-md-special-min) {
+        padding-left: ($padding-base)*2;
+        padding-right: ($padding-base)*2;
+    }
+}
+
+//Displays
+.d-table {
+    display: table;
+}
+
+.d-table-row {
+    display: table-row;
+}
+
+.d-table-cell {
+    display: table-cell;
+}
+
+.d-block {
+    display: block !important;
+}
+
+.d-inline {
+    display: inline !important;
+}
+
+.d-inline-block {
+    display: inline-block !important;
+}
+
+//Margins
+.m-1 {
+    margin: $margin-base;
+}
+
+.m-2 {
+    margin: ($margin-base)*2;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mb-12 {
+    margin-bottom: 12px;
+}
+
+.mr-1 {
+    margin-right: $margin-base;
+}
+
+.mt-1 {
+    margin-top: $margin-base;
+}
+
+.mb-1 {
+    margin-bottom: $margin-base;
+}
+
+.mb-2 {
+    margin-bottom: ($margin-base)*2;
+}
+
+.ml-1 {
+    margin-left: $margin-base;
+}
+
+.mr-2 {
+    margin-right: $margin-base *2;
+}
+
+.mt-2 {
+    margin-top: $margin-base *2;
+}
+
+.mb-2 {
+    margin-bottom: $margin-base *2;
+}
+
+.ml-2 {
+    margin-left: $margin-base *2;
+}
+
+.mt-25 {
+    margin-top: 25px;
+}
+
+.mt-35 {
+    margin-top: 35px;
+}
+
+.mt-5 {
+    margin-top: 5px;
+}
+
+//Bordes
+.borde-superior {
+    width: 20px;
+    height: 2px;
+    background-color: $nvb-green;
+}
+
+.borde-izquierdo {
+    border-left: 1px solid $nvb-gray-user-menu;
+}
+
+.border-dashed {
+    border: 1px solid dashed $nvb-green;
+}
+
+.borde-inferior-gray-dark {
+    border-bottom: 1px solid $nvb-gray-dark;
+}
+
+//Cursores
+.interactive {
+    cursor: pointer;
+}
+
+//Aliniaciones
+.v-align-middle {
+    vertical-align: middle !important;
+}
+
+//list style
+.list-style-disc {
+    list-style: disc;
+}
+
+//Sombras
+.box-shadow {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2)
+}
+
+.min-h-date {
+    min-height: 350px;
+}
+
+.min-h-documents{
+    min-height: 500px;
+}

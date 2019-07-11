@@ -1,0 +1,11 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "code": "PRUEBA 02738",
+    "name": "VALOR PRUEBA 02738",
+    "productType": "02738"
+  }
+}

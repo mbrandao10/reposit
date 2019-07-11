@@ -1,0 +1,26 @@
+<app-modal #modal>
+    <ng-container *ngIf="modalData">
+        <!--app-modal-header Confirmación-->
+        <div>
+
+            <app-modal-body>{{modalData.text | translate}}</app-modal-body>
+            <app-modal-footer>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 mt-1 text-left">
+                        <button class="btn btn-secondary" (click)="cancelConfirmModal()">
+                            {{ (modalData.cancelText ? modalData.cancelText :'ITECBAN-COMMON.COMPONENT.HEADER.CONFIRM.NO') |
+                            translate}}
+                        </button>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 mt-1 text-right">
+                        <button class="btn btn-primary" (click)="acceptConfirmModal()">
+                            {{ (modalData.acceptText ? modalData.acceptText : 'ITECBAN-COMMON.COMPONENT.HEADER.CONFIRM.YES')|
+                            translate}}
+                        </button>
+                    </div>
+                </div>
+            </app-modal-footer>
+        </div>
+    </ng-container>
+
+</app-modal>

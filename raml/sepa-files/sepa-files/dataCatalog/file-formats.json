@@ -1,0 +1,16 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "AEB19.14",
+      "name": "AEB19.14 - Domiciliaciones SEPA"
+    },
+       {
+      "id": "AEB34.14",
+      "name": "AEB34.14 - Transferencias SEPA"
+    }
+  ]
+}

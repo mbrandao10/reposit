@@ -1,0 +1,88 @@
+<div class="row">
+	<div class="col-md-6 col-xs-12">
+		<div>
+			<div>
+				<div class="row mt-1 mb-1">
+					<div OsbVoucherKeyValue class="col-xs-6 voucherKeyValue">
+						<div>
+							<b OsbVoucherKey> {{ 'ONESAIT-CONFIRMING.ADD.DATETIME' | translate }}
+							</b>
+						</div>
+						<div class="text-gray-dark" OsbVoucherValue>
+							{{ finishDate | dateLocalized:'short'}}
+						</div>
+					</div>
+					<div OsbVoucherKeyValue class="col-xs-6">
+						<div>
+							<b OsbVoucherKey>
+								{{ 'ONESAIT-CONFIRMING.ADD.CONTRACT' | translate }}
+							</b>
+						</div>
+						<div class="text-gray-dark" OsbVoucherValue>
+							{{ newConfirmingForm.controls.product.value.name }}
+						</div>
+					</div>
+				</div>
+				<div class="row mt-1 mb-1">
+					<div OsbVoucherKeyValue class="col-xs-6" *ngIf="accountInfo.username">
+						<div>
+							<b OsbVoucherKey> {{ 'ONESAIT-CONFIRMING.ADD.OWNERSHIP' | translate }}
+							</b>
+						</div>
+						<div class="text-gray-dark" OsbVoucherValue>
+							{{ accountInfo.username }}
+						</div>
+					</div>
+					<div OsbVoucherKeyValue class="col-xs-6" *ngIf="accountInfo.userId">
+						<div>
+							<b OsbVoucherKey>
+								{{ 'ONESAIT-CONFIRMING.ADD.CIF' | translate }}
+							</b>
+						</div>
+						<div class="text-gray-dark" OsbVoucherValue>
+							{{ accountInfo.holderLegalId }}
+						</div>
+					</div>
+				</div>
+				<div OsbVoucherKeyValue class="mt-1 mb-1" *ngIf="accountInfo.attorney">
+					<div>
+						<b OsbVoucherKey>
+							{{ 'ONESAIT-CONFIRMING.ADD.ATTORNEY' | translate }}
+						</b>
+					</div>
+					<div class="text-gray-dark" OsbVoucherValue>
+						{{ accountInfo.attorney }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div OsbVoucherKeyValue class="col-md-6 col-xs-12">
+		<div OsbVoucherKey class="text-os-semibold mt-1 mb-1">
+			{{ 'ONESAIT-CONFIRMING.ADD.INFO' | translate }}
+		</div>
+		<div class="text-gray-dark" >
+			<p>
+				{{ 'ONESAIT-CONFIRMING.ADD.INFO-PRODUCT1' | translate }}
+			</p>
+			<p>
+				{{ 'ONESAIT-CONFIRMING.ADD.INFO-PRODUCT2' | translate }} </p>
+			<p>
+				{{ 'ONESAIT-CONFIRMING.ADD.INFO-PRODUCT3' | translate }} </p>
+			<p>
+				{{ 'ONESAIT-CONFIRMING.ADD.INFO-PRODUCT4' | translate }} </p>
+			<p>
+				{{ 'ONESAIT-CONFIRMING.ADD.INFO-PRODUCT5' | translate }} </p>
+			<p>
+				{{ 'ONESAIT-CONFIRMING.ADD.INFO-PRODUCT6' | translate }} </p>
+		</div>
+		<div class="hidden" OsbVoucherValue>
+			{{ 'ONESAIT-CONFIRMING.ADD.INFO-PRODUCT1' | translate }}
+			{{ 'ONESAIT-CONFIRMING.ADD.INFO-PRODUCT2' | translate }}
+			{{ 'ONESAIT-CONFIRMING.ADD.INFO-PRODUCT3' | translate }}
+			{{ 'ONESAIT-CONFIRMING.ADD.INFO-PRODUCT4' | translate }}
+			{{ 'ONESAIT-CONFIRMING.ADD.INFO-PRODUCT5' | translate }}
+			{{ 'ONESAIT-CONFIRMING.ADD.INFO-PRODUCT6' | translate }}
+		</div>
+	</div>
+</div>

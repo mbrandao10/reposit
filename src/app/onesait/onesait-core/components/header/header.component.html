@@ -1,0 +1,68 @@
+<div class="row header-container">
+    <nav class="visible-xs">
+        <div class="row">
+            <div class="col-xs-2">
+                <span class="navbar-brand">
+                    <i class="icon icononesait icon-menu" (click)="toogleMenu()"></i>
+                </span>
+            </div>
+            <div class="col-xs-8">
+                <osb-header-title [headerTitle]="headerTitle"></osb-header-title>
+            </div>
+            <div class="pull-right button-operations">
+                <span class="navbar-brand">
+                    <i class="icon icononesait icon-configuration" (click)="openFooterMenu()"></i>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="col-sm-11 hidden-xs">
+        <span class="menu-opener navbar-brand hidden visible-sm-block" [ngClass]="{'open': showMenu}">
+            <i class="icon icononesait icon-menu" [ngClass]="{'open': showMenu}" (click)="toogleMenu()"></i>
+        </span>
+        <osb-header-title [headerTitle]="headerTitle"></osb-header-title>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown dropdown-navhead" *ngFor="let section of headerConfig.sections">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false">
+                    <span class="icon icononesait {{section.icon}} dropdown-navhead-icon"></span>
+                    <span class="hidden-sm dropdown-navhead-text">{{ section.name | translate }}</span>
+                    <span class="icon icononesait icon-arrow-drop-down"></span>
+                </a>
+                <div class="dropdown-arrow"></div>
+                <ul class="dropdown-menu">
+                    <li *ngFor="let operation of section.operations">
+                        <a (click)="changeComboBoxMenu(operation)">{{operation.name | translate }}</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown dropdown-profile">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false">
+                    <strong>{{activeProfileTitle}}</strong>
+                    <br><small>{{activeProfileName}}</small>
+                    <span class="icon icononesait icon-arrow-drop-down"></span>
+                </a>
+                <div class="dropdown-arrow"></div>
+                <ul class="dropdown-menu">
+                    <li *ngFor="let profile of profiles">
+                        <a (click)="changeProfile(profile)">
+                            {{ profile.relationShip.name }}
+                            <br><small>{{ profile.contractName }}</small>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="col-sm-1 hidden-xs">
+        <div class="avatar" (click)="mySpace()" title="{{ 'USER.MENU.PERSONAL.INFO' | translate }} (JG)">
+            <div class="content-avatar interactive">{{avatarAlias}}</div>
+        </div>
+    </div>
+</div>
+
+
+    
+<osb-footer-menu #footerMenu [operations]="sectionsFooterMenu.operations"></osb-footer-menu>

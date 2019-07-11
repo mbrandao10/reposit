@@ -1,0 +1,35 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "amountOptions": [
+      {
+        "amount": 5000.00,
+        "percentage": 50.00
+      },{
+        "amount": 8000.00,
+        "percentage": 75.00
+      },{
+        "amount": 10000.00,
+        "percentage": 100.00
+      }
+    ],
+    "periodOptions": [
+      {
+        "id": "0012",
+        "description": "12 MESES",
+        "interest": 55.00
+      },{
+        "id": "0024",
+        "description": "24 MESES",
+        "interest": 58.00
+      },{
+        "id": "0036",
+        "description": "36 MESES",
+        "interest": 63.00
+      }
+    ]
+  }
+}

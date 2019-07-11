@@ -1,0 +1,59 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "amount": {
+      "amount": 1285.01,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "requiredSignatures": 3,
+    "transactionId": "TRSP8828282222292",
+    "group": {
+      "id": "TRSP",
+      "name": "Traspaso"
+    },
+    "signers": [
+      {
+        "name": "Brian Wilson",
+        "userNumber": "121212112",
+        "date": "2014-10-30T00:00:00.00Z",
+        "status": {
+          "id": "0",
+          "name": "PENDIENTE FIRMA"
+        }
+      },
+      {
+        "name": "Al Jardine",
+        "userNumber": "121212112",
+        "date": "2014-10-30T00:00:00.00Z",
+        "status": {
+          "id": "1",
+          "name": "FIRMA COMPLETADA"
+        }
+      },
+      {
+        "name": "Bruce Jonhnston",
+        "userNumber": "121212112",
+        "date": "2014-10-30T00:00:00.00Z",
+        "status": {
+          "id": "1",
+          "name": "PENDIENTE FIRMA"
+        }
+      },
+      {
+        "name": "Mike Love",
+        "userNumber": "121212112",
+        "date": "2014-10-30T00:00:00.00Z",
+        "status": {
+          "id": "0",
+          "name": "FIRMA COMPLETADA"
+        }
+      }
+    ]
+  }
+}

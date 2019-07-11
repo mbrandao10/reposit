@@ -1,0 +1,15 @@
+{
+  "accountId": "ES8120952318526683783933",
+  "taxPaymentClass":"TgssTaxPayment",
+  "issuerEntity": "02827003",
+  "reference": "0007126249250",
+  "identification": "180301",
+  "paymentAmount": {
+    "amount": 88.75,
+    "currency": {
+      "id": "EUR",
+      "code": "978"
+    }
+  },
+  "isDirectDebit": true
+}

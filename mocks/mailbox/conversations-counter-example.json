@@ -1,0 +1,11 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data":
+    {
+      "numOfNewConversations": 3,
+      "hasNewConversations": true
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "result": {
+    "code": "401",
+    "info": "Unauthorized",
+    "errors": [
+      {
+        "errorDescription": "Authentication failed or user doesn’t have permissions for requested operation.",
+        "errorCode": "000A",
+        "errorType": "S"
+      }
+    ]
+  }
+}

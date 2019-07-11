@@ -1,0 +1,93 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="row">
+    <div class="col-xs-12  p-dynamic">
+        <div class="row">
+            <div class="col-xs-12">
+                <osb-tabs [tabs]="pageConfig.tabs" [(view)]="view"></osb-tabs>
+            </div>
+        </div>
+        <div class="row page-tabbed pb-1 pt-1">
+            <div class="col-xs-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <form [formGroup]="selectAccountsForm">
+                            <div class="row">
+
+                                <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                                    <label for="selectAccounts">
+
+                                        {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBITS-PAGE.SELECT-AN-ACCOUNT' | translate }}*
+
+                                    </label>
+                                    <select class="form-control form-control-amim" name="selectAccounts"
+                                        formControlName="selectAccounts" (ngModelChange)="getContracts($event)">
+                                        <option *ngFor="let account of accounts" [ngValue]="account">
+                                            {{ account.formats | formatAccountPipe: accountFormatView }}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div *ngIf="view==='contracts' && contracts && contracts.length > 0" scroll-collapse-emitter>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <table class="table table-striped">
+                                <thead class="hidden-xs">
+                                    <tr>
+                                        <th>
+                                            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBITS-PAGE.TABLE.ISSUING-ENTITY' | translate }}
+                                        </th>
+                                        <!-- <th>
+                                            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBITS-PAGE.TABLE.ISSUING-DOCUMENT' | translate }}
+                                        </th>-->
+                                        <th>
+                                            {{ 'ITECBAN-DIRECTDEBITS.DIRECTDEBITS-PAGE.TABLE.REFERENCE-DOMICILIATION' | translate }}
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr (click)="viewDetail(contract.id)" *ngFor="let contract of contracts"
+                                        class="interactive">
+                                        <td>
+                                            <span class="hidden-xs" *ngIf="contract.issuerName">
+                                                {{ contract.issuerName }}
+                                            </span>
+                                            <span class="visible-xs-block text-os-semibold"
+                                                style="word-break: break-word;">
+                                                {{ contract.issuerName }}
+                                            </span>
+                                            <!-- <span class="visible-xs-block fs-12" style="word-break: break-word;">
+                                                {{ contract.issuerLegalDocument.id }}
+                                            </span>-->
+                                        </td>
+                                        <!-- <td class="hidden-xs">
+                                            <span *ngIf="contract.issuerLegalDocument">
+                                               ss{{ contract.issuerLegalDocument.id }}
+                                            </span>
+                                        </td>-->
+                                        <td>
+                                            <span class="hidden-xs" *ngIf="contract.reference">
+                                                {{ contract.reference }}
+                                            </span>
+                                            <span class="visible-xs-block" style="word-break: break-word;">
+                                                {{ contract.reference }}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <osb-directdebit-payments-return *ngIf="view==='returns' && selectAccountsForm.valid"
+                    [account]="account" scroll-collapse-emitter>
+                </osb-directdebit-payments-return>
+            </div>
+
+        </div>
+    </div>
+</div>

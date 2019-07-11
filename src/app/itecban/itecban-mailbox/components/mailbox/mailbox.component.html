@@ -1,0 +1,14 @@
+<ng-container *ngIf="view==='list'">
+    <div class="filter-open" [ngClass]="{'filter-open': viewFilter}">
+        <osb-search-list [formGroup]="filterSearchForm" [formConfig]="formConfig" (search)="next()"></osb-search-list>
+    </div>
+</ng-container>
+<ng-container *ngIf="mailsBox">
+    <div AppScrollCollapseEmitter="AppScrollCollapseEmitter" [ngClass]="{'with-filter': view==='list'}">
+        <app-mailbox-list [mailsBox]="mailsBox"></app-mailbox-list>
+
+        <div class="row" *ngIf="hasMoreData">
+            <a class="col-xs-12 text-center" (click)="next()" role="button">{{'ITECBAN-ACCOUNT.MOVEMENT.MORE-DATA' | translate}}</a>
+        </div>
+    </div>
+</ng-container>

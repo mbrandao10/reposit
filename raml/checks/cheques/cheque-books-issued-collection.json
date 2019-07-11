@@ -1,0 +1,207 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "0122415",
+      "status": {
+        "id": "PAID",
+        "name": "Pagado"
+      },
+      "amount": {
+        "amount": 600.4,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 600.4,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "date": "2014-10-30T00:00:00.00Z",
+      "chequeBooksType": {
+        "id": "1",
+        "name": "CH C/C 20 EURO"
+      },
+      "chequeBooksNumber": "123",
+      "conformed": "NO"
+    },
+    {
+      "id": "0122416",
+      "status": {
+        "id": "RETURNED",
+        "name": "Devuelto"
+      },
+      "amount": {
+        "amount": 450,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 600.4,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "date": "2014-10-29T00:00:00.00Z",
+      "chequeBooksType": {
+        "id": "1",
+        "name": "CH C/C 20 EURO"
+      },
+      "chequeBooksNumber": "124",
+      "conformed": "NO"
+    },
+    {
+      "id": "0122417",
+      "status": {
+        "id": "CANCELLED",
+        "name": "Anulado"
+      },
+      "amount": {
+        "amount": 5660,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 600.4,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "date": "2014-10-28T00:00:00.00Z",
+      "chequeBooksType": {
+        "id": "1",
+        "name": "CH C/C 20 EURO"
+      },
+      "chequeBooksNumber": "125",
+      "conformed": "NO"
+    },
+    {
+      "id": "0122418",
+      "status": {
+        "id": "PAID",
+        "name": "Pagado"
+      },
+      "amount": {
+        "amount": 60,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 600.4,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "date": "2014-10-27T00:00:00.00Z",
+      "chequeBooksType": {
+        "id": "1",
+        "name": "CH C/C 20 EURO"
+      },
+      "chequeBooksNumber": "126",
+      "conformed": "NO"
+    },
+    {
+      "id": "0122419",
+      "status": {
+        "id": "PAID",
+        "name": "Pagado"
+      },
+      "amount": {
+        "amount": 60,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 600.4,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "date": "2014-10-26T00:00:00.00Z",
+      "chequeBooksType": {
+        "id": "1",
+        "name": "CH C/C 20 EURO"
+      },
+      "chequeBooksNumber": "127",
+      "conformed": "NO"
+    },
+    {
+      "id": "0122420",
+      "status": {
+        "id": "PAID",
+        "name": "PAgado"
+      },
+      "amount": {
+        "amount": 60,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 600.4,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "date": "2014-10-25T00:00:00.00Z",
+      "chequeBooksType": {
+        "id": "1",
+        "name": "CH C/C 20 EURO"
+      },
+      "chequeBooksNumber": "128",
+      "conformed": "NO"
+    },
+    {
+      "id": "0122421",
+      "status": {
+        "id": "PAID",
+        "name": "PAgado"
+      },
+      "amount": {
+        "amount": 60,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 600.4,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "date": "2014-10-24T00:00:00.00Z",
+      "chequeBooksType": {
+        "id": "1",
+        "name": "CH C/C 20 EURO"
+      },
+      "chequeBooksNumber": "129",
+      "conformed": "NO"
+    }
+  ],
+  "paging": {
+    "hasMorePages": false
+  }
+}

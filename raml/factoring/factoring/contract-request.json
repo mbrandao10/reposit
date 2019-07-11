@@ -1,0 +1,12 @@
+{
+  "productId":"fact-01111111",
+  "factoringType": "01",
+  "collectionManagementLimit":{
+    "amount": 90000.01,
+    "currency":"978"
+  },
+   "financingLimit":{
+    "amount": 4566.01,
+    "currency": "978"
+  }
+}

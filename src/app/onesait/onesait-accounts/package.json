@@ -1,0 +1,8 @@
+{
+    "name": "onesait-accounts",
+    "version": "0.0.2",
+    "description": "modulo de onesait-accounts",
+    "main": "index.js",
+    "author": "Minsait",
+    "license": "ISC"
+}

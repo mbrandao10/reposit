@@ -1,0 +1,617 @@
+<app-loader *ngIf="loading"></app-loader>
+<div class="row page-non-tabbed pb-1">
+    <div class="col-xs-12 p-dynamic mt-1">
+
+        <!-- Seleccion de cuenta -->
+        <ng-container *ngIf="step === 'FIRST'">
+            <div class="panel">
+                <div class="panel-body">
+                    <form #formStep1="ngForm">
+                        <div class="row">
+                            <div class="col-md-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="selectCuenta">
+                                        <b>
+                                            {{ 'ITECBAN-ACCOUNT.ADD.SELECT.TYPE' | translate }}
+                                        </b>
+                                    </label>
+                                    <select class="form-control" [(ngModel)]="productSelected" (ngModelChange)="getDetailProduct($event)" name="product" id="selectCuenta">
+                                        <option *ngFor="let product of products" [value]="product.id">
+                                            {{ product.name | capitalize }}
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div *ngIf="genericAccountInfo">
+                                            <div class="row mt-1 mb-1">
+                                                <div class="col-xs-6" *ngIf="genericAccountInfo.username">
+                                                    <div class="text-os-semibold mb-12">
+                                                        {{ 'ITECBAN-ACCOUNT.ADD.OWNERSHIP' | translate }}
+                                                    </div>
+                                                    <div class="text-gray-dark">
+                                                        {{ genericAccountInfo.username }}
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-6" *ngIf="genericAccountInfo.userId">
+                                                    <div class="text-os-semibold mb-12">
+                                                        {{ 'ITECBAN-ACCOUNT.ADD.CIF' | translate }}
+                                                    </div>
+                                                    <div class="text-gray-dark">
+                                                        {{ genericAccountInfo.userId }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-1 mb-1" *ngIf="genericAccountInfo.attorney">
+                                                <div class="text-os-semibold mb-12">
+                                                    {{ 'ITECBAN-ACCOUNT.ADD.ATTORNEY' | translate }}
+                                                </div>
+                                                <div class="text-gray-dark">
+                                                    {{ genericAccountInfo.attorney }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12">
+                                <div class="row" *ngIf="genericAccountInfo.product">
+                                    <div class="col-xs-12 mb-2 text-os-semibold">
+                                        {{ 'ITECBAN-ACCOUNT.ADD.PRODUCT.INFORMATION' | translate }}
+                                    </div>
+
+                                    <div class="col-xs-6 mb-1" *ngIf="genericAccountInfo.product.name">
+                                        <div class="text-os-semibold">
+                                            {{ 'ITECBAN-ACCOUNT.ADD.NAME' | translate }}
+                                        </div>
+                                        <div class="text-gray-dark">
+                                            {{ genericAccountInfo.product.name }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-6 mb-1" *ngIf="genericAccountInfo.product.settlementTerm">
+                                        <div class="text-os-semibold">
+                                            {{ 'ITECBAN-ACCOUNT.ADD.LIQUIDITY.PERIOD' | translate }}
+                                        </div>
+                                        <div class="text-gray-dark">
+                                            {{ genericAccountInfo.product.settlementTerm | capitalize }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-6" *ngIf="genericAccountInfo.product.interest">
+                                        <div class="text-os-semibold">
+                                            {{ 'ITECBAN-ACCOUNT.ADD.INTEREST' | translate }}
+                                        </div>
+                                        <div class="text-gray-dark">
+                                            {{ genericAccountInfo.product.interest }}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-6" *ngIf="genericAccountInfo.product.tae">
+                                        <div class="text-os-semibold">
+                                            {{ 'ITECBAN-ACCOUNT.ADD.TAE' | translate | uppercase }}
+                                        </div>
+                                        <div class="text-gray-dark">
+                                            {{ genericAccountInfo.product.tae }}%
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xs-12 mt-2 fs-10 text-gray-dark">
+                                        {{ 'ITECBAN-ACCOUNT.ADD.TERMS' | translate }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row mt-2">
+                        <div class="col-xs-6">
+                            <button class="btn btn-terciary" (click)="cancel()">
+                                {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CANCEL' | translate }}
+                            </button>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <button class="btn btn-primary" [disabled]="!formStep1.form.valid" (click)="step = 'VERIFY'">
+                                {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CONFIRM' | translate }}
+                            </button>
+                            <!-- <button class="btn btn-primary" [disabled]="!activeBoton" (click)="step = 'VERIFY'">
+                                    {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CONFIRM' | translate }}
+                                </button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <!-- Condiciones de Contratación -->
+        <ng-container *ngIf="step === 'VERIFY'">
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-12 mt-1 mb-1">
+                            <b>
+                                {{ 'ITECBAN-ACCOUNT.ADD.CONTRACT.CONDITIONS' | translate }}
+                            </b>
+                        </div>
+                        <div class="col-xs-12 col-sm-7">
+                            <div class="mt-1 mb-1 text-gray-dark">
+                                {{ 'ITECBAN-ACCOUNT.ADD.CONTRACT.ONE' | translate }}
+                            </div>
+                            <div class="mt-1 mb-1 text-gray-dark">
+                                {{ 'ITECBAN-ACCOUNT.ADD.CONTRACT.TWO' | translate }}
+                            </div>
+                            <div class="mt-1 mb-1 text-gray-dark">
+                                {{ 'ITECBAN-ACCOUNT.ADD.CONTRACT.THREE' | translate }}
+                            </div>
+                            <div class="mt-1 mb-1 text-gray-dark">
+                                {{ 'ITECBAN-ACCOUNT.ADD.CONTRACT.FOUR' | translate }}
+                            </div>
+                            <div class="mt-1 mb-1 text-gray-dark">
+                                {{ 'ITECBAN-ACCOUNT.ADD.CONTRACT.FIVE' | translate }}
+                            </div>
+                        </div>
+                        <app-conditions [conditions]="conditions" (read)="returnOperation($event)"></app-conditions>
+                        <!-- <div class="col-xs-12 col-sm-5">
+                            <div class="mt-1 mb-1">
+                                <a (click)="downloadDocument('pre-contractual')" class="text-blue text-os-bold">
+                                    <i class="icon icononesait icon-accounts"></i> {{ 'ITECBAN-ACCOUNT.ADD.LINK.DOCUMENTS.PRECONTRACTUAL.INFORMATION' | translate }}
+                                </a>
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <a (click)="downloadDocument('pre-employment')" class="text-blue text-os-bold">
+                                    <i class="icon icononesait icon-accounts"></i> {{ 'ITECBAN-ACCOUNT.ADD.LINK.DOCUMENTS.PREEMPLOYMENT.INFORMATION' | translate }}
+                                </a>
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <a (click)="downloadDocument('global-contract')" class="text-blue text-os-bold">
+                                    <i class="icon icononesait icon-accounts"></i> {{ 'ITECBAN-ACCOUNT.ADD.LINK.DOCUMENTS.GLOBAL.CONTRACT' | translate }}
+                                </a>
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <a (click)="downloadDocument('book-rates')" class="text-blue text-os-bold">
+                                    <i class="icon icononesait icon-accounts"></i> {{ 'ITECBAN-ACCOUNT.ADD.LINK.DOCUMENTS.BOOK.RATES' | translate }}
+                                </a>
+                            </div>
+                            <div class="mt-1 mb-1">
+                                <a (click)="downloadDocument('straight')" class="text-blue text-os-bold">
+                                    <i class="icon icononesait icon-accounts"></i> {{ 'ITECBAN-ACCOUNT.ADD.LINK.DOCUMENTS.STRAIGHT' | translate }}
+                                </a>
+                            </div>
+                        </div> -->
+
+                        <div class="col-xs-12 mt-1 mb-1">
+                            <div class="checkbox">
+                                <label>
+                                    <!-- De esta forma se utilizaria la ventana modal -->
+                                    <!-- <input [checked]="acceptTerms" type="checkbox" name="acceptConditions" required="required" (click)="goTermsCheck()" data-toggle="modal" data-target="#termAndConditionsModal"/> -->
+                                    <input [checked]="checkControl" [disabled]="!activeBoton" type="checkbox" name="acceptConditions" required="required" (click)="controlCheck()" />
+                                    <i class="icon-check"></i>
+                                    <span>
+                                        <a class=" text-gray-dark underline interactive" data-toggle="modal" data-target="#termAndConditionsModal" *ngIf="!activeBoton">
+                                            {{ 'ITECBAN-ACCOUNT.ADD.READ.ACCEPTED' | translate }}
+                                        </a>
+                                        <a class=" text-gray-dark underline interactive"  (click)="controlCheck()" data-toggle="modal" data-target="#termAndConditionsModal"  *ngIf="activeBoton">
+                                            {{ 'ITECBAN-ACCOUNT.ADD.READ.ACCEPTED' | translate }}
+                                        </a>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 mt-2">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <button class="btn btn-terciary" (click)="cancel()">
+                                        {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CANCEL' | translate }}
+                                    </button>
+                                </div>
+                                <div class="col-xs-6 text-right">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <button class="btn btn-secondary" (click)="step = 'FIRST'">
+                                                {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.BEHIND' | translate }}
+                                            </button>
+                                        </div>
+                                        <!-- De esta forma el boton es visible pero no accionable -->
+                                        <!-- <div class="col-xs-6" *ngIf="!checkControl">
+                                      <button class="btn btn-primary disabled"  >
+                                          {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CONFIRM' | translate }}
+                                      </button>
+                                  </div> -->
+                                        <div class="col-xs-6" *ngIf="checkControl">
+                                            <button class="btn btn-primary" [disabled]="!checkControl" (click)="addAccount()">
+                                                {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CONFIRM' | translate }}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <!-- Tarjeta de Coordenadas -->
+        <ng-container *ngIf="step === 'TOKEN'">
+            <div class="panel">
+                <div class="panel-body">
+                    <form #formStep3="ngForm">
+
+                        <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+
+                        <div class="row mt-2">
+                            <div class="col-xs-6">
+                                <button class="btn btn-terciary" (click)="cancel()">
+                                    {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CANCEL' | translate }}
+                                </button>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <button class="btn btn-secondary" (click)="step = 'VERIFY'">
+                                            {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.BEHIND' | translate }}
+                                        </button>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <button class="btn btn-primary" [disabled]="!signatureEntity?.tokenValid" (click)="tokenCompleted()">
+                                            {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.FINALIZE' | translate }}
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </ng-container>
+
+        <!-- Contratacion Correcta -->
+        <ng-container *ngIf="step === 'CREATED'">
+            <div class="panel">
+                <div class="panel-body">
+                    <osb-final-message [text]="'ITECBAN-ACCOUNT.ADD.HIRING.CORRECT'"></osb-final-message>
+                    <!-- <osb-final-message text="{{'ONESAIT-TRANSFERS.EMIT.CORRECT' | translate}}"></osb-final-message> -->
+                    <osb-voucher-container #voucherContainer>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 mt-1">
+                                <ng-container *ngIf="genericAccountInfo.product">
+                                    <div class="row">
+                                        <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="dateAndTime">
+                                            <div OsbVoucherKey class="text-os-semibold ">
+                                                {{ 'ITECBAN-ACCOUNT.ADD.DATE' | translate }}
+                                            </div>
+                                            <div OsbVoucherValue class="text-section ">
+                                                {{ dateAndTime | date: 'dd/MM/yyyy - hh: mm' }}h
+                                            </div>
+                                        </div>
+                                        <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="genericAccountInfo.product.name">
+                                            <div OsbVoucherKey class="text-os-semibold ">
+                                                {{ 'ITECBAN-ACCOUNT.ADD.ACCOUNT' | translate }}
+                                            </div>
+                                            <div OsbVoucherValue class="text-section ">
+                                                {{ genericAccountInfo.product.name }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="genericAccountInfo.username">
+                                            <div OsbVoucherKey class="text-os-semibold ">
+                                                {{ 'ITECBAN-ACCOUNT.ADD.OWNERSHIP' | translate }}
+                                            </div>
+                                            <div OsbVoucherValue class="text-section ">
+                                                {{ genericAccountInfo.username }}
+                                            </div>
+                                        </div>
+                                        <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="genericAccountInfo.userId">
+                                            <div OsbVoucherKey class="text-os-semibold ">
+                                                {{ 'ITECBAN-ACCOUNT.ADD.CIF' | translate }}
+                                            </div>
+                                            <div OsbVoucherValue class="text-section ">
+                                                {{ genericAccountInfo.userId }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="genericAccountInfo.attorney">
+                                            <div OsbVoucherKey class="text-os-semibold ">
+                                                {{ 'ITECBAN-ACCOUNT.ADD.ATTORNEY' | translate }}
+                                            </div>
+                                            <div OsbVoucherValue class="text-section ">
+                                                {{ genericAccountInfo.attorney }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 mt-1">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div>
+                                            <div *ngIf="genericAccountInfo.product">
+                                                <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="accountCreated.id">
+                                                    <div OsbVoucherKey class="text-os-semibold ">
+                                                        {{ 'ITECBAN-ACCOUNT.ADD.IBAN' | translate }}
+                                                    </div>
+                                                    <div OsbVoucherValue class="text-section ">
+                                                        {{ accountCreated.id }}
+                                                    </div>
+                                                </div>
+                                                <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="genericAccountInfo.product.name">
+                                                    <div OsbVoucherKey class="text-os-semibold ">
+                                                        {{ 'ITECBAN-ACCOUNT.ADD.PRODUCT.NAME' | translate }}
+                                                    </div>
+                                                    <div OsbVoucherValue class="text-section ">
+                                                        {{ genericAccountInfo.product.name }}
+                                                    </div>
+                                                </div>
+                                                <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="genericAccountInfo.product.settlementTerm">
+                                                    <div OsbVoucherKey class="text-os-semibold ">
+                                                        {{ 'ITECBAN-ACCOUNT.ADD.LIQUIDITY.PERIOD' | translate }}
+                                                    </div>
+                                                    <div OsbVoucherValue class="text-section ">
+                                                        {{ genericAccountInfo.product.settlementTerm }}
+                                                    </div>
+                                                </div>
+                                                <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="genericAccountInfo.product.interest">
+                                                    <div OsbVoucherKey class="text-os-semibold ">
+                                                        {{ 'ITECBAN-ACCOUNT.ADD.INTEREST' | translate }}
+                                                    </div>
+                                                    <div OsbVoucherValue class="text-section ">
+                                                        {{ genericAccountInfo.product.interest }}
+                                                    </div>
+                                                </div>
+                                                <div OsbVoucherKeyValue class="col-xs-12 mb-1 " *ngIf="genericAccountInfo.product.tae">
+                                                    <div OsbVoucherKey class="text-os-semibold ">
+                                                        {{ 'ITECBAN-ACCOUNT.ADD.TAE' | translate }}
+                                                    </div>
+                                                    <div OsbVoucherValue class="text-section ">
+                                                        {{ genericAccountInfo.product.tae }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 mt-1 mb-1">
+                                <osb-download-info [voucherContainer]="voucherContainer" text="{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.DOWNLOAD-RECEIPT' | translate}}">
+                                </osb-download-info>
+                                <div class="mt-1">
+                                    <a (click)="downloadDocument('pre-contractual')" class="text-os-bold text-gray-dark">
+                                    {{ 'ITECBAN-ACCOUNT.ADD.LINK.DOCUMENTATION' | translate }}
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 text-right">
+                                <button class="btn btn-primary" (click)="goToAccounts()">
+                                    {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.ACCOUNTS' | translate }}
+                                </button>
+                            </div>
+                        </div>
+
+                    </osb-voucher-container>
+                </div>
+            </div>
+        </ng-container>
+
+        <!-- Terminos del chekerd -->
+        <!-- <div class="modal fade" id="termAndConditionsModal" aria-hidden="true" data-backdrop="static" data-keyboard="false" *ngIf="step === 'TERMS'" role="dialog" >
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button class="close" type="button" data-dismiss="modal" (click)="goExitTerms()">
+                      &times;
+                  </button>
+                  <div class="modal-title">
+                      CONDICIONES PARTICULARES DE CAJAS DE AHORRO
+                  </div>
+              </div>
+              <div class="modal-body">
+                  <h5 class="fp-semibold">
+                      I - APERTURA DE LAS CUENTAS
+                  </h5>
+                  <ol>
+                      <li>
+                          Formas de apertura.
+                          <br/>
+                          El Banco podrá abrir caja de ahorro en pesos o dólares a personas
+                          humanas, en las siguientes formas:
+                          <ol>
+                              <li>A nombre y orden de una sola persona.</li>
+                              <li>A nombre y orden indistinta de dos o más de esas personas.</li>
+                          </ol>
+                          Para el caso de la CUENTA SUELDO, el Banco podrá abrir la respectiva cuenta, a
+                          solicitud de los empleadores alcanzados por la obligación de abonar las remuneraciones a su
+                          personal, mediante la acreditación en cuenta, conforme a lo dispuesto por el Ministerio de
+                          Trabajo, Empleo y Seguridad Social, en el marco de lo dispuesto por el artículo 124 del
+                          Régimen de Contrato de Trabajo (texto según Ley 26.590). La cuenta se abrirá a nombre del
+                          empleado y podrá tener otro u otros titulares.
+                      </li>
+                      <li>
+                          Reglamentación.El Solicitante se notifica que el texto de las normas reglamentarias de las
+                          cuentas de ahorro solicitadas, se encuentra a su disposición y las mismas podrán además ser
+                          consultadas a través de Internet en la dirección <a>www.bcra.gob.ar.</a>Las eventuales
+                          modificaciones se pondrán en conocimiento del solicitante por los medios que las normas
+                          aplicables permitan.
+                      </li>
+                  </ol>
+                  <h5 class="fp-semibold">
+                      II - FUNCIONAMIENTO DE LAS CUENTAS
+                  </h5>
+                  <ol>
+                      <li>
+                          Imposiciones (depósitos).
+                          <br/>
+                          El Banco no dispondrá de procedimientos propios de recepción
+                          de fondos, los mismos deberán realizarse mediante los canales que se pongan a disposición.
+                      </li>
+                      <li>
+                          Extracciones.
+                          <ol>
+                              <li>
+                                  Las extracciones de los fondos sólo podrán ser realizadas por las personas a cuya
+                                  orden se encontraran las cuentas y en la forma en que dicha orden lo establezca, o
+                                  bien por los representantes respectivos.
+                              </li>
+                              <li>
+                                  Cuenta Sueldo: En ningún caso se podrán realizar extracciones o débitos de
+                                  servicios que superen el saldo acreedor existente, por lo que el Banco queda
+                                  autorizado para impedir dicho movimiento o rechazar el débito de que se trate.
+                              </li>
+                          </ol>
+                      </li>
+                      <li>
+                          Cierre.
+                          <ol>
+                              <li>
+                                  Por decisión del Banco: previamente se cursará aviso a los clientes con 30
+                                  (treinta) días de anticipación al cierre de las cuentas. Los saldos, si los
+                                  hubiera, serán transferidos a una cuenta general y puestos a disposición de los
+                                  interesados, sin devengar intereses a partir de la fecha de cierre. El aviso
+                                  incluirá la comisión a aplicarse sobre los fondos transferidos y la fecha a partir
+                                  de la cual la misma será liquidada.
+                              </li>
+                          </ol>
+                      </li>
+                      <li>
+                          Intereses
+                          <ol>
+                              <li>
+                                  Los saldos de las cuentas podrán devengar intereses a la tasa que fije el Banco.
+                                  Dicha tasa de interés podrá ser aumentada o disminuida de acuerdo con las
+                                  condiciones de mercado, disposiciones del B.C.R.A., o autoridad competente. Los
+                                  intereses se liquidarán y capitalizarán por períodos vencidos no superiores a un
+                                  año, pagaderos cada 30 días. La información relativa a la tasa de interés y a las
+                                  fechas y plazos de capitalización de los mismos estará a disposición de los
+                                  depositantes.
+                              </li>
+                              <li>
+                                  A los fines del cálculo de los intereses se utilizará como divisor fijo el de 365
+                                  días.
+                              </li>
+                              <li>
+                                  La liquidación de intereses se efectuará por períodos vencidos de treinta (30)
+                                  días.
+                              </li>
+                              <li>
+                                  En los casos de retiro total de los fondos depositados los intereses serán
+                                  liquidados hasta el día anterior a la fecha de dicho retiro.
+                              </li>
+                          </ol>
+                      </li>
+                      <li>
+                          Comisiones y Cargos en Cuenta Sueldo
+                          <br/>
+                          La Cuenta Sueldo no estará afectada por cargos ni
+                          comisiones a la apertura, ni por mantenimiento, movimientos de fondos y consulta de saldos,
+                          siempre que la utilización de las cuentas se ajuste a las condiciones establecidas en el
+                          punto 2.3 de la Comunicación “A” 5091 BCRA y hasta el monto de las acreditaciones derivadas
+                          de la relación laboral y demás conceptos previstos en dicha norma.
+                      </li>
+                  </ol>
+                  <h5 class="fp-semibold">
+                      III - DISPOSICIONES COMPLEMENTARIAS
+                  </h5>
+                  <ol>
+                      <li>
+                          El Banco podrá modificar las condiciones que rigen las Cuentas de Caja de Ahorros, en la
+                          medida en que ello no importe un desmedro respecto de los servicios comprometidos. Tales
+                          eventuales modificaciones serán informadas con 60 días de antelación a la fecha de efectiva
+                          vigencia.
+                      </li>
+                      <li>
+                          El Solicitante autoriza a que se entreguen tarjetas de débito que el Banco emita o
+                          comercialice, operables mediante cajeros automáticos de la red a la que el Banco esté
+                          adherido, a cualquiera de los integrantes de las cuentas, a su solicitud, sin otra
+                          autorización que la presente, por lo que se responsabiliza expresamente por todo débito
+                          derivado de las tarjetas que se entreguen eventualmente a sus cotitulares.
+                      </li>
+                  </ol>
+                  <h5 class="fp-semibold">
+                      IV - DÉBITO AUTOMÁTICO EN CUENTA
+                  </h5>
+                  <ol>
+                      <li>
+                          Los importes de las facturas que participen del sistema de débito en cuenta, serán
+                          debitados de la caja de ahorros/Cuenta Sueldo, indicada por el Solicitante.
+                      </li>
+                      <li>
+                          El cliente podrá solicitar la reversión de los débitos efectuados en relación al servicio
+                          de débito automático por el total de cada operación, mediante una instrucción expresa
+                          formulada ante este Banco, la cual deberá ser realizada dentro de los 30 días corridos
+                          contados desde la fecha del débito. La devolución será efectuada dentro de las 72 Hs.
+                          hábiles siguientes a la fecha en que la entidad reciba la instrucción del cliente, siempre
+                          que la empresa originante del débito no se oponga a la reversión y sólo en los casos en que
+                          el importe de la reversión solicitada supere $750.
+                      </li>
+                      <li>
+                          El titular se obliga a:
+                          <ol>
+                              <li>
+                                  Adoptar las previsiones necesarias para tener saldo suficiente en la cuenta en las
+                                  fechas en que ésta deba ser afectada al pago de facturas.
+                              </li>
+                              <li>
+                                  En lo referente a la baja, la misma estará efectivizada desde el momento en que sea
+                                  aceptada por el Banco e implicará que no sea debitada de la cuenta, aunque continúe
+                                  impresa en las facturas la leyenda de práctica.
+                              </li>
+                              <li>
+                                  Requerir bajo su responsabilidad, la no realización de un débito determinado,
+                                  considerando que el Banco cumplirá dicha instrucción siempre que la misma sea
+                                  recibida al menos 48 horas antes del vencimiento de la factura en cuestión.
+                              </li>
+                          </ol>
+                      </li>
+                      <li>
+                          El titular presta expresa conformidad para que, en el caso que a la fecha de vencimiento de
+                          las facturas no existiesen fondos suficientes en la cuenta, el Banco pueda debitar:
+                          <ol>
+                              <li>
+                                  Parcialmente el importe de la factura hasta la concurrencia de la existencia de
+                                  fondos. En tal caso también autoriza expresamente al Banco para que el saldo que
+                                  resulte impago a la fecha de vencimiento de la factura, pueda ser debitado en los
+                                  plazos que el titular hubiere acordado con la empresa y que le fueran comunicados
+                                  por la misma, hasta su cancelación total.
+                              </li>
+                              <li>
+                                  El importe correspondiente al 2º vencimiento consignado en la factura o en su
+                                  defecto el importe correspondiente al 3ºvencimiento consignado en la factura.
+                              </li>
+                          </ol>
+                      </li>
+                      <li>
+                          El Banco se reserva el derecho de:
+                          <ol>
+                              <li>
+                                  Rechazar el pago de la facturación por saldo insuficiente en la cuenta. En este
+                                  supuesto, el titular asume en forma exclusiva, toda responsabilidad por los daños
+                                  derivados de tal rechazo.
+                              </li>
+                              <li>
+                                  Dejar de prestar este servicio sin expresión de causa, dando preaviso al cliente
+                                  con no menos de sesenta días de anticipación;
+                              </li>
+                          </ol>
+                      </li>
+                      <li>
+                          El Solicitante podrá solicitar la baja del servicio en cualquier momento, mediante
+                          comunicación fehaciente al Banco.
+                      </li>
+                  </ol>
+              </div>
+              <div class="modal-footer">
+                  <button class="btn btn-primary" type="button" data-dismiss="modal" (click)="goBackFromTermsConditions()">
+                      Aceptar
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div> -->
+
+    </div>
+</div>

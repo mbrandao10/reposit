@@ -1,0 +1,126 @@
+<app-loader *ngIf="loading"></app-loader>
+
+<div class="row">
+
+    <div class="col-xs-12 col-sm-9">
+        <osb-search-list [formGroup]="filterSearchForm" [formConfig]="formConfig" (search)="getMovements()"> </osb-search-list>
+    </div>
+
+    <div class="hidden-xs col-sm-3 drop-down-links text-right">
+        <ul>
+            <li class="filter-dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <span class="icon icononesait icon-configuration dropdown-options-filter"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a (click)="downloadExcel()">
+                            {{ 'ITECBAN-CREDITS.CREDIT-MOVEMENTS.SEARCH.DOWNLOAD-MOV' | translate }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Cambiar literales y comprobar su funcionamientp creo que no vale para nada -->
+    <div class="hidden-xs hidden-sm hidden-md content-historic-extract">
+        <a class="col-xs-5 text-center" role="button" aria-haspopup="true">
+            <span class="icon icononesait icon-global-position"></span>
+            <span class="text-os-bold text-literal">
+                [{{ 'ITECBAN-ACCOUNT.ACCOUNT.PAGE.EXTRACT' | translate }}]
+            </span>
+        </a>
+        <a class="col-xs-7 pr-1" (click)="downloadExcel()" role="button" aria-haspopup="true">
+            <span class="icon icononesait icon-global-position"></span>
+            <span class="text-os-bold text-literal">
+                [{{ 'ITECBAN-ACCOUNT.ACCOUNT.PAGE.DOWNLOAD-MOV' | translate }}]
+            </span>
+        </a>
+    </div>
+
+</div>
+
+<table class="table table-detail">
+    <thead class="hidden-xs" *ngIf="creditMovements">
+        <tr>
+            <th class="hidden-sm hidden-md hidden-lg"></th>
+            <th>
+                {{ 'ITECBAN-CREDITS.CREDIT-MOVEMENTS.TABLE.EXECUTION-DATE' | translate }}
+            </th>
+            <th>
+                {{ 'ITECBAN-CREDITS.CREDIT-MOVEMENTS.TABLE.VALUE-DATE' | translate }}
+            </th>
+            <th>
+                {{ 'ITECBAN-CREDITS.CREDIT-MOVEMENTS.TABLE.CONCEPT' | translate }}
+            </th>
+            <th class="text-right">
+                {{ 'ITECBAN-CREDITS.CREDIT-MOVEMENTS.TABLE.AMOUNT' | translate }}
+            </th>
+            <th class="text-right">
+                {{ 'ITECBAN-CREDITS.CREDIT-MOVEMENTS.TABLE.BALANCE' | translate }}
+            </th>
+        </tr>
+    </thead>
+
+    <tbody [ngClass]="{'open': creditMovement.id == selectedItem && !isMobileResolution() }" *ngFor="let creditMovement of creditMovements">
+        <tr class="interactive" (click)="viewDetail(creditMovement)">
+            <td class="hidden-sm hidden-md hidden-lg v-align-middle text-center">
+                <span [ngClass]="creditMovement.amount.amount >= 0 ? 'text-green icon-arrow-link-right' : 'text-orange icon-arrow-link-left'" class="icon icononesait"></span>
+            </td>
+
+            <td class="hidden-xs">
+                {{ creditMovement.operationDate | date: 'dd/MM/yyyy' }}
+            </td>
+
+            <td class="hidden-xs">
+                {{ creditMovement.valueDate | date: 'dd/MM/yyyy' }}
+            </td>
+
+            <td>
+                {{ creditMovement.type.name | uppercase }}
+                <span class="visible-xs-block fs-12">
+                    {{ creditMovement.operationDate | date: 'dd/MM/yyyy' }}
+                </span>
+            </td>
+
+            <td class="hidden-xs text-no-warp text-right">
+                {{ creditMovement.amount.amount | CurrencyPipe: creditMovement.amount.currency.code }}
+            </td>
+
+            <td class="text-right">
+                <span class="hidden-xs text-no-warp">
+                    {{ creditMovement.balance.amount | CurrencyPipe: creditMovement.balance.currency.code }}
+                </span>
+                <span class="visible-xs-block text-os-semibold text-no-warp text-right">
+                    {{ creditMovement.balance.amount | CurrencyPipe: creditMovement.balance.currency.code }}
+                </span>
+                <span class="visible-xs-block text-no-warp fs-12 text-right">
+                    {{ creditMovement.amount.amount | CurrencyPipe: creditMovement.amount.currency.code }}
+                </span>
+            </td>
+        </tr>
+
+        <tr [ngClass]="{'description': !isMobileResolution() }" *ngIf="selectedItem && (selectedItem === creditMovement.id)">
+            <td colspan="5">
+                <app-credit-movements-detail [creditMovementDetail]="creditMovement" (closeEvent)="close()"></app-credit-movements-detail>
+            </td>
+        </tr>
+
+    </tbody>
+
+</table>
+
+<div class="row" *ngIf="hasMoreData && creditMovements">
+    <a class="col-xs-12 text-center p-1 text-os-bold" (click)="next()" role="button">
+        {{ 'ITECBAN-CREDITS.CREDIT-MOVEMENTS.TABLE.MORE-RESULTS' | translate }}
+    </a>
+</div>
+
+<div class="row mt-2" *ngIf="listMovements.list.data.length === 0">
+    <div class="col-xs-12 mt-2" *ngIf="listMovements.list.data.length === 0 && !loading">
+        <p>
+            {{ 'ITECBAN-CREDITS.CREDIT-MOVEMENTS.TABLE.NO-MOVEMENTS' | translate }}
+        </p>
+    </div>
+</div>

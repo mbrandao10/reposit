@@ -1,0 +1,20 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "RETURNED",
+      "name": "Devuelto"
+    },
+    {
+      "id": "PAID",
+      "name": "Pagado"
+    },
+    {
+      "id": "CANCELLED",
+      "name": "Cancelado"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data":
+  	{
+        "id":"FAV001",
+        "alias":"Mi favorita 001",
+  			"orderer" : {
+          "fromAccount":{
+            "id":"14910001273000001268",
+			 "formats": [
+      {
+        "format": {
+          "id": "IBAN",
+          "name": "IBAN"
+        },
+        "value": "ES6968867819113534431785"
+      }
+    ]
+			
+          },
+          "description": "GREGORIO MUNOZ AVILA"
+  			},
+  			"beneficiary" : {
+          "toAccount": {
+            "type": {
+              "id": "IBAN",
+              "name": "IBAN"
+            },
+            "id": "ES3221002345206549917254"
+          },
+          "description" : "LILARECORDS",
+          "legalDocument":{
+            "id":"12345678Z",
+            "type":{
+              "id":"01",
+              "name":"DNI"
+            }
+          }
+  			},
+        "amount": {
+          "amount": 60.00,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+  			"reason" : "Arreglo furgoneta",
+        "purposeType" : {
+          "id": "02",
+          "name": "CUOTA"
+        },
+        "transferType" : {
+          "id": "03",
+          "name": "Cash"
+        },       
+        "transferMode":{
+          "id": "SEPA",
+          "name": "SEPA"
+        }
+
+  	}
+
+}

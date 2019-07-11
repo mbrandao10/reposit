@@ -1,0 +1,585 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<ng-container *ngIf="step === 'success'">
+    <div class="panel">
+        <div class="panel-body">
+            <osb-profile-success [addressPersonalPostal]="newAddressPersonalPostal"></osb-profile-success>
+            <div class="row mt-1">
+                <div class="col-xs-6 pull-right text-right">
+                    <button class="btn btn-primary" (click)="close()">
+                        {{ 'COMMON.FINALIZE' | translate }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="step === 'personal-data'">
+    <div class="col-xs-12">
+        <div class="row ">
+            <div class="col-xs-12">
+                <div class="panel">
+                    <div class="panel-body">
+                        <ng-container *ngIf="personalData">
+                            <div class="text-os-semibold mb-1">
+                                {{'ITECBAN-PERSONS.MY.SPACE.PROFILE.DATA.CONTACT' | translate}}
+                            </div>
+                            <ul class="list mb-1">
+                                <li *ngIf="personalData.name">
+                                    <div class="name text-left">
+                                        {{ 'ITECBAN-PERSONS.MY.SPACE.NAME.SURNAME' | translate }}
+                                    </div>
+                                    <div class="value text-right">
+                                        {{ personalData.name }} {{ personalData?.surname }}
+                                        {{ personalData?.secondSurname }}
+                                    </div>
+                                </li>
+                                <li *ngIf="personalData.legalDocument">
+                                    <div class="name text-left">
+                                        {{ 'ITECBAN-PERSONS.MY.SPACE.DNI' | translate }}
+                                    </div>
+                                    <div class="value text-right">
+                                        {{ personalData.legalDocument.id }}
+                                    </div>
+                                </li>
+                                <li *ngIf="personalData.birthDateOrCreationDate">
+                                    <div class="name text-left">
+                                        {{ 'ITECBAN-PERSONS.MY.SPACE.BIRTHDAY' | translate }}
+                                    </div>
+                                    <div class="value text-right">
+                                        {{ personalData.birthDateOrCreationDate | date: 'dd/MM/yyyy' }}
+                                    </div>
+                                </li>
+                                <li *ngIf="personalData.sex && personalData.sex.name">
+                                    <div class="name text-left">
+                                        {{ 'ITECBAN-PERSONS.MY.SPACE.GENDER' | translate }}
+                                    </div>
+                                    <div class="value text-right">
+                                        {{ personalData.sex.name }}
+                                    </div>
+                                </li>
+                                <li *ngIf="personalData.maritalStatus && personalData.maritalStatus.name">
+                                    <div class="name text-left">
+                                        {{ 'ITECBAN-PERSONS.MY.SPACE.CIVIL.STATUS' | translate }}
+                                    </div>
+                                    <div class="value text-right">
+                                        {{ personalData.maritalStatus.name }}
+                                    </div>
+                                </li>
+                                <li
+                                    *ngIf="personalData.contactInfo && personalData.contactInfo.mobileNumberPrefix && personalData.contactInfo.mobileNumber">
+                                    <div class="name text-left">
+                                        {{ 'ITECBAN-PERSONS.MY.SPACE.MOBILE.PHONE' | translate }}
+                                    </div>
+                                    <div class="value text-right">
+                                        ({{personalData.contactInfo.mobileNumberPrefix.id}}) -
+                                        {{personalData.contactInfo.mobileNumber}}
+                                    </div>
+                                </li>
+                                <li *ngIf="personalData.contactInfo && personalData.contactInfo.email">
+                                    <div class="name text-left">
+                                        {{ 'ITECBAN-PERSONS.MY.SPACE.EMAIL' | translate }}
+                                    </div>
+                                    <div class="value text-right">
+                                        {{ personalData.contactInfo.email }}
+                                    </div>
+                                </li>
+                            </ul>
+                        </ng-container>
+
+                        <ul class="list" *ngIf="addressPersonalPostal && !showEditPostalAddress">
+                            <div class="text-os-semibold mb-1">
+                                {{'ITECBAN-PERSONS.MY.SPACE.CORRESPONDENCE.ADDRESS' | translate}}</div>
+                            <li *ngIf="addressPersonalPostal.streetType && addressPersonalPostal.streetName">
+                                <div class="name text-left">
+                                    {{ 'ITECBAN-PERSONS.MY.SPACE.STREET' | translate }}
+                                </div>
+                                <div class="value text-right">
+                                    {{ addressPersonalPostal.streetType.name }} {{ addressPersonalPostal.streetName }}
+                                </div>
+                            </li>
+                            <li *ngIf="addressPersonalPostal.streetNumber">
+                                <div class="name text-left">
+                                    {{ 'ITECBAN-PERSONS.MY.SPACE.NUMBER' | translate }}
+                                </div>
+                                <div class="value text-right">
+                                    {{ addressPersonalPostal.streetNumber }}
+                                </div>
+                            </li>
+                            <li *ngIf="addressPersonalPostal.aditionalInfo">
+                                <div class="name text-left">
+                                    {{ 'ITECBAN-PERSONS.MY.SPACE.FLOOR' | translate }} /
+                                    {{ 'ITECBAN-PERSONS.MY.SPACE.DOOR' | translate }}
+                                </div>
+                                <div class="value text-right">
+                                    {{ addressPersonalPostal.aditionalInfo }}
+                                </div>
+                            </li>
+                            <!-- <li *ngIf="addressPersonalPostal.door">
+                            <div class="name text-left">
+                                {{ 'ITECBAN-PERSONS.MY.SPACE.DOOR' | translate }}
+                            </div>
+                            <div class="value text-right">
+                                {{ addressPersonalPostal.door }}
+                            </div>
+                        </li> -->
+                            <li *ngIf="addressPersonalPostal.postcode">
+                                <div class="name text-left">
+                                    {{ 'ITECBAN-PERSONS.MY.SPACE.POSTCODE' | translate }}
+                                </div>
+                                <div class="value text-right">
+                                    {{ addressPersonalPostal.postcode }}
+                                </div>
+                            </li>
+                            <li *ngIf="addressPersonalPostal.city">
+                                <div class="name text-left">
+                                    {{ 'ITECBAN-PERSONS.MY.SPACE.POPULATION' | translate }}
+                                </div>
+                                <div class="value text-right">
+                                    {{ addressPersonalPostal.city }}
+                                </div>
+                            </li>
+                            <li *ngIf="addressPersonalPostal.province">
+                                <div class="name text-left">
+                                    {{ 'ITECBAN-PERSONS.MY.SPACE.PROVINCE' | translate }}
+                                </div>
+                                <div class="value text-right">
+                                    {{ addressPersonalPostal.province }}
+                                </div>
+                            </li>
+                            <li *ngIf="addressPersonalPostal.country">
+                                <div class="name text-left">
+                                    {{ 'ITECBAN-PERSONS.MY.SPACE.COUNTRY' | translate }}
+                                </div>
+                                <div class="value text-right">
+                                    {{ addressPersonalPostal.country }}
+                                </div>
+                            </li>
+
+
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-9 text-center">
+                                </div>
+                                <div class="col-xs-6 col-sm-3 text-right">
+                                    <button class="btn btn-primary"
+                                        (click)="editAddress()">{{'ITECBAN-PERSONS.MY.SPACE.CHANGEBTN' | translate}}</button>
+                                </div>
+                            </div>
+
+
+
+                        </ul>
+                        <form [formGroup]="postalAddressForm" id="postalAddressForm" *ngIf="showEditPostalAddress">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-xs-6 col-md-2">
+                                        <label class="form-custom-label text-no-warp"
+                                            for="streetType">{{ 'ITECBAN-PERSONS.MY.SPACE.VIA' | translate }} *</label>
+                                        <select class="form-control" formControlName="streetType" name="streetType"
+                                            id="streetType">
+                                            <option *ngFor="let streetType of streetTypes" [ngValue]="streetType.id">
+                                                {{ streetType.name }}</option>
+                                        </select>
+                                        <span class="help-block text-red"
+                                            *ngIf="postalAddressForm.controls?.streetType?.errors?.required">
+                                            <p class="text-left">{{ 'ITECBAN-PERSONS.MY.ERRORS.REQUIRED' | translate }}
+                                            </p>
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-12 col-md-5">
+                                        <label class="form-custom-label text-no-warp"
+                                            for="streetName">{{ 'ITECBAN-PERSONS.MY.SPACE.STREET' | translate }}
+                                            *</label>
+                                        <input class="form-control" type="text" name="streetName"
+                                            formControlName="streetName" id="streetName">
+                                        <span class="help-block text-red"
+                                            *ngIf="postalAddressForm.controls?.streetName?.errors?.required">
+                                            <p class="text-left fs-12">
+                                                {{ 'ITECBAN-PERSONS.MY.ERRORS.REQUIRED' | translate }}
+                                            </p>
+                                        </span>
+                                        <span class="help-block text-red"
+                                            *ngIf="!postalAddressForm.controls?.streetName?.errors?.required && postalAddressForm?.controls?.streetName?.errors?.maxlength">
+                                            <p class="text-left fs-12">
+                                                {{ 'ITECBAN-PERSONS.MY.ERRORS.STREET' | translate }}
+                                            </p>
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-6 col-md-2">
+                                        <label class="form-custom-label text-no-warp"
+                                            for="streetNumber">{{ 'ITECBAN-PERSONS.MY.SPACE.NUMBER' | translate }}</label>
+                                        <input class="form-control" type="text" name="streetNumber"
+                                            formControlName="streetNumber" id="streetNumber">
+                                        <span class="help-block text-red"
+                                            *ngIf="postalAddressForm.controls?.streetNumber?.errors">
+                                            <p *ngIf="!postalAddressForm.controls?.streetNumber?.errors?.required && postalAddressForm.controls?.streetNumber?.errors?.pattern"
+                                                class="text-left fs-12">
+                                                {{ 'ITECBAN-PERSONS.MY.ERRORS.NUM' | translate }}
+                                            </p>
+                                            <p *ngIf="postalAddressForm.controls?.streetNumber?.errors?.required"
+                                                class="text-left fs-12">
+                                                {{ 'ITECBAN-PERSONS.MY.ERRORS.REQUIRED' | translate }}
+                                            </p>
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-6 col-md-3">
+                                        <label class="form-custom-label text-no-warp"
+                                            for="aditionalInfo ">{{ 'ITECBAN-PERSONS.MY.SPACE.FLOOR' | translate }} /
+                                            {{ 'ITECBAN-PERSONS.MY.SPACE.DOOR' | translate }} </label>
+                                        <input class="form-control" type="text" name="aditionalInfo"
+                                            formControlName="aditionalInfo" id="aditionalInfo" maxlength="30">
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 col-md-2">
+                                        <label class="form-custom-label text-no-warp"
+                                            for="postcode">{{ 'ITECBAN-PERSONS.MY.SPACE.POSTCODE' | translate }}
+                                            *</label>
+                                        <input class="form-control" type="text" name="postcode"
+                                            formControlName="postcode" id="postcode">
+                                        <span class="help-block text-red"
+                                            *ngIf="postalAddressForm.controls?.postcode?.errors?.required">
+                                            <p class="text-left fs-12">
+                                                {{ 'ITECBAN-PERSONS.MY.ERRORS.REQUIRED' | translate }}
+                                            </p>
+                                        </span>
+                                        <span class="help-block text-red"
+                                            *ngIf="!postalAddressForm.controls?.postcode?.errors?.required && postalAddressForm.controls?.postcode?.errors?.pattern">
+                                            <p class="text-left fs-12">
+                                                {{ 'ITECBAN-PERSONS.MY.ERRORS.POSTCODE' | translate }}
+                                            </p>
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-6 col-md-3">
+                                        <label class="form-custom-label text-no-warp"
+                                            for="province">{{ 'ITECBAN-PERSONS.MY.SPACE.PROVINCE' | translate }}
+                                            *</label>
+                                        <!-- <select class="form-control" formControlName="province" name="province" id="province">
+                                <option *ngFor="let province of provinces" [ngValue]="province.id">{{ province.name }}</option>
+                                    </select>-->
+                                        <input class="form-control" type="text" name="province"
+                                            formControlName="province" id="province">
+                                        <span class="help-block text-red"
+                                            *ngIf="postalAddressForm.controls?.province?.errors?.required">
+                                            <p class="text-left fs-12">
+                                                {{ 'ITECBAN-PERSONS.MY.ERRORS.REQUIRED' | translate }}
+                                            </p>
+                                        </span>
+
+                                    </div>
+                                    <div class="col-xs-6 col-md-4">
+                                        <label class="form-custom-label text-no-warp"
+                                            for="city">{{ 'ITECBAN-PERSONS.MY.SPACE.POPULATION' | translate }} *</label>
+                                        <!-- <select class="form-control" formControlName="city" name="city" id="city">
+                                <option *ngFor="let city of cities" [ngValue]="city.id">{{ city.name }}</option></select>-->
+                                        <input class="form-control" type="text" name="city" formControlName="city"
+                                            id="city">
+                                        <span class="help-block text-red"
+                                            *ngIf="postalAddressForm.controls?.city?.errors?.required">
+                                            <p class="text-left fs-12">
+                                                {{ 'ITECBAN-PERSONS.MY.ERRORS.REQUIRED' | translate }}
+                                            </p>
+                                        </span>
+                                        <span class="help-block text-red"
+                                            *ngIf="!postalAddressForm.controls?.city?.errors?.required && postalAddressForm.controls?.city?.errors?.maxlength ">
+                                            <p class="text-left fs-12">
+                                                {{ 'ITECBAN-PERSONS.MY.ERRORS.LOCAL' | translate }}
+                                            </p>
+                                        </span>
+                                    </div>
+
+                                    <div class="col-xs-6 col-md-3">
+                                        <label class="form-custom-label text-no-warp"
+                                            for="country">{{ 'ITECBAN-PERSONS.MY.SPACE.COUNTRY' | translate }} *</label>
+                                        <input class="form-control" type="text" name="country" formControlName="country"
+                                            id="country">
+                                        <span class="help-block text-red"
+                                            *ngIf="postalAddressForm.controls?.country?.errors?.required">
+                                            <p class="text-left fs-12">
+                                                {{ 'ITECBAN-PERSONS.MY.ERRORS.REQUIRED' | translate }}
+                                            </p>
+                                        </span>
+                                    </div>
+                                    <!-- <div class="col-xs-6 col-md-3">
+                                        <label class="form-custom-label text-no-warp"
+                                            for="country">{{ 'ITECBAN-PERSONS.MY.SPACE.COUNTRY' | translate }} *</label>
+
+                                        <select class="form-control form-control-amim" name="country"
+                                            formControlName="country">
+                                            <option *ngFor="let country of countries" [ngValue]="country.name">
+                                                {{country.name}}</option>
+                                        </select>
+
+                                    </div> -->
+                                </div>
+
+
+                                <div class="row pt-1 mb-1">
+                                    <div class="col-xs-6 col-sm-9 text-center">
+                                        <button class="btn btn-secondary"
+                                            (click)="cancel()">{{'COMMON.CANCEL' | translate}}</button>
+                                    </div>
+                                    <div class="col-xs-6 col-sm-3 text-right">
+                                        <button class="btn btn-primary" [disabled]="!postalAddressForm.valid"
+                                            (click)="modifyAddress()">{{'COMMON.ACCEPT' | translate}}</button>
+                                    </div>
+                                </div>
+                                <!-- <div *ngIf="postalAddressForm && !postalAddressForm.valid">
+                                    <span class="help-block text-red">
+                                        <p class="text-left">{{ 'ITECBAN-PERSONS.MY.ERRORS.REQUIRED' | translate }}</p>
+                                    </span>
+                                </div> -->
+                            </div>
+                        </form>
+                        <ng-container *ngIf="addressPersonalFiscal">
+                            <div class="text-os-semibold mb-1">{{'ITECBAN-PERSONS.MY.SPACE.TAX.ADDRESS' | translate}}
+                            </div>
+                            <ul class="list mb-1">
+                                <li *ngIf="addressPersonalFiscal.streetType && addressPersonalFiscal.streetName">
+                                    <div class="name text-left">
+                                        {{ 'ITECBAN-PERSONS.MY.SPACE.STREET' | translate }}
+                                    </div>
+                                    <div class="value text-right">
+                                        {{ addressPersonalFiscal.streetType.name }}
+                                        {{ addressPersonalFiscal.streetName }}
+                                    </div>
+                                </li>
+                                <li *ngIf="addressPersonalFiscal.streetNumber">
+                                    <div class="name text-left">
+                                        {{ 'ITECBAN-PERSONS.MY.SPACE.NUMBER' | translate }}
+                                    </div>
+                                    <div class="value text-right">
+                                        {{ addressPersonalFiscal.streetNumber }}
+                                    </div>
+                                </li>
+                                <li *ngIf="addressPersonalFiscal.aditionalInfo">
+                                    <div class="name text-left">
+                                        {{ 'ITECBAN-PERSONS.MY.SPACE.FLOOR' | translate }} /
+                                        {{ 'ITECBAN-PERSONS.MY.SPACE.DOOR' | translate }}
+                                    </div>
+                                    <div class="value text-right">
+                                        {{ addressPersonalFiscal.aditionalInfo }}
+                                    </div>
+                                </li>
+                                <!-- <li *ngIf="addressPersonalFiscal.door">
+                                <div class="name text-left">
+                                    {{ 'ITECBAN-PERSONS.MY.SPACE.DOOR' | translate }}
+                                </div>
+                                <div class="value text-right">
+                                    {{ addressPersonalFiscal.door }}
+                                </div>
+                            </li> -->
+                                <li *ngIf="addressPersonalFiscal.postcode">
+                                    <div class="name text-left">
+                                        {{ 'ITECBAN-PERSONS.MY.SPACE.POSTCODE' | translate }}
+                                    </div>
+                                    <div class="value text-right">
+                                        {{ addressPersonalFiscal.postcode }}
+                                    </div>
+                                </li>
+                                <li *ngIf="addressPersonalFiscal.city">
+                                    <div class="name text-left">
+                                        {{ 'ITECBAN-PERSONS.MY.SPACE.POPULATION' | translate }}
+                                    </div>
+                                    <div class="value text-right">
+                                        {{ addressPersonalFiscal.city }}
+                                    </div>
+                                </li>
+                                <li *ngIf="addressPersonalFiscal.province">
+                                    <div class="name text-left">
+                                        {{ 'ITECBAN-PERSONS.MY.SPACE.PROVINCE' | translate }}
+                                    </div>
+                                    <div class="value text-right">
+                                        {{ addressPersonalFiscal.province }}
+                                    </div>
+                                </li>
+                                <li *ngIf="addressPersonalFiscal.country">
+                                    <div class="name text-left">
+                                        {{ 'ITECBAN-PERSONS.MY.SPACE.COUNTRY' | translate }}
+                                    </div>
+                                    <div class="value text-right">
+                                        {{ addressPersonalFiscal.country }}
+                                    </div>
+                                </li>
+                            </ul>
+                        </ng-container>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</ng-container>
+
+
+
+<!-- DIRECCION DE CORRESPONDENCIA  -->
+<!-- <form #formPostalAddress="ngForm">
+        <ul class="list-edit-info person-config-info" *ngIf="addressPersonalPostal" [ngClass]="{'edit-mode': editPostalAddress}">
+
+                <span class="icon glyphicon glyphicon-pencil pull-right interactive" (click)="editPostalAddress = true; enabledBottonsPostalAddress = true">
+                    </span>
+            </div>
+            <li class="person-config-info-elemt">
+                <div class="name">{{'ITECBAN-PERSONS.MY.SPACE.USE.ADDRESS' | translate}}</div>
+                <div class="value">
+                    <div class="checkbox-custom"><label><input [disabled]="!editPostalAddress" type="checkbox" [(ngModel)]="useTaxAddress"
+                                    name="useTaxAddress" id="useTaxAddress" (ngModelChange)="changeUseAddress()" /><i class="icon-check"></i></label>
+                    </div>
+                </div>
+            </li>
+            <li class="person-config-info-elemt" *ngIf="showEditPostalAddress">
+                <div class="name">{{'ITECBAN-PERSONS.MY.SPACE.PROVINCE' | translate}}</div>
+                <div class="value" *ngIf="!editPostalAddress">{{addressPersonalPostal.province.name}}</div>
+                <div class="value" *ngIf="editPostalAddress">
+                    <app-input-autocomplete [type]="typeProvince" [provinceSelected]="addressPersonalPostal.province" [provinces]="provinces" [citySelected]="addressPersonalPostal.city" [cities]="cities" (idSelectedEvent)="getAddressProvince($event)" (idSelectedEventValid)="getAddressProvinceValid($event)">
+                    </app-input-autocomplete>
+                </div>
+            </li>
+            <li class="person-config-info-elemt" *ngIf="showEditPostalAddress">
+                <div class="name">{{'ITECBAN-PERSONS.MY.SPACE.LOCATION' | translate}}</div>
+                <div class="value" *ngIf="!editPostalAddress">{{addressPersonalPostal.city.name}}</div>
+                <div class="value" *ngIf="editPostalAddress">
+
+                    <app-input-autocomplete [type]="typeCity" [provinceSelected]="addressPersonalPostal.province" [provinces]="provinces" [citySelected]="addressPersonalPostal.city" [cities]="cities" (idSelectedEvent)="getAddressCity($event)" (idSelectedEventValid)="getAddressCityValid($event)">
+                    </app-input-autocomplete>
+
+                </div>
+            </li>
+            <li class="person-config-info-elemt" *ngIf="showEditPostalAddress">
+                <div class="name">{{'ITECBAN-PERSONS.MY.SPACE.NEIGHBORHOOD' | translate}} {{'COMMON.OPTIONAL' | translate}}</div>
+                <div class="value" *ngIf="!editPostalAddress">{{addressPersonalPostal.district}}</div>
+                <div class="value" *ngIf="editPostalAddress"><input class="form-control" [(ngModel)]="addressPersonalPostal.district" name="postalDistrict" /></div>
+            </li>
+            <li class="person-config-info-elemt" *ngIf="showEditPostalAddress">
+                <div class="name">{{'ITECBAN-PERSONS.MY.SPACE.STREET' | translate}} </div>
+                <div class="value" *ngIf="!editPostalAddress">{{addressPersonalPostal.streetName}} </div>
+                <div class="value" *ngIf="editPostalAddress">
+                    <div class="form-group"><input class="form-control" type="text" [(ngModel)]="addressPersonalPostal.streetName" name="postalStreetName" required="required" #postalStreetNameAttr="ngModel" />
+                        <div class="form-attr-error" *ngIf="!postalStreetNameAttr.valid">{{ 'COMMON.FIELD.REQUIRED' | translate}}</div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="person-config-info-elemt" *ngIf="showEditPostalAddress">
+                <div class="name">{{'ITECBAN-PERSONS.MY.SPACE.FLOOR.APARTMENT' | translate}} {{'COMMON.OPTIONAL' | translate}}</div>
+                <div class="value" *ngIf="!editPostalAddress">{{addressPersonalPostal.floor}}</div>
+                <div class="value" *ngIf="editPostalAddress"><input class="form-control" type="text" [(ngModel)]="addressPersonalPostal.floor" name="postalFloor" maxlength="10" /></div>
+            </li>
+            <li class="person-config-info-elemt" *ngIf="showEditPostalAddress">
+                <div class="name">{{'ITECBAN-PERSONS.MY.SPACE.ADDITIONAL.INFO' | translate}} {{'COMMON.OPTIONAL' | translate}}</div>
+                <div class="value" *ngIf="!editPostalAddress">{{addressPersonalPostal.aditionalInfo}}</div>
+                <div class="value" *ngIf="editPostalAddress"><input class="form-control" [(ngModel)]="addressPersonalPostal.aditionalInfo" name="postalAditionalInfo" /></div>
+            </li>
+            <li class="person-config-info-elemt" *ngIf="showEditPostalAddress">
+                <div class="name">{{'ITECBAN-PERSONS.MY.SPACE.POSTAL.CODE' | translate}}</div>
+                <div class="value" *ngIf="!editPostalAddress">{{addressPersonalPostal.postcode}}</div>
+                <div class="value" *ngIf="editPostalAddress">
+                    <div class="form-group"><input class="form-control" type="text" [(ngModel)]="addressPersonalPostal.postcode" name="postalPostcode" required="required" #postalPostcodeAttr="ngModel" pattern="[0-9]*" minlength="4" maxlength="4" />
+                        <div class="form-attr-error" *ngIf="!postalPostcodeAttr.valid &amp;&amp; (!addressPersonalPostal.postcode || addressPersonalPostal.postcode == '')">{{ 'COMMON.FIELD.REQUIRED' | translate}}</div>
+                        <div class="form-attr-error" *ngIf="!postalPostcodeAttr.valid &amp;&amp; addressPersonalPostal.postcode &amp;&amp; addressPersonalPostal.postcode != ''">{{ 'COMMON.FIELD.WRONG' | translate}}</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="row" *ngIf="enabledBottonsPostalAddress">
+            <div class="col-xs-offset-6 col-xs-3 text-center">
+                <button class="btn btn-secondary" [disabled]="!enabledBottonsPostalAddress" (click)="cancel('PostalAddress')">{{'COMMON.CANCEL' | translate}}
+                    </button>
+            </div>
+            <div class="col-xs-3 text-center" *ngIf="useTaxAddress">
+                <button class="btn btn-primary" [disabled]="!enabledBottonsPostalAddress || !formPostalAddress.form.valid" (click)="goToToken('PostalAddress')">{{'COMMON.ACCEPT' | translate}}
+                    </button>
+            </div>
+            <div class="col-xs-3 text-center" *ngIf="!useTaxAddress">
+                <button class="btn btn-primary" [disabled]="!enabledBottonsPostalAddress || !formPostalAddress.form.valid || !validAddressLocation || !validAddressProvince " (click)="goToToken('PostalAddress')">{{'COMMON.ACCEPT' | translate}}
+                    </button>
+            </div>
+        </div>
+    </form> -->
+
+<!-- DIRECCION FISCAL -->
+<!-- <form #formTaxAddress="ngForm">
+        <ul class="list-edit-info person-config-info" *ngIf="addressPersonalFiscal" [ngClass]="{'edit-mode': editTaxAddress}">
+            <div class="person-config-info-title">{{'ITECBAN-PERSONS.MY.SPACE.TAX.ADDRESS' | translate}}<span class="icon glyphicon glyphicon-pencil pull-right interactive" (click)="editTaxAddress = true; enabledBottonsTaxAddress = true"></span></div>
+            <li class="person-config-info-elemt">
+                <div class="name">{{'ITECBAN-PERSONS.MY.SPACE.PROVINCE' | translate}}</div>
+                <div class="value" *ngIf="!editTaxAddress">{{addressPersonalFiscal.province.name}}</div>
+                <div class="value" *ngIf="editTaxAddress">
+                    <app-input-autocomplete [type]="typeProvince" [provinceSelected]="addressPersonalFiscal.province" [provinces]="provinces" [citySelected]="addressPersonalFiscal.city" [cities]="cities" (idSelectedEvent)="getTaxProvince($event)" (idSelectedEventValid)="getTaxProvinceValid($event)"></app-input-autocomplete>
+                </div>
+            </li>
+            <li class="person-config-info-elemt">
+                <div class="name">{{'ITECBAN-PERSONS.MY.SPACE.LOCATION' | translate}}</div>
+                <div class="value" *ngIf="!editTaxAddress">{{addressPersonalFiscal.city.name}}</div>
+                <div class="value" *ngIf="editTaxAddress">
+                    <app-input-autocomplete [type]="typeCity" [provinceSelected]="addressPersonalFiscal.province" [provinces]="provinces" [citySelected]="addressPersonalFiscal.city" [cities]="cities" (idSelectedEvent)="getTaxCity($event)" (idSelectedEventValid)="getTaxCityValid($event)"></app-input-autocomplete>
+                </div>
+            </li>
+            <li class="person-config-info-elemt">
+                <div class="name">{{'ITECBAN-PERSONS.MY.SPACE.NEIGHBORHOOD' | translate}} {{'COMMON.OPTIONAL' | translate}}</div>
+                <div class="value" *ngIf="!editTaxAddress">{{addressPersonalFiscal.district}}</div>
+                <div class="value" *ngIf="editTaxAddress"><input class="form-control" [(ngModel)]="addressPersonalFiscal.district" name="taxDistrict" /></div>
+            </li>
+            <li class="person-config-info-elemt">
+                <div class="name">{{'ITECBAN-PERSONS.MY.SPACE.STREET' | translate}}</div>
+                <div class="value" *ngIf="!editTaxAddress">{{addressPersonalFiscal.streetName}}</div>
+                <div class="value" *ngIf="editTaxAddress">
+                    <div class="form-group"><input class="form-control" type="text" [(ngModel)]="addressPersonalFiscal.streetName" name="taxStreetName" required="required" #taxStreetNameAttr="ngModel" />
+                        <div class="form-attr-error" *ngIf="!taxStreetNameAttr.valid">{{ 'COMMON.FIELD.REQUIRED' | translate}}</div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="person-config-info-elemt">
+                <div class="name">{{'ITECBAN-PERSONS.MY.SPACE.FLOOR.APARTMENT' | translate}} {{'COMMON.OPTIONAL' | translate}}</div>
+                <div class="value" *ngIf="!editTaxAddress">{{addressPersonalFiscal.floor}}</div>
+                <div class="value" *ngIf="editTaxAddress"><input class="form-control" type="text" [(ngModel)]="addressPersonalFiscal.floor" name="taxFloor" maxlength="10" /></div>
+            </li>
+            <li class="person-config-info-elemt">
+                <div class="name">{{'ITECBAN-PERSONS.MY.SPACE.ADDITIONAL.INFO' | translate}} {{'COMMON.OPTIONAL' | translate}}</div>
+                <div class="value" *ngIf="!editTaxAddress">{{addressPersonalFiscal.aditionalInfo}}</div>
+                <div class="value" *ngIf="editTaxAddress"><input class="form-control" [(ngModel)]="addressPersonalFiscal.aditionalInfo" name="taxAditionalInfo" /></div>
+            </li>
+            <li class="person-config-info-elemt">
+                <div class="name">{{'ITECBAN-PERSONS.MY.SPACE.POSTAL.CODE' | translate}}</div>
+                <div class="value" *ngIf="!editTaxAddress">{{addressPersonalFiscal.postcode}}</div>
+                <div class="value" *ngIf="editTaxAddress">
+                    <div class="form-group"><input class="form-control" type="text" [(ngModel)]="addressPersonalFiscal.postcode" name="taxPostcode" required="required" #taxPostcodeAttr="ngModel" pattern="[0-9]*" minlength="4" maxlength="4" />
+                        <div class="form-attr-error" *ngIf="!taxPostcodeAttr.valid &amp;&amp; (!addressPersonalFiscal.postcode || addressPersonalFiscal.postcode == '')">{{ 'COMMON.FIELD.REQUIRED' | translate}}</div>
+                        <div class="form-attr-error" *ngIf="!taxPostcodeAttr.valid &amp;&amp; addressPersonalFiscal.postcode &amp;&amp; addressPersonalFiscal.postcode != ''">{{ 'COMMON.FIELD.WRONG' | translate}}</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="row" *ngIf="enabledBottonsTaxAddress">
+            <div class="col-xs-offset-6 col-xs-3 text-center"><button class="btn btn-secondary" [disabled]="!enabledBottonsTaxAddress" (click)="cancel('TaxAddress')">{{'COMMON.CANCEL' | translate}}</button></div>
+            <div class="col-xs-3 text-center"><button class="btn btn-primary" [disabled]="!enabledBottonsTaxAddress || !formTaxAddress.form.valid || !validTaxLocation || !validTaxProvince" (click)="goToToken('TaxAddress')">{{'COMMON.ACCEPT' | translate}}</button>
+            </div>
+        </div>
+    </form> -->
+
+<!-- </ng-container> -->
+<!--WRITE TOKEN-->
+<!-- <ng-container *ngIf="viewToken">
+    <form class="form-horizontal col-xs-12" #formStep3="ngForm">
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <h2 class="info-section-group-title">{{'ITECBAN-ACCOUNT.TOKEN.TEXT' | translate}} </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6"><button class="btn btn-secondary" (click)="cancel(action)">{{'COMMON.CANCEL' | translate}}</button></div>
+            <div class="col-xs-6">
+                <div class="row">
+                    <div class="col-xs-6 text-center"><button class="btn btn-secondary" (click)="goBackFromToken()">{{'COMMON.BACK' |
+                                translate}}</button></div>
+                    <div class="col-xs-6 text-center"><button class="btn btn-primary" (click)="save(action)">{{'COMMON.FINALIZE'
+                                | translate}}</button></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</ng-container> -->

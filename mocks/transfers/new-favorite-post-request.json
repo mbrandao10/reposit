@@ -1,0 +1,32 @@
+{
+  "alias": "Traspaso Interno entre cuentas",
+  "transferData": {
+    "orderer": {
+      "fromAccount": {
+        "id": "14910001273000001268",
+        "type": "cbu"
+      }
+    },
+    "beneficiary": {
+      "toAccount": {
+        "type": "ccc",
+        "id": "14910001273000001269"
+      },
+      "description": "ALVARO MUNOZ AVILA",
+      "email": "theuser@themail.org",
+      "legalDocument":{
+        "id":"12345678Z",
+        "type":"01"
+      }
+    },
+    "amount": {
+      "amount": 60,
+      "currency": "978"
+    },
+    "reason": "Arreglo furgoneta",
+    "reasonType": "1",
+    "operationType": "TRNE",
+    "transferType": "03",
+    "execution": "I"
+  }
+}

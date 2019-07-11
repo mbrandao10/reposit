@@ -1,0 +1,39 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "CACAF",
+      "name": "CUENTA FLEXIBLE",
+      "description": "CUENTA FLEXIBLE",
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    {
+      "id": "CACCD",
+      "name": "CUENTA AHORRO",
+      "description": "CUENTA AHORRO",
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    {
+      "id": "CACFE",
+      "name": "CUENTA COIN",
+      "description": "CUENTA COIN",
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

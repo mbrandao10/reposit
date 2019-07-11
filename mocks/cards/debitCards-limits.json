@@ -1,0 +1,43 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "daylyCashLimit": {
+      "amount": 1000,
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      }
+    },
+    "daylyPurchaseLimit": {
+      "amount": 1000,
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      }
+    },
+    "daylyCashTxLimit": {
+      "amount": 1000,
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      }
+    },
+    "daylyPaymentsLimit": {
+      "amount": 1000,
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      }
+    },
+    "daylyDigitalChannelsTxLimit": {
+      "amount": 1000,
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      }
+    }
+  }
+}

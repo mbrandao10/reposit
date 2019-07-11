@@ -1,0 +1,64 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "200",
+      "name": "IMPUESTO SOCIEDADES - IRNR IMPUESTO SOBRE LA RENTA DE NO RESIDENTES"
+    },
+    {
+      "id": "202",
+      "name": "IS - PAGO FRACCIONADO"
+    },
+    {
+      "id": "206",
+      "name": "IMPUESTO SOBRE LA RENTA DE NO RESIDENTES PERMANENTES"
+    },
+    {
+      "id": "210",
+      "name": "IMPUESTO SOBRE LA RENTA DE NO RESIDENTES NO PERMANENTES"
+    },
+    {
+      "id": "211",
+      "name": "IMPUESTOS SOBRE LA RENTA DE NO RESIDENTES RET. ADQUISICIÓN DE INMUEBLES"
+    },
+    {
+      "id": "213",
+      "name": "GRAVAMEN ESPECIAL NO RESIDENTES"
+    },
+    {
+      "id": "216",
+      "name": "IRPF NO RESIDENTES SIN PERMANENCIA"
+    },
+    {
+      "id": "220",
+      "name": "IS - RÉGIMEN GRUPOS FISCALES"
+    },
+    {
+      "id": "222",
+      "name": "RÉGIMEN DE BALANCES CONSOLIDADOS"
+    },
+    {
+      "id": "201",
+      "name": "IS - IRNR - DECLARACIÓN SIMPLIFICADA"
+    },
+    {
+      "id": "212",
+      "name": "IS - IRNR - ALQUILER DE INMUEBLES"
+    },
+    {
+      "id": "214",
+      "name": "IRNR SIMPLIFICADA"
+    },
+    {
+      "id": "218",
+      "name": "IRNR FRAC. EMPRESAS"
+    },
+    {
+      "id": "225",
+      "name": "IS SOCIEDADES PATRIMONIALES"
+    }
+  ]
+}

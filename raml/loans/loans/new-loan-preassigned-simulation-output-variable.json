@@ -1,0 +1,28 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "amount": 5000,
+    "period": {
+      "id": "0036",
+      "description": "36 MESES"
+    },
+    "averageInstallment": 340.33,
+    "initialInstallment": 315.68,
+    "percentage": 50,
+    "cfts": 72.33,
+    "cftn": 92.03,
+    "ttin": 55.00,
+    "ttea": 71.93,
+    "feeType": "00",
+    "varInterestInd": "0000",
+    "varInterestCal": "000",
+    "varInterestDif": 3.5,
+    "varInterestReferential": "BADLAR pesos fin mes",
+    "isVarInterest": true,
+    "revisionPeriod": "0000",
+    "amortizationPeriod": "0000"
+  }
+}

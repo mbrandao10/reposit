@@ -1,0 +1,9 @@
+{
+  "result": {
+    "code": "202",
+    "info": "Usuario creado pero pendiente de confirmación de datos"
+  },
+  "data": {
+    "userId":"121231231231"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "code": "CCCOT",
+    "name": "Seguro de Crédito",
+    "interest": 0.20,
+    "tae": 0.20,
+    "settlementTerm": "MENSUAL"
+  }
+}

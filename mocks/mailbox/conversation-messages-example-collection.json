@@ -1,0 +1,44 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data":
+    {
+      "id": "BUZS160000017120",
+      "creationDate": "2014-10-30T00:00:00.00Z",
+      "lastMessageDate": "2014-10-30T00:00:00.00Z",
+      "isRead": false,
+      "hasAttachment": true,
+      "subject": "Invierta en Triodos Bank",
+      "type":     {
+            "id": "01",
+            "name": "Sugerencia",
+            "href": "https://itecban.indra.es/mailbox/conversations/types"
+          },
+      "canReply": false,
+      "messages":[
+        {
+          "id": "001",
+          "date": "2014-10-30T00:00:00.00Z",
+          "conversationId": "BUZS160000013851",
+          "isRead": false,
+          "body": "Estimado/a cliente:<br/><br/>El compromiso de XXX Bank es seguir desarrollando nuestro modelo de banca ética y sostenible en el futuro y ampliar nuestro impacto positivo en la sociedad. \nPara su información, adjuntos a este comunicado podrá encontrar los siguientes documentos referentes a la información previa a la contratación de CDA:\n&gt; Análisis del riesgo del producto CDA, desde la triple aproximación de seguridad, riesgo y liquidez;\n&gt; Informaciónfiscal relevante para los titulares de <br/><br/> Declaración de políticas de aplicación en el ámbito de la Normativa MiFID; &gt; Condiciones generales del servicio de recepción y trasmisión de órdenes de compra/venta de CDA; <br/><br/>Para cualquier consulta al respecto, no dude en ponerse en contacto con nosotros a través de los teléfonos 99 999 99 99 / 999  940 o en cualquiera de nuestras oficinas. <br/><br/><br/>Atentamente, <br/><br/>XXX Bank       ",
+          "from": "XXX BANK NV S.E.",
+          "isFromUser": false,
+          "attachments": [
+            {
+              "id":"9cc94b7f-3fb6-4246-89c4-f503abf58b33",
+              "fileName":"Analisis_de_riesgo.pdf",
+              "link":{
+                "href":"https://itecban.indra.es/documents/9cc94b7f-3fb6-4246-89c4-f503abf58b33",
+                "method":"GET"
+                }
+            }
+          ]
+        }
+      ]
+    }
+
+
+}

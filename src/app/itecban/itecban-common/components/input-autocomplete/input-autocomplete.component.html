@@ -1,0 +1,15 @@
+<div class="form-group">
+        <input class="form-control form-control-amim form-control" type="text" [(ngModel)]="item.name"
+            id="inputAutocomplete" name="inputAutocomplete" #inputAutocompleteAttr="ngModel" autocomplete="off"
+            (ngModelChange)="filterScreen()" validateProvinceCity="validateProvinceCity" [listValidate]="filteredListValidate"
+            [type]="type" (isValid)="isValid($event)" required="required" [disabled]="disabledCmb" />
+        <div class="autocomp-result" *ngIf="filteredList.length > 0 && !disabledCmb && showList">
+            <ul class="autocomp-list" *ngFor="let option of filteredList">
+                <li class="autocomp-list-elemt"><a class="interactive" (click)="select(option)">{{option.name}}</a></li>
+            </ul>
+        </div>
+        <div class="form-attr-error" *ngIf="!inputAutocompleteAttr.valid && (!item.name || item.name == '')">{{
+            'COMMON.FIELD.REQUIRED' | translate}}</div>
+        <div class="form-attr-error" *ngIf="!inputAutocompleteAttr.valid && item.name && item.name != ''">{{
+            'COMMON.FIELD.WRONG' | translate}}</div>
+    </div>

@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-xs-12">
+    <osb-tabs [tabs]="pageConfig.tabs" [(view)]="view"></osb-tabs>
+    <div class="row page-tabbed pb-1 pt-1">
+      <div *ngIf="view === 'personal-data'">
+        <osb-profile-personal-data></osb-profile-personal-data>
+      </div>
+      <div *ngIf="view === 'fiscal-info'">
+        <osb-profile-fiscal-info></osb-profile-fiscal-info>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+{
+  "result": {
+    "code": "403",
+    "info": "Forbidden",
+    "errors": [
+      {
+        "errorDescription": "El usuario o la cuenta de correo ya esta en uso.",
+        "errorCode": "XXA",
+        "errorType": "S"
+      }
+    ]
+  }
+}

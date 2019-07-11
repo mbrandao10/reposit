@@ -1,0 +1,148 @@
+<div class="visible-xs">
+    <div class="row">
+        <div class="col-xs-10 text-title-filter">
+            {{ formConfig.mobileText | translate }}
+        </div>
+        <div class="col-xs-2 text-right">
+            <i class="icon icononesait icon-filter" (click)="open()"></i>
+        </div>
+    </div>
+    <div *ngIf="showMobileSearcher" class="mobile-searcher-container">
+        <div class="row">
+            <div class="col-xs-12">
+                <i class="pull-right button-close-modal icon icononesait icon-close" (click)="close()"></i>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 fs-18 text-os-semibold search-title--margin">
+                {{ formConfig.mobileSearcherTitle | translate }}</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <ng-container *ngTemplateOutlet="searchForm"></ng-container>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="hidden-xs">
+    <ng-container *ngTemplateOutlet="searchForm"></ng-container>
+</div>
+
+
+<ng-template #searchForm>
+    <form [formGroup]="formGroup" #formGR>
+        <!-- <ng-container *ngIf="formConfig">
+            <div [ngClass]="formConfig.labelsContainerClass">
+                <ng-container *ngFor="let labelTop of formConfig?.labelsTop">
+                    <div [ngClass]="labelTop.class"><b>{{labelTop.text | translate}}</b></div>
+                </ng-container>
+            </div>
+            <br>
+        </ng-container> -->
+        <div class="row" *ngIf="formConfig">
+            <!-- <ng-container *ngIf="formConfig">
+                <div [ngClass]="formConfig.labelsContainerClass">
+                    <ng-container *ngFor="let labelTop of formConfig?.labelsTop">
+                        <div [ngClass]="labelTop.class"><b>{{labelTop.text | translate}}</b></div>
+                    </ng-container>
+                </div>
+                <br>
+            </ng-container> -->
+            <ng-container *ngFor="let formControl of formConfig.formsControl">
+                <div *ngIf="formControl.labelDiv" [ngClass]="formControl.labelDivClass">
+                    <b>{{formControl.labelDiv  | translate}}</b>
+                </div>
+            </ng-container>
+            <ng-container *ngFor="let formControl of formConfig.formsControl">
+                <div class="form-group" [ngClass]="formControl.class">
+                    <ng-container *ngIf="formControl.labelTop">
+                        <label for="{{formControl.formControlName}}">{{formControl.labelTop | translate}}</label><br>
+                    </ng-container>
+                    <label for="{{formControl.formControlName}}" *ngIf="formControl.label"
+                        [ngClass]="formControl.labelClass">{{formControl.label | translate}}</label>
+                    <!---------------------------------DATE------------------------------------- -->
+                    <ng-container *ngIf="formControl.type === SEARCH_CONFIG_TYPE.DATE">
+                        <div class="input-calendar-custom mb-1">
+                            <osb-input-validator [formCtrl]="formGroup.get(formControl.formControlName)"
+                                [opts]="formControl.opts">
+                                <input autocomplete="off" type="text" class="form-control"
+                                    id="{{formControl.formControlName}}"
+                                    placeholder="{{(formControl.placeholder ? formControl.placeholder : '') | translate}}"
+                                    formControlName="{{formControl.formControlName}}" #bsDate="bsDatepicker"
+                                    [bsConfig]="formControl.config ? formControl.config: null"
+                                    [maxDate]="formControl.maxDate ? formControl.maxDate: null" bsDatepicker>
+                                <i class="icon icononesait icon-calendar" (click)="bsDate.show()"></i>
+                            </osb-input-validator>
+                        </div>
+                    </ng-container>
+
+                    <!----------------------------------TEXT-------------------------------------->
+                    <ng-container *ngIf="formControl.type === SEARCH_CONFIG_TYPE.TEXT">
+                        <input class="form-control mb-1" type="text" name="{{formControl.formControlName}}"
+                                formControlName="{{formControl.formControlName}}"
+                                placeholder="{{(formControl.placeholder ? formControl.placeholder : '') | translate}}"
+                                (blur)="blurFunction(formControl.formControlName)">
+                        <span *ngIf="formControl.currencySymbol"> {{formControl.currencySymbol}}</span>
+                    </ng-container>
+                    <!----------------------------------AMOUNT-------------------------------------->
+                    <ng-container *ngIf="formControl.type === SEARCH_CONFIG_TYPE.AMOUNT">
+                        <div class="input-euro ">
+                            <input class="form-control mb-1" type="text" name="{{formControl.formControlName}}"
+                                formControlName="{{formControl.formControlName}}"
+                                placeholder="{{(formControl.placeholder ? formControl.placeholder : '') | translate}}"
+                                (blur)="blurFunction(formControl.formControlName)">
+                        </div>
+                        <span *ngIf="formControl.currencySymbol"> {{formControl.currencySymbol}}</span>
+                    </ng-container>
+
+                    <!----------------------------------NUMBER-------------------------------------->
+                    <ng-container *ngIf="formControl.type === SEARCH_CONFIG_TYPE.NUMBER">
+                        <input class="  form-control mb-1" type="number" name="{{formControl.formControlName}}"
+                            formControlName="{{formControl.formControlName}}">
+                    </ng-container>
+
+                    <!----------------------------------SELECT-CHANGE-EVENT-------------------------->
+                    <ng-container *ngIf="formControl.type === SEARCH_CONFIG_TYPE.SELECT && formControl.selectChange">
+                        <select class="form-control form-control-amim mb-1" name="{{formControl.formControlName}}"
+                            formControlName="{{formControl.formControlName}}"
+                            (ngModelChange)="selectChangeEvent($event)">
+                            <option disabled selected *ngIf="formControl.selectPlaceHolder" value="">
+                                {{(formControl.selectPlaceHolder ? formControl.selectPlaceHolder : 'COMMON.SELECT-OPTION') | translate}}
+                            </option>
+                            <option *ngFor="let element of formControl.elements"
+                                [ngValue]="element[formControl.selectValue]">
+                                {{element[formControl.selectText]}}</option>
+                        </select>
+                    </ng-container>
+                    <!----------------------------------SELECT-------------------------------------->
+                    <ng-container *ngIf="formControl.type === SEARCH_CONFIG_TYPE.SELECT && !formControl.selectChange">
+                        <select class="form-control form-control-amim mb-1" name="{{formControl.formControlName}}"
+                            formControlName="{{formControl.formControlName}}">
+                            <option disabled selected *ngIf="formControl.selectPlaceHolder" value="">
+                                {{(formControl.selectPlaceHolder ? formControl.selectPlaceHolder : 'COMMON.SELECT-OPTION') | translate}}
+                            </option>
+                            <option *ngFor="let element of formControl.elements"
+                                [ngValue]="element[formControl.selectValue]">
+                                {{element[formControl.selectText]}}</option>
+                        </select>
+                    </ng-container>
+                    <!---------------------------------MONTH------------------------------------- -->
+                    <ng-container *ngIf="formControl.type === SEARCH_CONFIG_TYPE.MONTH">
+                        <input class="form-control mb-1" type="month" name="{{formControl.formControlName}}"
+                            formControlName="{{formControl.formControlName}}">
+                    </ng-container>
+                </div>
+            </ng-container>
+
+            <div [ngClass]="buttonContainer">
+                <button class="btn btn-primary btn-block mt-1 btn-search pull-right" [disabled]="!formGroup.valid"
+                    (click)="execSearch()">
+                    {{ (formConfig.buttonText ? formConfig.buttonText : 'COMMON.CONSULT') | translate}}
+                </button>
+            </div>
+        </div>
+        <osb-formgroup-validator [formGroup]="formGroup"></osb-formgroup-validator>
+    </form>
+</ng-template>

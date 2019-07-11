@@ -1,0 +1,44 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data":
+    {
+      "id":"cfmg-c1232233",
+      "openingDate": "2018-05-23T00:00:00.00Z",
+      "expirationDate": "2018-05-23",
+      "totalAmountOfAdvanceOrders":{
+        "amount": 122085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "totalAmountOfActiveOrders":{
+        "amount": 12085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "advancesMaxAmount":{
+        "amount": 100000.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "confirmingMaxAmount":{
+        "amount": 100000.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "productData": {
+        "id": "00-CFM-PLUS",
+        "description": "Confirming Plus"
+      }
+    }
+}

@@ -1,0 +1,31 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "amount": {
+      "amount": 20000.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+	"financedAmount": {
+      "amount": 12085.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "fees": {
+      "amount": 1.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+	"nominalInterestRate": 0.01,
+	"latePaymentRate": 5.01
+  }
+}

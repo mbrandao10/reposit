@@ -1,0 +1,20 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "saving-accounts",
+      "name": "Cuentas de Ahorro"
+    },
+    {
+      "id": "current-accounts",
+      "name": "Cuentas Corrientes"
+    },
+    {
+      "id": "fixed-term-deposits",
+      "name": "Depósitos Plazo"
+    }
+  ]
+}

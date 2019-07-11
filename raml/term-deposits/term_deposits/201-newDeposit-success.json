@@ -1,0 +1,16 @@
+{
+  "result": {
+    "code": "201",
+    "info": "Created"
+  },
+  "data": {
+    "id": "049100010000000172",
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://itecban.indra.es/fixed-term/deposits/049100010000000172",
+        "method": "GET"
+      }
+    ]
+  }
+}

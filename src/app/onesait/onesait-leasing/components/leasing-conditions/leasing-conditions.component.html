@@ -1,0 +1,104 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="row">
+  <div class="col-xs-12 page-tabbed pb-1">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="panel ">
+          <div class="panel-body">
+            <ul class="list" *ngIf="contract">
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.CONTRACT' | translate}}</div>
+                <div class="value text-right">{{contract.id}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.CURRENCY' | translate}}</div>
+                <div class="value text-right">{{contract.currency?.id}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.ACCOUNT' | translate}}</div>
+                <div class="value text-right">{{contract.accountId}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.REQUESTED' | translate}}</div>
+                <div class="value text-right text-no-warp">{{contract.requestedAmount?.amount | CurrencyPipe : contract.requestedAmount?.currency.code : false}}
+                </div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.AMOUNT' | translate}}</div>
+                <div class="value text-right text-no-warp">{{contract.grantedAmount?.amount | CurrencyPipe : contract.grantedAmount?.currency.code : false}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.AVAILABLE' | translate}}</div>
+                <div class="value text-right text-no-warp">{{contract.availableAmount?.amount | CurrencyPipe : contract.availableAmount?.currency.code : false}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.DISPOSED' | translate}}</div>
+                <div class="value text-right text-no-warp">{{contract.drawnAmount?.amount | CurrencyPipe : contract.drawnAmount?.currency.code : false}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.PENDING' | translate}}</div>
+                <div class="value text-right text-no-warp">{{contract.outstandingAmount?.amount | CurrencyPipe : contract.outstandingAmount?.currency.code : false}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.FORMALIZATION' | translate}}</div>
+                <div class="value text-right">{{contract.formalisationDate | dateLocalized:'shortDate'}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.EXPIRATION' | translate}}</div>
+                <div class="value text-right">{{contract.expiryDate | dateLocalized:'shortDate'}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.DURATION' | translate}}</div>
+                <div class="value text-right">{{contract.period}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.NEXT-SETTLEMENT' | translate}}</div>
+                <div class="value text-right">{{contract.nextSettlementDate | dateLocalized:'shortDate'}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.NEXT-AMORTIZATION' | translate}}</div>
+                <div class="value text-right">{{contract.nextAmortizationDate | dateLocalized:'shortDate'}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.FEE-AMOUNT' | translate}}</div>
+                <div class="value text-right text-no-warp">{{contract.installmentAmount?.amount | CurrencyPipe : contract.installmentAmount?.currency.code : false}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.RESIDUAL' | translate}}</div>
+                <div class="value text-right text-no-warp">{{contract.residualValue?.amount | CurrencyPipe : contract.residualValue?.currency.code : false}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.BAIL' | translate}}</div>
+                <div class="value text-right text-no-warp">{{contract.depositAmount?.amount | CurrencyPipe : contract.depositAmount?.currency.code : false}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.VAT' | translate}}</div>
+                <div class="value text-right">{{contract.installmentTaxRate}}</div>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.INTEREST' | translate}}</div>
+                <div class="value text-right">{{contract.interestRate}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.REFERENTIAL' | translate}}</div>
+                <div class="value text-right">{{contract.interestReferential}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.DIFFERENTIAL' | translate}}</div>
+                <div class="value text-right">{{contract.interestDifferential}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.REVIEW' | translate}}</div>
+                <div class="value text-right">{{contract.reviewPeriodicity}}</div>
+              </li>
+              <li>
+                <div class="name text-left">{{'ONESAIT-LEASING.CONDITIONS.NEXT-REVIEW' | translate}}</div>
+                <div class="value text-right">{{contract.nextReviewDate | dateLocalized:'shortDate'}}</div>
+              </li>
+            </ul>
+            <div *ngIf="!contract">{{'ONESAIT-CONFIRMING.CONDITIONS.NO-CONTRACTS' | translate}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

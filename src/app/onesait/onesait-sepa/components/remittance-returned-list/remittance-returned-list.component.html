@@ -1,0 +1,46 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="panel ">
+    <div class="panel-body">
+        <ng-container>
+            <osb-search-list [formGroup]="returnsListForm" [formConfig]="formConfig" (search)="getReturns()"></osb-search-list>
+            <div class="mb-1">
+                <div *ngIf="remittancesReturned && remittancesReturned.length > 1">
+                    {{ 'ONESAIT-SEPA.REMITTANCE-RETURNED-LIST.HAVE' | translate }} {{ remittancesReturned.length }} {{ 'ONESAIT-SEPA.REMITTANCE-RETURNED-LIST.REMITTANCES-RETURNED' | translate }}</div>
+                <div *ngIf="remittancesReturned && remittancesReturned.length === 1">
+                    {{ 'ONESAIT-SEPA.REMITTANCE-RETURNED-LIST.HAVE' | translate }} {{ remittancesReturned.length }} {{ 'ONESAIT-SEPA.REMITTANCE-RETURNED-LIST.REMITTANCE-RETURNED' | translate }}</div>
+            </div>
+
+            <table *ngIf="remittancesReturned" class="table table-striped" >
+                <thead class="hidden-xs">
+                    <tr>
+                        <th>{{'ONESAIT-SEPA.REMITTANCE-RETURNED-LIST.RETURNED' | translate }}</th>
+                        <th>{{'ONESAIT-SEPA.REMITTANCE-RETURNED-LIST.ID' | translate }}</th>
+                        <th class="hidden-xs">{{'ONESAIT-SEPA.REMITTANCE-RETURNED-LIST.NUM-OF-ORDERS' | translate }}</th>
+                        <th class="hidden-xs">{{'ONESAIT-SEPA.REMITTANCE-RETURNED-LIST.AMOUNT' | translate }}</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let remittanceReturned of remittancesReturned">
+                        <tr>
+                            <td *ngIf="remittanceReturned.creationDate">{{remittanceReturned.creationDate | date: 'dd/MM/yyyy' }}</td>
+                            <td *ngIf="remittanceReturned.remittanceId">{{remittanceReturned.remittanceId }}</td>
+                            <td *ngIf="remittanceReturned.numOfItems" class="hidden-xs">{{remittanceReturned.numOfItems }}</td>
+                            <td *ngIf="remittanceReturned.amount" class="hidden-xs text-no-warp">{{remittanceReturned.amount.amount | CurrencyPipe : remittanceReturned.amount.currency.code }}</td>
+                            <td class="text-right">
+                                <button class="btn btn-secondary" (click)="downloadFile(remittanceReturned)">{{'ONESAIT-SEPA.REMITTANCE-RETURNED-LIST.DOWNLOAD-FILE' | translate }}</button>
+                            </td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+
+            <div class="row" *ngIf="hasMoreData">
+                <a class="col-xs-12 text-center p-1" (click)="next()" role="button">{{'COMMON.MORE-RESULTS'
+              | translate}}</a>
+            </div>
+        </ng-container>
+        <!-- <div *ngIf="!remittancesReturned">
+            {{ 'ONESAIT-SEPA.REMITTANCE-RETURNED-LIST.NO-REMITTANCES-RETURNED' | translate }}</div> -->
+    </div>
+</div>

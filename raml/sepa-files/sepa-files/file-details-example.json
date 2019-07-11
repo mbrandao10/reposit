@@ -1,0 +1,26 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "fileType": {
+      "id": "AEB19.14",
+      "name": "AEB19.14 - Domiciliaciones SEPA"
+    },
+    "fileName": "RemesaDomiciliaciones24012018.xml",
+    "numOfOrders": 20,
+    "totalAmount": {
+      "amount": 12085.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "date": "2018-05-23T00:00:00.00Z",
+    "accountReference": {
+      "id": "PT50002700000001234567833"
+    },
+	"documentId":"38f93bf9-5704-45b8-8f4f-bf6e47241a03"
+  }
+}

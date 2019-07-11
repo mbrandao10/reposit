@@ -1,0 +1,49 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "movementClass":"SettlementMovement",
+    "id": "xxxx-xxxx-xxxxx-xxxxx-xxxxx-xxxxxx-xxxx",
+    "reference": "xxxx-xxxx-xxxxx-xxxxx-xxxxx-xxxxxx-xxxx",
+    "reason": "Liquidación xxx",
+    "amount": {
+      "amount": -9999.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "type": {
+      "id": "LIQC",
+      "name": "Liquidación cuenta a la vista"
+    },
+    "operationDate": "2014-10-30T00:00:00.00Z",
+    "hasDocument":true,
+    "documentId": "71cb8771-5b29-4570-af1c-ca3cb7975246",
+    "state": "APLICADA",
+    "dateFrom": "2014-10-30",
+    "dateTo": "2014-10-30",
+    "debtorInterest": 99,
+    "issuerInterest": 99,
+    "blockedAmount": {
+      "amount": 9.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "feeAmount": {
+      "amount": -99.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "donation": {
+      "interestDonation": 0.1,
+      "donationReceptor": ""
+    }
+  }
+}

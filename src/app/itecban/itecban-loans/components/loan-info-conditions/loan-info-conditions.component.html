@@ -1,0 +1,196 @@
+<app-loader *ngIf="loading"></app-loader>
+
+<ul class="list" *ngIf="loanDetail">
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.IBAN' | translate }}
+        </div>
+        <div class="value text-right" *ngIf="loanDetail && loanDetail.account.formats">
+            {{ loanDetail.account.formats | formatAccountPipe: accountFormatView }}
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.PRODUCT-TYPE' | translate }}
+        </div>
+        <div class="value text-right" *ngIf="loanDetail && loanDetail.product.description">
+            {{ loanDetail.product.description }}
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.STATUS' | translate }}
+        </div>
+        <div class="value text-right" *ngIf="loanDetail && loanDetail.status.name">
+            {{ loanDetail.status.name }}
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.STARTING-CAPITAL' | translate }}
+        </div>
+        <div class="value text-right" *ngIf="loanDetail && loanDetail.startingCapital.amount!==null && loanDetail.startingCapital.currency.code">
+            {{ loanDetail.startingCapital.amount | CurrencyPipe: loanDetail.startingCapital.currency.code }}
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.OUTSTANDING-CAPITAL' | translate }}
+        </div>
+        <div class="value text-right text-no-warp" *ngIf="loanDetail && loanDetail.outstandingCapital.amount!==null && loanDetail.outstandingCapital.currency.code">
+            {{ loanDetail.outstandingCapital.amount | CurrencyPipe: loanDetail.outstandingCapital.currency.code }}
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.LAST-RECEIPT' | translate }}
+        </div>
+        <div class="value text-right text-no-warp" *ngIf="loanDetail && loanDetail.lastMovementDate">
+            {{ loanDetail.lastMovementDate | date: 'dd/MM/yyyy' }}
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.FIRST-RECEIPT-PENDING' | translate }}
+        </div>
+        <div class="value text-right text-no-warp" *ngIf="loanDetail && loanDetail.pendingAmount.amount!==null && loanDetail.pendingAmount.currency.code">
+            {{ loanDetail.pendingAmount.amount | CurrencyPipe: loanDetail.pendingAmount.currency.code }}
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.CHARGE-ACCOUNT' | translate }}
+        </div>
+        <div class="value text-right" *ngIf="loanDetail && loanDetail.connectedAccount.formats">
+            {{ loanDetail.connectedAccount.formats | formatAccountPipe: accountFormatView }}
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.START-DATE' | translate }}
+        </div>
+        <div class="value text-right" *ngIf="loanDetail && loanDetail.startDate">
+            {{ loanDetail.startDate | date: 'dd/MM/yyyy' }}
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.EXPIRY-DATE' | translate }}
+        </div>
+        <div class="value text-right" *ngIf="loanDetail && loanDetail.expiryDate">
+            {{ loanDetail.expiryDate | date: 'dd/MM/yyyy' }}
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.AMORTIZATION-PERIODICITY' | translate }}
+        </div>
+        <div class="value text-right" *ngIf="loanDetail && loanDetail.amortizationPeriodicity">
+            {{ loanDetail.amortizationPeriodicity }}
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.AMORTIZATION-REVIEW' | translate }}
+        </div>
+        <div class="value text-right" *ngIf="loanDetail && loanDetail.reviewPeriodicity">
+            {{ loanDetail.reviewPeriodicity }}
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.INTEREST-RATE' | translate }}
+        </div>
+        <div class="value text-right" *ngIf="loanDetail && loanDetail.interestRate!==null">
+            {{ loanDetail.interestRate | CurrencyPipe }}
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.TAE' | translate }}
+        </div>
+        <div class="value text-right" *ngIf="loanDetail && loanDetail.interest!==null">
+            {{ loanDetail.interest | CurrencyPipe }} %
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.VARIABLE-INTEREST-INDICATOR' | translate }}
+        </div>
+        <div class="value text-right" *ngIf="loanDetail && loanDetail.varInterestDif!==null">
+            {{ loanDetail.varInterestDif }}
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.NEXTREVIEWDATE' | translate }}
+        </div>
+        <div class="value text-right" *ngIf="loanDetail && loanDetail.nextReviewDate">
+            {{ loanDetail.nextReviewDate | date: 'dd/MM/yyyy' }}
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.INTEREST-REFERENTIAL' | translate }}
+        </div>
+        <div class="value text-right" *ngIf="loanDetail && loanDetail.varInterestReferential!==null">
+            {{ loanDetail.varInterestReferential }}
+        </div>
+    </li>
+
+    <li>
+        <div class="name text-left">
+            {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-LIST.DIFFERENTIAL' | translate }}
+        </div>
+        <div class="value text-right" *ngIf="loanDetail && loanDetail.differential!==null">
+            {{ loanDetail.differential | CurrencyPipe }}
+        </div>
+    </li>
+
+</ul>
+
+<div class="mt-2" *ngIf="loanDetail.holders">
+    <span class="text-os-semibold">
+        {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-PARTICIPANTS.TITLE-HEADS-AND-INTERVENTIONS' | translate }}
+    </span>
+
+    <table class="table table-striped mt-1">
+        <thead class="hidden-xs">
+            <tr>
+                <th>
+                    {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-PARTICIPANTS.FIRST-NAME' | translate }}
+                </th>
+                <th class="text-right">
+                    {{ 'ITECBAN-LOANS.LOAN-INFO-CONDITIONS.DETAILED-PARTICIPANTS.PROFILE' | translate }}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let holder of loanDetail.holders">
+                <td *ngIf="holder && holder.userName">
+                    {{ holder.userName }}
+                </td>
+                <td class="text-right" *ngIf="holder && holder.type.name">
+                    {{ holder.type.name }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

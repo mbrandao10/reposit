@@ -1,0 +1,16 @@
+{
+  "amount": {
+    "amount": 5000.01,
+    "currency": "032"
+  },
+  "reference": "Envio de efectivo",
+  "fromAccount": {
+    "id": "149100011009408525",
+    "type": "01"
+  },
+  "accountType":"10",
+  "document": {
+    "id": "12345678Z",
+    "type": "DNI"
+  }
+}

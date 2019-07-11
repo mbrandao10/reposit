@@ -1,0 +1,18 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "Hombre",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/genders"
+    },
+    {
+      "id": "02",
+      "name": "Mujer",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/genders"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "id": "0000000000000000001",
+    "reason": "Concepto del movimiento 1",
+    "amount": {
+      "amount": -12.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "date": "2017-09-28T00:00:00.00Z",
+    "hasDocument": true,
+    "hasDetail": true,
+    "documentId": "71cb8771-5b29-4570-af1c-ca3cb7975246",
+    "shop": "Shopping Storage",
+    "city": "Santiago",
+    "contract": "123456778",
+    "currencyAmount": {
+      "amount": -12.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "exchange": 0.05
+  }
+}

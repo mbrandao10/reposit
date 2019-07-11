@@ -1,0 +1,59 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<ng-container *ngIf="orders">
+    <div class="col-xs-12">
+        <osb-search-list #searchComponent [formGroup]="consultOrdersForm" [formConfig]="formConfig"
+            (search)="consultOrders()"></osb-search-list>
+        <div class="col-md-3 col-md-offset-9 hidden-xs hidden-sm p-0">
+            <button class="btn btn-primary btn-block mt-1 btn-search pull-right" (click)="searchComponent.execSearch()" [disabled]="!consultOrdersForm.valid">
+                {{'COMMON.CONSULT' | translate}}
+            </button>
+        </div>
+    </div>
+
+    <ng-container *ngIf="orders">
+        <p class="interactive" *ngIf="showingLastOrders && !filterOrders">{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.ORDERS.LAST-ORDERS'
+        | translate}}</p>
+        <p class="interactive" *ngIf="!showingLastOrders && !filterOrders">{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.ORDERS.CONSULTED-ORDERS'
+        | translate}}</p>
+        <p class="interactive" *ngIf="filterOrders === 'alive'">{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.ORDERS.ALIVE-ORDERS'
+        | translate}}</p>
+        <p class="interactive" *ngIf="filterOrders === 'advance'">{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.ORDERS.ADVANCED-ORDERS'
+        | translate}}</p>
+    </ng-container>
+
+    <table class="table table-striped" *ngIf="orders">
+        <thead class="hidden-xs">
+            <tr>
+                <th class="hidden-sm">{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.ORDERS.ORDER-NUMBER' | translate}}</th>
+                <th class="hidden-sm">
+                    {{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.ORDERS.RECEIPT' | translate}}</th>
+                <th>{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.ORDERS.EXPIRATION' | translate}}</th>
+                <th>
+                    {{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.ORDERS.SUPPLIER' | translate}}</th>
+                <th>
+                    {{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.ORDERS.CONCEPT' | translate}}</th>
+                <th class="th-right-confirming">{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.ORDERS.AMOUNT' | translate}}</th>
+                <th>{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.ORDERS.STATE' | translate}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of orders">
+                <td class="hidden-sm">{{order.id}}</td>
+                <td class="hidden-sm">{{order.creationDate | date: 'dd/MM/yyyy'}}</td>
+                <td>{{order.expirationDate | date: 'dd/MM/yyyy'}}</td>
+                <td>{{order.supplier}}</td>
+                <td>{{order.concept}}</td>
+                <td class="text-no-warp th-right-confirming">{{order.amount.amount | CurrencyPipe : order.amount.currency.code :false}} {{currencySymbol}}</td>
+                <td>{{order.status.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-container *ngIf="hasMoreData">
+        <p class="text-center pt-1">
+            <a (click)="next()" role="button">{{'COMMON.MORE-RESULTS' | translate}}</a>
+        </p>
+    </ng-container>
+</ng-container>
+<!-- <div *ngIf="!orders" class="pt-1 text-center">{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.ORDERS.NO-ORDERS' | translate}}
+</div> -->

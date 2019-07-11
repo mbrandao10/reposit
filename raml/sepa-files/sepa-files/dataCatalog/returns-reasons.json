@@ -1,0 +1,48 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "AC01",
+      "name": "IBAN no válido o el número de cuenta no existe"
+    },
+    {
+      "id": "AC04",
+      "name": "Número de cuenta cancelada"
+    },
+    {
+      "id": "AC06",
+      "name": "Cuenta bloqueada"
+    },
+    {
+      "id": "RC01",
+      "name": "BIC inválido"
+    },
+    {
+      "id": "RR01",
+      "name": "Error en el IBAN deudor"
+    },
+    {
+      "id": "RR02",
+      "name": "Falta el nombre del deudor"
+    },
+    {
+      "id": "RR03",
+      "name": "Falta nombre de acreedor"
+    },
+    {
+      "id": "MD01",
+      "name": "Mandato no válido"
+    },
+    {
+      "id": "MD02",
+      "name": "Faltan datos del mandato o mandato incorrecto"
+    },
+    {
+      "id": "MD06",
+      "name": "No conforme con el cargo"
+    }
+  ]
+}

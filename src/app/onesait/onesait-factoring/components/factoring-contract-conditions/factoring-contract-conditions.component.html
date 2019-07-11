@@ -1,0 +1,70 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<div class="panel ">
+  <div class="panel-body">
+    <ul class="list" *ngIf="contract">
+      <li>
+        <div class="name text-left">{{'ONESAIT-FACTORING.CONDITIONS.FACTORING-TYPE' | translate }}</div>
+        <div class=" value text-right">{{contract.factoringType.name}}</div>
+      </li>
+      <li>
+        <div class="name text-left">{{'ONESAIT-FACTORING.CONDITIONS.COLLECTION-LIMIT' | translate }}</div>
+        <div class=" value text-right text-no-warp">{{contract.collectionManagementLimit.amount | CurrencyPipe :
+                contract.collectionManagementLimit.currency.code : false }}</div>
+      </li>
+      <li>
+        <div class="name text-left">{{'ONESAIT-FACTORING.CONDITIONS.FINANCING-LIMIT' | translate }}</div>
+        <div class=" value text-right text-no-warp">{{contract.financingLimit.amount | CurrencyPipe :
+                contract.financingLimit.currency.code :
+                false }}</div>
+      </li>
+      <li>
+        <div class="name text-left">{{'ONESAIT-FACTORING.CONDITIONS.SUBSCRIPTION-ACCOUNT' | translate }}</div>
+        <div class=" value text-right">{{contract.subscriptionAccount.id}}</div>
+      </li>
+      <li>
+        <div class="name text-left">{{'ONESAIT-FACTORING.CONDITIONS.SETTLEMENT-TYPE' | translate }}</div>
+        <div class=" value text-right">{{contract.settlementType.name}}</div>
+      </li>
+      <li>
+        <div class="name text-left">{{'ONESAIT-FACTORING.CONDITIONS.AUTOMATIC-FINANCE' | translate }}</div>
+        <div class=" value text-right" *ngIf="contract.financing.isAutomatic">{{'ONESAIT-FACTORING.CONDITIONS.YES' |
+                translate }}</div>
+        <div class=" value text-right" *ngIf="!contract.financing.isAutomatic">{{'ONESAIT-FACTORING.CONDITIONS.NO' |
+                translate }}</div>
+      </li>
+      <li>
+        <div class="name text-left">{{'ONESAIT-FACTORING.CONDITIONS.FINANCING-CONDITIONS' | translate }}</div>
+        <div class=" value text-right" *ngIf="contract.financing.fixedRate">{{'ONESAIT-FACTORING.CONDITIONS.FIXED' |
+                translate }}
+          {{contract.financing.fixedRate}} %</div>
+        <div class=" value text-right" *ngIf="contract.financing.referenceIndex">{{contract.financing.referenceIndex}}
+          {{contract.financing.differentialRate}} %</div>
+      </li>
+      <li>
+        <div class="name text-left">{{'ONESAIT-FACTORING.CONDITIONS.MAX-ADVANCE' | translate }}</div>
+        <div class=" value text-right">{{contract.maxPercentageToAnticipate}}</div>
+      </li>
+      <li>
+        <div class="name text-left">{{'ONESAIT-FACTORING.CONDITIONS.COVERAGE' | translate }}</div>
+        <div class=" value text-right">{{contract.percentageOfCoverage }}</div>
+      </li>
+      <li *ngIf="contract.settlementSubType">
+        <div class="name text-left">{{'ONESAIT-FACTORING.CONDITIONS.PAYMENT' | translate }}</div>
+        <div class=" value text-right">{{contract.settlementSubType.name}}</div>
+      </li>
+      <li>
+        <div class="name text-left">{{'ONESAIT-FACTORING.CONDITIONS.COLLECTION-AMOUNT' | translate }}</div>
+        <div class=" value text-right text-no-warp">{{contract.collectionsAmount.amount | CurrencyPipe :
+                contract.collectionsAmount.currency.code : false }}</div>
+      </li>
+      <li>
+        <div class="name text-left">{{'ONESAIT-FACTORING.CONDITIONS.FINANCED-AMOUNT' | translate }}</div>
+        <div class=" value text-right text-no-warp">{{contract.financedAmount.amount | CurrencyPipe :
+                contract.financedAmount.currency.code :
+                false }}</div>
+      </li>
+    </ul>
+    <div class="col-xs-12" *ngIf="!contract">{{'ONESAIT-FACTORING.CONDITIONS.NO-CONTRACT' | translate }}</div>
+  </div>
+</div>

@@ -1,0 +1,198 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<div *ngIf="view === 'INIT'">
+  <div class="panel ">
+    <div class="panel-body">
+
+      <osb-input-file (sendFile)="sendFileEvent($event)">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <label>{{'ONESAIT-FACTORING.UPLOAD-INVOICE.USE-FILE' | translate }}</label>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <a class="interactive" (click)="goToCompatibleFiles()" data-toggle="modal"
+            data-target="#compatibleFilesModal">{{'ONESAIT-FACTORING.UPLOAD-INVOICE.COMPATIBLE-FILES'
+                  | translate }}</a>
+        </div>
+      </osb-input-file>
+
+    </div>
+  </div>
+  <br>
+</div>
+
+<!-- Pantalla de confirmacion de subida de archivo -->
+<div *ngIf="view === 'CONFIRM' && fileResponse">
+  <div class="panel ">
+    <div class="panel-body">
+
+      <ng-container *ngIf="fileResponse.date">
+        <ng-container *ngTemplateOutlet="factoringUploadInvoiceResume"></ng-container>
+      </ng-container>
+
+      <div class="col-xs-12 text-center">
+        <div class="col-xs-12 col-sm-3 col-md-2 mb-1 mt-1">
+          <button class="btn btn-terciary" (click)="cancel()">{{ 'COMMON.CANCEL' | translate }}</button>
+        </div>
+
+        <div class="col-xs-12 col-sm-3 col-md-3 col-sm-offset-3 col-md-offset-5 mb-1 mt-1">
+          <button class=" btn btn-terciary" (click)="back()">{{ 'COMMON.BACK' | translate }} </button>
+        </div>
+
+        <div class="col-xs-12 col-sm-3 col-md-2 mb-1 mt-1">
+          <button type="button" class="btn btn-primary" (click)="sendFileConfirm()">{{ 'COMMON.NEXT' |
+                          translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pantalla de token -->
+<div *ngIf="view === 'TOKEN'">
+  <div class="panel ">
+    <div class="panel-body">
+      <div class="row mb-1 mt-1">
+        <div class="col-xs-12 col-md-6 col-md-offset-3">
+          <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+        </div>
+      </div>
+
+      <div class="col-xs-12 text-center">
+        <div class="col-xs-12 col-sm-3 col-md-2 mb-1 mt-1">
+          <button class="btn btn-terciary" (click)="cancel()">{{ 'COMMON.CANCEL' | translate }}</button>
+        </div>
+
+        <div class="col-xs-12 col-sm-3 col-md-3 col-sm-offset-3 col-md-offset-5 mb-1 mt-1">
+          <button class=" btn btn-terciary" (click)="back()">{{ 'COMMON.BACK' | translate }} </button>
+        </div>
+
+        <div class="col-xs-12 col-sm-3 col-md-2 mb-1 mt-1">
+          <button class="btn btn-primary" [disabled]="!signatureEntity.tokenValid" (click)="tokenCompleted()">{{
+                                'COMMON.FINALIZE' | translate }}</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Pantalla de archivo subido confirmado -->
+<div *ngIf="view === 'FINISH'">
+  <div class="panel ">
+    <div class="panel-body">
+
+      <ng-container *ngIf="fileResponse">
+        <osb-final-message text="{{'ONESAIT-FACTORING.UPLOAD-INVOICE.CORRECT-FILE' | translate }}">
+        </osb-final-message>
+        <osb-voucher-container #voucherContainer>
+          <ng-container *ngTemplateOutlet="factoringUploadInvoiceResume"></ng-container>
+          <div class="col-xs-12 mb-1">
+            <osb-download-info [voucherContainer]="voucherContainer"
+              text="{{'ONESAIT-CONFIRMING.REQUEST-ADVANCE.DOWNLOAD-RECEIPT' | translate}}">
+            </osb-download-info>
+          </div>
+        </osb-voucher-container>
+      </ng-container>
+
+      <div class="col-xs-12 text-center">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-sm-offset-4 col-md-offset-6 mb-1">
+            <button type="button" class="btn btn-secondary" (click)="goToAccounts()">{{'ONESAIT-FACTORING.UPLOAD-INVOICE.GO-ACCOUNTS'
+                      | translate }}</button>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-3 mb-1">
+            <button type="button" class="btn btn-primary" (click)="back()">{{'ONESAIT-FACTORING.UPLOAD-INVOICE.ANOTHER-FILE'
+                      | translate }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Template para verificación y confirmación -->
+<ng-template #factoringUploadInvoiceResume>
+  <div class="col-xs-12 col-sm-6 col-md-6">
+    <div class="col-xs-12">
+
+      <div class="mb-1 mt-1 info-text">
+        <div>{{'HEADER.TITLE.FACTORING' | translate }} - <b>{{'ONESAIT-FACTORING.UPLOAD-INVOICE.DETAIL.TITLE' |
+                    translate
+                    }}</b></div>
+        <div>{{file.name}}</div>
+      </div>
+
+      <div class="box-form-info grayBackground-c">
+        <div class="info-section-group">
+
+          <div class="mb-1 mt-1">
+            <div><b>{{'ONESAIT-FACTORING.UPLOAD-INVOICE.DETAIL.CREATION-DATE' | translate }}</b></div>
+            <div>{{fileResponse.date | dateLocalized: 'shortDate'}}</div>
+          </div>
+
+          <div class="mb-1 mt-1 ">
+            <div><b>{{'ONESAIT-FACTORING.UPLOAD-INVOICE.DETAIL.ISSUER' | translate }}</b></div>
+            <div>[]</div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6 mb-1 mt-1">
+              <div><b>{{'ONESAIT-FACTORING.UPLOAD-INVOICE.DETAIL.NUM-INVOICES' | translate }}</b></div>
+              <div *ngIf="fileResponse.numOfItems">{{fileResponse.numOfItems}}</div>
+            </div>
+            <div class="col-xs-6 mb-1 mt-1 text-right">
+              <div><b>{{'ONESAIT-FACTORING.UPLOAD-INVOICE.DETAIL.AMOUNT' | translate }}</b></div>
+              <div>[]</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<!-- Modal de Archivos compatibles -->
+<div class="modal fade" id="compatibleFilesModal" *ngIf="modal=='compatibleFiles'" role="dialog">
+  <div class="modal-dialog modal-long">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" type="button" data-dismiss="modal" (click)="goBackFromModal()">&times;</button>
+        <div class="modal-title">[Listado de ficheros compatibles]</div>
+      </div>
+      <div class="modal-body">
+        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin
+          gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum
+          sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum,
+          nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.</span>
+        <br><br>
+        <table class="table">
+          <tr>
+            <th>Nombre</th>
+            <th>Extensión</th>
+          </tr>
+          <tr>
+            <td>Lorem ipsum</td>
+            <td>xxx</td>
+          </tr>
+          <tr>
+            <td>Lorem ipsum</td>
+            <td>xxx</td>
+          </tr>
+          <tr>
+            <td>Lorem ipsum</td>
+            <td>xxx</td>
+          </tr>
+          <tr>
+            <td>Lorem ipsum</td>
+            <td>xxx</td>
+          </tr>
+          <tr>
+            <td>Lorem ipsum</td>
+            <td>xxx</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

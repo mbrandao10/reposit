@@ -1,0 +1,65 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="panel ">
+    <div class="panel-body">
+        <ng-container *ngIf="remittances">
+            <div *ngIf="viewRemittanceDetail">
+                <osb-remittance-detail [remittance]="remittance" (backButton)="handleBack()"></osb-remittance-detail>
+            </div>
+        </ng-container>
+        <div *ngIf="!viewRemittanceDetail">
+            <osb-search-list [formGroup]="remittanceListForm" [formConfig]="formConfig" (search)="getRemittances()"
+                (selectChange)="selectEventChange($event)">
+            </osb-search-list>
+            <ng-container *ngIf="remittances">
+
+                <div class="mb-1">
+                    <div *ngIf="showingLastRemittances">
+                        {{ 'ONESAIT-SEPA.REMITTANCE-LIST.LAST-REMITTANCES' | translate }}
+                    </div>
+                    <div *ngIf="!showingLastRemittances">
+                        {{ 'ONESAIT-SEPA.REMITTANCE-LIST.CONSULTED-REMITTANCES' | translate }}
+                    </div>
+                </div>
+
+                <table class="table table-striped">
+                    <thead class="hidden-xs">
+                        <tr>
+                            <th>{{'ONESAIT-SEPA.REMITTANCE-LIST.CREATION-DATE' | translate | uppercase}} </th>
+                            <th>{{'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-ID' | translate | uppercase}} </th>
+                            <th>{{'ONESAIT-SEPA.REMITTANCE-LIST.FILETYPE' | translate }} </th>
+                            <th class="hidden-sm">
+                                {{'ONESAIT-SEPA.REMITTANCE-LIST.NUM-OF-ORDERS' | translate | uppercase}} </th>
+                            <th>{{'ONESAIT-SEPA.REMITTANCE-LIST.TOTAL-AMOUNT' | translate | uppercase}} </th>
+                            <th>{{'ONESAIT-SEPA.REMITTANCE-LIST.STATUS' | translate | uppercase}} </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let remittance of remittances">
+                            <tr>
+                                <td class="hidden-xs">{{remittance.creationDate | date: 'dd/MM/yyyy' }}</td>
+                                <td class="hidden-xs">{{remittance.id }}</td>
+                                <td>{{remittance.fileType.name }}</td>
+                                <td class="hidden-sm hidden-xs">{{remittance.numOfOrders }}</td>
+                                <td class="hidden-xs text-no-warp">
+                                    {{remittance.totalAmount.amount | CurrencyPipe : remittance.totalAmount.currency.code }}</td>
+                                <td>{{remittance.status.name }}</td>
+                                <td class="text-right">
+                                    <button class="btn btn-secondary"
+                                        (click)="viewOrdersOfRemittance(remittance)">{{'ONESAIT-SEPA.REMITTANCE-LIST.VIEW-ORDERS' | translate }}</button>
+                                </td>
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+
+                <div class="row" *ngIf="hasMoreData">
+                    <a class="col-xs-12 text-center p-1" (click)="next()" role="button">{{'COMMON.MORE-RESULTS'
+              | translate}}</a>
+                </div>
+            </ng-container>
+        </div>
+        <!-- <div *ngIf="!remittances">
+            {{ 'ONESAIT-SEPA.REMITTANCE-LIST.NO-REMITTANCES' | translate }}</div> -->
+    </div>
+</div>

@@ -1,0 +1,20 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "name": "Disfrutá la guita"
+    },
+    {
+      "name": "Paga semanal"
+    },
+    {
+      "name": "Solo para libros"
+    },
+    {
+      "name": "Comprate algo bonito"
+    }
+  ]
+}

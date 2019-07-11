@@ -1,0 +1,59 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "referenceNumber": "1110917838310",
+      "executionDate": "2018-07-20T00:00:00.00Z",
+      "type": "income",
+      "taxForm": {
+        "id": "111",
+        "name": "IRPF RETENCIONES E INGRESOS A CUENTA"
+      },
+      "paymentAmount": {
+        "amount": 137.40,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "referenceNumber": "3031491000045X",
+      "executionDate": "2018-04-20T00:00:00.00Z",
+      "type": "income",
+      "taxForm": {
+        "id": "303",
+        "name": "IVA RÉGIMEN GENEAL AUTOLIQUIDACIÓN"
+      },
+      "paymentAmount": {
+        "amount": 150.00,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "referenceNumber": "1001491000264B",
+      "executionDate": "2018-02-20T00:00:00.00Z",
+      "type": "income",
+      "taxForm": {
+        "id": "100",
+        "name": "IRPF - DECLARACIÓN ANUAL / BORRADOR IRPF"
+      },
+      "paymentAmount": {
+        "amount": 450.00,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages": false
+  }
+}

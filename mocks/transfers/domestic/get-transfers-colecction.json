@@ -1,0 +1,168 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "TRNE030000000001744",
+      "orderer": {
+        "fromAccount": {
+          "id": "ES6220952671899969212624",
+          "type": {
+            "id": "IBAN",
+            "name": "IBAN"
+          }
+        },
+        "description": "GREGORIO MUNOZ AVILA"
+      },
+      "beneficiary": {
+        "toAccount": {
+          "type": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "id": "ES4620958779978815599333"
+        },
+        "description": "Badguy Car Repair",
+        "legalDocument": {
+          "id": "12345678Z",
+          "type": {
+            "id": "01",
+            "name": "DNI"
+          }
+        }
+      },
+      "amount": {
+        "amount": 60,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "reason": "Reparación furgoneta",
+      "purposeType": {
+        "id": "02",
+        "name": "CUOTA"
+      },
+      "transferType": {
+        "id": "03",
+        "name": "Cash"
+      },
+      "date": "2014-10-30T00:00:00.00Z",
+      "isCancellable":true,
+      "status":{
+        "id": "PENDING",
+        "name": "Pendiente"
+      }
+    },
+    {
+      "id": "TRNE030000000001722",
+      "orderer": {
+        "fromAccount": {
+          "id": "ES6220952671899969212624",
+          "type": {
+            "id": "IBAN",
+            "name": "IBAN"
+          }
+        },
+        "description": "John Denver"
+      },
+      "beneficiary": {
+        "toAccount": {
+          "type": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "id": "ES4531906352952412299274"
+        },
+        "description": "Bestrong Gim",
+        "legalDocument": {
+          "id": "12345678Z",
+          "type": {
+            "id": "01",
+            "name": "DNI"
+          }
+        }
+      },
+      "amount": {
+        "amount": 60,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "reason": "Pago Mensualidad",
+      "purposeType": {
+        "id": "02",
+        "name": "CUOTA"
+      },
+      "transferType": {
+        "id": "03",
+        "name": "Cash"
+      },
+      "date": "2014-10-30T00:00:00.00Z",
+      "isCancellable":false,
+      "status":{
+        "id": "PENDING",
+        "name": "Pendiente"
+      }
+    },
+    {
+      "id": "TRNE030000000001744",
+      "orderer": {
+        "fromAccount": {
+          "id": "ES6220952671899969212624",
+          "type": {
+            "id": "IBAN",
+            "name": "IBAN"
+          }
+        },
+        "description": "GREGORIO MUNOZ AVILA"
+      },
+      "beneficiary": {
+        "toAccount": {
+          "type": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "id": "ES4620958779978815599333"
+        },
+        "description": "MARIA DE SOUSA",
+        "legalDocument": {
+          "id": "12345678Z",
+          "type": {
+            "id": "01",
+            "name": "DNI"
+          }
+        }
+      },
+      "amount": {
+        "amount": 60,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "reason": "ALquiler piso",
+      "purposeType": {
+        "id": "02",
+        "name": "CUOTA"
+      },
+      "transferType": {
+        "id": "03",
+        "name": "Cash"
+      },
+      "date": "2014-10-30T00:00:00.00Z",
+      "isCancellable":false,
+      "status":{
+        "id": "PENDING",
+        "name": "Pendiente"
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

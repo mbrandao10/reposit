@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="col-xs-12">
+        <osb-loader *ngIf="loading"></osb-loader>
+        <div class="row">
+            <div class="col-xs-12  p-dynamic">
+                <osb-tabs [tabs]="cardsTypes.tabs" [(view)]="view" (viewChange)="chargeCardByType($event)"></osb-tabs>
+            </div>
+        </div>
+
+        <div class="row page-tabbed pb-1 pt-1">
+            <div class="col-xs-12 p-dynamic">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <div class="row" style="height: 60px;">
+                                    <div class="col-xs-12 col-sm-4 col-md-9" *ngIf="cardsBalance">
+                                        <div class="borde-superior" *ngIf="cardType==='C'  || !cardType"></div>
+                                        <div class=" fs-12 text-uppercase text-os-semibold" *ngIf="cardType==='C' || !cardType">{{ 'ITECBAN-CREDITS.CREDITS-PAGE.TABS.DISPOSED-BALANCE'| translate }}</div>
+                                        <div class='amount-section text-size-primary text-os-semibold text-no-warp' *ngIf="cardType==='C'">
+                                            <span class="text-no-warp" [fittext]="true" [minFontSize]="12" [maxFontSize]="21" [minFontSizeTablet]="12" [maxFontSizeTablet]="21" [minFontSizeMobile]="12" [maxFontSizeMobile]="21">
+                                                {{ totalSpentMonth.amount | CurrencyPipe: totalSpentMonth.currency.code }}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <osb-validator-profile>
+                                        <div class="col-sm-12 col-md-3 pt-1 hidden-xs text-right">
+                                            <button class="btn btn-primary btn-small" (click)="contractCard()">
+                                                {{ 'ITECBAN-DEBITCARD.CONTRACT' | translate | uppercase }}
+                                            </button>
+                                        </div>
+                                    </osb-validator-profile>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <table class="table table-striped">
+                                    <thead class="hidden-xs">
+                                        <tr>
+                                            <th>{{ 'ITECBAN-CARDS.TITLE-GRID'| translate }}</th>
+                                            <th>{{ 'ITECBAN-DEBITCARD.TYPE' | translate }}</th>
+                                            <th class="text-right" *ngIf="cardType ==='C'  || !cardType">{{ 'ITECBAN-CREDITS.CREDITS-PAGE.TABS.DISPOSED-BALANCE' | translate }}</th>
+                                            <th *ngIf="cardType ==='D'"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr (click)="viewCard(card)" *ngFor="let card of cards" class="interactive">
+                                            <td class="col-xs-6" *ngIf="card && card.id">
+                                                <div class="row hidden-xs">
+                                                    <div class="col-xs-2">
+                                                        <img class="img-responsive" src="assets/images/NB_gold.png" *ngIf="cardType==='C'">
+                                                        <img class="img-responsive" src="assets/images/NB_deb.png" *ngIf="cardType==='D'">
+                                                    </div>
+                                                    <span class="name text-no-warp">{{ card.id | formatCardNumberHidden:ismobileResolution }}</span>
+                                                </div>
+                                                <span class="visible-xs-block name text-no-warp">{{ card.id | formatCardNumberHidden: ismobileResolution }}</span>
+                                            </td>
+                                            <td class="hidden-xs text-no-warp" *ngIf="card && card.productData">
+                                                <span><strong class="text-no-warp">{{ card.productData.description }}</strong></span>
+                                            </td>
+                                            <td class="text-right" *ngIf="card && card.productData">
+                                                <span><strong class="visible-xs-block text-os-semibold text-no-warp">{{ card.productData.description }}</strong></span>
+                                                <span><strong  class="visible-xs-block fs-12 text-no-warp" *ngIf="card && card.productData.type.id ==='C'">{{ card.outstandingBalance.amount | CurrencyPipe: card.outstandingBalance.currency.code }}</strong></span>
+                                                <span class="text-no-warp hidden-xs" *ngIf="card && card.productData.type.id ==='C'">{{ card.outstandingBalance.amount | CurrencyPipe: card.outstandingBalance.currency.code }}</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,38 @@
+{
+  "orderer": {
+    "fromAccount": {
+      "id": "14910001273000001268"
+    }
+  },
+  "beneficiary": {
+    "toAccount": {
+      "type": "IBAN",
+      "id": "AD9443256823492176665121",
+      "swift": "CRDAADADXXX"
+    },
+    "description": "JUAN PEREZ LOPEZ",
+    "email": "theuser@themail.org",
+    "legalDocument": {
+      "id": "12345678Z",
+      "type": "01"
+    },
+    "personType": "F",
+    "entity": {
+      "name": "",
+      "country": {
+        "id": "100",
+        "name": "BULGARIA"
+      }
+    }
+  },
+  "amount": {
+    "amount": 60,
+    "currency": "978"
+  },
+  "reason": "Arreglo furgoneta",
+  "purposeType": "01",
+  "transferType": "03",
+  "executionType": "S",
+  "chargeBearer": "DEBT",
+  "transferMode":"INTERNATIONAL"
+}

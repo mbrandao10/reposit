@@ -1,0 +1,14 @@
+<!-- <ul  id="detail">
+    <li  *ngIf="movementDetail.amount?.amount"><span class="name">{{'ITECBAN-ACCOUNT.MOVEMENT.MONTO'
+            | translate}} </span><span class="value">{{movementDetail.amount.amount | CurrencyPipe:
+            movementDetail.amount.currency.code}}</span></li>
+    <li  *ngIf="movementDetail.reason"><span class="name">{{'ITECBAN-ACCOUNT.MOVEMENT.CONCEPT'
+            | translate}} </span><span class="value">{{movementDetail.reason}}</span></li>
+</ul> -->
+
+<div class="row">
+    <div class="col-xs-12" *ngIf="movementDetail.amount?.amount">
+        <div class="col-xs-6 info-section-title">{{'ITECBAN-ACCOUNT.MOVEMENT.MONTO' | translate}}</div>
+        <div class="col-xs-6 text-no-warp">{{movementDetail.amount.amount | CurrencyPipe: movementDetail.amount.currency.code}}</div>
+    </div>
+</div>

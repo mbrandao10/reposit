@@ -1,0 +1,56 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "ENE",
+      "name": "Enero"
+    },
+    {
+      "id": "FEB",
+      "name": "Febrero"
+    },
+    {
+      "id": "MAR",
+      "name": "Marzo"
+    },
+    {
+      "id": "ABR",
+      "name": "Abril"
+    },
+    {
+      "id": "MAY",
+      "name": "Mayo"
+    },
+    {
+      "id": "JUN",
+      "name": "Junio"
+    },
+    {
+      "id": "JUL",
+      "name": "Julio"
+    },
+    {
+      "id": "AGO",
+      "name": "Agosto"
+    },
+    {
+      "id": "SEP",
+      "name": "Septiembre"
+    },
+    {
+      "id": "OCT",
+      "name": "Octubre"
+    },
+    {
+      "id": "NOV",
+      "name": "Noviembre"
+    },
+    {
+      "id": "DIC",
+      "name": "Diciembre"
+    }
+  ]
+}

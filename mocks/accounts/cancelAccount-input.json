@@ -1,0 +1,24 @@
+{
+  "toAccount": {
+    "id": "3840001600000000003061",
+    "type": "CBU",
+    "coelsaAccountType":"10"
+  },
+  "amount": {
+    "amount": 100.5,
+    "currency": {
+      "id": "ARG",
+      "code": "032"
+    }
+  },
+  "beneficiary": {
+    "description": "Amelia Burton",
+    "legalDocument": {
+      "id": "12345678Z",
+      "type": "0"
+    },
+    "personType":"F"
+  },
+  "reason":"Cancelación de cuenta",
+  "transferInd":1
+}

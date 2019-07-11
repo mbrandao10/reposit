@@ -1,0 +1,28 @@
+<ng-container *ngIf="transferState && transferState.currentStep <= (transferState.formSteps+2)">
+    <div class="row modal-header" >
+        <div class="col-xs-1">
+            <i class="fs-28 icon icononesait icon-arrow-left" (click)="backModal()"></i>
+        </div>
+        <div class="col-xs-10">
+            <span>{{transferState.title | translate}}</span>
+        </div>
+        <div class="col-xs-1">
+            <i class="pull-right fs-28 icon icononesait icon-close" (click)="closeModal()"></i>
+        </div>
+    </div>
+    <div class="row transfer-advance">
+        <div *ngFor="let step of counter(transferState.formSteps+2); index as i">
+            <div class="transfer-step " [ngClass]="{ 'transfer-step-active': (i < transferState.currentStep)}"></div>
+        </div>
+        <!-- <div class="col-xs-12 fs-28">
+            <b>{{transferState.currentStep}}</b>
+        </div> -->
+    </div>
+</ng-container>
+<ng-container *ngIf="transferState && transferState.currentStep > (transferState.formSteps+2)">
+    <div class="row" >        
+        <div class="col-xs-offset-11 col-xs-1">
+            <i class="pull-right fs-28 icon icononesait icon-close" (click)="closeModal()"></i>
+        </div>
+    </div>    
+</ng-container>

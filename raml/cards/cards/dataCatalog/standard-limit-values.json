@@ -1,0 +1,88 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "limitValueCode": "C1",
+      "limitValue": {
+        "amount": 100,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      }
+    },
+    {
+      "limitValueCode": "C2",
+      "limitValue": {
+        "amount": 200,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      }
+    },
+    {
+      "limitValueCode": "C3",
+      "limitValue": {
+        "amount": 300,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      }
+    },
+    {
+      "limitValueCode": "C4",
+      "limitValue": {
+        "amount": 600,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      }
+    },
+    {
+      "limitValueCode": "C5",
+      "limitValue": {
+        "amount": 1000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      }
+    },
+    {
+      "limitValueCode": "C6",
+      "limitValue": {
+        "amount": 1500,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      }
+    },
+    {
+      "limitValueCode": "C7",
+      "limitValue": {
+        "amount": 2000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      }
+    },
+    {
+      "limitValueCode": "C8",
+      "limitValue": {
+        "amount": 3000,
+        "currency": {
+          "id": "ARG",
+          "code": "032"
+        }
+      }
+    }
+  ]
+}

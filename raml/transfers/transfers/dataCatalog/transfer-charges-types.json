@@ -1,0 +1,20 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "SHA",
+      "name": "Compartidos"
+    },
+    {
+      "id": "OUR",
+      "name": "Ordenante"
+    },
+    {
+      "id": "BEN",
+      "name": "Beneficiario"
+    }
+  ]
+}

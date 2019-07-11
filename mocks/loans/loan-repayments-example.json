@@ -1,0 +1,925 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "number": 1,
+      "date": "2014-10-30T00:00:00.00Z",
+      "nominal": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installment": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "iva": {
+        "amount": 10.70,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 190.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+      ,
+      "insurance": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "stampTax": {
+        "amount": 279.32,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "number": 2,
+      "date": "2014-11-30T00:00:00.00Z",
+      "nominal": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installment": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "iva": {
+        "amount": 10.70,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 190.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+      ,
+      "insurance": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "stampTax": {
+        "amount": 279.32,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "number": 3,
+      "date": "2014-12-30T00:00:00.00Z",
+      "nominal": {
+        "amount": 6.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 6.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 1286.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installment": {
+        "amount": 1286.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "iva": {
+        "amount": 11.70,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 191.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "insurance": {
+        "amount": 6.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "stampTax": {
+        "amount": 280.32,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },{
+      "number": 1,
+      "date": "2014-10-30T00:00:00.00Z",
+      "nominal": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installment": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "iva": {
+        "amount": 10.70,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 190.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+      ,
+      "insurance": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "stampTax": {
+        "amount": 279.32,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "number": 2,
+      "date": "2014-11-30T00:00:00.00Z",
+      "nominal": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installment": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "iva": {
+        "amount": 10.70,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 190.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+      ,
+      "insurance": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "stampTax": {
+        "amount": 279.32,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "number": 3,
+      "date": "2014-12-30T00:00:00.00Z",
+      "nominal": {
+        "amount": 6.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 6.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 1286.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installment": {
+        "amount": 1286.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "iva": {
+        "amount": 11.70,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 191.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "insurance": {
+        "amount": 6.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "stampTax": {
+        "amount": 280.32,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },{
+      "number": 1,
+      "date": "2014-10-30T00:00:00.00Z",
+      "nominal": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installment": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "iva": {
+        "amount": 10.70,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 190.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+      ,
+      "insurance": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "stampTax": {
+        "amount": 279.32,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "number": 2,
+      "date": "2014-11-30T00:00:00.00Z",
+      "nominal": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installment": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "iva": {
+        "amount": 10.70,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 190.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+      ,
+      "insurance": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "stampTax": {
+        "amount": 279.32,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "number": 3,
+      "date": "2014-12-30T00:00:00.00Z",
+      "nominal": {
+        "amount": 6.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 6.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 1286.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installment": {
+        "amount": 1286.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "iva": {
+        "amount": 11.70,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 191.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "insurance": {
+        "amount": 6.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "stampTax": {
+        "amount": 280.32,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },{
+      "number": 1,
+      "date": "2014-10-30T00:00:00.00Z",
+      "nominal": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installment": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "iva": {
+        "amount": 10.70,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 190.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+      ,
+      "insurance": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "stampTax": {
+        "amount": 279.32,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "number": 2,
+      "date": "2014-11-30T00:00:00.00Z",
+      "nominal": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installment": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "iva": {
+        "amount": 10.70,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 190.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+      ,
+      "insurance": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "stampTax": {
+        "amount": 279.32,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "number": 3,
+      "date": "2014-12-30T00:00:00.00Z",
+      "nominal": {
+        "amount": 6.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 6.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 1286.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installment": {
+        "amount": 1286.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "iva": {
+        "amount": 11.70,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 191.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "insurance": {
+        "amount": 6.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "stampTax": {
+        "amount": 280.32,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },{
+      "number": 1,
+      "date": "2014-10-30T00:00:00.00Z",
+      "nominal": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installment": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "iva": {
+        "amount": 10.70,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 190.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+      ,
+      "insurance": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "stampTax": {
+        "amount": 279.32,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "number": 2,
+      "date": "2014-11-30T00:00:00.00Z",
+      "nominal": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installment": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "iva": {
+        "amount": 10.70,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 190.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+      ,
+      "insurance": {
+        "amount": 5.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "stampTax": {
+        "amount": 279.32,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+    {
+      "number": 3,
+      "date": "2014-12-30T00:00:00.00Z",
+      "nominal": {
+        "amount": 6.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "interest": {
+        "amount": 6.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "pendingAmount": {
+        "amount": 1286.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "installment": {
+        "amount": 1286.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "iva": {
+        "amount": 11.70,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "fixedFee": {
+        "amount": 191.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "insurance": {
+        "amount": 6.10,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "stampTax": {
+        "amount": 280.32,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+    "links": [
+      {
+        "rel": "next",
+        "href": "https://itecban.indra.es/loans/123456/repayments?paginationKey=f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+        "method": "GET"
+      }
+    ]
+  }
+}

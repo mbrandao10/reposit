@@ -1,0 +1,19 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "id": "CACCD",
+    "name": "CUENTA AHORRO",
+    "description": "CUENTA AHORRO",
+    "type": {
+      "id": "CACC2",
+      "name": "CUENTA AHORRO"
+    },
+    "currency": {
+      "id": "ARS",
+      "code": "032"
+    }
+  }
+}

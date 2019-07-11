@@ -1,0 +1,30 @@
+export const constants = {
+    ACCESS_TOKEN: 'access_token',
+    USER: 'user',
+    USER_PROFILE: 'user_profile',
+    REMEBER_USERNAME: 'user_name',
+    SIGNATURE_KEY: 'X-SIGNATURE-KEY',
+    SIGNATURE_TYPE: 'X-SIGNATURE-TYPE',
+    SIGNATURE_TRANSACTION: 'X-SIGNATURE-TRANSACTION',
+    CHANNEL_KEY: 'X-CHANNEL-KEY',
+    APP_VERSION: 'X-APP-VERSION',
+    UUID_KEY: 'X-DEVICE-UUID',
+    TOKEN_KEY: 'X-DEVICE-PUSH-TOKEN',
+    MODEL_KEY: 'X-DEVICE-MODEL',
+    PLATFORM_KEY: 'X-DEVICE-PLATFORM',
+    DEVICE_VERSION_KEY: 'X-DEVICE-VERSION',
+    FIRST_ACCESS_KEY: 'f_access_date',
+    FIRST_ACCESS_DEBIN_KEY: 'f_access_debin_date',
+    APP_CONFIG: 'app_config',
+    DEVICE_TOKEN: 'd_token',
+    DEVICE_UUID: 'd_uuid',
+    DEVICE_MODEL: 'd_model',
+    DEVICE_PLATFORM: 'd_uuid',
+    DEVICE_VERSION: 'd_uuid',
+    USER_PROFILE_ID: 'X-USER-PROFILE-ID',
+    TOKEN_EXPIRATION: 'token_expiration',
+    TOKEN_REFRESH: 'token_refresh',
+    APPLICATION_ID: 'X-APPLICATION-ID'
+};
+
+

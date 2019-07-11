@@ -1,0 +1,12 @@
+{
+  "id":"000000000000001804",
+  "product":"PRP01",
+  "amount":{
+    "amount":5000,
+    "currency":"032"
+  },
+  "periodId":"18",
+  "preassignedAmount": 10000,
+  "interest": 55.00,
+  "percentage": 50.00
+}

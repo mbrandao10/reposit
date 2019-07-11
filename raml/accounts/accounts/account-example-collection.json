@@ -1,0 +1,323 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "149100011009408525",
+      "balance": {
+        "amount": 1285.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "retainedBalance": {
+        "amount": 100,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": -12.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "productData": {
+        "id": "CCCOT",
+        "description": "Cuenta corriente triodos",
+        "type": {
+          "id": "P",
+          "name": "PASIVO"
+        },
+        "subtype": {
+          "id": "CC",
+          "name": "Cuentas Corrientes"
+        }
+      },
+      "operationalStatus": "1",
+      "alias": "Cuenta gastos de casa",
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      },
+      "status": {
+        "id": "xx",
+        "name": "vigente"
+      },
+      "formats": [
+        {
+          "format": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "value": "ES6968867819113534454879"
+        },
+        {
+          "format": {
+            "id": "CCC",
+            "name": "CCC"
+          },
+          "value": "68867819113534454879"
+        }
+      ],
+      "hasLocks": true
+    },
+    {
+      "id": "149100011009408526",
+      "balance": {
+        "amount": 18512.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "retainedBalance": {
+        "amount": 100,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": -12.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "productData": {
+        "id": "CCCOT",
+        "description": "Cuenta corriente triodos",
+        "type": {
+          "id": "P",
+          "name": "PASIVO"
+        },
+        "subtype": {
+          "id": "CC",
+          "name": "Cuentas Corrientes"
+        }
+      },
+      "operationalStatus": "1",
+      "alias": "Cuenta ahorro",
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      },
+      "status": {
+        "id": "xx",
+        "name": "vigente"
+      },
+      "formats": [
+        {
+          "format": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "value": "ES6968867819113534431785"
+        },
+        {
+          "format": {
+            "id": "CCC",
+            "name": "CCC"
+          },
+          "value": "68867819113534431785"
+        }
+      ]
+    },
+    {
+      "id": "149100011009408527",
+      "balance": {
+        "amount": 782.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "retainedBalance": {
+        "amount": 100,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": -12.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "productData": {
+        "id": "CCCOT",
+        "description": "Cuenta corriente triodos",
+        "type": {
+          "id": "P",
+          "name": "PASIVO"
+        },
+        "subtype": {
+          "id": "CC",
+          "name": "Cuentas Corrientes"
+        }
+      },
+      "operationalStatus": "1",
+      "alias": "Cuenta hipoteca",
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      },
+      "status": {
+        "id": "xx",
+        "name": "vigente"
+      },
+      "formats": [
+        {
+          "format": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "value": "ES6968867819113534411000"
+        },
+        {
+          "format": {
+            "id": "CCC",
+            "name": "CCC"
+          },
+          "value": "6886781911353411000"
+        }
+      ]
+    },
+    {
+      "id": "149100011009408528",
+      "balance": {
+        "amount": 782.01,
+        "currency": {
+          "id": "USD",
+          "code": "840"
+        }
+      },
+      "retainedBalance": {
+        "amount": 100,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": -12.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "productData": {
+        "id": "CCCOT",
+        "description": "Cuenta ahorro USD",
+        "type": {
+          "id": "P",
+          "name": "PASIVO"
+        },
+        "subtype": {
+          "id": "CC",
+          "name": "Cuentas Corrientes"
+        }
+      },
+      "operationalStatus": "1",
+      "alias": "Cuenta ahorro USD",
+      "currency": {
+        "id": "USD",
+        "code": "840"
+      },
+      "status": {
+        "id": "xx",
+        "name": "vigente"
+      },
+      "formats": [
+        {
+          "format": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "value": "ES6968867819113534411000"
+        },
+        {
+          "format": {
+            "id": "CCC",
+            "name": "CCC"
+          },
+          "value": "6886781911353411000"
+        }
+      ]
+    },
+    {
+      "id": "149100011009408529",
+      "balance": {
+        "amount": 782.01,
+        "currency": {
+          "id": "USD",
+          "code": "840"
+        }
+      },
+      "retainedBalance": {
+        "amount": 100,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": -12.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "productData": {
+        "id": "CCCOT",
+        "description": "Cuenta en dolares",
+        "type": {
+          "id": "P",
+          "name": "PASIVO"
+        },
+        "subtype": {
+          "id": "CC",
+          "name": "Cuentas Corrientes"
+        }
+      },
+      "operationalStatus": "1",
+      "alias": "Cuenta en dolares",
+      "currency": {
+        "id": "USD",
+        "code": "840"
+      },
+      "status": {
+        "id": "xx",
+        "name": "vigente"
+      },
+      "formats": [
+        {
+          "format": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "value": "ES6968867819113534411000"
+        },
+        {
+          "format": {
+            "id": "CCC",
+            "name": "CCC"
+          },
+          "value": "6886781911353411000"
+        }
+      ]
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

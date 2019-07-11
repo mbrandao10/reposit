@@ -1,0 +1,148 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "buyTradeDay": [
+      {
+        "amount": 0,
+        "currency": {
+          "code": "032"
+        }
+      },
+      {
+        "amount": 0,
+        "currency": {
+          "code": "840"
+        }
+      }
+    ],
+    "atmDay": [
+      {
+        "amount": 0,
+        "currency": {
+          "code": "032"
+        }
+      },
+      {
+        "amount": 0,
+        "currency": {
+          "code": "840"
+        }
+      }
+    ],
+    "buyTradeLimit": [
+      {
+        "amount": 500,
+        "currency": {
+          "code": "032"
+        }
+      },
+      {
+        "amount": 500,
+        "currency": {
+          "code": "840"
+        }
+      }
+    ],
+    "buyTradeOperationLimit": [
+      {
+        "amount": 5000,
+        "currency": {
+          "code": "032"
+        }
+      },
+      {
+        "amount": 5000,
+        "currency": {
+          "code": "840"
+        }
+      }
+    ],
+    "buyTradeAvailable": [
+      {
+        "amount": 0,
+        "currency": {
+          "code": "032"
+        }
+      },
+      {
+        "amount": 0,
+        "currency": {
+          "code": "840"
+        }
+      }
+    ],
+    "atmLimit": [
+      {
+        "amount": 500,
+        "currency": {
+          "code": "032"
+        }
+      },
+      {
+        "amount": 500,
+        "currency": {
+          "code": "840"
+        }
+      }
+    ],
+    "atmOperationLimit": [
+      {
+        "amount": 5000,
+        "currency": {
+          "code": "032"
+        }
+      },
+      {
+        "amount": 5000,
+        "currency": {
+          "code": "840"
+        }
+      }
+    ],
+    "atmAvailable": [
+      {
+        "amount": 0,
+        "currency": {
+          "code": "032"
+        }
+      },
+      {
+        "amount": 0,
+        "currency": {
+          "code": "840"
+        }
+      }
+    ],
+    "buyAvailablePeriod": [
+      {
+        "amount": 0,
+        "currency": {
+          "code": "032"
+        }
+      },
+      {
+        "amount": 0,
+        "currency": {
+          "code": "840"
+        }
+      }
+    ],
+    "atmAvailablePeriod": [
+      {
+        "amount": 0,
+        "currency": {
+          "code": "032"
+        }
+      },
+      {
+        "amount": 0,
+        "currency": {
+          "code": "840"
+        }
+      }
+    ]
+  }
+}

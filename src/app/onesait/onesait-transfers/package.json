@@ -1,0 +1,8 @@
+{
+    "name": "onesait-transfers",
+    "version": "0.0.2",
+    "description": "modulo de onesait-transfers",
+    "main": "index.js",
+    "author": "Minsait",
+    "license": "ISC"
+}

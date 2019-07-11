@@ -1,0 +1,8 @@
+{
+    "name": "itecban-settings",
+    "version": "0.0.2",
+    "description": "modulo de itecban-settings",
+    "main": "index.js",
+    "author": "Minsait",
+    "license": "ISC"
+}

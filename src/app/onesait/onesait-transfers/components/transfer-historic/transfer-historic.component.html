@@ -1,0 +1,68 @@
+<div class="panel">
+    <div class="panel-body">
+        <osb-loader *ngIf="loading"></osb-loader>
+        <osb-search-list [formGroup]="filterSearchForm" [formConfig]="formConfig" (search)="getTransfers()">
+        </osb-search-list>
+
+        <ng-container *ngIf="transfers">
+            <table class="table table-detail">
+                <thead class="hidden-xs">
+                    <tr>
+                        <th>{{ 'ONESAIT-TRANSFERS.HISTORIC.LIST.TOACCOUNT' | translate }}</th>
+                        <th>{{ 'ONESAIT-TRANSFERS.HISTORIC.LIST.DATE' | translate }}</th>
+                        <th class="text-center">{{ 'ONESAIT-TRANSFERS.HISTORIC.LIST.AMOUNT' | translate }}</th>
+                        <th>{{ 'ONESAIT-TRANSFERS.HISTORIC.LIST.CONCEPT' | translate }}</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody [ngClass]="{'open': transfer.id == selectedItem}" *ngFor="let transfer of transfers; let i: index">
+                    <tr class="interactive" (click)="viewDetail(transfer)" *ngIf="transfer">
+                        <td class="hidden-xs text-no-warp">
+                            {{ transfer.beneficiary?.toAccount?.formats | formatAccountPipe:accountFormatView }}
+                        </td>
+                        <td class="hidden-xs text-no-warp"> {{ transfer.date | date: 'dd/MM/yyyy' }}</td>
+                        <td class="visible-xs-block text-no-warp">
+                            <span class="visible-xs-block text-os-semibold text-no-warp text-left">
+                                {{ transfer.beneficiary?.toAccount?.formats | formatAccountPipe:accountFormatView:true }}
+                            </span>
+                            <span class="visible-xs-block fs-12 text-no-warp text-left">
+                                {{ transfer.date | date: 'dd/MM/yyyy' }}
+                            </span>
+                        </td>
+                        <td class="hidden-xs text-no-warp text-right">
+                            {{ transfer.amount.amount | CurrencyPipe: transfer.amount.currency.code }}
+                        </td>
+                        <td class="hidden-xs text-no-warp">{{ transfer.reason }}</td>
+                        <td>
+                            <span class="visible-xs-block text-os-semibold text-no-warp text-right">
+                                {{ transfer.amount.amount | CurrencyPipe: transfer.amount.currency.code }}
+                            </span>
+                            <span class="visible-xs-block fs-12 text-no-warp text-right">
+                                {{ transfer.reason }}
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="description" *ngIf="selectedItem && (selectedItem === transfer.id)">
+                        <td colspan="5">
+                            <osb-transfer-historic-detail [mode]="'SEPA'" [transfer]="transfer" (closeEvent)="close()" (deleteTansferOk)="deleteTansferOk()">
+                            </osb-transfer-historic-detail>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center mt-1" *ngIf="hasMoreData">
+                <a (click)="next()">{{'ITECBAN-ACCOUNT.MOVEMENT.MORE-DATA' | translate}}</a>
+            </div>
+
+            <div class="panel-body" *ngIf="transfers && transfers.length === 0">
+                <table class="table table-detail">
+                    <tbody>
+                        <tr>
+                            {{ 'ITECBAN-TRANSFER.NO.PENDDING.TRANSFERS' | translate }}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </ng-container>
+    </div>
+</div>

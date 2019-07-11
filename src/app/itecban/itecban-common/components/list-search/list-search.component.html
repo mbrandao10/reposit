@@ -1,0 +1,213 @@
+<div *ngIf="filterApply">
+  <span class="filter-apply-text"
+    ><ng-container *ngFor="let input of searchForm"
+      ><ng-container [ngSwitch]="input.type"
+        ><ng-container *ngSwitchCase="'date'"
+          ><span>{{ input.label | translate }}: </span
+          ><span class="filter-apply-field"
+            >{{ input.model | date: "dd-MM-yyyy" }}
+          </span></ng-container
+        ><ng-container *ngSwitchCase="'select'">
+          <span class="filter-apply-field" *ngIf="input.model"
+            >{{ input.label | translate }}:
+            {{
+              input.model[input.option.name]
+                ? input.model[input.option.name]
+                : input.model[input.option.name2]
+            }}</span
+          ></ng-container
+        ><ng-container *ngSwitchDefault=""
+          ><span
+            class="filter-apply-field"
+            *ngIf="input.model &amp;&amp; input.model == 'issued'"
+            >{{ "ITECBAN-TRANSFER.ALL.HISTORIC.KIND.SEND" | translate }}</span
+          ><span
+            class="filter-apply-field"
+            *ngIf="input.model &amp;&amp; input.model == 'received'"
+            >{{
+              "ITECBAN-TRANSFER.ALL.HISTORIC.KIND.RECIEVED" | translate
+            }} </span
+          ><span
+            class="filter-apply-field"
+            *ngIf="input.model &amp;&amp; input.model != 'received' &amp;&amp; input.model != 'issued'"
+            >{{ input.label | translate }}: {{ input.model }}
+          </span></ng-container
+        ></ng-container
+      ></ng-container
+    ></span
+  ><span class="filter-apply-del" (click)="clean()"
+    ><i class="glyphicon glyphicon-list-alt"></i
+    ><span>{{ "COMMON.CLEAN" | translate }}</span></span
+  >
+</div>
+
+<form class="form-custom-inline" #formListSearch="ngForm">
+  <fieldset class="fielset-custom">
+    <div class="row" *ngIf="!_continue">
+      <div class="col-xs-12">
+        <div class="alert alert-danger">
+          <span>Error:</span><span *ngIf="_msgValor">{{ _msg }}</span
+          ><span *ngIf="_invalidRange">{{
+            "COMMON.FILTER.ERROR.DATERANGE" | translate
+          }}</span
+          ><span *ngIf="_existRange &amp;&amp; !_rangeOk">{{
+            "COMMON.FILTER.ERROR.MAXDATERANGE"
+              | translate: { rangeDays: rangeDays }
+          }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <ng-container *ngFor="let input of searchForm"
+        ><ng-container [ngSwitch]="input.type"
+          ><div class="form-group col-md-3" *ngSwitchCase="'date'">
+            <label
+              class="form-custom-label"
+              *ngIf="input.label"
+              for="input.id"
+              >{{ input.label | translate }}</label
+            >
+            <div class="input-calendar-custom">
+              <input
+                autocomplete="off"
+                class="form-control"
+                type="text"
+                [name]="input.id"
+                [(bsValue)]="input.model"
+                #dp="bsDatepicker"
+                (change)="onChangeSelect(input)"
+                [minDate]="input.minDate"
+                [maxDate]="input.maxDate"
+                bsDatepicker="bsDatepicker"
+                [bsConfig]="bsConfig"
+                [ngClass]="{ 'with-label': input.label }"
+                [required]="input.required"
+                [disabled]="input.disabled"
+              /><i class="icon icononesait icon-calendar" (click)="dp.show()"></i>
+            </div>
+          </div>
+          <div class="form-group col-md-6" *ngSwitchCase="'select'">
+            <label
+              class="form-custom-label"
+              *ngIf="input.label"
+              for="input.id"
+              >{{ input.label | translate }}</label
+            >
+            <div class="form-select-custom">
+              <select
+                class="form-control"
+                [name]="input.id"
+                [(ngModel)]="input.model"
+                (change)="onChangeSelect(input)"
+                [required]="input.required"
+                [disabled]="input.disabled"
+                ><option
+                  *ngIf="!input.selectlable"
+                  [ngValue]="undefined"
+                  selected="selected"
+                  disabled="disabled"
+                >
+                  {{ "COMMON.FILTER.SELECT" | translate }}</option
+                ><option
+                  *ngIf="input.selectlable"
+                  [ngValue]="undefined"
+                  selected="selected"
+                  disabled="disabled"
+                >
+                  {{ "COMMON.FILTER.SELECT" | translate }}</option
+                ><option
+                  *ngFor="let option of input.options"
+                  [ngValue]="option"
+                  >{{
+                    option[input.option.name]
+                      ? option[input.option.name]
+                      : option[input.option.name2]
+                  }}</option
+                ></select
+              >
+            </div>
+          </div>
+          <div class="form-group col-md-6" *ngSwitchDefault="">
+            <label
+              class="form-custom-label"
+              *ngIf="input.label"
+              for="input.id"
+              >{{ input.label | translate }}</label
+            >
+            <div
+              class="col-xs-5 text-left"
+              *ngIf="input.btn"
+              style="padding: 0; margin:0px;"
+            >
+              <input
+                class="form-control"
+                type="text"
+                [(ngModel)]="input.model"
+                [name]="input.id"
+                [placeholder]="input.placeholder | translate"
+                [required]="input.required"
+                [disabled]="input.disabled"
+              />
+            </div>
+            <input
+              class="form-control"
+              *ngIf="input.id &amp;&amp; !input.btn"
+              type="text"
+              [(ngModel)]="input.model"
+              [name]="input.id"
+              [ngClass]="{ 'with-label': input.label }"
+              [placeholder]="input.placeholder | translate"
+              [required]="input.required"
+              [disabled]="input.disabled"
+            />
+            <div class="col-xs-1 text-left">
+              <div class="info-section">
+                <div
+                  class="info-section-group"
+                  *ngIf="input.btn &amp;&amp; getResp"
+                  style="padding: 0; margin:0px;"
+                >
+                  <i
+                    class="glyphicon glyphicon-check"
+                    style="margin-bottom: 10px; margin-left:10px;  color:green;"
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-xs-2 text-left"
+              *ngIf="input.btn"
+              style="margin-left: 10px;"
+            >
+              <button
+                class="btn btn-field form-control"
+                (click)="ok(input.model)"
+              >
+                {{ "ITECBAN-DEBIN.BTN.OK" | translate }}
+              </button>
+            </div>
+          </div></ng-container
+        ></ng-container
+      >
+      <p class="help-block" *ngIf="_existRange &amp;&amp; _rangeOk">
+        (*)
+        {{
+          "COMMON.FILTER.ERROR.MAXDATERANGE"
+            | translate: { rangeDays: rangeDays }
+        }}
+      </p>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 text-right">
+        <button
+          class="btn btn-primary"
+          [disabled]="!formListSearch.form.valid"
+          id="buttonFormListSearch"
+          (click)="search()"
+        >
+          {{ "COMMON.FILTER.TEXT" | translate }}
+        </button>
+      </div>
+    </div>
+  </fieldset>
+</form>

@@ -1,0 +1,17 @@
+{
+  "productId": "TDT006000204",
+  "subProductId": "0003",
+  "accountId": "3840100200000000015779",
+  "limitAmount": {
+    "amount": 1000,
+    "currency": "032"
+  },
+  "cardSending": "HOME",
+  "legalDocument": {
+    "id": "12345678Z",
+    "type": "0"
+  },
+  "email": "pepe@indra.es",
+  "message": "Texto personalizado para incluir en el mensaje de invitación",
+  "addressId": "1"
+}

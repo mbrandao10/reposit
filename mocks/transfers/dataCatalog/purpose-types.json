@@ -1,0 +1,33 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "ALQUILERES"
+    },
+    {
+      "id": "02",
+      "name": "CUOTA"
+    },
+    {
+      "id": "03",
+      "name": "EMPRESAS"
+    },
+    {
+      "id": "04",
+      "name": "FACTURAS"
+    },
+    {
+      "id": "05",
+      "name": "HONORARIOS"
+    },
+    {
+      "id": "06",
+      "name": "VARIOS"      
+    }
+
+  ]
+}

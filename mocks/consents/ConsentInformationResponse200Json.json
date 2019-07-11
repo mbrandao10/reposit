@@ -1,0 +1,222 @@
+[
+   {
+      "consent":       {
+         "consentId": 27503,
+         "deleted": null,
+         "tpp": "l76c7f63c46e9c4c1dbcd957a21f3e9704",
+         "psu": "carlos",
+         "expirationTime": "2019-05-23",
+         "frequencyPerDay": 4,
+         "recurringIndicator": 1,
+         "combinedServiceInd": "N",
+         "consentType": "bank",
+         "consentStatusId":          {
+            "consentStatusId": 2,
+            "description": "RECEIVED"
+         },
+         "consentModifier": null,
+         "corporateId": null,
+         "corporateType": null,
+         "authorizationCode": null,
+         "reqXDayWithOutPsu": null,
+         "reqAvailable": null,
+         "tppRedirectPreferred": "N",
+         "tppRedirectURI": null,
+         "tppExplicitAuthPref": "N",
+         "tppRedirectURINok": null,
+         "lastActionTime": "2019-02-22",
+         "paymentInitiationMade": "N",
+         "aspspscaapproach": "REDIRECT",
+         "tokenauthserver": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiYXBpLWN1c3RvbWVycyIsImFwaS1sZWFzaW5nIiwiYXBpLWZ1bmRzIiwiYXBpLWVxdWl0aWVzIiwiYXBpLWZhY3RvcmluZyIsImFwaS1jb25maXJtaW5nIiwiYXV0aC1hcGkiLCJhcGktYWNjb3VudHMiLCJhcGktY2hlcXVlcyIsImFwaS1jYXNoLXBvb2xpbmciLCJhcGktc2lnbmF0dXJlcyJdLCJkIjoiQ1RWZDF1ZW9aV0hHN0Z4YVpyWDA1Nys1Y3V0S1lrOFVQcDA0YjFSbC9SdEtkM3VpTlNDTnhqcFJvTDNIUGN6R2FNTVZYZGF1aTVsKzMyL24vOFpTdXVyNUtzV0w4ZHQ5Y253VFZmQzNxTHNhVkRZREtqTnpmQkIxcWs0QkJ0V0JwQmFLalFSQTNLMVQ2NmZ0VUh2NmgwM21xM2NIekNmTEdjN254KzM3MVhPR09sWlNKR01naXgvUzNuZkE0dEV3N0YwWjZudEFXWmdlcHlmYnFHYVZDekVRaDlTNDBnSjRQbHhCVjNHbmVkSFYxZjEyK001dTVYNW8xOUFTL3NCVlQxbTVTTDg0TXZyell5eGVsbWtma1Y1M05QQlp3dUFYOGRVZVhQRS9KcVdPRmNQMEJselQ1S0lhV3hJWXQ1cElMcE9GVmFnOUx5L0F5ZVQ3TFFxU1MwdEZnb3hWTE1CZCt6Nnp0VVZWanRkeXIxbTYzanQxMkxXYWhZSThNdlFHallCRENjUzRpVHlSZHM0R25CZU5hRm1uLzI1S2RiZ1V3ME5pQ2wyaXhncFFvV0hGSUhKQ3Q3RFNBMFZoQytEMERLK2JSOUxEQjFYWFVvRHRjQ3JwREV3cjdLS0tPeGZsdm1mSG1mSm5uUjNnc05Wb3dzRHZ5SU9ic3lIYmlwOTZFS3M4YWdsZFFpcmVqWDIrTy9Hd0Rwb1ZLTjZMQVFlYmJRUHU1cUlNejVmd1VGNElNMjJSOWh6R3ZLWHozd3lUdWVtYTZjc2xXYXV2VTFZRmdtNmtqYkozclVRWlE4TkVVaGZZRXAySExzNUwvN09wbU1KdXVwSGpISEtKMTFFdXlTSEVCbDFrcS9QU2xqQVY5UnZwSUR6SzZpSnUvNzVjK2FVY2F1aytNbG5LdHg1OUpXNzZNZmNtSUNpTzV4ZHFoaWdRNWJDbnBjRjJ3NDNHWG9NMndkVnN3NzhzbTlpd281NFFrSi9xUWhPYURTMlZQcENtTENPb3hNNWtsajFCY3pxTndVekU5SWZScnhBbUx0bFB5aDNBMzg2aC85K3BDTVRKR2F4M2tQckEvZFNHdFVUQ3R2cFpqL3M1M1JqcmVlZUkxZHhVWWhmSkpyekl3QWFnUWUvMHh2ZTJsdVdnSEMzS3FXeDJXODFLNkdmNFdXdWI2cS9iM2tKMWJkVmpJWFlmVUJFS3NKMi9CTU1ta3JhdHgrTXFYcml6dVZRVWVkZU9pNlF1RXB4dkpnRTY4WlBDNWY5bnpRbWx1Z2hSa3hKbUx6QUp6SXpEcHFRVmt2TkREZEdLb3VBTGZqem83ejI5bzRMWlR3ZmRjY2lwdElOQWJOVXlsanFxZ1Uwbm95d0NVNjBnNmNWQ1dZQjdJSVZ1QzF4T3dQYzRCc000eDdiNHBkS2RHV0ZCL2RjVmwrRzBWNEhlMXZvNXBOb2o1T29JOHRtcGp5TGxPM2k3ckpMdUJXREgyN0R0SGlOazdwYVJ2VGdRSVdVbjN5dHUzUnVDRFAxQXZxNFhTOXI4TjBCanhLczFUUzc1cFJMb2xVNHFuWnVYckFiTmZ3Ry8wYUFzM0wwQ0pYU1NZbFRUMWhneEdDSlpINHN5MSs4TlE3SEc2RTIycGo2eUQrQ3JSMWFFTXdObThwMUxLamZpZ1g2R0RHQmJ1bWhBbjc2emRHbkp5WUdRd1Q2TUpSZnQiLCJ1c2VyX25hbWUiOiIyNjkxNjU4OSIsInNjb3BlIjpbImFjY291bnRzIiwidXNlcnMiLCJjdXN0b21lcnMiLCJmdW5kcyIsImVxdWl0aWVzIiwiY2FzaC1wb29saW5nIiwiY2hlcXVlcyIsImNvbmZpcm1pbmciLCJmYWN0b3JpbmciLCJsZWFzaW5nIiwic2lnbmF0dXJlcyJdLCJleHAiOjE1NTEwMTQ1NTUsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiJmMmVjMmMyNy05YWQ3LTQ1N2EtYWNhOC0xNjNhODA0ZTk2NGYiLCJjbGllbnRfaWQiOiJhcGlfZ2F0ZXdheSJ9.hzxOb2JNlxnEjSn9E91VgshR1WGwcgPCGuV28qMRavM"
+      },
+      "accountList": [      {
+         "accountId": "b26258ad-bfc7-40c9-b1d2-88e94bf5a756",
+         "currency": "EUR",
+         "accountRef": "IBAN",
+         "accountRefValue": "ES0201318807602730000409",
+         "consentId": null,
+         "accesTypeId":          {
+            "accessTypeId": 4,
+            "scaMethod": "Transactions"
+         },
+         "producttype": "Cuentas Personales",
+         "resourceId": "01318807602730000409"
+      }]
+   },
+      {
+      "consent":       {
+         "consentId": 27501,
+         "deleted": null,
+         "tpp": "l76c7f63c46e9c4c1dbcd957a21f3e9704",
+         "psu": "carlos",
+         "expirationTime": "2019-05-23",
+         "frequencyPerDay": 4,
+         "recurringIndicator": 1,
+         "combinedServiceInd": "N",
+         "consentType": "bank",
+         "consentStatusId":          {
+            "consentStatusId": 3,
+            "description": "EXPIRED"
+         },
+         "consentModifier": null,
+         "corporateId": null,
+         "corporateType": null,
+         "authorizationCode": null,
+         "reqXDayWithOutPsu": null,
+         "reqAvailable": null,
+         "tppRedirectPreferred": "N",
+         "tppRedirectURI": null,
+         "tppExplicitAuthPref": "N",
+         "tppRedirectURINok": null,
+         "lastActionTime": "2019-02-22",
+         "paymentInitiationMade": "N",
+         "aspspscaapproach": "REDIRECT",
+         "tokenauthserver": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiYXBpLWN1c3RvbWVycyIsImFwaS1sZWFzaW5nIiwiYXBpLWZ1bmRzIiwiYXBpLWVxdWl0aWVzIiwiYXBpLWZhY3RvcmluZyIsImFwaS1jb25maXJtaW5nIiwiYXV0aC1hcGkiLCJhcGktYWNjb3VudHMiLCJhcGktY2hlcXVlcyIsImFwaS1jYXNoLXBvb2xpbmciXSwiZCI6InVPbXRaYUVUck93YURHUzhnaDd2WHVuV0MvUm1TaFlFTU9ySnF2cXhrU245T0ZPSkd5cHRFTlM0Wm9kbG9OL3Jvby9oWjUxVlBVd2ZDMVhndzVDd000WlZ4dld5R0poZTF3UGJ4MStRNFdTWktIckpidHJhTmpKZXF1VW5FaGdBSWdwMlJFaEVNTngyKy93Yy9VNTNBTy9COG56L3F1OVRGWXNjUEpQR3BUUnhzcmFoZVRxYUcrMGpLK2pjWnk0ajZ5N3BZTkhpWUk0ZjJPbENoWmpsajVQdDF4SFd5eG5XSnNiQ3FmRUZUT3FGNmptRVJmUmFZdm43djA5UzBRNkZNbWhBQjVCdlZMQWxxQ3VwK04wU2p1ZlJwbXR5ODRha09IRUNrK09sb2VGejNTcVBuM0I2a0gwRzk5SHdQc3pUOHQzdnpSWGVoYU5EVXB4a3k0UVNYNHJET2laZXNDUkN1ZHgwRlZGWS95MUpYQWRPUzNkcVRaNnZJeGZ4Mnp3SS9mTllNazFLZDJJdXQxNFl0L0VUYUJoc3dYTHloMjN1VHpQTWtHUmhrRzN1VC9oVnIyM2RGeEFHdjM2ZTNRbDNYV0tETW93cndzcFZnQ3h6dWJNQmwvVDhQK3pqNlI3UjFUSTdVcWV4anlyMHNSa01CQlRxZzc4R1FkKzA0UVUyUEZNVEVjOHU1Wm9yTGRqZXZwSEw3WFVucWFSRGYwdmpFdnVkbDFacWZUdTVFcWxJcFFJL1dmc3Z0ZTFKZmZ2WnRWcUowbjYvZUdKbSs3MzEvN2NTUTk5QXlYaWJPdzIrbkdMQ2lka1FmY2MyZm9sZ2o1b29WRlJPNFNEZzAyaTc4QTFMTEFQbFhlWCt3bGVxdldCSnFTanB0OXVUT1ZIK3l2WDUrVlovOFZSQ3JBa0VENUVwZTNnbWIxRlhtS2tZSkd5ZlZpbkpMS0U5YXhlTHdjYjRreTNVVHRmYUw1MklJZDVSaHA2SGsrRkNXSGc3cmNid0ZyRjJmK0p1ZnB4R0Z0ZDEycWtaeGlNd0wwcHBBcCtpcHNhdTJXVGRxNVVVZ2tOZnFBQUduK0FwOW5LbEFUZzM2Wkt5ODdNazAwQVAyVFZwWmtpRHE4K0E1Z21hVlVGNVlmMlR4UlZicmJtMTZ6M0JnakltVStvbGRrcndwZmlKaXJFZ1lNVWNkK3J5cmtXYk1oSGRBZFhjcGNqNDhLajNmY09IWVJaNVpZRFcwR1RzRC9JUjZodFkxS01ReVVCNzk1Sjd1TG0xSDJRMGh2RTZocDkwYTVNUHo3Um54MzVZWHVIT1EzcHEzc3BNdWp3eDNvbjZ0bDUyaFovTmxGMmkxSU9GbnR5YkJtTm5lNGdZRjR5ZzkvSVFvcWRVMDl4c3hTaGdmQ0pWa2NsTE0xVGg4WjFjVGwwRS81aEprNWxSL2M0QjlxenIrMVQ0V1NnYWpzZDN2QUEyVTUvRTJ6ZDR6UDFmU21jYnhTNllwQWU3RTdrVUhHR2pRb1Z0RVRwOHk2UHdmWFZBVWxrS2VaN1NYMVFsYzFrb2wzZmhIOHd4Ujh1WGlYWitqckM4RzA1ZU0wQ2NnVllTZmZpTTdJb1ZMSS9CTHdJN1preld6b1BKV3VMVS9vZ0FZeWpVb0NPOG9Tb1h4dzB3UXY5TGQvYTJ0eXFZMzNSU3NNbU80dld1RXluVnA0d1JDZFdqIiwidXNlcl9uYW1lIjoiMjY5MTY1ODkiLCJzY29wZSI6WyJhY2NvdW50cyIsInVzZXJzIiwiY3VzdG9tZXJzIiwiZnVuZHMiLCJlcXVpdGllcyIsImNhc2gtcG9vbGluZyIsImNoZXF1ZXMiLCJjb25maXJtaW5nIiwiZmFjdG9yaW5nIiwibGVhc2luZyJdLCJleHAiOjE1NTA4MzgyNTIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiJmNGQwMDQwOS03ZTAwLTRjN2ItYTQ4MC0zMGMzOWRlNDQ5MmUiLCJjbGllbnRfaWQiOiJhcGlfZ2F0ZXdheSJ9.umLdlCgXZxyeDeXpM44LkEpJhWmaSa0rvODcRYREEo8"
+      },
+      "accountList": [      {
+         "accountId": "57fa07d3-263f-407f-aa38-5c2b8d2b93f0",
+         "currency": "EUR",
+         "accountRef": "IBAN",
+         "accountRefValue": "ES0201318807602730000409",
+         "consentId": null,
+         "accesTypeId":          {
+            "accessTypeId": 4,
+            "scaMethod": "Transactions"
+         },
+         "producttype": "Cuentas Personales",
+         "resourceId": "01318807602730000409"
+      }]
+   },
+      {
+      "consent":       {
+         "consentId": 27502,
+         "deleted": null,
+         "tpp": "l76c7f63c46e9c4c1dbcd957a21f3e9704",
+         "psu": "carlos",
+         "expirationTime": "2019-05-23",
+         "frequencyPerDay": 4,
+         "recurringIndicator": 1,
+         "combinedServiceInd": "N",
+         "consentType": "bank",
+         "consentStatusId":          {
+            "consentStatusId": 3,
+            "description": "EXPIRED"
+         },
+         "consentModifier": null,
+         "corporateId": null,
+         "corporateType": null,
+         "authorizationCode": null,
+         "reqXDayWithOutPsu": null,
+         "reqAvailable": null,
+         "tppRedirectPreferred": "N",
+         "tppRedirectURI": null,
+         "tppExplicitAuthPref": "N",
+         "tppRedirectURINok": null,
+         "lastActionTime": "2019-02-22",
+         "paymentInitiationMade": "N",
+         "aspspscaapproach": "REDIRECT",
+         "tokenauthserver": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiYXBpLWN1c3RvbWVycyIsImFwaS1sZWFzaW5nIiwiYXBpLWZ1bmRzIiwiYXBpLWVxdWl0aWVzIiwiYXBpLWZhY3RvcmluZyIsImFwaS1jb25maXJtaW5nIiwiYXV0aC1hcGkiLCJhcGktYWNjb3VudHMiLCJhcGktY2hlcXVlcyIsImFwaS1jYXNoLXBvb2xpbmciLCJhcGktc2lnbmF0dXJlcyJdLCJkIjoiT0d5aCszdFduVHNMUmVLR3o2QWo2THFQWTZwdzhtaUJpTmxxKzZFQzFXZk5UZjgxOUxGaGZGbDkvcjRzWUtUN2hGWVVVOHQ0RElwdU9UUEVzUkFRNmtoZ3JZL3lLNUlPejhqMi84OHVSWmZ0Qy9ScDlnQmtZSWJRckJnMWw4bW45TE02MHlITkNad3ZoeUl6RTM5Q0srTlJHdWYwQ1ZRQjVybGFkZnk4L01FMzZsS2RTenF2MjlxWmdobThLQVAvL2xCS1dQNk1sbTdHNExyYkdraHpMMHJJOHVZTFYrcG1tZTl4VlJlVHd4eWQ5bjBlSVg3MEt5NTdkMVVlZmdKS2xUV0xzUGlGYVUvRDNlYkcrMlJhUnlKa21zTUVKT2doWERWRCtGUnB5enBLYjNWQWhwbm5IZ1lwcHF1RWx3V3Y4ckhXR0dJYStWQm1VVkR4ZEtKSGExak1KWDVVdkY2SXQ5eWFJbGlNaUtucEkwbi96eGZWcDhzYWZrc2pnRU5jaklMa1U4UmQ1TEJ6N2U3YVJiU1oxSUVQM2lrd0U1ZTBma2E3NWxyM3NvbGovcTdRQlpZejdvcXB4M2piTkYrcjNmcWpod2taRTJ4M3RhQ0NSWStjV3RPY2pDZjBDT3RPU2tnQ2JCQ0wvTXBQUUxURlpLS1BrcEFDRW1wdEQyNWRvVzVCalAzMGsxUGxXN2libVBnaG9ia015Z1JDZjZ0dXhqZHNhSzYwWW5tZmtCOWozdDMwSGlzTjJmU0c2THppaW1yVnNVTFRQZkFvaUdzVUdSVklOWXhiTGw0b29HY2x4NHVUWjk2ZFdSdldTTkFWU1pZSWpPRTVLK3ZZRVVkSHhPZDE3REp0UkJyRmFKa28rRWl5dW0wTFZmcWZVeFFNWjBYeWVDMmZUVHlQWUZxWEtwTm1zcnNUZC9hYjV2YnFLWEp5aXpZbDR1M3lxdTQ2ZjhJSXI3U0dCR3BYRmF1V0t1M05JWkladytReEh3cm1raXNDd2dtUm41ODNWSXRUTzNDZTlZYXh6cW04MVJheEJwcFJZTEpIQXFSK1ZTNnNITU50dUZrWUN5ZTVRZWdtTWUwOGxaZ2tyU3F4WldZak04TklEbEZjbkYyVElLVmtVVElJbVdjTmszY3JUL3RCUVdNL3o4V21ER1RET1RYNUYrQTMyYUg4QTU0dVI2R04zUGw0dFpyUFg2YWljSWhXK0x0SnRCVmN0SFZoRklFUE0zZE1ISld1TWJKSTFZMXRBZzBpQUVoSDlZb05pMU9ZOFVvV29GU0Q4VVhGOU5vVjVhcWx2c2lQcGx5T2xjWkswYmhBaWFISWVSNlZWSG1hWXNlLzhHQmpWbHorc0x5VjhvWURRSTVXWnE5alhWUHNYUldiMmpsRG1vSWpqcXpMZFRlalZVL3pBNVdYUEV1YmZVaTB4QjBIZVhWdmdKQURvRk9wZmFVR005SE1Eb0NlS0lrVWoyZUw0NVpLM21BMmNVUDZ3ZEpiMGhDejA1bXpkaWdpM0k3NGlrYkp1SFlqTXNBa2dvY1lqN0twVE5ISmZSTVhUUVE5S013QXI0dXVJNXZHU0pqUGR5Nm45d2gyWElkck5tWWZsa0k4T1g1czZnSG9nMzJUN3ZrbUoyTlBPWm9oWGJsQWRtaEhBQXNUZnZuc0VtOE1PSG5NOWtOM0h4a2dpMkI1YnVHY2NnSGgiLCJ1c2VyX25hbWUiOiIyNjkxNjU4OSIsInNjb3BlIjpbImFjY291bnRzIiwidXNlcnMiLCJjdXN0b21lcnMiLCJmdW5kcyIsImVxdWl0aWVzIiwiY2FzaC1wb29saW5nIiwiY2hlcXVlcyIsImNvbmZpcm1pbmciLCJmYWN0b3JpbmciLCJsZWFzaW5nIiwic2lnbmF0dXJlcyJdLCJleHAiOjE1NTEwMTExMjIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiI5MWZmNzU0ZC0yNDYzLTQyZjgtYWUyZi1lZmNhOGE5OTFiNjkiLCJjbGllbnRfaWQiOiJhcGlfZ2F0ZXdheSJ9.PEcUEcRbB4EaxGtd-lqgGEIroGtVK7qNTpYrikpJCj0"
+      },
+      "accountList": [      {
+         "accountId": "96cd1602-f53d-4f7d-bf47-fe264648ceb4",
+         "currency": "EUR",
+         "accountRef": "IBAN",
+         "accountRefValue": "ES0201318807602730000409",
+         "consentId": null,
+         "accesTypeId":          {
+            "accessTypeId": 4,
+            "scaMethod": "Transactions"
+         },
+         "producttype": "Cuentas Personales",
+         "resourceId": "01318807602730000409"
+      }]
+   },
+      {
+      "consent":       {
+         "consentId": 27500,
+         "deleted": null,
+         "tpp": "l76c7f63c46e9c4c1dbcd957a21f3e9704",
+         "psu": "carlos",
+         "expirationTime": "2019-05-23",
+         "frequencyPerDay": 4,
+         "recurringIndicator": 1,
+         "combinedServiceInd": "N",
+         "consentType": "bank",
+         "consentStatusId":          {
+            "consentStatusId": 3,
+            "description": "EXPIRED"
+         },
+         "consentModifier": null,
+         "corporateId": null,
+         "corporateType": null,
+         "authorizationCode": null,
+         "reqXDayWithOutPsu": null,
+         "reqAvailable": null,
+         "tppRedirectPreferred": "N",
+         "tppRedirectURI": null,
+         "tppExplicitAuthPref": "N",
+         "tppRedirectURINok": null,
+         "lastActionTime": "2019-02-22",
+         "paymentInitiationMade": "N",
+         "aspspscaapproach": "REDIRECT",
+         "tokenauthserver": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiYXBpLWN1c3RvbWVycyIsImFwaS1sZWFzaW5nIiwiYXBpLWZ1bmRzIiwiYXBpLWVxdWl0aWVzIiwiYXBpLWZhY3RvcmluZyIsImFwaS1jb25maXJtaW5nIiwiYXV0aC1hcGkiLCJhcGktYWNjb3VudHMiLCJhcGktY2hlcXVlcyIsImFwaS1jYXNoLXBvb2xpbmciXSwiZCI6IjAxU25EaXNhWW4wK0M0U1hYcmh2YzZBSWJaK0NaODVLb2VQUSt3akhOdW5SOVJKbjQrRTZuWUxvTUFXQ2U5RXAxOFk2K1NRRlNzem1yeGtMcnFpL2RhT2pLVkZPRzRwTWRtdlRaSkNnbkhlQUtmdjFiTis1cS9peHZCL2dYbCtiaTRZbUp3V3drYXY1WXM2c1ptbHo4ZE5nYVZScjZZOE1RcmJVZWZjWXowTGh3TmNvUGdMS0dFU1h2bE9jb3gzYk80OXhFd1g1YlBZWEJidnZwTHMvaHZ6bUZVRHhxL3VJNmNWUVVHOUlQUytRUkY0YTJ3TEJjaUVyQUhYdTkwc0NhOXdHWldNSno2STdPZWNRbGQ0aEliZXNFZHQrRm41UGliMnpzMXhYR0M0b1Y5aW5PTXpnZjdrUzhJOTZ2T0M5d080OUVEL3Z6dFBRTk05V0lHOWtEZ1ZiS1l3ZHNqazgyRFBWbTRzY2Q3eTdYaUlKSld4SFgxQlhCQWgwamhCd1FEUXhqZGoyRWxNb3Vlc3oyQlpIRW9RSnd1bVZZZGg1dEFZQlZCSncvTm5ucTFmaG5CYmlSYkdLc3ZnNlQ1RytUNkk4bGdmY0Y4Qm5KelBXUWJ5U2FhczlKSkJwZ21Od0F6RkRxcEN5YXFBQVNqR2VBYjJNdzVBWTdnN1RKSzFUOS9rM1E3Mkp2OXpwT1F1eFZicC9FWjYzT3AzaHB4di8xVU9mWW9MdVQ0MVVSV1lLTVdqMmVpK3BYcmpLK2ZIWWxnUFpqWVJGeTJjSUNNcXMvRzFicVBPU2g1ZkFzSjhrQ3ZVQ25DaDJPNUdGZDZjbkNYell0Z3VtVlNIdEJvZHJDV2c1SXdRNzEzd0RiK0tPQ1phYnFXSmdEenB4YkZidkxMYS9qVDhFSmZyREpxbUhOZXhQblNHQldzYlg1MWlSVFhNclNvSXJ4cmtQdWhMOFhXVTQ3TEpQbUlLKzJ3aUxUUFlCZ1pabmZLMWdTc2o1NDRMQVVpUEY4a3c4MW5JeFFOTzRDQjlCSms2M3FVZWdqOENSOTZQSUdOL3BDL2ErTHpabmxyeVlHNXZIbXlWcktqcUFtZ2FHdFNnbFB3ejFQUnJFbklmMElqY00yVlhtSDdsc1QzT2xMVnVJa2pZemlXcGlKSE85cDFUcVJ4Q0xERlowZVo0T25rZ0cycU9POG5hRjdqNC9PMlFmbHNnMTN1Sm8ySDBSb0V0djhwOHhLUU9yazlUb1orNTgvZUZoSjlIbkcvcndsaXloNGVFZGRqMS93OUtLSjBuUzJjalhET0x5bjJLTVVvczJCSmlvQldqMEZMUERWY0dIMEhyQXN4S1NpQytCSk5pd3RzcEZxdmVZYm1Ed21wbG5LVGFzdEFlR2RrZkVLRktIdXNNdU1JS3JDUGhXaWsxOUpoakZ6Nmo5VE1uRlZmMGVUYmxtMlRJMU1zdkhQa1FoamcvQis2WFBsanhNS1NhUFIrU0EwbzJjUGIydm8ybXJyVUVCU1ZtWlhmVEdrTGRDSU1RQWkwRzNhai9hS2tGTXRPT2FPM000VmpkU0R3RzFPSVJpZnp2TWRQeENzNCthZE8ya3lQbys5YU1waXVzYlVvNElKelJWSUdZQklkeHJ1a2JETlRkMnFYU0pYR2J1RG00Z25neXFGc2xhbDlUSFF4bloySndCNVFpaU50MWtoVkFqIiwidXNlcl9uYW1lIjoiMjY5MTY1ODkiLCJzY29wZSI6WyJhY2NvdW50cyIsInVzZXJzIiwiY3VzdG9tZXJzIiwiZnVuZHMiLCJlcXVpdGllcyIsImNhc2gtcG9vbGluZyIsImNoZXF1ZXMiLCJjb25maXJtaW5nIiwiZmFjdG9yaW5nIiwibGVhc2luZyJdLCJleHAiOjE1NTA4Mzc1NTQsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiIxZjE1NmU0Yy05ZmYyLTQzMTQtOTM2MS1lMGZhMTlkNTAzYzciLCJjbGllbnRfaWQiOiJhcGlfZ2F0ZXdheSJ9.QQa3aCy32fWGHuunsVtcvbSGrBAGANmPAJzkRVjU3y8"
+      },
+      "accountList": [      {
+         "accountId": "b90f2196-e293-4cb4-b814-f748a624179d",
+         "currency": "EUR",
+         "accountRef": "IBAN",
+         "accountRefValue": "ES0201318807602730000409",
+         "consentId": null,
+         "accesTypeId":          {
+            "accessTypeId": 4,
+            "scaMethod": "Transactions"
+         },
+         "producttype": "Cuentas Personales",
+         "resourceId": "01318807602730000409"
+      }]
+   },
+      {
+      "consent":       {
+         "consentId": 27350,
+         "deleted": null,
+         "tpp": "l76c7f63c46e9c4c1dbcd957a21f3e9704",
+         "psu": "carlos",
+         "expirationTime": "2019-05-23",
+         "frequencyPerDay": 4,
+         "recurringIndicator": 1,
+         "combinedServiceInd": "N",
+         "consentType": "bank",
+         "consentStatusId":          {
+            "consentStatusId": 3,
+            "description": "EXPIRED"
+         },
+         "consentModifier": null,
+         "corporateId": null,
+         "corporateType": null,
+         "authorizationCode": null,
+         "reqXDayWithOutPsu": null,
+         "reqAvailable": null,
+         "tppRedirectPreferred": "N",
+         "tppRedirectURI": null,
+         "tppExplicitAuthPref": "N",
+         "tppRedirectURINok": null,
+         "lastActionTime": "2019-02-22",
+         "paymentInitiationMade": "N",
+         "aspspscaapproach": "REDIRECT",
+         "tokenauthserver": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiYXBpLWN1c3RvbWVycyIsImFwaS1sZWFzaW5nIiwiYXBpLWZ1bmRzIiwiYXBpLWVxdWl0aWVzIiwiYXBpLWZhY3RvcmluZyIsImFwaS1jb25maXJtaW5nIiwiYXV0aC1hcGkiLCJhcGktYWNjb3VudHMiLCJhcGktY2hlcXVlcyIsImFwaS1jYXNoLXBvb2xpbmciXSwiZCI6IlZkZGtFUlM1aGRHK0R5bCs3OW44dmgzcDZGUUdZUGMydVlaYU5wTkJCclY0Y0w0M1FDNTJzQmllNFk1Uk1ib1JOTzBBYnpSUFVwNS9FcXkzbXFpQ0VCd0dEMEJvR2xTTnN4ejdvcVBqSEZwVWZYazgwV3dYM1RIbHAvZ1ozcUFoWE0zY0MrZ2dwL3ZqSURIc2NOenFuNVh1a1dWcnc3UG5kckN0b3NLeDRoSXBGUkM1dVVkZmxDRDFWU0NkVmI1Zm9WVjlTR2cydi9BekRhbU5ScnJMMXlhNklIT3EvSHB1VWh0dkFOQmYwSjNKU3NybmJUMXZldDU1QXhwTDJ3d0EzTXR5ckxSOE5abVBDeFpURFJvN1FpZjJwZzJsSEtlNWdBUEpRMTMyb25lNit2dFRsVTNsM1RjL0F5WHBnQjJVbHlBVlFYakE3Y1ZQV0lhNWE1SkxUWXNXbk9ObGpOOTNvTWxWd1J1R2h6WkxLeDJpa1FRc0tVWk11TE1NSkRJRXhrNEIya3EweS9pTFlhRkxIaVMvS05hTEkvSHBQZ2FrYnV1TklNMmdjblp1ZERBWm5uMlJCSVRpU2hGcW04OGtacndJQnRTZGVpeHJiQjdRVEZMbjJ2OXAwZUpHanpTRWlFcUk5VmZpYWlFajgzbno5bVkwTGlsdVkyNDlhcUVwZERQNkNQUGlaWnV2VXZLd2ptK3ErdEthdW1may84S0V0elBCNGtoSmpCd2pxWkVwb2hYOWtUaWhRanVrQzRPcUM5NW5ENVQzb0VhSDJDUXVWRjFKS1l0UWFuVnRiOTlMc3ZOOW9qblJ0ZDdwbVNvcENmVktkeVZCQ3RZbWVxV3p6dzVOeUdpK05uOVhtc1VTWml1MlVKN1RNTFBPQWNzaFdBQm56YXpUT1l3NzZwUFZ4ZzFpajhJTjBrUVF1N2NtenhTUW1ZUGhtSi9zUlhHcHhWaWNyODdDL0IvNVR1djhFWHFoWmcwZjAxRFJXd0tLamdYVVA2WlQrclMzdURsVEQwcWU3bXRQTWtjVVRyZ3M2NVhDQVVyVmRTNVkxQWtaVGMrdjFmUHQ1M0E5Y0pCdUpxcUhLMCsxcjFsNVUza2ZtU3FUYkNoYkFsbUhsTWJMbFJFOHg5TmZJYVBxU3NzNFVZN3dKakNwQkZ0UE1XQzFzUkpuVkNYMDJFUmRIRnNxZFdJK1oyMEFraGxxMkh5T2xCUi9Lc3A4Yk1RWnhzaUFaNjR6amVWeXcrTjJ0V3hOUGRLQ1ZEOHR5UlJqcW56QVVRMTlRazFud004VEc0RmgxampTNDV3dE1MejVSV1I1a1VaOExMbUwvamd2K0VVa3c1UGNJczIvc3YyOHRoWTkza2JvcTU5MkNOTnVYd2s0UFA2bU4yWEpMK0k2YnJ1UGhVbHVsT0wwMGxZNHJWSk9keTdRYUZOYUhycm1wYzdFako3amJRdnVleVV6VVBQcUVsbHlLSURpVmJMR3pMSVJhTXJpT3hWSGhBd1RDL3dLM1p5d3A2UGlhNlFVdkJ6MURNa3cydjlPck5NQnNBTGwzMnViRzBQZmZuOGpHUDBwb1lyU3hobkxIVExWbTEvVGxHcm1rMDlPelJkc1orU3BGUW1GQ1dic3ZnNyt2OGc4TzZyKytLb1V3SXV6M3pYZkJQNEdJR29VdXFZSTBXS2lLdFZPUHZpbURHdmVlKzhTIiwidXNlcl9uYW1lIjoiMjY5MTY1ODkiLCJzY29wZSI6WyJhY2NvdW50cyIsInVzZXJzIiwiY3VzdG9tZXJzIiwiZnVuZHMiLCJlcXVpdGllcyIsImNhc2gtcG9vbGluZyIsImNoZXF1ZXMiLCJjb25maXJtaW5nIiwiZmFjdG9yaW5nIiwibGVhc2luZyJdLCJleHAiOjE1NTA4MzU3NzQsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJqdGkiOiIyZmMzYmFjMS0yM2U5LTRmYzItODhjMS1jMzA3MjdiMTQzNDYiLCJjbGllbnRfaWQiOiJhcGlfZ2F0ZXdheSJ9.US-akjUPAxlg76-dmS7EsJjpHycq-iZX-n8lhM77kPE"
+      },
+      "accountList": [      {
+         "accountId": "6a544107-5b6e-4fa1-bf55-a20299d68737",
+         "currency": "EUR",
+         "accountRef": "IBAN",
+         "accountRefValue": "ES0201318807602730000409",
+         "consentId": null,
+         "accesTypeId":          {
+            "accessTypeId": 4,
+            "scaMethod": "Transactions"
+         },
+         "producttype": "Cuentas Personales",
+         "resourceId": "01318807602730000409"
+      }]
+   }
+]

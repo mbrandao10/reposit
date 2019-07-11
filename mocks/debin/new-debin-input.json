@@ -1,0 +1,14 @@
+{
+  "sellerCbu": "3840001600000000004941",
+  "buyerCbu": "3840001700000000005656",
+  "concept": "ALQ",
+  "reason": "Pago del alquiler de enero",
+  "amount": {
+    "amount": 6000,
+    "currency": "032"
+  },
+  "buyerlegalDocumentId": "20111144444",
+  "buyerName": "PEPA MARIA NUEVO",
+  "expirationTimeInMinutes": 4320,
+  "isPreauthorized":false
+}

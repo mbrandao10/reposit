@@ -1,0 +1,16 @@
+{
+    "result": {
+        "code": "200",
+        "info": "OK"
+    },
+    "data": [
+        {
+            "id": "01",
+            "name": "CONTADO"
+        },
+        {
+            "id": "03",
+            "name": "PAGO MINIMO"
+        }
+    ]
+}

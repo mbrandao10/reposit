@@ -1,0 +1,31 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "pendingTerms": 9,
+    "pendingAmount": {
+      "amount": 1284.01,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "termAmount": {
+      "amount": 1284.01,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "feeAmount": {
+      "amount": 1284.01,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "newExpirationDate": "2014-10-30T00:00:00.00Z"
+  }
+}

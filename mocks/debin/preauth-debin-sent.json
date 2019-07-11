@@ -1,0 +1,51 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "0000000000000000008525",
+      "role":"seller",
+      "status": {
+        "id": "01",
+        "name": "PENDIENTE"
+      },
+      "buyerLegalDocumentId": "12345678901",
+      "buyerCbu": "6886722819113534431785",
+      "reason": "Pago del alquiler",
+      "sellerName": "David Robert Jones",
+      "buyerName": "Sara Jones"
+    },
+    {
+      "id": "0000000000000000008526",
+      "role":"seller",
+      "status": {
+        "id": "01",
+        "name": "PENDIENTE"
+      },
+      "buyerLegalDocumentId": "12345678901",
+      "buyerCbu": "6886722819113534431785",
+      "reason": "Pago del otro alquiler",
+      "sellerName": "David Robert Jones",
+      "buyerName": "Sara Jones"
+    },
+    {
+      "id": "0000000000000000008527",
+      "role":"seller",
+      "status": {
+        "id": "01",
+        "name": "PENDIENTE"
+      },
+      "buyerLegalDocumentId": "12345678901",
+      "buyerCbu": "6886722819113534431785",
+      "reason": "Pago del coche prestado",
+      "sellerName": "David Robert Jones",
+      "buyerName": "Sara Jones"
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

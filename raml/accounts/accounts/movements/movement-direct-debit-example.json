@@ -1,0 +1,48 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "movementClass":"DirectDebitMovement",
+    "id": "xxxx-xxxx-xxxxx-xxxxx-xxxxx-xxxxxx-xxxx",
+    "reference": "xxxx-xxxx-xxxxx-xxxxx-xxxxx-xxxxxx-xxxx",
+    "reason": "Vodafone 923892382",
+    "amount": {
+      "amount": -12.01,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "type": {
+      "id": "ADSR",
+      "name": "Adeudos SEPA Recibidos"
+    },
+    "operationDate": "2014-10-30T00:00:00.00Z",
+    "hasDocument":true,
+    "documentId": "71cb8771-5b29-4570-af1c-ca3cb7975246",
+    "state": "COBRADO/CARGADO EN CUENTA",
+    "sepa": "",
+    "debitType": "",
+    "issuer": {
+      "name": "VODAFONE ESPANA S.A.U",
+      "legalDocument": {
+        "id":"12345678Q",
+        "type":{
+          "id":"01",
+          "name":"DNI"
+        }
+      },
+      "reference": "BSHESMMDC1201611102734036993"
+    },
+    "debtor": {
+      "name": "RUT GONZALEZ AGOSTI",
+      "reference": "0925934455"
+    },
+    "chargeDate": "2014-10-30T00:00:00.00Z",
+    "expirationDate": "2014-10-30T00:00:00.00Z",
+    "description": "",
+    "chargeAccount": "ES9014910001202028097620"
+  }
+}

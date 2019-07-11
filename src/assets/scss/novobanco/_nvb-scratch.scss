@@ -1,0 +1,35 @@
+/*--------------------------------------------*\
+    $CLASES DE PRUEBA O PENDINTES DE INTEGRAR
+\*--------------------------------------------*/
+
+.theme-default{
+    z-index: 2000
+}
+bs-datepicker-container{
+  z-index: 2000 ;
+}
+
+.th-right{
+    text-align: right;
+    display: block;
+}
+
+.input-euro{
+	display:inline-block;
+  position: relative;
+  color: #4a4a4a;
+	}
+.input-euro input{
+	padding-left:15px;
+	}
+.input-euro:before {  
+  color: #4a4a4a;
+	position: absolute;
+  content:"€";
+  right: 10px;
+  top: 8px;
+}
+
+.th-right-confirming{
+  text-align: right;
+}

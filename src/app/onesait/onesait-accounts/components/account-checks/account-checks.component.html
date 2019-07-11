@@ -1,0 +1,69 @@
+<osb-loader *ngIf="loading"></osb-loader>
+
+<div class="row">
+    <div class="col-md-8 col-sm-10 p-0">
+        <div class="col-sm-8">
+            <osb-search-list #searchComponent [formGroup]="checksListForm" [formConfig]="formConfig" (search)="search()">
+            </osb-search-list>
+        </div>
+        <div class="col-sm-4 hidden-xs mt-1">
+            <button class="btn btn-primary btn-block mt-1 btn-search pull-right" (click)="searchComponent.execSearch()">
+            {{'COMMON.CONSULT' | translate}}
+            </button>
+        </div>
+    </div>
+    <div class="col-md-4 mt-1 hidden-xs hidden-sm mt-25 text-right">
+        <button class="btn btn-secondary" (click)="contractCheckBook()">
+            {{ 'ONESAIT-ACCOUNTS.ACCOUNTS.CHECKS.CONTRACT' | translate}}
+        </button>
+    </div>
+    <div class="visible-sm col-sm-2 drop-down-links text-right">
+        <ul>
+            <li class="filter-dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <span class="icon icononesait icon-configuration dropdown-options-filter"></span>
+                </a>
+                <div class="dropdown-arrow"></div>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a (click)="contractCheckBook()">
+                            {{ 'ONESAIT-ACCOUNTS.ACCOUNTS.CHECKS.CONTRACT' | translate}}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<ng-container *ngIf="checks">
+    <table class="table table-striped mt-1">
+        <thead class="hidden-xs">
+            <tr>
+                <th>{{'ONESAIT-ACCOUNTS.ACCOUNTS.CHECKS.DATE' | translate}}</th>
+                <th>{{'ONESAIT-ACCOUNTS.ACCOUNTS.CHECKS.NUMBER' | translate}}</th>
+                <th>{{'ONESAIT-ACCOUNTS.ACCOUNTS.CHECKS.STATE' | translate}}</th>
+                <th class="th-right">{{'ONESAIT-ACCOUNTS.ACCOUNTS.CHECKS.AMOUNT' | translate}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let check of checks">
+                <td>
+                    <span class="hidden-xs">{{check.date | date: 'dd/MM/yyyy'}}</span>
+                    <span class="visible-xs-block">{{check.id}}</span>
+                    <span class="visible-xs-block fs-12">{{check.date | date: 'dd/MM/yyyy'}}</span>
+                </td>
+                <td class="hidden-xs">{{check.id}}</td>
+                <td class="hidden-xs">{{check.status.name}}</td>
+                <td class="text-no-warp">
+                    <span class="hidden-xs th-right">{{check.amount.amount | CurrencyPipe : check.amount.currency.code :false}}</span>
+                    <span class="visible-xs-block text-os-semibold text-right">{{check.amount.amount | CurrencyPipe : check.amount.currency.code :false}}</span>
+                    <span class="visible-xs-block fs-12 text-right">{{check.status.name}}</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="row" *ngIf="hasMoreData">
+        <a class="col-xs-12 p-1 text-center" (click)="next()" role="button">{{'ITECBAN-ACCOUNT.MOVEMENT.MORE-DATA' | translate}}</a>
+    </div>
+</ng-container>

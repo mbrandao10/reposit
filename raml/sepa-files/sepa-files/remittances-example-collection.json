@@ -1,0 +1,72 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "REM00000",
+      "totalAmount": {
+        "amount": 100085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "creationDate": "2018-05-23T00:00:00.00Z",
+      "numOfOrders": 22,
+      "fileType": {
+        "id": "AEB19.14",
+        "name": "AEB19.14 - Domiciliaciones SEPA"
+      },
+      "status": {
+        "id": "01",
+        "name": "Pendiente"
+      }
+    },
+    {
+      "id": "REM00001",
+      "totalAmount": {
+        "amount": 10085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "creationDate": "2018-05-23T00:00:00.00Z",
+      "numOfOrders": 22,
+      "fileType": {
+        "id": "AEB34.14",
+        "name": "AEB34.14 - Transferencias SEPA"
+      },
+      "status": {
+        "id": "02",
+        "name": "Rechazado"
+      }
+    },
+    {
+      "id": "REM00002",
+      "totalAmount": {
+        "amount": 550085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "creationDate": "2018-06-23T00:00:00.00Z",
+      "numOfOrders": 22,
+      "fileType": {
+        "id": "AEB19.14",
+        "name": "AEB19.14 - Domiciliaciones SEPA"
+      },
+      "status": {
+        "id": "02",
+        "name": "Procesado"
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

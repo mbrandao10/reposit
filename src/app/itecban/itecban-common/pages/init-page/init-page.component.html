@@ -1,0 +1,65 @@
+<div class="row">
+    <div class="col-md-12 col-xs-12">
+        {{'ITECBAN-INIT-PAGE.TITLE' | translate:param }}<span>{{'ITECBAN-INIT-PAGE.SUBTITLE'
+                | translate }}</span>
+        <div> {{ userInitials }}</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <app-loader *ngIf="loadingAccount"></app-loader>
+            <div class="col-sm-6 col-xs-12">
+                <div class="box-resume-info right">
+                    <div class="value" (click)="goAccounts('PESOS')">
+                        <app-currencyformat class="currency-account-title" [amountParam]="totalAccPesos"
+                            [currencyParam]="codePesos"></app-currencyformat>
+                    </div>
+                    <div class="title">{{'ITECBAN-INIT-PAGE.TOTAL.PESOS' | translate}}</div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xs-12">
+                <div class="box-resume-info left">
+                    <div class="value" (click)="goAccounts('USD')">
+                        <app-currencyformat class="currency-account-title" [amountParam]="totalAccUsd"
+                            [currencyParam]="codeUSD"></app-currencyformat>
+                    </div>
+                    <div class="title">{{'ITECBAN-INIT-PAGE.TOTAL.DOLLARS' | translate}} </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-xs-12">
+                <div class="box-dest-info">
+                    <div class="resume">{{'ITECBAN-INIT-PAGE.BANNER.SUBTITLE1' | translate}} </div>
+                    <div class="title">{{'ITECBAN-INIT-PAGE.BANNER.TITLE1' | translate}} </div>
+                    <div class="text">
+                        <p>{{'ITECBAN-INIT-PAGE.BANNER.TEXT1' | translate}} </p>
+                    </div><button class="btn btn-primary" (click)="goFacebook()">{{'ITECBAN-INIT-PAGE.BANNER.BUTTON1'
+                        | translate}} </button>
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <div class="box-dest-info">
+                    <div class="resume">{{'ITECBAN-INIT-PAGE.BANNER.SUBTITLE2' | translate}} </div>
+                    <div class="title">{{'ITECBAN-INIT-PAGE.BANNER.TITLE2' | translate}}</div>
+                    <div class="text">
+                        <p>{{'ITECBAN-INIT-PAGE.BANNER.TEXT2' | translate}}</p>
+                    </div><button class="btn btn-primary" (click)="goWilo()">{{'ITECBAN-INIT-PAGE.BANNER.BUTTON2' |
+                        translate}} </button>
+                    <!--button.btn.btn-primary| {{'ITECBAN-INIT-PAGE.BANNER.BUTTON2' | translate}} -->
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <div class="box-dest-info">
+                    <div class="resume">{{'ITECBAN-INIT-PAGE.BANNER.SUBTITLE3' | translate}} </div>
+                    <div class="title">{{'ITECBAN-INIT-PAGE.BANNER.TITLE3' | translate}}</div>
+                    <div class="text">
+                        <p>{{'ITECBAN-INIT-PAGE.BANNER.TEXT3' | translate}} </p>
+                    </div><button class="btn btn-primary" (click)="goHelp()">{{'ITECBAN-INIT-PAGE.BANNER.BUTTON3' |
+                        translate}} </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

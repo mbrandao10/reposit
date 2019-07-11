@@ -1,0 +1,41 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data":
+  {
+    "reference": "000001",
+    "debtId": "00002",
+    "concept": {
+        "id": "001",
+        "name": "TASA SER PROP"
+    },
+    "entity": {
+      "id": "001",
+      "name": "Agua y saneamientos Argentinos S.A",
+      "shortName": "Aysa",
+      "item": {
+        "id": "01",
+        "name": "Luz, Agua y Gas",
+        "shortName": "Luz, Agua y Gas"
+      }
+    },
+    "amount": {
+      "amount": 100,
+      "currency": {
+        "id": "USD",
+        "code": "840"
+      }
+    },
+    "chargeDate": "2014-10-30T00:00:00.00Z",
+    "state": {
+      "id": "xx",
+      "name": "vigente"
+    },
+    "beneficiaryName": "Juan Lopez",
+    "linkCode": "1234567890",
+    "cardId": "4305790004640705",
+    "isCardAdhered":true
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id":"cfmg-c1232233",
+      "productData": {
+        "id": "00-CFM-PLUS",
+        "description": "Confirming Plus"
+      },
+      "totalAmountOfAdvanceOrders":{
+        "amount": 122085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "totalAmountOfActiveOrders":{
+        "amount": 12085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+	    {
+      "id":"cfmg-c1232234",
+      "productData": {
+        "id": "00-CFM-BASIC",
+        "description": "Confirming Basic"
+      },
+      "totalAmountOfAdvanceOrders":{
+        "amount": 122085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "totalAmountOfActiveOrders":{
+        "amount": 12085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+	    {
+      "id":"cfmg-c1232235",
+      "productData": {
+        "id": "00-CFM-PLUS",
+        "description": "Confirming Plus"
+      },
+      "totalAmountOfAdvanceOrders":{
+        "amount": 122085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "totalAmountOfActiveOrders":{
+        "amount": 12085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages": false
+  }
+}

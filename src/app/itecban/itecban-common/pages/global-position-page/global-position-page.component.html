@@ -1,0 +1,71 @@
+<app-loader *ngIf="loading"></app-loader>
+
+<div class="row">
+    <div class="col-xs-12 p-dynamic">
+        <osb-tabs *ngIf="pageConfig" [tabs]="pageConfig.tabs" [view]="view" (viewChange)="chargeGlobalPositionByCurrency($event)"></osb-tabs>
+    </div>
+</div>
+
+<div class="row pt-1 page-tabbed pb-1">
+    <div class="col-xs-12 p-dynamic">
+        <div class="row" *ngFor="let currency of currencies">
+            <div class="col-xs-12">
+                <app-global-position-charts [idCurrency]="currency.code" *ngIf="currency.code === view" [elments]="accountCurrencySelected" [colorInvestment]="colorInvestment" [colorFinancial]="colorFinancial"></app-global-position-charts>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-xs-12">
+                <ng-container *ngIf="accountCurrencySelected.accounts">
+                    <app-global-position-box [elments]="accountCurrencySelected.accounts" [headerText]="'ITECBAN-GLOBAL-POSITION.CARD.ACCOUNTS.TITLE' | translate" [headerPath]="'accounts-page'" [detailPath]="'account-detail-page'" [product]="'accounts'" [currencyCode]="view"
+                        [color]="'text-blue'"></app-global-position-box>
+                </ng-container>
+                <ng-container *ngIf="accountCurrencySelected.deposits">
+                    <app-global-position-box [elments]="accountCurrencySelected.deposits" [headerText]="'ITECBAN-GLOBAL-POSITION.CARD.DEPOSITS.TITLE' | translate" [headerPath]="'deposits-page'" [detailPath]="'deposit-detail-page'" [product]="'deposits'" [currencyCode]="view"
+                        [color]="'text-blue'"></app-global-position-box>
+                </ng-container>
+                <ng-container *ngIf="accountCurrencySelected.investmentfunds">
+                    <app-global-position-box [elments]="accountCurrencySelected.investmentfunds" [headerText]="'ITECBAN-GLOBAL-POSITION.CARD.INVESTMENTFUNDS.TITLE' | translate" [headerPath]="'funds-page'" [detailPath]="'funds-account-page'" [currencyCode]="view" [product]="'investmentfunds'"
+                        [color]="'text-blue'"></app-global-position-box>
+                </ng-container>
+                <ng-container *ngIf="accountCurrencySelected.equities">
+                    <app-global-position-box [elments]="accountCurrencySelected.equities" [headerText]="'ITECBAN-GLOBAL-POSITION.CARD.EQUITIES.TITLE' | translate" [headerPath]="'equities-page'" [detailPath]="'equity-page'" [currencyCode]="view" [product]="'equities'" [color]="'text-blue'"></app-global-position-box>
+                </ng-container>
+                <ng-container *ngIf="accountCurrencySelected.guarantees">
+                    <app-global-position-box [elments]="accountCurrencySelected.guarantees" [headerText]="'ITECBAN-GLOBAL-POSITION.CARD.GUARANTEES.TITLE' | translate" [headerPath]="'/itecban/guarantees'" [detailPath]="'/itecban/account-detail/'" [currencyCode]="view" [product]="'guarantees'"
+                        [color]="'text-blue'"></app-global-position-box>
+                </ng-container>
+                <!-- <div class="row">
+                    <div class="col-xs-12">
+                        <app-loader *ngIf="loadingInvestment"></app-loader>
+                        <global-position-box [elments]="investmentsPesos" [headerText]="'ITECBAN-GLOBAL-POSITION.CARD.INVESTMENTS.TITLE' | translate" [headerPath]="'/itecban/deposits'" [iconClass]="'icon-investments-bk'" [totalAmount]="totalInvestmentsPesos" [currencyCode]="codePesos"
+                            [color]="'#f52c5b'"></global-position-box>
+                    </div>
+                </div> -->
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <ng-container *ngIf="accountCurrencySelected.cards">
+                    <app-global-position-box [elments]="accountCurrencySelected.cards" [headerText]="'ITECBAN-GLOBAL-POSITION.CARD.CARDS.TITLE' | translate" [headerPath]="'cards-page'" [detailPath]="'card-page'" [currencyCode]="view" [product]="'cards'" [color]="'text-orange'"></app-global-position-box>
+                </ng-container>
+                <ng-container *ngIf="accountCurrencySelected.loans">
+                    <app-global-position-box [elments]="accountCurrencySelected.loans" [headerText]="'ITECBAN-GLOBAL-POSITION.CARD.LOANS.TITLE' | translate" [headerPath]="'loans-page'" [detailPath]="'loan-page'" [currencyCode]="view" [product]="'loans'" [color]="'text-orange'"></app-global-position-box>
+                </ng-container>
+                <ng-container *ngIf="accountCurrencySelected.credits">
+                    <app-global-position-box [elments]="accountCurrencySelected.credits" [headerText]="'ITECBAN-GLOBAL-POSITION.CARD.CREDITS.TITLE' | translate" [headerPath]="'credits-page'" [detailPath]="'credit-detail-page'" [currencyCode]="view" [product]="'credits'"
+                        [color]="'text-orange'"></app-global-position-box>
+                </ng-container>
+                <ng-container *ngIf="accountCurrencySelected.confirming">
+                    <app-global-position-box [elments]="accountCurrencySelected.confirming" [headerText]="'ITECBAN-GLOBAL-POSITION.CARD.CONFIRMING.TITLE' | translate" [headerPath]="'confirming-page'" [detailPath]="'confirming-contract-page'" [detailPathEB]="'express-bill-contract-page'"
+                        [currencyCode]="view" [product]="'confirming'" [color]="'text-orange'"></app-global-position-box>
+                </ng-container>
+                <ng-container *ngIf="accountCurrencySelected.factoring">
+                    <app-global-position-box [elments]="accountCurrencySelected.factoring" [headerText]="'ITECBAN-GLOBAL-POSITION.CARD.FACTORING.TITLE' | translate" [headerPath]="'factoring-page'" [detailPath]="'factoring-contract-page'" [currencyCode]="view" [product]="'factoring'"
+                        [color]="'text-orange'"></app-global-position-box>
+                </ng-container>
+                <ng-container *ngIf="accountCurrencySelected.leasing">
+                    <app-global-position-box [elments]="accountCurrencySelected.leasing" [headerText]="'ITECBAN-GLOBAL-POSITION.CARD.LEASING.TITLE' | translate" [headerPath]="'leasing-page'" [detailPath]="'leasing-detail-page'" [currencyCode]="view" [product]="'leasing'"
+                        [color]="'text-orange'"></app-global-position-box>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

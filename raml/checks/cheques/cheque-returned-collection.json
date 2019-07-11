@@ -1,0 +1,136 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "0122415",
+      "status": {
+        "id": "PAID",
+        "name": "Pagado"
+      },
+      "amount": {
+        "amount": 600.4,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "date": "2014-10-30T00:00:00.00Z",
+      "dateReturn": "2014-11-05",
+      "valueDateReturn": "2014-11-06",
+      "amountReturned": {
+        "amount": 600.4,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "amountRefund": {
+        "amount": 10.4,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "reasonReturn": "Motivo devolución 1"
+    },
+    {
+      "id": "0122416",
+      "status": {
+        "id": "RETURNED",
+        "name": "Devuelto"
+      },
+      "amount": {
+        "amount": 450,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "date": "2014-10-29T00:00:00.00Z",
+      "dateReturn": "2014-11-04",
+      "valueDateReturn": "2014-11-08",
+      "amountReturned": {
+        "amount": 450,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "amountRefund": {
+        "amount": 4.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "reasonReturn": "Motivo devolución 2"
+    },
+    {
+      "id": "0122417",
+      "status": {
+        "id": "CANCELLED",
+        "name": "Anulado"
+      },
+      "amount": {
+        "amount": 5660,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "date": "2014-10-28T00:00:00.00Z",
+      "dateReturn": "2014-11-02",
+      "valueDateReturn": "2014-11-03",
+      "amountReturned": {
+        "amount": 5660,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "amountRefund": {
+        "amount": 56.6,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "reasonReturn": "Motivo devolución 3"
+    },
+    {
+      "id": "0122418",
+      "status": {
+        "id": "PAID",
+        "name": "Pagado"
+      },
+      "amount": {
+        "amount": 60,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "date": "2014-10-27T00:00:00.00Z",
+      "dateReturn": "2014-11-01",
+      "valueDateReturn": "2014-11-03",
+      "amountReturned": {
+        "amount": 60,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "amountRefund": {
+        "amount": 0.6,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "reasonReturn": "Motivo devolución 4"
+    }
+  ]
+}

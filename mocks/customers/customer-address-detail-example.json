@@ -1,0 +1,46 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "type": {
+        "id": "FISCAL",
+        "name": "FISCAL"
+      },
+      "addressId": "1",
+      "country": "ESPAÑA",
+      "postcode": "28029",
+      "province": "MADRID",
+      "city": "MADRID",
+      "streetType": {
+        "id": "01",
+        "name": "CALLE"
+      },
+      "streetName": "LA ROSA",
+      "streetNumber": "34",
+      "aditionalInfo": "PISO : 23   PUERTA - A",
+      "isPrincipal": true
+    },
+    {
+      "type": {
+        "id": "CORRESPONDENCIA",
+        "name": "CORRESPONDENCIA"
+      },
+      "addressId": "2",
+      "country": "ESPAÑA",
+      "postcode": "28030",
+      "province": "MADRID",
+      "city": "MADRID",
+      "streetType": {
+        "id": "01",
+        "name": "CALLE"
+      },
+      "streetName": "SERRANO",
+      "streetNumber": "3331",
+      "aditionalInfo": "PISO 19",
+      "isPrincipal": false
+    }
+  ]
+}

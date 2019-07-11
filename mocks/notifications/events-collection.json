@@ -1,0 +1,252 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "001",
+      "name": "SALDO CON PERIODICIDAD",
+      "isMandatory": false,
+      "isEditable": true,
+      "notificationChannels": [
+        "mail",
+        "push",
+        "sms"
+      ],
+      "eventGroup":"account",
+      "eventType": "period"
+    },
+    {
+      "id": "002",
+      "name": "ABONO SUPERIOR A",
+      "isMandatory": false,
+      "isEditable": true,
+      "notificationChannels": [
+        "mail",
+        "push",
+        "sms"
+      ],
+      "eventGroup":"account",
+      "eventType": "amount",
+      "defaultAmount":{
+        "amount": 3000,
+        "currency": {
+          "code":"032",
+          "id":"ARG"
+        }
+      }
+    },
+    {
+      "id": "003",
+      "name": "CARGO SUPERIOR A",
+      "isMandatory": false,
+      "isEditable": true,
+      "notificationChannels": [
+        "mail",
+        "push",
+        "sms"
+      ],
+      "eventGroup":"account",
+      "eventType": "amount",
+      "defaultAmount":{
+        "amount": 2000,
+        "currency": {
+          "code":"032",
+          "id":"ARG"
+        }
+      }
+    },
+    {
+      "id": "004",
+      "name": "RECIBO PRÉSTAMO CUENTA RELACIONADA",
+      "isMandatory": false,
+      "isEditable": true,
+      "notificationChannels": [
+        "mail",
+        "push",
+        "sms"
+      ],
+      "eventGroup":"account",
+      "eventType": "basic"
+    },
+    {
+      "id": "005",
+      "name": "ABONO NÓMINA CUENTA",
+      "isMandatory": false,
+      "isEditable": true,
+      "notificationChannels": [
+        "mail",
+        "push",
+        "sms"
+      ],
+      "eventGroup":"account",
+      "eventType": "basic"
+    },
+    {
+      "id": "006",
+      "name": "SALDO INFERIOR A",
+      "isMandatory": false,
+      "isEditable": true,
+      "notificationChannels": [
+        "mail",
+        "push",
+        "sms"
+      ],
+      "eventGroup":"account",
+      "eventType": "amount",
+      "defaultAmount":{
+        "amount": 5000,
+        "currency": {
+          "code":"032",
+          "id":"ARG"
+        }
+      }
+    },
+    {
+      "id": "007",
+      "name": "LIQUIDACIÓN TARJETA DE CRÉDITO POR CUENTA",
+      "isMandatory": false,
+      "isEditable": true,
+      "notificationChannels": [
+        "mail",
+        "push",
+        "sms"
+      ],
+      "eventGroup":"account",
+      "eventType": "basic"
+    },
+    {
+      "id": "008",
+      "name": "LIQUIDACIÓN TARJETA DE CRÉDITO POR TARJETA. (AVISO LIQUIDACIÓN), CUENTA RELACIONADA",
+      "isMandatory": false,
+      "isEditable": true,
+      "notificationChannels": [
+        "mail",
+        "push",
+        "sms"
+      ],
+      "eventGroup":"account",
+      "eventType": "basic"
+    },
+    {
+      "id": "009",
+      "name": "INGRESO POR TRANSFERENCIA EXTRANJERO CUENTA",
+      "isMandatory": false,
+      "isEditable": true,
+      "notificationChannels": [
+        "mail",
+        "push",
+        "sms"
+      ],
+      "eventGroup":"account",
+      "eventType": "basic"
+    },
+    {
+      "id": "010",
+      "name": "PAGO DE RECIBOS CUENTA RELACIONADA",
+      "isMandatory": false,
+      "isEditable": true,
+      "notificationChannels": [
+        "mail",
+        "push",
+        "sms"
+      ],
+      "eventGroup":"account",
+      "eventType": "amount",
+      "defaultAmount":{
+        "amount": 3000,
+        "currency": {
+          "code":"032",
+          "id":"ARG"
+        }
+      }
+    },
+    {
+      "id": "011",
+      "name": "NUEVO MENSAJE EN BUZÓN DE DOCUMENTOS",
+      "isMandatory": false,
+      "isEditable": true,
+      "notificationChannels": [
+        "mail",
+        "push",
+        "sms"
+      ],
+      "eventGroup":"person",
+      "eventType": "basic"
+
+    },
+    {
+      "id": "012",
+      "name": "PRÓXIMA CUOTA DE PRÉSTAMO CUENTA",
+      "isMandatory": false,
+      "isEditable": true,
+      "notificationChannels": [
+        "mail",
+        "push",
+        "sms"
+      ],
+      "eventGroup":"account",
+      "eventType": "amount"
+    },
+    {
+      "id": "013",
+      "name": "DISPOSICIÓN EN CAJERO CON TARJETA DE CRÉDITO",
+      "isMandatory": true,
+      "isEditable": false,
+      "notificationChannels": [
+        "mail",
+        "sms"
+      ],
+      "eventGroup":"card",
+      "eventType": "amount"
+    },
+    {
+      "id": "014",
+      "name": "DISPOSICIÓN EN CAJERO CON TARJETA DE DÉBITO",
+      "isMandatory": true,
+      "isEditable": false,
+      "notificationChannels": [
+        "mail",
+        "sms"
+      ],
+      "eventGroup":"card",
+      "eventType": "amount"
+    },
+    {
+      "id": "015",
+      "name": "COMPRA EN ESTABLECIMIENTO CON TARJETA DE CRÉDITO",
+      "isMandatory": true,
+      "isEditable": false,
+      "notificationChannels": [
+        "mail",
+        "sms"
+      ],
+      "eventGroup":"card",
+      "eventType": "amount"
+    },
+    {
+      "id": "016",
+      "name": "COMPRA EN ESTABLECIMIENTO CON TARJETA DE DÉBITO",
+      "isMandatory": true,
+      "isEditable": false,
+      "notificationChannels": [
+        "mail",
+        "sms"
+      ],
+      "eventGroup":"card",
+      "eventType": "amount"
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+    "links": [
+      {
+        "rel": "next",
+        "href": "https://itecban.indra.es/notifications/events/?paginationKey=f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+        "method": "GET"
+      }
+    ]
+  }
+}

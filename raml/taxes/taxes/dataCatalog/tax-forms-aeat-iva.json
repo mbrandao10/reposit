@@ -1,0 +1,48 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "303",
+      "name": "IVA RÉGIMEN GENERAL AUTOLIQUIDACIÓN"
+    },
+    {
+      "id": "353",
+      "name": "IVA - GRUPOS Y ENTIDADES"
+    },
+    {
+      "id": "380",
+      "name": "IVA OPERAC. IMPORTACIONES"
+    },
+    {
+      "id": "300",
+      "name": "IVA DECLARACIÓN TRIMESTRAL"
+    },
+    {
+      "id": "310",
+      "name": "IVA REG. SIMPLIFICADO"
+    },
+    {
+      "id": "311",
+      "name": "IVA REG. SIMPLIFICADO."
+    },
+    {
+      "id": "320",
+      "name": "IVA GRANDES EMPRESAS"
+    },
+    {
+      "id": "330",
+      "name": "IVA EXPORTADORES"
+    },
+    {
+      "id": "332",
+      "name": "IVA EXPORTADORES."
+    },
+    {
+      "id": "371",
+      "name": "IVA REG. DECLARACIÓN FINAL"
+    }
+  ]
+}

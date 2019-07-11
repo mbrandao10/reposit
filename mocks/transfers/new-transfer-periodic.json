@@ -1,0 +1,34 @@
+{
+		"orderer" : {
+			"fromAccount":{
+				"id":"14910001273000001268"
+			}
+		},
+		"beneficiary" : {
+			"toAccount": {
+				"type": "ccc",
+				"id": "14910001273000001268"
+			},
+			"description" : "ALVARO MUNOZ AVILA",
+			"email" : "theuser@themail.org",
+			"legalDocument":{
+        "id":"12345678Z",
+        "type":"01"
+      },
+			"personType":"F"
+		},
+		"amount": {
+			"amount": 100.00,
+			"currency": "978"
+		},
+		"reason" : "Arreglo furgoneta",
+		"reasonType": "01",
+		"operationType" : "TRNE",
+		"transferType" : "03",
+		"execution" : "P",
+		"periodicity":{
+			"frequency":"1",
+			"firstExecutionDate":"2017-12-31",
+			"lastExecutionDate":"2025-12-31"
+	}
+}

@@ -1,0 +1,8 @@
+{
+    "name": "itecban-deposits",
+    "version": "0.0.2",
+    "description": "modulo de itecban-deposits",
+    "main": "index.js",
+    "author": "Minsait",
+    "license": "ISC"
+}

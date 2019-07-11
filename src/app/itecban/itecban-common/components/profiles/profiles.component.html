@@ -1,0 +1,36 @@
+<div class="profiler">
+    <div class="profiler-row" *ngFor="let profile of profiles" (click)="chooseProfile(profile)">
+        <div class="profiler-cell">
+            <div class="text-os-semibold hidden-sm hidden-xs text-center">{{profile.relationShip.name}}</div>
+            <span class="text-os-semibold hidden-md hidden-lg">{{profile.relationShip.name}}</span>
+            <div class="hidden-md hidden-lg"><span class="table-text">{{profile.contractName}}</span></div>
+        </div>
+        <div class="profiler-cell text-center">
+            <span class="hidden-sm hidden-xs">|</span>
+        </div>
+        <div class="profiler-cell text-center">
+            <span class="hidden-sm hidden-xs">{{profile.contractName}}</span>
+        </div>
+        <div class="profiler-cell text-center">
+            <i class="icon icononesait icon-arrow-link-right"></i>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="row mt-1 pt-1 pb-1 bg-white fs-20 interactive" *ngFor="let profile of profiles" (click)="chooseProfile(profile)">
+    <div class="col-xs-10">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 text-sm-left text-xs-left text-right">
+                <strong><span class="table-link">{{profile.contractName}}</span></strong>
+                <span class="pl-1 pr-1 hidden-sm hidden-xs">|</span>
+            </div>
+            <div class="col-xs-12 col-md-6 text-left">
+                <span class="table-text">{{profile.relationShip.name}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-2 text-right text-blue">
+        <i class="icon icononesait icon-arrow-link-right"></i>
+    </div>
+</div> -->
+<a class="lnk-back text-os-semibold" (click)="back()"> {{ 'ITECBAN-LOGIN-PAGE.PROFILE.LOGOUT' | translate }} <i class="icon icononesait icon-exit"></i></a>

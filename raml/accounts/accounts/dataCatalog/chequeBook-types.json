@@ -1,0 +1,25 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+
+  "data": [
+    {
+      "id": "T20CRE",
+      "name": "T.20 CHEQUES C.CLIENTE RESIDENTES EUROS"
+    },
+    {
+      "id": "T20CNRE",
+      "name": "T.20 CHEQUES C.CLIENTE NO RESIDENTES EUROS"
+    },
+    {
+      "id": "T20PRE",
+      "name": "T.20 PAGARES C.CLIENTE RESIDENTES EUROS"
+    },
+    {
+      "id": "T20PNRE",
+      "name": "T.20 PAGARES C.CLIENTE NO RESIDENTES EUROS"
+    }
+  ]
+}

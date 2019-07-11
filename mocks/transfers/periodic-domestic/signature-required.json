@@ -1,0 +1,18 @@
+{
+  "result": {
+    "code": "400",
+    "info": "Bad Request",
+    "errors": [
+      {
+        "errorDescription": "LA OPERATIVA REQUIERE FIRMA",
+        "errorCode": "096H",
+        "errorType": "S",
+        "info":{
+          "type":"security-card",
+          "data":"A5,B8",
+          "transactionCode":"123123123we2342342"
+        }
+      }
+    ]
+  }
+}

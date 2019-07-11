@@ -1,0 +1,158 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<button type="button" class="btn-link pull-left mb-1" (click)="handleBackButton($event)">
+  <span><i
+      class="glyphicon glyphicon-triangle-left"></i>{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.BACK' | translate }}</span>
+</button>
+
+<osb-voucher-container #voucherContainer class="col-xs-12 data-container">
+    <div class="col-xs-12">
+        <div class="row">
+            <div OsbVoucherKeyValue class="col-xs-12 ">
+                <p>
+                    <strong><span
+              OsbVoucherKey>{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.REMITTANCE' | translate }}</span>:
+            <span OsbVoucherValue>{{ remittance.id }}</span></strong>
+                    <span>&nbsp;- {{ remittance.fileType.name }}</span>
+                </p>
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-12 ">
+                <p>
+                    <strong><span OsbVoucherKey>{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.STATUS' | translate }}</span>:
+            <span OsbVoucherValue>{{ remittance.status.name }}</span></strong>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="row">
+            <div OsbVoucherKeyValue class="col-xs-6 col-sm-3 ">
+                <p>
+                    <span OsbVoucherKey>{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.CREATION-DATE' | translate }}</span><br>
+                    <span OsbVoucherValueclass="">{{ remittance.creationDate | date: 'dd/MM/yyyy' }}</span>
+                </p>
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-6 col-sm-3 ">
+                <p>
+                    <span OsbVoucherKey>{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.CHARGE-DATE' | translate }}</span><br>
+                    <span OsbVoucherValue>{{ remittance.chargeDate | date: 'dd/MM/yyyy' }}</span>
+                </p>
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-12 col-sm-6 text-right ">
+                <p>
+                    <strong><span
+              OsbVoucherKey>{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.NUM-OF-ORDERS' | translate }}</span></strong><br>
+                    <span OsbVoucherValue>{{ remittance.numOfOrders }}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 flex-align-center">
+        <div class="row">
+            <div OsbVoucherKeyValue class="col-xs-12 col-sm-6 ">
+                <p><span OsbVoucherKey>{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.FROM-ACCOUNT' | translate }}</span>:
+                    <span OsbVoucherValue>{{ remittance.fromAccount.id }}</span></p>
+            </div>
+            <div OsbVoucherKeyValue class="col-xs-12 col-sm-6 text-right ">
+                <p>
+                    <strong><span
+              OsbVoucherKey>{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.AMOUNT' | translate }}</span></strong><br>
+                    <span class="text-no-warp" OsbVoucherValue>{{ remittance.totalAmount.amount | CurrencyPipe : remittance.totalAmount.currency.code }}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 flex-align-end">
+        <div class="row">
+            <div class="col-xs-12 col-sm-7 col-md-8 ">
+                <div OsbVoucherKeyValue><span OsbVoucherKey>{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.HOLDER-NAME' | translate }}</span>:
+                    <span OsbVoucherValue>{{ remittance.holder.name }}</span></div>
+                <div OsbVoucherKeyValue><span OsbVoucherKey>{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.HOLDER-SUFFIX' | translate }}</span>:
+                    <span OsbVoucherValue>{{ remittance.holder.suffix }}</span></div>
+                <div OsbVoucherKeyValue><span OsbVoucherKey>{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.HOLDER-LEGAL-DOCUMENT' | translate }}</span>:
+                    <span OsbVoucherValue>{{ remittance.holder.legalDocument.id }}</span></div>
+            </div>
+            <div class="col-xs-12 col-sm-5 col-md-4 mt-1 text-right">
+                <br class="hidden-xs">
+                <osb-download-info [voucherContainer]="voucherContainer" class="col-xs-12" text="{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.DOWNLOAD-INFO' | translate }}"></osb-download-info>
+            </div>
+        </div>
+    </div>
+</osb-voucher-container>
+<br>
+
+<div *ngIf="orders" class="col-xs-12 mb-1 mt-1 ">
+    <div *ngIf="remittance.fileType.id === sepaFileTypeId.AEB19">
+        <table class="table table-striped">
+            <thead class="hidden-xs">
+                <tr>
+                    <th>{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.AEB19.NUM-OF-ORDER' | translate | uppercase}}</th>
+                    <th class="hidden-xs">
+                        {{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.AEB19.LEGAL-DOCUMENT' | translate | uppercase}}
+                    </th>
+                    <th class="hidden-xs">{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.AEB19.BIC' | translate | uppercase}}
+                    </th>
+                    <th class="hidden-sm hidden-xs">
+                        {{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.AEB19.DEBTOR' | translate | uppercase}}</th>
+                    <th>{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.AEB19.EXPIRATION-DATE' | translate | uppercase}}</th>
+                    <th>{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.AEB19.STATUS' | translate | uppercase}}</th>
+                    <th>{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.AEB19.AMOUNT' | translate | uppercase}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let order of orders">
+                    <tr>
+                        <td>{{ order.id }}</td>
+                        <td class="hidden-xs">{{ order.debtor?.legalDocument.id }}</td>
+                        <td class="hidden-xs">{{ order.debtor?.bic }}</td>
+                        <td class="hidden-sm hidden-xs">{{ order.debtor?.name }}</td>
+                        <td>{{ order.expirationDate | date: 'dd/MM/yyyy' }}</td>
+                        <td>{{ order.status.name }}</td>
+                        <td class="text-no-warp">{{ order.amount.amount | CurrencyPipe : order.amount.currency.code }}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+
+        <div class="row" *ngIf="hasMoreData">
+            <a class="col-xs-12 text-center p-1" (click)="next()" role="button">{{'COMMON.MORE-RESULTS'
+            | translate}}</a>
+        </div>
+    </div>
+    <div *ngIf="remittance.fileType.id === sepaFileTypeId.AEB34">
+        <table class="table table-striped">
+            <thead class="hidden-xs">
+                <tr>
+                    <th class="hidden-xs">
+                        {{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.AEB34.NUM-OF-ORDER' | translate | uppercase}}
+                    </th>
+                    <th class="hidden-xs">
+                        {{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.AEB34.BENEFICIARY' | translate | uppercase}}</th>
+                    <th>{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.AEB34.ACCOUNT' | translate | uppercase}}</th>
+                    <th class="hidden-xs">
+                        {{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.AEB34.STATUS' | translate | uppercase}}</th>
+                    <th>{{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.AEB34.AMOUNT' | translate | uppercase}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let order of orders">
+                    <tr>
+                        <td class="hidden-xs">{{ order.id }}</td>
+                        <td class="hidden-xs">{{ order.beneficiary }}</td>
+                        <td>{{ order.toAccount.id }}</td>
+                        <td class="hidden-xs">{{ order.status.name }}</td>
+                        <td class="text-no-warp">{{ order.amount.amount | CurrencyPipe : order.amount.currency.code }}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+
+        <div class="row" *ngIf="hasMoreData">
+            <a class="col-xs-12 text-center p-1" (click)="next()" role="button">{{'COMMON.MORE-RESULTS'
+                      | translate}}</a>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!orders" class="col-xs-12">
+    {{ 'ONESAIT-SEPA.REMITTANCE-LIST.REMITTANCE-DETAIL.NO-ORDERS' | translate }}
+</div>

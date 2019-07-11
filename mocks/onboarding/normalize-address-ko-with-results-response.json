@@ -1,0 +1,51 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "isValid":false,
+    "matchedResults":
+  [
+    {
+      "street": "SARMIENTO DOMINGO FAUSTINO",
+      "streetShortName": "DOMINGO SARMIENTO",
+      "streetType": "CALLE",
+      "numberRange": {
+        "min": 1,
+        "max": 300
+      },
+      "apartment": "PB",
+      "door": "PB",
+      "province": "BUENOS AIRES",
+      "district": "ESTEBAN ECHEVERRIA",
+      "city": "MONTE GRANDE",
+      "neighbourhood": "MONTE GRANDE",
+      "zip8": "B1842FXS",
+      "zip4": "1842",
+      "geoLocation": {
+        "latitude": -58.472625732421875,
+        "longitude": -34.803611755371094
+      }
+    },
+    {
+      "street": "DOMINGO LOPEZ",
+      "streetShortName": "DOMINGO LOPEZ",
+      "streetType": "CALLE",
+      "number": 500,
+      "apartment": "PB",
+      "door": "PB",
+      "province": "BUENOS AIRES",
+      "district": "ESTEBAN ECHEVERRIA",
+      "city": "MONTE GRANDE",
+      "neighbourhood": "MONTE GRANDE",
+      "zip8": "B1842FXS",
+      "zip4": "1842",
+      "geoLocation": {
+        "latitude": -58.472625732421875,
+        "longitude": -34.803611755371094
+      }
+    }
+  ]
+}
+}

@@ -1,0 +1,17 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "expirationDate": "2020-10-30T00:00:00.00Z",
+    "interestRate": 0.8,
+    "finalAmount": {
+      "amount": 7100,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    }
+  }
+}

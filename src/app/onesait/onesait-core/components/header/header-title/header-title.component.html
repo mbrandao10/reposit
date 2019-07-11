@@ -1,0 +1,9 @@
+
+<div class="title-container-mobile text-os-semibold pull-left visible-xs text-no-warp">
+    <osb-header-title-element [headerElement]="titleMobile" [level]="1"></osb-header-title-element>
+</div>
+<div class="title-container text-os-semibold pull-left hidden-xs">
+    <osb-header-title-element *ngIf="headerTitle && headerTitle.level1" [headerElement]="headerTitle.level1" [level]="1"></osb-header-title-element>
+    <osb-header-title-element *ngIf="headerTitle && headerTitle.level2" [headerElement]="headerTitle.level2" [level]="2"></osb-header-title-element>
+    <osb-header-title-element *ngIf="headerTitle && headerTitle.level2 && headerTitle.level3" [headerElement]="headerTitle.level2" [level]="3"></osb-header-title-element>
+</div>

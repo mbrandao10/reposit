@@ -1,0 +1,16 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "03",
+      "name": "España"
+    },
+    {
+      "id": "04",
+      "name": "Portugal"
+    }
+  ]
+}

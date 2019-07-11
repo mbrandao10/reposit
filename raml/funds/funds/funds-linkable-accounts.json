@@ -1,0 +1,77 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "149100011009408525",
+      "formats": [
+        {
+          "format": {
+            "id": "CBU",
+            "name": "CBU"
+          },
+          "value": "4910001700000000000758"
+        },
+        {
+          "format": {
+            "id": "CCC",
+            "name": "CCC"
+          },
+          "value": "68867819113534454879"
+        }
+      ],
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      }
+    },
+    {
+      "id": "149100011009408526",
+      "formats": [
+        {
+          "format": {
+            "id": "CBU",
+            "name": "CBU"
+          },
+          "value": "4910001700000000000840"
+        },
+        {
+          "format": {
+            "id": "CCC",
+            "name": "CCC"
+          },
+          "value": "68867819113534454878"
+        }
+      ],
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      }
+    },
+    {
+      "id": "149100011009408527",
+      "formats": [
+        {
+          "format": {
+            "id": "CBU",
+            "name": "CBU"
+          },
+          "value": "4910001700000000000841"
+        },
+        {
+          "format": {
+            "id": "CCC",
+            "name": "CCC"
+          },
+          "value": "68867819113534454853"
+        }
+      ],
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      }
+    }
+  ]
+}

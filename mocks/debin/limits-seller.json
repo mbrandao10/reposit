@@ -1,0 +1,13 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data":
+    {
+      "maxAmountArs": 1230,
+      "maxQuantityArs": 10,
+      "maxAmountUsd": 4560,
+      "maxQuantityUsd": 20
+    }
+}

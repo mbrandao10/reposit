@@ -1,0 +1,30 @@
+{
+    "id":"2333",
+    "legalDocument": {
+      "id":"12345678Z",
+      "type":"DNI"
+    },
+    "name": "ANTONIO",
+    "surname":"GOMEZ",
+    "secondSurname":"GONZALES",
+    "bussinesName": "ANTONIO GOMEZ GONZALES",
+    "birthDateOrCreationDate": "1991-03-26",
+    "sex": "01",
+    "maritalStatus":"01",
+    "economicRegime":"01",
+    "contactInfo": {
+      "phoneNumber": "999999999",
+      "phoneNumberPrefix":"0035",
+      "mobileNumber": "699519233",
+      "mobileNumberPrefix":"0035",
+      "email": "THEUSER@THEMAIL.ES"
+    },
+    "fiscalObligations":true,
+    "fiscalRelationType":"05",
+    "indicators":[
+      {"id":"politicInd", "value":false},
+      {"id":"subjectInd", "value":true},
+      {"id":"isCRS", "value":false},
+      {"id":"isFATCA", "value":false}
+    ]
+  }

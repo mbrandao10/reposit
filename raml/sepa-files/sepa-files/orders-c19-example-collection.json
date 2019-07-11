@@ -1,0 +1,90 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "00000",
+      "amount": {
+        "amount": 12085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "status": {
+        "id": "01",
+        "name": "Enviado"
+      },
+      "debtor": {
+        "name": "The debtor Name",
+        "legalDocument": {
+          "id": "12345678Z",
+          "type": {
+            "id": "01",
+            "name": "DNI"
+          }
+        },
+        "bic": "CGDIESMMXXX"
+      },
+      "expirationDate": "2018-05-23T00:00:00.00Z"
+    },
+    {
+      "id": "00001",
+      "amount": {
+        "amount": 62085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "status": {
+        "id": "01",
+        "name": "Enviado"
+      },
+      "debtor": {
+        "name": "The debtor Name",
+        "legalDocument": {
+          "id": "12345678Z",
+          "type": {
+            "id": "01",
+            "name": "DNI"
+          }
+        },
+        "bic": "CASDESBBXXX"
+      },
+      "expirationDate": "2018-05-23T00:00:00.00Z"
+    },
+    {
+      "id": "00002",
+      "amount": {
+        "amount": 1085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "status": {
+        "id": "01",
+        "name": "Enviado"
+      },
+      "debtor": {
+        "name": "The debtor Name",
+        "legalDocument": {
+          "id": "12345678Z",
+          "type": {
+            "id": "01",
+            "name": "DNI"
+          }
+        },
+        "bic": "BSABESBBXXX"
+      },
+      "expirationDate": "2018-05-23T00:00:00.00Z"
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

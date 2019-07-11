@@ -1,0 +1,116 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "9cc94b7f-3fb6-4246-89c4-f503abf58b31",
+      "date": "2014-10-30T00:00:00.00Z",
+      "accountId": "149100011009408525",
+      "cardId": "4305790009880014",
+      "fileName": "Apertura cuenta plan.pdf",
+      "amount": {
+          "amount": -12.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+      "type": {
+        "id": "01",
+        "name": "Comunicados",
+        "href": "https://itecban.indra.es/documentBox/documents/types"
+      },
+      "isRead": false,
+      "link":{
+        "href":"https://itecban.indra.es/documents/9cc94b7f-3fb6-4246-89c4-f503abf58b33",
+        "method":"GET"
+        }
+    },
+	{
+      "id": "9cc94b7f-3fb6-4246-89c4-f503abf58b32",
+      "date": "2014-10-30T00:00:00.00Z",
+      "accountId": "149100011009408525",
+      "cardId": "4305790009880014",
+      "fileName": "Precontractual planes.pdf",
+      "amount": {
+          "amount": -12.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+      "type": {
+        "id": "01",
+        "name": "Comunicados",
+        "href": "https://itecban.indra.es/documentBox/documents/types"
+      },
+      "isRead": false,
+      "link":{
+        "href":"https://itecban.indra.es/documents/9cc94b7f-3fb6-4246-89c4-f503abf58b33",
+        "method":"GET"
+        }
+    },
+	{
+      "id": "9cc94b7f-3fb6-4246-89c4-f503abf58b33",
+      "date": "2014-10-30T00:00:00.00Z",
+      "accountId": "149100011009408525",
+      "cardId": "4305790009880014",
+      "fileName": "Contrato cuenta nomina.pdf",
+      "amount": {
+          "amount": -12.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+      "type": {
+        "id": "01",
+        "name": "Comunicados",
+        "href": "https://itecban.indra.es/documentBox/documents/types"
+      },
+      "isRead": true,
+      "link":{
+        "href":"https://itecban.indra.es/documents/9cc94b7f-3fb6-4246-89c4-f503abf58b33",
+        "method":"GET"
+        }
+    },
+	{
+      "id": "9cc94b7f-3fb6-4246-89c4-f503abf58b34",
+      "date": "2014-10-30T00:00:00.00Z",
+      "accountId": "149100011009408525",
+      "cardId": "4305790009880014",
+      "fileName": "Condiciones.pdf",
+      "amount": {
+          "amount": -12.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+      "type": {
+        "id": "01",
+        "name": "Comunicados",
+        "href": "https://itecban.indra.es/documentBox/documents/types"
+      },
+      "isRead": false,
+      "link":{
+        "href":"https://itecban.indra.es/documents/9cc94b7f-3fb6-4246-89c4-f503abf58b33",
+        "method":"GET"
+        }
+    }
+  ],
+  "paging": {
+    "hasMorePages":true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+    "links": [
+      {
+        "rel": "next",
+        "href": "https://itecban.indra.es/documentBox?paginationKey=f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+         "method": "GET"
+      }
+    ]
+
+  }
+}

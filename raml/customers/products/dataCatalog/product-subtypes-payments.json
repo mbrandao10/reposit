@@ -1,0 +1,16 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "credit-cards",
+      "name": "Tarjetas de crédito"
+    },
+    {
+      "id": "debit-cards",
+      "name": "Tarjetas de débito"
+    }
+  ]
+}

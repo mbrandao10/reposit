@@ -1,0 +1,20 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "guarantees",
+      "name": "Avales"
+    },
+    {
+      "id": "loans",
+      "name": "Prestamos"
+    },
+    {
+      "id": "overdrafts",
+      "name": "Créditos"
+    }
+  ]
+}

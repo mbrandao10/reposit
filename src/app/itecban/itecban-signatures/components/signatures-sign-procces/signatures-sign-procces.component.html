@@ -1,0 +1,156 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="modal-detail" *ngIf="pendingSignature">
+    <!-- VISTA MOVIL-->
+    <ng-container *ngIf="isMobileResolution()">
+        <osb-modal-page [isOpenModal]="true" (closeEvent)="close()">
+            <osb-modal-page-header></osb-modal-page-header>
+            <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+        </osb-modal-page>
+    </ng-container>
+    <!-- VISTA DESKTOP-->
+    <ng-container *ngIf="!isMobileResolution()">
+        <ng-container *ngTemplateOutlet="templateRef"></ng-container>
+    </ng-container>
+    <!-- CONTENIDO-->
+    <ng-template #templateRef>
+        <osb-loader *ngIf="loading">
+        </osb-loader>
+        <ng-container *ngIf="view === 'VERIFY'">
+            <div class="mb-1" *ngIf="sign && pendingSignatureDetail">
+                <osb-final-message [signatureData]="signatureData" text="{{'ONESAIT-TRANSFERS.EMIT.CORRECT' | translate}}"></osb-final-message>
+            </div>
+            <div class="p-1">
+                <div class="text-os-semibold mb-1" *ngIf="action==='accept'">{{'ITECBAN-PERSONS.SIGNATURES.OPERATION-SIGN' | translate}}</div>
+                <div class="text-os-semibold mb-1" *ngIf="action==='reject'">{{'Rachazo' | translate}} - {{'ITECBAN-PERSONS.SIGNATURES.OPERATION-SIGN' | translate}}</div>
+                <div class="row">
+                    <div class="col-xs-12 mb-2">
+                        <div>
+                            {{ pendingSignature.group.name }}
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="col-xs-12 col-md-4 mb-2">
+                        <div>
+                            <b>
+                                    {{ 'ITECBAN-PERSONS.SIGNATURES.DETAIL.ACCOUNT' | translate }}
+                                </b>
+                        </div>
+                        <div class="text-no-warp" *ngIf="pendingSignatureDetail.account">
+                            {{ pendingSignatureDetail.account.formats | formatAccountPipe: accountFormatView:ismobileResolution }}
+                        </div>
+                    </div>
+                    <!-- <div class="col-xs-12 col-md-4 mb-2">
+                            <div>
+                                <b>{{ 'ITECBAN-PERSONS.SIGNATURES.PERSON' | translate }}</b>
+                            </div>
+                            <div>
+                                {{ pendingSignature.creator }}
+                            </div>
+                        </div>-->
+                    <div class="col-xs-12 col-md-4 mb-2">
+                        <div>
+                            <b>{{ 'ITECBAN-PERSONS.SIGNATURES.DETAIL.CONCEPT' | translate }}</b>
+                        </div>
+                        <div *ngIf="pendingSignature.description">
+                            {{ pendingSignature.description }}
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="col-xs-12 col-md-4 mb-2">
+                        <!--<div>
+                                <b>{{ 'ITECBAN-PERSONS.SIGNATURES.DETAIL.PENDING-SIGNATURES' | translate }} </b> {{ pendingSignature.pendingSignatures }}
+                            </div>-->
+                        <!--<div class="mt-1">
+                                <b> {{ 'ITECBAN-PERSONS.SIGNATURES.DETAIL.REQUIRED-SIGNATURES' | translate }}</b> {{ pendingSignatureDetail.requiredSignatures }}
+                            </div>-->
+                        <div>
+                            <b>{{ 'ITECBAN-PERSONS.SIGNATURES.DETAIL.REQUIRED-SIGNATURES' | translate }}</b>
+                        </div>
+                        <div *ngIf="pendingSignatureDetail.requiredSignatures">
+                            {{ pendingSignatureDetail.requiredSignatures }}
+                        </div>
+
+
+                        <!-- <div *ngFor="let pendingSigner of pendingSignatureDetail.signers">
+                                <p *ngIf="pendingSigner.status.id==='0'">
+                                    {{ pendingSigner.name }}
+                                </p>
+                            </div> -->
+                    </div>
+                    <div class="col-xs-12 col-md-4 mb-2">
+                        <div>
+                            <b>{{ 'ITECBAN-PERSONS.SIGNATURES.DATE' | translate }}</b>
+                        </div>
+                        <div *ngIf="pendingSignature.date">
+                            {{ pendingSignature.date | date: 'dd/MM/yyyy' }}
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-4 mb-2">
+                        <div>
+                            <b>
+                                {{ 'ITECBAN-PERSONS.SIGNATURES.AMOUNT' | translate }}
+                                </b>
+                        </div>
+                        <div class="text-no-warp" *ngIf="pendingSignature.amount">
+                            {{ pendingSignature.amount.amount | CurrencyPipe:pendingSignature.amount.currency.code }}
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12" *ngIf="!continue">
+                        <div class="row">
+                            <div class="col-xs-6 text-left">
+                                <button class="btn btn-secondary interactive" (click)="returnOperation()">
+                                    {{ 'ITECBAN-PERSONS.SIGNATURES.BUTTON.CANCELED' | translate }}
+                                </button>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <button class="btn btn-primary interactive" (click)="signOperation()">
+                                    {{ 'ITECBAN-PERSONS.SIGNATURES.BUTTON.CONTINUE' | translate }}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12" *ngIf="continue">
+                        <div class="text-right">
+                            <button class="btn btn-primary interactive" (click)=close(true)>
+                                {{ 'ITECBAN-PERSONS.SIGNATURES.BUTTON.CONTINUE' | translate }}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="view === 'TOKEN'">
+            <form #formStep3="ngForm">
+                <osb-signature [signatureEntity]="signatureEntity"></osb-signature>
+
+                <div class="col-xs-12 mt-2 hidden-xs">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <button class="btn btn-terciary" (click)="returnOperation()">{{ 'ITECBAN-ACCOUNT.ADD.BUTTON.CANCEL' | translate }}</button>
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <button class="btn btn-secondary" (click)="goBack()">{{ 'ITECBAN-ACCOUNT.ADD.BUTTON.BEHIND'
+                                        | translate }}</button>
+                                </div>
+
+                                <div class="col-xs-6">
+                                    <button class="btn btn-primary" [disabled]="!signatureEntity?.tokenValid" (click)="signOperation()">{{
+                                        'ITECBAN-ACCOUNT.ADD.BUTTON.FINALIZE' | translate }}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 col-xs-offset-3 visible-xs-block">
+                    <button class="btn btn-primary" [disabled]="!signatureEntity?.tokenValid" (click)="signOperation()"> {{ 'ITECBAN-ACCOUNT.ADD.BUTTON.FINALIZE' | translate }}</button>
+                </div>
+            </form>
+        </ng-container>
+    </ng-template>
+</div>

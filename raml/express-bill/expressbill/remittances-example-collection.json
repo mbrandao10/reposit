@@ -1,0 +1,63 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "REM00000",
+      "totalAmount": {
+        "amount": 100085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "creationDate": "2018-05-23T00:00:00.00Z",
+      "lastModificationDate": "2018-06-23T00:00:00.00Z",
+      "numOfAuthorizedOrders":22,
+      "numOfPendingOrders":3,
+      "numOfRejectedOrders":1,
+      "numOfDeniedOrders":0,
+      "contractId":"cfmg-c1232233"
+    },
+    {
+      "id": "REM00001",
+      "totalAmount": {
+        "amount": 10085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "creationDate": "2018-05-23T00:00:00.00Z",
+      "lastModificationDate": "2018-06-23T00:00:00.00Z",
+      "numOfAuthorizedOrders":22,
+      "numOfPendingOrders":3,
+      "numOfRejectedOrders":1,
+      "numOfDeniedOrders":0,
+      "contractId":"cfmg-c1232233"
+    },
+    {
+      "id": "REM00002",
+      "totalAmount": {
+        "amount": 550085.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "creationDate": "2018-06-23T00:00:00.00Z",
+      "lastModificationDate": "2018-06-24T00:00:00.00Z",
+      "numOfAuthorizedOrders":234,
+      "numOfPendingOrders":20,
+      "numOfRejectedOrders":4,
+      "numOfDeniedOrders":1,
+      "contractId":"cfmg-c1232233"
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

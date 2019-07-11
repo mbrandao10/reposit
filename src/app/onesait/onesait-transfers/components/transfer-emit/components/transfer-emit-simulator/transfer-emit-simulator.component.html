@@ -1,0 +1,72 @@
+<ng-container *ngIf="simulation">
+    <div class="p-1 box-shadow bg-gray-lighter mb-1">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="dropdown-arrow-gray-lighter"></div>
+                <div class="simulation">
+                    <div class="row">
+                        <div class="col-xs-12 mb-1 text-os-semibold">
+                            {{'ONESAIT-TRANSFERS.EMIT.SIMULATOR.REAL-TIME' | translate}}
+                        </div>
+                        <div class="col-sm-4 col-xs-12">
+                            <div class="mb-1" *ngIf="simulation.amount">
+                                <span
+                                    class="text-os-semibold">{{'ONESAIT-TRANSFERS.EMIT.SIMULATOR.AMOUNT' | translate}}:
+                                </span>
+                                <span>{{simulation.amount.amount  | CurrencyPipe: simulation.amount.currency.code }}</span>
+                            </div>
+                            <div class="mb-1" *ngIf="simulation.expenses">
+                                <span class="text-os-semibold">{{'ONESAIT-TRANSFERS.EMIT.SIMULATOR.EXPENSES' | translate}}:
+                                </span>
+                                <span>{{simulation.expenses.amount  | CurrencyPipe: simulation.expenses.currency.code}}</span>
+                            </div>
+                            <div class="mb-1" *ngIf="simulation.riskScoring">
+                                <span class="text-os-semibold">{{'ONESAIT-TRANSFERS.EMIT.SIMULATOR.RISK' | translate}}:
+                                </span>
+                                <span>{{simulation.riskScoring.name}}</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-xs-12">
+                            <div class="mb-1" *ngIf="simulation.fee">
+                                <span class="text-os-semibold">{{'ONESAIT-TRANSFERS.EMIT.SIMULATOR.FEE' | translate}}:
+                                </span>
+                                <span>{{simulation.fee.amount  | CurrencyPipe: simulation.fee.currency.code}}</span>
+                            </div>
+
+                            <div class="mb-1" *ngIf="(simulation.mailCharge && (simulation.mailCharge.amount > 0))">
+                                <span
+                                    class="text-os-semibold">{{'ONESAIT-TRANSFERS.EMIT.SIMULATOR.MAIL-CHARGES' | translate}}:
+                                </span>
+                                <span>{{simulation.mailCharge.amount | CurrencyPipe: simulation.mailCharge.currency.code }}</span>
+                            </div>
+                            <div class="mb-1" *ngIf="simulation.total">
+                                <span class="text-os-semibold">{{'ONESAIT-TRANSFERS.EMIT.SIMULATOR.TOTAL' | translate}}:
+                                </span>
+                                <span>{{simulation.total.amount | CurrencyPipe: simulation.total.currency.code }}</span>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-4 col-xs-12" *ngIf="simulation.beneficiary">
+                            <div class="mb-1" *ngIf="simulation.beneficiary.description">
+                                <span
+                                    class="text-os-semibold">{{'ONESAIT-TRANSFERS.EMIT.SIMULATOR.BENEFICIARY' | translate}}:
+                                </span>
+                                <span>{{simulation.beneficiary.description}}</span>
+                            </div>
+                            <div class="mb-1" *ngIf="simulation.beneficiary.email">
+                                <span class="text-os-semibold">{{'ONESAIT-TRANSFERS.EMIT.EMAIL' | translate}}: </span>
+                                <span>{{simulation.beneficiary.email | formatLiteralPipe:2:resolution}}</span>
+                            </div>
+                            <div class="mb-1" *ngIf="simulation.beneficiary.legalDocument">
+                                <span
+                                    class="text-os-semibold">{{'ONESAIT-TRANSFERS.EMIT.SIMULATOR.DOCUMENT' | translate}}:
+                                </span>
+                                <span>{{simulation.beneficiary.legalDocument.id}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

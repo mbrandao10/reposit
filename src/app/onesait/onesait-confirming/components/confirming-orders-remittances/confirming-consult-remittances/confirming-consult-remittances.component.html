@@ -1,0 +1,66 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<ng-container *ngIf="remittances">
+  <div class="col-xs-12">
+    <osb-search-list #searchComponent [formGroup]="consultRemittancesForm" [formConfig]="formConfig"
+      (search)="consultRemittances()">
+    </osb-search-list>
+    <div class="col-md-3 col-md-offset-9 hidden-xs hidden-sm p-0">
+      <button class="btn btn-primary btn-block mt-1 btn-search pull-right" (click)="searchComponent.execSearch()" [disabled]="!consultRemittancesForm.valid">
+        {{'COMMON.CONSULT' | translate}}
+      </button>
+    </div>
+  </div>
+
+  <ng-container *ngIf="remittances">
+    <p *ngIf="showingLastRemittances">{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.REMITTANCES.LAST-REMITTANCES'
+        | translate}}</p>
+    <p *ngIf="!showingLastRemittances">{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.REMITTANCES.CONSULTED-REMITTANCES'
+        | translate}}</p>
+  </ng-container>
+
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.REMITTANCES.REMITTANCE-NUMBER' | translate}}</th>
+        <th>{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.REMITTANCES.CREATION' | translate}}</th>
+        <th>{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.REMITTANCES.EXPIRATION' | translate}}</th>
+        <th>{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.REMITTANCES.MODIFICATION' | translate}}</th>
+        <th>{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.REMITTANCES.AMOUNT' | translate}}</th>
+        <th>{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.REMITTANCES.STATE' | translate}}</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody *ngIf="remittances">
+      <tr *ngFor="let remittance of remittances; let i = index">
+        <td>{{remittance.id}}</td>
+        <td>{{remittance.creationDate | date: 'dd/MM/yyyy'}}</td>
+        <td>{{remittance.expirationDate | date: 'dd/MM/yyyy'}}</td>
+        <td>{{remittance.lastModificationDate | date: 'dd/MM/yyy'}}</td>
+        <td class="text-no-warp">
+          {{remittance.totalAmount.amount | CurrencyPipe : remittance.totalAmount.currency.code:false}}</td>
+        <td *ngIf="remittancesIncidents[i] === 1">{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.REMITTANCES.THERE-IS'
+          | translate}} {{remittancesIncidents[i]}}
+          {{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.REMITTANCES.ORDER-INCIDENTS' | translate}}</td>
+        <td *ngIf="remittancesIncidents[i] > 1">{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.REMITTANCES.THERE-ARE'
+          |
+          translate}} {{remittancesIncidents[i]}}
+          {{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.REMITTANCES.ORDERS-INCIDENTS' | translate}}</td>
+        <td *ngIf="remittancesIncidents[i] === 0">{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.REMITTANCES.NO-INCIDENTS'
+          | translate}}</td>
+        <td>
+          <button class="btn btn-secondary" (click)="viewOrder(remittance)">{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.REMITTANCES.ORDERS'
+            | translate}}</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-container *ngIf="hasMoreData">
+    <p class="text-center pt-1">
+      <a (click)="next()" role="button">{{'COMMON.MORE-RESULTS'| translate}}</a>
+    </p>
+  </ng-container>
+
+</ng-container>
+<!-- <div class="text-center pt-1" *ngIf="!remittances">{{'ONESAIT-CONFIRMING.ORDERS-REMITTANCES.REMITTANCES.NO-REMITTANCES'|
+  translate}}</div> -->

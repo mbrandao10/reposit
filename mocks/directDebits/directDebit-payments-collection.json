@@ -1,0 +1,91 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "1234",
+      "reason": "Cuota junio 2017",
+      "chargeDate": "2017-06-30T00:00:00.00Z",
+      "incomingDate": "2017-06-29T00:00:00.00Z",
+      "maxReturnDate": "2017-06-29T00:00:00.00Z",
+      "state": {
+        "id": "01",
+        "name": "Pagado"
+      },
+      "amount": {
+        "amount": 100.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      }
+    },
+    {
+      "id": "1235",
+      "reason": "Cuota julio 2017",
+      "chargeDate": "2017-07-30T00:00:00.00Z",
+      "incomingDate": "2017-07-29T00:00:00.00Z",
+      "maxReturnDate": "2017-07-29T00:00:00.00Z",
+      "state": {
+        "id": "01",
+        "name": "Pagado"
+      },
+      "amount": {
+        "amount": 110.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      }
+    },
+    {
+      "id": "1236",
+      "reason": "Cuota agosto 2017",
+      "chargeDate": "2017-08-30T00:00:00.00Z",
+      "incomingDate": "2017-08-29T00:00:00.00Z",
+      "maxReturnDate": "2017-08-29T00:00:00.00Z",
+      "state": {
+        "id": "01",
+        "name": "Pagado"
+      },
+      "amount": {
+        "amount": 120.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      }
+    },
+    {
+      "id": "1237",
+      "reason": "Cuota septiembre 2017",
+      "chargeDate": "2017-09-30T00:00:00.00Z",
+      "incomingDate": "2017-09-29T00:00:00.00Z",
+      "maxReturnDate": "2018-10-10T00:00:00.00Z",
+      "state": {
+        "id": "01",
+        "name": "Pagado"
+      },
+      "amount": {
+        "amount": 130.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+    "links": [
+      {
+        "rel": "next",
+        "href": "https://itecban.indra.es/directDebits/contracts/1231232312/payments?paginationKey=f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+        "method": "GET"
+      }
+    ]
+  }
+}

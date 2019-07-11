@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../../node_modules/itecban-common",
+  "lib": {
+    "entryFile": "index.ts",
+    "umdModuleIds": {
+      "d3": "d3",
+      "moment": "moment",
+      "itecban-environment": "itecban-environment",
+      "underscore": "underscore",
+      "onesait-core": "onesait-core",
+      "onesait-api": "onesait-api",
+      "@ngx-translate/core": "@ngx-translate/core",
+      "ngx-bootstrap/datepicker": "ngx-bootstrap/datepicker",
+      "ngx-bootstrap/locale": "ngx-bootstrap/locale",
+      "ngx-bootstrap/chronos": "ngx-bootstrap/chronos"
+    }
+  }
+
+}

@@ -1,0 +1,8 @@
+{
+    "name": "onesait-credits",
+    "version": "0.0.2",
+    "description": "modulo de onesait-credits",
+    "main": "index.js",
+    "author": "Minsait",
+    "license": "ISC"
+}

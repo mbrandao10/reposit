@@ -1,0 +1,630 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "onesait-banking": {
+            "root": "",
+            "sourceRoot": "src",
+            "projectType": "application",
+            "prefix": "osb",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "styleext": "scss"
+                }
+            },
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/onesait-banking",
+                        "index": "src/index.html",
+                        "main": "src/main.ts",
+                        "polyfills": "src/polyfills.ts",
+                        "tsConfig": "src/tsconfig.app.json",
+                        "assets": [
+                            "src/favicon.ico",
+                            "src/assets"
+                        ],
+                        "styles": [
+                            "src/styles.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [{
+                                "replace": "src/environments/environment.ts",
+                                "with": "src/environments/environment.prod.ts"
+                            }],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [{
+                                "type": "initial",
+                                "maximumWarning": "2mb",
+                                "maximumError": "5mb"
+                            }]
+                        },
+                        "uat": {
+                            "fileReplacements": [{
+                                "replace": "src/environments/environment.ts",
+                                "with": "src/environments/environment.uat.ts"
+                            }],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [{
+                                "type": "initial",
+                                "maximumWarning": "2mb",
+                                "maximumError": "5mb"
+                            }]
+                        },
+                        "dev": {
+                            "fileReplacements": [{
+                                "replace": "src/environments/environment.ts",
+                                "with": "src/environments/environment.dev.ts"
+                            }],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [{
+                                "type": "initial",
+                                "maximumWarning": "2mb",
+                                "maximumError": "5mb"
+                            }]
+                        },
+                        "pr": {
+                            "fileReplacements": [{
+                                "replace": "src/environments/environment.ts",
+                                "with": "src/environments/environment.dev.ts"
+                            }],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [{
+                                "type": "initial",
+                                "maximumWarning": "2mb",
+                                "maximumError": "5mb"
+                            }]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "onesait-banking:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "onesait-banking:build:production"
+                        },
+                        "uat": {
+                            "browserTarget": "onesait-banking:build:uat"
+                        },
+                        "dev": {
+                            "browserTarget": "onesait-banking:build:dev"
+                        },
+                        "pr": {
+                            "browserTarget": "onesait-banking:build:pr"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "onesait-banking:build"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "src/test.ts",
+                        "polyfills": "src/polyfills.ts",
+                        "tsConfig": "src/tsconfig.spec.json",
+                        "karmaConfig": "src/karma.conf.js",
+                        "styles": [
+                            "src/styles.scss"
+                        ],
+                        "scripts": [],
+                        "assets": [
+                            "src/favicon.ico",
+                            "src/assets"
+                        ]
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "src/tsconfig.app.json",
+                            "src/tsconfig.spec.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                }
+            }
+        },
+        "onesait-banking-e2e": {
+            "root": "e2e/",
+            "projectType": "application",
+            "prefix": "",
+            "architect": {
+                "e2e": {
+                    "builder": "@angular-devkit/build-angular:protractor",
+                    "options": {
+                        "protractorConfig": "e2e/protractor.conf.js",
+                        "devServerTarget": "onesait-banking:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "onesait-banking:serve:production"
+                        }
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": "e2e/tsconfig.e2e.json",
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                }
+            }
+        },        
+        "onesait-api": {
+            "root": "src/app/onesait/onesait-api",
+            "sourceRoot": "src/app/onesait/onesait-api",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/onesait/onesait-api/tsconfig.lib.json",
+                        "project": "src/app/onesait/onesait-api/ng-package.json"
+                    }
+                }
+            }
+        },
+        "onesait-core": {
+            "root": "src/app/onesait/onesait-core",
+            "sourceRoot": "src/app/onesait/onesait-core",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/onesait/onesait-core/tsconfig.lib.json",
+                        "project": "src/app/onesait/onesait-core/ng-package.json"
+                    }
+                }
+            }
+        },
+        "onesait-confirming": {
+            "root": "src/app/onesait/onesait-confirming",
+            "sourceRoot": "src/app/onesait/onesait-confirming",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/onesait/onesait-confirming/tsconfig.lib.json",
+                        "project": "src/app/onesait/onesait-confirming/ng-package.json"
+                    }
+                }
+            }
+        },
+        "onesait-nbexpress": {
+            "root": "src/app/onesait/onesait-nbexpress",
+            "sourceRoot": "src/app/onesait/onesait-nbexpress",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/onesait/onesait-nbexpress/tsconfig.lib.json",
+                        "project": "src/app/onesait/onesait-nbexpress/ng-package.json"
+                    }
+                }
+            }
+        },
+        "onesait-accounts": {
+            "root": "src/app/onesait/onesait-accounts",
+            "sourceRoot": "src/app/onesait/onesait-accounts",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/onesait/onesait-accounts/tsconfig.lib.json",
+                        "project": "src/app/onesait/onesait-accounts/ng-package.json"
+                    }
+                }
+            }
+        },
+        "onesait-leasing": {
+            "root": "src/app/onesait/onesait-leasing",
+            "sourceRoot": "src/app/onesait/onesait-leasing",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/onesait/onesait-leasing/tsconfig.lib.json",
+                        "project": "src/app/onesait/onesait-leasing/ng-package.json"
+                    }
+                }
+            }
+        },
+        "onesait-taxes": {
+            "root": "src/app/onesait/onesait-taxes",
+            "sourceRoot": "src/app/onesait/onesait-taxes",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/onesait/onesait-taxes/tsconfig.lib.json",
+                        "project": "src/app/onesait/onesait-taxes/ng-package.json"
+                    }
+                }
+            }
+        },
+        "onesait-sepa": {
+            "root": "src/app/onesait/onesait-sepa",
+            "sourceRoot": "src/app/onesait/onesait-sepa",
+            "projectType": "library",
+            "prefix": "osb",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/onesait/onesait-sepa/tsconfig.lib.json",
+                        "project": "src/app/onesait/onesait-sepa/ng-package.json"
+                    }
+                }
+            },
+            "schematics": {
+                "@schematics/angular:component": {
+                    "styleext": "scss"
+                }
+            }
+        },
+        "onesait-factoring": {
+            "root": "src/app/onesait/onesait-factoring",
+            "sourceRoot": "src/app/onesait/onesait-factoring",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/onesait/onesait-factoring/tsconfig.lib.json",
+                        "project": "src/app/onesait/onesait-factoring/ng-package.json"
+                    }
+                }
+            }
+        },
+        "itecban-settings": {
+            "root": "src/app/itecban/itecban-settings",
+            "sourceRoot": "src/app/itecban/itecban-settings",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/itecban/itecban-settings/tsconfig.lib.json",
+                        "project": "src/app/itecban/itecban-settings/ng-package.json"
+                    }
+                }
+            }
+
+        },
+        "onesait-transfers": {
+            "root": "src/app/onesait/onesait-transfers",
+            "sourceRoot": "src/app/onesait/onesait-transfers",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/onesait/onesait-transfers/tsconfig.lib.json",
+                        "project": "src/app/onesait/onesait-transfers/ng-package.json"
+                    }
+                }
+            }
+        },
+        "onesait-profile": {
+            "root": "src/app/onesait/onesait-profile",
+            "sourceRoot": "src/app/onesait/onesait-profile",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/onesait/onesait-profile/tsconfig.lib.json",
+                        "project": "src/app/onesait/onesait-profile/ng-package.json"
+                    }
+                }
+            }
+        },
+        "onesait-credits": {
+            "root": "src/app/onesait/onesait-credits",
+            "sourceRoot": "src/app/onesait/onesait-credits",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/onesait/onesait-credits/tsconfig.lib.json",
+                        "project": "src/app/onesait/onesait-credits/ng-package.json"
+                    }
+                }
+            }
+        },
+        "itecban-common": {
+            "root": "src/app/itecban/itecban-common",
+            "sourceRoot": "src/app/itecban/itecban-common",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/itecban/itecban-common/tsconfig.lib.json",
+                        "project": "src/app/itecban/itecban-common/ng-package.json"
+                    }
+                }
+            }
+        },
+        "itecban-alerts": {
+            "root": "src/app/itecban/itecban-alerts",
+            "sourceRoot": "src/app/itecban/itecban-alerts",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/itecban/itecban-alerts/tsconfig.lib.json",
+                        "project": "src/app/itecban/itecban-alerts/ng-package.json"
+                    }
+                }
+            }
+        },
+        "itecban-mailbox": {
+            "root": "src/app/itecban/itecban-mailbox",
+            "sourceRoot": "src/app/itecban/itecban-mailbox",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/itecban/itecban-mailbox/tsconfig.lib.json",
+                        "project": "src/app/itecban/itecban-mailbox/ng-package.json"
+                    }
+                }
+            }
+        },
+        "itecban-cards": {
+            "root": "src/app/itecban/itecban-cards",
+            "sourceRoot": "src/app/itecban/itecban-cards",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/itecban/itecban-cards/tsconfig.lib.json",
+                        "project": "src/app/itecban/itecban-cards/ng-package.json"
+                    }
+                }
+            }
+        },
+        "itecban-persons": {
+            "root": "src/app/itecban/itecban-persons",
+            "sourceRoot": "src/app/itecban/itecban-persons",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/itecban/itecban-persons/tsconfig.lib.json",
+                        "project": "src/app/itecban/itecban-persons/ng-package.json"
+                    }
+                }
+            }
+        },
+        "itecban-directdebits": {
+            "root": "src/app/itecban/itecban-directdebits",
+            "sourceRoot": "src/app/itecban/itecban-directdebits",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/itecban/itecban-directdebits/tsconfig.lib.json",
+                        "project": "src/app/itecban/itecban-directdebits/ng-package.json"
+                    }
+                }
+            }
+        },
+        "itecban-accounts": {
+            "root": "src/app/itecban/itecban-accounts",
+            "sourceRoot": "src/app/itecban/itecban-accounts",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/itecban/itecban-accounts/tsconfig.lib.json",
+                        "project": "src/app/itecban/itecban-accounts/ng-package.json"
+                    }
+                }
+            }
+        },
+        "itecban-signatures": {
+            "root": "src/app/itecban/itecban-signatures",
+            "sourceRoot": "src/app/itecban/itecban-signatures",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/itecban/itecban-signatures/tsconfig.lib.json",
+                        "project": "src/app/itecban/itecban-signatures/ng-package.json"
+                    }
+                }
+            }
+        },
+        "itecban-deposits": {
+            "root": "src/app/itecban/itecban-deposits",
+            "sourceRoot": "src/app/itecban/itecban-deposits",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/itecban/itecban-deposits/tsconfig.lib.json",
+                        "project": "src/app/itecban/itecban-deposits/ng-package.json"
+                    }
+                }
+            }
+        },
+        "itecban-loans": {
+            "root": "src/app/itecban/itecban-loans",
+            "sourceRoot": "src/app/itecban/itecban-loans",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/itecban/itecban-loans/tsconfig.lib.json",
+                        "project": "src/app/itecban/itecban-loans/ng-package.json"
+                    }
+                }
+            }
+        },
+        "itecban-funds": {
+            "root": "src/app/itecban/itecban-funds",
+            "sourceRoot": "src/app/itecban/itecban-funds",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/itecban/itecban-funds/tsconfig.lib.json",
+                        "project": "src/app/itecban/itecban-funds/ng-package.json"
+                    }
+                }
+            }
+        },
+        "itecban-equities": {
+            "root": "src/app/itecban/itecban-equities",
+            "sourceRoot": "src/app/itecban/itecban-equities",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/itecban/itecban-equities/tsconfig.lib.json",
+                        "project": "src/app/itecban/itecban-equities/ng-package.json"
+                    }
+                }
+            }
+        },
+        "itecban-foreignoperations": {
+            "root": "src/app/itecban/itecban-foreignoperations",
+            "sourceRoot": "src/app/itecban/itecban-foreignoperations",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/itecban/itecban-foreignoperations/tsconfig.lib.json",
+                        "project": "src/app/itecban/itecban-foreignoperations/ng-package.json"
+                    }
+                }
+            }
+        },
+        "itecban-cashpooling": {
+            "root": "src/app/itecban/itecban-cashpooling",
+            "sourceRoot": "src/app/itecban/itecban-cashpooling",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/itecban/itecban-cashpooling/tsconfig.lib.json",
+                        "project": "src/app/itecban/itecban-cashpooling/ng-package.json"
+                    }
+                }
+            }
+        },
+        "itecban-credits": {
+            "root": "src/app/itecban/itecban-credits",
+            "sourceRoot": "src/app/itecban/itecban-credits",
+            "projectType": "library",
+            "prefix": "lib",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-ng-packagr:build",
+                    "options": {
+                        "tsConfig": "src/app/itecban/itecban-credits/tsconfig.lib.json",
+                        "project": "src/app/itecban/itecban-credits/ng-package.json"
+                    }
+                }
+            }
+        }
+    },
+    "defaultProject": "onesait-banking"
+}

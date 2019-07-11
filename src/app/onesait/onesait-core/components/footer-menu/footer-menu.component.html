@@ -1,0 +1,14 @@
+
+<ng-container *ngIf="show">
+  <div class="footer-menu-background" (click)="close()">
+    
+  </div>
+  <div class="footer-menu">
+      <ul>
+        <li *ngFor="let operation of operations">
+          <div (click)="goTo(operation)">{{operation.name | translate }}</div>
+        </li>
+      </ul>
+  </div>
+
+</ng-container>

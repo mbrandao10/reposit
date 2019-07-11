@@ -1,0 +1,90 @@
+<ng-container *ngIf="transfer">
+    <div>
+        <span class="text-os-semibold">
+        {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.CONCEPT' | translate}}:
+      </span>
+        <span>
+        {{ transfer.reason}}
+      </span>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-xs-4">
+            <span class="text-os-semibold">
+            {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.TOACCOUNT' | translate}}:
+          </span>
+            <span>
+            {{ transfer.beneficiary.toAccount.id }}
+          </span>
+        </div>
+        <div class="col-xs-4">
+            <span class="text-os-semibold">
+            {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.DATE' | translate}}:
+          </span>
+            <span>
+            {{ transfer.date | date: 'dd/MM/yyyy' }}
+          </span>
+        </div>
+        <div class="col-xs-4">
+            <span class="text-os-semibold">
+            {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.AMOUNT' | translate}}:
+          </span>
+            <span class="text-no-warp">
+            {{ transfer.amount.amount | CurrencyPipe: transfer.amount.currency.code }}
+          </span>
+        </div>
+    </div>
+
+    <div class="mt-1">
+        <span>
+        {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.ORDERER' | translate}}:
+      </span>
+        <span>
+        {{ transfer.orderer.description }}
+      </span>
+    </div>
+
+    <div class="mt-1">
+        <span>
+        {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.REFERENCE' | translate}}:
+      </span>
+        <span>
+        {{ transfer.id }}
+      </span>
+    </div>
+
+    <div class="mt-1">
+        <span>
+        {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.BENEFICIARY' | translate}}:
+      </span>
+        <span>
+        {{ transfer.beneficiary.description }}
+      </span>
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-xs-6">
+            <div>
+                <span>
+            {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.TRANSFER-TYPE' | translate}}:
+          </span>
+                <span>
+            {{ transfer.transferType.name }}
+          </span>
+            </div>
+            <div class="mt-1">
+                <span>
+            {{'ONESAIT-TRANSFERS.HISTORIC.DETAIL.STATUS' | translate}}:
+          </span>
+                <span>
+            {{ transfer.status.name }}
+          </span>
+            </div>
+        </div>
+        <div *ngIf="transfer.isCancellable" class="col-xs-6 text-right">
+            <button class="btn btn-primary" (click)="anulTransfer()">
+              {{ 'ONESAIT-TRANSFERS.HISTORIC.DETAIL.ANUL' | translate | uppercase }}
+          </button>
+        </div>
+    </div>
+</ng-container>

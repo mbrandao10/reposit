@@ -1,0 +1,20 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "DIARIO"
+    },
+    {
+      "id": "02",
+      "name": "SEMANAL"
+    },
+    {
+      "id": "03",
+      "name": "MENSUAL"
+    }
+  ]
+}

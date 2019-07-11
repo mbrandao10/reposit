@@ -1,0 +1,51 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "userHolder": false,
+    "authorizedBalance": [
+      {
+        "amount": 0,
+        "currency": {
+          "code": "032"
+        }
+      },
+      {
+        "amount": 0,
+        "currency": {
+          "code": "840"
+        }
+      }
+    ],
+    "availableBalance": [
+      {
+        "amount": 3500,
+        "currency": {
+          "code": "032"
+        }
+      },
+      {
+        "amount": 0,
+        "currency": {
+          "code": "840"
+        }
+      }
+    ],
+    "currentBalance": [
+      {
+        "amount": 0,
+        "currency": {
+          "code": "032"
+        }
+      },
+      {
+        "amount": 0,
+        "currency": {
+          "code": "840"
+        }
+      }
+    ]
+  }
+}

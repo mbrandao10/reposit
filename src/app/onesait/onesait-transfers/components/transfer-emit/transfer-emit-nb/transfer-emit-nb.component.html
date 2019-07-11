@@ -1,0 +1,187 @@
+<div class="row" *ngIf="transferState">
+    <div class="col-xs-12">
+        <fieldset class="fielset-custom" *ngIf="!isMobileResolution() || transferState.currentStep === 1">
+            <div class="mt-1 mb-1">
+                {{ 'ONESAIT-TRANSFERS.EMIT.DESCRIPTION.NB' | translate }}
+            </div>
+            <div class="row mt-1" *ngIf="transferState.favourites">
+                <div class="col-xs-12 col-md-5">
+                    <div class="form-group">
+                        <label for="favourite">{{'ONESAIT-TRANSFERS.EMIT.FILL-FAV' | translate}}</label>
+                        <select class="form-control form-control-amim" name="favourite"
+                            [(ngModel)]="transferFavouriteSelected" (ngModelChange)="onChangeSelect($event)">
+                            <option [ngValue]='null'></option>
+                            <option *ngFor="let favourite of transferState.favourites" [ngValue]="favourite">
+                                {{favourite.alias}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <form [formGroup]="transferFormAccounts" id="form">
+                <div class="form-group">
+                    <div class="row mt-1">
+                        <div class="col-xs-12 col-md-5">
+                            <div class="form-group">
+                                <label for="origin">{{'ONESAIT-TRANSFERS.EMIT.ACCOUNT.ORIGINIBAN' | translate}}*</label>
+                                <osb-input-validator [formCtrl]="transferFormAccounts.get('origin')">
+                                    <select class="form-control form-control-amim" name="origin"
+                                        formControlName="origin" (ngModelChange)="changeCurrency($event)">
+                                        <option *ngFor="let account of transferState.accounts" [ngValue]="account">
+                                            {{account.formats | formatAccountPipe: accountFormatView}}
+                                        </option>
+                                    </select>
+                                </osb-input-validator>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-xs-12 col-md-5">
+                            <label
+                                for="externalDestiny">{{'ONESAIT-TRANSFERS.EMIT.ACCOUNT.DESTINY' | translate}}*</label>
+                            <div class="row mt-1">
+                                <div class="col-xs-12">
+                                    <div class="row pl-1">
+                                        <osb-input-validator [formCtrl]="transferFormAccounts.get('externalDestiny')">
+                                            <input class="form-control input-iban" type="text" name="ibanbloque1"
+                                                formControlName="ibanbloque1" maxlength="4" minlength="4"
+                                                (ngModelChange)="changeAccountFrom('1')" (blur)="removeSpaceFormat()" />
+                                            <input class="form-control input-iban" type="text" name="ibanbloque2"
+                                                formControlName="ibanbloque2" maxlength="4" minlength="4"
+                                                (ngModelChange)="changeAccountFrom('2')" (blur)="removeSpaceFormat()" />
+                                            <input class="form-control input-iban" type="text" name="ibanbloque3"
+                                                formControlName="ibanbloque3" maxlength="4" minlength="4"
+                                                (ngModelChange)="changeAccountFrom('3')" (blur)="removeSpaceFormat()" />
+                                            <input class="form-control input-iban" type="text" name="ibanbloque4"
+                                                formControlName="ibanbloque4" maxlength="4" minlength="4"
+                                                (ngModelChange)="changeAccountFrom('4')" (blur)="removeSpaceFormat()" />
+                                            <input class="form-control input-iban" type="text" name="ibanbloque5"
+                                                formControlName="ibanbloque5" maxlength="4" minlength="4"
+                                                (ngModelChange)="changeAccountFrom('5')" (blur)="removeSpaceFormat()" />
+                                            <input class="form-control input-iban" type="text" name="ibanbloque6"
+                                                formControlName="ibanbloque6" maxlength="4" minlength="4"
+                                                (ngModelChange)="changeAccountFrom('6')" (blur)="removeSpaceFormat()" />
+                                            <input class="form-control input-iban" type="text" name="ibanbloque7"
+                                                formControlName="ibanbloque7" maxlength="1" minlength="1"
+                                                (ngModelChange)="changeAccountFrom('7')" (blur)="removeSpaceFormat()" />
+                                        </osb-input-validator>
+                                    </div>
+                                    <span class="help-block text-red"
+                                        *ngIf="errorText && transferFormAccounts.invalid && (transferFormAccounts.touched)">
+                                        <p class="text-left">{{ errorText | translate }}</p>
+                                    </span>
+                                </div>
+                                <!-- <osb-input-validator [formCtrl]="transferFormAccounts.get('externalDestiny')">
+                                    <input class="form-control" type="hidden" name="externalDestiny"
+                                        formControlName="externalDestiny" minlength="24" (blur)="removeSpaceFormat()" />
+                                </osb-input-validator> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <form [formGroup]="transferFormBeneficiary" id="form">
+                <div class="form-group">
+                    <div class="row mt-1">
+                        <!--<div class="col-xs-12 col-md-3">
+                            <label  for="bic">[Código BIC / Swift]*</label>
+                            <input class="form-control" type="text" name="bic" formControlName="bic" />
+                        </div>-->
+                        <div class="col-xs-12 col-md-4">
+                            <label for="beneficiaryName">{{'ONESAIT-TRANSFERS.EMIT.ACCOUNT.BENEFICIARY' | translate}}
+                            </label>
+                            <input class="form-control" type="text" name="beneficiaryName"
+                                formControlName="beneficiaryName" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <form [formGroup]="transferFormAccounts" id="form">
+                <div class="row mt-1">
+                    <div class="col-xs-6 col-md-3">
+                        <label for="amount">{{'ONESAIT-TRANSFERS.EMIT.ACCOUNT.AMOUNT' | translate}}*</label>
+                        <osb-input-validator [formCtrl]="transferFormAccounts.get('amount')"
+                            [opts]="inputValidatorOptions">
+                            <input class="form-control" type="text" name="amount" formControlName="amount"
+                                (blur)="applyFormatInput()" />
+                        </osb-input-validator>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 pl-0 mt-2"><span>{{currencySymbol}}</span></div>
+                    <!--<div class="col-xs-6 col-md-2">
+                            <label  for="currency">[Divisa]</label>
+                            <div class="form-select-custom">
+                                <select class="form-control form-control-amim" name="currency" formControlName="currency">
+                                    <option *ngFor="let currency of transferState.currencies" [ngValue]="currency">
+                                        {{currency.name}}</option>
+                                </select>
+                            </div>
+                        </div>-->
+                </div>
+            </form>
+        </fieldset>
+
+
+        <!--<form [formGroup]="transferFormBeneficiary" id="form">
+                <div class="form-group">
+                    <div class="row mt-1">
+                        <div class="col-xs-12 col-md-3">
+                            <label  for="beneficiaryName">[Nombre del beneficiario]
+                            </label>
+                            <input class="form-control" type="text" name="beneficiaryName" formControlName="beneficiaryName" />
+                        </div>
+                        <div class="col-xs-12 col-md-3">
+                            <label  for="beneficiaryAddress">[Dirección]</label>
+                            <input class="form-control" type="text" name="beneficiaryAddress" formControlName="beneficiaryAddress" />
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <label  for="beneficiaryProvince">[Localidad]</label>
+                            <input class="form-control" type="text" name="beneficiaryProvince" formControlName="beneficiaryProvince" />
+                        </div>
+                        <div class="col-xs-6 col-md-3">
+                            <label  for="beneficiaryCountry">[País]</label>
+                            <input class="form-control" type="text" name="beneficiaryCountry" formControlName="beneficiaryCountry" />
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+    </fieldset>-->
+
+        <fieldset class="fielset-custom" *ngIf="!isMobileResolution() || transferState.currentStep === 2">
+            <form [formGroup]="transferFormExecution" id="form">
+                <div class="form-group">
+                    <!--<osb-transfer-execution [transferForm]="transferFormExecution"
+                        [frequencyTypes]="transferState.frequencyTypes"></osb-transfer-execution>-->
+                    <osb-transfer-emit-simulator [simulation]="simulation"></osb-transfer-emit-simulator>
+                </div>
+            </form>
+        </fieldset>
+        <fieldset class="fielset-custom" *ngIf="!isMobileResolution() || transferState.currentStep === 3">
+            <form [formGroup]="transferFormData" id="form">
+                <div class="row mt-1">
+                    <div class="col-xs-12 col-md-3">
+                        <label for="concept">{{'ONESAIT-TRANSFERS.EMIT.REASON' | translate}}*</label>
+                        <osb-input-validator [formCtrl]="transferFormData.get('concept')">
+                            <input class="form-control" type="text" name="concept" formControlName="concept" />
+                        </osb-input-validator>
+                    </div>
+                    <div class="col-xs-12 col-md-3">
+                        <label for="email">{{'ONESAIT-TRANSFERS.EMIT.EMAIL' | translate}}</label>
+                        <osb-input-validator [formCtrl]="transferFormData.get('email')">
+                            <input class="form-control" type="text" name="email" formControlName="email" />
+                        </osb-input-validator>
+                    </div>
+                </div>
+                <osb-transfer-show-add-fav [transferFormData]="transferFormData"
+                    [transferFormExecution]="transferFormExecution.value"></osb-transfer-show-add-fav>
+            </form>
+        </fieldset>
+    </div>
+    <div class="col-xs-12 hidden-xs">
+        <button class="btn btn-primary pull-right" [disabled]="!validateForms()"
+            (click)="send()">{{ 'COMMON.NEXT' | translate }}</button>
+    </div>
+    <div class="col-xs-12 visible-xs">
+        <button class="btn btn-primary btn-search" [disabled]="!validStep()"
+            (click)="nextStep()">{{ 'COMMON.NEXT' | translate }}</button>
+    </div>
+</div>

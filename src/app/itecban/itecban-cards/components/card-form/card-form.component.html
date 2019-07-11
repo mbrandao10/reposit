@@ -1,0 +1,76 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div class="panel-body">
+    <div class="col-xs-12 mt-10 text-danger" *ngIf="!allServiceFull && !loading">
+        <span>{{'ERROR.CODE.404' | translate}}</span>
+    </div>
+    <form>
+        <ul class="radio nav nav-pills" style="margin-top: 0px;">
+            <li>
+                <label>{{'ITECBAN-CARDS.CREDIT' | translate | uppercase}}
+                    </label>
+            </li>
+            <li class="pl-1">
+                <input type="radio" name="optradio" checked (click)="changeProductId('credit')">
+            </li>
+            <li>
+                <label>{{'ITECBAN-CARDS.DEBIT' | translate | uppercase}}
+                </label>
+            </li>
+            <li class="pl-1">
+                <input type="radio" name="optradio" (click)="changeProductId('debit')">
+            </li>
+        </ul>
+    </form>
+
+    <!-- <div class="visible-xs">
+        <div class="panel">
+            <div class="panel-body">
+                <ul class="list interactive">
+                    <li (click)="changeProductId('credit')">
+                        <span>{{'ITECBAN-CREDITCARDS.TITLE' | translate | uppercase}}</span>
+                        <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                    </li>
+                    <li (click)="changeProductId('debit')">
+                        <span>{{'ITECBAN-DEBITCARDS.TITLE' | translate | uppercase}}</span>
+                        <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div> -->
+
+    <!--Vista del Formulario -->
+    <div class="col-xs-12 mt-10" *ngIf="view">
+        <div class="row" *ngIf="cardContractForm">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="col-xs-12" *ngIf="view === 'credit'">
+                        <span class="text-os-semibold">
+                            {{ 'ITECBAN-CREDITCARDS.TITLE' | translate }}
+                        </span>
+                    </div>
+                    <div class="col-xs-12" *ngIf="view === 'debit'">
+                        <span class="text-os-semibold">
+                                {{ 'ITECBAN-DEBITCARDS.TITLE' | translate }}
+                            </span>
+                    </div>
+                    <app-card-form-generator [formGroup]="cardContractForm" [formConfig]="formConfig" (changeEvent)="prueba($event)">
+                    </app-card-form-generator>
+                    <!-- <form [formGroup]="cardContractForm" id="form">
+                        <osb-search-list [formGroup]="cardContractForm" [formConfig]="formConfig" (search)="next()">
+                        </osb-search-list>
+                    </form> -->
+                </div>
+            </div>
+            <div class="col-xs-6 mt-10">
+                <button class="btn btn-secondary" type="button" (click)="cancel()">{{'COMMON.CANCEL' | translate}}</button>
+            </div>
+            <div class="col-xs-6 mt-10 text-right">
+                <button class="btn btn-primary" type="button" (click)="goStep()" [disabled]="cardContractForm.invalid || fullComplete">
+                    <span>{{'COMMON.CONTINUE' | translate}}</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>

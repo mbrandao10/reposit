@@ -1,0 +1,18 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "CUOTA",
+      "href": "https://itecban.indra.es/loans/dataCatalog/amortizationTypes"
+    },
+    {
+      "id": "02",
+      "name": "IMPORTE",
+      "href": "https://itecban.indra.es/loans/dataCatalog/amortizationTypes"
+    }
+  ]
+}

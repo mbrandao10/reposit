@@ -1,0 +1,19 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+      "id": "001",
+      "name": "SALDO CON PERIODICIDAD",
+      "isMandatory": false,
+      "isEditable": true,
+      "notificationChannels": [
+        "mail",
+        "push",
+        "sms"
+      ],
+      "eventGroup":"account",
+      "eventType": "period"
+    }
+}

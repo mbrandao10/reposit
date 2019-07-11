@@ -1,0 +1,806 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "accounts": [
+	  {
+        "id": "149100011009408526",
+        "postedBalance": {
+          "amount": 100.01,
+          "currency": {
+            "id": "USD",
+            "code": "840"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534431785"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534431785"
+          }
+        ]
+      },
+      {
+        "id": "149100011009408525",
+        "postedBalance": {
+          "amount": 200.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454879"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454879"
+          }
+        ]
+      },
+	  {
+        "id": "149100011009408525",
+        "postedBalance": {
+          "amount": 300.02,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454879"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454879"
+          }
+        ]
+      },
+	  {
+        "id": "149100011009408525",
+        "postedBalance": {
+          "amount": 100.04,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454880"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454880"
+          }
+        ]
+      },
+	  {
+        "id": "149100011009408570",
+        "postedBalance": {
+          "amount": 450.50,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454890"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454890"
+          }
+        ]
+      }
+    ],
+    "credits": [
+      {
+        "id": "149100011009408527",
+        "postedBalance": {
+          "amount": 200.09,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454880"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454880"
+          }
+        ]
+      },
+      {
+        "id": "149100011009408528",
+        "postedBalance": {
+          "amount": 100.09,
+          "currency": {
+            "id": "USD",
+            "code": "840"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534431783"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534431783"
+          }
+        ]
+      },
+	  {
+        "id": "149100011009408528",
+        "postedBalance": {
+          "amount": 300.09,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534431783"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534431783"
+          }
+        ]
+      }
+    ],
+    "cards": [
+      {
+        "id": "4305790004640705",
+        "postedBalance": {
+          "amount": 150.2,
+          "currency": {
+            "id": "ARG",
+            "code": "032"
+          }
+        }
+      },
+      {
+        "id": "4305790004640706",
+        "postedBalance": {
+          "amount": 40.1,
+          "currency": {
+            "id": "ARG",
+            "code": "032"
+          }
+        }
+      }
+    ],
+    "deposits": [
+      {
+        "id": "149100011009408529",
+        "postedBalance": {
+          "amount": 100.51,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454881"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454881"
+          }
+        ]
+      },
+      {
+        "id": "149100011009408510",
+        "postedBalance": {
+          "amount": 512.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534431784"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534431784"
+          }
+        ]
+      },
+      {
+        "id": "149100011009408510",
+        "postedBalance": {
+          "amount": 512.01,
+          "currency": {
+            "id": "EUR",
+            "code": "978"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534431784"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534431784"
+          }
+        ]
+      },
+      {
+        "id": "149100011009408510",
+        "postedBalance": {
+          "amount": 512.01,
+          "currency": {
+            "id": "USD",
+            "code": "840"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534431784"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534431784"
+          }
+        ]
+      }
+    ],
+    "loans": [
+      {
+        "id": "149100011009408526",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454879"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454879"
+          }
+        ],
+        "pendingAmount": {
+          "amount": 1500.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        }
+      },
+      {
+        "id": "149100011009408526",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454879"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454879"
+          }
+        ],
+        "pendingAmount": {
+          "amount": 1400.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        }
+      }
+    ],
+    "confirming": [
+      {
+        "id": "149100011009408527",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454833"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454833"
+          }
+        ],
+        "agreedBalanceAccepted": {
+          "amount": 2500.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        },
+        "prepaidBalance": {
+          "amount": 1500.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        }
+      },
+      {
+        "id": "149100011009408528",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454834"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454834"
+          }
+        ],
+        "agreedBalanceAccepted": {
+          "amount": 3500.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        },
+        "prepaidBalance": {
+          "amount": 5500.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        }
+      }
+    ],
+    "factoring": [
+      {
+        "id": "149100011009408529",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454835"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454835"
+          }
+        ],
+        "chargesMngLimit": {
+          "amount": 2520.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        },
+        "financingLimit": {
+          "amount": 1530.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        }
+      },
+      {
+        "id": "149100011009408530",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454836"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454836"
+          }
+        ],
+        "chargesMngLimit": {
+          "amount": 3510.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        },
+        "financingLimit": {
+          "amount": 5520.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        }
+      }
+    ],
+    "leasing": [
+      {
+        "id": "149100011009408531",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454837"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454837"
+          }
+        ],
+        "outstandingBalance": {
+          "amount": 2570.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        }
+      },
+      {
+        "id": "149100011009408532",
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454838"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454838"
+          }
+        ],
+        "outstandingBalance": {
+          "amount": 3580.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        }
+      }
+    ],
+    "investmentfunds": [
+      {
+        "id": "149100011009408533",
+        "postedBalance": {
+          "amount": -12.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454839"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454839"
+          }
+        ]
+      },
+      {
+        "id": "149100011009408534",
+        "postedBalance": {
+          "amount": -12.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534431740"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534431740"
+          }
+        ]
+      }
+    ],
+    "equities": [
+      {
+        "id": "149100011009408535",
+        "postedBalance": {
+          "amount": 34.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454841"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454841"
+          }
+        ]
+      },
+      {
+        "id": "149100011009408536",
+        "postedBalance": {
+          "amount": 36.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534431742"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534431742"
+          }
+        ]
+      }
+    ],
+    "guarantees": [
+      {
+        "id": "149100011009408537",
+        "amount": {
+          "amount": 36.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534454843"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534454843"
+          }
+        ]
+      },
+      {
+        "id": "149100011009408538",
+        "amount": {
+          "amount": 37.01,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        },
+        "formats": [
+          {
+            "format": {
+              "id": "IBAN",
+              "name": "IBAN",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "ES6968867819113534431744"
+          },
+          {
+            "format": {
+              "id": "CCC",
+              "name": "CCC",
+              "href": "https://itecban.indra.es/accounts/dataCatalogs/accountFormats"
+            },
+            "value": "68867819113534431744"
+          }
+        ]
+      }
+    ]
+  }
+}

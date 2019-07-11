@@ -1,0 +1,16 @@
+
+{
+  "addressId": "POSTAL",
+  "streetType": "CALLE",
+  "streetName": "REAL",
+  "streetNumber": "0077",
+  "floor": "1",
+  "door": "A",
+  "postcode": "28049",
+  "city": "MADRID",
+  "province": "MADRID",
+  "country": "ESPAÑA",
+  "type": "POSTAL",
+  "aditionalInfo":"Parcela B",
+  "isPrincipal":false
+}

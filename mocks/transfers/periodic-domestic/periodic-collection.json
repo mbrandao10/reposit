@@ -1,0 +1,122 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "TRNE030000000001744",
+      "date": "2018-10-30T00:00:00.00Z",
+      "orderer": {
+        "fromAccount": {
+          "id": "ES5121003778441545387494"
+        }
+      },
+      "beneficiary": {
+        "toAccount": {
+          "type": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "id": "ES7720809848813497195537"
+        },
+        "description": "ALVARO MUNOZ AVILA",
+        "email": "theuser@themail.com"
+      },
+      "amount": {
+        "amount": 60,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "reason": "Pago alquiler Piso",
+      "transferType": {
+        "id": "03",
+        "name": "Cash"
+      },
+      "periodicity": {
+        "firstExecutionDate": "2018-12-31",
+        "frequency": {
+          "id": "1",
+          "name": "MENSUAL"
+        },
+        "executionRule": "E"
+      }
+    },
+    {
+      "id": "TRNE030000000001745",
+      "date": "2014-10-30T00:00:00.00Z",
+      "orderer": {
+        "fromAccount": {
+          "id": "ES6420807939518144595283"
+        }
+      },
+      "beneficiary": {
+        "toAccount": {
+          "type": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "id": "ES6420807939518144595283"
+        },
+        "description": "John Wood",
+        "email": "theuser@themail.com"
+      },
+      "amount": {
+        "amount": 60,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "reason": "Abono Gimnasio",
+      "transferType": {
+        "id": "03",
+        "name": "Cash"
+      },
+      "periodicity": {
+        "firstExecutionDate": "2017-12-31",
+        "lastExecutionDate": "2018-12-31",
+        "frequency": {
+          "id": "1",
+          "name": "MENSUAL"
+        },
+        "executionRule": "L"
+      }
+    },
+    {
+      "id": "TRNE030000000001746",
+      "date": "2014-10-30T00:00:00.00Z",
+      "orderer": {
+        "fromAccount": {
+          "id": "ES9201822139934451768561"
+        }
+      },
+      "beneficiary": {
+        "toAccount": {
+          "id": "ES9201822139934451768562"
+        },
+        "description": "ALVARO MUNOZ AVILA",
+        "email": "theuser@themail.com"
+      },
+      "amount": {
+        "amount": 60,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "reason": "Ahorro interno",
+      "transferType": {
+        "id": "03",
+        "name": "Cash"
+      },
+      "nextExecutionDate": "2017-09-20T00:00:00.00Z"
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

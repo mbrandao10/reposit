@@ -1,0 +1,15 @@
+{
+  "uuid": "d3946fc116fdf657",
+  "model": "A001",
+  "platform": "Android",
+  "version": "6.0.1",
+  "manufacturer": "OnePlus",
+  "serial": "RFC09090909",
+  "phoneNumber": "999999999",
+  "geolocation":{
+    "latitude":65.9667,
+    "longitude":-18.5333
+  },
+  "client_id":"dob01",
+  "client_secret":"5ee9e042-11f6-4c89-aace-3c69536d98ed"
+}

@@ -1,0 +1,33 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "Comunicados",
+      "href": "https://itecban.indra.es/documentBox/documents/types"
+    },
+    {
+      "id": "02",
+      "name": "Doc Contractuales",
+      "href": "https://itecban.indra.es/documentBox/documents/types"
+    },
+    {
+      "id": "03",
+      "name": "CDoc Requerida",
+      "href": "https://itecban.indra.es/documentBox/documents/types"
+    },
+    {
+      "id": "04",
+      "name": "Incidencias",
+      "href": "https://itecban.indra.es/documentBox/documents/types"
+    },
+    {
+      "id": "05",
+      "name": "Justificantes",
+      "href": "https://itecban.indra.es/documentBox/documents/types"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "dateQuota": "2019-04-30",
+    "capital": {
+      "amount": 2500,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "interest": 23.4,
+    "totalQuota": {
+      "amount": 5000,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "outstandingCapital": {
+      "amount": 2500,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    }
+  }
+}

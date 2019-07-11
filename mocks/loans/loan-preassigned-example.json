@@ -1,0 +1,87 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "code": "PRP01",
+    "description": "PRESTAMO AL VENCIMIENTO",
+    "validPeriod": 45,
+    "identityCode": "001",
+    "startDate": "2018-10-30T00:00:00.00Z",
+    "expiryDate": "2019-10-30T00:00:00.00Z",
+    "amount": {
+      "amount": 4500.01,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "availableAmount": {
+      "amount": 0,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "drawnAmount": {
+      "amount": 0,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "relations": [
+      {
+        "account": {
+          "id": "049100010000000278",
+          "formats": [
+            {
+              "format": {
+                "id": "CBU",
+                "name": "CBU"
+              },
+              "value": "4910001700000000002785"
+            }
+          ]
+        },
+        "state": {
+          "id": "01",
+          "description": "VIGENTE"
+        },
+        "currentBalance": {
+          "amount": 39799.9,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        }
+      },
+      {
+        "account": {
+          "id": "049100010000000268",
+          "formats": [
+            {
+              "format": {
+                "id": "CBU",
+                "name": "CBU"
+              },
+              "value": "4910001700000000002686"
+            }
+          ]
+        },
+        "state": {
+          "id": "97",
+          "description": "EXPEDIENTE EN TRAMITE"
+        },
+        "currentBalance": {
+          "amount": 0,
+          "currency": {
+            "id": "ARS",
+            "code": "032"
+          }
+        }
+      }
+    ]
+  }
+}

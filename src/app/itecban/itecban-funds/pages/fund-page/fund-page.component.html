@@ -1,0 +1,38 @@
+<app-loader *ngIf="loading"></app-loader>
+
+<div class="row page-non-tabbed pb-1" *ngIf="!loading">
+    <div class="col-xs-12 p-dynamic">
+        <div class="row p-1">
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="row" *ngIf="fund">
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="borde-superior"></div>
+                            <div class="text-section fs-12 text-uppercase text-os-semibold">{{ 'ITECBAN-FUNDS.DETAIL.EFFECTIVE-VALUE' | translate }}</div>
+                            <div class='fs-28 text-os-semibold text-no-warp'>{{ fund.effectiveValue.amount | CurrencyPipe: fund.effectiveValue.currency.code }}</div>
+                            <div class="mb-1 visible-xs"></div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="borde-superior"></div>
+                            <div class="text-section fs-12 text-uppercase text-os-semibold">{{ 'ITECBAN-FUNDS.DETAIL.LIQ-VALUE' | translate }}</div>
+                            <div class='fs-20 text-os-light mt-10 text-no-warp'>{{ fund.liquidationValue.amount | CurrencyPipe: fund.liquidationValue.currency.code }}</div>
+                        </div>
+                        <div class="col-xs-6 col-sm-3">
+                            <div class="borde-superior"></div>
+                            <div class="text-section fs-12 text-uppercase text-os-semibold">{{ 'ITECBAN-FUNDS.DETAIL.TOTAL-COST' | translate }}</div>
+                            <div class="fs-20 text-os-light mt-10 text-no-warp">{{ fund.totalCost.amount | CurrencyPipe: fund.totalCost.currency.code }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <osb-tabs [tabs]="pageConfig.tabs" [(view)]="view"></osb-tabs>
+            <div class="mb-1">
+                <div class="panel mt-1">
+                    <div class="panel-body">
+                        <osb-fund-detail *ngIf="view==='conditions'" [fundDetail]="fund" scroll-collapse-emitter></osb-fund-detail>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

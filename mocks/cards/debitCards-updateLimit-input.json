@@ -1,0 +1,11 @@
+{
+  "limitValueCode": "C1",
+  "limitValue": {
+    "amount": 100,
+    "currency": "032"
+  },
+  "temporality": {
+    "from": "2017-09-30",
+    "to": "2017-10-30"
+  }
+}

@@ -1,0 +1,93 @@
+<app-loader *ngIf="loading"></app-loader>
+<td colspan="6" *ngIf="!loading">
+    <ul>
+        <li *ngIf="movementDetail.reason">
+            <span class="name">
+                {{ 'ITECBAN-ACCOUNT.MOVEMENT-DETAIL.CONCEPT' | translate }}
+            </span>
+            <span class="value">
+                {{ movementDetail.reason }}                       
+            </span>
+        </li>
+
+        <li *ngIf="movementDetail.operationDate">
+            <span class="name">
+                {{ 'ITECBAN-ACCOUNT.MOVEMENT-DETAIL.EXECUTION-DATE' | translate }}
+            </span>
+            <span class="value">
+                {{ movementDetail.operationDate | date: 'dd/MM/yyyy' }}                 
+            </span>
+        </li>
+
+        <li *ngIf="accountMovementDetail.item.valueDate">
+            <span class="name">
+                {{ 'ITECBAN-ACCOUNT.MOVEMENT-DETAIL.VALUE-DATE' | translate }}
+            </span>
+            <span class="value">
+                {{ accountMovementDetail.item.valueDate | date: 'dd/MM/yyyy' }}             
+            </span>
+        </li>
+
+        <li *ngIf="movementDetail.amount.amount && movementDetail.amount.currency.code">
+            <span class="name">
+                {{ 'ITECBAN-ACCOUNT.MOVEMENT-DETAIL.INPORT' | translate }}
+            </span>
+            <span class="value text-no-warp">   
+                {{ movementDetail.amount.amount | CurrencyPipe: movementDetail.amount.currency.code }}                      
+            </span>
+        </li>
+
+        <li *ngIf="accountMovementDetail.accountId">
+            <span class="name">
+                {{ 'ITECBAN-ACCOUNT.MOVEMENT-DETAIL.CHARGE-ACCOUNT' | translate }}
+            </span>
+            <span class="value">    
+                {{ accountMovementDetail.accountId }}                      
+            </span>
+        </li>
+
+        <li *ngIf="movementDetail.beneficiary.account.id">
+            <span class="name">
+                {{ 'ITECBAN-ACCOUNT.MOVEMENT-DETAIL.BENEFICIAL-ACCOUNT' | translate }}
+            </span>
+            <span class="value">   
+                {{ movementDetail.beneficiary.account.id }}                           
+            </span>
+        </li>
+
+        <li *ngIf="movementDetail.beneficiary.swift">
+            <span class="name">
+                {{ 'ITECBAN-ACCOUNT.MOVEMENT-DETAIL.BIC-SWIFT' | translate }}
+            </span>
+            <span class="value">
+                {{ movementDetail.beneficiary.swift }}                    
+            </span>
+        </li>
+
+        <li *ngIf="movementDetail.orderer.name">
+            <span class="name">
+                {{ 'ITECBAN-ACCOUNT.MOVEMENT-DETAIL.ON-BEHALF-OF' | translate }}
+            </span>
+            <span class="value">   
+                {{ movementDetail.orderer.name }}                               
+            </span>
+        </li>
+
+        <li *ngIf="movementDetail.beneficiary.name">
+            <span class="name">
+                {{ 'ITECBAN-ACCOUNT.MOVEMENT-DETAIL.NAME-OF-BENEFICIARY' | translate }}
+            </span>
+            <span class="value">   
+                {{ movementDetail.beneficiary.name }}                       
+            </span>
+        </li>
+
+        <li>
+            <span class="value">
+                <a href="">
+                    {{ 'ITECBAN-ACCOUNT.MOVEMENT-DETAIL.DOWNLOAD-INFORMATION' | translate }}
+                </a>                   
+            </span>
+        </li>
+    </ul>
+</td>

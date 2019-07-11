@@ -1,0 +1,39 @@
+<app-loader *ngIf="loading"></app-loader>
+<table class="table table-striped" *ngIf="creditLocks">
+    <thead class="hidden-xs">
+        <tr>
+            <th>
+                {{ 'ITECBAN-CREDITS.CREDIT-LOCKS.TABLE.DESCRIPTION' | translate }}
+            </th>
+            <th>
+                {{ 'ITECBAN-CREDITS.CREDIT-LOCKS.TABLE.START-DATE' | translate }}
+            </th>
+            <th>
+                {{ 'ITECBAN-CREDITS.CREDIT-LOCKS.TABLE.END-DATE' | translate }}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let creditLock of creditLocks">
+            <tr>
+                <td *ngIf="creditLock && creditLock.reason">
+                    <span class="hidden-xs">
+                        {{ creditLock.reason }}
+                    </span>
+                    <span class="hidden-sm hidden-md hidden-lg text-os-semibold">
+                        {{ creditLock.reason }}
+                    </span>
+                    <span class="visible-xs-block  fs-12" *ngIf="creditLock">
+                        {{ creditLock.startDate | date:'dd/MM/yyyy' }} - {{ creditLock.endDate | date:'dd/MM/yyyy' }}
+                    </span>
+                </td>
+                <td class="hidden-xs" *ngIf="creditLock && creditLock.startDate">
+                    {{ creditLock.startDate | date:'dd/MM/yyyy' }}
+                </td>
+                <td class="hidden-xs" *ngIf="creditLock && creditLock.startDate">
+                    {{ creditLock.endDate | date:'dd/MM/yyyy' }}
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

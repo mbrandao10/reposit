@@ -1,0 +1,66 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+  "id": "0000000000000000001",
+  "reason": "Concepto del movimiento 1",
+  "amount": {
+    "amount": -12.01,
+    "currency": {
+      "id": "EUR",
+      "code": "978"
+    }
+  },
+  "date": "2017-09-11T00:00:00.00Z",
+  "hasDocument": true,
+  "hasDetail": true,
+  "documentId": "71cb8771-5b29-4570-af1c-ca3cb7975246"
+},
+{
+  "id": "0000000000000000002",
+  "reason": "Concepto del movimiento 2",
+  "amount": {
+    "amount": -12.01,
+    "currency": {
+      "id": "EUR",
+      "code": "978"
+    }
+  },
+  "date": "2017-08-29T00:00:00.00Z",
+  "hasDocument": true,
+  "hasDetail": false,
+  "documentId": "71cb8771-5b29-4570-af1c-ca3cb7975246"
+},
+{
+  "id": "0000000000000000003",
+  "reason": "Concepto del movimiento 3",
+  "amount": {
+    "amount": -12.01,
+    "currency": {
+      "id": "ARS",
+      "code": "032"
+    }
+  },
+  "date": "2016-09-30T00:00:00.00Z",
+  "hasDocument": true,
+  "hasDetail": true,
+  "documentId": "71cb8771-5b29-4570-af1c-ca3cb7975246"
+}
+  ],
+  "paging": {
+    "hasMorePages":true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+    "links": [
+      {
+        "rel": "next",
+        "href": "https://itecban.indra.es/debitCards/149100011009408525/movements/?paginationKey=f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+         "method": "GET"
+      }
+    ]
+
+  }
+
+}

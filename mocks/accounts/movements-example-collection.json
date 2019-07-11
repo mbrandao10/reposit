@@ -1,0 +1,313 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id":"210000000416002801150413060226469521",
+      "reference": "00000001",
+      "amount": {
+        "amount": -12.01,
+        "currency": {
+          "id": "USA",
+          "code": "840"
+        }
+      },
+      "type": {
+        "id": "TRPR",
+        "name": "Traspaso Recibido",
+        "href": "https://itecban.indra.es/accounts/dataCatalogs/movementTypes"
+      },
+      "reason": "Traspaso recibido",
+      "operationNumber": "000000000000001",
+      "operationDate": "2017-05-23T00:00:00.00Z",
+      "valueDate": "2017-05-23T00:00:00.00Z",
+      "hasDetail":true,
+      "balance": {
+        "amount": -12.01,
+        "currency": {
+          "id": "USA",
+          "code": "840"
+        }
+      },
+      "aditionalInfo":{
+        "key":"value",
+        "key2":"value2"
+      }
+    },
+	{
+      "id":"210000000416002801150413060226469522",
+      "reference": "00000002",
+      "amount": {
+        "amount": -56.99,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "type": {
+        "id": "TRIE",
+        "name": "Compra",
+        "href": "https://itecban.indra.es/accounts/dataCatalogs/movementTypes"
+      },
+      "reason": "Ayuntamiento de Madrid",
+      "operationNumber": "000000000000001",
+      "operationDate": "2017-05-20T00:00:00.00Z",
+      "valueDate": "2017-05-20T00:00:00.00Z",
+      "hasDetail":true,
+      "balance": {
+        "amount": -56.99,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      }
+    },
+	{
+      "id":"210000000416002801150413060226469523",
+      "reference": "00000003",
+      "amount": {
+        "amount": 1200.89,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "type": {
+        "id": "ADSR",
+        "name": "Nomina",
+        "href": "https://itecban.indra.es/accounts/dataCatalogs/movementTypes"
+      },
+      "reason": "Ingreso Nómina",
+      "operationNumber": "000000000000001",
+      "operationDate": "2016-09-20T00:00:00.00Z",
+      "valueDate": "2016-09-20T00:00:00.00Z",
+      "hasDetail":true,
+      "balance": {
+        "amount": 1200.89,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "aditionalInfo":{
+        "key":"value",
+        "key2":"value2"
+      }
+    },
+	{
+      "id":"210000000416002801150413060226469524",
+      "reference": "00000004",
+      "amount": {
+        "amount": -70.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "type": {
+        "id": "LIQ",
+        "name": "Transferencia",
+        "href": "https://itecban.indra.es/accounts/dataCatalogs/movementTypes"
+      },
+      "reason": "Transferencia emitida",
+      "operationNumber": "000000000000001",
+      "operationDate": "2015-05-20T00:00:00.00Z",
+      "valueDate": "2015-05-20T00:00:00.00Z",
+      "hasDetail":true,
+      "balance": {
+        "amount": -70.5,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "aditionalInfo":{
+        "key":"value",
+        "key2":"value2"
+      }
+    },
+	{
+      "id":"210000000416002801150413060226469525",
+      "reference": "00000005",
+      "amount": {
+        "amount": -50,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "type": {
+        "id": "RM34",
+        "name": "Internet",
+        "href": "https://itecban.indra.es/accounts/dataCatalogs/movementTypes"
+      },
+      "reason": "Movistar ADSL",
+      "operationNumber": "000000000000001",
+      "operationDate": "2014-10-30T00:00:00.00Z",
+      "valueDate": "2014-10-30T00:00:00.00Z",
+      "hasDetail":true,
+      "balance": {
+        "amount": -50,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+	{
+      "id":"210000000416002801150413060226469526",
+      "reference": "00000006",
+      "amount": {
+        "amount": -22.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "type": {
+        "id": "ARAD",
+        "name": "Recibo",
+        "href": "https://itecban.indra.es/accounts/dataCatalogs/movementTypes"
+      },
+      "reason": "Recibo Canal Isabel II",
+      "operationNumber": "000000000000001",
+      "operationDate": "2014-10-30T00:00:00.00Z",
+      "valueDate": "2014-10-30T00:00:00.00Z",
+      "hasDetail":true,
+      "balance": {
+        "amount": -22.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      }
+    },
+	{
+      "id":"210000000416002801150413060226469527",
+      "reference": "00000007",
+      "amount": {
+        "amount": -280.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "type": {
+        "id": "SIND",
+        "name": "Recibo",
+        "href": "https://itecban.indra.es/accounts/dataCatalogs/movementTypes"
+      },
+      "reason": "Recibo iberdrola",
+      "operationNumber": "000000000000001",
+      "operationDate": "2014-10-30T00:00:00.00Z",
+      "valueDate": "2014-10-30T00:00:00.00Z",
+      "hasDetail":false,
+      "balance": {
+        "amount": -280.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      }
+    },
+	{
+      "id":"210000000416002801150413060226469528",
+      "reference": "00000008",
+      "amount": {
+        "amount": -120.45,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "type": {
+        "id": "TRIR",
+        "name": "Compra",
+        "href": "https://itecban.indra.es/accounts/dataCatalogs/movementTypes"
+      },
+      "reason": "Compra amazon",
+      "operationNumber": "000000000000001",
+      "operationDate": "2014-10-30T00:00:00.00Z",
+      "valueDate": "2014-10-30T00:00:00.00Z",
+      "hasDetail":true,
+      "balance": {
+        "amount": -120.45,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    },
+	{
+      "id":"210000000416002801150413060226469529",
+      "reference": "00000009",
+      "amount": {
+        "amount": -56.01,
+        "currency": {
+          "id": "USA",
+          "code": "840"
+        }
+      },
+      "type": {
+        "id": "ADNR",
+        "name": "Compra",
+        "href": "https://itecban.indra.es/accounts/dataCatalogs/movementTypes"
+      },
+      "reason": "Compra Mercadona",
+      "operationNumber": "000000000000001",
+      "operationDate": "2014-10-30T00:00:00.00Z",
+      "valueDate": "2014-10-30T00:00:00.00Z",
+      "hasDetail":false,
+      "balance": {
+        "amount": -56.01,
+        "currency": {
+          "id": "USA",
+          "code": "840"
+        }
+      }
+    },
+	{
+      "id":"210000000416002801150413060226469520",
+      "reference": "000000010",
+      "amount": {
+        "amount": 180,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "type": {
+        "id": "LIQ",
+        "name": "Traspaso Recibido",
+        "href": "https://itecban.indra.es/accounts/dataCatalogs/movementTypes"
+      },
+      "reason": "Traspaso recibido",
+      "operationNumber": "000000000000001",
+      "operationDate": "2014-10-30T00:00:00.00Z",
+      "valueDate": "2014-10-30T00:00:00.00Z",
+      "hasDetail":true,
+      "balance": {
+        "amount": 180.01,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages":true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+    "links": [
+      {
+        "rel": "next",
+        "href": "https://itecban.indra.es/accounts/149100011009408525/movements/?paginationKey=f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+         "method": "GET"
+      }
+    ]
+
+  }
+
+}

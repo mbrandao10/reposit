@@ -1,0 +1,54 @@
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+
+//Textos
+$text-color: $nvb-gray-darker;
+
+//Layout
+$screen-md: 1024px;
+$screen-lg: 1920px;
+$nvb-screen-md-special-max: 1279px;
+$nvb-screen-md-special-min: 1280px;
+$nvb-login-min-height: 659px;
+
+//Espaciados
+$padding-base: 15px;
+$margin-base: 15px;
+$hr-border: $nvb-gray-user-menu;
+
+//Fuentes
+$font-path: "/assets/fonts/";
+$font-family-sans-serif:  "Open Sans", Arial, sans-serif;
+$font-size-base: 15px;
+
+//Buttons
+$btn-font-weight: 600;
+
+//Tooltips
+$tooltip-bg: $nvb-gray-darker;
+$tooltip-color: $nvb-white;
+$tooltip-arrow-color: $nvb-gray-darker;
+
+//Espaciados formularios
+$form-group-margin-bottom: 0;
+
+// Content font-icon
+$icon-font-path: "assets/fonts/";
+
+//** File name for all font files.
+$icon-font-name:          "glyphicons-halflings-regular";
+//** Element ID within SVG icon file.
+$icon-font-svg-id:        "glyphicons_halflingsregular";
+
+//-- Z-index master list
+
+$zindex-navbar:            1000;
+$zindex-dropdown:          1000;
+$zindex-popover:           1060;
+$zindex-tooltip:           1070;
+$zindex-navbar-fixed:      1030;
+$zindex-menu:              1035;
+$zindex-user-menu:         900;
+$zindex-modal-background:  1040;
+$zindex-modal:             1050;

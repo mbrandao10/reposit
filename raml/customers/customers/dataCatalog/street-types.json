@@ -1,0 +1,212 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "CALLE"
+    },
+    {
+      "id": "10",
+      "name": "COLONIA"
+    },
+    {
+      "id": "11",
+      "name": "POLIGONO"
+    },
+    {
+      "id": "12",
+      "name": "PROLONGACION"
+    },
+    {
+      "id": "13",
+      "name": "RONDA"
+    },
+    {
+      "id": "14",
+      "name": "TRAVESIA"
+    },
+    {
+      "id": "15",
+      "name": "URBANIZACION"
+    },
+    {
+      "id": "16",
+      "name": "RAMBLA"
+    },
+    {
+      "id": "17",
+      "name": "GLORIETA"
+    },
+    {
+      "id": "18",
+      "name": "GALERIA"
+    },
+    {
+      "id": "19",
+      "name": "CASERIO"
+    },
+    {
+      "id": "02",
+      "name": "CARRETERA"
+    },
+    {
+      "id": "20",
+      "name": "CUESTA"
+    },
+    {
+      "id": "21",
+      "name": "GRUPO"
+    },
+    {
+      "id": "22",
+      "name": "EDIFICIO"
+    },
+    {
+      "id": "23",
+      "name": "APARTAMENTO"
+    },
+    {
+      "id": "24",
+      "name": "PARQUE"
+    },
+    {
+      "id": "25",
+      "name": "BLOQUE"
+    },
+    {
+      "id": "26",
+      "name": "CHALET"
+    },
+    {
+      "id": "27",
+      "name": "PARAJE"
+    },
+    {
+      "id": "28",
+      "name": "MERCADO"
+    },
+    {
+      "id": "29",
+      "name": "MUNICIPIO"
+    },
+    {
+      "id": "03",
+      "name": "AVENIDA"
+    },
+    {
+      "id": "30",
+      "name": "MANZANA"
+    },
+    {
+      "id": "31",
+      "name": "POBLADO"
+    },
+    {
+      "id": "32",
+      "name": "BARRIADA"
+    },
+    {
+      "id": "33",
+      "name": "CORTIJO"
+    },
+    {
+      "id": "34",
+      "name": "CARRIL"
+    },
+    {
+      "id": "35",
+      "name": "APDO. DE CORREOS"
+    },
+    {
+      "id": "36",
+      "name": "VEREDA"
+    },
+    {
+      "id": "37",
+      "name": "AGRUPACION"
+    },
+    {
+      "id": "38",
+      "name": "BAJADA"
+    },
+    {
+      "id": "39",
+      "name": "BARRANCO"
+    },
+    {
+      "id": "04",
+      "name": "PASAJE"
+    },
+    {
+      "id": "40",
+      "name": "CALLEJON"
+    },
+    {
+      "id": "41",
+      "name": "DISEMINADO"
+    },
+    {
+      "id": "42",
+      "name": "PARTIDA"
+    },
+    {
+      "id": "43",
+      "name": "PLAZUELA"
+    },
+    {
+      "id": "44",
+      "name": "SUBIDA"
+    },
+    {
+      "id": "45",
+      "name": "SENDA"
+    },
+    {
+      "id": "46",
+      "name": "TORRENTE"
+    },
+    {
+      "id": "47",
+      "name": "ALDEA"
+    },
+    {
+      "id": "48",
+      "name": "LUGAR"
+    },
+    {
+      "id": "49",
+      "name": "RESIDENCIAL"
+    },
+    {
+      "id": "05",
+      "name": "PASEO"
+    },
+    {
+      "id": "50",
+      "name": "CONJUNTO"
+    },
+    {
+      "id": "06",
+      "name": "PLAZA"
+    },
+    {
+      "id": "07",
+      "name": "ALAMEDA"
+    },
+    {
+      "id": "08",
+      "name": "CAMINO"
+    },
+    {
+      "id": "09",
+      "name": "BARRIO"
+    },
+    {
+      "id": "99",
+      "name": "VIA EXTRANJERA"
+    }
+  ]
+}

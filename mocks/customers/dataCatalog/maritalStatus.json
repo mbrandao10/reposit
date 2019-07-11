@@ -1,0 +1,18 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "Soltero/a",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/maritalStatus"
+    },
+    {
+      "id": "02",
+      "name": "Casado/a",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/maritalStatus"
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "income": {
+        "amount": 1850.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "spending": {
+        "amount": 570.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "balance": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "month": "01",
+      "year": "2017"
+    },
+    {
+      "income": {
+        "amount": 1200.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "spending": {
+        "amount": 3450.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "balance": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "month": "02",
+      "year": "2017"
+    },
+    {
+      "income": {
+        "amount": 1500.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "spending": {
+        "amount": 280.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "balance": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "month": "03",
+      "year": "2017"
+    },
+    {
+      "income": {
+        "amount": 1900.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "spending": {
+        "amount": 490.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "balance": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "month": "04",
+      "year": "2017"
+    },
+    {
+      "income": {
+        "amount": 2100.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "spending": {
+        "amount": 580.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "balance": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "month": "05",
+      "year": "2017"
+    },
+    {
+      "income": {
+        "amount": 1800.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "spending": {
+        "amount": 1600.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "balance": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "month": "06",
+      "year": "2017"
+    },
+    {
+      "income": {
+        "amount": 1300.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "spending": {
+        "amount": 700.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "balance": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "month": "07",
+      "year": "2017"
+    },
+    {
+      "income": {
+        "amount": 1800.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "spending": {
+        "amount": 2000.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "balance": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "month": "08",
+      "year": "2017"
+    },
+    {
+      "income": {
+        "amount": 1100.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "spending": {
+        "amount": 400.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "balance": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "month": "09",
+      "year": "2017"
+    },
+    {
+      "income": {
+        "amount": 1760.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "spending": {
+        "amount": 200.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "balance": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "month": "10",
+      "year": "2017"
+    },
+    {
+      "income": {
+        "amount": 800.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "spending": {
+        "amount": 1220.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "balance": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "month": "11",
+      "year": "2017"
+    },
+    {
+      "income": {
+        "amount": 1900.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "spending": {
+        "amount": 560.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "balance": {
+        "amount": 1284.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "month": "12",
+      "year": "2017"
+    }
+  ]
+}

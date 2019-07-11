@@ -1,0 +1,18 @@
+{
+  "accountId": "ES8120952318526683783933",
+  "taxPaymentClass":"SociedadesTaxPayment",
+  "taxForm": {
+    "id": "200",
+    "name": "IS Y IRNR. IMPUESTO SOBRE SOCIEDADES E IMPUESTO SOBRE LA RENTA DE NO RESIDENTES"
+  },
+  "type": "income",
+  "taxYear": 2018,
+  "taxPeriod": "1T",
+  "paymentAmount": {
+    "amount": 1245.51,
+    "currency": {
+      "id": "EUR",
+      "code": "978"
+    }
+  }
+}

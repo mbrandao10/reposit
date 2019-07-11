@@ -1,0 +1,85 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "1491-00011-0094-08526",
+      "description": "Alta de traspaso",
+      "group": {
+        "id": "TRSP",
+        "name": "Traspaso"
+      },
+      "date": "2014-10-30T00:00:00.00Z",
+      "transactionId": "65444",
+      "creator": "Jean Django Reinhardt",
+      "state": {
+        "id": "01",
+        "name": "PENDIENTE DE COMPLETAR FIRMAS"
+      },  
+      "amount": {
+        "amount": 1285.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      }
+    },
+	{
+      "id": "1491-00011-0094-08527",
+      "description": "Invitación cotitularidad",
+      "group": {
+        "id": "TRSP",
+        "name": "Traspaso"
+      },
+      "date": "2014-10-30T00:00:00.00Z",
+      "transactionId": "65444",
+      "creator": "Pablo Nuboso",
+      "state": {
+        "id": "01",
+        "name": "PENDIENTE DE COMPLETAR FIRMAS"
+      },  
+      "amount": {
+        "amount": 1285.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      }
+    },
+	{
+      "id": "1491-00011-0094-08528",
+      "description": "Alta de traspaso",
+      "group": {
+        "id": "TRSP",
+        "name": "Traspaso"
+      },
+      "date": "2014-10-30T00:00:00.00Z",
+      "transactionId": "65444",
+      "creator": "Jean Django Reinhardt",
+      "state": {
+        "id": "01",
+        "name": "PENDIENTE DE COMPLETAR FIRMAS"
+      },  
+      "amount": {
+        "amount": 1285.01,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      }
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+    "links": [
+      {
+        "rel": "next",
+        "href": "https://itecban.indra.es/signatures/myPendingOperations?paginationKey=f81d4fae-7dec-11d0-a765-00a0c91e6bf6",
+        "method": "GET"
+      }
+    ]
+  }
+}

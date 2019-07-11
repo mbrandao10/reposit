@@ -1,0 +1,138 @@
+<app-loader *ngIf="loading"></app-loader>
+
+<div class="row">
+    <div class="col-xs-12 p-dynamic">
+        <osb-tabs [tabs]="tabElement" [view]="view" (viewChange)="chargeLoansByCurrency($event)"></osb-tabs>
+    </div>
+</div>
+
+<div class="row page-tabbed pb-1 pt-1">
+    <div class="col-xs-12 p-dynamic">
+        <div class="panel">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-3 col-md-3">
+                        <div class="borde-superior"></div>
+                        <div class="fs-12 text-uppercase text-os-semibold">
+                            {{ 'ITECBAN-LOANS.LOANS-PAGE.TABS.PENDING-CAPITAL' | translate }}
+                        </div>
+                        <div class='amount-section text-size-primary text-os-semibold text-no-warp' *ngIf="loanCurrencySelected.loans && loanCurrencySelected.divisa">
+                            {{ loanCurrencySelected.loans.pendingAmount | CurrencyPipe: loanCurrencySelected.divisa }}
+                        </div>
+                        <div class="mb-1 visible-xs"></div>
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <div class="borde-superior"></div>
+                        <div class="fs-12 text-uppercase text-os-semibold">
+                            {{ 'ITECBAN-LOANS.LOANS-PAGE.TABS.EXPIRED-CAPITAL' | translate }}
+                        </div>
+                        <div class='amount-section text-size-secondary  text-os-light mt-10 text-no-warp'>
+                        </div>
+                        <!-- <div class="mb-1 visible-xs"></div> -->
+                    </div>
+
+                    <div class="col-xs-6 col-sm-3 col-md-3">
+                        <div class="borde-superior"></div>
+                        <div class="fs-12 text-uppercase text-os-semibold">
+                            {{ 'ITECBAN-LOANS.LOANS-PAGE.TABS.EXPIRED-INTERESTS' | translate }}
+                        </div>
+                        <div class='amount-section text-size-secondary  text-os-light mt-10 text-no-warp'>
+                        </div>
+                        <!-- <div class="mb-1 visible-xs"></div> -->
+                    </div>
+
+                    <osb-validator-profile>
+                        <div class="col-sm-3 pt-1 hidden-xs text-right">
+                            <button class="btn btn-primary btn-small" (click)="addLoan()">
+                                {{ 'ITECBAN-LOANS.LOANS-PAGE.TABS.BUTTON-REQUEST-LOAN' | translate }}
+                            </button>
+                        </div>
+                    </osb-validator-profile>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead class="hidden-xs">
+                        <tr>
+                            <th>
+                                {{ 'ITECBAN-LOANS.LOANS-PAGE.TABLE.ACCOUNT' | translate }}
+                            </th>
+                            <th>
+                                {{ 'ITECBAN-LOANS.LOANS-PAGE.TABLE.LAST-MOVEMENT' | translate }}
+                            </th>
+                            <th>
+                                {{ 'ITECBAN-LOANS.LOANS-PAGE.TABLE.CAPITAL-EXPIRATION' | translate }}
+                            </th>
+                            <th>
+                                {{ 'ITECBAN-LOANS.LOANS-PAGE.TABLE.VENTED-INTERESTS' | translate }}
+                            </th>
+                            <th class="text-right">
+                                {{ 'ITECBAN-LOANS.LOANS-PAGE.TABLE.PENDING' | translate }}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr (click)="viewDetail(loan)" *ngFor="let loan of loanCurrencySelected.loans" class="interactive">
+                            <td>
+                                <span *ngIf="loan && loan.account.formats" class="name">
+                                    {{ loan.account.formats | formatAccountPipe: accountFormatView:ismobileResolution }}
+                                </span>
+                                <br/>
+                                <span class="desc hidden-xs" *ngIf="loan && loan.product">
+                                    {{ loan.product.description }}
+                                </span>
+                            </td>
+
+                            <td *ngIf="loan && loan.pendingAmount.amount!=null && loan.pendingAmount.currency.code && loan.lastMovementDate">
+                                <span class="hidden-xs text-no-warp">
+                                    {{ loan.lastMovementDate | date: 'dd/MM/yyyy' }}
+                                </span>
+                            </td>
+
+                            <td>
+                            </td>
+
+                            <td>
+                            </td>
+
+                            <td class="text-no-warp text-right" *ngIf="loan && loan.pendingAmount">
+                                <span class="hidden-xs text-no-warp">
+                                    {{ loan.pendingAmount.amount | CurrencyPipe: loan.pendingAmount.currency.code }}
+                                </span>
+                                <span class="visible-xs text-os-semibold text-no-warp">
+                                    {{ loan.pendingAmount.amount | CurrencyPipe: loan.pendingAmount.currency.code }}
+                                </span>
+                                <span class="visible-xs-block text-no-warp">
+                                    {{ loan.lastMovementDate | date: 'dd/MM/yyyy' }}
+                                </span>
+                            </td>
+
+                            <!-- <td class="hidden-xs text-no-warp" *ngIf="loan && loan.limitAmount.amount!==null && loan.limitAmount.currency">
+                                <span class="hidden-xs text-no-warp">
+                                    {{ loan.limitAmount.amount | CurrencyPipe: loan.limitAmount.currency.code }}
+                                </span>
+                            </td> -->
+
+                            <!-- <td class="hidden-xs text-no-warp" *ngIf="loan && loan.startAmount.amount!==null && loan.startAmount.currency.code">
+                                <span class="hidden-xs text-no-warp">
+                                    {{ loan.startAmount.amount | CurrencyPipe: loan.startAmount.currency.code }}
+                                </span>
+                            </td> -->
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<osb-modal-page #modal>
+    <osb-modal-page-header></osb-modal-page-header>
+    <osb-loan-add-page [modal]="modal" *ngIf="modal.isOpenModal"></osb-loan-add-page>
+</osb-modal-page>

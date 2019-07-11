@@ -1,0 +1,362 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "049100010000000172",
+      "balance": {
+        "amount": 5100,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 5100,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "productData": {
+        "id": "CCCOT",
+        "description": "PLAZO FIJO EN PESOS 30 DÍAS",
+        "type": {
+          "id": "IPF",
+          "name": "PLAZO FIJO"
+        },
+        "subtype": {
+          "id": "PL",
+          "name": "DEPOSITO"
+        }
+      },
+      "alias": "DEPOSITO PESOS",
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      },
+      "formats": [
+        {
+          "format": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "value": "ES4910001700000000001720"
+        },
+		{
+          "format": {
+            "id": "CBU",
+            "name": "CBU"
+          },
+          "value": "4910001700000000001720"
+        }
+      ]
+    },
+	{
+      "id": "049100010000000192",
+      "balance": {
+        "amount": 10000,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "postedBalance": {
+        "amount": 10000,
+        "currency": {
+          "id": "ARS",
+          "code": "032"
+        }
+      },
+      "productData": {
+        "id": "CCCOT",
+        "description": "PLAZO FIJO EN PESOS 60 DÍAS",
+        "type": {
+          "id": "IPF",
+          "name": "PLAZO FIJO"
+        },
+        "subtype": {
+          "id": "PL",
+          "name": "DEPOSITO"
+        }
+      },
+      "alias": "DEPOSITO PESOS",
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      },
+      "formats": [
+        {
+          "format": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "value": "ES0491000100000000000192"
+        },
+		{
+          "format": {
+            "id": "CBU",
+            "name": "CBU"
+          },
+          "value": "4910001700000000001720"
+        }
+      ]
+    },
+    {
+      "id": "049100010000000176",
+      "balance": {
+        "amount": 5100,
+        "currency": {
+          "id": "USD",
+          "code": "840"
+        }
+      },
+      "postedBalance": {
+        "amount": 5100,
+        "currency": {
+          "id": "USD",
+          "code": "840"
+        }
+      },
+      "productData": {
+        "id": "CCCOT",
+        "description": "PLAZO FIJO EN DOLARES 30 DÍAS",
+        "type": {
+          "id": "IPF",
+          "name": "PLAZO FIJO"
+        },
+        "subtype": {
+          "id": "PL",
+          "name": "DEPOSITO"
+        }
+      },
+      "alias": "DEPOSITO PESOS",
+      "currency": {
+        "id": "USD",
+        "code": "840"
+      },
+      "formats": [
+        {
+          "format": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "value": "ES4910001700000000001768"
+        },
+		{
+          "format": {
+            "id": "CBU",
+            "name": "CBU"
+          },
+          "value": "4910001700000000001768"
+        }
+      ]
+    },
+    {
+      "id": "049100010000000196",
+      "balance": {
+        "amount": 99000,
+        "currency": {
+          "id": "USD",
+          "code": "840"
+        }
+      },
+      "postedBalance": {
+        "amount": 99000,
+        "currency": {
+          "id": "USD",
+          "code": "840"
+        }
+      },
+      "productData": {
+        "id": "CCCOT",
+        "description": "PLAZO FIJO EN DOLARES 99 DÍAS",
+        "type": {
+          "id": "IPF",
+          "name": "PLAZO FIJO"
+        },
+        "subtype": {
+          "id": "PL",
+          "name": "DEPOSITO"
+        }
+      },
+      "alias": "DEPOSITO DOLARES",
+      "currency": {
+        "id": "USD",
+        "code": "840"
+      },
+      "formats": [
+        {
+          "format": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "value": "ES4910000491001000000196"
+        },
+		{
+          "format": {
+            "id": "CBU",
+            "name": "CBU"
+          },
+          "value": "4910001700000000001768"
+        }
+      ]
+    },
+    {
+      "id": "049100010000000333",
+      "balance": {
+        "amount": 1000,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "postedBalance": {
+        "amount": 1000,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "productData": {
+        "id": "CCCOT",
+        "description": "PLAZO FIJO EN DOLARES 30 DÍAS",
+        "type": {
+          "id": "IPF",
+          "name": "PLAZO FIJO"
+        },
+        "subtype": {
+          "id": "PL",
+          "name": "DEPOSITO"
+        }
+      },
+      "alias": "DEPOSITO",
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      },
+      "formats": [
+        {
+          "format": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "value": "ES4910001700000000001333"
+        },
+		{
+          "format": {
+            "id": "CBU",
+            "name": "CBU"
+          },
+          "value": "4910001700000000001768"
+        }
+      ]
+    },
+    {
+      "id": "049100010000000444",
+      "balance": {
+        "amount": 2000,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "postedBalance": {
+        "amount": 2000,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "productData": {
+        "id": "CCCOT",
+        "description": "PLAZO FIJO EN DOLARES 40 DÍAS",
+        "type": {
+          "id": "IPF",
+          "name": "PLAZO FIJO"
+        },
+        "subtype": {
+          "id": "PL",
+          "name": "DEPOSITO"
+        }
+      },
+      "alias": "DEPOSITO",
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      },
+      "formats": [
+        {
+          "format": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "value": "ES4910001700000000001444"
+        },
+		{
+          "format": {
+            "id": "CBU",
+            "name": "CBU"
+          },
+          "value": "4910001700000000001768"
+        }
+      ]
+    },
+    {
+      "id": "049100010000000555",
+      "balance": {
+        "amount": 3000,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "postedBalance": {
+        "amount": 3000,
+        "currency": {
+          "id": "EUR",
+          "code": "978"
+        }
+      },
+      "productData": {
+        "id": "CCCOT",
+        "description": "PLAZO FIJO EN DOLARES 50 DÍAS",
+        "type": {
+          "id": "IPF",
+          "name": "PLAZO FIJO"
+        },
+        "subtype": {
+          "id": "PL",
+          "name": "DEPOSITO"
+        }
+      },
+      "alias": "DEPOSITO",
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      },
+      "formats": [
+        {
+          "format": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "value": "ES4910001700000000001555"
+        },
+		{
+          "format": {
+            "id": "CBU",
+            "name": "CBU"
+          },
+          "value": "4910001700000000001768"
+        }
+      ]
+    }
+  ],
+  "paging": {
+    "hasMorePages": true,
+    "nextPaginationKey": "f81d4fae-7dec-11d0-a765-00a0c91e6bf6"
+  }
+}

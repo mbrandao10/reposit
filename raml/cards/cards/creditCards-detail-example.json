@@ -1,0 +1,116 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "id": "4305790004640705",
+    "alias": "Mi tarjeta",
+    "productData": {
+      "id": "",
+      "description": "MASTERCAD CREDIT",
+      "type": {
+        "id": "C",
+        "name": "Tarjetas credito"
+      },
+      "subtype": {
+        "id": "525653",
+        "name": "MASTER CREDIT"
+      }
+    },
+    "currency": {
+      "id": "ARG",
+      "code": "032"
+    },
+    "status": {
+      "id": "007",
+      "name": "ACTIVA"
+    },
+    "operationalStatus": true,
+    "cancellable": true,
+    "outstandingBalance": {
+      "amount": 0.01,
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      }
+    },
+    "postedBalance": {
+      "amount": 0,
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      }
+    },
+    "dailyCashLimit": {
+      "amount": 1000,
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      }
+    },
+    "dailyPurchaseLimit": {
+      "amount": 2100.01,
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      }
+    },
+    "currentMonthCashOutstandingBalance": {
+      "amount": 0,
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      }
+    },
+    "currentMonthPurchaseOutstandingBalance": {
+      "amount": 0,
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      }
+    },
+    "account": {
+      "id": "149100011009408525",
+      "formats": [
+        {
+          "format": {
+            "id": "IBAN",
+            "name": "IBAN"
+          },
+          "value": "ES6968867819113534454879"
+        },
+        {
+          "format": {
+            "id": "CCC",
+            "name": "CCC"
+          },
+          "value": "68867819113534454879"
+        }
+      ]
+    },
+    "holder": "Neil Hannon",
+    "openingDate": "2017-05-23T00:00:00.00Z",
+    "expiryDate": "2020-05-23T00:00:00.00Z",
+    "contractNumber": "23423222342",
+    "settlement": {
+      "settlementGroup": {
+        "id": "2",
+        "name": "LIQUIDACION DIA-2"
+      },
+      "settlementPercentage": 30,
+      "settlementAmount": 2000
+    },
+    "paymentType": {
+      "id": "01",
+      "name": "CONTADO"
+    },
+    "creditLimit": {
+      "amount": 0,
+      "currency": {
+        "id": "ARG",
+        "code": "032"
+      }
+    }
+  }
+}

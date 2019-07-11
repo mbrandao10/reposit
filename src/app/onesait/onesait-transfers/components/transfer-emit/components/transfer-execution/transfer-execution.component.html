@@ -1,0 +1,97 @@
+<div class="row mt-1" *ngIf="!hideHeader">
+    <div class="col-xs-12">
+        <b>{{'ONESAIT-TRANSFERS.EMIT.WHEN-TRANSFER' | translate}}</b>
+    </div>
+</div>
+<div class="row mt-1 mb-1" *ngIf="!hideHeader">
+    <div class="col-xs-12">
+        <label class="radio-inline">
+            <input [formControl]="transferForm.controls.executionMoment" type="radio" value="N">
+            {{'ONESAIT-TRANSFERS.EMIT.EXECUTE.NOW' | translate}}
+        </label>
+        <!-- <label class="radio-inline"> NOVOBANCO no tiene esta funcionalidad, por eso la dejamos comentada
+      <input [formControl]="transferForm.controls.executionMoment" type="radio" value="P">
+      {{'ONESAIT-TRANSFERS.EMIT.EXECUTE.PROGRAM.TEXT' | translate}}
+    </label> -->
+        <label class="radio-inline">
+            <input [formControl]="transferForm.controls.executionMoment" type="radio" value="S">
+            {{'ONESAIT-TRANSFERS.EMIT.EXECUTE.PERIOD.TEXT' | translate}}
+        </label>
+    </div>
+</div>
+<div class="row mt-1" *ngIf="transferForm.controls.executionMoment.value === 'P' ">
+    <div class="col-md-3 col-xs-12">
+        <div class="form-group">
+            <label for="expirationDate">
+                {{'ONESAIT-TRANSFERS.EMIT.EXECUTE.PROGRAM.DATE' | translate}}
+            </label>
+            <div class="input-calendar-custom">
+                <input autocomplete="off" class="form-control" [minDate]="minDate" name="executionDate" [formControl]="transferForm.controls.executionDate" #dp="bsDatepicker" bsDatepicker>
+                <i class="icon icononesait icon-calendar" (click)="dp.show()"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mt-1" *ngIf="transferForm.controls.executionMoment.value === 'S' ">
+    <div class="col-xs-12 col-md-3">
+        <div class="form-group">
+            <label for="frequencyType">{{'ONESAIT-TRANSFERS.EMIT.EXECUTE.PERIOD.FREQUENCY' |
+        translate}}</label>
+            <select class="form-control form-control-amim" name="frequencyType" [formControl]="transferForm.controls.frequencyType">
+                <option *ngFor="let frequencyType of frequencyTypes" [value]="frequencyType.id">{{frequencyType.name}}
+                </option>
+            </select>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-3">
+        <div class="form-group">
+            <label for="firstExecutionDate">
+                {{'ONESAIT-TRANSFERS.EMIT.EXECUTE.PERIOD.START' | translate}}
+            </label>
+            <div class="input-calendar-custom">
+                <input autocomplete="off" class="form-control" [minDate]="minDate" name="firstExecutionDate" [formControl]="transferForm.controls.firstExecutionDate" #dp="bsDatepicker" bsDatepicker>
+                <i class="icon icononesait icon-calendar" (click)="dp.show()"></i>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-3">
+        <div class="form-group" *ngIf="!noFinish">
+            <label for="lastExecutionDate">
+                {{'ONESAIT-TRANSFERS.EMIT.EXECUTE.PERIOD.STOP' | translate}}
+            </label>
+            <div class="input-calendar-custom">
+                <input autocomplete="off" class="form-control" name="lastExecutionDate" [minDate]="maxDate" [formControl]="transferForm.controls.lastExecutionDate" #dp="bsDatepicker" bsDatepicker>
+                <i class="icon icononesait icon-calendar" (click)="dp.show()"></i>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="col-xs-12 col-md-3">
+    <div class="checkbox">
+      <label for="frequencyType">{{'ONESAIT-TRANSFERS.EMIT.EXECUTE.PERIOD.UNDEFINED' | translate}}
+        <input type="checkbox">
+      </label>
+    </div>
+  </div>-->
+    <div class="col-xs-12 col-md-3">
+        <div class="checkbox pt-1">
+            <label for="frequencyType">
+                <input type="checkbox" #check name="executionDateCheck" (change)="changeCheckbox()" [(ngModel)]="noFinish">
+                {{'ONESAIT-TRANSFERS.EMIT.EXECUTE.PERIOD.UNDEFINED' | translate}}
+            </label>
+        </div>
+    </div>
+</div>
+<ng-container *ngIf="transferForm.errors && transferForm.touched">
+    <span class="help-block text-red" *ngIf="transferForm.errors.invalidDate">
+        <p class="text-left">{{'ONESAIT-TRANSFERS.EMIT.FORM.DATES.ERRORTEXT' | translate}}</p>
+    </span>
+    <span class="help-block text-red" *ngIf="transferForm.errors.invalidInitialDate">
+        <p class="text-left">{{'ONESAIT-TRANSFERS.EMIT.FORM.DATES.ERRORINITIALTEXT' | translate}}</p>
+    </span>
+    <span class="help-block text-red" *ngIf="transferForm.errors.requiredFirstDate">
+        <p class="text-left">{{'ONESAIT-TRANSFERS.EMIT.FORM.DATES.ERROR-FIRST-REQUIRED' | translate}}</p>
+    </span>
+    <span class="help-block text-red" *ngIf="transferForm.errors.requiredLastDate && transferForm.controls.lastExecutionDate.enabled && !noFinish ">
+        <p class="text-left">{{'ONESAIT-TRANSFERS.EMIT.FORM.DATES.ERROR-LAST-REQUIRED' | translate}}</p>
+    </span>
+</ng-container>

@@ -1,0 +1,72 @@
+{
+    "consents": [
+        {
+            "tppName" : "FinTech",
+            "consentId": "3d9a81b3-a47d-4130-8765",
+            "consentType": "Acceso a Cuentas | Confirmación de Fondos",
+            "access":
+                {
+                    "balances":
+                        [
+                            {"iban": "DE2310010010123456789"}
+                        ],
+                    "transactions":
+                        [
+                            {"iban": "DE2310010010123456789"},
+                            {"pan": "123456xxxxxx3457"}
+                        ]
+                },
+            "recurringIndicator": "true",
+            "lastActionDate": "Sun, 06 Aug 2017 15:02:42 GMT",
+            "validUntil": "2017-11-01",
+            "frequencyPerDay": "4",
+            "consentStatus": "valid"
+        },
+        
+        {
+            "tppName" : "Fintonic",
+            "consentId": "8765",
+            "consentType": "Acceso a Cuentas | Confirmación de Fondos",
+            "access":
+                {
+                    "balances":
+                        [
+                            {"iban": "DE2310010010123456789"}
+                        ],
+                    "transactions":
+                        [
+                            {"iban": "DE2310010010123456789"},
+                            {"pan": "123456xxxxxx3457"}
+                        ]
+                },
+            "recurringIndicator": "true",
+            "lastActionDate": "Sun, 01 Jul 2020 16:30:42 GMT",
+            "validUntil": "2020-07-01",
+            "frequencyPerDay": "4",
+            "consentStatus": "valid"
+        },
+
+        {
+            "tppName" : "BBVA",
+            "consentId": "a9c0-ff861b99",
+            "consentType": "Acceso a Cuentas | Confirmación de Fondos",
+            "access":
+                {
+                    "balances":
+                        [
+                            {"iban": "DE2310010010123456784"}
+                        ],
+                    "transactions":
+                        [
+                            {"iban": "ES2310010010123456789"},
+                            {"pan": "123456xxxxxx3457"}
+                        ]
+                },
+            "recurringIndicator": "true",
+            "lastActionDate": "Sun, 01 Jul 2020 16:30:42 GMT",
+            "validUntil": "2019-08-12",
+            "frequencyPerDay": "4",
+            "consentStatus": "valid"
+        }
+    ]
+}

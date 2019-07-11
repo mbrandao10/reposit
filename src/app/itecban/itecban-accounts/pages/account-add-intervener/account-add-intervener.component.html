@@ -1,0 +1,232 @@
+<div class="row">
+    <div class="col-xs-12">
+        {{'ITECBAN-ACCOUNT.ADDINTERVENER.TITLE' | translate}}
+    </div>
+</div>
+<div class="row" *ngIf="view==='addIntervener'">
+    <div class="col-xs-12">
+        <form class="col-xs-12" #formAddIntervener="ngForm">
+            <fieldset class="row">
+                <div class="col-xs-12 col-md-6">
+                    <fieldset class="fielset-custom">
+                        <div class="info-section">
+                            <div class="info-section-title">{{'ITECBAN-ACCOUNT.ADDINTERVENER.ENTER.COOWNERDATA' |
+                                translate}}</div>
+                        </div>
+                        <div class="form-group"><label class="form-custom-label" for="name">{{'ITECBAN-ACCOUNT.ADDINTERVENER.NAME'
+                                | translate}}</label><input class="form-control" type="text" [(ngModel)]="newIntervener.name"
+                                name="name" id="name" required="required" /></div>
+                        <div class="form-group"><label class="form-custom-label" for="surname">{{'ITECBAN-ACCOUNT.ADDINTERVENER.SURNAME'
+                                | translate}}</label><input class="form-control" type="text" [(ngModel)]="newIntervener.surname"
+                                name="surname" id="surname" /></div>
+                        <!--.form-grouplabel.form-custom-label(for="secondSurname") {{'ITECBAN-ACCOUNT.ADDINTERVENER.SECONDSURNAME' | translate}}
+input.form-control(type="text", [(ngModel)]="newIntervener.secondSurname", 
+name="secondSurname", 
+id="secondSurname" 
+)
+-->
+                        <div class="form-group"><label class="form-custom-label" for="id">{{'ITECBAN-ACCOUNT.ADDINTERVENER.DNI'
+                                | translate}} </label><input class="form-control" type="text" [(ngModel)]="newIntervener.legalDocument.id"
+                                name="id" id="id" required="required" /></div>
+                        <div class="form-group"><label class="form-custom-label" for="email">{{'ITECBAN-ACCOUNT.ADDINTERVENER.EMAIL'
+                                | translate}}</label><input class="form-control" type="email" [(ngModel)]="newIntervener.email"
+                                name="email" id="email" required="required" /></div>
+                        <div class="form-group"><label class="form-custom-label" for="msg">{{"ITECBAN-ACCOUNT.ADDINTERVENER.MSG"
+                                | translate}}</label><textarea class="form-control" [(ngModel)]="newIntervener.text"
+                                name="msg" id="msg" maxlength="140" required="required"></textarea></div>
+                        <p class="help-block"> <i class="icon icononesait icon-help"></i>{{
+                            "ITECBAN-ACCOUNT.ADDINTERVENER.INFO.1" | translate }}</p>
+                        <p class="help-block">{{ "ITECBAN-ACCOUNT.ADDINTERVENER.INFO.2" | translate }}</p>
+                    </fieldset>
+                    <fieldset class="fielset-custom">
+                        <div class="info-section">
+                            <div class="info-section-title">{{'ITECBAN-ACCOUNT.ADDINTERVENER.SELECT.ACCOUNT' |
+                                translate }}</div>
+                        </div>
+                        <div class="info-section-resume">
+                            <div class="info-section-group" *ngIf="accountsPesos">
+                                <p>{{'ITECBAN-ACCOUNT.ADDINTERVENER.ACCOUNT.PESOS' | translate}}</p>
+                                <div class="form-group">
+                                    <div class="checkbox-custom col-xs-12" *ngFor="let accountPesos of accountsPesos"><label><input
+                                                type="checkbox" [name]="accountPesos.id" [(ngModel)]="accountPesos.selected"
+                                                (ngModelChange)="updateSelected()" /><i class="icon-check"> </i><span>{{
+                                                accountPesos.alias ? accountPesos.alias :
+                                                accountPesos.productData.description }}</span></label></div>
+                                </div>
+                            </div>
+                            <div class="info-section-group" *ngIf="accountsUSD">
+                                <p>{{'ITECBAN-ACCOUNT.ADDINTERVENER.ACCOUNT.DOLLARS' | translate}}</p>
+                                <div class="form-group">
+                                    <div class="checkbox-custom col-xs-12" *ngFor="let accountUSD of accountsUSD"><label><input
+                                                type="checkbox" [name]="accountUSD.id" [(ngModel)]="accountUSD.selected" /><i
+                                                class="icon-check"> </i><span>{{ accountUSD.alias ?
+                                                accountUSD.alias : accountUSD.productData.description }}</span></label></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="help-block">{{'ITECBAN-ACCOUNT.ADDINTERVENER.SELECT.ACCOUNT.HELP' | translate}}</p>
+                    </fieldset>
+                </div>
+            </fieldset>
+            <div class="row">
+                <div class="col-md-6 col-xs-12"><button class="btn btn-secondary" type="button" (click)="backDetail()">{{'COMMON.CANCEL'
+                        | translate}}</button></div>
+                <div class="col-md-6 col-xs-12 text-right" *ngIf="view==='addIntervener'"><button class="btn btn-primary"
+                        type="button" (click)="verifityIntervener()" [disabled]="!formAddIntervener.form.valid || numSelected &lt;= 0">{{'COMMON.VERIFY'
+                        | translate}} </button></div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="row" *ngIf="view==='verifyIntervener'">
+    <div class="col-xs-12">
+        {{'ITECBAN-ACCOUNT.ADDINTERVENER.VERIFY.INVITATION.INFORMATION' | translate}}
+    </div>
+    <div class="col-xs-6">
+        <div class="info-section">
+            <div class="info-section-group">
+                <ng-container *ngFor="let accountPesos of accountsPesos">
+                    <div class="info-section-group-elem" *ngIf="accountPesos.selected">
+                        <div class="lbl-info">{{'ITECBAN-ACCOUNT.ADDINTERVENER.ACCOUNT.PESOS' | translate}}</div>
+                        <div class="content-info">{{ accountPesos.alias ? accountPesos.alias :
+                            accountPesos.productData.description }}</div>
+                    </div>
+                </ng-container>
+                <ng-container *ngFor="let accountUSD of accountsUSD">
+                    <div class="info-section-group-elem" *ngIf="accountUSD.selected">
+                        <div class="lbl-info">{{'ITECBAN-ACCOUNT.ADDINTERVENER.ACCOUNT.DOLLARS' | translate}}</div>
+                        <div class="content-info">{{ accountUSD.alias ? accountUSD.alias : accountUSD.productData.description }}</div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="info-section-group">
+                <div class="info-section-group-title">{{'ITECBAN-ACCOUNT.ADDINTERVENER.COOWNERDATA' | translate}}</div>
+                <div class="info-section-group-elem">
+                    <div class="lbl-info">{{'ITECBAN-ACCOUNT.ADDINTERVENER.NAME' | translate}}</div>
+                    <div class="content-info">{{newIntervener.name}}</div>
+                </div>
+                <div class="info-section-group-elem">
+                    <div class="lbl-info">{{'ITECBAN-ACCOUNT.ADDINTERVENER.SURNAME' | translate}}</div>
+                    <div class="content-info">{{newIntervener.surname}} </div>
+                </div>
+                <!--.info-section-group-elem.lbl-info {{'ITECBAN-ACCOUNT.ADDINTERVENER.SECONDSURNAME' | translate}}
+.content-info {{newIntervener.secondSurname}}-->
+                <!--.info-section-group-elem.lbl-info {{'ITECBAN-ACCOUNT.ADDINTERVENER.BOND' | translate}}
+.content-info {{newIntervener.bondType.name}}
+-->
+                <div class="info-section-group-elem">
+                    <div class="lbl-info">{{'ITECBAN-ACCOUNT.ADDINTERVENER.DNI' | translate}} </div>
+                    <div class="content-info">{{newIntervener.legalDocument.id}}</div>
+                </div>
+                <div class="info-section-group-elem">
+                    <div class="lbl-info">{{'ITECBAN-ACCOUNT.ADDINTERVENER.EMAIL' | translate}}</div>
+                    <div class="content-info">{{newIntervener.email}}</div>
+                </div>
+                <div class="info-section-group-elem">
+                    <div class="lbl-info">{{'ITECBAN-ACCOUNT.ADDINTERVENER.TEXT' | translate}}</div>
+                    <div class="content-info">{{newIntervener.text}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6"></div>
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="row">
+                    <div class="col-xs-6"><button class="btn btn-secondary" type="button" (click)="backDetail()">{{'COMMON.CANCEL'
+                            | translate}}</button></div>
+                </div>
+            </div>
+            <div class="col-xs-6 text-right">
+                <div class="row">
+                    <div class="col-xs-6"><button class="btn btn-secondary" type="button" (click)="goBack(view)">{{'COMMON.BACK'
+                            | translate}}</button></div>
+                    <div class="col-xs-6"><button class="btn btn-primary" type="button" (click)="checkIntervener()">{{'COMMON.SEND'
+                            | translate}} </button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" *ngIf="view==='saveIntervener'">
+    <form class="form-horizontal col-xs-12" #formAddIntervenerToken="ngForm">
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <h2 class="info-section-group-title">{{'ITECBAN-ACCOUNT.ADDINTERVENER.CODE.TOKEN' | translate}}</h2>
+                <!-- <osb-signature-token [(token)]="token" [(tokenValid)]="tokenValid"></osb-signature-token> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+                <div class="box-msg-info">
+                    <p>{{'ITECBAN-ACCOUNT.ADDINTERVENER.TOKEN.MESSAGE' | translate}}</p>
+                    <p>{{'ITECBAN-ACCOUNT.ADDINTERVENER.TOKEN.MESSAGE.DOWNLOAD' | translate}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6"><button class="btn btn-secondary" type="button" (click)="backDetail()">{{'COMMON.CANCEL'
+                    | translate}}</button></div>
+            <div class="col-xs-6">
+                <div class="row">                        
+                    <div class="col-xs-6"><button class="btn btn-primary" type="button" (click)="saveIntervener()"
+                            [disabled]="!tokenValid">{{'COMMON.FINALIZE' | translate}}</button></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="row" *ngIf="view==='created'">
+    <div class="col-xs-12">
+        <i class="glyphicon glyphicon-check"></i>{{'ITECBAN-ACCOUNT.ADDINTERVENER.SENT.NOTIFICATION' | translate}}
+    </div>
+    <div class="col-xs-6">
+        <div class="info-section">
+            <div class="info-section-group">
+                <div class="info-section-group-elem">
+                    <div class="lbl-info">{{'ITECBAN-ACCOUNT.ADDINTERVENER.ACCOUNT' | translate}} </div>
+                    <div class="content-info">{{accountId}}</div>
+                </div>
+            </div>
+            <div class="info-section-group">
+                <div class="info-section-group-title">{{'ITECBAN-ACCOUNT.ADDINTERVENER.COOWNERDATA' | translate}}</div>
+                <div class="info-section-group-elem">
+                    <div class="lbl-info">{{'ITECBAN-ACCOUNT.ADDINTERVENER.DNI' | translate}} </div>
+                    <div class="content-info">{{newIntervener.legalDocument.id}}</div>
+                </div>
+                <div class="info-section-group-elem">
+                    <div class="lbl-info">{{'ITECBAN-ACCOUNT.ADDINTERVENER.NAME' | translate}}</div>
+                    <div class="content-info">{{newIntervener.name}}</div>
+                </div>
+                <div class="info-section-group-elem">
+                    <div class="lbl-info">{{'ITECBAN-ACCOUNT.ADDINTERVENER.SURNAME' | translate}}</div>
+                    <div class="content-info">{{newIntervener.surname}}</div>
+                </div>
+                <!--.info-section-group-elem.lbl-info {{'ITECBAN-ACCOUNT.ADDINTERVENER.SECONDSURNAME' | translate}}
+.content-info {{newIntervener.secondSurname}}
+-->
+                <!--.info-section-group-elem.lbl-info {{'ITECBAN-ACCOUNT.ADDINTERVENER.BOND' | translate}}
+.content-info {{newIntervener.bondType.name}}
+-->
+                <div class="info-section-group-elem">
+                    <div class="lbl-info">{{'ITECBAN-ACCOUNT.ADDINTERVENER.EMAIL' | translate}}</div>
+                    <div class="content-info">{{newIntervener.email}}</div>
+                </div>
+                <div class="info-section-group-elem">
+                    <div class="lbl-info">{{'ITECBAN-ACCOUNT.ADDINTERVENER.TEXT' | translate}}</div>
+                    <div class="content-info">{{newIntervener.text}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div class="box-msg-info">{{'ITECBAN-ACCOUNT.ADDINTERVENER.SENT.NOTIFICATION2' | translate}}</div>
+    </div>
+    <div class="col-xs-12">
+        <div class="row">
+            <div class="col-xs-12 text-right"><a class="btn btn-primary" type="button" (click)="backDetail()">{{'ITECBAN-ACCOUNT.ADDINTERVENER.GOTO.ACCOUNT'
+                    | translate}}</a></div>
+        </div>
+    </div>
+</div>

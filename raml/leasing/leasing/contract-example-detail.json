@@ -1,0 +1,85 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "id":"991200130",
+    "productData": {
+      "id": "00-LEASING",
+      "description": "Leasing"
+    },
+    "currency": {
+      "id": "EUR",
+      "code": "978"
+    },
+    "accountId": "ES000000000000000000",
+    "requestedAmount": {
+      "amount": 35956.45,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "grantedAmount": {
+      "amount": 35956.45,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "availableAmount": {
+      "amount": 5456.21,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "drawnAmount": {
+      "amount": 9345.96,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "outstandingAmount": {
+      "amount": 20322.34,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "formalisationDate": "2018-05-12T00:00:00.00Z",
+    "expiryDate": "2021-05-12T00:00:00.00Z",
+    "period": "-",
+    "nextSettlementDate": "2021-05-12T00:00:00.00Z",
+    "nextAmortizationDate": "2020-09-12T00:00:00.00Z",
+    "installmentAmount": {
+      "amount": 1289.45,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "residualValue": {
+      "amount": 12335.38,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "depositAmount": {
+      "amount": 5000.00,
+      "currency": {
+        "id": "EUR",
+        "code": "978"
+      }
+    },
+    "installmentTaxRate": 0.21,
+    "interestRate": 0.035,
+    "interestReferential": 0,
+    "interestDifferential": 0,
+    "reviewPeriodicity": "Semestral",
+    "nextReviewDate": "2019-06-12T00:00:00.00Z"
+  }
+}

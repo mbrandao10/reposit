@@ -1,0 +1,60 @@
+<osb-loader *ngIf="loading"></osb-loader>
+<div *ngIf="formConfig">
+    <osb-search-list [formGroup]="filterSearchForm" [formConfig]="formConfig" (search)="getDocuments()">
+    </osb-search-list>
+</div>
+
+<table class="table table-striped" *ngIf="documents">
+    <thead class="hidden-xs">
+        <tr>
+            <th></th>
+            <th>{{'ITECBAN-DOCUMENTS.LIST.DATE' | translate}}</th>
+            <th>{{'ITECBAN-DOCUMENTS.LIST.ACCOUNT' | translate}}</th>
+            <th>{{'ITECBAN-DOCUMENTS.LIST.CATEGORYDOC' | translate}}</th>
+            <th class="text-right">{{'ITECBAN-DOCUMENTS.LIST.AMOUNT' | translate}}</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="documents">
+        <ng-container *ngFor="let documentElem of documents">
+            <tr class="interactive" (click)="downloadDetail(documentElem)">
+                <td class="v-align-middle">
+                    <i *ngIf="!documentElem.isRead" class="icon icon-documents text-green fs-20"></i>
+                        <i *ngIf="documentElem.isRead" class="icon icon-documents text-gray-doc fs-20"></i>
+                            <!-- <i class="icon icononesait icon-documents pull-left"></i> -->
+                </td>
+
+                <td class="text-no-warp text-left">
+                    <span class="hidden-xs text-no-warp">
+                        {{ documentElem.date | date: 'dd-MM-yyyy' }}
+                    </span>
+                    <span class="visible-xs-block text-os-semibold text-no-warp">
+                        {{ documentElem.date | date: 'dd-MM-yyyy' }}
+                    </span>
+                    <span class="visible-xs-block fs-12 text-no-warp" *ngIf="documentElem.type">
+                        {{ documentElem.accounts | formatAccountPipe: accountFormatView:true }}
+                    </span>
+                </td>
+                <td class="text-no-warp hidden-xs">
+                    {{ documentElem.accounts | formatAccountPipe: accountFormatView }}
+                </td>
+                <td class="text-no-warp hidden-xs">
+                    {{ documentElem.type?.name }}
+                </td>
+                <td class="text-right">
+                    <span class="hidden-xs text-no-warp text-right" *ngIf="documentElem.amount">
+                        {{ documentElem.amount.amount | CurrencyPipe: documentElem.amount.currency?.code }}
+                    </span>
+                    <span class="visible-xs-block text-os-semibold text-no-warp text-right" *ngIf="documentElem.amount">
+                        {{ documentElem.amount.amount | CurrencyPipe: documentElem.amount.currency?.code }}
+                    </span>
+                    <span class="visible-xs-block fs-12 text-no-warp" *ngIf="documentElem.type">
+                        {{ documentElem.type.name }}
+                    </span>
+                </td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
+<div class="row" *ngIf="hasMoreData">
+    <a class="col-xs-12 text-center" (click)="next()" role="button">{{'ITECBAN-ACCOUNT.MOVEMENT.MORE-DATA' | translate}}</a>
+</div>

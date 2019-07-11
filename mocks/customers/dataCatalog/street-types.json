@@ -1,0 +1,23 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "CALLE",
+      "name": "CALLE",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/streetTypes"
+    },
+    {
+      "id": "AVENIDA",
+      "name": "AVENIDA",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/streetTypes"
+    },
+    {
+      "id": "PLAZA",
+      "name": "PLAZA",
+      "href": "https://itecban.indra.es/customer/dataCatalogs/streetTypes"
+    }
+  ]
+}

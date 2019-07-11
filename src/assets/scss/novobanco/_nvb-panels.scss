@@ -1,0 +1,21 @@
+//
+// Paneles Personalizados
+// --------------------------------------------------
+
+/*------------------------------------*\
+    $PANELS
+\*------------------------------------*/
+
+.panel-footer {
+  background-color: $nvb-white;
+}
+
+
+.panel.panel-transp {
+    background-color: inherit;
+    box-shadow: none;
+
+    .panel-footer {
+        background-color: inherit;
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "beneficiary": {
+    "toAccount": {
+      "type": "IBAN",
+      "id": "ES6420807939518144595283"
+    },
+    "description": "ALVARO MUNOZ AVILA",
+    "legalDocument":{
+      "id":"12345678Z",
+      "type":"01"
+    }
+  },
+  "amount": {
+    "amount": 60,
+    "currency": "978"
+  },
+  "periodicity": {
+    "type":"PERIODIC",
+    "frequency": "1",
+    "firstExecutionDate": "2017-06-01",
+    "lastExecutionDate": "2018-06-01",
+    "executionRule": "L"
+  }
+}

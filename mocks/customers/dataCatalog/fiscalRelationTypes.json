@@ -1,0 +1,33 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "01",
+      "name": "Responsable Inscripto c/Percepción"
+
+    },
+    {
+      "id": "02",
+      "name": "Responsable Inscripto s/Percepción"
+    },
+    {
+      "id": "03",
+      "name": "IVA Liberado"
+    },
+    {
+      "id": "04",
+      "name": "No Alcanzado / Exento"
+    },
+    {
+      "id": "05",
+      "name": "Consumidor Final"
+    },
+    {
+      "id": "06",
+      "name": "Monotributista"
+    }
+  ]
+}

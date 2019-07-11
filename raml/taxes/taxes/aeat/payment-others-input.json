@@ -1,0 +1,17 @@
+{
+  "accountId": "ES8120952318526683783933",
+  "taxPaymentClass":"OthersTaxPayment",
+  "taxForm": {
+    "id": "561",
+    "name": "IMPUESTO SOBRE LA CERVEZA"
+  },
+  "taxYear": 2018,
+  "taxPeriod": "1T",
+  "paymentAmount": {
+    "amount": 1245.51,
+    "currency": {
+      "id": "EUR",
+      "code": "978"
+    }
+  }
+}

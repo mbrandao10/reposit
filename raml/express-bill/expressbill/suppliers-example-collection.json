@@ -1,0 +1,23 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "id": "F1732177I",
+      "name": "Fashion Clothes"
+    },
+    {
+      "id": "R2173791A",
+      "name": "Cueros Lona"
+    },
+    {
+      "id": "Q0890151D",
+      "name": "Trendy chick"
+    }
+  ],
+  "paging": {
+    "hasMorePages": false
+  }
+}

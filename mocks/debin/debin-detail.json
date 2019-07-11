@@ -1,0 +1,45 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": {
+    "id": "1212121212121212121234",
+    "concept": {
+      "id": "ALQ",
+      "name": "ALQUILER"
+    },
+    "reason": "Pago del alquiler de enero",
+    "amount": {
+      "amount": 1000,
+      "currency": {
+        "id": "ARS",
+        "code": "032"
+      }
+    },
+    "sellerName": "Milton Arbogast",
+    "sellerlegalDocumentId":"20111144444",
+    "sellerCbu":"3840001600000000004941",
+    "sellerBank":{
+      "id":"34",
+      "name":"Wanap"
+    },
+    "buyerName": "David Robert Jones",
+    "buyerlegalDocumentId":"35111144444",
+    "buyerCbu":"3840001700000000005656",
+    "buyerBank":{
+      "id":"34",
+      "name":"Wanap"
+    },
+    "expirationDate": "2018-03-30T00:00:00.00Z",
+    "operationDate": "2018-01-30T00:00:00.00Z",
+    "requestDate": "2018-01-30T00:00:00.00Z",
+    "status": {
+      "id": "01",
+      "name": "PENDIENTE"
+    },
+    "role":"seller",
+    "isPreauthorized":false,
+    "isChargeback":false
+  }
+}

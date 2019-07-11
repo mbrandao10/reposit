@@ -1,0 +1,16 @@
+{
+  "result": {
+    "code": "200",
+    "info": "OK"
+  },
+  "data": [
+    {
+      "productId": "TCT006000203",
+      "description": "WORLD MASTERCARD - WORLD MASTERCARD",
+      "maxAmount": {
+        "amount": 50000.01,
+        "currency": "032"
+      }
+    }
+  ]
+}

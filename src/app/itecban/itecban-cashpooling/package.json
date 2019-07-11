@@ -1,0 +1,8 @@
+{
+    "name": "itecban-cashpooling",
+    "version": "0.0.2",
+    "description": "modulo de itecban-cashpooling",
+    "main": "index.js",
+    "author": "Minsait",
+    "license": "ISC"
+}

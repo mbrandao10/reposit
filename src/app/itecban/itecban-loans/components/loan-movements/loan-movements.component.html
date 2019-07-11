@@ -1,0 +1,82 @@
+<app-loader *ngIf="loading"></app-loader>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-9">
+        <osb-search-list [formGroup]="filterSearchForm" [formConfig]="formConfig" (search)="getMovements()"></osb-search-list>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel ">
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead class="hidden-xs">
+                            <tr>
+                                <th>
+                                    {{ 'ITECBAN-LOANS.MOVEMENTS.OPERATION-DATE' | translate }}
+                                </th>
+                                <th>
+                                    {{ 'ITECBAN-LOANS.MOVEMENTS.VALUEDATE' | translate }}
+                                </th>
+                                <th>
+                                    {{ 'ITECBAN-LOANS.MOVEMENTS.CONCEPT' | translate }}
+                                </th>
+                                <th class="text-right">
+                                    {{ 'ITECBAN-LOANS.MOVEMENTS.AMOUNT' | translate }}
+                                </th>
+                                <th class="text-right">
+                                    {{ 'ITECBAN-LOANS.MOVEMENTS.BALANCE' | translate }}
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="movements">
+                            <tr *ngFor="let item of movements">
+                                <td class="hidden-xs">
+                                    {{ item.operationDate | date: 'dd/MM/yyyy'}}
+                                </td>
+                                <td class="hidden-xs">
+                                    {{ item.valueDate | date: 'dd/MM/yyyy' }}
+                                </td>
+                                <td>
+                                    <span class="hidden-xs text-no-warp">
+                                        {{ item.reason }}
+                                    </span>
+                                    <span class="visible-xs-block text-os-semibold text-no-warp">
+                                        {{ item.reason }}
+                                    </span>
+                                    <span class="visible-xs-block fs-12 text-no-warp">
+                                        {{ item.operationDate | date: 'dd/MM/yyyy' }}
+                                    </span>
+                                </td>
+                                <td class="hidden-xs text-no-warp text-right">
+                                    {{ item.amount.amount | CurrencyPipe: item.amount.currency.code }}
+                                </td>
+                                <td class="text-right">
+                                    <span class="hidden-xs text-no-warp">
+                                        {{ item.balance.amount | CurrencyPipe: item.balance.currency.code }}
+                                    </span>
+                                    <span class="visible-xs-block text-os-semibold text-no-warp">
+                                        {{ item.balance.amount | CurrencyPipe: item.balance.currency.code }}
+                                    </span>
+                                    <span class="visible-xs-block fs-12 text-no-warp">
+                                        {{ item.amount.amount | CurrencyPipe: item.amount.currency.code  }}
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="row" *ngIf="hasMoreData && movements">
+                        <a class="col-xs-12 text-center p-1 text-os-bold" (click)="next()" role="button">
+                            {{ 'ITECBAN-ACCOUNT.MOVEMENT.MORE-DATA' | translate }}
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-xs-12" *ngIf="listMovements.list.data.length === 0">
+                    <div class="col-xs-12 mt-2" *ngIf="listMovements.list.data.length === 0 && !loading">
+                        <p> {{'ITECBAN-LOGIN-PAGE.NO-MOVEMENTS' | translate}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
