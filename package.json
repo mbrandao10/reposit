@@ -36,7 +36,7 @@
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.5.4",
     "d3": "^5.7.0",
-    "jspdf": "^1.4.1",
+    "jspdf": "^2.3.1",
     "jspdf-autotable": "^2.3.5",
     "moment": "^2.22.2",
     "ngx-bootstrap": "^4.1.1",
